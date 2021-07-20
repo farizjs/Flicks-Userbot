@@ -347,7 +347,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "**♨️KEN-UBOT♨️** SUDAH AKTIF DAN BISA DIGUNAKAN!")
+    await bot.send_message(BOTLOG_CHATID, "**♨️KEN-UBOT♨️** `SUDAH AKTIF!!!`")
     return
 
 with bot:
