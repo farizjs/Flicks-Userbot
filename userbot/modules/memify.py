@@ -58,7 +58,7 @@ async def draw_meme_text(image_path, text):
     os.remove(image_path)
     i_width, i_height = img.size
     m_font = ImageFont.truetype(
-        "userbot/utils/sytles/MutantAcademyStyle.ttf", int(
+        "userbot/utils/styles/KenFont.otf", int(
             (70 / 640) * i_width)
     )
     if ";" in text:
@@ -214,7 +214,7 @@ async def draw_meme_text(image_path, text):
     os.remove(image_path)
     i_width, i_height = img.size
     m_font = ImageFont.truetype(
-        "userbot/utils/sytles/KenFont.ttf", int((95 / 730) * i_width)
+        "userbot/utils/styles/KenFont.ttf", int((95 / 730) * i_width)
     )
     if ";" in text:
         upper_text, lower_text = text.split(";")
