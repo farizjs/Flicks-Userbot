@@ -52,7 +52,7 @@ jobs:
 
           repository: .
 
-          commit_user_name: KennedyProjec
+          commit_user_name: KennedyProject
 
           commit_user_email: abdulmutaqin14@gmail.com
 
