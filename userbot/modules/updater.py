@@ -53,7 +53,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if HEROKU_APP_NAME is None:
             await event.edit(
                 '`[HEROKU]: Harap Siapkan Variabel` **HEROKU_APP_NAME** `'
-                ' untuk dapat deploy perubahan terbaru dari ♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️`'
+                ' untuk dapat deploy perubahan terbaru dari 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓`'
             )
             repo.__del__()
             return
