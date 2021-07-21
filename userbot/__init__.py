@@ -383,8 +383,8 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} ♨️".format(
-                "♨️", x), data="ub_modul_{}".format(x))
+            "{} {} 👾".format(
+                "👾", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -459,11 +459,11 @@ with bot:
                     f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Kennedy Project**\nKalo mau tau lebih lanjut silahkan Join Ke \n**Group Support** Dibawah Ini.\n",
                     buttons=[
                         [
-                            Button.url("🎯 Channel Support",
+                            Button.url("ᴄʜᴀɴɴᴇʟ sᴜᴘᴘᴏʀᴛ",
                                        "t.me/flywaytr"),
-                            Button.url("🔧 Group support",
+                            Button.url("ɢʀᴏᴜᴘ sᴜᴘᴘᴏʀᴛ",
                                        "t.me/zeusspam")],
-                        [Button.url("🗣️ Development",
+                        [Button.url("ᴅᴇᴠᴇʟᴏᴘᴇʀ",
                                     "t.me/xgothboi")],
                     ]
                 )
@@ -490,25 +490,25 @@ with bot:
                 result = builder.photo(
                     file=geezlogo,
                     link_preview=False,
-                    text=f"♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️\n\n**Bᴏᴛ Oꜰ : {DEFAULTUSER}**".format(
+                    text=f"𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\n\n**Bᴏᴛ Oꜰ : {DEFAULTUSER}**".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan Dari ♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️\\ ",
+                    "Bantuan Dari 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\\ ",
                     text="Daftar Plugins",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
-                    " ♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️\\ ",
-                    text="""**♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️\\n\n Anda Bisa Membuat KEN UBOT Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
+                    " 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\\ ",
+                    text="""**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\\n\n Anda Bisa Membuat KEN UBOT Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️"
+                                "𝐊𝐄𝐍-𝐔𝐁𝐎𝐓"
                                 "https://github.com/KennedyProject/KEN-UBOT"),
                             custom.Button.url(
                                 "OWNER",
@@ -547,9 +547,9 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("🎯 Channel Support",
+                            Button.url("ᴄʜᴀɴɴᴇʟ sᴜᴘᴘᴏʀᴛ",
                                        "t.me/flywaytr"),
-                            Button.url("🔧 Group support",
+                            Button.url("ɢʀᴏᴜᴘ sᴜᴘᴘᴏʀᴛ",
                                        "t.me/zeusspam")],
                         [custom.Button.inline(
                             "Close", b"close")],
@@ -609,7 +609,7 @@ with bot:
 
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
-            await event.edit("Menu Ditutup!", buttons=Button.clear())
+            await event.edit("Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ!", buttons=Button.clear())
 
     except BaseException:
         LOGS.info(
