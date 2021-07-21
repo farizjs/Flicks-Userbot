@@ -113,9 +113,9 @@ async def repo_is_here(wannasee):
         "**Hey**, __I am using__ ♨️ **KEN-UBOT** ♨️\n"
         "      __Thanks For Using me__\n"
         "   \n"
-        "♛ **Repo :** [KEN-UBOT](https://github.com/KennedyProject/KEN-UBOT)\n"
-        "♛ **Owner :** [Ken](t.me/xgothboi)\n"
-        "♛ **Licenses:** [GPL-3.0 License](https://github.com/KennedyProject/KEN-UBOT/blob/KEN-UBOT/LICENSE)"
+        "➣ **Repo :** [KEN-UBOT](https://github.com/KennedyProject/KEN-UBOT)\n"
+        "➣ **Owner :** [Ken](t.me/xgothboi)\n"
+        "➣ **License :** [GPL-3.0 License](https://github.com/KennedyProject/KEN-UBOT/blob/KEN-UBOT/LICENSE)"
     )
 
 
