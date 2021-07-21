@@ -108,7 +108,7 @@ async def log(log_text):
 @register(outgoing=True, pattern="^.kickme$")
 async def kickme(leave):
     """ Basically it's .kickme command """
-    await leave.edit(f"`❗ {ALIVE_NAME} Telah Meninggalkan Group...`")
+    await leave.edit(f"`Tuanmu Telah Meninggalkan Group Ini Untuk Selamanya...`")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
@@ -121,7 +121,7 @@ async def unmute_chat(unm_e):
         await unm_e.edit('`Running on Non-SQL Mode!`')
         return
     unkread(str(unm_e.chat_id))
-    await unm_e.edit("```Berhasil Dibuka, Obrolan Tidak Lagi Dibisukan```")
+    await unm_e.edit("```Tuan Membuka Obrolan, Chat Tidak Lagi Dibisukan```")
     await sleep(2)
     await unm_e.delete()
 
@@ -136,7 +136,7 @@ async def mute_chat(mute_e):
         return
     await mute_e.edit(str(mute_e.chat_id))
     kread(str(mute_e.chat_id))
-    await mute_e.edit("`Ssshssh Anda Telah Membisukan Obrolan !`")
+    await mute_e.edit("`Ssshssh Tuanmu Telah Membisukan Obrolan !`")
     await sleep(2)
     await mute_e.delete()
     if BOTLOG:
