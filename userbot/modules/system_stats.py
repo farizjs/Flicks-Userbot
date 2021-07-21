@@ -164,7 +164,7 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
-            "**⚜-**♨️KEN-UBOT♨️ Versi:** \n "
+            "**⚜-**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 Versi:** \n "
             f"heads/KEN-UBOT-0-x634i7u1"
             "\n**⚜-**Revisi:**\n "
             f"{revout}"
@@ -274,7 +274,7 @@ async def amireallyalive(alive):
         f"├ 👾 • `ʙᴏᴛ      :`v.{BOT_VER} \n"
         f"├ 📂 • `ᴍᴏᴅᴜʟᴇ   :`{len(modules)} \n"
         f"╰───────────────── \n"
-        f"💢 : [REPO-KEN​](https://github.com/KennedyProject/KEN-UBOT)\n👥 : [KEN-TEAM](t.me/zeusspam)\n👤 : [OWNER](t.me/xgothboi)\n"
+        f"♨️ : [REPO-KEN​](https://github.com/KennedyProject/KEN-UBOT)\n👥 : [KEN-TEAM](t.me/zeusspam)\n👤 : [OWNER](t.me/xgothboi)\n"
     )
     if ALIVE_LOGO:
         try:
@@ -308,20 +308,16 @@ async def redis(alive):
     await alive.edit("♨️")
     await asyncio.sleep(2)
     output = (
-        f"╭─────────────\n"
-        f"┃ ♨️KEN-UBOT♨️ \n"
-        f"╰───────────────── \n"
-        f" ♨️ `Name     :` {DEFAULTUSER} \n"
-        f" ♨️ `Username :` @{user.username} \n"
-        f" ♨️ `Telethon :` Ver {version.__version__} \n"
-        f" ♨️ `Python   :` Ver {python_version()} \n"
-        f" ♨️ `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
-        f" ♨️ `Bot Ver  :` {BOT_VER} \n"
-        f" ♨️ `Modules  :` {len(modules)} Modules \n"
-        f"╭────────────────── \n"
-        f"┃[REPO](https://github.com/KEN-UBOT)  |  [SUPPORT](t.me/zeusspam)  |  "
-        f"[INSTA](https://Instagram.com/acxken._)\n"
-        f"╰──────────────────────")
+        f"┏━━━━━━━━━━━━━━━━━━━━━n"
+        f"┣  `Name     :` {DEFAULTUSER} \n"
+        f"┣  `Username :` @{user.username} \n"
+        f"┣  `Telethon :` Ver {version.__version__} \n"
+        f"┣  `Python   :` Ver {python_version()} \n"
+        f"┣  `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
+        f"┣  `Bot Ver  :` {BOT_VER} \n"
+        f"┣ `Modules  :` {len(modules)} Modules \n"
+        f"┣[𝐑𝐞𝐩𝐨](https://github.com/KEN-UBOT)  |  [𝐒𝐮𝐩𝐩𝐨𝐫𝐭](t.me/zeusspam)\n"
+        f"┗━━━━━━━━━━━━━━━━━━━━━")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
