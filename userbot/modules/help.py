@@ -25,15 +25,15 @@ async def help(event):
         if args in CMD_HELP:
             await event.edit(str(CMD_HELP[args]))
         else:
-            await event.edit(f"**{args}** `Command Tidak Valid, Harap Ketik Command Dengan Benar`")
+            await event.edit(f"**{args}** `Bukan Plugin Yang Benar.`")
             await asyncio.sleep(200)
             await event.delete()
     else:
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`\t  ♕  "
-        await event.edit("**♨️KEN-UBOT♨️**\n\n"
+            string += "`\t  ✯  "
+        await event.edit("**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓.**\n\n"
                          f"**◉ Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n**◉ Mᴏᴅᴜʟᴇꜱ : {len(modules)}**\n\n"
                          "**• Mᴀɪɴ Mᴇɴᴜ :**\n"
                          f"◉ {string}◉\n\n")
