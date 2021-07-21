@@ -347,7 +347,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "**♨️KEN-UBOT♨️** `SUDAH AKTIF!!!`")
+    await bot.send_message(BOTLOG_CHATID, "**♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️** `Has Been Activated!`")
     return
 
 with bot:
@@ -459,11 +459,11 @@ with bot:
                     f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Kennedy Project**\nKalo mau tau lebih lanjut silahkan Join Ke \n**Group Support** Dibawah Ini.\n",
                     buttons=[
                         [
-                            Button.url("🚀 Channel Support",
+                            Button.url("🎯 Channel Support",
                                        "t.me/flywaytr"),
-                            Button.url("✨ Group support",
+                            Button.url("🔧 Group support",
                                        "t.me/zeusspam")],
-                        [Button.url("👤 Development",
+                        [Button.url("🗣️ Development",
                                     "t.me/xgothboi")],
                     ]
                 )
@@ -490,25 +490,25 @@ with bot:
                 result = builder.photo(
                     file=geezlogo,
                     link_preview=False,
-                    text=f"♨️KEN-UBOT♨️\n\n**Bot Of : {DEFAULTUSER}**".format(
+                    text=f"♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️\n\n**Bᴏᴛ Oꜰ : {DEFAULTUSER}**".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan Dari ♨️KEN-UBOT♨️\\ ",
+                    "Bantuan Dari ♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️\\ ",
                     text="Daftar Plugins",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
-                    " ♨️KEN-UBOT♨️\\ ",
-                    text="""**♨️KEN-UBOT♨️\\n\n Anda Bisa Membuat KEN UBOT Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
+                    " ♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️\\ ",
+                    text="""**♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️\\n\n Anda Bisa Membuat KEN UBOT Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "♨️KEN-UBOT♨️"
+                                "♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️"
                                 "https://github.com/KennedyProject/KEN-UBOT"),
                             custom.Button.url(
                                 "OWNER",
@@ -531,7 +531,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"WARNING! Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -547,9 +547,9 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("🚀 Channel Support",
+                            Button.url("🎯 Channel Support",
                                        "t.me/flywaytr"),
-                            Button.url("✨ Group support",
+                            Button.url("🔧 Group support",
                                        "t.me/zeusspam")],
                         [custom.Button.inline(
                             "Close", b"close")],
