@@ -189,7 +189,7 @@ async def dyno_usage(dyno):
                 "➣`Sisa Quota Dyno Bulan Ini :` \n"
                 f"   • {hours} jam - {minutes} menit"
                 f" [{percentage}%] \n\n"
-                f"• **Master :** {ALIVE_NAME} )
+                f"• ** Master: ** {ALIVE_NAME})
 
             await asyncio.sleep(20)
             await event.delete()
