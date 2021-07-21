@@ -95,7 +95,7 @@ async def redis(pong):
     await pong.edit("__Connecting to data center...__")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**KEN-UBOT**\n"
+    await pong.edit(f"**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓**\n"
                     f"➾ __Signal__    __:__ "
                     f"`%sms` \n"
                     f"➾ __Uptime__ __:__ "
@@ -119,7 +119,7 @@ async def redis(pong):
     await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**♨️KEN-UBOT♨️**\n\n"
+    await pong.edit(f"**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓**\n\n"
                     f"** ▹  Sɪɢɴᴀʟ   :** "
                     f"`%sms` \n"
                     f"** ▹  Uᴘᴛɪᴍᴇ  :** "
@@ -165,7 +165,7 @@ async def speedtst(spd):
                    f"`{result['ping']}` \n"
                    "✧ **ISP:** "
                    f"`{result['client']['isp']}` \n"
-                   "✧ **BOT:**♨️KEN-UBOT♨️")
+                   "✧ **BOT:**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓")
 
 
 def speed_convert(size):
