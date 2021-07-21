@@ -2,15 +2,15 @@ from userbot.events import register
 from time import sleep
 
 
-@register(outgoing=True, pattern='^.geez(?: |$)(.*)')
+@register(outgoing=True, pattern='^.kenalan(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(3)
-    await typew.edit("`Hai Perkenalkan Namaku` {ALIVE_NAME}")
+    await typew.edit("`Hai Perkenalkan Namaku Gatau`")
     sleep(3)
     await typew.edit("`Umur Gaada Yang Tahu`")
     sleep(1)
-    await typew.edit("`Tinggal Di Mars, Salam Kenal!`")
+    await typew.edit("`Tinggal Di Gatau, Salam Kenal!`")
 # Create by myself @localheart
 
 
