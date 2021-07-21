@@ -181,12 +181,12 @@ async def dyno_usage(dyno):
             await dyno.edit(
                 " **Dyno Usage :**  \n"
                 "   \n"
-                "➠`Penggunaan Dyno :` \n"
-                f" • {AppHours} jam - {AppMinutes} menit"
+                "➣`Penggunaan Dyno {ALIVE_NAME} :` \n"
+                f"   • {AppHours} jam - {AppMinutes} menit"
                 f" [{AppPercentage}%] \n"
                 "   \n"
-                "➠`Sisa Dyno Bulan Ini :` \n"
-                f" • {hours} jam - {minutes} menit"
+                "➣`Sisa Quota Dyno Bulan Ini :` \n"
+                f"   • {hours} jam - {minutes} menit"
                 f" [{percentage}%] \n"
             )
             await asyncio.sleep(20)
