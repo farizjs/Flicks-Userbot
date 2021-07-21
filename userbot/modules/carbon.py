@@ -80,7 +80,7 @@ async def carbon_api(e):
         e.chat_id,
         file,
         caption="Made By [Kennedy](https://t.me/xgothboi),\
-        \na project by [Grup Gj](https://t.me/zeusspam)",
+        \na project by [Grup Spam](https://t.me/zeusspam)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -146,7 +146,7 @@ async def carbon_api(e):
         e.chat_id,
         file,
         caption="Made By [Kennedy](https://t.me/xgothboi),\
-        \na project by [Grup Gj](https://t.me/zeusspam)",
+        \na project by [Grup Spam](https://t.me/zeusspam)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -212,7 +212,7 @@ async def carbon_api(e):
         e.chat_id,
         file,
         caption="Made By [Kennedy](https://t.me/xgothboi),\
-        \na project by [Grup Gj](https://t.me/zeusspam)",
+        \na project by [Grup Spam](https://t.me/zeusspam)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -278,7 +278,7 @@ async def carbon_api(e):
         e.chat_id,
         file,
         caption="Made By [Kennedy](https://t.me/xgothboi),\
-        \na project by [Grup Gj](https://t.me/zeusspam)",
+        \na project by [Grup Spam](https://t.me/zeusspam)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -344,7 +344,7 @@ async def carbon_api(e):
         e.chat_id,
         file,
         caption="Made By [Kennedy](https://t.me/xgothboi),\
-        \na project by [Grup Gj](https://t.me/zeusspam)",
+        \na project by [Grup Spam](https://t.me/zeusspam)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
