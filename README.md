@@ -23,7 +23,7 @@ Repo Yang [ken](https://t.me/xgothboi) Curry Dari Beberapa Github Hehe.
 
 ### Generate String Using Replit⤵️
 
-[![KEN-UBOT-STRING](https://replit.com/badge/github/@KennedyProject/KEN-UBOT)](https://replit.com/@KennedyProject/stringen)
+[![KEN-UBOT-STRING](https://replit.com/badge/github/@KennedyProject/KEN-UBOT)](https://replit.com/@KennedyProject/KEN-UBOT-STRING)
 
 
 ## DEPLOY TO HEROKU ✨
