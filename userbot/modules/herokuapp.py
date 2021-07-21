@@ -15,7 +15,8 @@ from userbot import (
     HEROKU_API_KEY,
     BOTLOG,
     BOTLOG_CHATID,
-    CMD_HELP)
+    CMD_HELP,
+    ALIVE_NAME)
 from userbot.events import register
 
 heroku_api = "https://api.heroku.com"
@@ -181,7 +182,7 @@ async def dyno_usage(dyno):
             await dyno.edit(
                 " **Dyno Usage :**  \n"
                 "   \n"
-                "➣`Penggunaan Dyno {alive.name} :` \n"
+                "➣`Penggunaan Dyno {ALIVE_NAME} :` \n"
                 f"   • {AppHours} jam - {AppMinutes} menit"
                 f" [{AppPercentage}%] \n"
                 "   \n"
