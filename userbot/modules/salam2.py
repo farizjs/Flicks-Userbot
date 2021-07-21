@@ -7,31 +7,31 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern='^gjm(?: |$)(.*)')
+@register(outgoing=True, pattern='^.gjm(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**GAK, JANGAN MAKSA LAH ANJEEENGGG!!!**")
 
 
-@register(outgoing=True, pattern='^yhh(?: |$)(.*)')
+@register(outgoing=True, pattern='^.yhh(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**YAHAHA WAHYOOOOEEEEE**")
 
 
-@register(outgoing=True, pattern='^eg(?: |$)(.*)')
+@register(outgoing=True, pattern='^.eg(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**EH GOBLOK!!!**")
 
 
-@register(outgoing=True, pattern='^en(?: |$)(.*)')
+@register(outgoing=True, pattern='^.en(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**EH NGENTOTTT!!!**")
 
 
-@register(outgoing=True, pattern='^ast(?: |$)(.*)')
+@register(outgoing=True, pattern='^.ast(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**ASTAGFIRULLAHALAZDIM....**")
@@ -43,7 +43,7 @@ async def typewriter(typew):
     await typew.edit("**GRUP SAMPAH KEK GINI MENDING BUBARIN AJA NGENTOT.**")
 
 
-@register(outgoing=True, pattern='^so(?: |$)(.*)')
+@register(outgoing=True, pattern='^.so(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**SOK KERAS BANGET SI JAMET INI BHAAAKSSSS.**")
@@ -73,17 +73,17 @@ CMD_HELP.update({
 \n↳ : Tersedak Meledek.\
 \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `X`\
 \n↳ : Ngatain Grup.\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `en`\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.en`\
 \n↳ : Coba Aja Sendiri Kontol.\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `ast`\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ast`\
 \n↳ : Istigfar.\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `gjm`\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.gjm`\
 \n↳ : Coba Aja Sendiri.\
 \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `eg`\
 \n↳ : Coba Aja.\
 \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.yhh`\
 \n↳ : Si Wahyu.\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `so`\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.so`\
 \n↳ : Ngatain Orang Sok Keras.\
 \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `D`\
 \n↳ : Cara Jadi Majikan Yang Benar.\
