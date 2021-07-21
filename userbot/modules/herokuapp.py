@@ -15,6 +15,7 @@ from userbot import (
     HEROKU_API_KEY,
     BOTLOG,
     BOTLOG_CHATID,
+    ALIVE_NAME,
     CMD_HELP)
 from userbot.events import register
 
@@ -181,14 +182,15 @@ async def dyno_usage(dyno):
             await dyno.edit(
                 " **Dyno Usage :**  \n"
                 "   \n"
-                "➣`Penggunaan Dyno {HEROKU_APP_NAME} :` \n"
+                "➣`Penggunaan Dyno` {app.name} `:` \n"
                 f"   • {AppHours} jam - {AppMinutes} menit"
                 f" [{AppPercentage}%] \n"
                 "   \n"
                 "➣`Sisa Quota Dyno Bulan Ini :` \n"
                 f"   • {hours} jam - {minutes} menit"
-                f" [{percentage}%] \n"
-            )
+                f" [{percentage}%] \n\n"
+                f"• **Master :** {ALIVE_NAME} )
+
             await asyncio.sleep(20)
             await event.delete()
             return True
