@@ -28,13 +28,13 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    f"╔══════ ⚜ ══════╗\n      **ROOM CHAT {ALIVE_NAME}**     \n╚══════ ⚜ ══════╝  \n"
-    f"⎆ __Dimohon Untuk Tidak Melakukan Spam Karena Jika Anda Melakukan Spam Anda Akan Saya Blokir. Jadi Tunggu Sampai {ALIVE_NAME} Kembali Dan Membalas Pesan Anda. __ \n"
-    "⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊\n"
-    f"⎆ **DILARANG SPAM** \n"
-    "⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊\n"
+    f"┌────── ⚜ ──────┐n      **ROOM CHAT {ALIVE_NAME}**     \n└────── ⚜ ──────┘  \n"
+    f"➣ __Dimohon Untuk Tidak Melakukan Spam Karena Jika Anda Melakukan Spam Anda Akan Saya Blokir. Jadi Tunggu Sampai {ALIVE_NAME} Kembali Dan Membalas Pesan Anda. __ \n"
+    "▰▱▰▱▰▱▰▱▰▱▰▱\n"
+    f"➣ **DILARANG SPAM** \n"
+    "▰▱▰▱▰▱▰▱▰▱▰▱\n"
     f"◈ **TUAN** : {DEFAULTUSER}\n"
-    f"◈ **SUPPORT** ♨️KEN-UBOT♨️\n")
+    f"◈ **SUPPORT** ♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️\n")
 # =================================================================
 
 
@@ -232,9 +232,9 @@ async def approvepm(apprvpm):
     try:
         approve(uid)
     except IntegrityError:
-        return await apprvpm.edit("`Oke Pesan Anda Sudah Diterima ツ`")
+        return await apprvpm.edit("`Oke Pesan Anda Sudah Diterima...`")
 
-    await apprvpm.edit(f"`Hai` [{name0}](tg://user?id={uid}) `Pesan Anda Sudah Diterima, Jangan ngespam atau kirim bokep ya goblok!`")
+    await apprvpm.edit(f"`Hai` [{name0}](tg://user?id={uid}) `Pesan Anda Sudah Diterima...`")
     await apprvpm.delete(getmsg)
     await message.delete()
 
