@@ -13,7 +13,7 @@ async def typewriter(typew):
     await typew.edit("**ASTAGAAAA MEMEKNYA ANAK INI!!!!**")
 
 
-@register(outgoing=True, pattern='^ek(?: |$)(.*)')
+@register(outgoing=True, pattern='^.ek(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**EH KONTOOOLL!!!**")
@@ -25,7 +25,7 @@ async def typewriter(typew):
     await typew.edit("**YAUDAH IYAAA SAYANG...**")
 
 
-@register(outgoing=True, pattern='^asn(?: |$)(.*)')
+@register(outgoing=True, pattern='^.asn(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**ASTAGFIRULLAH NGENTOOOT!!!**")
@@ -45,7 +45,7 @@ async def typewriter(typew):
 
 CMD_HELP.update({
     "salam3":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `asn`\
+    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.asn`\
 \n↳ : Hmmm.\
 \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.mmk`\
 \n↳ : Biasalah.\
@@ -53,7 +53,7 @@ CMD_HELP.update({
 \n↳ : Baptis.\
 \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.wibu`\
 \n↳ : Pake Bila Ketemu Wibu.\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `ek`\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ek`\
 \n↳ : Coba Aja Sendiri Kontol.\
 \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ya`\
 \n↳ : Yasaja."
