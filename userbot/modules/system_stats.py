@@ -223,7 +223,7 @@ async def pipcheck(pip):
         await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
 
 
-@register(outgoing=True, pattern=r"^\.(?:kenalive)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:kalive)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -260,21 +260,21 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:kena)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:zalive)\s?(.)?")
 async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"**THE KEN-UBOT**\n"
-        f"╭─────────────────── \n"
-        f"├ 🤴 • `ᴏᴡɴᴇʀ    :`[KEN](t.me/xgothboi) \n"
-        f"├ 🖥️ • `ꜱʏꜱᴛᴇᴍ.   :`Ubuntu 20.10 \n"
-        f"├ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ  :`v.{version.__version__} \n"
-        f"├ 🐍 • `ᴘʏᴛʜᴏɴ.   :`v.{python_version()} \n"
-        f"├ 👾 • `ʙᴏᴛ      :`v.{BOT_VER} \n"
-        f"├ 📂 • `ᴍᴏᴅᴜʟᴇ   :`{len(modules)} \n"
-        f"╰───────────────── \n"
-        f"♨️ : [REPO-KEN​](https://github.com/KennedyProject/KEN-UBOT)\n👥 : [KEN-TEAM](t.me/zeusspam)\n👤 : [OWNER](t.me/xgothboi)\n"
+        f"**𝐓𝐇𝐄 𝐊𝐄𝐍 - 𝐔𝐁𝐎𝐓**\n"
+        f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
+        f"➣ 🤴 • `ᴏᴡɴᴇʀ    :`[KEN](t.me/xgothboi) \n"
+        f"➣ 🖥️ • `ꜱʏꜱᴛᴇᴍ.   :`Ubuntu 20.10 \n"
+        f"➣ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ  :`v.{version.__version__} \n"
+        f"➣ 🐍 • `ᴘʏᴛʜᴏɴ.   :`v.{python_version()} \n"
+        f"➣ 👾 • `ʙᴏᴛ      :`v.{BOT_VER} \n"
+        f"➣ 📂 • `ᴍᴏᴅᴜʟᴇ   :`{len(modules)} \n"
+        f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
+        f"🔧 : [REPO-KEN​](https://github.com/KennedyProject/KEN-UBOT)\n👥 : [KEN-TEAM](t.me/zeusspam)\n👤 : [OWNER](t.me/xgothboi)\n"
     )
     if ALIVE_LOGO:
         try:
@@ -300,12 +300,12 @@ async def amireallyalive(alive):
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("__A.__")
-    await alive.edit("__AL..__")
-    await alive.edit("__ALI.__")
-    await alive.edit("__ALIV..__")
-    await alive.edit("__ALIVE...__")
-    await alive.edit("♨️")
+    await alive.edit("__𝐀𝐋𝐈𝐕𝐄.__")
+    await alive.edit("__𝐀𝐋𝐈𝐕𝐄..__")
+    await alive.edit("__𝐀𝐋𝐈𝐕𝐄.__")
+    await alive.edit("__𝐀𝐋𝐈𝐕𝐄..__")
+    await alive.edit("__𝐀𝐋𝐈𝐕𝐄...__")
+    await alive.edit("😈")
     await asyncio.sleep(2)
     output = (
         f"┏━━━━━━━━━━━━━━━━━━━━━ \n"
@@ -316,7 +316,7 @@ async def redis(alive):
         f"┣  `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
         f"┣  `Bot Ver  :` {BOT_VER} \n"
         f"┣ `Modules  :` {len(modules)} Modules \n"
-        f"┣[𝐑𝐞𝐩𝐨](https://github.com/KEN-UBOT)  |  [𝐒𝐮𝐩𝐩𝐨𝐫𝐭](t.me/zeusspam)\n"
+        f"┣  [𝐑𝐞𝐩𝐨](https://github.com/KEN-UBOT) \n"
         f"┗━━━━━━━━━━━━━━━━━━━━━")
     if ALIVE_LOGO:
         try:
@@ -369,7 +369,7 @@ CMD_HELP.update({
 })
 CMD_HELP.update({
     "alive":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.alive` or `.on` or `.kenalive`"
+    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.alive` or `.zalive` or `.on` or `.kalive`"
     "\n↳ : To see whether your bot is working or not."
     "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.aliveu` <text>"
     "\n↳ : Changes the 'user' in alive to the text you want."
