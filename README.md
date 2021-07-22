@@ -26,7 +26,7 @@ Repo Yang [ken](https://t.me/xgothboi) Curry Dari Beberapa Github Hehe.
 [![KEN-UBOT-STRING](https://replit.com/badge/github/@KennedyProject/KEN-UBOT)](https://replit.com/@KennedyProject/KEN-UBOT-STRING)
 
 
-## DEPLOY TO HEROKU ✨
+## DEPLOY TO HEROKU 🔧
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/KennedyProject/KEN-UBOT/tree/KEN-UBOT"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-yellow?style=flat&logo=heroku" width="250" height="38.60" /></a></p>
 
 
@@ -34,9 +34,10 @@ Repo Yang [ken](https://t.me/xgothboi) Curry Dari Beberapa Github Hehe.
   <summary><b>© Credits</b></summary>
 
 
- 🙏 **THANK YOU VERY MUCH FOR**
+ 🔧 **THANK YOU VERY MUCH FOR**
 
-*   [VCKYOU](https://github.com/Vckyou/Geez-Project)    Geez - Project
+*   [apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
+*   [VCKYOU](https://github.com/Vckyou/Geez-Project)    Geez - Project 
 *   [X_iMFiNe](https://github.com/ximfine/xBot-Remix)    XBOT-REMIX
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
 *   [RaphielGang](https://github.com/RaphielGang)    Telegram - Paperplane
@@ -46,5 +47,5 @@ Repo Yang [ken](https://t.me/xgothboi) Curry Dari Beberapa Github Hehe.
 *   DAN TERIMAKASIH BANYAK KEPADA USERBOT INDONESIA LAINNYA🙏
 
 
-##  Stay Support 🚀
+##  Stay Support 🔧
 *   [LonamiWebs](https://github.com/LonamiWebs/) and [Telethon](https://github.com/LonamiWebs/Telethon)
