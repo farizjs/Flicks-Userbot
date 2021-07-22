@@ -86,7 +86,7 @@ async def logo_gen(event):
               stroke_width=strke, stroke_fill="black")
     flnme = f"kenubot.png"
     img.save(flnme, "png")
-    await xx.edit("`Done!`")
+    await xx.edit("`Selesai!`")
     if os.path.exists(flnme):
         await event.client.send_file(
             event.chat_id,
