@@ -23,10 +23,10 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 @register(outgoing=True, pattern="^.logo(?: |$)(.*)")
 async def logo_gen(event):
-    xx = await event.edit("`Membuat logo.....`")
+    xx = await event.edit("`Membuat logo...`")
     name = event.pattern_match.group(1)
     if not name:
-        await xx.edit("`Ketik text yang mau dijadiin logo!`")
+        await xx.edit("`Ketik text yang akan dijadikan logo!`")
     bg_, font_ = "", ""
     if event.reply_to_msg_id:
         temp = await event.get_reply_message()
@@ -41,7 +41,7 @@ async def logo_gen(event):
     else:
         pics = []
         async for i in event.client.iter_messages(
-            "@GeezLogo", filter=InputMessagesFilterPhotos
+            "@KenLogopack", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
@@ -51,7 +51,7 @@ async def logo_gen(event):
     if not bg_:
         pics = []
         async for i in event.client.iter_messages(
-            "@GeezLogo", filter=InputMessagesFilterPhotos
+            "@KenLogopack", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
@@ -104,4 +104,4 @@ async def logo_gen(event):
 
 
 CMD_HELP.update({"logo": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.logo <text>`"
-                 "\n↳ : Hasilkan logo dari Teks atau Balas Ke gambar yang diberikan, untuk menulis teks Anda di atasnya. Atau Balas Ke File Font, Untuk menulis dengan font itu."})
+                 "\n↳ : Hasilkan logo dari Teks."})
