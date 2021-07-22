@@ -201,11 +201,11 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/da073cd25fa05c607fe0b.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/2f30083e355464f9df89e.jpg"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/da073cd25fa05c607fe0b.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/2f30083e355464f9df89e.jpg"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -383,8 +383,8 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} 👾".format(
-                "👾", x), data="ub_modul_{}".format(x))
+            "{} {} ✯".format(
+                "✯", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -402,7 +402,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "⋖╯", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "Close", data="{}_close({})".format(prefix, modulo_page)
+                    "❌", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
                     "╰⋗", data="{}_next({})".format(prefix, modulo_page)
