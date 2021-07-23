@@ -242,7 +242,7 @@ async def kang(args):
                 await bot.send_read_acknowledge(conv.chat_id)
 
         await args.edit(
-            f"**Tikel Berhasil dicurry**\n      ** [🎯Tekan Disini🎯](t.me/addstickers/{packname}) **\n**Untuk Melihat Pack Tikelmu!!!**",
+            f"**Tikel Berhasil dicurry [🎯Tekan Disini🎯](t.me/addstickers/{packname}) Untuk Melihat Pack Tikelmu!!!**",
             parse_mode="md",
         )
 
