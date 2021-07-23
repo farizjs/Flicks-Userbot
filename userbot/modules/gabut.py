@@ -25,7 +25,7 @@ async def typewriter(typew):
     await typew.edit(f"**Halo gaesss..**")
     sleep(1)
     await typew.edit("**السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ**")
-# Salam 
+# Salam
 
 
 @register(outgoing=True, pattern='^.l(?: |$)(.*)')
@@ -47,6 +47,7 @@ async def typewriter(typew):
     await typew.edit("**Dyno Usage**:\n\n╭━━━━━━━━━━━━━━━━━━━━╮\n" f"-> `Penggunaan Dyno ` **{DEFAULTUSER}**:\n" f" •**0 jam - " f"0 menit - 0%**" "\n ◐━─━─━─━─━──━─━─━─━─━◐\n" "-> `Sisa Dyno Bulan Ini`:\n" f" •**9999 jam - 9999 menit " f"- 100%**\n" "╰━━━━━━━━━━━━━━━━━━━━╯"
                      )
 # Dyno fake
+
 
 @register(outgoing=True, pattern="^.perkenalan(?: |$)(.*)")
 async def perkenalan(event):
