@@ -36,7 +36,7 @@ Repo Yang [ken](https://t.me/xgothboi) Curry Dari Beberapa Github Hehe.
 
  🔧 **THANK YOU VERY MUCH FOR**
 
-*   [apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
+*   [Apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
 *   [VCKYOU](https://github.com/Vckyou/Geez-Project)    Geez - Project 
 *   [X_iMFiNe](https://github.com/ximfine/xBot-Remix)    XBOT-REMIX
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
