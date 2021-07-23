@@ -69,6 +69,8 @@ CMD_HELP.update(
         \nUsage : Dyno fake\
         \n\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `.l`\
         \nUsage : Untuk Menjawab Salam\
+        \n\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `.perkenalan`\
+        \nUsage : Memperkenalkan Diri\
         \n\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `.g`\
         \nUsage : Member Goblok\
         \n\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `.p`\
