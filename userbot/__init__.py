@@ -359,7 +359,7 @@ with bot:
             "valid entity. Check your environment variables/config.env file.")
         quit(1)
 
-# Global Variables
+# =================================GlobalVariables=================================== #
 COUNT_MSG = 0
 USERS = {}
 COUNT_PM = {}
@@ -382,9 +382,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline(
-            "{} {} ✯".format(
-                "✯", x), data="ub_modul_{}".format(x))
+        custom.Button.inline("{} {} ✯".format("✯", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -412,9 +410,11 @@ def paginate_help(page_number, loaded_modules, prefix):
     return pairs
 
 
-with bot:
+ken = bot
+
+with ken:
     try:
-        tgbot = TelegramClient(
+        ken.tgbot = TelegramClient(
             "TG_BOT_TOKEN",
             api_id=API_KEY,
             api_hash=API_HASH).start(
@@ -424,34 +424,11 @@ with bot:
         me = bot.get_me()
         uid = me.id
 
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile("open")
-            )
-        )
-        async def opeen(event):
-            try:
-                tgbotusername = BOT_USERNAME
-                if tgbotusername is not None:
-                    results = await event.client.inline_query(tgbotusername, "@Geez-Project")
-                    await results[0].click(
-                        event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
-                    )
-                    await event.delete()
-                else:
-                    await event.edit(
-                        "`The bot doesn't work! Please set the Bot Token and Username correctly. The module has been stopped.`"
-                    )
-            except Exception:
-                return await event.edit(
-                    "`You cannot send inline results in this chat (caused by SendInlineBotResultRequest)`"
-                )
-
-        geezlogo = INLINE_PIC
+        kenlogo = INLINE_PIC
         plugins = CMD_HELP
         vr = BOT_VER
 
-        @tgbot.on(events.NewMessage(pattern="/start"))
+        @ken.tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
@@ -459,36 +436,35 @@ with bot:
                     f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Kennedy Project**\nKalo mau tau lebih lanjut silahkan Join Ke \n**Group Support** Dibawah Ini.\n",
                     buttons=[
                         [
-                            Button.url("ᴄʜᴀɴɴᴇʟ sᴜᴘᴘᴏʀᴛ",
+                            Button.url("Channel Support",
                                        "t.me/flywaytr"),
-                            Button.url("ɢʀᴏᴜᴘ sᴜᴘᴘᴏʀᴛ",
-                                       "t.me/zeusspam")],
-                        [Button.url("ᴅᴇᴠᴇʟᴏᴘᴇʀ",
+                            Button.url("Group Support",
+                                       "t.me/KingUserbotSupport")],
+                        [Button.url("Developer",
                                     "t.me/xgothboi")],
                     ]
                 )
 
-        @tgbot.on(events.NewMessage(pattern="/ping"))
+        @ken.tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
             if event.message.from_id != uid:
                 start = datetime.now()
                 end = datetime.now()
                 ms = (end - start).microseconds / 1000
-                await tgbot.send_message(
+                await ken.tgbot.send_message(
                     event.chat_id,
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
-        @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+        @ken.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith(
-                    "@Geez-Project"):
+            if event.query.user_id == uid and query.startswith("@KenProject"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
-                    file=geezlogo,
+                    file=kenlogo,
                     link_preview=False,
                     text=f"𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\n\n**Bᴏᴛ Oꜰ : {DEFAULTUSER}**".format(
                         len(dugmeler),
@@ -517,7 +493,7 @@ with bot:
                 )
             await event.answer([result] if result else None)
 
-        @tgbot.on(
+        @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
@@ -534,29 +510,29 @@ with bot:
                 reply_pop_up_alert = f"WARNING! Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_close\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:  # @Geez-Project
+            if event.query.user_id == uid:  # @KenProject
                 # https://t.me/TelethonChat/115200
                 await event.edit(
-                    file=geezlogo,
+                    file=kenlogo,
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("ᴄʜᴀɴɴᴇʟ sᴜᴘᴘᴏʀᴛ",
+                            Button.url("Channel Support",
                                        "t.me/flywaytr"),
-                            Button.url("ɢʀᴏᴜᴘ sᴜᴘᴘᴏʀᴛ",
-                                       "t.me/zeusspam")],
+                            Button.url("Group Support",
+                                       "t.me/KingUserbotSupport")],
                         [custom.Button.inline(
                             "Close", b"close")],
                     ]
                 )
 
-        @ tgbot.on(
+        @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_prev\((.+?)\)")
             )
@@ -574,7 +550,7 @@ with bot:
                 reply_pop_up_alert = f"LU NGAPAIN PENCET BOT PUNYA {DEFAULTUSER} DASAR ANAK NGENTOT!."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"ub_modul_(.*)")
             )
@@ -607,7 +583,7 @@ with bot:
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(events.CallbackQuery(data=b"close"))
+        @ken.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             await event.edit("Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ!", buttons=Button.clear())
 
