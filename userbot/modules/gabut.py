@@ -1,6 +1,6 @@
 from time import sleep
 from platform import uname
-from userbot import ALIVE_NAME, WEATHER_DEFICITY, CMD_HELP
+from userbot import ALIVE_NAME, WEATHER_DEFCITY, CMD_HELP
 from userbot.events import register
 
 # ================= CONSTANT =================
@@ -54,7 +54,7 @@ async def perkenalan(event):
     event.pattern_match.group(1)
     await event.edit(f"**Hai Guys , Perkenalkan Nama Gw {DEFAULTUSER}**")
     sleep(2)
-    await event.edit(f"**Gw Tinggal Di {WEATHER_DEFICITY}**")
+    await event.edit(f"**Gw Tinggal Di {WEATHER_DEFCITY}**")
     sleep(2)
     await event.edit("`Salam Kenal...`")
     sleep(2)
