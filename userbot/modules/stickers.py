@@ -24,8 +24,8 @@ from userbot.events import register
 
 
 KANGING_STR = [
-    "Sedang Mengambil Sticker Ini Ke Pack Anda",
-    "Sedang Mengambil Sticker Ini Ke Pack Anda",
+    "Lagi Curry Tikel Ini Ke Pack Anda Tuan",
+    "Lagi Curry Tikel Ini Ke Pack Anda Tuan",
 ]
 
 
@@ -198,7 +198,7 @@ async def kang(args):
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
         else:
-            await args.edit("`Membuat Pack Sticker Baru`")
+            await args.edit("`Membuat Tikel Pack Baru`")
             async with bot.conversation("Stickers") as conv:
                 await conv.send_message(cmd)
                 await conv.get_response()
@@ -242,7 +242,7 @@ async def kang(args):
                 await bot.send_read_acknowledge(conv.chat_id)
 
         await args.edit(
-            f"**Sticker Berhasil Ditambahkan**\n      **>>> [Tekan Disini](t.me/addstickers/{packname}) <<<**\n**Untuk Melihat Sticker Anda**",
+            f"**Tikel Berhasil dicurry**\n      ** [🎯Tekan Disini🎯](t.me/addstickers/{packname}) **\n**Untuk Melihat Pack Tikelmu!!!**",
             parse_mode="md",
         )
 
