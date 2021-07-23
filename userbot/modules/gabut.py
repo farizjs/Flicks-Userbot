@@ -1,6 +1,6 @@
 from time import sleep
 from platform import uname
-from userbot import ALIVE_NAME, CMD_HELP
+from userbot import ALIVE_NAME, WEATHER_DEFICITY, CMD_HELP
 from userbot.events import register
 
 # ================= CONSTANT =================
