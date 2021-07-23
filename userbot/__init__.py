@@ -201,11 +201,11 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/2f30083e355464f9df89e.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/a0a9367c72cd7755c6eaa.jpg"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/2f30083e355464f9df89e.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/a0a9367c72cd7755c6eaa.jpg"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -402,7 +402,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "⋖╯", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "❌", data="{}_close({})".format(prefix, modulo_page)
+                    "ᴄʟᴏsᴇ", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
                     "╰⋗", data="{}_next({})".format(prefix, modulo_page)
