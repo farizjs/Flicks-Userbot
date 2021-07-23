@@ -8,18 +8,6 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern='^kntl(?: |$)(.*)')
-async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
-    await typew.edit(f"**LU KONTOL**")
-    sleep(3)
-    await typew.edit("**KONTOL KONTOL KONTOL!!!**")
-    sleep(3)
-    await typew.edit("**DASAR KEPALA KONTOL!!!**")
-# Owner @Si_Dian
-
-
 @register(outgoing=True, pattern='^.g(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -30,23 +18,23 @@ async def typewriter(typew):
 # Owner @Si_Dian
 
 
-@register(outgoing=True, pattern='^ass(?: |$)(.*)')
+@register(outgoing=True, pattern='^.p(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
     await typew.edit(f"**Halo gaesss..**")
-    sleep(2)
-    await typew.edit("**ASSALAMU'ALAIKUM NGENTOT!!!**")
+    sleep(1)
+    await typew.edit("**السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ**")
 # Owner @manusiarakitann
 
 
-@register(outgoing=True, pattern='^wss(?: |$)(.*)')
+@register(outgoing=True, pattern='^.l(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
     await typew.edit(f"**Jawab Salam Dulu Gaes**")
     sleep(2)
-    await typew.edit("**WAALAIKUMSALAM GOBLOK!!!!!**")
+    await typew.edit("**وَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ**")
 # Owner @manusiarakitann
 
 
@@ -65,12 +53,10 @@ CMD_HELP.update({
     "fakedyno":
     "`Usage`\
 \nUsage: tipu tipu anjeeeng.\
-\n\n`kntl`\
-\nUsage: Ngontolin Orang.\
-\n\n`wss`\
+\n\n`.l`\
 \nUsage: Untuk Menjawab Salam.\
 \n\n`.g`\
 \nUsage: Member Goblok.\
-\n\n`ass`\
+\n\n`.p`\
 \nUsage: Untuk Memberi Salam."
 })
