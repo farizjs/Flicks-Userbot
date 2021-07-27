@@ -26,13 +26,13 @@ from telethon.tl.types import InputPeerUser
 
 @register(outgoing=True, pattern="^.getmemb(?: |$)(.*)")
 async def scrapmem(event):
-    chat=event.chat_id
+    chat = event.chat_id
     await event.edit("`Please wait...`")
     event.client
-    members=await event.client.get_participants(chat, aggressive=True)
+    members = await event.client.get_participants(chat, aggressive=True)
 
     with open("members.csv", "w", encoding="UTF-8") as f:
-        writer=csv.writer(f, delimiter=",", lineterminator="\n")
+        writer = csv.writer(f, delimiter=",", lineterminator="\n")
         writer.writerow(["user_id", "hash"])
         for member in members:
             writer.writerow([member.id, member.access_hash])
@@ -42,23 +42,23 @@ async def scrapmem(event):
 @register(outgoing=True, pattern="^.addmemb(?: |$)(.*)")
 async def admem(event):
     await event.edit("`Adding 0 members...`")
-    chat=await event.get_chat()
+    chat = await event.get_chat()
     event.client
-    users=[]
+    users = []
     with open("members.csv", encoding="UTF-8") as f:
-        rows=csv.reader(f, delimiter=",", lineterminator="\n")
+        rows = csv.reader(f, delimiter=",", lineterminator="\n")
         next(rows, None)
         for row in rows:
-            user={'id': int(row[0]), 'hash': int(row[1])}
+            user = {'id': int(row[0]), 'hash': int(row[1])}
             users.append(user)
-    n=0
+    n = 0
     for user in users:
         n += 1
         if n % 30 == 0:
             await event.edit(f"`Mencapai 30 anggota, tunggu selama {900/60} menit`")
             await asyncio.sleep(900)
         try:
-            userin=InputPeerUser(user['id'], user['hash'])
+            userin = InputPeerUser(user['id'], user['hash'])
             await event.client(InviteToChannelRequest(chat, [userin]))
             await asyncio.sleep(random.randrange(5, 7))
             await event.edit(f"`Menambahkan {n} anggota...`")
