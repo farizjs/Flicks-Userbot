@@ -82,7 +82,7 @@ CMD_HELP.update({
    \nUsage : Mengumpulkan Anggota dari Obrolan\
    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.addmemb`\
    \nUsage : Menambahkan Anggota ke Obrolan\
-   \nTata Cara Menggunakannya:  Pertama, Anda harus melakukan .getmemb terlebih dahulu dari Obrolan. Lalu buka grup Anda dan ketik .addmemb untuk menambahkan mereka ke grup Anda."
+   \nTata Cara Menggunakannya:  Pertama, Anda harus melakukan .getmemb terlebih dahulu dari Obrolan.."
 
 
 })
