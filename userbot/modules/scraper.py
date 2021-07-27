@@ -24,7 +24,7 @@ from telethon.tl.functions.channels import InviteToChannelRequest
 from telethon.tl.types import InputPeerUser
 
 
-@bot.on(geezbot_cmd(outgoing=True, pattern="^.getmemb(?: |$)(.*)")
+@register(outgoing=True, pattern="^.getmemb(?: |$)(.*)")
 async def scrapmem(event):
     chat=event.chat_id
     await event.edit("`Please wait...`")
@@ -39,7 +39,7 @@ async def scrapmem(event):
     await event.edit("`Members scraped.`")
 
 
-@ bot.on(geezbot_cmd(outgoing=True, pattern="^.addmemb(?: |$)(.*)")
+@register(outgoing=True, pattern="^.addmemb(?: |$)(.*)")
 async def admem(event):
     await event.edit("`Adding 0 members...`")
     chat=await event.get_chat()
