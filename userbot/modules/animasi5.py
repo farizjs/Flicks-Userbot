@@ -1812,7 +1812,7 @@ async def emoji_tengkorak(e):
 
 
 CMD_HELP.update({
-    "animasi3":
+    "animasi5":
     ">`.cowsay`"
     "\nUsage: sapi yang mengatakan sesuatu."
     "\n\n> .cp"
