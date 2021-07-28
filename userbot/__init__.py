@@ -523,12 +523,12 @@ with ken:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("Channel Support",
+                            Button.url("ᴄʜᴀɴɴᴇʟ sᴜᴘᴘᴏʀᴛ",
                                        "t.me/kennedyproject"),
-                            Button.url("Group Support",
+                            Button.url("ɢʀᴏᴜᴘ sᴜᴘᴘᴏʀᴛ",
                                        "t.me/KingUserbotSupport")],
                         [custom.Button.inline(
-                            "Close", b"close")],
+                            "ᴄʟᴏsᴇ", b"close")],
                     ]
                 )
 
