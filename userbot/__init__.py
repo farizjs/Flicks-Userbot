@@ -377,8 +377,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 
 def paginate_help(page_number, loaded_modules, prefix):
-    number_of_rows = 4
-    number_of_cols = 3
+    number_of_rows = 3
+    number_of_cols = 2
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
@@ -410,6 +410,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     return pairs
 
 
+# -----------------------------------------------File------------------------------------>
 ken = bot
 
 with ken:
@@ -420,28 +421,58 @@ with ken:
             api_hash=API_HASH).start(
             bot_token=BOT_TOKEN)
 
+
+# -----------------------------------------------File------------------------------------>
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
+        logo = ALIVE_LOGO
 
         kenlogo = INLINE_PIC
         plugins = CMD_HELP
         vr = BOT_VER
+# ------------------------------ChatAction--------------->
 
-        @ken.tgbot.on(events.NewMessage(pattern="/start"))
+        @ken.tgbot.on(events.NewMessage(pattern=r"/start"))
+        async def handler(event):
+            if event.message.from_id != uid:
+                u = await event.client.get_entity(event.chat_id)
+                await event.message.get_sender()
+                text = (
+                    f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Saya Adalah\n"
+                    f"Assistant Bot Atau Pembantu,\n"
+                    f"Untuk Mempersantai Mengatur Grup.\n"
+                    f"Saya **Dibuat oleh :** {DEFAULTUSER} Yang Di Deploy Di Heroku\n")
+                await ken.tgbot.send_file(event.chat_id, logo,
+                                           caption=text,
+                                           buttons=[
+                                               [
+                                                   custom.Button.url(
+                                                       text="Channel Support",
+                                                       url="https://t.me/kennedyproject"),
+                                                   custom.Button.url(
+                                                       text="Group Support",
+                                                       url="https://t.me/Kinguserbotsupport"
+                                                   )
+                                               ]
+                                           ]
+                                           )
+
+        @ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Kennedy Project**\nKalo mau tau lebih lanjut silahkan Join Ke \n**Group Support** Dibawah Ini.\n",
+                    f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
+                    f"Ingin melihat repository ini dan Cara deploynya\n\n"
+                    f" `Klik button url di bawah ini` \n\n"
+                    f"**USERBOT TELEGRAM**\n",
                     buttons=[
                         [
-                            Button.url("Channel Support",
-                                       "t.me/flywaytr"),
-                            Button.url("Group Support",
-                                       "t.me/KingUserbotSupport")],
-                        [Button.url("Developer",
-                                    "t.me/xgothboi")],
+                            Button.url("Repository",
+                                       "https://github.com/KennedyProject/KEN-UBOT"),
+                            Button.url("Cara Deploy",
+                                       "https://t.me/kennedyproject/16")],
                     ]
                 )
 
@@ -507,7 +538,7 @@ with ken:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"WARNING! Jangan Menggunakan Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"Jangan Dipencet, Ini Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ken.tgbot.on(
@@ -547,7 +578,7 @@ with ken:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"LU NGAPAIN PENCET BOT PUNYA {DEFAULTUSER} DASAR ANAK NGENTOT!."
+                reply_pop_up_alert = f"Jangan Dipencet, Ini Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ken.tgbot.on(
@@ -579,7 +610,7 @@ with ken:
                     )
                 )
             else:
-                reply_pop_up_alert = f"LU NGAPAIN PENCET BOT PUNYA {DEFAULTUSER} DASAR ANAK NGENTOT!!!."
+                reply_pop_up_alert = f"Jangan Dipencet, Ini Milik {DEFAULTUSER}."
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
