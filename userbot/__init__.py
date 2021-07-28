@@ -378,11 +378,11 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 4
-    number_of_cols = 2
+    number_of_cols = 3
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline("{} {} ✯".format("✯", x), data="ub_modul_{}".format(x))
+        custom.Button.inline("{} {} ✘".format("✘", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -397,13 +397,13 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⋖╯", data="{}_prev({})".format(prefix, modulo_page)
+                    "⌫️", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
                     "ᴄʟᴏsᴇ", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "╰⋗", data="{}_next({})".format(prefix, modulo_page)
+                    "⌦️", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
@@ -466,7 +466,7 @@ with ken:
                 result = builder.photo(
                     file=kenlogo,
                     link_preview=False,
-                    text=f"𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\n\n**Bᴏᴛ Oꜰ : {DEFAULTUSER}**".format(
+                    text=f"𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\n\nBᴏᴛ Vᴇʀ : `5.0`\nMᴏᴅᴜʟᴇs​ : `{len(plugins)}`\n\nBᴏᴛ Oꜰ : {DEFAULTUSER}**".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -524,7 +524,7 @@ with ken:
                     buttons=[
                         [
                             Button.url("Channel Support",
-                                       "t.me/flywaytr"),
+                                       "t.me/kennedyproject"),
                             Button.url("Group Support",
                                        "t.me/KingUserbotSupport")],
                         [custom.Button.inline(
