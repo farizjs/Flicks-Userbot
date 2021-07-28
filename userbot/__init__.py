@@ -347,7 +347,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "**♨️𝐊𝐄𝐍-𝐔𝐁𝐎𝐓♨️** `Has Been Activated!`")
+    await bot.send_message(BOTLOG_CHATID, "**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓** `Has Been Activated Master!`")
     return
 
 with bot:
@@ -448,10 +448,10 @@ with ken:
                                           buttons=[
                                               [
                                                   custom.Button.url(
-                                                      text="Channel Support",
+                                                      text="ᴄʜᴀɴɴᴇʟ sᴜᴘᴘᴏʀᴛ",
                                                       url="https://t.me/kennedyproject"),
                                                   custom.Button.url(
-                                                      text="Group Support",
+                                                      text="ɢʀᴏᴜᴘ sᴜᴘᴘᴏʀᴛ",
                                                       url="https://t.me/Kinguserbotsupport"
                                                   )
                                               ]
@@ -469,9 +469,9 @@ with ken:
                     f"**USERBOT TELEGRAM**\n",
                     buttons=[
                         [
-                            Button.url("Repository",
+                            Button.url("ʀᴇᴘᴏsɪᴛᴏʀʏ",
                                        "https://github.com/KennedyProject/KEN-UBOT"),
-                            Button.url("Cara Deploy",
+                            Button.url("ʜᴏᴡ ᴛᴏ ᴅᴇᴘʟᴏʏ​",
                                        "https://t.me/kennedyproject/16")],
                     ]
                 )
@@ -518,7 +518,7 @@ with ken:
                                 "𝐊𝐄𝐍-𝐔𝐁𝐎𝐓"
                                 "https://github.com/KennedyProject/KEN-UBOT"),
                             custom.Button.url(
-                                "OWNER",
+                                "Oᴡᴇʀ​",
                                 "t.me/xgothboi")]],
                     link_preview=False,
                 )
