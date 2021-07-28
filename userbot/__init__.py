@@ -444,19 +444,19 @@ with ken:
                     f"Untuk Mempersantai Mengatur Grup.\n"
                     f"Saya **Dibuat oleh :** {DEFAULTUSER} Yang Di Deploy Di Heroku\n")
                 await ken.tgbot.send_file(event.chat_id, logo,
-                                           caption=text,
-                                           buttons=[
-                                               [
-                                                   custom.Button.url(
-                                                       text="Channel Support",
-                                                       url="https://t.me/kennedyproject"),
-                                                   custom.Button.url(
-                                                       text="Group Support",
-                                                       url="https://t.me/Kinguserbotsupport"
-                                                   )
-                                               ]
-                                           ]
-                                           )
+                                          caption=text,
+                                          buttons=[
+                                              [
+                                                  custom.Button.url(
+                                                      text="Channel Support",
+                                                      url="https://t.me/kennedyproject"),
+                                                  custom.Button.url(
+                                                      text="Group Support",
+                                                      url="https://t.me/Kinguserbotsupport"
+                                                  )
+                                              ]
+                                          ]
+                                          )
 
         @ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
         async def handler(event):
