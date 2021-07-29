@@ -3,7 +3,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern'^.fakyu(?: |$)(.*)')
+@register(outgoing=True, pattern'^.fak(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
@@ -39,8 +39,8 @@ async def typewriter(typew):
 
 CMD_HELP.update({
     "nyindir2":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.fakyu`\
-\n↳ : Coba Aja.\
+    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.fak`\
+\n↳ : Coba Aja Sendiri.\
 \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.diam`\
 \n↳ : Coba Aja Sendiri."
 })
