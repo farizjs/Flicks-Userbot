@@ -201,11 +201,11 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/a0a9367c72cd7755c6eaa.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/fa26128e9d48d18263724.png"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/a0a9367c72cd7755c6eaa.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/279f1de82747019cb0b62.jpg"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -378,7 +378,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 3
-    number_of_cols = 2
+    number_of_cols = 3
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
