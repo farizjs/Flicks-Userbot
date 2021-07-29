@@ -32,7 +32,7 @@ async def _(event):
                     return await event.edit(
                         "Something Wrong. Use Audio Duration Minimal 5-10 Second."
                     )
-                await event.edit("```Tunggu sebentar...```")
+                await event.edit("```Please Wait...```")
                 result = await conv.get_response()
                 await event.client.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
