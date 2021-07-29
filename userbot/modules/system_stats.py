@@ -300,24 +300,24 @@ async def amireallyalive(alive):
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("__𝐀𝐋𝐈𝐕𝐄.__")
-    await alive.edit("__𝐀𝐋𝐈𝐕𝐄..__")
-    await alive.edit("__𝐀𝐋𝐈𝐕𝐄.__")
-    await alive.edit("__𝐀𝐋𝐈𝐕𝐄..__")
+    await alive.edit("__𝐀 𝐋 𝐈 𝐕 𝐄.__")
+    await alive.edit("__𝐀𝐋 𝐈 𝐕 𝐄..__")
+    await alive.edit("__𝐀𝐋𝐈 𝐕 𝐄.__")
+    await alive.edit("__𝐀𝐋𝐈𝐕 𝐄..__")
     await alive.edit("__𝐀𝐋𝐈𝐕𝐄...__")
     await alive.edit("😈")
-    await asyncio.sleep(2)
+    await asyncio.sleep(3)
     output = (
-        f"┏━━━━━━━━━━━━━━━━━━━━━ \n"
+        f"┏━━━━━━━━━━━━━━━━━━━ \n"
         f"┣  `Name     :` {DEFAULTUSER} \n"
         f"┣  `Username :` @{user.username} \n"
         f"┣  `Telethon :` Ver {version.__version__} \n"
         f"┣  `Python   :` Ver {python_version()} \n"
         f"┣  `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
         f"┣  `Bot Ver  :` {BOT_VER} \n"
-        f"┣ `Modules  :` {len(modules)} Modules \n"
-        f"┣  [𝐑𝐞𝐩𝐨](https://github.com/KEN-UBOT) \n"
-        f"┗━━━━━━━━━━━━━━━━━━━━━")
+        f"┣  `Modules  :` {len(modules)} Modules \n"
+        f"┣  `Github   :` [Userbot](https://github.com/KEN-UBOT) \n"
+        f"┗━━━━━━━━━━━━━━━━━━━")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
