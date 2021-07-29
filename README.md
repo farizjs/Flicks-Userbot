@@ -1,4 +1,4 @@
-<h1 align="center"><img src="./resources/extras/ken.gif" width="350px">
+<h1 align="center"><img src="./resources/extras/kenn.gif" width="20px">    KEN UBOT    <img src="./resources/extras/kenn.gif" width="20px"></h1>
 
 <p align="center">
     <a href="https://github.com/KennedyProject/KEN-UBOT/commits/KEN-UBOT"><img src="https://img.shields.io/github/last-commit/KennedyProject/KEN-UBOT?color=ff0000&logo=github&logoColor=ffffff&style=for-the-badge" /></a>
@@ -14,11 +14,11 @@
 # KEN UBOT
 ![KEN UBOT Logo](https://telegra.ph/file/a0a9367c72cd7755c6eaa.jpg)
 
-<h3 align="center">GABUT DOANG KAK HEHE</h3>
+<h3 align="center">KEN USERNOT DIBUAT KARENA ISENG DOANG.</h3>
 <p align="center">&nbsp;</p>
 
 ### Repo KEN UBOT
-Repo Yang [ken](https://t.me/xgothboi) Curry Dari Beberapa Github Hehe. 
+Repo Yang Dibuat Oleh [ken](https://t.me/xgothboi) Dari beberapa Repo Yang Ada Di Github. 
 
 
 ### Generate String Using Replit⤵️
@@ -30,22 +30,14 @@ Repo Yang [ken](https://t.me/xgothboi) Curry Dari Beberapa Github Hehe.
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/KennedyProject/KEN-UBOT/tree/KEN-UBOT"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-yellow?style=flat&logo=heroku" width="250" height="38.60" /></a></p>
 
 
-<details>
-  <summary><b>© Credits</b></summary>
+  <b>© Credits</b></summary>
 
 
  🔧 **THANK YOU VERY MUCH FOR**
-
+*   [Kennedy](https://github.com/KennedyProject/KEN-UBOT)    Ken - Userbot
 *   [Apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
 *   [VCKYOU](https://github.com/Vckyou/Geez-Project)    Geez - Project 
 *   [X_iMFiNe](https://github.com/ximfine/xBot-Remix)    XBOT-REMIX
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
 *   [RaphielGang](https://github.com/RaphielGang)    Telegram - Paperplane
-*   [AvinashReddy3108](https://github.com/AvinashReddy3108)    PaperplaneExtended
-*   [TeamUserge](https://github.com/UsergeTeam/Userge)    Userge
-*   [sandy1709](https://github.com/sandy1709/catuserbot)    CatUserbot
 *   DAN TERIMAKASIH BANYAK KEPADA USERBOT INDONESIA LAINNYA🙏
-
-
-##  Stay Support 🔧
-*   [LonamiWebs](https://github.com/LonamiWebs/) and [Telethon](https://github.com/LonamiWebs/Telethon)
