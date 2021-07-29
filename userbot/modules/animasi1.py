@@ -42,6 +42,21 @@ async def koc(e):
         await e.edit("༼ ༎ຶ ෴ ༎ຶ༽")
 
 
+@register(outgoing=True, pattern'^.fak$")
+async def koc(e):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+        await e.edit(".                       /¯ )")
+        await e.edit(".                       /¯ )\n                      /¯  /")
+        await e.edit(".                       /¯ )\n                      /¯  /\n                    /    /")
+        await e.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸")
+        await e.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸\n          /'/   /    /       /¨¯\\ ")
+        await e.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸\n          /'/   /    /       /¨¯\\ \n        ('(   (   (   (  ¯~/'  ')")
+        await e.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸\n          /'/   /    /       /¨¯\\ \n        ('(   (   (   (  ¯~/'  ')\n         \\                        /")
+        await e.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸\n          /'/   /    /       /¨¯\\ \n        ('(   (   (   (  ¯~/'  ')\n         \\                        /\n          \\                _.•´")
+        await e.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸\n          /'/   /    /       /¨¯\\ \n        ('(   (   (   (  ¯~/'  ')\n         \\                        /\n          \\                _.•´\n            \\              (")
+        await e.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸\n          /'/   /    /       /¨¯\\ \n        ('(   (   (   (  ¯~/'  ')\n         \\                        /\n          \\                _.•´\n            \\              (\n              \\  ")
+
+
 @register(outgoing=True, pattern='^.huh(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -175,7 +190,7 @@ async def _(event):
 
 CMD_HELP.update({
     "animasi1":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nah` ; `.huh` ; `.owner`\
+    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nah` ; `.fak` ; `.huh` ; `.owner`\
     \n↳ : Cobain Sendiri.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bunga` ; `.buah`\
     \n↳ : animasi.\
