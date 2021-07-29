@@ -14,7 +14,7 @@
 # KEN UBOT
 ![KEN UBOT Logo](https://telegra.ph/file/a0a9367c72cd7755c6eaa.jpg)
 
-<h3 align="center">KEN USERNOT DIBUAT KARENA ISENG DOANG.</h3>
+<h3 align="center">KEN USERBOT DIBUAT KARENA ISENG DOANG.</h3>
 <p align="center">&nbsp;</p>
 
 ### Repo KEN UBOT
