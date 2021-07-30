@@ -96,11 +96,11 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**Geez-Project ERROR**\n"
-                    link = "Silahkan chat: @VckyouuBitch"
-                    text += "Untuk melaporkan kesalahan"
-                    text += f"tinggal teruskan pesan ini {link}.\n"
-                    text += "Vcky Siap Membantu Kamu\n"
+                    text = "**KEN-UBOT ERROR**\n"
+                    link = "Filenya hanya diunggah disini,"
+                    text += "login baru hanya menyatakan error dan tanggal,"
+                    text += f"kami menghargai privasi mu.\n"
+                    text += "banyak data disini, tidak ada yang mau melihat data mu\n"
 
                     ftext = "========== DISCLAIMER =========="
                     ftext += "\nThis file uploaded ONLY here,"
