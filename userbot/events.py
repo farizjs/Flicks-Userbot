@@ -97,7 +97,6 @@ def register(**args):
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
                     text = "**KEN-UBOT ERROR**\n"
-                    link = "Filenya hanya diunggah disini,"
                     text += "login baru hanya menyatakan error dan tanggal,"
                     text += f"kami menghargai privasi mu.\n"
                     text += "banyak data disini, tidak ada yang mau melihat data mu\n"
