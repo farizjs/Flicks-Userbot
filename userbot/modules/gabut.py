@@ -21,7 +21,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.p(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    sleep(0,1)
+    sleep(0, 1)
     await typew.edit(f"**Halo gaesss..**")
     sleep(1)
     await typew.edit("**السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ**")
@@ -31,7 +31,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.l(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    sleep(0,1)
+    sleep(0, 1)
     await typew.edit(f"**Jawab Salam Dulu Gaes**")
     sleep(2)
     await typew.edit("**وَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ**")
