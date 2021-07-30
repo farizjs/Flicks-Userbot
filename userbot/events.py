@@ -97,16 +97,14 @@ def register(**args):
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
                     text = "**KEN-UBOT ERROR**\n"
-                    text += "login baru hanya menyatakan error dan tanggal,"
-                    text += f"kami menghargai privasi mu.\n"
-                    text += "banyak data disini, tidak ada yang mau melihat data mu\n"
+                    text += "login baru hanya menyatakan error dan tanggal\n\n"
 
                     ftext = "========== DISCLAIMER =========="
-                    ftext += "\nThis file uploaded ONLY here,"
-                    ftext += "\nwe logged only fact of error and date,"
-                    ftext += "\nwe respect your privacy,"
-                    ftext += "\nyou may not report this error if you've"
-                    ftext += "\nany confidential data here, no one will see your data\n"
+                    ftext += "\nFile ini HANYA diunggah di sini,"
+                    ftext += "\nkami hanya mencatat fakta kesalahan dan tanggal,"
+                    ftext += "\nkami menghormati privasi Anda,"
+                    ftext += "\nAnda tidak boleh melaporkan kesalahan ini jika Anda telah"
+                    ftext += "\ndata rahasia apa pun di sini, tidak ada yang akan melihat data Anda\n"
                     ftext += "================================\n\n"
                     ftext += "--------BEGIN USERBOT TRACEBACK LOG--------\n"
                     ftext += "\nDate: " + date
