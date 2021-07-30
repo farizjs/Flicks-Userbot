@@ -38,17 +38,6 @@ async def typewriter(typew):
 # Menjawab Salam
 
 
-@register(outgoing=True, pattern='^.usangen(?: |$)(.*)')
-async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
-    await typew.edit("`Getting Information...`")
-    sleep(1)
-    await typew.edit("**Dyno Usage**:\n f" -> `Penggunaan Dyno ` ** {DEFAULTUSER}**: \n f" •** 0 jam - f"0 menit - 0 % **" "\n    \n -> `Sisa Dyno Bulan Ini`: \n f" •** 1000 jam - 0 menit f" - 100 % **\n"
-                     )
-# Dyno fake
-
-
 @register(outgoing=True, pattern="^.perkenalan(?: |$)(.*)")
 async def perkenalan(event):
     event.pattern_match.group(1)
@@ -65,8 +54,6 @@ async def perkenalan(event):
 CMD_HELP.update(
     {
         "gabut": "**Modules** - `Gabut`\
-        \n\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `.usangen`\
-        \nUsage : Dyno fake\
         \n\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `.l`\
         \nUsage : Untuk Menjawab Salam\
         \n\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : `.perkenalan`\
