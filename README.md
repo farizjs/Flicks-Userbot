@@ -33,7 +33,5 @@ Repo Yang Dibuat Oleh [ken](https://t.me/xgothboi) Dari beberapa Repo Yang Ada D
 *   [Kennedy](https://github.com/KennedyProject/KEN-UBOT)    Ken - Userbot
 *   [Apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
 *   [VCKYOU](https://github.com/Vckyou/Geez-Project)    Geez - Project 
-*   [X_iMFiNe](https://github.com/ximfine/xBot-Remix)    XBOT-REMIX
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
-*   [RaphielGang](https://github.com/RaphielGang)    Telegram - Paperplane
 *   DAN TERIMAKASIH BANYAK KEPADA USERBOT INDONESIA LAINNYA <img src="./resources/extras/kennn.gif" width="10px">
