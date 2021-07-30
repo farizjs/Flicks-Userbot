@@ -44,7 +44,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("`Getting Information...`")
     sleep(1)
-    await typew.edit("**Dyno Usage**:\n\n f" -> `Penggunaan Dyno ` ** {DEFAULTUSER}**: \n" f" •** 0 jam - " f"0 menit - 0 % **" "\n    \n" " -> `Sisa Dyno Bulan Ini`: \n" f" •** 1000 jam - 0 menit " f" - 100 % **\n"
+    await typew.edit("**Dyno Usage**:\n f" -> `Penggunaan Dyno ` ** {DEFAULTUSER}**: \n f" •** 0 jam - f"0 menit - 0 % **" "\n    \n -> `Sisa Dyno Bulan Ini`: \n f" •** 1000 jam - 0 menit f" - 100 % **\n"
                      )
 # Dyno fake
 
