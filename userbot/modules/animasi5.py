@@ -1636,7 +1636,7 @@ async def taco(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("\n{\\__/}"
                      "\n(●_●)"
-                     "\n( >💩 Mau Tai Ku?")
+                     "\n( >💩 Mau Tai Gua?")
 
 
 @register(outgoing=True, pattern=r"^\.paw$")
