@@ -21,7 +21,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.p(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    sleep(0, 1)
+    sleep(1)
     await typew.edit(f"**Halo gaesss..**")
     sleep(1)
     await typew.edit("**السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ**")
@@ -31,9 +31,9 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.l(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    sleep(0, 1)
+    sleep(1)
     await typew.edit(f"**Jawab Salam Dulu Gaes**")
-    sleep(2)
+    sleep(1)
     await typew.edit("**وَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ**")
 # Menjawab Salam
 
@@ -44,7 +44,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("`Getting Information...`")
     sleep(1)
-    await typew.edit("**Dyno Usage**:\n\n╭━━━━━━━━━━━━━━━━━━━━╮\n" f"-> `Penggunaan Dyno ` **{DEFAULTUSER}**:\n" f" •**0 jam - " f"0 menit - 0%**" "\n ◐━─━─━─━─━──━─━─━─━─━◐\n" "-> `Sisa Dyno Bulan Ini`:\n" f" •**9999 jam - 9999 menit " f"- 100%**\n" "╰━━━━━━━━━━━━━━━━━━━━╯"
+    await typew.edit("**Dyno Usage**:\n\n f"-> `Penggunaan Dyno ` **{DEFAULTUSER}**:\n" f" •**0 jam - " f"0 menit - 0%**" "\n    \n" "-> `Sisa Dyno Bulan Ini`:\n" f" •**1000 jam - 0 menit " f"- 100%**\n"
                      )
 # Dyno fake
 
