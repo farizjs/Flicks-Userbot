@@ -13,7 +13,7 @@ from asyncio import sleep
 from collections import deque
 from random import choice, getrandbits, randint
 
-from userbot import bot, CMD_HELP, ALIVE_NAME
+from userbot import CMD_HELP, bot
 from userbot.events import register
 from userbot.modules.admin import get_user_from_event
 
