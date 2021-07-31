@@ -517,7 +517,7 @@ with ken:
             result = None
             query = event.text
             if event.query.user_id == uid and query.startswith("@KenProject"):
-                buttons =paginate_help(0, dugmeler, "helpme")
+                buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=kenlogo,
                     link_preview=False,
