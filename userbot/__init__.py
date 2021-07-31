@@ -518,7 +518,7 @@ with ken:
             query = event.text
             if event.query.user_id == uid and query.startswith("@KenProject"):
                 buttons = [
-                    Button.url("Oᴘᴇɴ Pʟᴜɢɪɴs​", (data="openplugins"),),
+                    Button.inline("Oᴘᴇɴ Pʟᴜɢɪɴs​", (data="openplugins"),),
                 ]
                 result = builder.photo(
                     file=kenlogo,
@@ -647,7 +647,7 @@ with ken:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 buttons=[
-                    (custom.Button.url("Oᴘᴇɴ Mᴇɴᴜ Aɢᴀɪɴ​", data="openplugins"),),
+                    (custom.Button.inline("Oᴘᴇɴ Mᴇɴᴜ Aɢᴀɪɴ​", data="openplugins"),),
                 ]
         async def close(event):
             await event.edit("Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ!", buttons=Button.)
