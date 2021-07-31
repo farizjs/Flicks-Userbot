@@ -9,7 +9,7 @@ async def gcast(event):
         return await event.edit("`Mohon Berikan Sebuah Pesan`")
     tt = event.text
     msg = tt[6:]
-    kk = await event.edit("`Sending a global broadcast message... 🗣️`")
+    kk = await event.edit("`Mengirim Pesan Global... 📣`")
     er = 0
     done = 0
     async for x in bot.iter_dialogs():
