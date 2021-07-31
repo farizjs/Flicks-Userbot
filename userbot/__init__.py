@@ -517,9 +517,7 @@ with ken:
             result = None
             query = event.text
             if event.query.user_id == uid and query.startswith("@KenProject"):
-                buttons = [
-                    Button.inline("Oᴘᴇɴ Pʟᴜɢɪɴs​", (data="openplugins"),),
-                ]
+                buttons =paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=kenlogo,
                     link_preview=False,
@@ -552,7 +550,7 @@ with ken:
 
         @ ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"openplugins")
+                data=re.compile(rb"helpme_next\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
@@ -583,7 +581,7 @@ with ken:
                             Button.url("ᴄʜᴀɴɴᴇʟ sᴜᴘᴘᴏʀᴛ",
                                        "t.me/kennedyproject"),
                             Button.url("ɢʀᴏᴜᴘ sᴜᴘᴘᴏʀᴛ",
-                                       "t.me/KingUserbotSupport")],
+                                       "t.me/kenupdate")],
                         [custom.Button.inline(
                             "ᴄʟᴏsᴇ", b"close")],
                     ]
@@ -639,22 +637,6 @@ with ken:
                 reply_pop_up_alert = f"Jangan Dipencet, Ini Milik {DEFAULTUSER}."
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @ ken.tgbot.on(
-                 events.CallbackQuery(data=b"close")
-                 )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                buttons=[
-                    (custom.Button.inline("Oᴘᴇɴ Mᴇɴᴜ Aɢᴀɪɴ​", data="openplugins"),),
-                ]
-        async def close(event):
-            await event.edit("Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ!", buttons=Button.)
-            else:
-                reply_pop_up_alert =  f"Jangan Dipencet, ini Milik {DEFAULTUSER}."
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
 
     except BaseException:
         LOGS.info(
