@@ -11,7 +11,7 @@
   ],
   "repository": "https://github.com/KennedyProject/KEN-UBOT",
   "telegram": "https://t.me/xgothboi",
-  "success_url": "https://t.me/flywaytr",
+  "success_url": "https://t.me/KennedyProject",
   "stack": "container",
   "env": {
     "API_KEY": {
@@ -206,7 +206,7 @@
     },
     "WEATHER_DEFCITY": {
       "description": "Set the default city for the userbot's weather module.",
-      "value": "Tangerang",
+      "value": "Bandung",
       "required": false
     },
     "WOLFRAM_ID": {
