@@ -144,11 +144,40 @@ async def redis(pong):
     await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**🏓Pong!!** \n"
+    await pong.edit(f"**🏓 Pong!!** \n"
                     f"⚡ __**Speed !!**__ "
                     f"`%sms` \n"
                     f"💡 __**Uptime**__ - "
                     f"`{uptime}` \n" % (duration))
+
+
+@register(outgoing=True, pattern="^.pink$")
+async def redis(pong):
+    """ For .ping command, ping the userbot from any chat.  """
+    uptime = await get_readable_time((time.time() - StartTime))
+    start = datetime.now()
+    await pong.edit("8✊===D")
+    await pong.edit("8=✊==D")
+    await pong.edit("8==✊=D")
+    await pong.edit("8===✊D")
+    await pong.edit("8==✊=D")
+    await pong.edit("8=✊==D")
+    await pong.edit("8✊===D")
+    await pong.edit("8=✊==D")
+    await pong.edit("8==✊=D")
+    await pong.edit("8===✊D")
+    await pong.edit("8==✊=D")
+    await pong.edit("8=✊==D")
+    await pong.edit("8✊===D")
+    await pong.edit("8=✊==D")
+    await pong.edit("8==✊=D")
+    await pong.edit("8===✊D")
+    await pong.edit("8===✊D💦")
+    await pong.edit("8====D💦💦")
+    await pong.edit("**CROOTTTT PINGGGG!**")
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
+    await pong.edit(f"**BABI!! ✨**\n**NGENTOT** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration))
 
 
 @register(outgoing=True, pattern="^.speed$")
@@ -213,9 +242,9 @@ async def pingme(pong):
 
 
 CMD_HELP.update({
-    "ping": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ping` | `.lping` | `.xping` | `.pings` | `.fping`\
+    "ping": "Command: `.ping` | `.lping` | `.xping` | `.pings` | `.fping`\
          \n↳ : Untuk Menunjukkan Ping Bot Anda.\
-         \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.speed`\
+         \n\nCommand: `.speed`\
          \n↳ : Untuk Menunjukkan Kecepatan Jaringan Anda.\
-         \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.pong`\
+         \n\nCommand: `.pong`\
          \n↳ : Sama Seperti Perintah Ping."})
