@@ -434,58 +434,67 @@ with ken:
         vr = BOT_VER
 # ------------------------------ChatAction--------------->
 
+        @ken.tgbot.on(events.ChatAction)
+        async def handler(event):
+            if event.user_joined:
+                u = await event.client.get_entity(event.chat_id)
+                c = await event.client.get_entity(event.user_id)
+                await event.reply(f"**Selamat datang di** [{get_display_name(u)}](tg://user?id={u.id})\n👤 **Pengguna :** [{get_display_name(c)}](tg://user?id={c.id})\n📌 **ID Pengguna :** {c.id}\n\nSemoga betah 😉")
+
+# ====================================InlineHandler===================================== #
+
         @ken.tgbot.on(events.NewMessage(pattern=r"/start"))
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
                 text = (
-                    f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Saya Adalah\n"
-                    f"Assistant Bot Atau Pelayan,\n"
-                    f"Untuk Mempersantai Mengatur Grup.\n"
-                    f"Saya **Dibuat oleh :** {DEFAULTUSER} Yang Di Deploy Di Heroku\n")
+                    f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Saya adalah bot\n"
+                    f"Yang dibikin oleh pembuat saya,\n"
+                    f"dan Untuk Mempersantai Grup Anda\n"
+                    f"Saya **Dibuat oleh :** {DEFAULTUSER} pada heroku\n")
                 await ken.tgbot.send_file(event.chat_id, logo,
-                                          caption=text,
-                                          buttons=[
-                                              [
-                                                  custom.Button.url(
-                                                      text="ᴄʜᴀɴɴᴇʟ sᴜᴘᴘᴏʀᴛ",
-                                                      url="https://t.me/kennedyproject"),
-                                                  custom.Button.url(
-                                                      text="ɢʀᴏᴜᴘ sᴜᴘᴘᴏʀᴛ",
-                                                      url="https://t.me/Kinguserbotsupport"
-                                                  )
-                                              ]
-                                          ]
-                                          )
+                                           caption=text,
+                                           buttons=[
+                                               [
+                                                   custom.Button.url(
+                                                       text="Support Chat",
+                                                       url="https://t.me/kenupdate"),
+                                                   custom.Button.url(
+                                                       text="Support Channel",
+                                                       url="https://t.me/KennedyProject"
+                                                   )
+                                               ]
+                                           ]
+                                           )
 
         @ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
+                    f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
                     f"Ingin melihat repository ini dan Cara deploynya\n\n"
-                    f" `Klik button url di bawah ini` \n\n"
+                    f"👇🏻 `Klik button url di bawah ini` 👇🏻\n\n"
                     f"**USERBOT TELEGRAM**\n",
                     buttons=[
                         [
-                            Button.url("ʀᴇᴘᴏsɪᴛᴏʀʏ",
+                            Button.url("Repository",
                                        "https://github.com/KennedyProject/KEN-UBOT"),
-                            Button.url("ʜᴏᴡ ᴛᴏ ᴅᴇᴘʟᴏʏ​",
-                                       "https://t.me/kennedyproject/16")],
+                            Button.url("Cara Deploy",
+                                       "https://t.me/TeamKingUserbot/16")],
                     ]
                 )
 
-        @ken.tgbot.on(events.NewMessage(pattern="/ping"))
+        @ken.tgbot.on(events.NewMessage(pattern=r"/ping"))
         async def handler(event):
             if event.message.from_id != uid:
                 start = datetime.now()
                 end = datetime.now()
                 ms = (end - start).microseconds / 1000
-                await ken.tgbot.send_message(
+                await king.tgbot.send_message(
                     event.chat_id,
-                    f"**PING!!**\n `{ms}ms`",
+                    f"**PONG !!**\n `{ms}ms`",
                 )
 
         @ken.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
@@ -493,39 +502,62 @@ with ken:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@KenProject"):
+            if event.query.user_id == uid and query.startswith(
+                    "@kenupdate"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
-                    file=kenlogo,
+                    logo,
                     link_preview=False,
-                    text=f"𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\n\nBᴏᴛ Vᴇʀ : `5.0`\nMᴏᴅᴜʟᴇs​ : `{len(plugins)}`\n\nBᴏᴛ Oꜰ : {DEFAULTUSER}".format(
+                    text=f"\n𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\n\n◎› **Oᴡɴᴇʀ** {DEFAULTUSER}\n\n◎› Bʀᴀɴᴄʜ : __𝐊𝐄𝐍-𝐔𝐁𝐎𝐓__\n◎› Vᴇʀsɪ : `v{BOT_VER}`\n◎› Pʟᴜɢɪɴs : `{len(plugins)}`\n".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan Dari 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\\ ",
-                    text="Daftar Plugins",
+                    "Bantuan 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 ",
+                    text="◎› Dᴀꜰᴛᴀʀ Pʟᴜɢɪɴs",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
-                    " 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\\ ",
-                    text="""**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\\n\n Anda Bisa Membuat KEN UBOT Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
+                    "𝐊𝐄𝐍-𝐔𝐁𝐎𝐓,
+                    text="""**Anda Bisa Membuat KEN UBOT Anda Sendiri Dengan Cara :** [Tekan Disini](t.me/kinguserbotsupport)""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "𝐊𝐄𝐍-𝐔𝐁𝐎𝐓"
+                                "KEN-UBOT",
                                 "https://github.com/KennedyProject/KEN-UBOT"),
                             custom.Button.url(
-                                "Oᴡᴇʀ​",
-                                "t.me/xgothboi")]],
+                                "Developer",
+                                "t.me/xgothboi")],
+                    ],
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
 
-        @ ken.tgbot.on(
+# =============================================Button========================================= #
+
+        @ken.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"opener")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                current_page_number = int(looters)
+                buttons = paginate_help(current_page_number, plugins, "helpme")
+                text = f"\n𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\n\n◎› Oᴡɴᴇʀ {DEFAULTUSER}\n\n◎› Bʀᴀɴᴄʜ : __𝐊𝐄𝐍-𝐔𝐁𝐎𝐓__\n◎› Vᴇʀsɪ : `v{BOT_VER}`\n◎› Pʟᴜɢɪɴs : `{len(plugins)}`\n"
+                await event.edit(text,
+                                 logo,
+                                 buttons=buttons,
+                                 link_preview=False,
+                                 )
+            else:
+                reply_pop_up_alert = f"Hanya {ALIVE_NAME} Yang Bisa Melihat Code Tersembunyi."
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
@@ -539,32 +571,21 @@ with ken:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"Jangan Dipencet, Ini Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"Hanya {ALIVE_NAME} Yang Bisa Melihat Code Tersembunyi."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ ken.tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"helpme_close\((.+?)\)")
-            )
-        )
+        @ken.tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:  # @KenProject
-                # https://t.me/TelethonChat/115200
-                await event.edit(
-                    file=kenlogo,
-                    link_preview=True,
-                    buttons=[
-                        [
-                            Button.url("ᴄʜᴀɴɴᴇʟ sᴜᴘᴘᴏʀᴛ",
-                                       "t.me/kennedyproject"),
-                            Button.url("ɢʀᴏᴜᴘ sᴜᴘᴘᴏʀᴛ",
-                                       "t.me/kenupdate")],
-                        [custom.Button.inline(
-                            "ᴄʟᴏsᴇ", b"close")],
-                    ]
-                )
+            if event.query.user_id == uid:
+                buttons = [
+                    (custom.Button.inline("Buka Kembali", data="opener"),),
+                ]
+                await event.edit("__**- Help Button Ditutup -**__", file=logoking, buttons=buttons)
+            else:
+                reply_pop_up_alert = f"Hanya {ALIVE_NAME} Yang Bisa Melihat Code Tersembunyi."
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ ken.tgbot.on(
+        @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_prev\((.+?)\)")
             )
@@ -579,12 +600,12 @@ with ken:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"Jangan Dipencet, Ini Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"Hanya {ALIVE_NAME} Yang Bisa Melihat Code Tersembunyi."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ ken.tgbot.on(
+        @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"ub_modul_(.*)")
+                data=re.compile(b"ub_modul_(.*)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
@@ -592,11 +613,10 @@ with ken:
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
-                if len(cmdhel) > 180:
+                if len(cmdhel) > 150:
                     help_string = (
-                        str(CMD_HELP[modul_name]).replace(
-                            '`', '')[:180] + "..."
-                        + "\n\nBaca Text Berikutnya Ketik .help "
+                        str(CMD_HELP[modul_name]).replace('`', '')[:150] + "..."
+                        + "\n\nBaca Teks Berikutnya Ketik .help "
                         + modul_name
                         + " "
                     )
@@ -606,23 +626,23 @@ with ken:
                 reply_pop_up_alert = (
                     help_string
                     if help_string is not None
-                    else "{} No document has been written for module.".format(
+                    else "{} Tidak ada dokumen yang ditulis dari plugin.".format(
                         modul_name
                     )
                 )
             else:
-                reply_pop_up_alert = f"Jangan Dipencet, Ini Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"Hanya {ALIVE_NAME} Yang Bisa Melihat Code Tersembunyi."
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     except BaseException:
         LOGS.info(
             "Mode Inline Bot Mu Nonaktif. "
-            "Untuk Mengaktifkannya, Silahkan Pergi Ke @BotFather Lalu, Settings Bot > Pilih Mode Inline > Turn On. ")
+            "Untuk Mengaktifkan Pergi Ke @BotFather, lalu settings bot > pilih mode inline > Turn On. ")
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID Environment Variable Isn't a "
-            "Valid Entity. Please Check Your Environment variables/config.env File.")
+            "BOTLOG_CHATID environment variabel bukan "
+            "Identitas yang valid. Periksa Anda environment variabel/config.env atau file.")
         quit(1)
