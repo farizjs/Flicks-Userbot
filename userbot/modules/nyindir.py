@@ -60,7 +60,7 @@ async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
     await typew.edit("**Woy**")
-    sleep(3)
+    sleep(2)
     await typew.edit("**Anak erpe ya?**")
     sleep(3)
     await typew.edit("**Ngapain Sih Pake Foto Orang?**")
@@ -69,7 +69,7 @@ async def typewriter(typew):
     sleep(3)
     await typew.edit("**Daripada Mubadzir Itu Muka Mending Lu Kasih Ke Orang Yang Cari Muka.**")
     sleep(3)
-    await typew.edit("**Tuhan Ciptain Lu Sesempurna Mungkin Rh Lu Malah Mau Pake Muka Orang, Bhaaks!!!**")
+    await typew.edit("**Tuhan Ciptain Lu Sesempurna Mungkin, Eh Lu Malah Mau Pake Muka Orang. Bhaaks!!!**")
     sleep(3)
     await typew.edit("**Eh Maaf Lu Kan Atheis, Jadi Gapercaya Tuhan. Makanya Tolol Kek Gini.**")
 
