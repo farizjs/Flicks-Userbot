@@ -454,19 +454,19 @@ with ken:
                     f"dan Untuk Mempersantai Grup Anda\n"
                     f"Saya **Dibuat oleh :** {DEFAULTUSER} pada heroku\n")
                 await ken.tgbot.send_file(event.chat_id, logo,
-                                           caption=text,
-                                           buttons=[
-                                               [
-                                                   custom.Button.url(
-                                                       text="Support Chat",
-                                                       url="https://t.me/kenupdate"),
-                                                   custom.Button.url(
-                                                       text="Support Channel",
-                                                       url="https://t.me/KennedyProject"
-                                                   )
-                                               ]
-                                           ]
-                                           )
+                                          caption=text,
+                                          buttons=[
+                                              [
+                                                  custom.Button.url(
+                                                      text="Support Chat",
+                                                      url="https://t.me/kenupdate"),
+                                                  custom.Button.url(
+                                                      text="Support Channel",
+                                                      url="https://t.me/KennedyProject"
+                                                  )
+                                              ]
+                                          ]
+                                          )
 
         @ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
         async def handler(event):
@@ -520,20 +520,19 @@ with ken:
                     buttons=[],
                     link_preview=True)
             else:
-                result = builder.article(
-                    "𝐊𝐄𝐍-𝐔𝐁𝐎𝐓,
-                    text="""**Anda Bisa Membuat KEN UBOT Anda Sendiri Dengan Cara :** [Tekan Disini](t.me/kinguserbotsupport)""",
-                    buttons=[
-                        [
-                            custom.Button.url(
-                                "KEN-UBOT",
-                                "https://github.com/KennedyProject/KEN-UBOT"),
-                            custom.Button.url(
-                                "Developer",
-                                "t.me/xgothboi")],
-                    ],
-                    link_preview=False,
-                )
+                result = builder.article("𝐊𝐄𝐍 - 𝐔𝐁𝐎𝐓,
+                                         text="""**Anda Bisa Membuat KEN UBOT Anda Sendiri Dengan Cara :** [Tekan Disini](t.me/kinguserbotsupport)""",
+                                         buttons=[
+                                             [
+                                                 custom.Button.url(
+                                                     "KEN-UBOT",
+                                                     "https://github.com/KennedyProject/KEN-UBOT"),
+                                                 custom.Button.url(
+                                                     "Developer",
+                                                     "t.me/xgothboi")],
+                                         ],
+                                         link_preview=False,
+                                         )
             await event.answer([result] if result else None)
 
 # =============================================Button========================================= #
