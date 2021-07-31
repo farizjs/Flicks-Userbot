@@ -520,7 +520,7 @@ with ken:
                 buttons = [
                     Button.url("Oᴘᴇɴ Pʟᴜɢɪɴs​", (data="openplugins"),),
                 ]
-                result=builder.photo(
+                result = builder.photo(
                     file=kenlogo,
                     link_preview=False,
                     text=f"𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\n\nBᴏᴛ Vᴇʀ : `5.0`\nMᴏᴅᴜʟᴇs​ : `{len(plugins)}`\n\nBᴏᴛ Oꜰ : {DEFAULTUSER}".format(
@@ -529,13 +529,13 @@ with ken:
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
-                result=builder.article(
+                result = builder.article(
                     "Bantuan Dari 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\\ ",
                     text="Daftar Plugins",
                     buttons=[],
                     link_preview=True)
             else:
-                result=builder.article(
+                result = builder.article(
                     " 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\\ ",
                     text="""**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\\n\n Anda Bisa Membuat KEN UBOT Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
                     buttons=[
@@ -557,14 +557,14 @@ with ken:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number=int(
+                current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons=paginate_help(
+                buttons = paginate_help(
                     current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert=f"Jangan Dipencet, Ini Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"Jangan Dipencet, Ini Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ ken.tgbot.on(
@@ -596,15 +596,15 @@ with ken:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number=int(
+                current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons=paginate_help(
+                buttons = paginate_help(
                     current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
                 )
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert=f"Jangan Dipencet, Ini Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"Jangan Dipencet, Ini Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ ken.tgbot.on(
@@ -614,11 +614,11 @@ with ken:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                modul_name=event.data_match.group(1).decode("UTF-8")
+                modul_name = event.data_match.group(1).decode("UTF-8")
 
-                cmdhel=str(CMD_HELP[modul_name])
+                cmdhel = str(CMD_HELP[modul_name])
                 if len(cmdhel) > 180:
-                    help_string=(
+                    help_string = (
                         str(CMD_HELP[modul_name]).replace(
                             '`', '')[:180] + "..."
                         + "\n\nBaca Text Berikutnya Ketik .help "
@@ -626,9 +626,9 @@ with ken:
                         + " "
                     )
                 else:
-                    help_string=str(CMD_HELP[modul_name]).replace('`', '')
+                    help_string = str(CMD_HELP[modul_name]).replace('`', '')
 
-                reply_pop_up_alert=(
+                reply_pop_up_alert = (
                     help_string
                     if help_string is not None
                     else "{} No document has been written for module.".format(
@@ -636,7 +636,7 @@ with ken:
                     )
                 )
             else:
-                reply_pop_up_alert=f"Jangan Dipencet, Ini Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"Jangan Dipencet, Ini Milik {DEFAULTUSER}."
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
@@ -646,7 +646,7 @@ with ken:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                buttons = [
+                buttons=[
                     (custom.Button.url("Oᴘᴇɴ Mᴇɴᴜ Aɢᴀɪɴ​", data="openplugins"),),
                 ]
         async def close(event):
