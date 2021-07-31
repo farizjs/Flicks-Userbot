@@ -508,7 +508,7 @@ with ken:
                 ms = (end - start).microseconds / 1000
                 await ken.tgbot.send_message(
                     event.chat_id,
-                    f"**PONG!!**\n `{ms}ms`",
+                    f"**PING!!**\n `{ms}ms`",
                 )
 
         @ken.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
