@@ -417,7 +417,7 @@ def paginate_help(page_number, loaded_modules, prefix):
 
 with bot:
     try:
-        tgbot = TelegramClient(
+        ken.tgbot = TelegramClient(
             "TG_BOT_TOKEN",
             api_id=API_KEY,
             api_hash=API_HASH).start(
@@ -434,7 +434,7 @@ with bot:
         )
         async def opeen(event):
             try:
-                tgbotusername = BOT_USERNAME
+                kenbotusername = BOT_USERNAME
                 if tgbotusername is not None:
                     results = await event.client.inline_query(tgbotusername, "@KenProject")
                     await results[0].click(
@@ -471,7 +471,7 @@ with bot:
                     ]
                 )
 
-        @tgbot.on(events.NewMessage(pattern="/ping"))
+        @ken.tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
             if event.message.from_id != uid:
                 start = datetime.now()
@@ -482,7 +482,7 @@ with bot:
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
-        @tgbot.on(
+        @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"nepo")
             )
@@ -496,7 +496,7 @@ with bot:
                 link_preview=False,
             )
 
-        @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+        @ken.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder = event.builder
             result = None
@@ -533,7 +533,7 @@ with bot:
                 )
             await event.answer([result] if result else None)
 
-        @tgbot.on(
+        @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
@@ -550,7 +550,7 @@ with bot:
                 reply_pop_up_alert = f"Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_close\((.+?)\)")
             )
@@ -573,14 +573,14 @@ with bot:
                     ]
                 )
 
-        @tgbot.on(events.CallbackQuery(data=b"close"))
+        @ken.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
                 (custom.Button.inline("Open Menu", data="nepo"),),
             ]
             await event.edit("Menu Ditutup!", buttons=Button.clear())
 
-        @ tgbot.on(
+        @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_prev\((.+?)\)")
             )
@@ -598,7 +598,7 @@ with bot:
                 reply_pop_up_alert = f"Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"ub_modul_(.*)")
             )
