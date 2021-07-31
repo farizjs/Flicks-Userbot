@@ -518,7 +518,7 @@ with ken:
             query = event.text
             if event.query.user_id == uid and query.startswith("@KenProject"):
                 buttons = [
-                    (Button.inline("Oᴘᴇɴ Pʟᴜɢɪɴs​", (data="openplugins"),),
+                    Button.url("Oᴘᴇɴ Pʟᴜɢɪɴs​", (data="openplugins"),),
                 ]
                 result=builder.photo(
                     file=kenlogo,
@@ -640,9 +640,21 @@ with ken:
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ ken.tgbot.on(events.CallbackQuery(data=b"close"))
+        @ ken.tgbot.on(
+                 events.CallbackQuery(data=b"close")
+                 )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                buttons = [
+                    (custom.Button.url("Oᴘᴇɴ Mᴇɴᴜ Aɢᴀɪɴ​", data="openplugins"),),
+                ]
         async def close(event):
-            await event.edit("Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ!", buttons=Button.clear())
+            await event.edit("Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ!", buttons=Button.)
+            else:
+                reply_pop_up_alert =  f"Jangan Dipencet, ini Milik {DEFAULTUSER}."
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
 
     except BaseException:
         LOGS.info(
