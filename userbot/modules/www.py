@@ -7,20 +7,21 @@
 
 import asyncio
 import time
-import redis
 
 from datetime import datetime
+from telethon import functions
 
 from speedtest import Speedtest
 from userbot import CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
+from userbot.utils import humanbytes
 
 
 async def get_readable_time(seconds: int) -> str:
     count = 0
     up_time = ""
     time_list = []
-    time_suffix_list = ["Dtk", "Mnt", "Jam", "Hari"]
+    time_suffix_list = ["s", "m", "h", "d"]
 
     while count < 4:
         count += 1
@@ -64,7 +65,7 @@ async def redis(pong):
                     f"☞ `{ALIVE_NAME}` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.lping$")
+@register(outgoing=True, pattern="^.xping$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -79,20 +80,19 @@ async def redis(pong):
                     f"`{uptime}` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.xping$")
+@register(outgoing=True, pattern="^.lping$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("__Connec.__")
-    await pong.edit("__Connect..__")
-    await pong.edit("__Connecting...__")
-    await pong.edit("__Connecting t.__")
-    await pong.edit("__Connecting to ..__")
-    await pong.edit("__Connecting to da...__")
-    await pong.edit("__Connecting to data.__")
-    await pong.edit("__Connecting to data cen..__")
-    await pong.edit("__Connecting to data center...__")
+    await pong.edit("⚡UBOT⚡")
+    await pong.edit("UB⚡OT")
+    await pong.edit("UBO⚡T")
+    await pong.edit("UBOT⚡")
+    await pong.edit("UBO⚡T")
+    await pong.edit("UB⚡OT")
+    await pong.edit("U⚡BOT")
+    await pong.edit("⚡UBOT⚡")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓**\n"
@@ -115,11 +115,11 @@ async def redis(pong):
     await pong.edit("__Connecting..__")
     await pong.edit("__Connecting...__")
     await pong.edit("__Connecting....__")
-    await pong.edit("♨️")
+    await pong.edit("⚡")
     await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓**\n\n"
+    await pong.edit(f"**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓**\n"
                     f"** ▹  Sɪɢɴᴀʟ   :** "
                     f"`%sms` \n"
                     f"** ▹  Uᴘᴛɪᴍᴇ  :** "
@@ -132,12 +132,23 @@ async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("**Ping!!**")
+    await pong.edit("__Please Wait.__")
+    await pong.edit("__Please Wait..__")
+    await pong.edit("__Please Wait...__")
+    await pong.edit("__Please Wait.__")
+    await pong.edit("__Please Wait..__")
+    await pong.edit("__Please Wait...__")
+    await pong.edit("__Please Wait.__")
+    await pong.edit("__Please Wait..__")
+    await pong.edit("__Please Wait...__")
+    await pong.edit("⚡")
+    await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"__**Speed !!**__ "
+    await pong.edit(f"**🏓Pong!!▰▱▰▱▰▱**
+                    f"⚡ __**Speed !!**__ "
                     f"`%sms` \n"
-                    f"__**Uptime**__ - "
+                    f"⌛ __**Uptime**__ - "
                     f"`{uptime}` \n" % (duration))
 
 
