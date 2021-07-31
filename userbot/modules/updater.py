@@ -98,7 +98,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID, "#BOT \n"
-                "`Geez-Project Berhasil Di Update`")
+                "`KEN-UBOT Berhasil Di Update`")
 
     else:
         await event.edit('`[HEROKU]:'
@@ -188,7 +188,7 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n➣ 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 Sudah Versi Terbaru\n')
+            f'\n☄️ 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 Sudah Versi Terbaru\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
@@ -208,7 +208,7 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond('**Perintah Untuk Update, Sebagai Berikut.**\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update now`\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update deploy`\n\n__Untuk Meng Update Fitur 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓.__')
+        return await event.respond('**Perintah Untuk Update, Sebagai Berikut.**\n Command: >`.update now`\n Command: >`.update deploy`\n\n__Untuk Meng Update Fitur 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓.__')
 
     if force_update:
         await event.edit(
@@ -235,8 +235,8 @@ CMD_HELP.update({
     'update':
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.update`"
     "\n• : Untuk Melihat Pembaruan Terbaru KEN-UBOT."
-    "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.update now`"
+    "\n\nCommand: `.update now`"
     "\n• : Memperbarui KEN-UBOT."
-    "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.update deploy`"
+    "\n\nCommand: `.update deploy`"
     "\n• : Memperbarui KEN-UBOT Dengan Cara Men-Deploy Ulang."
 })
