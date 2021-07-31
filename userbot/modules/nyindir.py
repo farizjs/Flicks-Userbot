@@ -55,6 +55,25 @@ async def typewriter(typew):
     await typew.edit("**ANEH BANGET DAH TU AGAMA CUIHHH!!!!**")
 
 
+@register(outgoing=True, pattern='^.erpe(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(1)
+    await typew.edit("**Woy**")
+    sleep(3)
+    await typew.edit("**Anak erpe ya?**")
+    sleep(3)
+    await typew.edit("**Ngapain Sih Pake Foto Orang?**")
+    sleep(3)
+    await typew.edit("**Malu Ya Karena Muka Lu Burik?**")
+    sleep(3)
+    await typew.edit("**Daripada Mubadzir Itu Muka Mending Lu Kasih Ke Orang Yang Cari Muka.**")
+    sleep(3)
+    await typew.edit("**Tuhan Ciptain Lu Sesempurna Mungkin Rh Lu Malah Mau Pake Muka Orang, Bhaaks!!!**")
+    sleep(3)
+    await typew.edit("**Eh Maaf Lu Kan Atheis, Jadi Gapercaya Tuhan. Makanya Tolol Kek Gini.**")
+
+
 @register(outgoing=True, pattern='^.biksu(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -97,6 +116,8 @@ CMD_HELP.update({
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ngontol`\
 \n↳ : Coba Aja Sendiri.\
 \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.stress`\
+\n↳ : Coba Aja Sendiri.\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.erpe`\
 \n↳ : Coba Aja Sendiri.\
 \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.buddha`\
 \n↳ : Coba Aja Sendiri.\
