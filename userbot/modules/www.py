@@ -7,14 +7,13 @@
 
 import asyncio
 import time
+import redis
 
 from datetime import datetime
-from telethon import functions
 
 from speedtest import Speedtest
 from userbot import CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
-from userbot.utils import humanbytes
 
 
 async def get_readable_time(seconds: int) -> str:
