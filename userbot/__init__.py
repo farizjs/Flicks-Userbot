@@ -429,6 +429,33 @@ with ken:
         uid = me.id
         logo = ALIVE_LOGO
 
+
+
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile("open")
+            )
+        )
+        async def opeen(event):
+            try:
+                tgbotusername = BOT_USERNAME
+                if tgbotusername is not None:
+                    results = await event.client.inline_query(tgbotusername, "@KenProject")
+                    await results[0].click(
+                        event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+                    )
+                    await event.delete()
+                else:
+                    await event.edit(
+                        "`The bot doesn't work! Please set the Bot Token and Username correctly. The module has been stopped.`"
+                    )
+            except Exception:
+                return await event.edit(
+                    "`You cannot send inline results in this chat (caused by SendInlineBotResultRequest)`"
+                )
+
+
         kenlogo = INLINE_PIC
         plugins = CMD_HELP
         vr = BOT_VER
@@ -494,7 +521,9 @@ with ken:
             result = None
             query = event.text
             if event.query.user_id == uid and query.startswith("@KenProject"):
-                buttons = paginate_help(0, dugmeler, "helpme")
+                buttons = [
+                    (Button.inline("Oᴘᴇɴ Pʟᴜɢɪɴs​", (data="openplugins"),),
+                ]
                 result = builder.photo(
                     file=kenlogo,
                     link_preview=False,
@@ -527,7 +556,7 @@ with ken:
 
         @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"helpme_next\((.+?)\)")
+                data=re.compile(rb"openplugins")
             )
         )
         async def on_plug_in_callback_query_handler(event):
