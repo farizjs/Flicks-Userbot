@@ -464,7 +464,7 @@ with ken:
                 await event.message.get_sender()
                 text = (
                     f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Saya Adalah\n"
-                    f"Assistant Bot Atau Pembantu,\n"
+                    f"Assistant Bot Atau Pelayan,\n"
                     f"Untuk Mempersantai Mengatur Grup.\n"
                     f"Saya **Dibuat oleh :** {DEFAULTUSER} Yang Di Deploy Di Heroku\n")
                 await ken.tgbot.send_file(event.chat_id, logo,
