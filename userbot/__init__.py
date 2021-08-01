@@ -443,7 +443,7 @@ with bot:
                             Button.url("Cʜᴀɴɴᴇʟ Uᴘᴅᴀᴛᴇ​",
                                        "t.me/KennedyProject"),
                             Button.url("Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ",
-                                       "t.me/kenupdate")],
+                                       "t.me/kenbotsupport")],
                         [Button.url("Dᴇᴠᴇʟᴏᴘᴇʀ​",
                                     "t.me/xgothboi")],
                     ]
@@ -546,8 +546,8 @@ with bot:
                         [
                             Button.url("Cʜᴀɴɴᴇʟ Uᴘᴅᴀᴛᴇ​",
                                        "t.me/KennedyProject"),
-                            Button.url("Gʀᴏᴜᴘ Ssᴜᴘᴘᴏʀ",
-                                       "t.me/kenupdate")],
+                            Button.url("Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ",
+                                       "t.me/kenbotsupport")],
                         [Button.inline("Open Menu", data="open")],
                         [custom.Button.inline(
                             "Cʟᴏsᴇ", b"close")],
