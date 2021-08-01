@@ -29,7 +29,7 @@ Repo Yang Dibuat Oleh [ken](https://t.me/xgothboi) Dari beberapa Repo Yang Ada D
   <b>© Credits</b></summary>
 
 
- <img src="./resources/extras/Kenpurple.gif" width="40px"> **THANK YOU VERY MUCH FOR**
+⚡ **THANK YOU VERY MUCH FOR**
 *   [Kennedy](https://github.com/KennedyProject/KEN-UBOT)    Ken - Userbot
 *   [Apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
 *   [VCKYOU](https://github.com/Vckyou/Geez-Project)    Geez - Project 
