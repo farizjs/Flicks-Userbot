@@ -58,7 +58,7 @@ async def draw_meme_text(image_path, text):
     os.remove(image_path)
     i_width, i_height = img.size
     m_font = ImageFont.truetype(
-        "userbot/utils/styles/kfonts.otf", int(
+        "userbot/utils/styles/KenFont.otf", int(
             (70 / 640) * i_width)
     )
     if ";" in text:
