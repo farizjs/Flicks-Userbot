@@ -468,8 +468,10 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             current_page_number = int(lockpage)
             buttons = paginate_help(current_page_number, plugins, "helpme")
+            text = f"Userbot By {DEFAULTUSER}"
             await event.edit(
-                file=geezlogo,
+                text,
+                file=kenlogo,
                 buttons=buttons,
                 link_preview=False,
             )
