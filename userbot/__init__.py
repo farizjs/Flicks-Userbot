@@ -442,7 +442,7 @@ with bot:
                         [
                             Button.url("Cʜᴀɴɴᴇʟ Uᴘᴅᴀᴛᴇ​",
                                        "t.me/KennedyProject"),
-                            Button.url("Gʀᴏᴜᴘ Ssᴜᴘᴘᴏʀ",
+                            Button.url("Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ",
                                        "t.me/kenupdate")],
                         [Button.url("Dᴇᴠᴇʟᴏᴘᴇʀ​",
                                     "t.me/xgothboi")],
