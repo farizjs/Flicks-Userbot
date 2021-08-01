@@ -365,6 +365,7 @@ USERS = {}
 COUNT_PM = {}
 ENABLE_KILLME = True
 LASTMSG = {}
+ken = bot
 CMD_HELP = {}
 ISAFK = False
 AFKREASON = None
@@ -427,33 +428,11 @@ with bot:
         me = bot.get_me()
         uid = me.id
 
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile("open")
-            )
-        )
-        async def opeen(event):
-            try:
-                if tgbotusername is not None:
-                    results = await event.client.inline_query(tgbotusername, "@KenProject")
-                    await results[0].click(
-                        event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
-                    )
-                    await event.delete()
-                else:
-                    await event.edit(
-                        "`The bot doesn't work! Please set the Bot Token and Username correctly. The module has been stopped.`"
-                    )
-            except Exception:
-                return await event.edit(
-                    "`You cannot send inline results in this chat (caused by SendInlineBotResultRequest)`"
-                )
-
         kenlogo = INLINE_PIC
         plugins = CMD_HELP
         vr = BOT_VER
 
-        @tgbot.on(events.NewMessage(pattern="/start"))
+        @ken.tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
@@ -483,7 +462,7 @@ with bot:
 
         @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"nepo")
+                data=re.compile(rb"open")
             )
         )
         async def on_plug_in_callback_query_handler(event):
@@ -567,7 +546,7 @@ with bot:
                                        "t.me/KennedyProject"),
                             Button.url("Gʀᴏᴜᴘ Ssᴜᴘᴘᴏʀ",
                                        "t.me/kenupdate")],
-                        [Button.inline("Open Menu", data="nepo")],
+                        [Button.inline("Open Menu", data="open")],
                         [custom.Button.inline(
                             "Cʟᴏsᴇ", b"close")],
                     ]
@@ -576,9 +555,9 @@ with bot:
         @ken.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("Open Menu", data="nepo"),),
+                (custom.Button.inline("Buka Menu", data="open"),),
             ]
-            await event.edit("Menu Ditutup!", buttons=Button.clear())
+            await event.edit("Menu Ditutup!", file=kenlogo, buttons=buttons)
 
         @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
