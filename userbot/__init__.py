@@ -487,7 +487,7 @@ with bot:
                 result = builder.photo(
                     file=kenlogo,
                     link_preview=False,
-                    text=f"\n𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\n\n◎› **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n◎› Bʀᴀɴᴄʜ : __𝐊𝐄𝐍-𝐔𝐁𝐎𝐓__\n◎› Vᴇʀsɪ : `v5.0`\n◎› Pʟᴜɢɪɴs : `{len(plugins)}`\n".format(
+                    text=f"\nUsᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​\n\n◎› **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n◎› Bʀᴀɴᴄʜ : __𝐊𝐄𝐍-𝐔𝐁𝐎𝐓__\n◎› Vᴇʀsɪ : `v5.0`\n◎› Pʟᴜɢɪɴs : `{len(plugins)}`\n".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
