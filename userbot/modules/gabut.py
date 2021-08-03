@@ -8,7 +8,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern='^.g(?: |$)(.*)')
+@register(outgoing=True, pattern="^.g(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
@@ -18,24 +18,52 @@ async def typewriter(typew):
 # Pantun
 
 
-@register(outgoing=True, pattern='^.p(?: |$)(.*)')
+@register(outgoing=True, pattern="^.p(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
     await typew.edit("`Salam Dulu Biar Sopan...`")
-    sleep(1)
+    sleep(2)
     await typew.edit("`السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ`")
 # Salam
 
 
-@register(outgoing=True, pattern='^.l(?: |$)(.*)')
+@register(outgoing=True, pattern="^.l(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
     await typew.edit("`Kalo Orang Salam Itu Dijawab...`")
-    sleep(1)
+    sleep(2)
     await typew.edit("`وَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ`")
 # Menjawab Salam
+
+
+@register(outgoing=True, pattern="^.kenalin(?: |$)(.*)")
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(3)
+    await typew.edit("☑️`Apis Gila`")
+    sleep(3)
+    await typew.edit("✅`Apis Gila`")
+    sleep(3)
+    await typew.edit("☑️`Skyzo Stress`")
+    sleep(3)
+    await typew.edit("✅`Skyzo Stress`")
+    sleep(3)
+    await typew.edit("☑️`Yunus Gajelas`")
+    sleep(3)
+    await typew.edit("✅`Yunus Gajelas`")
+    sleep(3)
+    await typew.edit("☑️`Tegar Wibu Sangean`")
+    sleep(3)
+    await typew.edit("✅`Tegar Wibu Sangean`")    
+    sleep(3)
+    await typew.edit("☑️`Can Autis`")
+    sleep(3)
+    await typew.edit("✅`Can Autis`")
+    sleep(3)
+    await typew.edit("`Cuma Ken Yang Paling Waras, Baik Hati, Dan Tidak Sombong :v`")
+# Ngik Ngok
 
 
 @register(outgoing=True, pattern="^.perkenalan(?: |$)(.*)")
@@ -54,13 +82,15 @@ async def perkenalan(event):
 CMD_HELP.update(
     {
         "gabut": "**Modules** - `Gabut`\
-        \n\n Command : `.l`\
+        \n\n Cmd : `.l`\
         \nUsage : Untuk Menjawab Salam\
-        \n\n Command : `.perkenalan`\
+        \n\n Cmd : `.perkenalan`\
         \nUsage : Memperkenalkan Diri\
-        \n\n Command : `.g`\
+        \n\n Cmd : `.g`\
         \nUsage : Member Goblok\
-        \n\n Command : `.p`\
+        \n\n Cmd : `.kenalin`\
+        \nUsage : Awokwok\
+        \n\n Cmd : `.p`\
         \nUsage : Untuk Memberi Salam\
     "
     }
