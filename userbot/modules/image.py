@@ -19,9 +19,9 @@ async def goimg(event):
             lmt = int(query.split(";")[1])
             query = query.split(";")[0]
         except BaseExceptaion:
-            lmt = 5
+            lmt = 10
     else:
-        lmt = 5
+        lmt = 10
     gi = googleimagesdownload()
     args = {
         "keywords": query,
@@ -38,7 +38,7 @@ async def goimg(event):
 
 CMD_HELP.update(
     {
-        "img": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.img <search_query>`\
+        "img": "Cmd: `.img <search_query>`\
          \n↳ : Does an image search on Google and shows 5 images."
     }
 )
