@@ -460,7 +460,7 @@ with bot:
         @ken.tgbot.on(events.NewMessage(pattern=r"/alive"))
         async def handler(event):
             if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id)
+                await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
                 text = (
                     f"       __令 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 令__ \n\n"
