@@ -467,14 +467,14 @@ with bot:
                     f"     令 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 令 \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱\n"
                     f"    ⚡ I'ᴍ Aʟɪᴠᴇ​ ⚡ \n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱n"
+                    "▰▱▰▱▰▱▰▱▰▱▰▱ \n"
                     f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi     :` {BOT_VER} \n"
                     f"`Bahasa    :` Python \n"
-                    f"`Database  :` Mongo db \n\n"
+                    f"`Database  :` Mongo db \n"
                     f"`Owner     :` {DEFAULTUSER} \n\n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱n"
+                    "▰▱▰▱▰▱▰▱▰▱▰▱ \n"
                     f"    Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱")
                 await ken.tgbot.send_file(event.chat_id, file=logo,
