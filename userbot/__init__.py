@@ -438,7 +438,7 @@ with bot:
             if event.user_joined or event.user_added:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
-                await event.reply(f"**Hallo Welcome To** [{get_display_name(u)}](tg://user?id={u.id}) ✨ \n────────────────────\n🗣️ **Nama :** [{get_display_name(c)}](tg://user?id={c.id})\n────────────────────\n👁️‍🗨️ **User id :** {c.id}\n────────────────────\n\n⭐Mᴀsᴛᴇʀ Bᴏᴛ : {DEFAULTUSER}")
+                await event.reply(f"**Hallo Welcome To** [{get_display_name(u)}](tg://user?id={u.id})\n────────────────────\n🗣️ **Nama :** [{get_display_name(c)}](tg://user?id={c.id})\n────────────────────\n👁️‍🗨️ **User id :** {c.id}\n────────────────────\n\n⭐Mᴀsᴛᴇʀ Bᴏᴛ : {DEFAULTUSER}")
 
         @ken.tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
@@ -460,24 +460,27 @@ with bot:
         @ken.tgbot.on(events.NewMessage(pattern=r"/alive"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.client.get_entity(event.chat_id)
+                u = await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
                 text = (
-                    f"       __令 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 令__ \n\n"
+                    f"**Hello** [{get_display_name(u)}](tg://user?id={u.id}) **Is Its Alive Bot**\n\n"
+                    f"     令 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 令 \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱\n"
-                    f"       ⚡ I'ᴍ Aʟɪᴠᴇ​ ⚡\n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱\n"
+                    f"    ⚡ I'ᴍ Aʟɪᴠᴇ​ ⚡ \n"
+                    "▰▱▰▱▰▱▰▱▰▱▰▱n"
                     f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi     :` {BOT_VER} \n"
                     f"`Bahasa    :` Python \n"
-                    f"`Pemilik   :`{DEFAULTUSER} \n"
-                    f"      Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱\n")
+                    f"`Database  :` Mongo db \n\n"
+                    f"`Owner     :` {DEFAULTUSER} \n\n"
+                    "▰▱▰▱▰▱▰▱▰▱▰▱n"
+                    f"    Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
+                    "▰▱▰▱▰▱▰▱▰▱▰▱")
                 await ken.tgbot.send_file(event.chat_id, file=logo,
-                                          caption=text,
-                                          buttons=[
-                                              [
+                                           caption=text,
+                                           buttons=[
+                                               [
                                                   custom.Button.url(
                                                       text="Rᴇᴘᴏ",
                                                       url="https://github.com/KennedyProject/KEN-UBOT"),
