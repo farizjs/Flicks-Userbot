@@ -433,12 +433,12 @@ with bot:
         plugins = CMD_HELP
         vr = BOT_VER
 
-        @king.tgbot.on(events.ChatAction)
+        @ken.tgbot.on(events.ChatAction)
         async def handler(event):
             if event.user_joined or event.user_added:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
-                await event.reply(f"**Hᴀʟʟᴏ Wᴇʟᴄᴏᴍᴇ Tᴏ** [{get_display_name(u)}](tg://user?id={u.id})\n🗣️ **Nᴀᴍᴇ :** [{get_display_name(c)}](tg://user?id={c.id})\n📌 **Iᴅ Usᴇʀ :** {c.id}\n\n\nMᴀsᴛᴇʀ Bᴏᴛ : {DEFAULTUSER}")
+                await event.reply(f"**Hᴀʟʟᴏ Wᴇʟᴄᴏᴍᴇ Tᴏ** [{get_display_name(u)}](tg://user?id={u.id})\n\n🗣️ **Nᴀᴍᴇ :** [{get_display_name(c)}](tg://user?id={c.id})\n📌 **Iᴅ Usᴇʀ :** {c.id}\n\n\nMᴀsᴛᴇʀ Bᴏᴛ : {DEFAULTUSER}")
 
         @ken.tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
