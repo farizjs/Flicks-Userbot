@@ -11,7 +11,6 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 @register(outgoing=True, pattern='^.g(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    sleep(1)
     await typew.edit(f"**JAKA SEMBUNG BAWA GOLOK**")
     sleep(3)
     await typew.edit("**NIMBRUNG GOBLOKK!!!**")
@@ -21,7 +20,6 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.p(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    sleep(1)
     await typew.edit("`Salam Dulu Biar Sopan...`")
     sleep(2)
     await typew.edit("`السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ`")
@@ -31,7 +29,6 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.l(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    sleep(1)
     await typew.edit("`Kalo Orang Salam Itu Dijawab...`")
     sleep(2)
     await typew.edit("`وَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ`")
@@ -41,29 +38,64 @@ async def typewriter(typew):
 @register(outgoing=True, pattern="^.kenalin(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    sleep(2)
     await typew.edit("☑️`Apis Gila`")
     sleep(2)
     await typew.edit("✅`Apis Gila`")
-    sleep(2)
+    sleep(1)
     await typew.edit("☑️`Skyzo Stress`")
     sleep(2)
     await typew.edit("✅`Skyzo Stress`")
-    sleep(2)
+    sleep(1)
     await typew.edit("☑️`Yunus Gajelas`")
     sleep(2)
     await typew.edit("✅`Yunus Gajelas`")
-    sleep(2)
+    sleep(1)
     await typew.edit("☑️`Tegar Wibu Sangean`")
     sleep(2)
     await typew.edit("✅`Tegar Wibu Sangean`")
-    sleep(2)
+    sleep(1)
     await typew.edit("☑️`Can Autis`")
     sleep(2)
     await typew.edit("✅`Can Autis`")
-    sleep(2)
+    sleep(1)
     await typew.edit("`Cuma Ken Yang Paling Waras, Baik Hati, Dan Tidak Sombong :v`")
 # Ngik Ngok
+
+
+@register(outgoing=True, pattern="^.la(?: |$)(.*)")
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("☑️`Piah Owner Sadis`")
+    sleep(2)
+    await typew.edit("✅`Piah Owner Sadis`")
+    sleep(1)
+    await typew.edit("☑️`Icah Gila`")
+    sleep(2)
+    await typew.edit("✅`Icah Gila`")
+    sleep(1)
+    await typew.edit("☑️`Kia Babu`")
+    sleep(2)
+    await typew.edit("✅`Eh Babi Maksudnya`")
+    sleep(1)
+    await typew.edit("☑️`Yan Bapak Pekerja Keras`")
+    sleep(2)
+    await typew.edit("✅`Yan Bapak Pekerja Keras`")
+    sleep(1)
+    await typew.edit("☑️`Bra Gaje`")
+    sleep(2)
+    await typew.edit("✅`Bra Gaje`")
+    sleep(1)
+    await typew.edit("`Cuma Ken Yang Paling Sopan, Baik Hati, Dan Tidak Sombong :v`")
+# Luar Angkasa
+
+
+@register(outgoing=True, pattern="^.istigfar(?: |$)(.*)")
+async def perkenalan(event):
+    event.pattern_match.group(1)
+    await event.edit(f"`Heh Kamu Gaboleh Begitu...`")
+    sleep(2)
+    await event.edit("`اَسْتَغْفِرُاللهَ الْعَظِيْم`")
+# Istigfar
 
 
 @register(outgoing=True, pattern="^.perkenalan(?: |$)(.*)")
@@ -86,6 +118,8 @@ CMD_HELP.update(
         \nUsage : Untuk Menjawab Salam\
         \n\n Cmd : `.perkenalan`\
         \nUsage : Memperkenalkan Diri\
+        \n\n Cmd : `.la`\
+        \nUsage : Luar Angkasa\
         \n\n Cmd : `.g`\
         \nUsage : Member Goblok\
         \n\n Cmd : `.kenalin`\
