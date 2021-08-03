@@ -29,14 +29,10 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    f"┌────── ⚜ ──────┐\n ** ROOM CHAT ** `{ALIVE_NAME}`\n└────── ⚜ ──────┘ \n"
-    f"➣ __Dimohon Untuk Tidak Melakukan Spam Karena Jika Anda Melakukan Spam Anda Akan Saya Blokir. Jadi Tunggu Sampai {ALIVE_NAME} Kembali Dan Membalas Pesan Anda. __ \n"
-    "▰▱▰▱▰▱▰▱▰▱▰▱\n"
-    f"➣ **DILARANG SPAM** \n"
-    "▰▱▰▱▰▱▰▱▰▱▰▱\n"
-    f"◈ **TUAN** : {DEFAULTUSER}\n"
-    f"◈ **SUPPORT** 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓\n")
-# =================================================================
+    f"__Dimohon Untuk Tidak Melakukan Spam Kepada {DEFAULTUSER} \n"
+    "__Karena Jika Anda Melakukan Spam Anda Akan Saya Blokir Anda. \n"
+    f"__Jadi Tunggu Sampai {DEFAULTUSER} Kembali Dan Membalas Pesan Anda. __ \n"
+     "**__Terima Kasih__ Salam Master KEN-UBOT** ✨
 
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
@@ -405,21 +401,21 @@ CMD_HELP.update(
     {
         "pmpermit": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.setuju | .ok`"
         "\n↳ : Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.tolak | .nopm`"
+        "\n\nCmd: >`.tolak | .nopm`"
         "\n↳ : Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.block`"
+        "\n\nCmd: >`.block`"
         "\n↳ : Memblokir Orang Di PM."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.unblock`"
+        "\n\nCmd: >`.unblock`"
         "\n↳ : Membuka Blokir."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.notifoff`"
+        "\n\nCmd: >`.notifoff`"
         "\n↳ : Mematikan notifikasi pesan yang belum diterima."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.notifon`"
+        "\n\nCmd: >`.notifon`"
         "\n↳ : Menghidupkan notifikasi pesan yang belum diterima."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.set pm_msg` <balas ke pesan>"
+        "\n\nCmd: >`.set pm_msg` <balas ke pesan>"
         "\n↳ : Menyetel Pesan Pribadimu untuk orang yang pesannya belum diterima"
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.get pm_msg`"
+        "\n\nCmd: >`.get pm_msg`"
         "\n↳ : Mendapatkan Custom pesan PM mu"
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.reset pm_msg`"
+        "\n\nCmd: >`.reset pm_msg`"
         "\n↳ : Menghapus pesan PM ke default"
         "\n\nPesan Pribadi yang belum diterima saat ini tidak dapat disetel"
         "\nke teks format kaya bold, underline, link, dll."
