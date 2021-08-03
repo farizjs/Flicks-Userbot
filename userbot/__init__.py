@@ -438,7 +438,7 @@ with bot:
             if event.user_joined or event.user_added:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
-                await event.reply(f"**Hallo Welcome To** [{get_display_name(u)}](tg://user?id={u.id})✨\n────────────────────\n🗣️ **Nama :** [{get_display_name(c)}](tg://user?id={c.id})\n────────────────────\n👁️‍🗨️ **User id :** {c.id}\n────────────────────\n\n⭐Mᴀsᴛᴇʀ Bᴏᴛ : {DEFAULTUSER}")
+                await event.reply(f"**Hallo Welcome To** [{get_display_name(u)}](tg://user?id={u.id}) ✨ \n────────────────────\n🗣️ **Nama :** [{get_display_name(c)}](tg://user?id={c.id})\n────────────────────\n👁️‍🗨️ **User id :** {c.id}\n────────────────────\n\n⭐Mᴀsᴛᴇʀ Bᴏᴛ : {DEFAULTUSER}")
 
         @ken.tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
@@ -467,11 +467,11 @@ with bot:
                     "▰▱▰▱▰▱▰▱▰▱▰▱\n"
                     f"       ⚡ I'ᴍ Aʟɪᴠᴇ​ ⚡\n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱\n"
-                    f"`Pengguna  :` {DEFAULTUSER} \n"
+                    f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi     :` {BOT_VER} \n"
                     f"`Bahasa    :` Python \n"
-                    " \n\n"
+                    f"`Pemilik   :`{DEFAULTUSER} \n"
                     f"      Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱\n")
                 await ken.tgbot.send_file(event.chat_id, file=logo,
