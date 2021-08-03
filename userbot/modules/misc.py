@@ -110,10 +110,9 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        "**Hey**, __I am using__  **𝐊𝐄𝐍-𝐔𝐁𝐎𝐓** \n"
-        "➣ **Repo :** [KEN-UBOT](https://github.com/KennedyProject/KEN-UBOT)\n"
-        "➣ **Owner :** [Ken](t.me/xgothboi)\n"
-        "➣ **License :** [GPL-3.0 License](https://github.com/KennedyProject/KEN-UBOT/blob/KEN-UBOT/LICENSE)"
+        "**Hey**, I am using **𝐊𝐄𝐍-𝐔𝐁𝐎𝐓** \n"
+        "➣ **Repo :** [Github](https://github.com/KennedyProject/KEN-UBOT)\n"
+        "➣ **Owner :** [Ken](t.me/xgothboi)"
     )
 
 
@@ -261,27 +260,27 @@ async def scam(results, lim):
 
 CMD_HELP.update({
     "random":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.random <item1> <item2> ... <itemN>`\
+    "Command: `.random <item1> <item2> ... <itemN>`\
     \n↳ : Get a random item from the list of items.",
     "sleep":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sleep <seconds>`\
+    "Command: `.sleep <seconds>`\
     \n↳ : Let yours snooze for a few seconds.",
     "shutdown":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.shutdown`\
+    "Command: `.shutdown`\
     \n↳ : Shutdown bot",
     "repo":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.repo`\
+    "Command: `.repo`\
     \n↳ : Github Repo of this bot",
     "readme":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙 `.readme`\
+    "Command `.readme`\
     \n↳ : Provide links to setup the userbot and it's modules.",
     "repeat":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.repeat <no> <text>`\
+    "Command: `.repeat <no> <text>`\
     \n↳ : Repeats the text for a number of times. Don't confuse this with spam tho.",
     "restart":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.restart`\
+    "Command: `.restart`\
     \n↳ : Restarts the bot !!",
     "raw":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.raw`\
+    "Command: `.raw`\
     \n↳ : Get detailed JSON-like formatted data about replied message."
 })
