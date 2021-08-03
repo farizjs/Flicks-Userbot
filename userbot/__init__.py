@@ -478,9 +478,9 @@ with bot:
                     f"    Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱")
                 await ken.tgbot.send_file(event.chat_id, file=logo,
-                                           caption=text,
-                                           buttons=[
-                                               [
+                                          caption=text,
+                                          buttons=[
+                                              [
                                                   custom.Button.url(
                                                       text="Rᴇᴘᴏ",
                                                       url="https://github.com/KennedyProject/KEN-UBOT"),
