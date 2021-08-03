@@ -427,10 +427,20 @@ with bot:
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
+        logo = ALIVE_LOGO
 
         kenlogo = INLINE_PIC
         plugins = CMD_HELP
         vr = BOT_VER
+
+
+        @king.tgbot.on(events.ChatAction)
+        async def handler(event):
+            if event.user_joined or event.user_added:
+                u = await event.client.get_entity(event.chat_id)
+                c = await event.client.get_entity(event.user_id)
+                await event.reply(f"**Hᴀʟʟᴏ Wᴇʟᴄᴏᴍᴇ Tᴏ** [{get_display_name(u)}](tg://user?id={u.id})\n🗣️ **Nᴀᴍᴇ :** [{get_display_name(c)}](tg://user?id={c.id})\n📌 **Iᴅ Usᴇʀ :** {c.id}\n\n\nMᴀsᴛᴇʀ Bᴏᴛ : {DEFAULTUSER}")
+
 
         @ken.tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
@@ -448,6 +458,38 @@ with bot:
                                     "t.me/xgothboi")],
                     ]
                 )
+
+        @ken.tgbot.on(events.NewMessage(pattern=r"/alive"))
+        async def handler(event):
+            if event.message.from_id != uid:
+                u = await event.client.get_entity(event.chat_id)
+                await event.message.get_sender()
+                text = (
+                    "       __令 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 令__ \n\n"
+                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
+                    f"       ⚡ I'ᴍ Aʟɪᴠᴇ​ ⚡\n"
+                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
+                    f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
+                    f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
+                    f"`Versi     :` {BOT_VER} \n"
+                    f"`Bahasa    :` Python \n"
+                    f"• **Bot By :** {DEFAULTUSER} \n\n"
+                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
+                    f"      Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n")
+                await ken.tgbot.send_file(event.chat_id, file=logo,
+                                           caption=text,
+                                           buttons=[
+                                               [
+                                                   custom.Button.url(
+                                                       text="Rᴇᴘᴏ",
+                                                       url="https://github.com/KennedyProject/KEN-UBOT"),
+                                                   custom.Button.url(
+                                                       text="Lɪsᴇɴsɪ​",
+                                                       url="https://github.com/KennedyProject/KEN-UBOT/blob/KEN-UBOT/LICENSE"
+                                                   )
+                                               ]
+                                           ]
+                                           )
 
         @ken.tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
