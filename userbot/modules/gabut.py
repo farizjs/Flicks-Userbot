@@ -56,7 +56,7 @@ async def typewriter(typew):
     sleep(3)
     await typew.edit("☑️`Tegar Wibu Sangean`")
     sleep(3)
-    await typew.edit("✅`Tegar Wibu Sangean`")    
+    await typew.edit("✅`Tegar Wibu Sangean`")
     sleep(3)
     await typew.edit("☑️`Can Autis`")
     sleep(3)
