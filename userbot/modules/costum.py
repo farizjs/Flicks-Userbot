@@ -127,9 +127,9 @@ CMD_HELP.update(
         \n\n Cmd : `.costum` <nama> <data> atau membalas pesan dengan .costum <nama>\
         \nUsage : **Menyimpan pesan costum (catatan global) dengan nama. (bisa dengan gambar, docs, dan stickers!)\
         \n\n Cmd : `.costums`\
-        \nUsage : Mendapat semua costums yang disimpan.\
+        \nUsage : Mendapat semua costums yang disimpan\
         \n\n Cmd : `.delcostum` <nama_costum>\
-        \nUsage : Menghapus costum yang ditentukan.\
+        \nUsage : Menghapus costum yang ditentukan\
     "
     }
 )
