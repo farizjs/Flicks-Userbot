@@ -60,8 +60,29 @@ async def redis(pong):
     await pong.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸\n          /'/   /    /       /¨¯\\ \n        ('(   (   (   (  ¯~/'  ')\n         \\                        /\n          \\                _.•´\n            \\              (\n              \\  ")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f" ☞ `%sms` \n"
-                    f"☞ `{ALIVE_NAME}` \n" % (duration))
+    await pong.edit(f" ➥ `%sms` \n"
+                    f"➥ `{ALIVE_NAME}` \n" % (duration))
+
+
+@register(outgoing=True, pattern="^.sping$")
+async def redis(pong):
+    """ For .ping command, ping the userbot from any chat.  """
+    await get_readable_time((time.time() - StartTime))
+    start = datetime.now()
+    await pong.edit("`0%` ▒▒▒▒▒▒▒▒▒▒")
+    await pong.edit("`20%` ██▒▒▒▒▒▒▒▒")
+    await pong.edit("`40%` ████▒▒▒▒▒▒")
+    await pong.edit("`60%` ██████▒▒▒▒")
+    await pong.edit("`80%` ████████▒▒")
+    await pong.edit("`100%` ██████████")
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
+    await pong.edit(f"**╭━━━━━━━━━━━━━━━━━╮** \n"
+                    f"**          - 𝐍 𝐄 𝐓 𝐖 𝐎 𝐑 𝐊 -** \n"
+                    f"**   ▰▱▰▱▰▱▰▱▰▱▰▱** \n"
+                    f"**        ❉ ꜱɪɢɴᴀʟ  :** `%sms` \n"
+                    f"**        ❉ ᴏᴡɴᴇʀ   :** `{ALIVE_NAME}` \n"
+                    f"**╰━━━━━━━━━━━━━━━━━╯** \n" % (duration))
 
 
 @register(outgoing=True, pattern="^.xping$")
@@ -73,9 +94,9 @@ async def redis(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"**`{ALIVE_NAME}`**\n"
-                    f"✧ **-ꜱɪɢɴᴀʟ- :** "
+                    f"⍟ **-ꜱɪɢɴᴀʟ- :** "
                     f"`%sms` \n"
-                    f"✧ **-ᴜᴘᴛɪᴍᴇ- :** "
+                    f"⍟ **-ᴜᴘᴛɪᴍᴇ- :** "
                     f"`{uptime}` \n" % (duration))
 
 
@@ -95,9 +116,9 @@ async def redis(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓**\n"
-                    f"➾ __Signal__    __:__ "
+                    f"➤ __Signal__    __:__ "
                     f"`%sms` \n"
-                    f"➾ __Uptime__ __:__ "
+                    f"➤ __Uptime__ __:__ "
                     f"`{uptime}` \n" % (duration))
 
 
@@ -106,15 +127,11 @@ async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("__Connecting.__")
-    await pong.edit("__Connecting..__")
-    await pong.edit("__Connecting...__")
-    await pong.edit("__Connecting....__")
-    await pong.edit("__Connecting.__")
-    await pong.edit("__Connecting..__")
-    await pong.edit("__Connecting...__")
-    await pong.edit("__Connecting....__")
-    await pong.edit("⚡")
+    await pong.edit("❉")
+    await pong.edit("❉❉)
+    await pong.edit("❉❉❉")
+    await pong.edit("❉❉❉❉")
+    await pong.edit("💡")
     await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
@@ -131,23 +148,21 @@ async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("__Please Wait.__")
-    await pong.edit("__Please Wait..__")
-    await pong.edit("__Please Wait...__")
-    await pong.edit("__Please Wait.__")
-    await pong.edit("__Please Wait..__")
-    await pong.edit("__Please Wait...__")
-    await pong.edit("__Please Wait.__")
-    await pong.edit("__Please Wait..__")
-    await pong.edit("__Please Wait...__")
+    await pong.edit("▁ ")
+    await pong.edit("▁ ▂ ")
+    await pong.edit("▁ ▂ ▄ ")
+    await pong.edit("▁ ▂ ▄ ▅ ")
+    await pong.edit("▁ ▂ ▄ ▅ ▆ ")
+    await pong.edit("▁ ▂ ▄ ▅ ▆ ▇ ")
+    await pong.edit("▁ ▂ ▄ ▅ ▆ ▇ █")
     await pong.edit("⚡")
     await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"**🏓 Pong!!** \n"
-                    f"⚡ __**Speed !!**__ "
+                    f"⚡ **Speed !!** "
                     f"`%sms` \n"
-                    f"💡 __**Uptime**__ - "
+                    f"💡 **Uptime** - "
                     f"`{uptime}` \n" % (duration))
 
 
@@ -224,27 +239,27 @@ def speed_convert(size):
 async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
     start = datetime.now()
-    await pong.edit("`Pong...........🚶`")
-    await pong.edit("`Pong..........🏃.`")
-    await pong.edit("`Pong.........🏃..`")
-    await pong.edit("`Pong........🏃...`")
-    await pong.edit("`Pong.......🏃....`")
-    await pong.edit("`Pong......🏃.....`")
-    await pong.edit("`Pong.....🏃......`")
-    await pong.edit("`Pong....🏃.......`")
-    await pong.edit("`Pong...🏃........`")
-    await pong.edit("`Pong..🏃.........`")
-    await pong.edit("`Pong.🏃..........`")
-    await pong.edit("`Pong🏃...........`")
+    await pong.edit("`Pong...........🐤`")
+    await pong.edit("`Pong..........🐤.`")
+    await pong.edit("`Pong.........🐤..`")
+    await pong.edit("`Pong........🐤...`")
+    await pong.edit("`Pong.......🐤....`")
+    await pong.edit("`Pong......🐤.....`")
+    await pong.edit("`Pong.....🐤......`")
+    await pong.edit("`Pong....🐤.......`")
+    await pong.edit("`Pong...🐤........`")
+    await pong.edit("`Pong..🐤.........`")
+    await pong.edit("`Pong.🐤..........`")
+    await pong.edit("`Pong🐤...........`")
     end = datetime.now()
     duration = (end - start).microseconds / 9000
     await pong.edit("**Test Ping!**\n`%sms`" % (duration))
 
 
 CMD_HELP.update({
-    "ping": "Command: `.ping` | `.lping` | `.xping` | `.pings` | `.fping`\
+    "ping": "Cmd: `.ping` | `.lping` | `.xping` | `.sping` | `.pings` | `.fping`\
          \n↳ : Untuk Menunjukkan Ping Bot Anda.\
-         \n\nCommand: `.speed`\
+         \n\nCmd: `.speed`\
          \n↳ : Untuk Menunjukkan Kecepatan Jaringan Anda.\
-         \n\nCommand: `.pong`\
+         \n\nCmd: `.pong`\
          \n↳ : Sama Seperti Perintah Ping."})
