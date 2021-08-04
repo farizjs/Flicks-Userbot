@@ -511,7 +511,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             current_page_number = int(lockpage)
             buttons = paginate_help(current_page_number, plugins, "helpme")
-            text = f"Userbot By {DEFAULTUSER}"
+            text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n◎› **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n**◎› Bʀᴀɴᴄʜ :** __𝐊𝐄𝐍-𝐔𝐁𝐎𝐓__\n**◎› Vᴇʀsɪ :** `v5.0`\n**◎› Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
             await event.edit(
                 text,
                 file=kenlogo,
@@ -530,7 +530,7 @@ with bot:
                 result = builder.photo(
                     file=kenlogo,
                     link_preview=False,
-                    text=f"\nUsᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​\n\n◎› **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n◎› Bʀᴀɴᴄʜ : __𝐊𝐄𝐍-𝐔𝐁𝐎𝐓__\n◎› Vᴇʀsɪ : `v5.0`\n◎› Pʟᴜɢɪɴs : `{len(plugins)}`\n".format(
+                    text=f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n◎› **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n**◎› Bʀᴀɴᴄʜ :** __𝐊𝐄𝐍-𝐔𝐁𝐎𝐓__\n**◎› Vᴇʀsɪ :** `v5.0`\n**◎› Pʟᴜɢɪɴs :** `{len(plugins)}`\n".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -602,7 +602,7 @@ with bot:
             buttons = [
                 (custom.Button.inline("Buka Menu", data="open"),),
             ]
-            await event.edit("Menu Ditutup!", file=kenlogo, buttons=buttons)
+            await event.edit("**Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ​!**", file=kenlogo, buttons=buttons)
 
         @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
