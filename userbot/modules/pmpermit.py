@@ -29,10 +29,8 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    f" __Dimohon Untuk Tidak Melakukan Spam Kepada__ {DEFAULTUSER} \n"
-    f" __Karena Jika Anda Melakukan Spam Anda Akan Saya Blokir Anda.__ \n"
-    f" __Jadi Tunggu Sampai__ {DEFAULTUSER} __Kembali Dan Membalas Pesan Anda.__ \n"
-    f" **__Terima Kasih__ Salam Master KEN - UBOT ** ✨ \n")
+    f" __Dimohon Untuk Tidak Melakukan Spam Kepada **{DEFAULTUSER}**, Karena Jika Anda Melakukan Spam Anda Akan Saya Blokir. Jadi Tunggu Sampai **{DEFAULTUSER}** Kembali Dan Membalas Pesan Anda.__ \n"
+    f" **__Terima Kasih Salam Hormat KEN - UBOT__ ** ✨ \n")
 
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
@@ -392,14 +390,14 @@ async def permitpm(event):
     if event.is_private:
         if not pm_permit_sql.is_approved(chats.id):
             pm_permit_sql.approve(
-                chats.id, f"`{ALIVE_NAME} Telah Mengirimi Anda Pesan 😯`")
+                chats.id, f"`Hallo {ALIVE_NAME}, Developer Telah Mengirimi Anda Pesan... `")
             await borg.send_message(
-                chats, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah {DEFAULTUSER}**"
+                chats, f"**Menerima Pesan!, Pengguna Terdeteksi Adalah Developer Saya**"
             )
 
 CMD_HELP.update(
     {
-        "pmpermit": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.setuju | .ok`"
+        "pmpermit": "Cmd: >`.setuju | .ok`"
         "\n↳ : Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
         "\n\nCmd: >`.tolak | .nopm`"
         "\n↳ : Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
