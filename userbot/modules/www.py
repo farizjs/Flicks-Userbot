@@ -85,21 +85,6 @@ async def redis(pong):
                     f"**╰━━━━━━━━━━━━━━━━━╯** \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.xping$")
-async def redis(pong):
-    """ For .ping command, ping the userbot from any chat.  """
-    uptime = await get_readable_time((time.time() - StartTime))
-    start = datetime.now()
-    await pong.edit("`Connecting to server...`")
-    end = datetime.now()
-    duration = (end - start).microseconds / 1000
-    await pong.edit(f"**`{ALIVE_NAME}`**\n"
-                    f"⍟ **-ꜱɪɢɴᴀʟ- :** "
-                    f"`%sms` \n"
-                    f"⍟ **-ᴜᴘᴛɪᴍᴇ- :** "
-                    f"`{uptime}` \n" % (duration))
-
-
 @register(outgoing=True, pattern="^.lping$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
@@ -122,7 +107,7 @@ async def redis(pong):
                     f"`{uptime}` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.pings$")
+@register(outgoing=True, pattern="^.xping$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
