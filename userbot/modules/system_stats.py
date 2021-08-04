@@ -230,7 +230,7 @@ async def amireallyalive(alive):
     output = (
         f"\n__**{KEN_TEKS_KUSTOM}**__\n"
         f"**╭───────────────────**\n"
-        f"**├[• ♨️ Owner** \n"
+        f"**├[• 🌚 Owner** \n"
         f"├[•   : `{DEFAULTUSER}` \n"
         f"**├[• 🔎 Username** \n"
         f"├[•   : `@{user.username}` \n"
@@ -300,16 +300,16 @@ async def amireallyalive(alive):
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("__𝐀 𝐋 𝐈 𝐕 𝐄.__")
-    await alive.edit("__𝐀𝐋 𝐈 𝐕 𝐄..__")
-    await alive.edit("__𝐀𝐋𝐈 𝐕 𝐄.__")
-    await alive.edit("__𝐀𝐋𝐈𝐕 𝐄..__")
-    await alive.edit("__𝐀𝐋𝐈𝐕𝐄...__")
-    await alive.edit("😈")
+    await alive.edit("**__A L I V E__**")
+    await alive.edit("**__AL I V E__**")
+    await alive.edit("**__ALI V E__**")
+    await alive.edit("**__ALIV E__**")
+    await alive.edit("**__ALIVE__**")
+    await alive.edit("✨")
     await asyncio.sleep(3)
     output = (
         f"┏━━━━━━━━━━━━━━━━━━━ \n"
-        f"┣  `Name     :` {DEFAULTUSER} \n"
+        f"┣  `Master   :` {DEFAULTUSER} \n"
         f"┣  `Username :` @{user.username} \n"
         f"┣  `Telethon :` Ver {version.__version__} \n"
         f"┣  `Python   :` Ver {python_version()} \n"
@@ -360,27 +360,27 @@ async def amireallyalivereset(ureset):
 
 CMD_HELP.update({
     "system":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sysd`"
+    "Cmd: `.sysd`"
     "\n↳ : Shows system information using neofetch."
-    "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.db`"
+    "\n\nCmd: `.db`"
     "\n↳ : Shows database related info."
-    "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.spc`"
+    "\n\nCmd: `.spc`"
     "\n↳ : Show system specification."
 })
 CMD_HELP.update({
     "alive":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.alive` or `.zalive` or `.on` or `.kalive`"
+    "Cmd: `.alive` or `.zalive` or `.on` or `.kalive`"
     "\n↳ : To see whether your bot is working or not."
-    "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.aliveu` <text>"
+    "\n\nCmd: `.aliveu` <text>"
     "\n↳ : Changes the 'user' in alive to the text you want."
-    "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.restalive`"
+    "\n\nCmd: `.restalive`"
     "\n↳ : Resets the user to default."
 })
 CMD_HELP.update(
     {
         "botversion":
-        "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.botver`"
+        "Cmd: `.botver`"
         "\n↳ : Shows the userbot version."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.pip` <module(s)>"
+        "\n\nCmd: `.pip` <module(s)>"
         "\n↳ : Does a search of pip modules(s)."
     })
