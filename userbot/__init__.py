@@ -543,8 +543,8 @@ with bot:
                     link_preview=True)
             else:
                 result = builder.article(
-                    " **Alive**\n Check Alive Stats! ",
-                    text="""**HELLO I'M ALIVE** ⚡\n𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 :\n**Main Bot :** `Alive`\n**UserBot :** `Alive`\n**Python :** `3.9.6`\n**Modules :** `{len(plugins)}`""",
+                    " Alive\n Check Alive Stats! ",
+                    text=f"""**HELLO I'M ALIVE** ⚡\n🧿𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 :\n**🧿Main Bot :** `Alive`\n**🧿UserBot :** `Alive`\n**🧿Python :** `3.9.6`\n**🧿Modules :** `{len(plugins)}`\n USERBOT BY {DEFAULTUSER} """,
                     buttons=[
                         [
                             custom.Button.url(
