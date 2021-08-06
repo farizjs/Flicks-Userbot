@@ -439,11 +439,11 @@ with bot:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
                 await event.reply(
-                    f"**Hallo welcome to ** [{get_display_name(u)}](tg://user?id={u.id}) \n\n"
+                    f"**Hallo welcome to ** [{get_display_name(u)}](tg://user?id={u.id}) ☄️\n\n"
                     f"━━━━━━━━━━━━━━━━━━━━ \n"
-                    f"👤 **Pengguna :** [{get_display_name(c)}](tg://user?id={c.id}) \n"
+                    f"👤 **ᴘᴇɴɢɢᴜɴᴀ​ :** [{get_display_name(c)}](tg://user?id={c.id}) \n"
                     f"━━━━━━━━━━━━━━━━━━━━ \n"
-                    f"📮 **ID Pengguna :** {c.id} \n"
+                    f"📮 **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {c.id} \n"
                     f"━━━━━━━━━━━━━━━━━━━━ \n\n"
                     f"__Welcome semoga betah ya__ ✨\n",
                     buttons=[
