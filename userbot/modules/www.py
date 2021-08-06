@@ -100,7 +100,7 @@ async def redis(pong):
     await pong.edit("⚡UBOT⚡")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓**\n"
+    await pong.edit(f"{DEFAULTUSER} Uʙᴏᴛ​\n"
                     f"➤ __Signal__    __:__ "
                     f"`%sms` \n"
                     f"➤ __Uptime__ __:__ "
@@ -125,8 +125,7 @@ async def redis(pong):
     await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓**\n"
-                    f"** ▹  Sɪɢɴᴀʟ   :** "
+    await pong.edit(f"** ▹  Sɪɢɴᴀʟ   :** "
                     f"`%sms` \n"
                     f"** ▹  Uᴘᴛɪᴍᴇ  :** "
                     f"`{uptime}` \n"
