@@ -557,7 +557,7 @@ with bot:
             else:
                 result = builder.article(
                     " Alive\n Check Alive Stats! ",
-                    text=f"""**⚡𝐊𝐄𝐍-𝐔𝐁𝐎𝐓⚡ \n**MainBot :** `Alive`\n**UserBot :** `Alive`\n**Python :** `3.9.6`\n**BotVer :** `v5.0`\n**Modules :** `{len(plugins)}`\n**Master :** {DEFAULTUSER} """,
+                    text=f""" ⚡𝐊𝐄𝐍-𝐔𝐁𝐎𝐓⚡ \n**MainBot :** `Alive`\n**UserBot :** `Alive`\n**Python :** `3.9.6`\n**BotVer :** `v5.0`\n**Modules :** `{len(plugins)}`\n**Master :** {DEFAULTUSER} """,
                     buttons=[
                         [
                             custom.Button.url(
