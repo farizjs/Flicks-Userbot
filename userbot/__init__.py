@@ -438,7 +438,20 @@ with bot:
             if event.user_joined or event.user_added:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
-                await event.reply(f"**Hallo Welcome To** [{get_display_name(u)}](tg://user?id={u.id})\n────────────────────\n🗣️ **Nama :** [{get_display_name(c)}](tg://user?id={c.id})\n────────────────────\n👁️‍🗨️ **User id :** {c.id}\n────────────────────\n\n⭐Mᴀsᴛᴇʀ Bᴏᴛ : {DEFAULTUSER}")
+                await event.reply(
+                    f"**Hallo welcome to ** [{get_display_name(u)}](tg://user?id={u.id}) ✨ \n\n"
+                    f"**_________________________**\n"
+                    f"👤 **Pengguna :** [{get_display_name(c)}](tg://user?id={c.id}) \n"
+                    f"**_________________________**\n"
+                    f"📮 **ID Pengguna :** {c.id} \n"
+                    f"**_________________________**\n\n"
+                    f"__Welcome semoga betah ya__ ✨\n",
+                    buttons=[
+                        [
+                            Button.url("Tutorial Userbot",
+                                       "https://t.me/KennedyProject")],
+                    ]
+                )
 
         @ken.tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
