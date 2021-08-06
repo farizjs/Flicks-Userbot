@@ -439,12 +439,12 @@ with bot:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
                 await event.reply(
-                    f"**Hallo welcome to ** [{get_display_name(u)}](tg://user?id={u.id}) ✨ \n\n"
-                    f"**_________________________**\n"
+                    f"**Hallo welcome to ** [{get_display_name(u)}](tg://user?id={u.id}) \n\n"
+                    f"━━━━━━━━━━━━━━━━━━━━ \n"
                     f"👤 **Pengguna :** [{get_display_name(c)}](tg://user?id={c.id}) \n"
-                    f"**_________________________**\n"
+                    f"━━━━━━━━━━━━━━━━━━━━ \n"
                     f"📮 **ID Pengguna :** {c.id} \n"
-                    f"**_________________________**\n\n"
+                    f"━━━━━━━━━━━━━━━━━━━━ \n\n"
                     f"__Welcome semoga betah ya__ ✨\n",
                     buttons=[
                         [
@@ -557,7 +557,7 @@ with bot:
             else:
                 result = builder.article(
                     " Alive\n Check Alive Stats! ",
-                    text=f"""**HELLO I'M ALIVE**\n ⚡𝐊𝐄𝐍-𝐔𝐁𝐎𝐓⚡ \n**MainBot :** `Alive`\n**UserBot :** `Alive`\n**Python :** `3.9.6`\n**BotVer :** `v5.0`\n**Modules :** `{len(plugins)}`\n**Master :** {DEFAULTUSER} """,
+                    text=f"""**⚡𝐊𝐄𝐍-𝐔𝐁𝐎𝐓⚡ \n**MainBot :** `Alive`\n**UserBot :** `Alive`\n**Python :** `3.9.6`\n**BotVer :** `v5.0`\n**Modules :** `{len(plugins)}`\n**Master :** {DEFAULTUSER} """,
                     buttons=[
                         [
                             custom.Button.url(
