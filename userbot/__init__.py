@@ -445,21 +445,13 @@ with bot:
                     f"━━━━━━━━━━━━━━━━━━━━ \n"
                     f"📮 **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {c.id} \n"
                     f"━━━━━━━━━━━━━━━━━━━━ \n\n"
-                    f"__**Semoga betah ya Kawan**__ ✨\n")
-                await ken.tgbot.send_file(event.chat_id, file=logo,
-                                          caption=text,
-                                          buttons=[
-                                              [
-                                                  custom.Button.url(
-                                                      text="Rᴇᴘᴏ",
-                                                      url="https://github.com/KennedyProject/KEN-UBOT"),
-                                                  custom.Button.url(
-                                                      text="Tᴜᴛᴏʀɪᴀʟ​​",
-                                                      url="https://t.me/KennedyProject"
-                                                  )
-                                              ]
-                                          ]
-                                          )
+                    f"__**Semoga betah ya Kawan**__ ✨\n",
+                    buttons=[
+                        [
+                            Button.url("ᴛᴜᴛᴏʀɪᴀʟ ᴜsᴇʀʙᴏᴛ​",
+                                       "https://t.me/KingUserbotSupport")],
+                    ]
+                )
 
         @ken.tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
