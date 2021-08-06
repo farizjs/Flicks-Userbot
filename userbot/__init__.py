@@ -449,7 +449,7 @@ with bot:
                     buttons=[
                         [
                             Button.url("ᴛᴜᴛᴏʀɪᴀʟ ᴜsᴇʀʙᴏᴛ​",
-                                       "https://t.me/KingUserbotSupport")],
+                                       "https://t.me/KennedyProject")],
                     ]
                 )
 
