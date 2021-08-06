@@ -100,7 +100,7 @@ async def redis(pong):
     await pong.edit("⚡UBOT⚡")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**{DEFAULTUSER} Uʙᴏᴛ​**\n"
+    await pong.edit(f"***⚡{ALIVE_NAME} Bᴏᴛ⚡​**\n"
                     f"➤ __Signal__    __:__ "
                     f"`%sms` \n"
                     f"➤ __Uptime__ __:__ "
