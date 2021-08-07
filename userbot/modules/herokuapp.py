@@ -191,7 +191,7 @@ async def dyno_usage(dyno):
                 f"│◈`Sisa dyno bulan ini :` \n"
                 f"│◈ {hours} jam - {minutes} menit \n"
                 f"│◈ `Percentage :`[{percentage}%] \n"
-                f"╰┈───────────────────┈╯
+                f"╰┈───────────────────┈╯ \n"
                 f"◈ **Master :** {ALIVE_NAME} \n"
             )
             await asyncio.sleep(20)
