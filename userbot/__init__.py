@@ -532,6 +532,22 @@ with bot:
                 link_preview=False,
             )
 
+        @ken.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"helpme_open\((.+?)\)")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:  # @KenProject
+                # https://t.me/TelethonChat/115200
+                await event.edit(
+                    file=kenlogo,
+                    link_preview=True,
+                    buttons=[
+                        [Button.inline("Open Menu", data="open")],
+                    ]
+                )
+
         @ken.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder = event.builder
@@ -566,7 +582,6 @@ with bot:
                             custom.Button.url(
                                 "ᴅᴇᴠ​",
                                 "t.me/xgothboi")]],
-                    file=kenlogo
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
