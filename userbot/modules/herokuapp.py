@@ -130,13 +130,7 @@ async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
     """
-    await dyno.edit("```Please wait.```")
-    await dyno.edit("```Please wait..```")
-    await dyno.edit("```Please wait...```")
-    await dyno.edit("```Please wait.```")
-    await dyno.edit("```Please wait..```")
-    await dyno.edit("⚡")
-    await asyncio.sleep(2)
+    await dyno.edit("```Checking dynos...```")
     useragent = (
         'Mozilla/5.0 (Linux; Android 10; SM-G975F) '
         'AppleWebKit/537.36 (KHTML, like Gecko) '
@@ -186,17 +180,17 @@ async def dyno_usage(dyno):
             AppMinutes = math.floor(AppQuotaUsed % 60)
 
             await dyno.edit(
-                "╭┈─╼━━━━━━━━━━━━━━━╾─┈╮ \n"
-                "│       ⚡**KEN-UBOT**⚡ \n"
-                "╭┈─╼━━━━━━━━━━━━━━━╾─┈╮ \n"
-                "│◈`Penggunaan dyno :` \n"
+                f"╭┈─╼━━━━━━━━━━━━━━━╾─┈╮ \n"
+                f"│       ⚡**KEN-UBOT**⚡ \n"
+                f"╭┈─╼━━━━━━━━━━━━━━━╾─┈╮ \n"
+                f"│◈`Penggunaan dyno :` \n"
                 f"│◈ {AppHours} jam - {AppMinutes} menit \n"
                 f"│◈ `Percentage :` [{AppPercentage}%] \n"
-                "╰┈───────────────────┈╮ \n"
-                "│◈`Sisa dyno bulan ini :` \n"
+                f"╰┈───────────────────┈╮ \n"
+                f"│◈`Sisa dyno bulan ini :` \n"
                 f"│◈ {hours} jam - {minutes} menit \n"
                 f"│◈ `Percentage :`[{percentage}%] \n"
-                "╰┈───────────────────┈╯
+                f"╰┈───────────────────┈╯
                 f"◈ **Master :** {ALIVE_NAME} ")
 
             await asyncio.sleep(20)
