@@ -188,7 +188,7 @@ async def dyno_usage(dyno):
                 f"│◈ {AppHours} jam - {AppMinutes} menit \n"
                 f"│◈ `Percentage :` [{AppPercentage}%] \n"
                 f"╰┈───────────────────┈╮ \n"
-                f"│◈ **Sisa dyno bulan ini :** \n"
+                f"│◈ **Remaining dyno this month :** \n"
                 f"│◈ {hours} jam - {minutes} menit \n"
                 f"│◈ `Percentage :`[{percentage}%] \n"
                 f"╰┈───────────────────┈╯ \n"
