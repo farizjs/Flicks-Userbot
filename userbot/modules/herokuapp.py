@@ -182,15 +182,15 @@ async def dyno_usage(dyno):
 
             await dyno.edit(
                 f"╭┈─╼━━━━━━━━━━━━━━╾─┈╮ \n"
-                f"│ㅤㅤㅤ⚡**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓**⚡ \n"
+                f"│ㅤㅤㅤㅤ⚡**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓**⚡ \n"
                 f"╭┈─╼━━━━━━━━━━━━━━╾─┈╮ \n"
                 f"│◈ **Dyno usage this month :** \n"
                 f"│◈ {AppHours} jam - {AppMinutes} menit \n"
-                f"│◈ `Percentage :` [{AppPercentage}%] \n"
+                f"│◈ **Percentage :** {AppPercentage}% \n"
                 f"╰┈──────────────────┈╮ \n"
                 f"│◈ **Remaining dyno this month :** \n"
                 f"│◈ {hours} jam - {minutes} menit \n"
-                f"│◈ `Percentage :`[{percentage}%] \n"
+                f"│◈ **Percentage :** {percentage}% \n"
                 f"╰┈──────────────────┈╯ \n"
                 f"◈ **Master :** {ALIVE_NAME} \n"
             )
