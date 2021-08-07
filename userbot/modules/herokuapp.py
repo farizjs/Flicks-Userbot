@@ -130,7 +130,13 @@ async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
     """
-    await dyno.edit("```Processing...```")
+    await dyno.edit("```Please wait.```")
+    await dyno.edit("```Please wait..```")
+    await dyno.edit("```Please wait...```")
+    await dyno.edit("```Please wait.```")
+    await dyno.edit("```Please wait..```")
+    await dyno.edit("⚡")
+    await asyncio.sleep(2)
     useragent = (
         'Mozilla/5.0 (Linux; Android 10; SM-G975F) '
         'AppleWebKit/537.36 (KHTML, like Gecko) '
@@ -180,16 +186,18 @@ async def dyno_usage(dyno):
             AppMinutes = math.floor(AppQuotaUsed % 60)
 
             await dyno.edit(
-                f" **Dyno Usage :**  \n"
-                f"   \n"
-                f"➣`Penggunaan Dyno` {app.name} `:` \n"
-                f"   • {AppHours} jam - {AppMinutes} menit"
-                f" [{AppPercentage}%] \n"
-                f"   \n"
-                f"➣`Sisa Quota Dyno Bulan Ini :` \n"
-                f"   • {hours} jam - {minutes} menit"
-                f" [{percentage}%] \n\n"
-                f"• **Master :** {ALIVE_NAME} ")
+                "╭┈─╼━━━━━━━━━━━━━━━╾─┈╮ \n"
+                "│       ⚡**KEN-UBOT**⚡ \n"
+                "╭┈─╼━━━━━━━━━━━━━━━╾─┈╮ \n"
+                "│◈`Penggunaan dyno :` \n"
+                f"│◈ {AppHours} jam - {AppMinutes} menit \n"
+                f"│◈ `Percentage :` [{AppPercentage}%] \n"
+                "╰┈───────────────────┈╮ \n"
+                "│◈`Sisa dyno bulan ini :` \n"
+                f"│◈ {hours} jam - {minutes} menit \n"
+                f"│◈ `Percentage :`[{percentage}%] \n"
+                "╰┈───────────────────┈╯
+                f"◈ **Master :** {ALIVE_NAME} ")
 
             await asyncio.sleep(20)
             await event.delete()
@@ -217,14 +225,14 @@ async def _(dyno):
     return os.remove("logs.txt")
 
 
-CMD_HELP.update({"herokuapp": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `Usage`"
+CMD_HELP.update({"herokuapp": "Cmd: `Usage`"
                  "\n↳ : Check Quota Dyno Heroku"
-                 "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.set var <NEW VAR> <VALUE>`"
+                 "\n\nCmd: `.set var <NEW VAR> <VALUE>`"
                  "\n↳ : Tambahkan Variabel Baru Atau Memperbarui Variabel"
                  "\nSetelah Menyetel Variabel Tersebut, Geez-Userbot Akan Di Restart."
-                 "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.get var atau .get var <VAR>`"
+                 "\n\nCmd: `.get var atau .get var <VAR>`"
                  "\n↳ : Dapatkan Variabel Yang Ada, !!PERINGATAN!! Gunakanlah Di Grup Privasi Anda."
                  "\nIni Mengembalikan Semua Informasi Pribadi Anda, Harap berhati-hati."
-                 "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.del var <VAR>`"
+                 "\n\nCmd: `.del var <VAR>`"
                  "\n↳ : Menghapus Variabel Yang Ada"
                  "\nSetelah Menghapus Variabel, Bot Akan Di Restart."})
