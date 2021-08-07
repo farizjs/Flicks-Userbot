@@ -131,6 +131,7 @@ async def dyno_usage(dyno):
         Get your account Dyno Usage
     """
     await dyno.edit("```Checking dynos...```")
+    await asyncio.sleep(1)
     useragent = (
         'Mozilla/5.0 (Linux; Android 10; SM-G975F) '
         'AppleWebKit/537.36 (KHTML, like Gecko) '
