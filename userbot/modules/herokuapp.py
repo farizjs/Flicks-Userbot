@@ -181,19 +181,19 @@ async def dyno_usage(dyno):
             AppMinutes = math.floor(AppQuotaUsed % 60)
 
             await dyno.edit(
-                "╭┈─╼━━━━━━━━━━━━━━━╾─┈╮ \n"
-                "│       ⚡**KEN-UBOT**⚡ \n"
-                "╭┈─╼━━━━━━━━━━━━━━━╾─┈╮ \n"
-                "│◈`Penggunaan dyno :` \n"
+                f"╭┈─╼━━━━━━━━━━━━━━━╾─┈╮ \n"
+                f"│       ⚡**KEN-UBOT**⚡ \n"
+                f"╭┈─╼━━━━━━━━━━━━━━━╾─┈╮ \n"
+                f"│◈`Penggunaan dyno :` \n"
                 f"│◈ {AppHours} jam - {AppMinutes} menit \n"
                 f"│◈ `Percentage :` [{AppPercentage}%] \n"
-                "╰┈───────────────────┈╮ \n"
-                "│◈`Sisa dyno bulan ini :` \n"
+                f"╰┈───────────────────┈╮ \n"
+                f"│◈`Sisa dyno bulan ini :` \n"
                 f"│◈ {hours} jam - {minutes} menit \n"
                 f"│◈ `Percentage :`[{percentage}%] \n"
-                "╰┈───────────────────┈╯
-                f"◈ **Master :** {ALIVE_NAME} ")
-
+                f"╰┈───────────────────┈╯
+                f"◈ **Master :** {ALIVE_NAME} \n"
+            )
             await asyncio.sleep(20)
             await event.delete()
             return True
