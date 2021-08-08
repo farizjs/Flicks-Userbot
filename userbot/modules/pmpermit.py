@@ -38,12 +38,15 @@ LASTMSG = {}
 
 
 # ========================= CONSTANTS ============================
+
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 CUSTOM_TEXT = str(
     PMPERMIT_TEXT) if PMPERMIT_TEXT else f"__Dimohon Untuk Tidak Melakukan Spam Kepada {DEFAULTUSER} Karena Jika Anda Melakukan Spam Anda Akan Saya Blokir.  Jadi Tunggu Sampai {DEFAULTUSER} Kembali Dan Membalas Pesan Anda.  Terima Kasih!__\n"
 DEF_UNAPPROVED_MSG = (
     f" __{CUSTOM_TEXT}__ \n"
-    f" **__Terima Kasih Salam Hormat {DEFAULTUSER}__ ** ✨ ")
+    f" **Owner :** {DEFAULTUSER} \n"
+    f" **Support KEN-UBOT** ⚡ ")
+# =================================================================
 
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
