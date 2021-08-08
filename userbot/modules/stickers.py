@@ -173,9 +173,9 @@ async def kang(args):
                         # Ensure user doesn't get spamming notifications
                         await bot.send_read_acknowledge(conv.chat_id)
                         return await args.edit(
-                            "❒ `Sticker telah dibuat ke pack baru !"
-                            "\n❒ Ini Pack Yang Baru Saja Anda Buat !"
-                            f"\n❒ Tekan [Tikel!](t.me/addstickers/{packname})\n❒ Untuk Melihat Sticker Anda",
+                            "❒ **Sticker telah dibuat ke pack baru !**"
+                            "\n❒ **Ini Pack Yang Baru Saja Anda Buat !**"
+                            f"\n❒ **Coba Tekan [Tikel!]**(t.me/addstickers/{packname})\n❒ **Untuk Melihat Pack Tikelmu!!!**",
                             parse_mode="md",
                         )
                 if is_anim:
@@ -242,7 +242,7 @@ async def kang(args):
                 await bot.send_read_acknowledge(conv.chat_id)
 
         await args.edit(
-            f"**❒Tikel Berhasil dicurry**\n**Tekan [Tikel!](t.me/addstickers/{packname})**\n❒ **Untuk Melihat Pack Tikelmu!!!**",
+            f"**❒Tikel Berhasil dicurry**\n**❒ Coba Tekan [Tikel!]**(t.me/addstickers/{packname})\n❒ **Untuk Melihat Pack Tikelmu!!!**",
             parse_mode="md",
         )
 
@@ -348,13 +348,13 @@ async def sticker_to_png(sticker):
 
 CMD_HELP.update(
     {
-        "stickers": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.kang | .tikel [emoji('s)]?`"
+        "stickers": "Cmd: `.kang | .tikel [emoji('s)]?`"
         "\n↳ : Balas .tikel Ke Sticker Atau Gambar Untuk Menambahkan Ke Pack Mu "
         "\nBisa Memilih Emoji Sesuai Pilihanmu."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.kang | .tikel  (emoji['s]]?` [nomer]?"
+        "\n\nCmd: `.kang | .tikel  (emoji['s]]?` [nomer]?"
         "\n↳ : Ambil Sticker/Gambar Ke Pack Baru Mu "
         "Dan Bisa Pilih Emoji Sticker Mu."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.stkrinfo`"
+        "\n\nCmd: `.stkrinfo`"
         "\n↳ : Dapatkan Informasi Pack Sticker."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.get`"
+        "\n\nCmd: `.get`"
         "\n↳ : Balas Ke Stcker Untuk Mendapatkan File 'PNG' Sticker."})
