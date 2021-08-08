@@ -7,6 +7,7 @@
 # From KEN-UBOT
 """Userbot module for keeping control who PM you."""
 
+from userbot.events import register
 from sqlalchemy.exc import IntegrityError
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
@@ -35,8 +36,6 @@ else:
 COUNT_PM = {}
 LASTMSG = {}
 
-
-from userbot.events import register
 
 # ========================= CONSTANTS ============================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
