@@ -108,7 +108,7 @@ async def on_afk(event):
         msg = None
         if reason:
             message_to_reply = (
-                f"Pesan Otomatia\n** {ALIVE_NAME} Sedang Offline**\n"
+                f"⚡Pesan Otomatis\n** {ALIVE_NAME} Sedang Offline**\n"
                 f"**Karena :** `{reason}`")
         else:
             message_to_reply = f"Pesan Otomatis\n** {ALIVE_NAME} Sedang Offline**\n"
