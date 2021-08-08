@@ -54,7 +54,7 @@ async def kang(args):
                 in message.media.document.attributes
             ):
                 emoji = message.media.document.attributes[1].alt
-                if emoji != "🎯":
+                if emoji != "⚡":
                     emojibypass = True
         elif "tgsticker" in message.media.document.mime_type:
             await args.edit(f"`{random.choice(KANGING_STR)}`")
@@ -76,7 +76,7 @@ async def kang(args):
     if photo:
         splat = args.text.split()
         if not emojibypass:
-            emoji = "🎯"
+            emoji = "⚡"
         pack = 1
         if len(splat) == 3:
             pack = splat[2]  # User sent both
@@ -173,9 +173,9 @@ async def kang(args):
                         # Ensure user doesn't get spamming notifications
                         await bot.send_read_acknowledge(conv.chat_id)
                         return await args.edit(
-                            "`Sticker telah dibuat ke pack baru !"
-                            "\nIni Pack Yang Baru Saja Anda Buat !"
-                            f"\nTekan [🎯Klik Disini🎯](t.me/addstickers/{packname}) Untuk Melihat Sticker Anda",
+                            "❒ `Sticker telah dibuat ke pack baru !"
+                            "\n❒ Ini Pack Yang Baru Saja Anda Buat !"
+                            f"\n❒ Tekan [Tikel!](t.me/addstickers/{packname})\n❒ Untuk Melihat Sticker Anda",
                             parse_mode="md",
                         )
                 if is_anim:
@@ -242,7 +242,7 @@ async def kang(args):
                 await bot.send_read_acknowledge(conv.chat_id)
 
         await args.edit(
-            f"**Tikel Berhasil dicurry [🎯Tekan Disini🎯](t.me/addstickers/{packname}) Untuk Melihat Pack Tikelmu!!!**",
+            f"**❒Tikel Berhasil dicurry**\n**Tekan [Tikel!](t.me/addstickers/{packname})**\n❒ **Untuk Melihat Pack Tikelmu!!!**",
             parse_mode="md",
         )
 
