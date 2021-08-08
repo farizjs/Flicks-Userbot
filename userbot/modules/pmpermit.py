@@ -19,20 +19,32 @@ from userbot import (
     COUNT_PM,
     LASTMSG,
     LOGS,
+    ALIVE_LOGO,
     PM_AUTO_BAN,
+    PMPERMIT_TEXT,
+    PMPERMIT_PIC,
     ALIVE_NAME,
 )
+
+
+if PMPERMIT_PIC is None:
+    CUSTOM_PIC = ALIVE_LOGO
+else:
+    CUSTOM_PIC = str(PMPERMIT_PIC)
+
+COUNT_PM = {}
+LASTMSG = {}
+
 
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-
+CUSTOM_TEXT = str(
+    PMPERMIT_TEXT) if PMPERMIT_TEXT else f"__Dimohon Untuk Tidak Melakukan Spam Kepada {DEFAULTUSER} Karena Jika Anda Melakukan Spam Anda Akan Saya Blokir.  Jadi Tunggu Sampai {DEFAULTUSER} Kembali Dan Membalas Pesan Anda.  Terima Kasih!__\n"
 DEF_UNAPPROVED_MSG = (
-    f" __Dimohon Untuk Tidak Melakukan Spam Kepada__ **{DEFAULTUSER}** "
-    f" __Karena Jika Anda Melakukan Spam Anda Akan Saya Blokir.__ "
-    f" __Jadi Tunggu Sampai__ **{DEFAULTUSER}** __Kembali Dan Membalas Pesan Anda.__ "
-    f" **__Terima Kasih Salam Hormat KEN - UBOT__ ** ✨ ")
+    f" __{CUSTOM_TEXT}__ \n"
+    f" **__Terima Kasih Salam Hormat {DEFAULTUSER}__ ** ✨ ")
 
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
@@ -60,8 +72,10 @@ async def permitpm(event):
         getmsg = gvarstatus("unapproved_msg")
         if getmsg is not None:
             UNAPPROVED_MSG = getmsg
+            CUSTOM_PIC = getmsg
         else:
             UNAPPROVED_MSG = DEF_UNAPPROVED_MSG
+            CUSTOM_PIC = PMPERMIT_PIC
 
         # This part basically is a sanity check
         # If the message that sent before is Unapproved Message
@@ -73,12 +87,12 @@ async def permitpm(event):
                 # Send the Unapproved Message again
                 if event.text != prevmsg:
                     async for message in event.client.iter_messages(
-                        event.chat_id, from_user="me", search=UNAPPROVED_MSG
+                        event.chat_id, from_user="me", search=UNAPPROVED_MSG, file=CUSTOM_PIC
                     ):
                         await message.delete()
-                    await event.reply(f"{UNAPPROVED_MSG}")
+                    await event.reply(f" {CUSTOM_PIC}\n\n {UNAPPROVED_MSG}")
             else:
-                await event.reply(f"{UNAPPROVED_MSG}")
+                await event.reply(f" {CUSTOM_PIC}\n\n {UNAPPROVED_MSG}")
             LASTMSG.update({event.chat_id: event.text})
             if notifsoff:
                 await event.client.send_read_acknowledge(event.chat_id)
