@@ -574,9 +574,9 @@ with bot:
                             custom.Button.url(
                                 "ᴄʜᴀɴɴᴇʟ​​",
                                 "t.me/KennedyProject")],
-                           [custom.Button.url(
-                                "ᴅᴇᴠ​",
-                                "t.me/xgothboi")]],
+                        [custom.Button.url(
+                            "ᴅᴇᴠ​",
+                            "t.me/xgothboi")]],
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
