@@ -84,7 +84,7 @@ async def logo_gen(event):
     y = (image_height - h) / 2
     draw.text((x, y), name, font=font, fill="white",
               stroke_width=strke, stroke_fill="black")
-    flnme = f"kenubot.png"
+    flnme = f"knbot.png"
     img.save(flnme, "png")
     await xx.edit("`Selesai!`")
     if os.path.exists(flnme):
@@ -103,5 +103,5 @@ async def logo_gen(event):
             os.remove(font_)
 
 
-CMD_HELP.update({"logo": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.logo <text>`"
+CMD_HELP.update({"logo": "Cmd: `.logo <text>`"
                  "\n↳ : Hasilkan logo dari Teks."})
