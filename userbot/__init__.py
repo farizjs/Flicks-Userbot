@@ -573,8 +573,8 @@ with bot:
                                 "https://github.com/KennedyProject/KEN-UBOT"),
                             custom.Button.url(
                                 "ᴄʜᴀɴɴᴇʟ​​",
-                                "t.me/KennedyProject"),
-                            custom.Button.url(
+                                "t.me/KennedyProject")],
+                           [custom.Button.url(
                                 "ᴅᴇᴠ​",
                                 "t.me/xgothboi")]],
                     link_preview=False,
