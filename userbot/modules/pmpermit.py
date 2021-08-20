@@ -31,9 +31,12 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    f"__Dimohon Untuk Tidak Melakukan Spam Kepada {DEFAULTUSER} Karena Jika Anda Melakukan Spam Anda Akan Saya Blokir.  Jadi Tunggu Sampai {DEFAULTUSER} Kembali Dan Membalas Pesan Anda.  Terima Kasih!__\n"
+    "__Dimohon Untuk Tidak Melakukan Spam__ \n"
+    f"__Karena {DEFAULTUSER} Sedang Sibuk__ \n"
+    "__Jika Anda Melakukan Spamming, Anda Akan Terblokir Otomatis__\n"
     f" **Owner :** {DEFAULTUSER} \n"
-    f" **Support KEN-UBOT** ⚡ ")
+    " **Support KEN-UBOT** ⚡ ")
+
 # =================================================================
 
 
