@@ -35,58 +35,27 @@ async def typewriter(typew):
 # Menjawab Salam
 
 
-@register(outgoing=True, pattern="^.kenalin(?: |$)(.*)")
+@register(outgoing=True, pattern="^.alay(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("☑️ `Apis Gila`")
-    sleep(2)
-    await typew.edit("✅ `Apis Gila`")
+    await typew.edit("**Halo kak**")
     sleep(1)
-    await typew.edit("☑️ `Skyzo Stress`")
+    await typew.edit("**Gua liat-liat lu main bot mulu**")
     sleep(2)
-    await typew.edit("✅ `Skyzo Stress`")
-    sleep(1)
-    await typew.edit("☑️ `Yunus Gajelas`")
+    await typew.edit("**Alay banget sumpah**")
     sleep(2)
-    await typew.edit("✅ `Yunus Gajelas`")
-    sleep(1)
-    await typew.edit("☑️ `Tegar Wibu Sangean`")
+    await typew.edit("**Baru pasang ucelbot ya?**")
     sleep(2)
-    await typew.edit("✅ `Tegar Wibu Sangean`")
-    sleep(1)
-    await typew.edit("☑️ `Can Autis`")
+    await typew.edit("**Pantesan norak yahaha**")
     sleep(2)
-    await typew.edit("✅ `Can Autis`")
-    sleep(1)
-    await typew.edit("`⚡ Cuma Ken Yang Paling Waras, Baik Hati, Dan Tidak Sombong :v`")
-# King Userbot Support
-
-
-@register(outgoing=True, pattern="^.la(?: |$)(.*)")
-async def typewriter(typew):
-    typew.pattern_match.group(1)
-    await typew.edit("☑️ `Piah Owner Sadis`")
-    sleep(1)
-    await typew.edit("✅ `Piah Owner Sadis`")
+    await typew.edit("**Kalo mau coba coba command di gc pribadi aja**")
     sleep(2)
-    await typew.edit("☑️ `Icah Gila`")
-    sleep(1)
-    await typew.edit("✅ `Icah Gila`")
+    await typew.edit("**Jangan di publik, jijik liatnya anjg:v**")
     sleep(2)
-    await typew.edit("☑️ `Kia Babi`")
-    sleep(1)
-    await typew.edit("✅ `Kia Babi`")
+    await typew.edit("**Intinya lo alay maen bot mulu**")
     sleep(2)
-    await typew.edit("☑️ `Yan Bapak Pekerja Keras`")
-    sleep(1)
-    await typew.edit("✅ `Yan Bapak Pekerja Keras`")
-    sleep(2)
-    await typew.edit("☑️ `Bra Gaje`")
-    sleep(1)
-    await typew.edit("✅ `Bra Gaje`")
-    sleep(2)
-    await typew.edit("✨ `Cuma Ken Yang Paling Sopan, Baik Hati, Dan Tidak Sombong :v`")
-# Luar Angkasa
+    await typew.edit("**Lawriiiiiiieeeee:v")
+# Alay maen bot mulu ngentot!
 
 
 @register(outgoing=True, pattern="^.istigfar(?: |$)(.*)")
@@ -116,12 +85,10 @@ CMD_HELP.update(
         "gabut": "**Modules** - `Gabut`\
         \n\n Cmd : `.l`\
         \nUsage : Untuk Menjawab Salam\
-        \n\n Cmd : `.perkenalan`\
-        \nUsage : Memperkenalkan Diri\
-        \n\n Cmd : `.la`\
-        \nUsage : Luar Angkasa\
         \n\n Cmd : `.g`\
         \nUsage : Member Goblok\
+        \n\n Cmd : `.alay`\
+        \nUsage : Ngatain yang main bot mulu\
         \n\n Cmd : `.kenalin`\
         \nUsage : Awokwok\
         \n\n Cmd : `.p`\
