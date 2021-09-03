@@ -23,6 +23,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 @register(outgoing=True, pattern="^.logo(?: |$)(.*)")
 async def logo_gen(event):
+    kontol = await event.client.get_me()
     xx = await event.edit("`Membuat logo...`")
     name = event.pattern_match.group(1)
     if not name:
@@ -91,7 +92,7 @@ async def logo_gen(event):
         await event.client.send_file(
             event.chat_id,
             file=flnme,
-            caption=f"Logo by {DEFAULTUSER}",
+            caption=f"Logo by [{ALIVE_NAME}](tg://user?id={kontol.id})",
             force_document=True,
         )
         os.remove(flnme)
