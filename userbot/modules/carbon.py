@@ -8,7 +8,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from urllib.parse import quote_plus
 from asyncio import sleep
-from userbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
+from userbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN, ALIVE_NAME
 from userbot.events import register
 
 
@@ -79,8 +79,7 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Made By [Kennedy](https://t.me/xgothboi),\
-        \na project by [Grup Spam](https://t.me/zeusspam)",
+        caption=f"Made By {ALIVE_NAME}",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -145,8 +144,7 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Made By [Kennedy](https://t.me/xgothboi),\
-        \na project by [Grup Spam](https://t.me/zeusspam)",
+        caption=f"Made By {ALIVE_NAME}",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -211,8 +209,7 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Made By [Kennedy](https://t.me/xgothboi),\
-        \na project by [Grup Spam](https://t.me/zeusspam)",
+        caption=f"Made By {ALIVE_NAME}",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -277,8 +274,7 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Made By [Kennedy](https://t.me/xgothboi),\
-        \na project by [Grup Spam](https://t.me/zeusspam)",
+        caption=f"Made By {ALIVE_NAME}",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -343,8 +339,7 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Made By [Kennedy](https://t.me/xgothboi),\
-        \na project by [Grup Spam](https://t.me/zeusspam)",
+        caption=f"Made By {ALIVE_NAME}",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
