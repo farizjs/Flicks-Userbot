@@ -108,7 +108,23 @@ async def log(log_text):
 @register(outgoing=True, pattern="^.kickme$")
 async def kickme(leave):
     """ Basically it's .kickme command """
-    await leave.edit(f"`☄️ {ALIVE_NAME} Telah Meninggalkan Group....`")
+    await leave.edit(f"`☄️ {ALIVE_NAME} Telah Meninggalkan Grup...`")
+    await leave.client.kick_participant(leave.chat_id, 'me')
+
+
+@register(outgoing=True, pattern="^.leave$")
+async def kickme(leave):
+    """ Basically it's .leave command """
+    await leave.edit(f"`☄️ {ALIVE_NAME} Telah Keluar Grup...`")
+    await leave.client.kick_participant(leave.chat_id, 'me')
+
+
+@register(outgoing=True, pattern="^.keluar$")
+async def kickme(leave):
+    """ Basically it's .keluar command """
+    await leave.edit("`Keluar ajalah anjg , GC AMPAS GAK GUNA INI ...`")
+    sleep(7)
+    await leave.edit(f"`☄️ {ALIVE_NAME} Telah Keluar Grup...`")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
