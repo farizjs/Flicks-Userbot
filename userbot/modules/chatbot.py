@@ -1,4 +1,4 @@
-# 🍀 © @tofik_dn
+# 🍀 © @EntarSurenn
 # ⚠️ Do not remove credits
 
 import requests
@@ -70,7 +70,7 @@ CMD_HELP.update(
     {
         "chatbot": "**Plugin : **`chatbot`\
       \n\n  •  **Syntax :** `.chatbot` <on/off>\
-      \n  •  **Function :** Ya chatbot\
+      \n  •  **Function :** Y chatbot\
       "
     }
 )
