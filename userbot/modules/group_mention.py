@@ -2,6 +2,7 @@
 # Recode by @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
+# Fork by @EntarSurenn
 
 import asyncio
 
@@ -19,7 +20,7 @@ async def log_tagged_messages(event):
         if not event.is_private and not (await event.get_sender()).bot:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"<b>📨 #TAGS #MENERUSKAN</b> \n<b> • Dari : </b>{sender.first_name}\
+                f"<b>📮 #TAGS #MENERUSKAN</b> \n<b> • Dari : </b>{sender.first_name}\
 			\n<b> • Grup : </b><code>{hmm.title}</code>\
                         \n<b> • 👀 </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'>Lihat Pesan</a>",
                 parse_mode="html",
@@ -34,7 +35,7 @@ async def log_tagged_messages(event):
                 if not (await event.get_chat()).bot:
                     await event.client.send_message(
                         BOTLOG_CHATID,
-                        f"<b>📨 #TAGS</b> \n<b> • Dari : </b>{sender.first_name}\
+                        f"<b>📮 #TAGS</b> \n<b> • Dari : </b>{sender.first_name}\
                                 \n<b> • User ID : </b><code>{sender.id}</code>",
                         parse_mode="html",
                         link_preview=True,
