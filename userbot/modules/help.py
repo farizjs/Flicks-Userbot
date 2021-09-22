@@ -25,8 +25,8 @@ async def help(event):
         if args in CMD_HELP:
             await event.edit(str(CMD_HELP[args]))
         else:
-            await event.edit(f"`{args}` **Bukan Command Yang Valid**")
-            await asyncio.sleep(200)
+            await event.edit(f"`{args}` **Tidak tersedia, yang bener lah pukie**")
+            await asyncio.sleep(6)
             await event.delete()
     else:
         string = ""
@@ -36,7 +36,7 @@ async def help(event):
         await event.edit("**⚡ 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 ⚡**\n\n"
                          f"**❒ Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n**❒ Mᴏᴅᴜʟᴇꜱ : {len(modules)}**\n\n"
                          "**❒ Mᴀɪɴ Mᴇɴᴜ :**\n"
-                         f"◉| {string}◉\n\n")
-        await event.reply(f"\n**Contoh** : Ketik <`.help salam`> Untuk Informasi Pengunaan.\nAtau Bisa Juga Ketik `.helpme` Untuk Main Menu Yang Lain-Nya.")
-        await asyncio.sleep(1000)
+                         f"◉| {string}◉\n\n"
+                         f"\n**Contoh** : Ketik <`.help nekos`> Untuk Informasi Pengunaan.\nAtau Bisa Juga Ketik `.helpme` Untuk Main Menu Yang Lain-Nya.")
+        await asyncio.sleep(360)
         await event.delete()
