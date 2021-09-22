@@ -161,3 +161,38 @@ def post_to_telegraph(title, html_format_content):
         text=html_format_content,
     )
     return post_page["url"]
+
+
+async def media_to_pic(event, reply):
+    mediatype = media_type(reply)
+    if mediatype not in ["Photo", "Round Video", "Gif", "Sticker", "Video"]:
+        await edit_delete(
+            event,
+            "**Saya tidak dapat mengekstrak gambar untuk memproses lebih lanjut ke media yang tepat**",
+        )
+        return None
+    media = await reply.download_media(file="./temp")
+    event = await edit_or_reply(event, f"`Transfiguration Time! Converting....`")
+    file = os.path.join("./temp/", "meme.png")
+    if mediatype == "Sticker":
+        if media.endswith(".tgs"):
+            await runcmd(
+                f"lottie_convert.py --frame 0 -if lottie -of png '{media}' '{file}'"
+            )
+        elif media.endswith(".webp"):
+            im = Image.open(media)
+            im.save(file)
+    elif mediatype in ["Round Video", "Video", "Gif"]:
+        extractMetadata(createParser(media))
+        await runcmd(f"rm -rf '{file}'")
+        await take_screen_shot(media, 0, file)
+        if not os.path.exists(file):
+            await edit_delete(
+                event, f"**Maaf. Saya tidak dapat mengekstrak gambar dari ini {mediatype}**"
+            )
+            return None
+    else:
+        im = Image.open(media)
+        im.save(file)
+    await runcmd(f"rm -rf '{media}'")
+    return [event, file, mediatype]
