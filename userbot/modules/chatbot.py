@@ -25,7 +25,7 @@ async def ngapain_rep(message):
         if data.status_code == 200:
             return (data.json())["msg"]
         else:
-            LOGS.info("ERROR: API chatbot sedang down, report ke @tedesupport.")
+            LOGS.info("ERROR: API chatbot sedang down, report ke @kenbotsupport.")
     except Exception:
         LOGS.info("ERROR: {str(e)}")
 
@@ -36,13 +36,13 @@ async def chat_bot_toggle(db, event):
     if status == "on":
         if chat_id not in db:
             db.append(chat_id)
-            return await edit_or_reply(event, "ChatBot Diaktifkan!")
-        await edit_or_reply(event, "ChatBot Sudah Diaktifkan.")
+            return await edit_or_reply(event, "`ChatBot Diaktifkan!`")
+        await edit_or_reply(event, "`ChatBot Sudah Diaktifkan.`")
     elif status == "off":
         if chat_id in db:
             db.remove(chat_id)
-            return await edit_or_reply(event, "ChatBot Dinonaktifkan!")
-        await edit_or_reply(event, "ChatBot Sudah Dinonaktifkan.")
+            return await edit_or_reply(event, "`ChatBot Dinonaktifkan!`")
+        await edit_or_reply(event, "`ChatBot Sudah Dinonaktifkan.`")
     else:
         await edit_or_reply(event, "**Usage:**\n.chatbot <on/off>")
 
