@@ -147,9 +147,9 @@ async def redis(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"**🏓 Pong!!** \n"
-                    f"⚡ **Speed !!** "
+                    f"**__Speed !!__** "
                     f"`%sms` \n"
-                    f"💡 **Uptime** - "
+                    f"**__Uptime__** - "
                     f"`{uptime}` \n" % (duration))
 
 
