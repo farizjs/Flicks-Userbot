@@ -188,7 +188,7 @@ ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 
 # Bot Name
-TERM_ALIAS = os.environ.get("TERM_ALIAS", "KEN-UBOT")
+TERM_ALIAS = os.environ.get("TERM_ALIAS", "Flicks-Userbot")
 
 # Bot Version
 BOT_VER = os.environ.get("BOT_VER", "5.0")
@@ -479,7 +479,7 @@ with bot:
                     f"**Hello** [{get_display_name(u)}](tg://user?id={u.id}) **Is Its Alive Bot**\n\n"
                     f"       令 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 令 \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱\n"
-                    f"      ⚡ I'ᴍ Aʟɪᴠᴇ​ ⚡ \n"
+                    f"        I'ᴍ Aʟɪᴠᴇ​ ✨ \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱ \n"
                     f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
@@ -496,10 +496,10 @@ with bot:
                                               [
                                                   custom.Button.url(
                                                       text="Rᴇᴘᴏ",
-                                                      url="https://github.com/KennedyProject/KEN-UBOT"),
+                                                      url="https://github.com/fjgaming212/Flicks-Userbot"),
                                                   custom.Button.url(
                                                       text="Lɪsᴇɴsɪ​",
-                                                      url="https://github.com/KennedyProject/KEN-UBOT/blob/KEN-UBOT/LICENSE"
+                                                      url="https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE"
                                                   )
                                               ]
                                           ]
@@ -524,7 +524,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             current_page_number = int(lockpage)
             buttons = paginate_help(current_page_number, plugins, "helpme")
-            text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** __𝐊𝐄𝐍-𝐔𝐁𝐎𝐓__\n** Vᴇʀsɪ :** `v5.0`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
+            text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** __𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭__\n** Vᴇʀsɪ :** `v5.0`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
             await event.edit(
                 text,
                 file=kenlogo,
@@ -550,25 +550,25 @@ with bot:
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan Dari 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 ",
+                    "Bantuan Dari 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ",
                     text="Daftar Plugins",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
                     " Alive\n Check Alive Stats! ",
-                    text=f"""__**The KEN-UBOT**__\n`Pong!!` `{ms}ms`\n**Master :** {DEFAULTUSER} """,
+                    text=f"""__**The Flicks-Userbot**__\n`Pong!!` `{ms}ms`\n**Master :** {DEFAULTUSER} """,
                     buttons=[
                         [
                             custom.Button.url(
                                 "ʀᴇᴘᴏ​",
-                                "https://github.com/KennedyProject/KEN-UBOT"),
+                                "https://github.com/fjgaming212/Flicks-Userbot"),
                             custom.Button.url(
                                 "ᴄʜᴀɴɴᴇʟ​​",
-                                "t.me/KennedyProject")],
+                                "t.me/SadRoomsInfo")],
                         [custom.Button.url(
                             "ᴅᴇᴠ​",
-                            "t.me/xgothboi")]],
+                            "t.me/FJ_GAMING")]],
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
