@@ -347,7 +347,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓** `Has Been Activated Master!`")
+    await bot.send_message(BOTLOG_CHATID, "**Flicks-Userbot** `Has Been Activated Master!`")
     return
 
 with bot:
@@ -604,9 +604,9 @@ with bot:
                     buttons=[
                         [
                             Button.url("Cʜᴀɴɴᴇʟ Uᴘᴅᴀᴛᴇ​",
-                                       "t.me/KennedyProject"),
+                                       "t.me/FlicksSupport"),
                             Button.url("Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ",
-                                       "t.me/kenbotsupport")],
+                                       "t.me/SadRoomsInfo")],
                         [Button.inline("Open Menu", data="open")],
                         [custom.Button.inline(
                             "Cʟᴏsᴇ", b"close")],
