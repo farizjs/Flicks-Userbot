@@ -169,7 +169,7 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
 # Untuk Perintah .ken
-KEN_TEKS_KUSTOM = os.environ.get("KEN_TEKS_KUSTOM", None)
+FLICKS_TEKS_KUSTOM = os.environ.get("FLICKS_TEKS_KUSTOM", None)
 
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
@@ -596,7 +596,7 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:  # @KenProject
+            if event.query.user_id == uid:  # @FlicksSupport
                 # https://t.me/TelethonChat/115200
                 await event.edit(
                     file=kenlogo,
