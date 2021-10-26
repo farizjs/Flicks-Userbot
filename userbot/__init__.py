@@ -101,9 +101,9 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/KennedyProject/KEN-UBOT")
+    "https://github.com/fjgaming212/Flicks-Userbot")
 UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "KEN-UBOT")
+    "UPSTREAM_REPO_BRANCH", "Flicks-Userbot")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -201,11 +201,11 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/fa26128e9d48d18263724.png"
+    "ALIVE_LOGO") or "https://telegra.ph/file/a9eca2929a057f72fc6dd.jpg"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/279f1de82747019cb0b62.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/a9eca2929a057f72fc6dd.jpg"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -445,11 +445,11 @@ with bot:
                     f"━━━━━━━━━━━━━━━━━━━━ \n"
                     f"📮 **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {c.id} \n"
                     f"━━━━━━━━━━━━━━━━━━━━ \n\n"
-                    f"__**Semoga betah ya Kawan**__ ✨\n",
+                    f"__**Semoga betah ya**__ ✨\n",
                     buttons=[
                         [
                             Button.url("ᴛᴜᴛᴏʀɪᴀʟ ᴜsᴇʀʙᴏᴛ​",
-                                       "https://t.me/KennedyProject")],
+                                       "https://t.me/FlicksSupport")],
                     ]
                 )
 
@@ -462,11 +462,11 @@ with bot:
                     buttons=[
                         [
                             Button.url("Cʜᴀɴɴᴇʟ Uᴘᴅᴀᴛᴇ​",
-                                       "t.me/KennedyProject"),
+                                       "t.me/SadRoomsInfo"),
                             Button.url("Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ",
-                                       "t.me/kenbotsupport")],
+                                       "t.me/FlicksSupport")],
                         [Button.url("Dᴇᴠᴇʟᴏᴘᴇʀ​",
-                                    "t.me/xgothboi")],
+                                    "t.me/FJ_GAMING")],
                     ]
                 )
 
@@ -477,7 +477,7 @@ with bot:
                 await event.message.get_sender()
                 text = (
                     f"**Hello** [{get_display_name(u)}](tg://user?id={u.id}) **Is Its Alive Bot**\n\n"
-                    f"       令 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 令 \n"
+                    f"       令 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 令 \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱\n"
                     f"      ⚡ I'ᴍ Aʟɪᴠᴇ​ ⚡ \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱ \n"
