@@ -267,14 +267,14 @@ async def amireallyalive(alive):
     output = (
         f"**𝐓𝐇𝐄 𝐊𝐄𝐍 - 𝐔𝐁𝐎𝐓**\n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
-        f"➣ 🤴 • `ᴏᴡɴᴇʀ    :`[Skyzo](t.me/xflskyzo) \n"
+        f"➣ 🤴 • `ᴏᴡɴᴇʀ    :`[Rizz](t.me/FJ_GAMING) \n"
         f"➣ 🖥️ • `ꜱʏꜱᴛᴇᴍ.   :`Ubuntu 20.10 \n"
         f"➣ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ  :`v.{version.__version__} \n"
         f"➣ 🐍 • `ᴘʏᴛʜᴏɴ.   :`v.{python_version()} \n"
         f"➣ 👾 • `ʙᴏᴛ      :`v.{BOT_VER} \n"
         f"➣ 📂 • `ᴍᴏᴅᴜʟᴇ   :`{len(modules)} \n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
-        f"🔧 : [REPO-FLICKS](https://github.com/fjgaming212/Flicks-Userbot)\n👥 : [FLICKS-TEAM](t.me/FlicksSupport)\n👤 : [OWNER](t.me/xflskyzo)\n"
+        f"🔧 : [REPO-FLICKS](https://github.com/fjgaming212/Flicks-Userbot)\n👥 : [FLICKS-TEAM](t.me/FlicksSupport)\n👤 : [OWNER](t.me/FJ_GAMING)\n"
     )
     if ALIVE_LOGO:
         try:
