@@ -168,7 +168,7 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 # Youtube API key
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
-# Untuk Perintah .ken
+# Untuk Perintah .falive
 FLICKS_TEKS_KUSTOM = os.environ.get("FLICKS_TEKS_KUSTOM", None)
 
 # Default .alive Name
