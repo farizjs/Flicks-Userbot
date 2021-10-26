@@ -11,7 +11,7 @@
   ],
   "repository": "https://github.com/fjgaming212/Kyy-Userbot",
   "telegram": "https://t.me/xflskyzo",
-  "success_url": "https://t.me/SadRoomsInfo",
+  "success_url": "https://t.me/FlicksSupport",
   "stack": "container",
   "env": {
     "API_KEY": {
