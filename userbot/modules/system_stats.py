@@ -223,7 +223,7 @@ async def pipcheck(pip):
         await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
 
 
-@register(outgoing=True, pattern=r"^\.(?:kalive)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:falive)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -260,7 +260,7 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:zalive)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:flickson)\s?(.)?")
 async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -369,7 +369,7 @@ CMD_HELP.update({
 })
 CMD_HELP.update({
     "alive":
-    "Cmd: `.alive` or `.zalive` or `.on` or `.kalive`"
+    "Cmd: `.alive` or `.flickson` or `.on` or `.falive`"
     "\n↳ : To see whether your bot is working or not."
     "\n\nCmd: `.aliveu` <text>"
     "\n↳ : Changes the 'user' in alive to the text you want."
