@@ -165,7 +165,7 @@ async def bot_ver(event):
 
         await event.edit(
             "**⚜-**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 Versi:** \n "
-            f"heads/KEN-UBOT-0-x634i7u1"
+            f"heads/Flicks-Userbot-0-x634i7u1"
             "\n**⚜-**Revisi:**\n "
             f"{revout}"
         )
@@ -228,7 +228,7 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"\n__**{KEN_TEKS_KUSTOM}**__\n"
+        f"\n__**{FLICKS_TEKS_KUSTOM}**__\n"
         f"**╭───────────────────**\n"
         f"**├[• 🌚 Owner** \n"
         f"├[•   : `{DEFAULTUSER}` \n"
@@ -267,14 +267,14 @@ async def amireallyalive(alive):
     output = (
         f"**𝐓𝐇𝐄 𝐊𝐄𝐍 - 𝐔𝐁𝐎𝐓**\n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
-        f"➣ 🤴 • `ᴏᴡɴᴇʀ    :`[KEN](t.me/xgothboi) \n"
+        f"➣ 🤴 • `ᴏᴡɴᴇʀ    :`[Skyzo](t.me/xflskyzo) \n"
         f"➣ 🖥️ • `ꜱʏꜱᴛᴇᴍ.   :`Ubuntu 20.10 \n"
         f"➣ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ  :`v.{version.__version__} \n"
         f"➣ 🐍 • `ᴘʏᴛʜᴏɴ.   :`v.{python_version()} \n"
         f"➣ 👾 • `ʙᴏᴛ      :`v.{BOT_VER} \n"
         f"➣ 📂 • `ᴍᴏᴅᴜʟᴇ   :`{len(modules)} \n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
-        f"🔧 : [REPO-KEN​](https://github.com/KennedyProject/KEN-UBOT)\n👥 : [KEN-TEAM](t.me/zeusspam)\n👤 : [OWNER](t.me/xgothboi)\n"
+        f"🔧 : [REPO-FLICKS](https://github.com/fjgaming212/Flicks-Userbot)\n👥 : [FLICKS-TEAM](t.me/FlicksSupport)\n👤 : [OWNER](t.me/xflskyzo)\n"
     )
     if ALIVE_LOGO:
         try:
@@ -316,7 +316,7 @@ async def redis(alive):
         f"┣  `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
         f"┣  `Bot Ver  :` {BOT_VER} \n"
         f"┣  `Modules  :` {len(modules)} Modules \n"
-        f"┣  `Github   :` [Userbot](https://github.com/KEN-UBOT) \n"
+        f"┣  `Github   :` [Userbot](https://github.com/Flicks-Userbot) \n"
         f"┗━━━━━━━━━━━━━━━━━━━")
     if ALIVE_LOGO:
         try:
