@@ -112,7 +112,7 @@ async def repo_is_here(wannasee):
     await wannasee.edit(
         "**Hey**, I am using **Flicks-Userbot** \n"
         "➣ **Repo :** [Github](https://github.com/fjgaming212/Flicks-Userbot)\n"
-        "➣ **Owner :** [Skyzo](t.me/xflskyzo)"
+        "➣ **Owner :** [Rizz](t.me/FJ_GAMING)"
     )
 
 
