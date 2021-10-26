@@ -1,7 +1,7 @@
 {
-  "name": "KEN-UBOT",
-  "description": "[KEN-UBOT] USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERMAIN DI TELEGRAM.",
-  "logo": "https://telegra.ph/file/9cf8933ad10f520fc72e2.jpg",
+  "name": "Flicks-Userbot",
+  "description": "[Ficks-Userbot] USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERMAIN DI TELEGRAM.",
+  "logo": "https://telegra.ph/file/a9eca2929a057f72fc6dd.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -9,9 +9,9 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/KennedyProject/KEN-UBOT",
-  "telegram": "https://t.me/xgothboi",
-  "success_url": "https://t.me/KennedyProject",
+  "repository": "https://github.com/fjgaming212/Kyy-Userbot",
+  "telegram": "https://t.me/xflskyzo",
+  "success_url": "https://t.me/SadRoomsInfo",
   "stack": "container",
   "env": {
     "API_KEY": {
