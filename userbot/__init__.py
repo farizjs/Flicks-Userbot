@@ -604,9 +604,9 @@ with bot:
                     buttons=[
                         [
                             Button.url("Cʜᴀɴɴᴇʟ Uᴘᴅᴀᴛᴇ​",
-                                       "t.me/FlicksSupport"),
+                                       "t.me/SadRoomsInfo"),
                             Button.url("Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ",
-                                       "t.me/SadRoomsInfo")],
+                                       "t.me/FlicksSupport")],
                         [Button.inline("Open Menu", data="open")],
                         [custom.Button.inline(
                             "Cʟᴏsᴇ", b"close")],
