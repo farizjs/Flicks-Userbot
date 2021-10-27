@@ -59,7 +59,7 @@ async def typewriter(typew):
     await typew.edit("✅ **Skyzo Ganteng**")
     sleep(1)
     await typew.edit(
-        "🔰 **Cuma Skyzu Yang Paling Waras, Baik Hati, Dan Tidak Sombong :v**"
+        "🔰 **Cuma Skyzo Yang Paling Waras, Baik Hati, Dan Tidak Sombong :v**"
     )
 
 
