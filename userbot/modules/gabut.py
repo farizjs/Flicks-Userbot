@@ -66,7 +66,6 @@ async def typewriter(typew):
 # King Userbot Support
 
 
-
 @register(outgoing=True, pattern=r"^\.virtual(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -148,7 +147,7 @@ CMD_HELP.update(
         \n\n Cmd : `.p`\
         \nUsage : Untuk Memberi Salam\
         \n\n Cmd : `.virtual`\
-        \nUsage : Buat Ngasi Tau Orang" Virtual Awok\
-    "
+        \nUsage : Buat Ngasi Tau Orang" Virtual Awok
+        "
     }
 )
