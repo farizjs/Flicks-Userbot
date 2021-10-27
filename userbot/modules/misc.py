@@ -110,10 +110,10 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        "**Hey**, I am using **Flicks-Userbot** \n"
+        "**Hey**, I Am Using **Flicks-Userbot** \n"
         "➣ **Repo :** [Github](https://github.com/fjgaming212/Flicks-Userbot)\n"
-        "➣ **Owner :** [Rizz](t.me/FJ_GAMING)"
-        "➣ **Contributor :** [Skyzo](t.me/xflskyzo) [Kyy](t.me/IDnyaKosong) [Tonic](t.me/bukan_guudlooking)"
+        "➣ **Owner :** [Rizz](t.me/FJ_GAMING)\n"
+        "➣ **Team :** [Skyzo](t.me/xflskyzo) [Kyy](t.me/IDnyaKosong)"
     )
 
 
