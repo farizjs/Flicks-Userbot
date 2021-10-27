@@ -543,7 +543,7 @@ with bot:
                 result = builder.photo(
                     file=kenlogo,
                     link_preview=False,
-                    text=f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** __𝐊𝐄𝐍-𝐔𝐁𝐎𝐓__\n** Vᴇʀsɪ :** `v5.0`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n".format(
+                    text=f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭\n** Vᴇʀsɪ :** `v5.0`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
