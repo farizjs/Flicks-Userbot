@@ -147,7 +147,7 @@ CMD_HELP.update(
         \n\n Cmd : `.p`\
         \nUsage : Untuk Memberi Salam\
         \n\n Cmd : `.virtual`\
-        \nUsage : Buat Ngasi Tau Orang Virtual Awok
+nUsage: Buat Ngasi Tau Orang Virtual Awok
         "
     }
 )
