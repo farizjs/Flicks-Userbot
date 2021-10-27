@@ -12,22 +12,22 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 async def usit(e):
     await e.edit(
         f"**Halo {DEFAULTUSER} Jika Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `.help` Atau Bisa Minta Bantuan Ke:\n"
-        "\n[Telegram](t.me/xgothboi)"
-        "\n[Repo](https://github.com/KennedyProject/KEN-UBOT)"
-        "\n[Instagram](instagram.com/acxken._)")
+        "\n[Owner](t.me/FJ_GAMING)"
+        "\n[Repo](https://github.com/fjgaming212/Flicks-Userbot)"
+        "\n[Contributor](t.me/xflskyzo) (t.me/IDnyaKosong) (t.me/bukan_guudlooking)")
 
 
 @register(outgoing=True, pattern="^.vars$")
 async def var(m):
     await m.edit(
         f"**Disini Daftar Vars Dari {DEFAULTUSER}:**\n"
-        "\n[DAFTAR VARS](https://raw.githubusercontent.com/KennedyProject/KEN-UBOT/KEN-UBOT/varshelper.txt)")
+        "\n[DAFTAR VARS](https://raw.githubusercontent.com/fjgaming212/Flicks-Userbot/Flicks-Userbot/varshelper.txt)")
 
 
 CMD_HELP.update({
     "helper":
     "`.ghelp`\
-\nUsage: Bantuan Untuk KEN-UBOT.\
+\nUsage: Bantuan Untuk Flicks-Userbot.\
 \n`.vars`\
 \nUsage: Melihat Daftar Vars."
 })
