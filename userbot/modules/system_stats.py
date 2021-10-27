@@ -300,12 +300,18 @@ async def amireallyalive(alive):
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("**𝐋𝐨𝐚𝐝𝐢𝐧𝐠..**")
+    await alive.edit("**__𝐋𝐨𝐚𝐝𝐢𝐧𝐠.__**")
+    await alive.edit("**__𝐋𝐨𝐚𝐝𝐢𝐧𝐠..__**")
     await alive.edit("**__𝐋𝐨𝐚𝐝𝐢𝐧𝐠...__**")
     await alive.edit("**__𝐋𝐨𝐚𝐝𝐢𝐧𝐠.__**")
     await alive.edit("**__𝐋𝐨𝐚𝐝𝐢𝐧𝐠..__**")
+    await alive.edit("**__𝐋𝐨𝐚𝐝𝐢𝐧𝐠...__**")
+    await alive.edit("**__𝐋𝐨𝐚𝐝𝐢𝐧𝐠.__**")
+    await alive.edit("**__𝐋𝐨𝐚𝐝𝐢𝐧𝐠..__**")
+    await alive.edit("**__𝐋𝐨𝐚𝐝𝐢𝐧𝐠...__**")
     await alive.edit("**__⚡𝐔𝐬𝐞𝐫𝐛𝐨𝐭⚡__**")
     await alive.edit("🔥")
+    await alive.edit("☠️")
     await asyncio.sleep(3)
     output = (
         f"┏━━━━━━━━━━━━━━━━━━━ \n"
