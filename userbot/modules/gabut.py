@@ -35,6 +35,38 @@ async def typewriter(typew):
 # Menjawab Salam
 
 
+@register(outgoing=True, pattern="^.kenalin(?: |$)(.*)")
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("☑️ **Zero Wibu**")
+    sleep(2)
+    await typew.edit("✅ **Zero Wibu**")
+    sleep(1)
+    await typew.edit("☑️ **Tonic Ngentod**")
+    sleep(2)
+    await typew.edit("✅ **Tonic Ngentod**")
+    sleep(1)
+    await typew.edit("☑️ **Pariz Palkon**")
+    sleep(2)
+    await typew.edit("✅ **Pariz Palkon**")
+    sleep(1)
+    await typew.edit("☑️ **Kyy Buaya**")
+    sleep(2)
+    await typew.edit("✅ **Kyy Buaya**")
+    sleep(1)
+    await typew.edit("☑️ **Skyzo Ganteng**")
+    sleep(2)
+    await typew.edit("✅ **Skyzo Ganteng**")
+    sleep(1)
+    await typew.edit(
+        "🔰 **Cuma Skyzu Yang Paling Waras, Baik Hati, Dan Tidak Sombong :v**"
+    )
+
+
+# King Userbot Support
+
+
+
 @register(outgoing=True, pattern=r"^\.virtual(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -115,6 +147,8 @@ CMD_HELP.update(
         \nUsage : Awokwok\
         \n\n Cmd : `.p`\
         \nUsage : Untuk Memberi Salam\
+        \n\n Cmd : `.virtual`\
+        \nUsage : Buat Ngasi Tau Orang" Virtual Awok\
     "
     }
 )
