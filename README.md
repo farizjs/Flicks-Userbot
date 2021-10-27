@@ -29,6 +29,9 @@ Repo Yang Dibuat Oleh [Rizzz](https://t.me/FJ_GAMING) Dari beberapa Repo Yang Ad
 
 
 ⚡ **THANK YOU VERY MUCH FOR**
+*   [Fariz](https://github.com/fjgaming212/Flicks-Userbot)    Flicks - Userbot
+*   [Skyzo](https://github.com/ridho17-ind/XBot-Music)     Flicks Music
+*   [Ikyy](http://github.com/muhammadrizky16/Kyy-Userbot)    Kyy - Userbot
 *   [Kennedy](https://github.com/KennedyProject/KEN-UBOT)    Ken - Userbot
 *   [Apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
 *   [VCKYOU](https://github.com/Vckyou/Geez-Project)    Geez - Project 
