@@ -27,10 +27,10 @@ async def gcast(event):
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if not xx:
-        return await event.edit("`Berikan beberapa teks untuk Siaran Global`")
+        return await event.edit("**Berikan beberapa teks untuk Siaran Global**")
     tt = event.text
     msg = tt[7:]
-    kk = await event.edit("`Sedang Mengirim pesan secara global...`")
+    kk = await event.edit("**Sedang Mengirim pesan secara global...**")
     er = 0
     done = 0
     async for x in bot.iter_dialogs():
