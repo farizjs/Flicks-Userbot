@@ -434,6 +434,33 @@ async def typewriter(typew):
     await typew.edit("`Tapi Bo'ong Yahahaha Wahyoe`")
 # Create by myself @localheart
 
+
+@register(outgoing=True, pattern='^.war(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(1)
+    await typew.edit("**Woi Kontol**")
+    sleep(1)
+    await typew.edit("**Ga Senang Kah Lu??**")
+    sleep(1)
+    await typew.edit("**Sini War Kontol**")
+    sleep(1)
+    await typew.edit("**Bacod Doang Gede Ngentod**")
+    sleep(1)
+    await typew.edit("**Di Sosmed Jagoan Di Realife Babu Tongkrongan**")
+    sleep(1)
+    await typew.edit("**Ahahaha Jijik Gua Kontol**")
+    sleep(1)
+    await typew.edit("**HAHAHAHAHAHAHA**")
+    sleep(1)
+    await typew.edit("**Muka Kek Kontol Belagu Banget Sih Ngentod**")
+    sleep(1)
+    await typew.edit("**Sorry Cok Wkwkwk**")
+    sleep(1)
+    await typew.edit("**Tapi Bo'ong**")
+# Create by myself @localheart
+
+
 CMD_HELP.update({
     "animasi3":
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.gabut` atau `.dino`\
@@ -444,6 +471,6 @@ CMD_HELP.update({
     \n↳ : Mengirim cinta tai anjiing ke seseorang.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sayang`\
     \n↳ : Berubah menjadi kadal.\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sangean`\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sangean` atau `.war`\
     \n↳ : Kasih aja buat orang yang sangean."
 })
