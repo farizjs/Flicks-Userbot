@@ -35,6 +35,28 @@ async def typewriter(typew):
 # Menjawab Salam
 
 
+@register(outgoing=True, pattern=r"^\.virtual(?: |$)(.*)")
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("**OOOO**")
+    sleep(1.5)
+    await typew.edit("**INI YANG VIRTUAL**")
+    sleep(1.5)
+    await typew.edit("**YANG KATANYA SAYANG BANGET**")
+    sleep(1.5)
+    await typew.edit("**TAPI TETEP AJA DI TINGGAL**")
+    sleep(1.5)
+    await typew.edit("**NI INGET**")
+    sleep(1.5)
+    await typew.edit("**TANGANNYA AJA GA BISA DI PEGANG**")
+    sleep(1.5)
+    await typew.edit("**APALAGI OMONGANNYA**")
+    sleep(1.5)
+    await typew.edit("**BHAHAHAHA**")
+    sleep(1.5)
+    await typew.edit("**KASIAN MANA MASIH MUDA**")
+
+
 @register(outgoing=True, pattern="^.alay(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
