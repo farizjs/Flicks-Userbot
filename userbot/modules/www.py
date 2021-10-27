@@ -95,9 +95,9 @@ async def redis(pong):
     await pong.edit("UBO⚡T")
     await pong.edit("UBOT⚡")
     await pong.edit("UBO⚡T")
-    await pong.edit("UB⚡OT")
-    await pong.edit("U⚡BOT")
-    await pong.edit("⚡UBOT⚡")
+    await pong.edit("FARIZ")
+    await pong.edit("SKYZO")
+    await pong.edit("IKYY")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"**⚡{ALIVE_NAME} Bᴏᴛ⚡​**\n"
@@ -142,7 +142,7 @@ async def redis(pong):
     await pong.edit("࿘࿘࿘")
     await pong.edit("࿘࿘࿘࿘")
     await pong.edit("**Pong !!**")
-    await pong.edit("⚡")
+    await pong.edit("😎")
     await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
@@ -206,7 +206,7 @@ async def speedtst(spd):
                    f"`{result['ping']}` \n"
                    "✧ **ISP:** "
                    f"`{result['client']['isp']}` \n"
-                   "✧ **BOT:**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓")
+                   "✧ **BOT:**Flicks-Userbot")
 
 
 def speed_convert(size):
