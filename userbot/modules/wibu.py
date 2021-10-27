@@ -109,11 +109,104 @@ async def typewriter(typew):
     await typew.edit("**Mampus Kau Wibu**")
 
 
+@register(outgoing=True, pattern='^.jadiwibu(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("**Kekuatan Mengjadi Wibu Garis Keras**")
+    await typew.edit("**Kekuatan Menjadi Wibu Telah Aktif**")
+    sleep(3)
+    await typew.edit("**Rajin Sholat☑️**")
+    await typew.edit("**Rajin Sholat✅**")
+    sleep(2)
+    await typew.edit("**Tidak Bolos Sekolah☑️**")
+    await typew.edit("**Tidak Bolos Sekolah✅**")
+    sleep(2)
+    await typew.edit("**Gak Sangean☑️**")
+    await typew.edit("**Gak Sangean✅**")
+    sleep(2)
+    await typew.edit("**Harus Sangean☑️**")
+    await typew.edit("**Harus Sangean✅**")
+    sleep(2)
+    await typew.edit("**Tidak Alay☑️**")
+    await typew.edit("**Tidak Alay✅**")
+    sleep(2)
+    await typew.edit("**Suka Membantu☑️**")
+    await typew.edit("**Suka Membantu✅**")
+    sleep(2)
+    await typew.edit("**Selalu Berbagi Duit:v☑️**")
+    await typew.edit("**Selalu Berbagi Duit:v✅**")
+    sleep(2)
+    await typew.edit("**Sukses Menjadi Wibu**")
+    sleep(1)
+    await typew.edit("**Iya Wibu, Seperti Pariz**")
+
+
+@register(outgoing=True, pattern='^.adawibu(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("**WI WIII WIIII**")
+    await typew.edit("`🏃.....Wibu Anjir.......🏃`")
+    await typew.edit("`🏃....................🏃`")
+    await typew.edit("`🏃..................🏃`")
+    await typew.edit("`🏃.....`LARII`....🏃`")
+    await typew.edit("`🏃..............🏃`")
+    await typew.edit("`🏃.............🏃`")
+    await typew.edit("`🏃..Anjing...🏃`")
+    await typew.edit("`🏃.........🏃`")
+    await typew.edit("`🏃..Wiba..🏃`")
+    await typew.edit("`🏃...Wibu...🏃`")
+    await typew.edit("`🏃....Cringe..🏃`")
+    await typew.edit("`🏃....Tolol.....🏃`")
+    await typew.edit("`🏃............🏃`")
+    await typew.edit("`🏃..Tolong..🏃`")
+    await typew.edit("`🏃...........🏃`")
+    await typew.edit("`🏃............🏃`")
+    await typew.edit("`🏃.............🏃`")
+    await typew.edit("`🏃....Watashi...🏃`")
+    await typew.edit("`🏃.....Kejar.....🏃`")
+    await typew.edit("`🏃.....Sampai.....🏃`")
+    await typew.edit("`🏃.....Dapat.......🏃`")
+    await typew.edit("`🏃..................🏃`")
+    await typew.edit("`🏃......Anjir........🏃`")
+    await typew.edit("`🏃....................🏃`")
+    await typew.edit("`🏃.....................🏃`")
+    await typew.edit("`🏃..Huh-Huh-Huh.......🏃`")
+    await typew.edit("`🏃...................🏃`")
+    await typew.edit("`🏃..................🏃`")
+    await typew.edit("`🏃.....Anak........🏃`")
+    await typew.edit("`🏃................🏃`")
+    await typew.edit("`🏃....Ngentot....🏃`")
+    await typew.edit("`🏃..............🏃`")
+    await typew.edit("`🏃.............🏃`")
+    await typew.edit("`🏃..Bodoamat..🏃`")
+    await typew.edit("`🏃...........🏃`")
+    await typew.edit("`🏃..........🏃`")
+    await typew.edit("`🏃.........🏃`")
+    await typew.edit("__KOK MAKIN DEKET SI.__")
+    sleep(1)
+    await typew.edit("`🏃.......🏃`")
+    await typew.edit("`🏃...Y..🏃`")
+    await typew.edit("`🏃.....🏃`")
+    await typew.edit("`🏃....🏃`")
+    await typew.edit("**Untung Ngga Kena Njir**")
+    sleep(1)
+    await typew.edit("__Cape Juga Asu Cringe Gitu__")
+    sleep(2)
+    await typew.edit("**Kasian Si Wibu Wokwokwok**")
+
+
+
+
+
 CMD_HELP.update(
     {
         "wibu": "**Modules** - `wibu`\
         \n\n Cmd : `.wibbu`\
         \nUsage : ngatain wibu\
+        \n\n Cmd : `.jadiwibu`\
+        \nUsage : untuk jadi wibu\
+        \n\n Cmd : `.adawibu`\
+        \nUsage : lari ada wibu\
         \n\n Cmd : `.wibu2`\
         \nUsage : ngatain wibu 2\
     "
