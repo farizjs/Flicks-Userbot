@@ -14,7 +14,7 @@ async def usit(e):
         f"**Halo {DEFAULTUSER} Jika Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `.help` Atau Bisa Minta Bantuan Ke:\n"
         "\n[Owner](t.me/FJ_GAMING)"
         "\n[Repo](https://github.com/fjgaming212/Flicks-Userbot)"
-        "\n[Contributor](t.me/xflskyzo) (t.me/IDnyaKosong) (t.me/bukan_guudlooking)")
+        "\nTeam [Skyzo](t.me/xflskyzo) [Kyy](t.me/IDnyaKosong) [Tonic](t.me/bukan_guudlooking)")
 
 
 @register(outgoing=True, pattern="^.vars$")
