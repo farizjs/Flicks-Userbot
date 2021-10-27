@@ -25,6 +25,10 @@ Repo Yang Dibuat Oleh [Rizzz](https://t.me/FJ_GAMING) Dari beberapa Repo Yang Ad
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/fjgaming212/Flicks-Userbot/tree/Flicks-Userbot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-purple?style=flat&logo=heroku" width="250" height="38.60" /></a></p>
 
 
+### Support & Updates 
+<a href="https://t.me/FlicksSupport"><img src="https://img.shields.io/badge/Join-Group%20Support-red.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://t.me/SadRoomsInfo"><img src="https://img.shields.io/badge/Join-Updates%20Channel-white.svg?style=for-the-badge&logo=Telegram"></a>
+
+
   <b>© Credits</b></summary>
 
 
