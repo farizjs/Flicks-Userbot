@@ -458,7 +458,7 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Kennedy Project**\nKalo mau tau lebih lanjut silahkan Join Ke \n**Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ** Dibawah Ini.\n",
+                    f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Flicks Project**\nKalo mau tau lebih lanjut silahkan Join Ke \n**Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ** Dibawah Ini.\n",
                     buttons=[
                         [
                             Button.url("Cʜᴀɴɴᴇʟ Uᴘᴅᴀᴛᴇ​",
