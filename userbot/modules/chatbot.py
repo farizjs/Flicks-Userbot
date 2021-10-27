@@ -26,7 +26,7 @@ async def ngapain_rep(message):
             return (data.json())["msg"]
         else:
             LOGS.info(
-                "ERROR: API chatbot sedang down, report ke @FlicksSupport Atau Ke @Mengvirtual_GC.")
+                "ERROR: API chatbot sedang down, report ke @FlicksSupport .")
     except Exception:
         LOGS.info("ERROR: {str(e)}")
 
