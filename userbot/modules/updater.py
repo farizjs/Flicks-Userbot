@@ -63,11 +63,11 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy KEN-UBOT dyno.`'
+                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy Flicks-Userbot dyno.`'
             )
             return repo.__del__()
         await event.edit('`[HEROKU]:'
-                         '\nSedang MengUpdate 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓, Mohon Menunggu 5-7 Menit`'
+                         '\nSedang MengUpdate Flicks-Userbot, Mohon Menunggu 5-7 Menit`'
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -91,14 +91,14 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("`KEN-UBOT Berhasil Di Deploy!\n" "Restarting, Mohon Tunggu Sebentar.....`")
+            await event.edit("`Flicks-Userbot Berhasil Di Deploy!\n" "Restarting, Mohon Tunggu Sebentar.....`")
             await asyncio.sleep(15)
             await event.delete()
 
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID, "#BOT \n"
-                "`KEN-UBOT Berhasil Di Update`")
+                "`Flicks-Userbot Berhasil Di Update`")
 
     else:
         await event.edit('`[HEROKU]:'
@@ -115,9 +115,9 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit('**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓** `Berhasil Di Update!`')
+    await event.edit('**Flicks-Userbot** `Berhasil Di Update!`')
     await asyncio.sleep(1)
-    await event.edit('**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓** `Di Restart....`')
+    await event.edit('**Flicks-Userbot** `Di Restart....`')
     await asyncio.sleep(1)
     await event.edit('`Mohon Menunggu Beberapa Detik.`')
     await asyncio.sleep(10)
@@ -126,7 +126,7 @@ async def update(event, repo, ups_rem, ac_br):
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID, "#BOT \n"
-            "**𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 Telah Di Perbarui.**")
+            "**Flicks-Userbot Telah Di Perbarui.**")
         await asyncio.sleep(100)
         await event.delete()
 
@@ -188,13 +188,13 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n☄️ 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 Sudah Versi Terbaru\n')
+            f'\n☄️ Flicks-Userbot Sudah Versi Terbaru\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'**Pembaruan Untuk 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓 :\n\n➣ Pembaruan Data :**\n`{changelog}`'
+        changelog_str = f'**Pembaruan Untuk Flicks-Userbot :\n\n➣ Pembaruan Data :**\n`{changelog}`'
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
             file = open("output.txt", "w+")
@@ -214,12 +214,12 @@ async def upstream(event):
         await event.edit(
             '`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`')
     else:
-        await event.edit('` Proses Update 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓, Loading....1%`')
-        await event.edit('` Proses Update 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓, Loading....20%`')
-        await event.edit('` Proses Update 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓, Loading....35%`')
-        await event.edit('` Proses Update 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓, Loading....77%`')
-        await event.edit('` Proses Update 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓, Updating...90%`')
-        await event.edit('` Proses Update 𝐊𝐄𝐍-𝐔𝐁𝐎𝐓, Mohon Tunggu Sebentar....100%`')
+        await event.edit('` Proses Update Flicks-Userbot, Loading....1%`')
+        await event.edit('` Proses Update Flicks-Userbot, Loading....20%`')
+        await event.edit('` Proses Update Flicks-Userbot, Loading....35%`')
+        await event.edit('` Proses Update Flicks-Userbot, Loading....77%`')
+        await event.edit('` Proses Update Flicks-Userbot, Updating...90%`')
+        await event.edit('` Proses Update Flicks-Userbot, Mohon Tunggu Sebentar....100%`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
@@ -236,7 +236,7 @@ CMD_HELP.update({
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.update`"
     "\n• : Untuk Melihat Pembaruan Terbaru KEN-UBOT."
     "\n\nCommand: `.update now`"
-    "\n• : Memperbarui KEN-UBOT."
+    "\n• : Memperbarui Flicks-Userbot."
     "\n\nCommand: `.update deploy`"
-    "\n• : Memperbarui KEN-UBOT Dengan Cara Men-Deploy Ulang."
+    "\n• : Memperbarui Flicks-Userbot Dengan Cara Men-Deploy Ulang."
 })
