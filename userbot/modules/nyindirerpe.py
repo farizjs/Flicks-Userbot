@@ -1,13 +1,12 @@
 # import by skyzo
 
 from time import sleep
-from userbot import CMD_HELP, bot
+
+from userbot import CMD_HELP
 from userbot.events import register
-from telethon import events
-import asyncio
 
 
-@register(outgoing=True, pattern='^.adaerpe(?: |$)(.*)')
+@register(outgoing=True, pattern="^.adaerpe(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**ER ERRR ERRPE ASUU WOKWOK KANG PP ORANG**")
