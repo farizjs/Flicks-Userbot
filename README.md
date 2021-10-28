@@ -40,4 +40,5 @@ Repo Yang Dibuat Oleh [Rizzz](https://t.me/FJ_GAMING) Dari beberapa Repo Yang Ad
 *   [Apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
 *   [VCKYOU](https://github.com/Vckyou/Geez-Project)    Geez - Project 
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
+*   [Skyzu](https;//github.com/Skyzu/skyzu-userbot)     skyzu-userbot
 *   DAN TERIMAKASIH BANYAK KEPADA USERBOT INDONESIA LAINNYA <img src="./resources/extras/kennn.gif" width="10px">
