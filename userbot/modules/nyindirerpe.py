@@ -1,4 +1,4 @@
-#import by skyzo
+# import by skyzo
 
 from time import sleep
 from userbot import CMD_HELP, bot
