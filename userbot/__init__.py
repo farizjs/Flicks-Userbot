@@ -667,7 +667,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = f"Jangan Menggunakan Milik {DEFAULTUSER} Ngentot!."
+                reply_pop_up_alert = f"Jangan Menggunakan Milik {DEFAULTUSER} !."
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
