@@ -1,6 +1,0 @@
-# import userbot by skyzo
-
-from time import sleep
-
-from userbot import CMD_HELP
-from userbot.events import register
