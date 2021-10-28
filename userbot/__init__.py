@@ -587,7 +587,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"Jangan Menggunakan Milik {DEFAULTUSER} Ngentot."
+                reply_pop_up_alert = f"Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ken.tgbot.on(
@@ -635,7 +635,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"Jangan Menggunakan Milik {DEFAULTUSER} Ngentot!."
+                reply_pop_up_alert = f"Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ken.tgbot.on(
