@@ -164,15 +164,15 @@
     },
     "DEFAULT_BIO": {
       "description": "Default Bio Mu.",
-      "value": "KEN-UBOT",
+      "value": "Flicks-Userbot ✨",
       "required": false
     },
     "ALIVE_NAME": {
       "description": "Nama untuk menunjukan pesan .alive",
       "required": false
     },
-    "KEN_TEKS_KUSTOM": {
-      "description": "Kustom Pesan Alive Mu Untuk Perintah .kenalive (Isi Terserah)",
+    "FLICKS_TEKS_KUSTOM": {
+      "description": "Kustom Pesan Alive Mu Untuk Perintah .flicksalive (Isi Terserah)",
       "required": false
     },
     "S_PACK_NAME": {
@@ -228,11 +228,11 @@
     },
     "BOT_TOKEN": {
       "description": "Set this to enable inline bot helper. get the token from @BotFather",
-      "required": false
+      "required": true
     },
     "BOT_USERNAME": {
       "description": "Username of the bot you created with @BotFather",
-      "required": false
+      "required": true
     }
   },
   "addons": [
