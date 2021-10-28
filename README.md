@@ -32,13 +32,17 @@ Repo Yang Dibuat Oleh [Rizzz](https://t.me/FJ_GAMING) Dari beberapa Repo Yang Ad
   <b>© Credits</b></summary>
 
 
-⚡ **THANK YOU VERY MUCH FOR**
+⚡ **CONTRIBUTOR AND TEAM**
 *   [Fariz](https://github.com/fjgaming212/Flicks-Userbot)    Flicks - Userbot
 *   [Skyzo](https://github.com/ridho17-ind/XBot-Music)     Flicks Music
 *   [Ikyy](http://github.com/muhammadrizky16/Kyy-Userbot)    Kyy - Userbot
+*   [Tonic](http://github.com/Tonic990/Tonic-User)    Tonic - Userbot
+*   [Skyzu](https://github.com/Skyzu/Skyzu-Userbot)     Skyzu - Userbot
+
+🔰 **THANKS YOU TO**
 *   [Kennedy](https://github.com/KennedyProject/KEN-UBOT)    Ken - Userbot
 *   [Apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
 *   [VCKYOU](https://github.com/Vckyou/Geez-Project)    Geez - Project 
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
 *   [Skyzu](https;//github.com/Skyzu/skyzu-userbot)     skyzu-userbot
-*   DAN TERIMAKASIH BANYAK KEPADA USERBOT INDONESIA LAINNYA <img src="./resources/extras/kennn.gif" width="10px">
+*   DAN TERIMAKASIH KEPADA USERBOT LAINNYA <img src="./resources/extras/kennn.gif" width="10px">
