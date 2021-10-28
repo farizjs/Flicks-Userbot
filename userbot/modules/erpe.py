@@ -1,5 +1,5 @@
 from userbot import CMD_HELP
-from userbot.events import register import asyncio @register(outgoing=True, pattern='^.erpe(?: |$)(.*)')async def erpe(event): range(0, 11)
+from userbot.events import register import asyncio @ register(outgoing=True, pattern='^.erpe(?: |$)(.*)')async def erpe(event): range(0, 11)
 await event.edit("Erpe😨")
 await asyncio.sleep(2)
 await event.edit("Ada rp😱")
