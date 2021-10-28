@@ -57,3 +57,10 @@ async def typewriter(typew):
     await typew.edit("__Cape Juga Asu Cringe Gitu__")
     sleep(2)
     await typew.edit("**Kasian Si Bocah Erpe Wokwokwok**")
+
+
+CMD_HELP.update(
+    {
+        "wibu": "**Modules** - `erpe`\
+        \n\n Cmd : `.adaerpe`\
+        \nUsage : Lagi di kejar anak rp\
