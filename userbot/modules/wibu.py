@@ -1,4 +1,4 @@
-# import userbot by apis and skyzo from king userbot old
+# import userbot by skyzo
 
 from time import sleep
 
