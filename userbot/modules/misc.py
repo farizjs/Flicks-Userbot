@@ -113,7 +113,7 @@ async def repo_is_here(wannasee):
         "**Hey**, I Am Using **Flicks-Userbot** \n"
         "➣ **Repo :** [Github](https://github.com/fjgaming212/Flicks-Userbot)\n"
         "➣ **Owner :** [『Rizz』](t.me/FJ_GAMING)\n"
-        "➣ **Team :** [Skyzo](t.me/xflskyzo) [Kyy](t.me/IDnyaKosong) [TØNIC](t.me/Bukan_guudlooking)"
+        "➣ **Team :** [Skyzo](t.me/xflskyzo) [Kyy](t.me/IDnyaKosong) [TØNIC](t.me/Bukan_guudlooking) [Skyzu](t.me/skyzuex)"
     )
 
 
