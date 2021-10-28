@@ -64,4 +64,7 @@ CMD_HELP.update(
     {
         "erpe": "**Modules** - `erpe`\
         \n\n Cmd : `.adaerpe`\
-        \nUsage : ngatain erpe\
+        \nUsage : ngatain anak erpe\
+    "
+    }
+)
