@@ -445,7 +445,7 @@ with bot:
                     f"━━━━━━━━━━━━━━━━━━━━ \n"
                     f"📮 **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {c.id} \n"
                     f"━━━━━━━━━━━━━━━━━━━━ \n\n"
-                    f"__**Semoga Betah Ya Disini**__ ✨\n",
+                    f"__**Semoga Betah Disini Ya**__ ✨\n",
                     buttons=[
                         [
                             Button.url("ᴛᴜᴛᴏʀɪᴀʟ ᴜsᴇʀʙᴏᴛ​",
@@ -461,12 +461,12 @@ with bot:
                     f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Flicks Project**\nKalo mau tau lebih lanjut silahkan Join Ke \n**Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ** Dibawah Ini.\n",
                     buttons=[
                         [
-                            Button.url("Cʜᴀɴɴᴇʟ Uᴘᴅᴀᴛᴇ​",
+                            Button.url("Cʜᴀɴɴᴇʟ Uᴘᴅᴀᴛᴇ 📣",
                                        "t.me/SadRoomsInfo"),
-                            Button.url("Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ",
+                            Button.url("Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ 💬",
                                        "t.me/FlicksSupport")],
-                        [Button.url("Dᴇᴠᴇʟᴏᴘᴇʀ​",
-                                    "t.me/FJ_GAMING")],
+                        [Button.url("Rᴇᴘᴏ 🛠️",
+                                    "https://github.com/fjgaming212/Flicks-Userbot")],
                     ]
                 )
 
