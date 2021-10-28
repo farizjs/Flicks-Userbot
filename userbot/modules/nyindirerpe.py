@@ -2,8 +2,8 @@
 
 from time import sleep
 
-from userbot import CMD_HELP
 from userbot.events import register
+
 
 @register(outgoing=True, pattern='^.adaerpe(?: |$)(.*)')
 async def typewriter(typew):
@@ -57,4 +57,3 @@ async def typewriter(typew):
     await typew.edit("__Cape Juga Asu Cringe Gitu__")
     sleep(2)
     await typew.edit("**Kasian Si Bocah Erpe Wokwokwok**")
-
