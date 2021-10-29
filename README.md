@@ -35,7 +35,7 @@ Repo Yang Dibuat Oleh [Kami](https://t.me/devoloperflicks/32) Dari beberapa Repo
 ⚡ **CONTRIBUTOR AND TEAM**
 *   [Fariz](https://github.com/fjgaming212/Flicks-Userbot)    Flicks - Userbot
 *   [Skyzo](https://github.com/ridho17-ind/XBot-Music)     Flicks Music
-*   [Ikyy](http://github.com/muhammadrizky16/Kyy-Userbot)    Kyy - Userbot
+*   [Kyy](http://github.com/muhammadrizky16/Kyy-Userbot)    Kyy - Userbot
 *   [Tonic](http://github.com/Tonic990/Tonic-User)    Tonic - Userbot
 *   [Skyzu](https://github.com/Skyzu/Skyzu-Userbot)     Skyzu - Userbot
 
