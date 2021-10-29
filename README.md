@@ -13,7 +13,7 @@
 <p align="center">&nbsp;</p>
 
 ### Repo FLICKS UBOT
-Repo Yang Dibuat Oleh [Rizzz](https://t.me/FJ_GAMING) Dari beberapa Repo Yang Ada Di Github. 
+Repo Yang Dibuat Oleh [Kami](https://t.me/devoloperflicks/32) Dari beberapa Repo Yang Ada Di Github. 
 
 
 ### Generate String Using Replit⤵️
