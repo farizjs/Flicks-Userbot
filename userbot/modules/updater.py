@@ -91,7 +91,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("`Flicks-Userbot Berhasil Di Deploy!\n" "Restarting, Mohon Tunggu Sebentar.....`")
+            await event.edit("`𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 Berhasil Di Deploy!\n" "Restarting, Mohon Tunggu Sebentar.....`")
             await asyncio.sleep(15)
             await event.delete()
 
@@ -115,9 +115,9 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit('**Flicks-Userbot** `Berhasil Di Update!`')
+    await event.edit('**𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭** `Berhasil Di Update!`')
     await asyncio.sleep(1)
-    await event.edit('**Flicks-Userbot** `Di Restart....`')
+    await event.edit('**𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭** `Di Restart....`')
     await asyncio.sleep(1)
     await event.edit('`Mohon Menunggu Beberapa Detik.`')
     await asyncio.sleep(10)
@@ -188,7 +188,7 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n☄️ Flicks-Userbot Sudah Versi Terbaru\n')
+            f'\n☄️ 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 Sudah Versi Terbaru\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
@@ -214,12 +214,12 @@ async def upstream(event):
         await event.edit(
             '`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`')
     else:
-        await event.edit('` Proses Update Flicks-Userbot, Loading....1%`')
-        await event.edit('` Proses Update Flicks-Userbot, Loading....20%`')
-        await event.edit('` Proses Update Flicks-Userbot, Loading....35%`')
-        await event.edit('` Proses Update Flicks-Userbot, Loading....77%`')
-        await event.edit('` Proses Update Flicks-Userbot, Updating...90%`')
-        await event.edit('` Proses Update Flicks-Userbot, Mohon Tunggu Sebentar....100%`')
+        await event.edit('` Proses Update 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭, Loading....1%`')
+        await event.edit('` Proses Update 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭, Loading....20%`')
+        await event.edit('` Proses Update 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭, Loading....35%`')
+        await event.edit('` Proses Update 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭, Loading....77%`')
+        await event.edit('` Proses Update 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭, Updating...90%`')
+        await event.edit('` Proses Update 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭, Mohon Tunggu Sebentar....100%`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
