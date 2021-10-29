@@ -557,7 +557,7 @@ with bot:
             else:
                 result = builder.article(
                     " Alive\n Check Alive Stats! ",
-                    text=f"""__**The Flicks-Userbot**__\n`Pong!!` `{ms}ms`\n**Master :** {DEFAULTUSER} """,
+                    text=f"""__**The 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭**__\n`Pong!!` `{ms}ms`\n**Master :** {DEFAULTUSER} """,
                     buttons=[
                         [
                             custom.Button.url(
@@ -596,7 +596,7 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:  # @FlicksSupport
+            if event.query.user_id == uid:  # @Flicks_Userbot
                 # https://t.me/TelethonChat/115200
                 await event.edit(
                     file=kenlogo,
