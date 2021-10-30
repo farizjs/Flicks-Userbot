@@ -188,7 +188,7 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n☄️ 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 Sudah Versi Terbaru\n')
+            f'\n 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭✨ Sudah Versi Terbaru\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
@@ -208,7 +208,7 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond('**Perintah Untuk Update, Sebagai Berikut.**\n🔰 Command: >`.update now`\n🔰 Command: >`.update deploy`\n\n__Untuk Meng Update Fitur 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭.__')
+        return await event.respond('**Perintah Untuk Update, Sebagai Berikut.**\n🔰 Command: >`.update now` (Sementara)\n🔰 Command: >`.update deploy` (Permanen)\n\n__Untuk Meng Update Fitur 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭.__')
 
     if force_update:
         await event.edit(
