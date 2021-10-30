@@ -9,7 +9,7 @@ from userbot.events import register
 @register(outgoing=True, pattern="^.adaerpe(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**ER ERRR ERRPE ASUU WOKWOK KANG PP ORANG**")
+    await typew.edit("**ER ERRR ERRPE ASUU WOKWOK KANG PAKE PP ORANG KOREA**")
     await typew.edit("`🏃.....ERPE KOMTOL.......🏃`")
     await typew.edit("`🏃....................🏃`")
     await typew.edit("`🏃..................🏃`")
@@ -40,7 +40,7 @@ async def typewriter(typew):
     await typew.edit("`🏃..................🏃`")
     await typew.edit("`🏃.....Anak........🏃`")
     await typew.edit("`🏃................🏃`")
-    await typew.edit("`🏃....Ngentot....🏃`")
+    await typew.edit("`🏃....Teyunkk....🏃`")
     await typew.edit("`🏃..............🏃`")
     await typew.edit("`🏃.............🏃`")
     await typew.edit("`🏃..Jungkok Teyunk..🏃`")
@@ -50,14 +50,14 @@ async def typewriter(typew):
     await typew.edit("__KOK MAKIN DEKET SI.__")
     sleep(1)
     await typew.edit("`🏃.......🏃`")
-    await typew.edit("`🏃...Y..🏃`")
+    await typew.edit("`🏃...Taehyung..🏃`")
     await typew.edit("`🏃.....🏃`")
     await typew.edit("`🏃....🏃`")
     await typew.edit("**Untung Ngga Kena Njir**")
     sleep(1)
     await typew.edit("__Cape Juga Asu Cringe Gitu__")
     sleep(2)
-    await typew.edit("**Kasian Erpe Awokawokawok Makanya Jan Pake PP Orang**")
+    await typew.edit("**Kasian Erpe Awokawokawok Makanya Jan Pake PP Orang KOREA**")
 
 
 CMD_HELP.update(
