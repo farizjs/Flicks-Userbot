@@ -1,6 +1,6 @@
 # ReCode by @skyzuex
 # FROM skyzu-userbot <https://github.com/Skyzu/skyzu-userbot>
-# KONTOLLL
+# YEEASU
 
 from time import sleep
 
