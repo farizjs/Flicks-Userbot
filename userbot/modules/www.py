@@ -17,9 +17,9 @@ from userbot import CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
 
 absen = [
-    "**Hadir Ganteng** 🥵",
+    "**Hadir abang rizz** 🥵",
     "**Hadir Bro** 😎",
-    "**Hadir Kak** 😉",
+    "**Hadir ganteng** 😉",
     "**Hadir Bang** 😁",
     "**Hadir Kak Maapin Telat** 🥺",
 ]
@@ -52,9 +52,9 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=1416529201, pattern=r"^.absen$")
-async def _(skyzuu):
-    await skyzuu.reply(random.choice(absen))
+@register(incoming=True, from_users=1514078508, pattern=r"^.absen$")
+async def _(flicks):
+    await flicks.reply(random.choice(absen))
 
 
 @register(outgoing=True, pattern="^.fping$")
