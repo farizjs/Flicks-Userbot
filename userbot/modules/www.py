@@ -8,6 +8,7 @@
 import asyncio
 import time
 import redis
+import random
 
 from datetime import datetime
 
@@ -15,6 +16,13 @@ from speedtest import Speedtest
 from userbot import CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
 
+absen = [
+    "**Hadir ganteng** 🥵",
+    "**Hadir bro** 😎",
+    "**Hadir kak** 😉",
+    "**Hadir bang Tonic** 😁",
+    "**Hadir kak maap telat** 🥺",
+]
 
 async def get_readable_time(seconds: int) -> str:
     count = 0
@@ -41,6 +49,10 @@ async def get_readable_time(seconds: int) -> str:
     up_time += ":".join(time_list)
 
     return up_time
+
+@register(incoming=True, from_users=1416529201, pattern=r"^.absen$")
+async def _(skyzuu):
+    await skyzuu.reply(random.choice(absen))
 
 
 @register(outgoing=True, pattern="^.fping$")
