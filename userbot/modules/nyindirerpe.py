@@ -60,6 +60,42 @@ async def typewriter(typew):
     await typew.edit("**Kasian Erpe Awokawokawok Makanya Jan Pake PP Orang KOREA**")
 
 
+
+@register(outgoing=True, pattern="^.haerpe(?: |$)(.*)")
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+        await e.edit("HA ERPE?")
+        await e.edit("HAHA SI KONTOL ITU?")
+        await e.edit("HAHAHA")
+        await e.edit("HAHAHAHA")
+        await e.edit("HAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+        await e.edit("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+
+
 CMD_HELP.update(
     {
         "erpe": "**Modules** - `erpe`\
