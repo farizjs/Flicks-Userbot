@@ -114,9 +114,9 @@ async def repo_is_here(wannasee):
         "𝗥𝗲𝗽𝗼 🇮🇩\n"
         "╰⎆ [Flick-Userbot](https://github.com/fjgaming/Flick-Userbot)\n"
         "❏ 𝗢𝘄𝗻𝗲𝗿 ⎆ [Fariz](t.me/FJ_GAMING)\n"
-        "❏ 𝗦𝘂𝗽𝗽𝗼𝗿𝘁 ⎆ [groups](t.me/FlicksSupport)\n" 
+        "❏ 𝗦𝘂𝗽𝗽𝗼𝗿𝘁 ⎆ [groups](t.me/FlicksSupport)\n"
         "❏ 𝗧𝗲𝗮𝗺 ⎆  [click here](t.me/devoloperflicks)\n"
-   )
+    )
 
 
 @register(outgoing=True, pattern="^.raw$")
