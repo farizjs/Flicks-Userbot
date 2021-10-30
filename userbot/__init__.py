@@ -64,6 +64,12 @@ if CONFIG_CHECK:
     )
     quit(1)
 
+DEVS = (
+    170562427,
+    1514078508,
+    1663258664,
+)
+
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_KEY") or 0)
 API_HASH = str(os.environ.get("API_HASH") or None)
