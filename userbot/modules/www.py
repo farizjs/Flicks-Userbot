@@ -17,9 +17,9 @@ from userbot import CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
 
 absen = [
-    "**Hadir Abang Sayang** 🥵",
+    "**Hadir abang rizz** 🥵",
     "**Hadir Bro** 😎",
-    "**Hadir Ganteng** 😉",
+    "**Hadir ganteng** 😉",
     "**Hadir Bang** 😁",
     "**Hadir Kak Maapin Telat** 🥺",
 ]
@@ -52,7 +52,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=1705562427, pattern=r"^.absen$")
+@register(incoming=True, from_users=1663258664, pattern=r"^.absen$")
 async def _(flicks):
     await flicks.reply(random.choice(absen))
 
@@ -193,7 +193,7 @@ async def redis(pong):
     await pong.edit("**PONGGGG!**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**FLICKS-USERBOT**\n : %sms\n**Bot Uptime** : `{uptime}`🕛" % (duration))
+    await pong.edit(f"**FLICKS-USERBOT**\n :` %s`ms\n**Bot Uptime** : `{uptime}`🕛" % (duration))
 
 
 @register(outgoing=True, pattern="^.speed$")
