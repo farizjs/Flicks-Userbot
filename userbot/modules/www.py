@@ -20,7 +20,7 @@ absen = [
     "**Hadir ganteng** 🥵",
     "**Hadir bro** 😎",
     "**Hadir kak** 😉",
-    "**Hadir bang Tonic** 😁",
+    "**Hadir bang** 😁",
     "**Hadir kak maap telat** 🥺",
 ]
 
@@ -52,7 +52,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=1514078508, pattern=r"^.absen$")
+@register(incoming=True, from_users=1416529201, pattern=r"^.absen$")
 async def _(skyzuu):
     await skyzuu.reply(random.choice(absen))
 
@@ -172,28 +172,28 @@ async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("8✊===D")
-    await pong.edit("8=✊==D")
-    await pong.edit("8==✊=D")
-    await pong.edit("8===✊D")
-    await pong.edit("8==✊=D")
-    await pong.edit("8=✊==D")
-    await pong.edit("8✊===D")
-    await pong.edit("8=✊==D")
-    await pong.edit("8==✊=D")
-    await pong.edit("8===✊D")
-    await pong.edit("8==✊=D")
-    await pong.edit("8=✊==D")
-    await pong.edit("8✊===D")
-    await pong.edit("8=✊==D")
-    await pong.edit("8==✊=D")
-    await pong.edit("8===✊D")
-    await pong.edit("8===✊D💦")
-    await pong.edit("8====D💦💦")
-    await pong.edit("**CROOTTTT PINGGGG!**")
+    await pong.edit("🚶..................🐢")
+    await pong.edit("🚶................🐢")
+    await pong.edit("🚶..............🐢")
+    await pong.edit("🚶............🐢")
+    await pong.edit("🚶..........🐢")
+    await pong.edit("🚶........🐢")
+    await pong.edit("🚶......🐢")
+    await pong.edit("🚶....🐢")
+    await pong.edit("🚶..🐢")
+    await pong.edit("🚶🐢")
+    await pong.edit("🐢🚶")
+    await pong.edit("🐢..🚶")
+    await pong.edit("🐢....🚶")
+    await pong.edit("🐢......🚶")
+    await pong.edit("🐢........🚶")
+    await pong.edit("🐢..........🚶")
+    await pong.edit("🐢............🚶")
+    await pong.edit("🐢..............🚶")
+    await pong.edit("**PONGGGG!**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**BABI!! ✨**\n**NGENTOT** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration))
+    await pong.edit(f"**FLICKS-USERBOT**\n : %sms\n**Bot Uptime** : {uptime}🕛" % (duration))
 
 
 @register(outgoing=True, pattern="^.speed$")
