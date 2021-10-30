@@ -100,6 +100,8 @@ CMD_HELP.update(
         "erpe": "**Modules** - `erpe`\
         \n\n Cmd : `.adaerpe`\
         \nUsage : ngatain anak erpe\
+        \n\n Cmd : `.haerpe`\
+        \nUsage : ngetawain anak erpe\
     "
     }
 )
