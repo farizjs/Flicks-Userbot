@@ -63,8 +63,8 @@ async def typewriter(typew):
 @register(outgoing=True, pattern="^.haerpe(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await e.edit("HA ERPE?")
-    await e.edit("HAHA SI KONTOL ITU?")
+    await e.edit("HA ADA ERPE??")
+    await e.edit("HAHA")
     await e.edit("HAHAHA")
     await e.edit("HAHAHAHA")
     await e.edit("HAHAHAHAHA")
