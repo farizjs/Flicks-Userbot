@@ -60,7 +60,7 @@ async def typewriter(typew):
     await typew.edit("**Kasian Erpe Awokawokawok Makanya Jan Pake PP Orang KOREA**")
 
 
-@register(outgoing=True, pattern="^.haerpe(?: |$)(.*)")
+@register(outgoing=True, pattern="^.erpe2(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await e.edit("HA ADA ERPE??")
@@ -100,7 +100,7 @@ CMD_HELP.update(
         "erpe": "**Modules** - `erpe`\
         \n\n Cmd : `.adaerpe`\
         \nUsage : ngatain anak erpe\
-        \n\n Cmd : `.haerpe`\
+        \n\n Cmd : `.erpe2`\
         \nUsage : ngetawain anak erpe\
     "
     }
