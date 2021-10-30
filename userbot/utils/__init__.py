@@ -21,14 +21,10 @@ from .tools import (
     humanbytes,
     time_formatter,
     human_to_bytes,
-    md5,
-    check_media,
-    run_cmd,
-    runcmd,
-    take_screen_shot,
+    run_cmd, md5,
     post_to_telegraph,
-    media_to_pic,
+    take_screen_shot,
+    runcmd,
     edit_delete,
     edit_or_reply,
-    media_type
 )
