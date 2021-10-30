@@ -167,7 +167,7 @@ async def redis(pong):
                     f"`{uptime}` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.pink$")
+@register(outgoing=True, pattern="^.test$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -193,7 +193,7 @@ async def redis(pong):
     await pong.edit("**PONGGGG!**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**FLICKS-USERBOT**\n : %sms\n**Bot Uptime** : {uptime}🕛" % (duration))
+    await pong.edit(f"**FLICKS-USERBOT**\n : %sms\n**Bot Uptime** : `{uptime}`🕛" % (duration))
 
 
 @register(outgoing=True, pattern="^.speed$")
@@ -262,5 +262,5 @@ CMD_HELP.update({
          \n↳ : Untuk Menunjukkan Ping Bot Anda.\
          \n\nCmd: `.speed`\
          \n↳ : Untuk Menunjukkan Kecepatan Jaringan Anda.\
-         \n\nCmd: `.pong`\
+         \n\nCmd: `.pong` | `.test`\
          \n↳ : Sama Seperti Perintah Ping."})
