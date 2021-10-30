@@ -36,5 +36,5 @@ async def remoteaccess(event):
 CMD_HELP.update(
     {
         "message": "`.dm`\
-    \nMengirim Pesan Dengan Jarak Jauh Dengan .dm <username> <pesan>."
+    \nMengirim Pesan Dengan Orang Jarak Jauh Dengan .dm <username> <pesan>."
     })
