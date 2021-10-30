@@ -109,7 +109,7 @@ async def hack(event):
     await asyncio.sleep(3)
     await event.edit("`Accoount hacked\n Collecting all data\n converting data into PDF`")
     await asyncio.sleep(3)
-    await event.edit("PDF Created Click Link Below to Download Data`\n\n`Don't Worry Only i Can Open This File 😎😎..\nIf u don't Believe try to Download 🙂\n\nhttps://drive.google.com/file/d/1o2wXirqy1RZqnUMgsoM8qX4j4iyse26X/view?usp=sharing")
+    await event.edit("PDF Created Click Link Below to Download Data`\n\n`Don't Worry Only i Can Open This File 😎..\nIf u don't Believe try to Download 🙂\n\nhttps://drive.google.com/file/d/1o2wXirqy1RZqnUMgsoM8qX4j4iyse26X/view?usp=sharing")
 
 
 CMD_HELP.update({
