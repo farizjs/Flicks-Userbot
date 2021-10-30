@@ -94,7 +94,7 @@ async def remove_a_filter(r_handler):
         await r_handler.edit("`Filter` **{}** `Tidak Ada Disini`.".format(filt))
     else:
         await r_handler.edit(
-            "`Berhasil Menghapus Filter` **{}** `Disini`.".format(filt))
+            "`Berhasil Menghapuss Filter` **{}** `Disini`.".format(filt))
 
 
 @register(outgoing=True, pattern="^.bersihkanbotfilter (.*)")
