@@ -195,6 +195,34 @@ async def typewriter(typew):
     await typew.edit("**Kasian Si Wibu Wokwokwok**")
 
 
+@register(outgoing=True, pattern='^.tod(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("**WI WIII WIIII**")
+    await typew.edit("▰")
+    await typew.edit("▰▱")
+    await typew.edit("▰▱▰")
+    await typew.edit("▰▱▰▱")
+    await typew.edit("▰▱▰▱▰")
+    await typew.edit("▰▱▰▱▰▱")
+    await typew.edit("▰▱▰▱▰▱▰")
+    await typew.edit("▰▱▰▱▰▱▰▱")
+    await typew.edit("▰▱▰▱▰▱▰▱▰")
+    await typew.edit("▰▱▰▱▰▱▰▱▰▱")
+    await typew.edit("▰▱▰▱▰▱▰▱▰▱▰")
+    await typew.edit("▰▱▰▱▰▱▰▱▰▱▰▱")
+    await typew.edit("▰▱▰▱▰▱▰▱▰▱▰▱▰")
+    await typew.edit("▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
+    await typew.edit("▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰")
+    await typew.edit("**Apa Ya Ini Gua Gatau 🥺**")
+    sleep(1)
+    await typew.edit("**Cuma Gabut Saja Sayang**")
+    sleep(2)
+    await typew.edit("**Ahahaha**")
+
+
+
+
 CMD_HELP.update(
     {
         "wibu": "**Modules** - `wibu`\
@@ -202,6 +230,8 @@ CMD_HELP.update(
         \nUsage : ngatain wibu\
         \n\n Cmd : `.jadiwibu`\
         \nUsage : untuk jadi wibu\
+        \n\n Cmd : `.tod`\
+        \nUsage : icip mgentod\
         \n\n Cmd : `.adawibu`\
         \nUsage : lari ada wibu\
         \n\n Cmd : `.wibu2`\
