@@ -27,11 +27,11 @@ absen = [
 ]
 
 pacar = [
-    "**Saya hadir untuk untuk membasmi jamet telegram**😎 ",
-    "**Apaan bang anjink**",
-    "**uuyy bang**",
-    "**Hadir anjink** 😁",
-    "**Saya hadir untuk melindungi cewe dari laki laki sangean**",
+    "**Saya Hadir Untuk Membasmi Para Jamet Telegram** 😎 ",
+    "**Apaan Bang anjink**",
+    "**Uuyy Bang**",
+    "**Hadir Anjink** 😁",
+    "**Saya Hadir Untuk Melindungi Cewe Dari Laki Laki Sangean** 😎",
 ]
 
 
