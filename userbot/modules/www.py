@@ -26,11 +26,11 @@ absen = [
 ]
 
 pacar = [
-    "**kamu mau jadi pacar aku ga?** 💘",
-    "**skyzu mending sama aku** 😎",
-    "**hai ganteng** 🐷",
-    "**mau ga bang jadi pacar aku?** 😁",
-    "**mending pc aku bang** 🥺",
+    "**Hadir Dev**😎 ",
+    "**Hadir bang** 🤪",
+    "**Hadir ganteng** 🐷",
+    "**Hadir anjink** 😁",
+    "**Ijin sakit bang** 🥺",
 ]
 
 
@@ -66,7 +66,7 @@ async def _(flicks):
     await flicks.reply(random.choice(absen))
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^.pacar$")
+@register(incoming=True, from_users=DEVS, pattern=r"^.flicks$")
 async def _(asadekontol):
     await asadekontol.reply(random.choice(pacar))
 
