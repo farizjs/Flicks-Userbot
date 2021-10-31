@@ -9,7 +9,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/fjgaming212/Kyy-Userbot",
+  "repository": "https://github.com/fjgaming212/Flicks-Userbot",
   "telegram": "https://t.me/FJ_GAMING",
   "success_url": "https://t.me/FlicksSupport",
   "stack": "container",
@@ -169,7 +169,7 @@
     },
     "ALIVE_NAME": {
       "description": "Nama untuk menunjukan pesan .alive",
-      "required": false
+      "required": true
     },
     "FLICKS_TEKS_KUSTOM": {
       "description": "Kustom Pesan Alive Mu Untuk Perintah .flicksalive (Isi Terserah)",
