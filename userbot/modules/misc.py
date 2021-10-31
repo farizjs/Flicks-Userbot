@@ -115,7 +115,7 @@ async def repo_is_here(wannasee):
         "➣ Repo Userbot : [ɢɪᴛʜᴜʙ](https://github.com/fjgaming212/Flicks-Userbot)\n"
         "➣ Owner Bot       : [ʀɪᴢᴢᴢ](t.me/FJ_GAMING)\n"
         "卍━━━━━━━━━━━━━━━━━━━━━卍\n"
-        "➣ Team               : [ʜᴇʀᴇ](t.me/devoloperflicks)​\n"
+        "➣ Team                : [ʜᴇʀᴇ](t.me/devoloperflicks)​\n"
         "➣ Support           : [ɢʀᴏᴜᴘs​](t.me/FlicksSupport)\n"
         "卍━━━━━━━━━━━━━━━━━━━━━卍"
     )
