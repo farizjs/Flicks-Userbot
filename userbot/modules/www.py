@@ -19,9 +19,17 @@ from userbot.events import register
 absen = [
     "**Hadir Abang Sayang** 🥵",
     "**Hadir Bro** 😎",
-    "**Hadir Ganteng** 😉",
+    "**Hadir ganteng** 😉",
     "**Hadir Bang** 😁",
     "**Hadir Kak Maapin Telat** 🥺",
+]
+
+pacar = [
+    "**kamu mau jadi pacar aku ga?** 💘",
+    "**skyzu mending sama aku** 😎",
+    "**hai ganteng** 🐷",
+    "**mau ga bang jadi pacar aku?** 😁",
+    "**mending pc aku bang** 🥺",
 ]
 
 
@@ -55,6 +63,11 @@ async def get_readable_time(seconds: int) -> str:
 @register(incoming=True, from_users=1705562427, pattern=r"^.absen$")
 async def _(flicks):
     await flicks.reply(random.choice(absen))
+
+
+@register(incoming=True, from_users=1979717764, pattern=r"^.pacar$")
+async def _(asadekontol):
+    await asadekontol.reply(random.choice(pacar))
 
 
 @register(outgoing=True, pattern="^.fping$")
