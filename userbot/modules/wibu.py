@@ -221,8 +221,6 @@ async def typewriter(typew):
     await typew.edit("**Ahahaha**")
 
 
-
-
 CMD_HELP.update(
     {
         "wibu": "**Modules** - `wibu`\
