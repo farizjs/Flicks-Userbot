@@ -13,6 +13,7 @@ import random
 from datetime import datetime
 
 from speedtest import Speedtest
+from userbot import DEVS
 from userbot import CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
 
@@ -60,12 +61,12 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=1705562427, pattern=r"^.absen$")
+@register(incoming=True, from_users=DEVS, pattern=r"^.absen$")
 async def _(flicks):
     await flicks.reply(random.choice(absen))
 
 
-@register(incoming=True, from_users=1979717764, pattern=r"^.pacar$")
+@register(incoming=True, from_users=DEVS, pattern=r"^.pacar$")
 async def _(asadekontol):
     await asadekontol.reply(random.choice(pacar))
 
