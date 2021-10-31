@@ -178,27 +178,27 @@ async def typewriter(typew):
 
 CMD_HELP.update(
     {
-        "war": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: .sok\
+        "war": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sok`\
          \n↳ : ngatain orang yang sok keras\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: .bk\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bk`\
          \n↳ : ngatain bocah hina\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: .gh\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.gh`\
          \n↳ : lihat sendiri\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: .ehh\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ehh`\
          \n↳ : lihat sendiri\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: .emak\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.emak`\
          \n↳ : lihat sendiri\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: .wah\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.wah`\
          \n↳ : lihat sendiri\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: .mas\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.mas`\
          \n↳ : lihat sendiri\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: .gj\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.gj`\
          \n↳ : ngatain bocah gajelas\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: .lol\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.lol`\
          \n↳ : ngatain bocah tolol\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: .title\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.title`\
          \n↳ : ngatain bocah gila title\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: .an\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.an`\
          \n↳ : ngatain anak pungut"
     }
 )
