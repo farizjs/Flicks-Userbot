@@ -1,4 +1,6 @@
 # import by skyzo
+# From Flicks Userbot
+# Do not delete credits ⚠️
 
 from time import sleep
 
