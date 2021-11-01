@@ -250,8 +250,6 @@ async def typewriter(typew):
     await typew.edit("**Good Game**")
 
 
-
-
 @register(outgoing=True, pattern='^.tod(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
