@@ -195,6 +195,63 @@ async def typewriter(typew):
     await typew.edit("**Kasian Si Wibu Wokwokwok**")
 
 
+@register(outgoing=True, pattern='^.turtle(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("**War Sama Turtle? Gass Lah Ajg**")
+    sleep(2)
+    await typew.edit("`🐢..🤺`")
+    await typew.edit("`🐢....🤺`")
+    await typew.edit("`🐢...🤺`")
+    await typew.edit("`🐢....🤺`")
+    await typew.edit("`🐢....🤺`")
+    await typew.edit("`🐢.....🤺`")
+    await typew.edit("`🐢...🤺`")
+    await typew.edit("`🐢.....🤺`")
+    await typew.edit("`🐢..🤺`")
+    await typew.edit("`🐢....🤺`")
+    await typew.edit("`🐢......🤺`")
+    await typew.edit("`🐢.....🤺`")
+    await typew.edit("`🐢.......🤺`")
+    await typew.edit("`🐢....🤺`")
+    await typew.edit("`🐢.......🤺`")
+    await typew.edit("`🐢.....🤺`")
+    await typew.edit("`🐢......🤺`")
+    await typew.edit("`🐢....WUISH...🤺`")
+    await typew.edit("`🐢.....🤺`")
+    await typew.edit("`🐢.....🤺`")
+    await typew.edit("`🐢...MINGGIR..AJG..🤺`")
+    await typew.edit("`🐢............🤺`")
+    await typew.edit("`🐢......🤺`")
+    await typew.edit("`🐢.......🤺`")
+    await typew.edit("`🐢........🤺`")
+    await typew.edit("`🐢..HUH-HUH-HUH....🤺`")
+    await typew.edit("`🐢........🤺`")
+    await typew.edit("`🐢...........🤺`")
+    await typew.edit("`🐢.......🤺`")
+    await typew.edit("`🐢..........🤺`")
+    await typew.edit("`🐢....🤺`")
+    await typew.edit("`🐢.......🤺`")
+    await typew.edit("`🐢.........🤺`")
+    await typew.edit("`🐢..🤺`")
+    await typew.edit("`🐢......🤺`")
+    await typew.edit("`🐢.....🤺`")
+    await typew.edit("`🐢...🤺`")
+    await typew.edit("__GA MATI MATI ANJ__")
+    sleep(1)
+    await typew.edit("`🐢......🤺`")
+    await typew.edit("`🐢..🤺`")
+    await typew.edit("`🐢....🤺`")
+    await typew.edit("`🐢....🤺`")
+    await typew.edit("**Cape asu**")
+    sleep(1)
+    await typew.edit("**Turtle telah di eliminasi**")
+    sleep(2)
+    await typew.edit("**Good Game**")
+
+
+
+
 @register(outgoing=True, pattern='^.tod(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -226,6 +283,8 @@ CMD_HELP.update(
         "wibu": "**Modules** - `wibu`\
         \n\n Cmd : `.wibbu`\
         \nUsage : ngatain wibu\
+        \n\n Cmd : `.turtle`\
+        \nUsage : war sama turtle\
         \n\n Cmd : `.jadiwibu`\
         \nUsage : untuk jadi wibu\
         \n\n Cmd : `.tod`\
