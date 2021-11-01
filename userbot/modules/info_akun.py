@@ -8,7 +8,7 @@ from userbot import bot, CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r"^\.cek(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.cek akun(?: |$)(.*)")
 async def _(event):
     await event.edit("Mengecek Info Akun Anda...")
     async with bot.conversation("@SpamBot") as conv:
@@ -28,7 +28,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "info": "** Plugin :** Info Akun\
-        \n\n  •  Perintah : `.cek`\
+        \n\n  •  Perintah : `.cek akun`\
         \n  •  Function : Untuk mengecek info akun Anda\
     "
     }
