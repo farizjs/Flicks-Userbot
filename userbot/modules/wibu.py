@@ -198,7 +198,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.turtle(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**War Sama Turtle? Gass Lah Ajg**")
+    await typew.edit("**War Sama Turtle Kah Gass Lah Ajg**")
     sleep(2)
     await typew.edit("`🐢..🤺`")
     await typew.edit("`🐢....🤺`")
