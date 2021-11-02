@@ -2,9 +2,13 @@
 # FROM skyzu-userbot <https://github.com/Skyzu/skyzu-userbot>
 # YEEASU
 
-from time import sleep
-from userbot import CMD_HELP
+from platform import uname
+from userbot import ALIVE_NAME, CMD_HELP
 from userbot.events import register
+
+# ================= CONSTANT =================
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+# ============================================
 
 
 @register(outgoing=True, pattern=r"^\.sok(?: |$)(.*)")
@@ -167,9 +171,7 @@ async def typewriter(typew):
     sleep(4)
     await typew.edit("**YAELAH BRO MENTAL LO CUMA DI SOSMED APA GIMANE?**")
     sleep(2)
-    await typew.edit(
-        "**PERASAAN DULU TELEGRAM GAADA DEH BOCAH BOCAH SOK JAGO KEK GINI**"
-    )
+    await typew.edit("**PERASAAN DULU TELEGRAM GAADA DEH BOCAH BOCAH SOK JAGO KEK GINI**")
     sleep(2)
     await typew.edit("**GILIRAN TITLE NYA DI EJEK NGADU KE OWNER NYA**")
     sleep(4)
@@ -190,7 +192,8 @@ async def typewriter(typew):
     await typew.edit("**SEMOGA CEPET SADAR YA HAHAHAHA**")
 
 
-CMD_HELP.update({
+CMD_HELP.update(
+    {
     "war": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sok`\
          \n↳ : ngatain orang yang sok keras\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bk`\
@@ -214,5 +217,7 @@ CMD_HELP.update({
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.title`\
          \n↳ : ngatain bocah gila title\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.an`\
-         \n↳ : ngatain anak pungut"
-})
+         \n↳ : ngatain anak pungut.\
+    "
+    }
+)
