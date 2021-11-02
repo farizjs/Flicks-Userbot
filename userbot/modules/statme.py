@@ -8,6 +8,7 @@ from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
 
 from userbot.events import register
+from userbot import CMD_HELP
 
 logging.basicConfig(
     format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
@@ -108,3 +109,10 @@ def user_full_name(user):
     names = [i for i in list(names) if i]
     full_name = ' '.join(names)
     return full_name
+
+
+CMD_HELP.update({
+    "statme":
+    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.stats`\
+    \n↳ : Count the Number of Dialogs you have in your Telegram Account."
+})
