@@ -121,7 +121,7 @@ async def _(event):
         song = event.pattern_match.group(3)
     track = str(artist) + " - " + str(song)
     chat = "@SpotifyMusicDownloaderBot"
-    await event.edit("```Getting Your Music```")
+    await event.edit("```Getting Your  Music```")
     try:
         async with bot.conversation(chat) as conv:
             await asyncio.sleep(2)
