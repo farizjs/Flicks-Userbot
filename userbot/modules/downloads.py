@@ -107,7 +107,7 @@ Connected to server...
         rip_data["title"], rip_data["uploader"]
     )
     await event.edit(f"`{upteload}`")
-    CAPT = f"➥ {rip_data['title']}\n➥ Uploader - {rip_data['uploader']}\n➥ By : {DEFAULTUSER}\n"
+    CAPT = f"╭┈────────────────┈\n➥ `{rip_data['title']}`\n➥ Uploader - `{rip_data['uploader']}`\n╭┈────────────────┈╯\n➥ Request By : {DEFAULTUSER}\n╰┈────────────────┈➤"
     await event.client.send_file(
         event.chat_id,
         f"{rip_data['id']}.mp3",
