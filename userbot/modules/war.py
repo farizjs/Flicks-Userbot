@@ -2,13 +2,10 @@
 # FROM skyzu-userbot <https://github.com/Skyzu/skyzu-userbot>
 # YEEASU
 
-from platform import uname
-from userbot import ALIVE_NAME, CMD_HELP
-from userbot.events import register
+from time import sleep
 
-# ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-# ============================================
+from userbot import CMD_HELP
+from userbot.events import register
 
 
 @register(outgoing=True, pattern=r"^\.sok(?: |$)(.*)")
