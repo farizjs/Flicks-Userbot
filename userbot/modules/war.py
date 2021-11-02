@@ -194,7 +194,7 @@ async def typewriter(typew):
 
 CMD_HELP.update(
     {
-    "war": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sok`\
+        "war": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sok`\
          \n↳ : ngatain orang yang sok keras\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bk`\
          \n↳ : ngatain bocah hina\
