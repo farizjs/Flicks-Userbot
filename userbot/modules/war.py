@@ -3,7 +3,6 @@
 # YEEASU
 
 from time import sleep
-
 from userbot import CMD_HELP
 from userbot.events import register
 
@@ -36,9 +35,7 @@ async def typewriter(typew):
     sleep(2)
     await typew.edit("`Kesannya lo ngasih kita hiburan.`")
     sleep(2)
-    await typew.edit(
-        "`Kasian badut🤡, Ga di hargain pengunjung, Eh lampiaskan nya ke Tele, Wkwkwkwk`"
-    )
+    await typew.edit("`Kasian badut🤡, Ga di hargain pengunjung, Eh lampiaskan nya ke Tele, Wkwkwkwk`")
     sleep(3)
     await typew.edit("`Dah sana cabut, Makasih hiburannya, Udah bikin Gua tawa ngakak`")
 
@@ -193,8 +190,7 @@ async def typewriter(typew):
     await typew.edit("**SEMOGA CEPET SADAR YA HAHAHAHA**")
 
 
-CMD_HELP.update(
-    {
+CMD_HELP.update({
         "war": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sok`\
          \n↳ : ngatain orang yang sok keras\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bk`\
@@ -219,5 +215,4 @@ CMD_HELP.update(
          \n↳ : ngatain bocah gila title\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.an`\
          \n↳ : ngatain anak pungut"
-    }
-)
+})
