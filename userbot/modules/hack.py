@@ -22,7 +22,7 @@ async def hack(event):
     await asyncio.sleep(2)
     await event.edit("`Installing... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `")
     await asyncio.sleep(3)
-    await event.edit("`lnstallig... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `")
+    await event.edit("`lnstallig.... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `")
     await asyncio.sleep(2)
     await event.edit("`Installing... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `")
     await asyncio.sleep(3)
