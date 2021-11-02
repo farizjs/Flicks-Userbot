@@ -2,6 +2,7 @@
 # Ported By @VckyouuBitch
 # Copyright (c) 2021 Geez - Projects
 # Geez - Projects https://github.com/Vckyou/Geez-UserBot
+# Thanks Ken Ubot
 
 import json
 import os
