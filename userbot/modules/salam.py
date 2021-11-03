@@ -40,7 +40,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.ga(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**GAK KEREN LU BEGITU GOBLOK, SINI KELUARGA LU GUA LUDAHIN SATU SATU...**")
+    await typew.edit("**GAK KEREN LU BEGITU GOBLOK, SINI KELUARGA LU GUA LUDAHIN SATU SATU CUIHHH...**")
 
 
 CMD_HELP.update({
