@@ -112,7 +112,7 @@ async def typewriter(typew):
     )
 
 
-@register(outgoing=True, pattern=r"^\.kbot(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.gj(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -120,7 +120,7 @@ async def typewriter(typew):
     )
 
 
-@register(outgoing=True, pattern=r"^\.gj(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.kbot(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
