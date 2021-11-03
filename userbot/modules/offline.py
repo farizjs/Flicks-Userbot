@@ -62,16 +62,16 @@ async def set_afk(afk_e):
     afk_start = start_1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit(f"** Bos {ALIVE_NAME} Lagi OFF**\
+        await afk_e.edit(f"** {ALIVE_NAME} Sedang OFF**\
         \n⪩ **Alasan:** `{string}`")
     else:
-        await afk_e.edit(f"**Bos {ALIVE_NAME} Lagi OFF**")
+        await afk_e.edit(f"**{ALIVE_NAME} Sedang OFF**")
     if user.last_name:
-        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + "OFF"))
+        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + "𝗢𝗙𝗙 ᯾"))
     else:
-        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name="ᴏғғ彡"))
+        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name="𝗢𝗙𝗙 ᯾"))
     if BOTLOG:
-        await afk_e.client.send_message(BOTLOG_CHATID, "#OFF\n**Bos Telah Offline Sekarang!**")
+        await afk_e.client.send_message(BOTLOG_CHATID, "#OFF\n** {ALIVE_NAME} Telah Offline Sekarang!**")
     ISAFK = True
     afk_time = datetime.now()  # pylint:disable=E0602
     raise StopPropagation
@@ -90,7 +90,7 @@ async def type_afk_is_not_true(notafk):
     global afk_end
     user = await bot.get_me()  # pylint:disable=E0602
     last = user.last_name
-    if last and last.endswith("『 OFF 』"):
+    if last and last.endswith("𝗢𝗙𝗙 ᯾"):
         last1 = last[:-12]
     else:
         last1 = ""
@@ -166,7 +166,7 @@ async def mention_afk(mention):
                 afk_since = f"`{int(seconds)} Detik`"
             if mention.sender_id not in USERS:
                 if AFKREASON:
-                    await mention.reply(f"**Bos {ALIVE_NAME} Sedang OFF** {afk_since} **Yang Lalu.**\
+                    await mention.reply(f"**{ALIVE_NAME} Sedang OFF** {afk_since} **Yang Lalu.**\
                         \n **Alasan:** `{AFKREASON}`")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
