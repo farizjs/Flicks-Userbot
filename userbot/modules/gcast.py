@@ -1,6 +1,17 @@
-from userbot.events import register
-from userbot import CMD_HELP, bot
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
+#
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# PLease read the GNU Affero General Public License in
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+#
+# Ported by Koala @manusiarakitann
+# Recode by @mrismanaziz
+# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
+# t.me/SharingUserbot & t.me/Lunatic0de
 
+from userbot import CMD_HELP
+from userbot.events import register
 
 GCAST_BLACKLIST = [
     -1001473548283,  # SharingUserbot
@@ -14,58 +25,80 @@ GCAST_BLACKLIST = [
     -1001481357570,  # UsergeOnTopic
     -1001459701099,  # CatUserbotSupport
     -1001109837870,  # TelegramBotIndonesia
-    -1001578091827,  # AkiraSupport
-    -1001430568914,  # FlicksSupport
+    -1001578091827,  # GroupVirtualMusic
 ]
 
 
-@register(outgoing=True, pattern="^.gcast (.*)")
+@register(outgoing=True, pattern=r"^\.gcast(?: |$)(.*)")
 async def gcast(event):
     xx = event.pattern_match.group(1)
-    if not xx:
-        return await event.edit("`Mohon Berikan Sebuah Pesan`")
-    tt = event.text
-    msg = tt[6:]
-    kk = await event.edit("`Mengirim Pesan Global... 📣`")
+    if xx:
+        msg = xx
+    elif event.is_reply:
+        msg = await event.get_reply_message()
+    else:
+        await event.edit("**Berikan Sebuah Pesan atau Reply**")
+        return
+    kk = await event.edit("`Globally Broadcasting Msg...`")
     er = 0
     done = 0
-    async for x in bot.iter_dialogs():
+    async for x in event.client.iter_dialogs():
         if x.is_group:
             chat = x.id
             try:
-                done += 1
-                await bot.send_message(chat, msg)
+                if chat not in GCAST_BLACKLIST:
+                    await event.client.send_message(chat, msg)
+                    done += 1
+                elif chat not in GCAST_BLACKLIST:
+                    pass
             except BaseException:
                 er += 1
-    await kk.edit(f"**Berhasil Mengirim Pesan Ke** `{done}` **Grup, Gagal Mengirim Pesan Ke** `{er}` **Grup**")
+    await kk.edit(
+        f"**Berhasil Mengirim Pesan Ke** `{done}` **Grup, Gagal Mengirim Pesan Ke** `{er}` **Grup**"
+    )
 
 
 @register(outgoing=True, pattern=r"^\.gucast(?: |$)(.*)")
 async def gucast(event):
     xx = event.pattern_match.group(1)
-    if not xx:
-        return await event.edit("**Berikan beberapa teks untuk Siaran Global**")
-    tt = event.text
-    msg = tt[7:]
-    kk = await event.edit("**Sedang Mengirim pesan secara global...**")
+    if xx:
+        msg = xx
+    elif event.is_reply:
+        msg = await event.get_reply_message()
+    else:
+        await event.edit("**Berikan Sebuah Pesan atau Reply**")
+        return
+    kk = await event.edit("`Globally Broadcasting Msg...`")
     er = 0
     done = 0
-    async for x in bot.iter_dialogs():
+    async for x in event.client.iter_dialogs():
         if x.is_user and not x.entity.bot:
             chat = x.id
             try:
                 done += 1
-                await bot.send_message(chat, msg)
+                await event.client.send_message(chat, msg)
             except BaseException:
                 er += 1
-    await kk.edit(f"Berhasil Mengirim Pesan Ke `{done}` obrolan, kesalahan dalam `{er}` obrolan(s)")
+    await kk.edit(
+        f"**Berhasil Mengirim Pesan Ke** `{done}` **chats, Gagal Mengirim Pesan Ke** `{er}` **chats**"
+    )
 
 
 CMD_HELP.update(
     {
-        "broadcast": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.gcast`\
-         \n↳ : Mengirim Pesan Group Secara Global.\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.gucast`\
-         \n↳ : Mengirim Pesan Pribadi Secara Global"
+        "gcast": "**Plugin : **`gcast`\
+        \n\n  •  **Syntax :** `.gcast` <text/reply media>\
+        \n  •  **Function : **Mengirim Global Broadcast pesan ke Seluruh Grup yang kamu masuk. (Bisa Mengirim Media/Sticker)\
+    "
+    }
+)
+
+
+CMD_HELP.update(
+    {
+        "gucast": "**Plugin : **`gucast`\
+        \n\n  •  **Syntax :** `.gucast` <text/reply media>\
+        \n  •  **Function : **Mengirim Global Broadcast pesan ke Seluruh Private Massage / PC yang masuk. (Bisa Mengirim Media/Sticker)\
+    "
     }
 )
