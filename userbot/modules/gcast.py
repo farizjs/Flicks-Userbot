@@ -25,7 +25,8 @@ GCAST_BLACKLIST = [
     -1001481357570,  # UsergeOnTopic
     -1001459701099,  # CatUserbotSupport
     -1001109837870,  # TelegramBotIndonesia
-    -1001578091827,  # GroupVirtualMusic
+    -1001578091827,  # AkiraSupport
+    -1001430568914,  # FlicksSupport
 ]
 
 
