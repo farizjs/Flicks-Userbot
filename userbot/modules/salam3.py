@@ -10,13 +10,13 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 @register(outgoing=True, pattern='^.mmk(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**ASTAGAAAA MEMEKNYA ANAK INI!!!!**")
+    await typew.edit("**ASTAGAAAA MEMEKNYA ANAK ASU INI!!!!**")
 
 
 @register(outgoing=True, pattern='^.ek(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**EH KONTOOOLL!!!**")
+    await typew.edit("**EH EH KONTOOOLL!!!**")
 
 
 @register(outgoing=True, pattern='^.ya(?: |$)(.*)')
@@ -34,13 +34,13 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.suci(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**LU LAMA-LAMA JADI KEK ANAK HARAM, KEKNYA HARUS GUA BAPTIS. SINI LU NGENTOT GUA BAPTIS BIAR SUCI JIWA LO YANG HARAM ITU!!!**")
+    await typew.edit("**LU LAMA-LAMA JADI KEK ANAK HARAM, KEKNYA HARUS GUA BAPTIS. SINI LU NGENTOT GUA BAPTIS BIAR SUCI JIWA LO YANG HARAM ITU AWOKAWOKAWOK!!!**")
 
 
 @register(outgoing=True, pattern='^.wibu(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**LARI CUK ADA WIBU!!!**🏃🏃🏃")
+    await typew.edit("**LARI CUK ADA WIBU KONTOL!!!**🏃🏃🏃")
 
 
 CMD_HELP.update({
