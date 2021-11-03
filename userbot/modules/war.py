@@ -119,13 +119,13 @@ async def typewriter(typew):
         "**YA AMPUN LU NGOMONG APA? GA NYAMBUNG KONTOL KAYA KEHIDUPAN LU MAKANYA ORG ORG KAYA LU GABAKALN MAJU HIDUPNYA APA LAGI ORG ORG BAWAHAN KAYA LU.**"
     )
 
+
 @register(outgoing=True, pattern=r"^\.gj(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
         "**MENTANG MENTANG PUNYA BOT MAINNYA BOT!! PANTES MUKANYA KAYA BOT😁**"
     )
-
 
 
 @register(outgoing=True, pattern=r"^\.gh(?: |$)(.*)")
