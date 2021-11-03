@@ -3,7 +3,7 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r"^\.(?:dgrup|dg)\s?(.*)?")
+@register(outgoing=True, pattern=r"^\.(?:deteksi|dg)\s?(.*)?")
 async def _(event):
     if event.fwd_from:
         return
@@ -51,6 +51,6 @@ def user_full_name(user):
 
 CMD_HELP.update({
     "deteksi":
-        "`.dgrup` ; `.dg`\
+        "`.deteksi` ; `.deteksi`\
     \nPenjelasan: Melihat Riwayat Grup Yang Pernah / Sedang dimasuki."
 })
