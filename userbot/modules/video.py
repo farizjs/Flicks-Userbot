@@ -7,7 +7,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r"^\.wibu$")
+@register(outgoing=True, pattern=r"^\.vidwibu$")
 async def _(event):
     try:
         response = requests.get(
@@ -44,7 +44,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "video": "**Plugin : **`video`\
-        \n\n  •  **Syntax :** `.wibu`\
+        \n\n  •  **Syntax :** `.vidwibu`\
         \n  •  **Function : **Untuk Mengirim video wibu secara random.\
         \n\n  •  **Syntax :** `.chika`\
         \n  •  **Function : **Untuk Mengirim video chikakiku secara random.\
