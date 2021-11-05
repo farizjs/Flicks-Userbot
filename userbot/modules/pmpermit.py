@@ -36,7 +36,7 @@ DEF_UNAPPROVED_MSG = (
     "__Jika Anda Melakukan Spamming, Anda Akan Terblokir Otomatis__\n"
     f"╭┈────────────────┈\n"
     "➥ *Owner* : {DEFAULTUSER} ")
-    "➥ **Support** : @FlicksSupport\n╭┈────────────────┈╯\n➥ **Repo** : [Flicks-Userbot](https://github.com/fjgaming212/Flicks-Userbot)\n╰┈────────────────┈➤"
+"➥ **Support** : @FlicksSupport\n╭┈────────────────┈╯\n➥ **Repo** : [Flicks-Userbot](https://github.com/fjgaming212/Flicks-Userbot)\n╰┈────────────────┈➤"
 
 
 # =================================================================
