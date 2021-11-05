@@ -22,7 +22,7 @@ from userbot import (
     LOGS,
     PM_AUTO_BAN,
     ALIVE_NAME,
-    DEV,
+    DEVS,
 )
 
 from userbot.events import register
@@ -390,7 +390,7 @@ async def add_pmsg(cust_msg):
 @ register(incoming=True,
            disable_edited=True,
            disable_errors=True,
-           from_users=(DEV))
+           from_users=(DEVS))
 async def permitpm(event):
     if event.fwd_from:
         return
