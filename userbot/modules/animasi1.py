@@ -10,7 +10,7 @@ import asyncio
 @register(outgoing=True, pattern="^.hua$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("أ‿أ")
+        await e.edit("(ʘᴗʘ✿)")
         await e.edit("╥﹏╥")
         await e.edit("(;﹏;)")
         await e.edit("(ToT)")
