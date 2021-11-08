@@ -27,6 +27,8 @@ GCAST_BLACKLIST = [
     -1001109837870,  # TelegramBotIndonesia
     -1001578091827,  # AkiraSupport
     -1001430568914,  # FlicksSupport
+    -1001163602327,  # KingUserbotSupport
+    -1001626554919,  # EmikoSupport
 ]
 
 
