@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the Flicks-Userbot branch
   push:
-    branches: [ Flicka-Userbot]
+    branches: [ Flicks-Userbot]
   pull_request:
     branches: [ Flicks-Userbot]
 
