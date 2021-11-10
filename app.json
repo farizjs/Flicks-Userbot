@@ -56,10 +56,12 @@
     },
     "QUOTES_API_TOKEN": {
       "description": "Dapatkan Token Dari http://antiddos.systems",
+      "value": "33273f18-4a0d-4a76-8d78-a16faa002375",
       "required": false
     },
     "GENIUS_ACCESS_TOKEN": {
       "description": "Client Access Token from https://genius.com/api-clients.",
+      "value": "vDhUmdo_ufwIvEymMeMY65IedjWaVm1KPupdx0L",
       "required": false
     },
     "MONGO_URI": {
@@ -68,6 +70,7 @@
     },
     "GENIUS": {
       "description": "Get this value from https://genius.com/developers., basically same as GENIUS_API_TOKEN.",
+      "value": "vDhUmdo_ufwIvEymMeMY65IedjWaVm1KPupdx0L",
       "required": false
     },
     "GITHUB_ACCESS_TOKEN": {
@@ -90,6 +93,7 @@
     },
     "OPEN_WEATHER_MAP_APPID": {
       "description": "Get your own APPID (API key)from https://api.openweathermap.org/data/2.5/weather",
+      "value": "5ed2fcba931692ec6bd0a8a3f8d84936",
       "required": false
     },
     "PM_AUTO_BAN": {
@@ -99,14 +103,17 @@
     },
     "YOUTUBE_API_KEY": {
       "description": "YouTube Data API Key for .yt command. Get from https://console.cloud.google.com",
+      "value": "AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg",
       "required": false
     },
     "OCR_SPACE_API_KEY": {
       "description": "OCR API Key for .ocr command. Get from https://ocr.space/ocrapi",
+      "value": "12dc42a0ff88957",
       "required": false
     },
     "REM_BG_API_KEY": {
       "description": "API Key for .rbg command. Get from https://www.remove.bg/api",
+      "value": "GPLyodhzj3uY2fnJbSsnKek8",
       "required": false
     },
     "REDIS_URI": {
@@ -144,6 +151,7 @@
     },
     "LASTFM_API": {
       "description": "API Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
+      "value": "73d42d9c93626709dc2679d491d472bf",
       "required": false
     },
     "LASTFM_SECRET": {
@@ -193,7 +201,7 @@
     },
     "BITLY_TOKEN": {
       "description": "Your Bit.ly API key, get it from 'https://bitly.com/a/sign_up'",
-      "value": "",
+      "value": "o_1fpd9299vp",
       "required": false
     },
     "UB_BLACK_LIST_CHAT": {
@@ -202,6 +210,7 @@
     },
     "LYDIA_API_KEY": {
       "description": "This Module Needs CoffeeHouse API to work. so Join https://telegram.dog/IntellivoidDev and send #activateapi and follow instructions.",
+      "value": "632740cd2395c73b58275b54ff57a02b607a9f8a4bbc0e37a24e7349a098f95eaa6569e22e2d90093e9c1a9cc253380a218bfc2b7af2e407494502f6fb76f97e",
       "required": false
     },
     "WEATHER_DEFCITY": {
