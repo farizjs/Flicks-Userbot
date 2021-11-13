@@ -144,7 +144,7 @@ async def promote(promt):
     # Try to promote if current user is admin or creator
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await promt.edit("`Berhasil Mempromosikan Pengguna Ini Sebagai Admin!`")
+        await promt.edit("`Berhasil Menambahkan Pengguna Ini Sebagai Admin!`")
         await sleep(5)
         await promt.delete()
 
@@ -198,7 +198,7 @@ async def demote(dmod):
     # Assume we don't have permission to demote
     except BadRequestError:
         return await dmod.edit(NO_PERM)
-    await dmod.edit("`Admin Berhasil Dilepas!`")
+    await dmod.edit("`Berhasil Melepas Pengguna Ini Sebagai Admin!`")
     await sleep(5)
     await dmod.delete()
 
@@ -206,7 +206,7 @@ async def demote(dmod):
     if BOTLOG:
         await dmod.client.send_message(
             BOTLOG_CHATID,
-            "#MENURUNKAN\n"
+            "#DEMOTE\n"
             f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
             f"GRUP: {dmod.chat.title}(`{dmod.chat_id}`)",
         )
@@ -286,7 +286,7 @@ async def nothanos(unbon):
 
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await unbon.edit("```Unban Berhasil Dilakukan!```")
+        await unbon.edit("```Berhasil Melepas Ban Pengguna!```")
         await sleep(3)
         await unbon.delete()
 
@@ -332,14 +332,14 @@ async def spider(spdr):
     # If everything goes well, do announcing and mute
     await spdr.edit("`Telah Dibisukan!`")
     if mute(spdr.chat_id, user.id) is False:
-        return await spdr.edit("`Error! Pengguna Sudah Dibisukan.`")
+        return await spdr.edit("`Pengguna Sudah Dibisukan!`")
     else:
         try:
             await spdr.client(EditBannedRequest(spdr.chat_id, user.id, MUTE_RIGHTS))
 
             # Announce that the function is done
             if reason:
-                await spdr.edit(f"**Telah Dibisukan!**\n**Alasan:** `{reason}`")
+                await spdr.edit(f"**Pengguna Telah Dibisukan!**\n**Alasan:** `{reason}`")
             else:
                 await spdr.edit("`Telah Dibisukan!`")
 
@@ -380,12 +380,12 @@ async def unmoot(unmot):
         return
 
     if unmute(unmot.chat_id, user.id) is False:
-        return await unmot.edit("`Kesalahan! Pengguna Sudah Tidak Dibisukan.`")
+        return await unmot.edit("`Pengguna Sudah Tidak Dibisukan!`")
     else:
 
         try:
             await unmot.client(EditBannedRequest(unmot.chat_id, user.id, UNBAN_RIGHTS))
-            await unmot.edit("```Berhasil Melakukan Unmute! Pengguna Sudah Tidak Lagi Dibisukan```")
+            await unmot.edit("```Berhasil Melakukan Unmute! Pengguna Sudah Tidak Dibisukan```")
             await sleep(3)
             await unmot.delete()
         except UserIdInvalidError:
@@ -457,7 +457,7 @@ async def ungmoot(un_gmute):
     await un_gmute.edit("```Membuka Global Mute Pengguna...```")
 
     if ungmute(user.id) is False:
-        await un_gmute.edit("`Kesalahan! Pengguna Sedang Tidak Di Gmute.`")
+        await un_gmute.edit("`Pengguna Sedang Tidak Di Gmute!`")
     else:
         # Inform about success
         await un_gmute.edit("```Berhasil! Pengguna Sudah Tidak Lagi Dibisukan```")
@@ -495,7 +495,7 @@ async def gspider(gspdr):
         return
 
     # If pass, inform and start gmuting
-    await gspdr.edit("`Berhasil Membisukan Pengguna!`")
+    await gspdr.edit("`Pengguna Berhasil Dibisukan!`")
     if gmute(user.id) is False:
         await gspdr.edit("`Kesalahan! Pengguna Sudah Dibisukan.`")
     else:
@@ -518,7 +518,7 @@ async def rm_deletedacc(show):
 
     con = show.pattern_match.group(1).lower()
     del_u = 0
-    del_status = "`Tidak Menemukan Akun Terhapus, Grup Bersih`"
+    del_status = "`Tidak Menemukan Akun Terhapus Di Grup Ini`"
 
     if con != "clean":
         await show.edit("`Mencari Akun Hantu/Terhapus/Zombie...`")
