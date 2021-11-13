@@ -23,7 +23,7 @@
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @xgothboi di telegram",
+      "description": "Dapatkan String Session di https://replit.com/@fjgaming212/StringSession#main.py",
       "required": true
     },
     "HEROKU_APP_NAME": {
