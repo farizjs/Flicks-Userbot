@@ -30,6 +30,7 @@ GCAST_BLACKLIST = [
     -1001163602327,  # KingUserbotSupport
     -1001626554919,  # EmikoSupport
     -1001412403011,  # Group Music Chat ID
+    -1001752592753,  # Skyzusupport
 ]
 
 
