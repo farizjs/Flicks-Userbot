@@ -1,6 +1,6 @@
 from time import sleep
 from userbot.events import register
-from userbot import ALIVE_NAME, CMD_HELP, UMUR, WEATHER_DEFCITY
+from userbot import ALIVE_NAME, CMD_HELP, WEATHER_DEFCITY
 
 
 @register(outgoing=True, pattern='^.intro(?: |$)(.*)')
@@ -8,7 +8,7 @@ async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(f"`Hai Perkenalkan Namaku {ALIVE_NAME}`")
     sleep(3)
-    await typew.edit(f"`Umurku {UMUR}`")
+    await typew.edit(f"`Umurku Rahasia :D`")
     sleep(1)
     await typew.edit(f"`Tinggal Di {WEATHER_DEFCITY}, Salam Kenal :)`")
 # Create by myself @localheart
