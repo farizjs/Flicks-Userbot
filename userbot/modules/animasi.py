@@ -11,7 +11,7 @@ async def typewriter(typew):
     sleep(2)
     await typew.edit("`Kedua kamu manis`")
     sleep(1)
-    await typew.edit("`Dan yang terakhir adalah kamu bukan jodohku`")
+    await typew.edit("`Dan yang terakhir adalah kamu bukan jodohku:)`")
 
 # Create by myself @localheart
 
