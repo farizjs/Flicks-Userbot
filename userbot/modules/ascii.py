@@ -26,7 +26,7 @@ async def ascii(event):
     if not reply_message.media:
         await event.edit("`Balas Ke Gambar/Sticker/Video`")
         return
-    await event.edit("`Sedang Mendownload Media..`")
+    await event.edit("`Sedang Mendownload Media...`")
     if reply_message.photo:
         IMG = await bot.download_media(
             reply_message,
