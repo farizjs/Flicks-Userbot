@@ -26,7 +26,7 @@ async def _(event):
             await conv.get_response()
             await conv.send_message(text)
             await conv.get_response()
-            await event.edit(f"**Hasil Pencarian**\n\n{response.message.message}")
+            await event.client.forward_messages(event.chat_id)
             await event.delete()
         except YouBlockedUserError:
             await event.client(UnblockRequest("683757318"))
@@ -34,7 +34,7 @@ async def _(event):
             await conv.get_response()
             await conv.send_message(text)
             await conv.get_response()
-            await event.edit(f"**Hasil Pemcarian**\n\n{response.message.message}")
+            await event.client.forward_messages(event.chat_id)
             await event.delete()
 
 
