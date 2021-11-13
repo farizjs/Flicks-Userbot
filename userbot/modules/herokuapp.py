@@ -96,7 +96,7 @@ async def variable(var):
 
 @register(outgoing=True, pattern=r'^.set var (\w*) ([\s\S]*)')
 async def set_var(var):
-    await var.edit("`Sedang Menyetel Config Vars ヅ`")
+    await var.edit("`Sedang Menyetel Config Vars 🛠️`")
     variable = var.pattern_match.group(1)
     value = var.pattern_match.group(2)
     if variable in heroku_var:
@@ -106,7 +106,7 @@ async def set_var(var):
                 "**Mengganti Config Vars**:\n"
                 f"`{variable}` = `{value}`"
             )
-        await var.edit("`Sedang Di Proses, Mohon Menunggu Dalam Beberapa Detik 😼`")
+        await var.edit("`Sedang Di Proses, Mohon Menunggu Dalam Beberapa Detik ⌛`")
     else:
         if BOTLOG:
             await var.client.send_message(
@@ -179,17 +179,17 @@ async def dyno_usage(dyno):
             AppMinutes = math.floor(AppQuotaUsed % 60)
 
             await dyno.edit(
-                f"╭┈─╼━━━━━━━━━━━━━━╾─┈╮ \n"
+                f"╭┈─╼━━━━━━━━━━━━━╾─┈╮ \n"
                 f"│ㅤ✨**𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭**✨ \n"
-                f"╭┈─╼━━━━━━━━━━━━━━╾─┈╮ \n"
+                f"╭┈─╼━━━━━━━━━━━━━╾─┈╮ \n"
                 f"│◈ **Dyno usage this month :** \n"
                 f"│◈ {AppHours} jam - {AppMinutes} menit \n"
                 f"│◈ **Percentage :** {AppPercentage}% \n"
-                f"╰┈──────────────────┈╮ \n"
+                f"╰┈─────────────────┈╮ \n"
                 f"│◈ **Remaining dyno this month :** \n"
                 f"│◈ {hours} jam - {minutes} menit \n"
                 f"│◈ **Percentage :** {percentage}% \n"
-                f"╰┈──────────────────┈╯ \n"
+                f"╰┈─────────────────┈╯ \n"
                 f"◈ **Master :** {ALIVE_NAME} \n"
             )
             await asyncio.sleep(20)
@@ -215,7 +215,7 @@ async def _(dyno):
     return os.remove("logs.txt")
 
 
-CMD_HELP.update({"herokuapp": "Cmd: `Usage`"
+CMD_HELP.update({"herokuapp": "Cmd: `.usage`"
                  "\n↳ : Check Quota Dyno Heroku"
                  "\n\nCmd: `.logs`"
                  "\n↳ : Melihat Logs Heroku Anda"
