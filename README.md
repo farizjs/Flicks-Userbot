@@ -8,7 +8,7 @@
     </p>
     
 
-![FLICKS UBOT Logo](https://telegra.ph/file/2663014fea2ec59f955f8.jpg)
+![FLICKS UBOT logo](https://telegra.ph/file/2663014fea2ec59f955f8.jpg)
 
 <p align="center">&nbsp;</p>
 
@@ -42,6 +42,7 @@ Repo Yang Dibuat Oleh [Kami](https://t.me/devoloperflicks/32) Dari beberapa Repo
 🔰 **THANKS YOU TO**
 *   [Kennedy](https://github.com/KennedyProject/KEN-UBOT)    Ken - Userbot
 *   [Apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
-*   [VCKYOU](https://github.com/Vckyou/Geez-Project)    Geez - Project 
+*   [Vicky](https://github.com/Vckyou/Geez-Project)    Geez - Project 
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
+*   [Risman](https://github.com/mrismanaziz/Man-Userbot)   Man - Userbot
 *   DAN TERIMAKASIH KEPADA USERBOT LAINNYA <img src="./resources/extras/kennn.gif" width="10px">
