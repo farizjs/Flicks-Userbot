@@ -1,6 +1,6 @@
 from time import sleep
 from userbot.events import register
-from userbot import ALIVE_NAME, UMUR, WEATHER_DEFCITY
+from userbot import ALIVE_NAME, CMD_HELP, UMUR, WEATHER_DEFCITY
 
 
 @register(outgoing=True, pattern='^.intro(?: |$)(.*)')
@@ -50,3 +50,16 @@ async def typewriter(typew):
     sleep(2)
     await typew.edit("`Aku Gban Nanti Nangesss Lho 🥺`")
 # Create by myself @localheart
+
+
+
+CMD_HELP.update({
+    "flicks": "\
+**Perintah:** `.intro`\
+\n**Penjelasan:** Memperkenalkan diri anda\
+\n\n**Perintah:** `.semangat`\
+\n**Penjelasan:** Sedikit Motifasi\
+\n\n**Perintah:** `.aku`\
+\n**Penjelasan:** Lihat sendiri 🏃\
+\n\n**Perintah:** `.sayang`\
+\n**Penjelasan:** Lihat Sendiri 🏃"})
