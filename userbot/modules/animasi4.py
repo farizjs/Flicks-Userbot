@@ -78,7 +78,7 @@ async def typewriter(typew):
                      "╬═╬ \n"
                      "╬═╬ \n"
                      "╬═╬ \n"
-                     "╬═╬ Hallo Anak Ngentot!!! \n"
+                     "╬═╬ Hallo Nona Nona \n"
                      "╬═╬☻/ \n"
                      "╬═╬/▌ \n"
                      "╬═╬/ \\ \n")
@@ -205,11 +205,11 @@ async def typewriter(typew):
                      "░░░░░░███▓▓███████\n"
                      "░░░░░████▓▓████████\n"
                      "░░░░█████▓▓█████████\n"
-                     "░░░█████░░░█████●███\n"
-                     "░░████░░░░░░░███████\n"
-                     "░░███░░░░░░░░░██████\n"
-                     "░░██░░░░░░░░░░░████\n"
-                     "░░░░░░░░░░░░░░░░███\n"
+                     "░░░█████░|░█████●███\n"
+                     "░░████░░░|░░░███████\n"
+                     "░░███░░░░|░░░░██████\n"
+                     "░░██░░░░░|░░░░░████\n"
+                     "░░░░░░░░░|░░░░░░███\n"
                      "░░░░░░░░░░░░░░░░░░░\n")
 
 
@@ -240,7 +240,7 @@ async def typewriter(typew):
                      "◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤\n")
 
 
-@register(outgoing=True, pattern='^.babi(?: |$)(.*)')
+@register(outgoing=True, pattern='^.pig(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("┈┈┏━╮╭━┓┈╭━━━━╮\n"
@@ -253,7 +253,7 @@ async def typewriter(typew):
                      "┈┈┈┈┈┗┻┛┗┻┛┈┈┈┈\n")
 
 
-@register(outgoing=True, pattern='^.ajg(?: |$)(.*)')
+@register(outgoing=True, pattern='^.dog(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("╥━━━━━━━━╭━━╮━━┳\n"
@@ -310,6 +310,6 @@ CMD_HELP.update({
     \nUsage: jempol\
     \n\n`.awkwok`\
     \nUsage: ketawa lari.\
-    \n\n`.ular` ; `.babi` ; `.ajg`\
+    \n\n`.ular` ; `.pig` ; `.dog`\
     \nUsage: liat sendiri."
 })
