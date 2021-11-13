@@ -14,7 +14,7 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@register(outgoing=True, pattern='^.sayang(?: |$)(.*)')
+@register(outgoing=True, pattern='^.lopyu(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(3)
@@ -60,5 +60,5 @@ CMD_HELP.update({
 \n**Penjelasan:** Sedikit Motifasi\
 \n\n**Perintah:** `.aku`\
 \n**Penjelasan:** Lihat sendiri 🏃\
-\n\n**Perintah:** `.sayang`\
+\n\n**Perintah:** `.lopyu`\
 \n**Penjelasan:** Lihat Sendiri 🏃"})
