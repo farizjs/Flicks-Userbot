@@ -52,7 +52,6 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-
 CMD_HELP.update({
     "flicks": "\
 **Perintah:** `.intro`\
