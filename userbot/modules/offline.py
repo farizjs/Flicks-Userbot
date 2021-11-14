@@ -265,9 +265,12 @@ async def afk_on_pm(sender):
 
 
 CMD_HELP.update({
-    "off":
-    "CMD🚶`.off` [Alasan]\
+    "offline":
+    "**Perintah : `.off` [Alasan]\
 \nUsage: Sama Seperti AFK, Lakukan ketika ingin OFF.\nSiapapun Yang Balas, Tag, Atau Chat Kamu \
-Mereka Akan Tau Alasan Kamu OFF.\n\nOFF Bisa Dilakukan Dan Dibatalkan Dimanapun.\
+Mereka Akan Tau Alasan Kamu OFF.\n\nOFF Bisa Dilakukan Dan Dibatalkan Dimanapun, dan menguubah nama belakang menjadi ✘ ᴏꜰꜰʟɪɴᴇ ✘.\
+\n\n**Perintah :** `.sibuk`\
+\nUsage : Memberi tahu kalau Anda sedang SIBUK , dan menguubah nama belakang menjadi ✘ sɪʙᴜᴋ ✘\
+\n\nNotes : Bila ada orang spam berlebihan ke Anda , tinggal ketik .block\
 "
 })
