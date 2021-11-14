@@ -268,9 +268,9 @@ CMD_HELP.update({
     "offline":
     "**Perintah : `.off` [Alasan]\
 \nUsage: Sama Seperti AFK, Lakukan ketika ingin OFF.\nSiapapun Yang Balas, Tag, Atau Chat Kamu \
-Mereka Akan Tau Alasan Kamu OFF.\n\nOFF Bisa Dilakukan Dan Dibatalkan Dimanapun, dan menguubah nama belakang menjadi ✘ ᴏꜰꜰʟɪɴᴇ ✘.\
-\n\n**Perintah :** `.sibuk`\
-\nUsage : Memberi tahu kalau Anda sedang SIBUK , dan menguubah nama belakang menjadi ✘ sɪʙᴜᴋ ✘\
-\n\nNotes : Bila ada orang spam berlebihan ke Anda , tinggal ketik `.block`\
+Mereka Akan Tau Alasan Kamu OFF.\n\nOFF Bisa Dilakukan Dan Dibatalkan Dimanapun, dan menguubah nama belakang menjadi `✘ ᴏꜰꜰʟɪɴᴇ ✘`.**\
+\n\n**Perintah : `.sibuk`\
+\nUsage : Memberi tahu kalau Anda sedang SIBUK , dan menguubah nama belakang menjadi `✘ sɪʙᴜᴋ ✘`.\
+\n\n**Notes : Bila ada orang spam berlebihan ke Anda , tinggal ketik `.block`**\
 "
 })
