@@ -271,6 +271,6 @@ CMD_HELP.update({
 Mereka Akan Tau Alasan Kamu OFF.\n\nOFF Bisa Dilakukan Dan Dibatalkan Dimanapun, dan menguubah nama belakang menjadi ✘ ᴏꜰꜰʟɪɴᴇ ✘.\
 \n\n**Perintah :** `.sibuk`\
 \nUsage : Memberi tahu kalau Anda sedang SIBUK , dan menguubah nama belakang menjadi ✘ sɪʙᴜᴋ ✘\
-\n\nNotes : Bila ada orang spam berlebihan ke Anda , tinggal ketik .block\
+\n\nNotes : Bila ada orang spam berlebihan ke Anda , tinggal ketik `.block`\
 "
 })
