@@ -166,7 +166,7 @@ async def mention_afk(mention):
             if mention.sender_id not in USERS:
                 if AFKREASON:
                     await mention.reply(f"🔥 __**PESAN**__\n\n╭╼══════════════╾\n**Bos {ALIVE_NAME} Sedang SIBUK!**\n**Sejak :** {afk_since} Yang Lalu\
-                        \n╰► **Alasan :** `{AFKREASON}`\n╰╼═════════╾")
+                        \n**Mohon Jangan Mengganggunya** 🙏\n╰╼═════════╾")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
                 USERS.update({mention.sender_id: 1})
@@ -175,7 +175,7 @@ async def mention_afk(mention):
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await mention.reply(f"🔥 __**PESAN**__\n\n╭╼══════════════╾\n**{ALIVE_NAME} Masih SIBUK**\n**Sejak :** {afk_since} Yang Lalu\
-                            \n╰► **Alasan :** `{AFKREASON}`\n╰╼═════════╾")
+                            \n**Mohon Jangan Diganggu** 🙏\n╰╼═════════╾")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
                     USERS[mention.sender_id] = USERS[mention.sender_id] + 1
@@ -243,7 +243,7 @@ async def afk_on_pm(sender):
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(f"🔥 __**PESAN**__\n\n╭╼══════════════╾\n**{ALIVE_NAME} Masih SIBUK Mohon Tunggu!**\n**Sejak :** {afk_since} Yang Lalu\
-                        \n╰► **Alasan :** `{AFKREASON}`\n╰╼═════════╾")
+                        \n**Mohon Jangan Diganggu** 🙏\n╰╼═════════╾")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
                 USERS.update({sender.sender_id: 1})
@@ -252,7 +252,7 @@ async def afk_on_pm(sender):
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await sender.reply(f"🔥 __**PESAN**__\n\n╭╼══════════════╾\n**{ALIVE_NAME} Di Bilang Masih SIBUK**\n**Sejak :** {afk_since} Yang Lalu\
-                            \n╰► **Alasan :** `{AFKREASON}`\n╰╼═════════╾")
+                            \n**Mohon Jangan Diganggu** 🙏\n╰╼═════════╾")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
@@ -260,14 +260,3 @@ async def afk_on_pm(sender):
                 else:
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
                     COUNT_MSG = COUNT_MSG + 1
-
-
-CMD_HELP.update(
-    {
-        "sibuk": "** Plugin : **`sibuk`\
-        \n\n  •  **Perintah :** `.sibuk`\
-        \n  •  **Function : **Memberi tahu kalau Anda sedang SIBUK , dan menguubah nama belakang menjadi ✘ sɪʙᴜᴋ ✘\
-        \n\n  •  **Notes :** __Bila ada orang spam berlebihan ke Anda , tinggal ketik__ `.block`\
-    "
-    }
-)
