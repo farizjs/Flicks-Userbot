@@ -8,7 +8,7 @@
     </p>
     
 
-![FLICKS UBOT logo](https://telegra.ph/file/2663014fea2ec59f955f8.jpg)
+![FLICKS UBOT logo](https://telegra.ph/file/808a9f8f047f9a7e67050.jpg)
 
 <p align="center">&nbsp;</p>
 
