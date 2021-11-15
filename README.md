@@ -21,7 +21,7 @@ Berbasis [King](https://github.com/apisuserbot/King-Userbot) dan [Ken](https://g
 
 ### Generate String Using Replit
 
-[![FLICKS-UBOT-STRING]((https://replit.com/@fjgaming212/StringSession#main.py)
+[![FLICKS-UBOT-STRING](https://img.shields.io/badge/run-string__session.py-blue?style=for-the-badge&logo=repl.it)](https://replit.com/@fjgaming212/StringSession#main.py)
 
 
 ## DEPLOY TO HEROKU 
