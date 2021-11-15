@@ -4,7 +4,7 @@ import asyncio
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot import ALIVE_NAME, CMD_HELP
+from userbot import CMD_HELP
 from userbot.events import register
 
 
@@ -12,7 +12,7 @@ from userbot.events import register
 async def _(event):
     if event.fwd_from:
         return
-    aing = await event.client.get_me()
+    await event.client.get_me()
     text = event.pattern_match.group(1)
     if not text:
         await event.edit("`Give a teks too!`")
@@ -23,7 +23,7 @@ async def _(event):
         try:
             msg = await conv.send_message(f"{text}")
             response = await conv.get_response()
-            logo = await conv.get_response()
+            await conv.get_response()
             """ - don't spam notif - """
             await event.client.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
