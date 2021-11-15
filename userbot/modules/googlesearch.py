@@ -35,6 +35,7 @@ async def _(event):
         await event.client.send_message(
             event.chat_id,
             message,
+            caption=f"**Hasil Pencarian**",
         )
         await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
         await event.delete()
