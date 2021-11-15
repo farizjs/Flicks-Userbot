@@ -1,11 +1,8 @@
 #         FLICKS-USERBOT​    
 
-<p align="center">
-    <a href="https://github.com/fjgaming212/Flicks-Userbot/commits/Flicks-Userbot"><img src="https://img.shields.io/github/last-commit/fjgaming212/Flicks-Userbot?color=ff0000&logo=github&logoColor=ffffff&style=for-the-badge" /></a>
-    <a href="https://github.com/fjgaming212/Flicks-Userbot"> <img src="https://img.shields.io/github/repo-size/fjgaming212/Flicks-Userbot?logo=github&style=for-the-badge" /></a>
-    <a href="https://pypi.org/project/Telethon/"><img src="https://img.shields.io/pypi/v/telethon?color=important&label=telethon&logo=python&logoColor=brightgreen&style=for-the-badge" /></a>
-    <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.9.6-purple?style=for-the-badge&logo=appveyor"/>
-    </p>
+Flicks-Userbot adalah userbot Telegram modular yang berjalan di Python 3.6 dengan database sqlalchemy.
+
+Berbasis [King](https://github.com/apisuserbot/King-Userbot) dan [Ken](https://github.com/KennedyProject/KEN-UBOT) userbot. Saya membuat repository ini untuk memilih dan menambahkan beberapa modul yang saya butuhkan dengan banyak perubahan, fitur dan module.
     
 
 
@@ -22,13 +19,13 @@
 ```
 
 
-### Generate String Using Replit⤵️
+### Generate String Using Replit
 
-[![FLICKS-UBOT-STRING](https://replit.com/badge/github/@fjgaming212/Flicks-Userbot)](https://replit.com/@fjgaming212/StringSession#main.py)
+[![FLICKS-UBOT-STRING]((https://replit.com/@fjgaming212/StringSession#main.py)
 
 
 ## DEPLOY TO HEROKU 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/fjgaming212/Flicks-Userbot/tree/Flicks-Userbot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-purple?style=flat&logo=heroku" width="250" height="38.60" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/fjgaming212/Flicks-Userbot/tree/Flicks-Userbot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="150" height="30.60" /></a></p>
 
 ### Tutorial Deploy
 ```
