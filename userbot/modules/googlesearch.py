@@ -18,7 +18,7 @@ async def _(event):
         await event.edit("`Give a teks too!`")
     else:
         await event.edit("`Processing...`")
-    chat = "@tdtapibot"
+    chat = "@ribot"
     async with event.client.conversation(chat) as conv:
         try:
             msg = await conv.send_message(f"{text}")
@@ -40,5 +40,5 @@ async def _(event):
         await event.delete()
 
 
-CMD_HELP.update({"logo": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.search` <teks>"
+CMD_HELP.update({"googlesearch": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.search` <teks>"
                  "\n↳ : Untuk mencari sesuatu di google."})
