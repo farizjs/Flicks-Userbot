@@ -1,4 +1,4 @@
-<h1 align="center"><img src="./resources/extras/kenn.gif" width="20px">    FLICKS-UBOT​    <img src="./resources/extras/kenn.gif" width="20px"></h1>
+#         FLICKS-USERBOT​    
 
 <p align="center">
     <a href="https://github.com/fjgaming212/Flicks-Userbot/commits/Flicks-Userbot"><img src="https://img.shields.io/github/last-commit/fjgaming212/Flicks-Userbot?color=ff0000&logo=github&logoColor=ffffff&style=for-the-badge" /></a>
@@ -8,12 +8,18 @@
     </p>
     
 
-![FLICKS UBOT logo](https://telegra.ph/file/808a9f8f047f9a7e67050.jpg)
 
 <p align="center">&nbsp;</p>
 
-### Repo FLICKS UBOT
-Repo Yang Dibuat Oleh [Kami](https://t.me/devoloperflicks/32) Dari beberapa Repo Yang Ada Di Github. 
+### Disclaimer 
+```
+             ⚠️ PERINGATAN UNTUK ANDA ⚠️ ️
+   Flicks-Userbot digunakan untuk membantu aktifitas akun anda di telegram
+   Kami tidak bertanggung jawab atas apa yang anda salah gunakan pada repository ini!
+      Hati hati dalam penggunaan pada repository ini !
+   Jika salah satu member salah gunakan repository ini , kami terpaksa harus melakukan gban kepada anda 
+  Jangan pernah sekali sekali menyalah gunakan repository ini
+```
 
 
 ### Generate String Using Replit⤵️
@@ -21,12 +27,21 @@ Repo Yang Dibuat Oleh [Kami](https://t.me/devoloperflicks/32) Dari beberapa Repo
 [![FLICKS-UBOT-STRING](https://replit.com/badge/github/@fjgaming212/Flicks-Userbot)](https://replit.com/@fjgaming212/StringSession#main.py)
 
 
-## DEPLOY TO HEROKU <img src="./resources/extras/Kenpurple.gif" width="40px">
+## DEPLOY TO HEROKU 
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/fjgaming212/Flicks-Userbot/tree/Flicks-Userbot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-purple?style=flat&logo=heroku" width="250" height="38.60" /></a></p>
+
+### Tutorial Deploy
+```
+Dapatkan API_KEY dan API_HASH di web my.telegram.org.
+Dapatkan STRING_SESSION di web replit
+Dapatkan BOT_TOKEN dan BOT_USERNAME di @BotFather
+Dapatkan HEROKU_API_KEY di dashboard.heroku.com/account
+Terus Nyalakan, tutorial lengkap cek di Channel Update
+```
 
 
 ### Support & Updates 
-<a href="https://t.me/FlicksSupport"><img src="https://img.shields.io/badge/Join-Group%20Support-red.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://t.me/SadRoomsInfo"><img src="https://img.shields.io/badge/Join-Updates%20Channel-white.svg?style=for-the-badge&logo=Telegram"></a>
+Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t.me/GenXProject_Info) Untuk Mengetahui update userbot kami
 
 
   <b>© Credits</b></summary>
@@ -45,4 +60,4 @@ Repo Yang Dibuat Oleh [Kami](https://t.me/devoloperflicks/32) Dari beberapa Repo
 *   [Vicky](https://github.com/Vckyou/Geez-Project)    Geez - Project 
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
 *   [Risman](https://github.com/mrismanaziz/Man-Userbot)   Man - Userbot
-*   DAN TERIMAKASIH KEPADA USERBOT LAINNYA <img src="./resources/extras/kennn.gif" width="10px">
+*   DAN TERIMAKASIH KEPADA USERBOT LAINNYA
