@@ -471,8 +471,8 @@ with bot:
                     f"👋 Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Flicks Project**\nGunakan saya untuk mempersantai grup anda\n\n➣ Botver : 5.0\n➣ Owner repo : [Fariz](tg://user?id=1514078508)\n",
                     buttons=[
                         [
-                             Button.url("✘ Repo Flicks-Userbot ✘",
-                                    "https://github.com/fjgaming212/Flicks-Userbot")],
+                            Button.url("✘ Repo Flicks-Userbot ✘",
+                                       "https://github.com/fjgaming212/Flicks-Userbot")],
                     ]
                 )
 
