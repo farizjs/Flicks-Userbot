@@ -468,15 +468,15 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Flicks Project**\nKalo mau tau lebih lanjut silahkan Join Ke \n**Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ** Dibawah Ini.\n",
+                    f"👋 Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Flicks Project**\nSaya dibuat oleh {DEFAULTUSER}\n\nPlugin : {len(plugins}\nBahasa : `Python` \nDatabse : `Mongo DB` \n\nBuat userbot mu sendiri,[Klik Disini](https://github.com/fjgaming212/Flicks-Userbot).\n",
                     buttons=[
                         [
-                            Button.url("Cʜᴀɴɴᴇʟ Uᴘᴅᴀᴛᴇ 📣",
+                            Button.url("Cʜᴀɴɴᴇʟ Uᴘᴅᴀᴛᴇ",
                                        "t.me/SadRoomsInfo"),
-                            Button.url("Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ 💬",
+                            Button.url("Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ",
                                        "t.me/FlicksSupport")],
-                        [Button.url("Rᴇᴘᴏ 🛠️",
-                                    "https://github.com/fjgaming212/Flicks-Userbot")],
+                        [Button.url("➕ Tambahkan Ke Grup ➕",
+                                    "https://t.me/{BOT_USERNAME}?startgroup=true")],
                     ]
                 )
 
