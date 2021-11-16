@@ -7,54 +7,39 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern='^.gjm(?: |$)(.*)')
+@register(outgoing=True, pattern='^.sk(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**GAK, JANGAN MAKSA LAH ANJEEENGGG!!!**")
+    await typew.edit("__Shalom...__")
 
 
-@register(outgoing=True, pattern='^.yhh(?: |$)(.*)')
+@register(outgoing=True, pattern='^.sh(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**YAHAHA WAHYOOOOEEEEE**")
+    await typew.edit("__Om Swastyastu__")
 
 
-@register(outgoing=True, pattern='^.eg(?: |$)(.*)')
+@register(outgoing=True, pattern='^.sb(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**EH GOBLOK!!!**")
+    await typew.edit("__Namo Buddhaya__")
 
 
-@register(outgoing=True, pattern='^.en(?: |$)(.*)')
+@register(outgoing=True, pattern='^.skh(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**EH NGENTOTTT!!!**")
+    await typew.edit("__Salam kebajikan...__")
 
-
-@register(outgoing=True, pattern='^.ast(?: |$)(.*)')
-async def typewriter(typew):
-    typew.pattern_match.group(1)
-    await typew.edit("**ASTAGFIRULLAHALAZDIM....**")
-
-
-@register(outgoing=True, pattern='^.so(?: |$)(.*)')
-async def typewriter(typew):
-    typew.pattern_match.group(1)
-    await typew.edit("**SOK KERAS BANGET SI JAMET INI BHAAAKSSSS.**")
 
 
 CMD_HELP.update({
     "salam2":
-    "Cmd: `.en`\
-\n↳ : Coba aja.\
-\n\nCmd: `.ast`\
-\n↳ : Istigfar.\
-\n\nCmd: `.gjm`\
-\n↳ : Coba Aja Sendiri.\
-\n\nCmd: `eg`\
-\n↳ : Coba Aja.\
-\n\nCmd: `.yhh`\
-\n↳ : Coba aja.\
-\n\nCmd: `.so`\
-\n↳ : Si sokap."
+    "Cmd: `.sk`\
+\n↳ : Salam Kristen/Katolik.\
+\n\nCmd: `.sh`\
+\n↳ : Salam Hindu.\
+\n\nCmd: `.sb`\
+\n↳ : Salam Budha.\
+\n\nCmd: `.skh`\
+\n↳ : Salam Konghucu."
 })
