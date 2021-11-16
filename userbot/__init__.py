@@ -468,7 +468,7 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"👋 Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Flicks Project**\nGunakan saya untuk mempersantai grup anda\n\n➣ Botver : 5.0\n➣ Owner repo : [Fariz](tg://user?id=1514078508)\n",
+                    f"[👋](https://telegra.ph/file/808a9f8f047f9a7e67050.jpg) Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di **Flicks Project**\nGunakan saya untuk mempersantai grup anda\n\n➣ Botver : 5.0\n➣ Plugin : {len(plugins)}\n➣ Owner repo : [Fariz](tg://openmessage?user_id=1514078508)\n",
                     buttons=[
                         [
                             Button.url("✘ Repo Flicks-Userbot ✘",
