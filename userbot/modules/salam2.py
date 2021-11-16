@@ -31,7 +31,6 @@ async def typewriter(typew):
     await typew.edit("__Salam kebajikan...__")
 
 
-
 CMD_HELP.update({
     "salam2":
     "Cmd: `.sk`\
