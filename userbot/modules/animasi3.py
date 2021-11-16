@@ -45,7 +45,7 @@ async def typewriter(typew):
     await typew.edit("`🏃                       🦖`")
     await typew.edit("`🏃                      🦖`")
     await typew.edit("`🏃                     🦖`")
-    await typew.edit("`🏃   `LARII GOBLOK`   🦖`")
+    await typew.edit("`🏃   `LARII`          🦖`")
     await typew.edit("`🏃                   🦖`")
     await typew.edit("`🏃                  🦖`")
     await typew.edit("`🏃                 🦖`")
@@ -55,7 +55,7 @@ async def typewriter(typew):
     await typew.edit("`🏃             🦖`")
     await typew.edit("`🏃            🦖`")
     await typew.edit("`🏃           🦖`")
-    await typew.edit("`🏃ANJING KOK NGEJAR!   🦖`")
+    await typew.edit("`🏃Eh malah ngejar!   🦖`")
     await typew.edit("`🏃           🦖`")
     await typew.edit("`🏃            🦖`")
     await typew.edit("`🏃             🦖`")
@@ -67,7 +67,7 @@ async def typewriter(typew):
     await typew.edit("`🏃                   🦖`")
     await typew.edit("`🏃                    🦖`")
     await typew.edit("`🏃                     🦖`")
-    await typew.edit("`🏃  BANGSAT CAPE       🦖`")
+    await typew.edit("`🏃   CAPE             🦖`")
     await typew.edit("`🏃                   🦖`")
     await typew.edit("`🏃                  🦖`")
     await typew.edit("`🏃                 🦖`")
@@ -79,13 +79,13 @@ async def typewriter(typew):
     await typew.edit("`🏃           🦖`")
     await typew.edit("`🏃          🦖`")
     await typew.edit("`🏃         🦖`")
-    await typew.edit("`ASU DIA MAKIN DEKET!!!`")
+    await typew.edit("`DIA MAKIN DEKET!!!`")
     sleep(1)
     await typew.edit("`🏃       🦖`")
     await typew.edit("`🏃      🦖`")
     await typew.edit("`🏃     🦖`")
     await typew.edit("`🏃    🦖`")
-    await typew.edit("`Dahlah Pasrah Aja`")
+    await typew.edit("`Dahlah Pasrah Aja:)`")
     sleep(1)
     await typew.edit("`🧎🦖`")
     sleep(2)
@@ -349,23 +349,6 @@ async def koc(e):
         await e.edit("`GABUT`")
 
 
-@register(outgoing=True, pattern='^.sangean(?: |$)(.*)')
-async def typewriter(typew):
-    typew.pattern_match.group(1)
-    await typew.edit("`Kalo Sange Modal`")
-    sleep(1)
-    await typew.edit("`Jangan Modal Kontol Doang`")
-    sleep(1)
-    await typew.edit("`Goblook Emang`")
-    sleep(1)
-    await typew.edit("`Kelamaan Nge Jomblo Sih`")
-    sleep(1)
-    await typew.edit("`Jadinya Gitu, Sange Berat`")
-    sleep(1)
-    await typew.edit("`MAKANYA KALO HIDUP HARUS GANTENG KONTOOOLL`")
-# Create by myself @localheart
-
-
 @register(outgoing=True, pattern="^.mf$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
@@ -431,7 +414,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("`MAAF YA, CANDAA BEBANNNN xixixi.`")
     sleep(1)
-    await typew.edit("`Tapi Bo'ong Yahahaha Wahyoe`")
+    await typew.edit("`Tapi Bo'ong Yahahaha`")
 # Create by myself @localheart
 
 
@@ -439,21 +422,21 @@ async def typewriter(typew):
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
-    await typew.edit("**Woi Kontol**")
+    await typew.edit("**Woi Lol**")
     sleep(1)
     await typew.edit("**Ga Senang Kah Lu??**")
     sleep(1)
-    await typew.edit("**Sini War Kontol**")
+    await typew.edit("**Sini War **")
     sleep(1)
-    await typew.edit("**Bacod Doang Gede Ngentod**")
+    await typew.edit("**Bacod Doang Gede**")
     sleep(1)
     await typew.edit("**Di Sosmed Jagoan Di Realife Babu Tongkrongan**")
     sleep(1)
-    await typew.edit("**Ahahaha Jijik Gua Kontol**")
+    await typew.edit("**Ahahaha Jijik Gua**")
     sleep(1)
     await typew.edit("**HAHAHAHAHAHAHA**")
     sleep(1)
-    await typew.edit("**Muka Kek Kontol Belagu Banget Sih Ngentod**")
+    await typew.edit("**Muka Kek Sapi Belagu Banget Sih**")
     sleep(1)
     await typew.edit("**Sorry Cok Wkwkwk**")
     sleep(1)
@@ -471,6 +454,5 @@ CMD_HELP.update({
     \n↳ : Mengirim cinta tai anjiing ke seseorang.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sayang`\
     \n↳ : Berubah menjadi kadal.\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sangean` atau `.war`\
-    \n↳ : Kasih aja buat orang yang sangean."
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.war`."
 })
