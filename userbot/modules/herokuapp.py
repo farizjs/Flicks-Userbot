@@ -162,6 +162,7 @@ async def dyno_usage(dyno):
             minutes_remaining = remaining_quota / 60
             hours = math.floor(minutes_remaining / 60)
             minutes = math.floor(minutes_remaining % 60)
+            day = math.floor(hours / 24)
 
             """ - User App Used Quota - """
             Apps = result['apps']
@@ -189,6 +190,7 @@ async def dyno_usage(dyno):
                 f"│◈ **Remaining dyno this month :** \n"
                 f"│◈ {hours} jam - {minutes} menit \n"
                 f"│◈ **Percentage :** {percentage}% \n"
+                f"│◈ **Perkiraan Sisa :** {day} hari Lagi \n"
                 f"╰┈─────────────────┈╯ \n"
                 f"◈ **Master :** {ALIVE_NAME} \n"
             )
