@@ -16,7 +16,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 @register(outgoing=True, pattern="^.gbanb(?: |$)(.*)")
 async def _(event):
     if G_BAN_LOGGER_GROUP is None:
-        await event.edit("Set G_BAN_LOGGER_GROUP in vars otherwise module won't work.")
+        await event.edit("Set G_BAN_LOGGER_GROUP di vars jika tidak perintah tidak akan berfungsi!")
         return
     if event.fwd_from:
         return
@@ -34,7 +34,7 @@ async def _(event):
     await event.delete()
     await event.reply("**gbanning...**")
     asyncio.sleep(3.5)
-    await event.edit(f"**User gbanned by {DEFAULTUSER}**")
+    await event.edit(f"**Pengguna telah di gban oleh {DEFAULTUSER}**")
     asyncio.sleep(5)
     await event.delete()
 
@@ -42,7 +42,7 @@ async def _(event):
 @register(outgoing=True, pattern="^.ungbanb(?: |$)(.*)")
 async def _(event):
     if G_BAN_LOGGER_GROUP is None:
-        await event.edit("Set G_BAN_LOGGER_GROUP in vars otherwise module won't work.")
+        await event.edit("Set G_BAN_LOGGER_GROUP di vars jika tidak perintah tidak akan berfungsi!")
         return
     if event.fwd_from:
         return
@@ -57,6 +57,6 @@ async def _(event):
     await event.delete()
     await event.reply("**ungbanning...**")
     asyncio.sleep(3.5)
-    await event.edit(f"**User ungbanned by {DEFAULTUSER}**")
+    await event.edit(f"**Pengguna telah di ungban oleh {DEFAULTUSER}**")
     asyncio.sleep(5)
     await event.delete()
