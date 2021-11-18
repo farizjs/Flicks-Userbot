@@ -38,7 +38,7 @@ Terus Nyalakan, tutorial lengkap cek di Channel Update
 
 
 ### Support & Updates 
-Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t.me/GenXProject_Info) Untuk Mengetahui update userbot kami
+Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t.me/InfoFlicksUserbot) Untuk Mengetahui update userbot kami
 
 
   <b>© Credits</b></summary>
