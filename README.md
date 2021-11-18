@@ -25,7 +25,7 @@ Berbasis [King](https://github.com/apisuserbot/King-Userbot) dan [Ken](https://g
 
 
 ## DEPLOY TO HEROKU 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/fjgaming212/Flicks-Userbot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="150" height="30.60" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/fjgaming212/Flicks-Userbot"> <img src="https://www.herokucdn.com/deploy/button.svg" /></a></p>
 
 ### Tutorial Deploy
 ```
