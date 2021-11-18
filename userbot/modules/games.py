@@ -2,7 +2,7 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r"^\.xogame(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.xo(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -42,7 +42,7 @@ async def _(event):
 
 CMD_HELP.update({
     "games": "\
-Perintah: `.xogame`\
+Perintah: `.xo`\
 \n↳ : Mainkan game XO bersama temanmu.\
 \n\nPerintah: `.mod` <nama app>\
 \n↳ : Dapatkan applikasi mod\
