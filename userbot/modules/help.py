@@ -17,7 +17,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern="^.helpmodules(?: |$)(.*)")
+@register(outgoing=True, pattern="^.modules(?: |$)(.*)")
 async def help(event):
     """ For .help command,"""
     args = event.pattern_match.group(1).lower()
@@ -37,6 +37,6 @@ async def help(event):
                          f"**❒ Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n**❒ Mᴏᴅᴜʟᴇꜱ : {len(modules)}**\n\n"
                          "**❒ Mᴀɪɴ Mᴇɴᴜ :**\n"
                          f"◉| {string}◉\n\n"
-                         f"\n**Contoh** : Ketik <`.help nekos`> Untuk Informasi Pengunaan.\nAtau Bisa Juga Ketik `.helpme` Untuk Main Menu Yang Lain-Nya.")
+                         f"\n**Contoh** : Ketik <`.help offline`> Untuk Informasi Pengunaan.\nAtau Bisa Juga Ketik `.help` Untuk Main Menu Yang Lain-Nya.")
         await asyncio.sleep(360)
         await event.delete()
