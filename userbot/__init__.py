@@ -483,19 +483,19 @@ with bot:
                 await event.message.get_sender()
                 text = (
                     f"**Hello** [{get_display_name(u)}](tg://user?id={u.id}) **Is Its Alive Bot**\n\n"
-                    f"       令 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 令 \n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱\n"
-                    f"        I'ᴍ Aʟɪᴠᴇ​ ✨ \n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱ \n"
+                    f"         ✘ 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ \n"
+                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
+                    f"          I'ᴍ Aʟɪᴠᴇ​ ✨ \n"
+                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
                     f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi     :` {BOT_VER} \n"
                     f"`Bahasa    :` Python \n"
                     f"`Database  :` Mongo db \n"
                     f"`Owner     :` {DEFAULTUSER} \n\n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱ \n"
-                    f"     Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱")
+                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
+                    f"       Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
+                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
                 await ken.tgbot.send_file(event.chat_id, file=logo,
                                           caption=text,
                                           buttons=[
@@ -549,7 +549,7 @@ with bot:
                 result = builder.photo(
                     file=kenlogo,
                     link_preview=False,
-                    text=f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭\n** Vᴇʀsɪ :** `v5.0`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n".format(
+                    text=f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v5.0`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -641,7 +641,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"Jangan Menggunakan Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"🔒 Tombol Hanya bisa digunakan oleh {DEFAULTUSER} 🔒."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ken.tgbot.on(
