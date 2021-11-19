@@ -28,16 +28,17 @@ async def get_task(mode, choice):
 
 @register(outgoing=True, pattern=r"(task|truth|dare)(?: |$)([1-5]+)?$"))
 async def tod(event):
-    tod = event.pattern_match.group(1)
+    tod=event.pattern_match.group(1)
     if tod == "task":
-        xxnx = await edit_or_reply(event, "`Processing...`")
-        tod = random.choice(["truth", "dare"])
+        xxnx=await edit_or_reply(event, "`Processing...`")
+        tod=random.choice(["truth", "dare"])
     else:
-        xxnx = await edit_or_reply(event, f"`Tugas {tod} acak untuk Anda...`")
-    category = event.pattern_match.group(2)
-    category = int(random.choice(category)) if category else random.choice([1, 2])
+        xxnx=await edit_or_reply(event, f"`Tugas {tod} acak untuk Anda...`")
+    category=event.pattern_match.group(2)
+    category=int(random.choice(category)
+                 ) if category else random.choice([1, 2])
     try:
-        task = await get_task(tod, category)
+        task=await get_task(tod, category)
         if tod == "truth":
             await xxnx.edit(f"**Tugas Truth untuk Anda adalah**\n`{task}`")
         else:
