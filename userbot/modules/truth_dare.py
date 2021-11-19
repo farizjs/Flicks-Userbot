@@ -26,7 +26,7 @@ async def get_task(mode, choice):
     return random.choice(result)
 
 
-@register(outgoing=True, pattern=r"(.task|.truth|.dare)(?: |$)([1-5]+)?$"))
+@register(outgoing=True, pattern=r"^\.(task|truth|dare)$")
 async def tod(event):
     tod=event.pattern_match.group(1)
     if tod == "task":
