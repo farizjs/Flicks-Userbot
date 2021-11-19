@@ -18,20 +18,20 @@ from userbot import CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
 
 absen = [
-    "**Hadir Abang Sayang** 🥵",
+    "**Hadir Cuy** 😎",
     "**Hadir Bro** 😎",
     "**Hadir ganteng** 😉",
     "**Hadir Bang** 😁",
-    "**Hadir Kak Maapin Telat** 🥺",
+    "**Hadir Kak ** 😉",
     "**Hadir Dev**😎 ",
 ]
 
-pacar = [
-    "**Saya Hadir Untuk Membasmi Para Jamet Telegram** 😎 ",
-    "**Apaan Bang anjink**",
-    "**Uuyy Bang**",
-    "**Hadir Anjink** 😁",
-    "**Saya Hadir Untuk Melindungi Cewe Dari Laki Laki Sangean** 😎",
+uy = [
+    "**Woke dev** 😎 ",
+    "**Apaan Bang 🚶**",
+    "**Uuyy Bang** 😉",
+    "**Hadir Cuy** 😁",
+    "**Yoi dev** 😎",
 ]
 
 
@@ -69,7 +69,7 @@ async def _(flicks):
 
 @register(incoming=True, from_users=DEVS, pattern=r"^.flicks$")
 async def _(asadekontol):
-    await asadekontol.reply(random.choice(pacar))
+    await asadekontol.reply(random.choice(uy))
 
 
 @register(outgoing=True, pattern="^.fping$")
@@ -124,9 +124,9 @@ async def redis(pong):
     await pong.edit("UBO⚡T")
     await pong.edit("UBOT⚡")
     await pong.edit("UBO⚡T")
-    await pong.edit("😂")
-    await pong.edit("🥺")
-    await pong.edit("🤔")
+    await pong.edit("UBOT⚡")
+    await pong.edit("😁")
+    await pong.edit("😎")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"**⚡{ALIVE_NAME} Bᴏᴛ⚡​**\n"
@@ -172,10 +172,10 @@ async def redis(pong):
     await pong.edit("࿘࿘࿘࿘")
     await pong.edit("**Pong !!**")
     await pong.edit("😎")
-    await asyncio.sleep(2)
+    await asyncio.sleep(3)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**PONG!!🏓** \n"
+    await pong.edit(f"**PONG!!** \n"
                     f"**Speed !!** "
                     f"`%sms` \n"
                     f"**Uptime** - "
