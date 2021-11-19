@@ -15,22 +15,22 @@ from userbot.events import register
 async def _(event):
     if not event.reply_to_msg_id:
         return await event.edit("**Mohon Reply ke teks apa pun**")
-    reply_message = await event.get_reply_message()
-    chat = "@office2pdf_bot"
+    reply_message=await event.get_reply_message()
+    chat="@office2pdf_bot"
     await event.edit("`Mengubah menjadi PDF...`")
     try:
         async with bot.conversation(chat) as conv:
             try:
-                msg_start = await conv.send_message("/start")
-                response = await conv.get_response()
-                msg = await conv.send_message(reply_message)
-                convert = await conv.send_message("/ready2conv")
-                cnfrm = await conv.get_response()
-                editfilename = await conv.send_message("Yes")
-                enterfilename = await conv.get_response()
-                filename = await conv.send_message("Flicks-Userbot")
-                started = await conv.get_response()
-                pdf = await conv.get_response()
+                msg_start=await conv.send_message("/start")
+                response=await conv.get_response()
+                msg=await conv.send_message(reply_message)
+                convert=await conv.send_message("/ready2conv")
+                cnfrm=await conv.get_response()
+                editfilename=await conv.send_message("Yes")
+                enterfilename=await conv.get_response()
+                filename=await conv.send_message("Flicks-Userbot")
+                started=await conv.get_response()
+                pdf=await conv.get_response()
                 """- jangan spam notif -"""
                 await bot.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
