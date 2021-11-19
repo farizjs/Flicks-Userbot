@@ -11,7 +11,8 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r".pdf(?: |$)(.*)"))
+
+@register(outgoing=True, pattern=r"^\.pdf(?: |$)(.*)")
 async def _(event):
     if not event.reply_to_msg_id:
         return await event.edit("**Mohon Reply ke teks apa pun**")
@@ -63,7 +64,7 @@ CMD_HELP.update(
     {
         "pdf": f"**Plugin : **`pdf`\
         \n\n  •  **Syntax :** `.pdf` <reply text>\
-        \n  •  **Function : **Untuk Mengconvert teks menjadi file PDF menggunakan @office2pdf_bot\
+        \n  •  **Function : **Untuk Mengconvert teks menjadi file PDF\
     "
     }
 )
