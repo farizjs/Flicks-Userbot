@@ -8,7 +8,7 @@ logging.basicConfig(
     level=logging.WARNING)
 
 
-@register(outgoing=True, pattern=r"^\.help")
+@register(outgoing=True, pattern=r"^\.helpme")
 async def yardim(event):
     try:
         kenbotusername = BOT_USERNAME
