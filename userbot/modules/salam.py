@@ -16,19 +16,13 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.skp(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**SOKAP BANGET LU NAJIS ANJING GAUSAH REP REP CUIHHH!!!!**")
+    await typew.edit("**SOKAP BANGET LU GAUSAH REP REP !!!!**")
 
 
 @register(outgoing=True, pattern='^.war(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**WAR WAR TAI ANJING!!! SOK SOK AN NANTANG WAR, EH KE TRIGGERED MINTA SHARE LOCK. PAS UDAH DI SHARE LOCK NGILANG. MENTAL KEK TAI BHAAAKSSS!!!!**")
-
-
-@register(outgoing=True, pattern='^.pp(?: |$)(.*)')
-async def typewriter(typew):
-    typew.pattern_match.group(1)
-    await typew.edit("**PASANG PP DULU LU NGENTOT BIAR SEMUA ORANG TAU MUKA LU YANG HINA ITU CUIHHHH!!!!**")
+    await typew.edit("**WAR WAR OI!!! SOK SOK AN NANTANG WAR, EH KE TRIGGERED MINTA SHARE LOCK. PAS UDAH DI SHARE LOCK NGILANG. MENTAL PANTUNGAN BHAAAKSSS!!!!**")
 
 
 @register(outgoing=True, pattern='^.wa(?: |$)(.*)')
@@ -37,20 +31,21 @@ async def typewriter(typew):
     await typew.edit("**Wa'alaikumssalam Warohmatullahi Wabarokatuh**")
 
 
-@register(outgoing=True, pattern='^.ga(?: |$)(.*)')
+@register(outgoing=True, pattern='^.tutorial(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**GAK KEREN LU BEGITU GOBLOK, SINI KELUARGA LU GUA LUDAHIN SATU SATU...**")
-
+    await typew.edit("**Hallo kamu\nJika anda mau menjadi userbot [klik disini](https://t.me/InfoFlicksUserbot/64)\nJangan lupa join channel nya ya :D\nJangan lupa gabung [grup support](http://t.me/FlicksSupport) juga :)**")
 
 CMD_HELP.update({
     "salam1":
     "Cmd: `.pe`\
 \n↳ : Untuk Memberi salam.\
-\n\nCmd: `.ga`\
+\n\nCmd: `.skp`\
 \n↳ : Ngatain.\
-\n\nCmd: `.pp`\
+\n\nCmd: `.war`\
 \n↳ : Coba Aja Sendiri.\
+\n\nCmd: `.tutorial`\
+\n↳ : tutorial userbot.\
 \n\nCmd: `.wa`\
 \n↳ : Untuk Menjawab Salam."
 })
