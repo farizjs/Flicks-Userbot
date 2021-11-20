@@ -111,13 +111,13 @@ async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
         "**Hey, I Am ✨Fʟɪᴄᴋs Usᴇʀʙᴏᴛ✨ **\n"
-        "卍━━━━━━━━━━━━━━━━━━━━卍\n"
+        "卍━━━━━━━━━━━━━━━━━━━卍\n"
         "➣ Repo Userbot : [ɢɪᴛʜᴜʙ](https://github.com/fjgaming212/Flicks-Userbot)\n"
         "➣ Owner Bot       : [ʀɪᴢᴢᴢ](t.me/FJ_GAMING)\n"
-        "卍━━━━━━━━━━━━━━━━━━━━卍\n"
+        "卍━━━━━━━━━━━━━━━━━━━卍\n"
         "➣ Team                : [ʜᴇʀᴇ](t.me/devoloperflicks)​\n"
         "➣ Support           : [ɢʀᴏᴜᴘs​](t.me/FlicksSupport)\n"
-        "卍━━━━━━━━━━━━━━━━━━━━卍"
+        "卍━━━━━━━━━━━━━━━━━━━卍"
     )
 
 
