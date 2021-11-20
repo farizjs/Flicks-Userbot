@@ -37,6 +37,6 @@ async def help(event):
                          f"**❒ Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n**❒ Mᴏᴅᴜʟᴇꜱ : {len(modules)}**\n\n"
                          "**❒ Mᴀɪɴ Mᴇɴᴜ :**\n"
                          f"◉| {string}◉\n\n"
-                         f"\n**Contoh** : Ketik <`.modules offline`> Untuk Informasi Pengunaan Perintah.\nAtau Bisa Juga Ketik `.help` Untuk Main Menu Yang Lain-Nya.")
+                         f"\n**Contoh** : Ketik <`.modules offline`> Untuk Informasi Pengunaan Perintah.\nAtau Bisa Juga Ketik `.helpme` Untuk Main Menu Yang Lain-Nya.")
         await asyncio.sleep(360)
         await event.delete()
