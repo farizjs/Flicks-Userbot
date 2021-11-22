@@ -529,6 +529,25 @@ with bot:
                                           ]
                                           )
 
+        @ken.tgbot.on(events.NewMessage(pattern=r"/string"))
+        async def handler(event):
+            if event.message.from_id != uid:
+                reply = "**STRING SESSION**"
+                await event.reply(
+                    f"**Hai Kamu!**\n\n"
+                    f"Ingin Mengambil String Session?\n\n"
+                    f"Cukup Ambil Dibawah Button URL Ini\n\n"
+                    f"[⚠️](https://telegra.ph/file/32abc8853f19f9abf90e2.jpg) **Gunakan String Session Dengan Bijak!!**\n\n"
+                    f"{reply}\n",
+                    buttons=[
+                        [
+                            Button.url("Dengan Web",
+                                       "https://replit.com/@fjgaming212/StringSession#main.py"),
+                            Button.url("Dengan Bot",
+                                       "https://t.me/StringSessionFlicksbot")],
+                    ]
+                )
+
         @ken.tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
             if event.message.from_id != uid:
