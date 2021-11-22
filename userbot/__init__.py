@@ -476,6 +476,24 @@ with bot:
                     ]
                 )
 
+        @ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
+        async def handler(event):
+            if event.message.from_id != uid:
+                u = await event.client.get_entity(event.chat_id)
+                await event.reply(
+                    f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
+                    f"Ingin melihat repository ini dan Cara deploynya\n\n"
+                    f"👇🏻 __Klik button url di bawah ini__ 👇🏻\n\n"
+                    f"**FLICKS USERBOT**\n",
+                    buttons=[
+                        [
+                            Button.url("Repository",
+                                       "https://github.com/apisuserbot/King-Userbot"),
+                            Button.url("Tutorial",
+                                       "https://t.me/InfoFlicksUserbot/64")],
+                    ]
+                )
+
         @ken.tgbot.on(events.NewMessage(pattern=r"/alive"))
         async def handler(event):
             if event.message.from_id != uid:
