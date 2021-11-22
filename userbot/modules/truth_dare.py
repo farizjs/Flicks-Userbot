@@ -12,7 +12,7 @@ async def _(event):
     async with bot.conversation("@truthordares_bot") as conv:
         try:
             response = conv.wait_event(
-                events.NewMessage(incoming=True, from_users=1206492140)
+                events.NewMessage(incoming=True, from_users=1335899453)
             )
             await conv.send_message("/truth")
             response = await response
@@ -29,7 +29,7 @@ async def _(event):
     async with bot.conversation("@truthordares_bot") as conv:
         try:
             response = conv.wait_event(
-                events.NewMessage(incoming=True, from_users=1206492140)
+                events.NewMessage(incoming=True, from_users=1335899453)
             )
             await conv.send_message("/dare")
             response = await response
