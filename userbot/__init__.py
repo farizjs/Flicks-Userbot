@@ -488,7 +488,7 @@ with bot:
                     buttons=[
                         [
                             Button.url("Repository",
-                                       "https://github.com/apisuserbot/King-Userbot"),
+                                       "https://github.com/fjgaming212/Flicks-Userbot"),
                             Button.url("Tutorial",
                                        "https://t.me/InfoFlicksUserbot/64")],
                     ]
