@@ -15,7 +15,7 @@
   "stack": "container",
   "env": {
     "API_KEY": {
-      "description": "Dapatkan Api Key di web my.telegram.org.",
+      "description": "Dapatkan Api Key di web my.telegram.org ,masukan yang API ID",
       "required": true
     },
     "API_HASH": {
