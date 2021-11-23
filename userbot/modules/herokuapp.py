@@ -123,7 +123,7 @@ async def set_var(var):
 """
 
 
-@register(outgoing=True, pattern=r"^.usage(?: |$)")
+@register(outgoing=True, pattern=r"(.usage|.kuota|.dyno)(?: |$)")
 async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
@@ -217,7 +217,7 @@ async def _(dyno):
     return os.remove("logs.txt")
 
 
-CMD_HELP.update({"herokuapp": "Cmd: `.usage`"
+CMD_HELP.update({"herokuapp": "Cmd: `.usage`|`.kuota`|`.dyno`"
                  "\n↳ : Check Quota Dyno Heroku"
                  "\n\nCmd: `.logs`"
                  "\n↳ : Melihat Logs Heroku Anda"
