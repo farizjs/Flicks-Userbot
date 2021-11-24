@@ -472,7 +472,7 @@ with bot:
                     buttons=[
                         [
                             Button.url("About this bot",
-                                       "http://t.me/Flicks_Userbot?start=about")],
+                                       "https://t.me/Flicks_Userbot?start=about")],
                     ]
                 )
 
