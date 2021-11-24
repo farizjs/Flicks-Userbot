@@ -28,7 +28,7 @@ async def fban(event):
 
     if event.sender_id == fban_id:
         return await event.edit(
-            "**Error: This action has been prevented by KensurBot self preservation protocols.**"
+            "**Error: This action has been prevented by Flicks Userbot self preservation protocols.**"
         )
 
     if len((fed_list := get_flist())) == 0:
