@@ -3,6 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
+# Makasi codenya bg ken kan 😁
 """ Userbot start point """
 
 from importlib import import_module
@@ -11,6 +12,14 @@ from sys import argv
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from userbot import BOT_VER, LOGS, bot
 from userbot.modules import ALL_MODULES
+
+from telethon.tl.functions.channels import JoinChannelRequest
+from userbot import bot
+
+
+await bot(JoinChannelRequest("@FlicksSupport")) 
+
+await bot(JoinChannelRequest("@InfoFlicksUserbot"))
 
 INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
              '\n Tip: Use Country Code along with number.' \
