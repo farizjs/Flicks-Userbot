@@ -471,6 +471,19 @@ with bot:
                     f"[👋](https://telegra.ph/file/808a9f8f047f9a7e67050.jpg) Hallo [{get_display_name(u)}](tg://user?id={u.id}) \nSelamat Datang Di **Flicks Userbot**\nGunakan saya untuk mempersantai grup anda\n\n➣ Botver : 5.0\n➣ Plugin : {len(plugins)}\n➣ Owner repo : [Fariz](tg://openmessage?user_id=1514078508)\n",
                     buttons=[
                         [
+                            Button.url("About this bot",
+                                       "http://t.me/Flicks_Userbot?start=about")],
+                    ]
+                )
+
+        @ken.tgbot.on(events.NewMessage(pattern="/about"))
+        async def handler(event):
+            if event.message.from_id != uid:
+                u = await event.client.get_entity(event.chat_id)
+                await event.reply(
+                    f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) \nTentang Bot Ini\nOwner - {DEFAULUTSER}\nDeveloper - [Fariz](tg://openmessage?user_id=1514078508)\nTeam - [Click Here](https://t.me/devoloperflicks/32)\n\n➥ Plugin : {len(plugins)}\n➥ Bahasa : [Python](https://python.org)\n➥ Framework : [Telethon](http://docs.telethon.dev/)\n\nFlicks-Userbot v5.0",
+                    buttons=[
+                        [
                             Button.url("✘ Repo Flicks-Userbot ✘",
                                        "https://github.com/fjgaming212/Flicks-Userbot")],
                     ]
