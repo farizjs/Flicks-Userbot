@@ -201,7 +201,7 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "Flicks-Userbot")
 
 # Bot Version
-BOT_VER = os.environ.get("BOT_VER", "5.0")
+BOT_VER = os.environ.get("BOT_VER", "5.1")
 
 # Default .alive Username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
@@ -449,7 +449,7 @@ with bot:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
                 await event.reply(
-                    f"**Hallo Kamu Welcome To **\n [{get_display_name(u)}](tg://user?id={u.id}) \n\n"
+                    f"**Hallo Kamu**\n **Welcome To** [{get_display_name(u)}](tg://user?id={u.id}) \n\n"
                     f"✥ **ᴘᴇɴɢɢᴜɴᴀ​ :** {get_display_name(c)} \n"
                     f"✥ **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {c.id} \n"
                     f"✥ **ᴜsᴇʀɴᴀᴍᴇ​ :** @{c.username} \n"
@@ -467,7 +467,7 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"[👋](https://telegra.ph/file/808a9f8f047f9a7e67050.jpg) Hallo [{get_display_name(u)}](tg://user?id={u.id}) \nSelamat Datang Di **Flicks Userbot**\nGunakan saya untuk mempersantai grup anda\n\n➣ Botver : 5.0\n➣ Plugin : {len(plugins)}\n➣ Owner repo : [Fariz](tg://openmessage?user_id=1514078508)\n",
+                    f"[👋](https://telegra.ph/file/808a9f8f047f9a7e67050.jpg) Hallo [{get_display_name(u)}](tg://user?id={u.id}) \nSelamat Datang Di **Flicks Userbot**\nGunakan saya untuk mempersantai grup anda\n\n➣ Botver : {BOT_VER}\n➣ Plugin : {len(plugins)}\n➣ Owner repo : [Fariz](tg://openmessage?user_id=1514078508)\n",
                     buttons=[
                         [
                             Button.url("✘ Repo Flicks-Userbot ✘",
