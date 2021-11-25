@@ -13,11 +13,10 @@ from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from userbot import BOT_VER, LOGS, bot
 from userbot.modules import ALL_MODULES
 
-from telethon.tl.functions.channels import JoinChannelRequest
 from userbot import bot
 
 
-await bot(JoinChannelRequest("@FlicksSupport")) 
+await bot(JoinChannelRequest("@FlicksSupport"))
 
 await bot(JoinChannelRequest("@InfoFlicksUserbot"))
 
