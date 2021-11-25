@@ -16,9 +16,9 @@ from userbot.modules import ALL_MODULES
 from userbot import bot
 
 
-await bot(JoinChannelRequest("@FlicksSupport"))
+bot(JoinChannelRequest("@FlicksSupport"))
 
-await bot(JoinChannelRequest("@InfoFlicksUserbot"))
+bot(JoinChannelRequest("@InfoFlicksUserbot"))
 
 INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
              '\n Tip: Use Country Code along with number.' \
