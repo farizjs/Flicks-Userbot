@@ -397,8 +397,8 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} 」".format(
-                "「", x), data="ub_modul_{}".format(x))
+            "{} {} ✘".format(
+                "✘", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -413,13 +413,13 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⌫", data="{}_prev({})".format(prefix, modulo_page)
+                    "☜", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
                     "Cʟᴏsᴇ", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "⌦", data="{}_next({})".format(prefix, modulo_page)
+                    "☞", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
@@ -449,7 +449,7 @@ with bot:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
                 await event.reply(
-                    f"**Hallo Kamu Welcome To ** [{get_display_name(u)}](tg://user?id={u.id}) \n\n"
+                    f"**Hallo Kamu Welcome To **\n [{get_display_name(u)}](tg://user?id={u.id}) \n\n"
                     f"✥ **ᴘᴇɴɢɢᴜɴᴀ​ :** {get_display_name(c)} \n"
                     f"✥ **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {c.id} \n"
                     f"✥ **ᴜsᴇʀɴᴀᴍᴇ​ :** @{c.username} \n"
@@ -566,7 +566,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             current_page_number = int(lockpage)
             buttons = paginate_help(current_page_number, plugins, "helpme")
-            text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** __𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭__\n** Vᴇʀsɪ :** `v5.0`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
+            text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
             await event.edit(
                 text,
                 file=kenlogo,
@@ -585,7 +585,7 @@ with bot:
                 result = builder.photo(
                     file=kenlogo,
                     link_preview=False,
-                    text=f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v5.0`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n".format(
+                    text=f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -649,7 +649,7 @@ with bot:
                                        "t.me/SadRoomsInfo"),
                             Button.url("Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ",
                                        "t.me/FlicksSupport")],
-                        [Button.inline("Open Menu", data="open")],
+                        [Button.inline("Oᴘᴇɴ Mᴇɴᴜ", data="open")],
                         [custom.Button.inline(
                             "Cʟᴏsᴇ", b"close")],
                     ]
@@ -658,7 +658,7 @@ with bot:
         @ken.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("Buka Menu", data="open"),),
+                (custom.Button.inline("Bᴜᴋᴀ Mᴇɴᴜ", data="open"),),
             ]
             await event.edit("**Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ​!**", file=kenlogo, buttons=buttons)
 
