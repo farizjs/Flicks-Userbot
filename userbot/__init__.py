@@ -450,15 +450,14 @@ with bot:
                 c = await event.client.get_entity(event.user_id)
                 await event.reply(
                     f"**Hallo Kamu Welcome To ** [{get_display_name(u)}](tg://user?id={u.id}) \n\n"
-                    f"━━━━━━━━━━━━━━━━━━━━ \n"
-                    f"👤 **ᴘᴇɴɢɢᴜɴᴀ​ :** [{get_display_name(c)}](tg://user?id={c.id}) \n"
-                    f"━━━━━━━━━━━━━━━━━━━━ \n"
-                    f"📮 **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {c.id} \n"
-                    f"━━━━━━━━━━━━━━━━━━━━ \n\n"
-                    f"__**Semoga Betah Disini Ya**__ ✨\n",
+                    f"✥ **ᴘᴇɴɢɢᴜɴᴀ​ :** [{get_display_name(c)}] \n"
+                    f"✥ **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {c.id} \n"
+                    f"✥ **ᴜsᴇʀɴᴀᴍᴇ​ :** {c.username} \n"
+                    f"✥ **ᴍᴇɴᴛɪᴏɴ​ :** [{get_display_name(c)}](tg://user?id={c.id}) \n\n"
+                    f"sᴇᴍᴏɢᴀ ʙᴇᴛᴀʜ ᴅɪsɪɴɪ ʏᴀ​ ✨\n",
                     buttons=[
                         [
-                            Button.url("ʀᴇᴘᴏ",
+                            Button.url("ʀᴇᴘᴏ ꜰʟɪᴄᴋs ᴜsᴇʀʙᴏᴛ​",
                                        "https://github.com/fjgaming212/Flicks-Userbot")],
                     ]
                 )
