@@ -1,7 +1,7 @@
 {
   "name": "Flicks-Userbot",
   "description": "[Ficks-Userbot] USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERMAIN DI TELEGRAM.",
-  "logo": "https://telegra.ph/file/a9eca2929a057f72fc6dd.jpg",
+  "logo": "https://telegra.ph/file/62e4919abb9c9dd7c0310.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -23,7 +23,7 @@
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di https://replit.com/@fjgaming212/StringSession#main.py",
+      "description": "Dapatkan String Session di https://replit.com/@fjgaming212/StringSession#main.py atau di t.me/FlicksStringSessionBot",
       "required": true
     },
     "HEROKU_APP_NAME": {
@@ -51,17 +51,17 @@
       "required": true
     },
     "QUOTES_API_TOKEN": {
-      "description": "Dapatkan Token Dari http://antiddos.systems",
+      "description": "Dapatkan Token Dari http://antiddos.systems atau sudah di sediakan",
       "value": "33273f18-4a0d-4a76-8d78-a16faa002375",
       "required": false
     },
     "GENIUS_ACCESS_TOKEN": {
-      "description": "Client Access Token from https://genius.com/api-clients.",
+      "description": "Dapatkan Access Token dari https://genius.com/api-clients atau sudah di sediakan.",
       "value": "vDhUmdo_ufwIvEymMeMY65IedjWaVm1KPupdx0L",
       "required": false
     },
     "GENIUS": {
-      "description": "Get this value from https://genius.com/developers., basically same as GENIUS_API_TOKEN.",
+      "description": "Dapatkan di https://genius.com/developers ., Masukan GENIUS_API_TOKEN atau sudah di sediakan.",
       "value": "vDhUmdo_ufwIvEymMeMY65IedjWaVm1KPupdx0L",
       "required": false
     },
@@ -76,36 +76,36 @@
       "required": false
     },
     "OPEN_WEATHER_MAP_APPID": {
-      "description": "Get your own APPID (API key)from https://api.openweathermap.org/data/2.5/weather",
+      "description": "dapatkan APPID di from https://api.openweathermap.org/data/2.5/weather atau sudah di sediakan",
       "value": "5ed2fcba931692ec6bd0a8a3f8d84936",
       "required": false
     },
     "PM_AUTO_BAN": {
-      "description": "PM Auto-Ban Feature Switch. Also known as the 'bleep blop, this is a bot...' module.",
+      "description": "PMPERMIT untuk bot mu, false = Mati,true = Hidup",
       "value": "False",
       "required": true
     },
     "YOUTUBE_API_KEY": {
-      "description": "YouTube Data API Key for .yt command. Get from https://console.cloud.google.com",
+      "description": "YouTube Data API Key untuk .yt command. dapatkan di https://console.cloud.google.com atau sudah di sediakan",
       "value": "AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg",
       "required": false
     },
     "OCR_SPACE_API_KEY": {
-      "description": "OCR API Key for .ocr command. Get from https://ocr.space/ocrapi",
+      "description": "OCR API Key untuk .ocr command. dapatkan di https://ocr.space/ocrapi atau sudah di sediakan",
       "value": "12dc42a0ff88957",
       "required": false
     },
     "REM_BG_API_KEY": {
-      "description": "API Key for .rbg command. Get from https://www.remove.bg/api",
+      "description": "API Key untuk .rbg & .rembg command. dapatkan di https://www.remove.bg/api atau sudah di sediakan",
       "value": "GPLyodhzj3uY2fnJbSsnKek8",
       "required": false
     },
     "ANTI_SPAMBOT": {
-      "description": "Kicks spambots from groups after they join. [Requires admin powers in groups to kick.]",
+      "description": "Menendang spambot dari grup setelah mereka bergabung. [Membutuhkan hak admin.]",
       "value": "False"
     },
     "ANTI_SPAMBOT_SHOUT": {
-      "description": "Report spambots to @admins in groups after they join, just in case when you don't have admin powers to kick that shit yourself.",
+      "description": "Laporkan robot spam ke @admin dalam grup setelah mereka bergabung, untuk berjaga-jaga jika Anda tidak memiliki hak admin untuk anda kick sendiri.",
       "value": "False"
     },
     "TMP_DOWNLOAD_DIRECTORY": {
@@ -122,7 +122,7 @@
       "required": true
     },
     "LASTFM_API": {
-      "description": "API Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
+      "description": "API Key untuk Last.FM module. [Get one from - https://www.last.fm/api/account/create] atau sudah di sediakan",
       "value": "73d42d9c93626709dc2679d491d472bf",
       "required": false
     },
@@ -145,7 +145,7 @@
       "required": false
     },
     "BITLY_TOKEN": {
-      "description": "Your Bit.ly API key, get it from 'https://bitly.com/a/sign_up'",
+      "description": "Bit.ly API key, dapatkan di 'https://bitly.com/a/sign_up' atau sudah di sediakan",
       "value": "o_1fpd9299vp",
       "required": false
     },
