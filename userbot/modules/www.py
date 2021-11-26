@@ -20,18 +20,18 @@ from userbot.events import register
 absen = [
     "**Hadir Cuy** 😎",
     "**Hadir Bro** 😎",
-    "**Hadir ganteng** 😉",
+    "**Hadir Ganntengnya Flicks** 😉",
     "**Hadir Bang** 😁",
     "**Hadir Kak ** 😉",
     "**Hadir Dev**😎 ",
 ]
 
 uy = [
-    "**Woke dev** 😎 ",
-    "**Apaan Bang 🚶**",
+    "**Woke Dev** 😎 ",
+    "**Apaan Bang Gw Mo Daring 😭**",
     "**Uuyy Bang** 😉",
     "**Hadir Cuy** 😁",
-    "**Yoi dev** 😎",
+    "**Yoi Dev** 😎",
 ]
 
 
@@ -119,14 +119,14 @@ async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("⚡UBOT⚡")
-    await pong.edit("UB⚡OT")
-    await pong.edit("UBO⚡T")
-    await pong.edit("UBOT⚡")
-    await pong.edit("UBO⚡T")
-    await pong.edit("UBOT⚡")
-    await pong.edit("😁")
-    await pong.edit("😎")
+    await pong.edit("❤️‍🔥FLICKS❤️‍🔥")
+    await pong.edit("F❤️‍🔥ICKS")
+    await pong.edit("FL❤️‍🔥CKS")
+    await pong.edit("FLI❤️‍🔥KS")
+    await pong.edit("FLIC❤️‍🔥S")
+    await pong.edit("FLICKS❤️‍🔥")
+    await pong.edit("⚡USERBOT⚡")
+    await pong.edit("😈")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"**⚡{ALIVE_NAME} Bᴏᴛ⚡​**\n"
