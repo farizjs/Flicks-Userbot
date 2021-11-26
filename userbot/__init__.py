@@ -357,7 +357,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_file(BOTLOG_CHATID, ALIVE_LOGO, caption=f"**Flicks Userbot Telah diaktifkan ✨**\n\n✥ Master : {ALIVE_NAME}\n✥ Username : @{c.username}\n✥ Plugin : {len(plugins)}\n✥ Botver : {BOT_VER}\n✥ Support: @FlicksSupport")
+    await bot.send_file(BOTLOG_CHATID, ALIVE_LOGO, caption=f"**Flicks Userbot Telah diaktifkan ✨**\n\n✥ Master : {ALIVE_NAME}\n✥ Plugin : {len(plugins)}\n✥ Botver : {BOT_VER}\n✥ Support: @FlicksSupport")
     return
 
 with bot:
