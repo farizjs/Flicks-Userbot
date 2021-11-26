@@ -29,7 +29,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.l(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**Kalo Orang Salam Itu Dijawab...**")
+    await typew.edit("**Kalo Orang Salam Itu Dijawab Ya...**")
     sleep(2)
     await typew.edit("__وَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ__")
 # Menjawab Salam
@@ -38,9 +38,9 @@ async def typewriter(typew):
 @register(outgoing=True, pattern="^.kenalin(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("☑️ **Zero Wibu**")
+    await typew.edit("☑️ **Lu Semua Wibu**")
     sleep(2)
-    await typew.edit("✅ **Zero Wibu**")
+    await typew.edit("✅ **Lu Semua Wibu**")
     sleep(1)
     await typew.edit("☑️ **Tonic Ngentod**")
     sleep(2)
