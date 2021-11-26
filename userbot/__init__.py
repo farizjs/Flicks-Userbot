@@ -584,18 +584,17 @@ with bot:
                 link_preview=False,
             )
 
-        @ken.tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+        @ken.tgbot.on(events.InlineQuery)
         async def inline_handler(event):
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith(
-                    "@KenProject"):
+            if event.query.user_id == uid and query.startswith("@FlicksSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=kenlogo,
                     link_preview=False,
-                    text=f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n".format(
+                    text=f"\n**Flicks-Userbot**\n\n **Mᴀsᴛᴇʀ​** [{user.first_name}]tg://user?id={c.id}\n\n** ʟᴀɴɢᴜᴀɢᴇ​ :** Python\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -619,8 +618,8 @@ with bot:
                                 "ᴄʜᴀɴɴᴇʟ​​",
                                 "t.me/SadRoomsInfo")],
                         [custom.Button.url(
-                            "ᴅᴇᴠ​",
-                            "t.me/FJ_GAMING")]],
+                            "sᴜᴘᴘᴏʀᴛ",
+                            "t.me/FlicksSupport")]],
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
