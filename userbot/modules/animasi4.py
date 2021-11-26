@@ -91,7 +91,7 @@ async def typewriter(typew):
                      "(҂`_´)\n"
                      "<,︻╦╤─ ҉\n"
                      r"_/﹋\_"
-                     "\n**Mau Jadi Pacarku Gak?!**")
+                     "\n**Mau Jadi Pacarku Gak?! Harus Mau Soalnya Aku Maksa!**")
 
 
 @register(outgoing=True, pattern='^.bundir(?: |$)(.*)')
