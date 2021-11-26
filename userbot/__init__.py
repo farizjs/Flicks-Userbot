@@ -352,12 +352,12 @@ with bot:
     except BaseException:
         LOGS.info(
             "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file.")
+            "BOTLOG_CHATID yang anda masukan tidak valid, silahkan periksa variabel yang anda masukan.")
         quit(1)
 
 
 async def check_alive():
-    await bot.send_file(BOTLOG_CHATID, ALIVE_LOGO, caption=f"**Flicks Userbot Telah diaktifkan ✨**\n\n\n✥ Master : {ALIVE_NAME}\n✥ Username : @{c.username}\n✥ Plugin : {len(plugins)}\n✥ Botver : {BOT_VER}\n✥ Assisten : {BOT_USERNAME}\n✥ Support: @FlicksSupport")
+    await bot.send_file(BOTLOG_CHATID, ALIVE_LOGO, caption=f"**Flicks Userbot Telah diaktifkan ✨**\n\n\n✥ Master : {ALIVE_NAME}\n✥ Username : @{c.username}\n✥ Plugin : {len(plugins)}\n✥ Botver : {BOT_VER}\n✥ Support: @FlicksSupport")
     return
 
 with bot:
