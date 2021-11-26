@@ -595,7 +595,7 @@ with bot:
                 result = builder.photo(
                     file=kenlogo,
                     link_preview=False,
-                    text=f"\n**Flicks-Userbot**\n\n **Mᴀsᴛᴇʀ​** [{user.first_name}]tg://user?id={c.id}\n\n** ʟᴀɴɢᴜᴀɢᴇ​ :** Python\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n".format(
+                    text=f"\n**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** [{user.first_name}]tg://user?id={c.id}\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n➖➖➖➖➖➖➖➖➖➖".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -617,7 +617,7 @@ with bot:
                                 "https://github.com/fjgaming212/Flicks-Userbot"),
                             custom.Button.url(
                                 "ᴄʜᴀɴɴᴇʟ​​",
-                                "t.me/SadRoomsInfo")],
+                                "t.me/InfoFlicksUserbot")],
                         [custom.Button.url(
                             "sᴜᴘᴘᴏʀᴛ",
                             "t.me/FlicksSupport")]],
