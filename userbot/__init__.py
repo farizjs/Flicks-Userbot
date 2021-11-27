@@ -609,18 +609,18 @@ with bot:
             else:
                 result = builder.article(
                     " Alive\n Check Alive Stats! ",
-                    text=f"""__**The 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭**__\n`Pong!!` `{ms}ms`\n**Master :** {DEFAULTUSER} """,
+                    text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** [{user.first_name}]tg://user?id={c.id}\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n✥**ᴀssɪsᴛᴇɴ :** {BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖➖ """,
                     buttons=[
                         [
                             custom.Button.url(
-                                "ʀᴇᴘᴏ​",
-                                "https://github.com/fjgaming212/Flicks-Userbot"),
+                                "sᴜᴘᴘᴏʀᴛ",
+                                "t.me/FlicksSupport"),
                             custom.Button.url(
                                 "ᴄʜᴀɴɴᴇʟ​​",
                                 "t.me/InfoFlicksUserbot")],
                         [custom.Button.url(
-                            "sᴜᴘᴘᴏʀᴛ",
-                            "t.me/FlicksSupport")]],
+                            "ʀᴇᴘᴏ",
+                            "https://github.com/fjgaming212/Flicks-Userbot")]],
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
