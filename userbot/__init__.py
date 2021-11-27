@@ -609,7 +609,7 @@ with bot:
             else:
                 result = builder.article(
                     " Alive\n Check Alive Stats! ",
-                    text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** [{user.first_name}]tg://user?id={c.id}\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n✥**ᴀssɪsᴛᴇɴ :** {BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖➖ """,
+                    text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** [{DEFAULUTSER}](tg://user?id={c.id})\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n✥**ᴀssɪsᴛᴇɴ :** {BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖➖ """,
                     buttons=[
                         [
                             custom.Button.url(
