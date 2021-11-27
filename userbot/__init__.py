@@ -608,10 +608,8 @@ with bot:
                     link_preview=True)
             else:
                 result = builder.article(
-                    title="✘ Flicks-Userbot ✘",
-                    description="Flicks-Userbot | Telethon",
-                    thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", [])
-                    f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n✥**ᴀssɪsᴛᴇɴ :** @{BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖➖""",
+                    " ✘ Flicks-Userbot ✘",
+                    text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n✥**ᴀssɪsᴛᴇɴ :** @{BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖➖""",
                     buttons=[
                         [
                             custom.Button.url(
