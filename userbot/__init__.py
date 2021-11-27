@@ -608,7 +608,10 @@ with bot:
                     link_preview=True)
             else:
                 result = builder.article(
-                    " Alive\n✘ Flicks-Userbot ✘",
+                    title="✘ Flicks-Userbot ✘",
+                    description="Flicks-Userbot | Telethon",
+                    thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", [])
+                    url="https://t.me/FlicksSupport",
                     text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n✥**ᴀssɪsᴛᴇɴ :** @{BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖➖ """,
                     buttons=[
                         [
@@ -623,7 +626,9 @@ with bot:
                             "https://github.com/fjgaming212/Flicks-Userbot")]],
                     link_preview=False,
                 )
-            await event.answer([result] if result else None)
+            await event.answer(
+                [result], switch_pm="👥 USERBOT PORTAL", switch_pm_param="start"
+            )
 
         @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
