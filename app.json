@@ -55,31 +55,10 @@
       "value": "ID",
       "required": true
     },
-    "TZ_NUMBER": {
-      "description": "Change this value in case your country has multiple Time Zones.",
-      "value": "1",
-      "required": false
-    },
     "PM_AUTO_BAN": {
       "description": "PMPERMIT untuk bot mu, false = Mati,true = Hidup",
       "value": "False",
       "required": true
-    },
-    "ANTI_SPAMBOT": {
-      "description": "Menendang spambot dari grup setelah mereka bergabung. [Membutuhkan hak admin.]",
-      "value": "False"
-    },
-    "ANTI_SPAMBOT_SHOUT": {
-      "description": "Laporkan robot spam ke @admin dalam grup setelah mereka bergabung, untuk berjaga-jaga jika Anda tidak memiliki hak admin untuk anda kick sendiri.",
-      "value": "False"
-    },
-    "TMP_DOWNLOAD_DIRECTORY": {
-      "description": "Download location for many modules (GDrive, .download etc..)",
-      "value": "./downloads/"
-    },
-    "CLEAN_WELCOME": {
-      "description": "When a new person joins, the old welcome message is deleted.",
-      "value": "True"
     },
     "HEROKU_MEMEZ": {
       "description": "This should be True if the userbot is running on a Heroku Dyno.",
