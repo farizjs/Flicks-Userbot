@@ -23,7 +23,7 @@ async def _(event):
             p += 1
         except BaseException:
             pass
-    await event.edit("`Sukses Menghapus List Banning`")
+    await event.edit("`Sukses Menghapus List Banning di grup ini`")
 
 
 CMD_HELP.update(
