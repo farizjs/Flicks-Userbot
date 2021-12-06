@@ -48,6 +48,7 @@ async def get_adzan(adzan):
         f"**Ashar :** `{ashar}`\n"
         f"**Maghrib :** `{maghrib}`\n"
         f"**Isya :** `{isya}`\n"
+        f"By Flicks-Userbot 🔰\n"
     )
 
     await adzan.edit(result)
