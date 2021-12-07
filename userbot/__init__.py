@@ -189,6 +189,12 @@ FLICKS_TEKS_KUSTOM = os.environ.get("FLICKS_TEKS_KUSTOM", None)
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
+# Default .alive emoji
+ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", ✥)
+
+# Default .helpme emoji
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", ✥)
+
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
@@ -411,8 +417,8 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} ✘".format(
-                "✘", x), data="ub_modul_{}".format(x))
+            "{} {} {INLINE_EMOJI}".format(
+                "{INLINE_EMOJI}", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
