@@ -26,9 +26,9 @@ async def yardim(event):
     except Exception:
         return await event.edit(
             "`Anda tidak dapat mengirim hasil sebaris dalam obrolan ini (disebabkan oleh SendInlineBotResultRequest)\nSedang menyalakan, mohon tunggu`"
-            )
-            async with bot.conversation("@BotFather") as conv:
-                try:
+        )
+          async with bot.conversation("@BotFather") as conv:
+               try:
                     first = await conv.send_message("/setinline")
                     second = await conv.get_response()
                     third = await conv.send_message(BOT_USERNAME)
