@@ -219,6 +219,10 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 ALIVE_LOGO = os.environ.get(
     "ALIVE_LOGO") or "https://telegra.ph/file/808a9f8f047f9a7e67050.jpg"
 
+# Default pmpermit logo
+PMPERMIT_PIC = os.environ.get(
+    "PMPERMIT_PIC") or "https://telegra.ph/file/808a9f8f047f9a7e67050.jpg"
+
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
     "INLINE_PIC") or "https://telegra.ph/file/808a9f8f047f9a7e67050.jpg"
