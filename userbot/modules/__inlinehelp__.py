@@ -1,5 +1,6 @@
 import logging
 
+from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import BOT_USERNAME
 from userbot.events import register
 
@@ -20,9 +21,23 @@ async def yardim(event):
             await event.delete()
         else:
             await event.edit(
-                "`Botnya tidak berfungsi! Silahkan atur Bot Token dan Username dengan benar. Modul telah dihentikan.`"
+                "`Silahkan Tambahkan Var `BOT_TOKEN` dan `BOT_USERNAME` terlebih dahulu."
             )
     except Exception:
         return await event.edit(
-            "`Anda tidak dapat mengirim hasil sebaris dalam obrolan ini (disebabkan oleh SendInlineBotResultRequest)`"
-        )
+            "`Anda tidak dapat mengirim hasil sebaris dalam obrolan ini (disebabkan oleh SendInlineBotResultRequest)\nSedang menyalakan, mohon tunggu`"
+            )
+            async with bot.conversation("@BotFather") as conv:
+                try:
+                    first = await conv.send_message("/setinline")
+                    second = await conv.get_response()
+                    third = await conv.send_message(BOT_USERNAME)
+                    fourth = await conv.get_response()
+                    fifth = await conv.send_message("Search")
+                    sixth = await conv.get_response()
+                    await bot.send_read_acknowledge(conv.chat_id)
+                except YouBlockedUserError:
+                    return await event.edit("Harap Unblock @Botfather.")
+                await event.edit(
+                    f"**Berhasil Menyalakan Mode Inline**\n\n**Ketik** `.helpme` **lagi untuk membuka menu bantuan.**"
+                )
