@@ -4,6 +4,8 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import BOT_USERNAME
 from userbot.events import register
 
+chat = "@BotFather"
+
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
     level=logging.WARNING)
@@ -27,7 +29,7 @@ async def yardim(event):
         return await event.edit(
             "`Anda tidak dapat mengirim hasil sebaris dalam obrolan ini (disebabkan oleh SendInlineBotResultRequest)\nSedang menyalakan, mohon tunggu`"
         )
-          async with bot.conversation("@BotFather") as conv:
+              async with event.client.conversation(chat) as conv:
                try:
                     first = await conv.send_message("/setinline")
                     second = await conv.get_response()
