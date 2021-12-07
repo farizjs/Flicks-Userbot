@@ -190,10 +190,10 @@ FLICKS_TEKS_KUSTOM = os.environ.get("FLICKS_TEKS_KUSTOM", None)
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
 # Default .alive emoji
-ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", ✥)
+ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", 🔰)
 
 # Default .helpme emoji
-INLINE_EMOJI = os.environ.get("INLINE_EMOJI", ✥)
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", ⚜️)
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
