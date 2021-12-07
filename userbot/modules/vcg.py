@@ -19,7 +19,7 @@ NO_ADMIN = "`Maaf Kamu Bukan Admin 👮"
 
 async def get_call(event):
     kyy = await event.client(getchat(event.chat_id))
-    kyy = await event.client(getvc(kyy.full_chat.call))
+    kyy = await event.client(getvc(kyy.full_chat.call, limit=1))
     return kyy.call
 
 
