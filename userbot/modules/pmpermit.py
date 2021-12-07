@@ -21,6 +21,7 @@ from userbot import (
     LASTMSG,
     LOGS,
     PM_AUTO_BAN,
+    PMPERMIT_PIC,
     ALIVE_NAME,
     DEVS,
 )
@@ -33,7 +34,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
     "__Dimohon Untuk Tidak Melakukan Spam Ke Room Chat ini__ \n"
-    f"__Karena bisa menggangu {DEFAULTUSER} [⚠️](PMPERMIT_PIC)__ \n"
+    f"__Karena bisa menggangu {DEFAULTUSER} [⚠️]({PMPERMIT_PIC})__ \n"
     "__Jika Anda Melakukan Spamming, Anda Akan Terblokir Otomatis__\n"
     f" **Owner :** {DEFAULTUSER} \n"
     " **Pesan otomatis by Flicks-Userbot** ")
