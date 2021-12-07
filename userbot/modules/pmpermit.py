@@ -21,7 +21,6 @@ from userbot import (
     LASTMSG,
     LOGS,
     PM_AUTO_BAN,
-    PMPERMIT_PIC,
     ALIVE_NAME,
     DEVS,
 )
