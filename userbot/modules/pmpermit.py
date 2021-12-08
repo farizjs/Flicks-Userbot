@@ -34,13 +34,14 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    "__Dimohon Untuk Tidak Melakukan Spam Ke Room Chat ini__ \n"
-    f"__Karena bisa menggangu {DEFAULTUSER} [⚠️]({PMPERMIT_PIC})__ \n"
-    "__Jika Anda Melakukan Spamming, Anda Akan Terblokir Otomatis__\n"
-    f" ➖➖➖➖➖➖➖➖➖➖\n"
-    " **Owner :** {DEFAULTUSER} \n"
-    f" **Pesan otomatis by Flicks-Userbot** \n"
-    " ➖➖➖➖➖➖➖➖➖➖ ")
+    " ─────「Flicks-Userbot」─────\n"
+    f"__Dimohon Untuk Tidak Melakukan Spam Ke Room Chat ini__ \n"
+    "__Karena bisa menggangu {DEFAULTUSER} [⚠️]({PMPERMIT_PIC})__ \n"
+    f"__Jika Anda Melakukan Spamming, Anda Akan Terblokir Otomatis__\n"
+    " ➖➖➖➖➖➖➖➖➖➖\n"
+    f" **Owner :** {ALIVE_NAME} \n"
+    " **Pesan otomatis by Flicks-Userbot** \n"
+    f" ➖➖➖➖➖➖➖➖➖➖ ")
 
 # =================================================================
 
