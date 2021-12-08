@@ -1,4 +1,4 @@
-from userbot.utils import remove_plugin, load_module
+from userbot.utils import command, remove_plugin, load_module
 from pathlib import Path
 import asyncio
 import os
