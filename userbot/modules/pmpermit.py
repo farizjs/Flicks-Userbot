@@ -5,6 +5,7 @@
 
 # Fixes By Dev KEN-UBOT
 # From KEN-UBOT
+# Update by Dev Flicks-Userbot
 """Userbot module for keeping control who PM you."""
 
 from userbot.events import register
@@ -36,8 +37,10 @@ DEF_UNAPPROVED_MSG = (
     "__Dimohon Untuk Tidak Melakukan Spam Ke Room Chat ini__ \n"
     f"__Karena bisa menggangu {DEFAULTUSER} [⚠️]({PMPERMIT_PIC})__ \n"
     "__Jika Anda Melakukan Spamming, Anda Akan Terblokir Otomatis__\n"
-    f" **Owner :** {DEFAULTUSER} \n"
-    " **Pesan otomatis by Flicks-Userbot** ")
+    f" ➖➖➖➖➖➖➖➖➖➖\n"
+    " **Owner :** {DEFAULTUSER} \n"
+    f" **Pesan otomatis by Flicks-Userbot** \n"
+    " ➖➖➖➖➖➖➖➖➖➖ ")
 
 # =================================================================
 
