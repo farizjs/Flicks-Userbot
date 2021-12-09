@@ -67,7 +67,7 @@ ANTI_SPAMBOT_SHOUT = True or False
 YOUTUBE_API_KEY = 
 
 # Default .alive name
-ALIVE_NAME = any name
+ALIVE_NAME = you name
 
 # Time & Date - Country and Time Zone
 COUNTRY = 
