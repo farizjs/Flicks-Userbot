@@ -92,7 +92,7 @@ async def kang(args):
                 emoji = splat[1]
 
         u_name = user.username
-        f_name = user.first_name
+        user.first_name
         packname = f"StickerBy{u_name}_{pack}"
         custom_packnick = f"StickerBy @{u_name} ✨"
         packnick = f"{custom_packnick}"
