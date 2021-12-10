@@ -19,7 +19,7 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from userbot import CMD_HELP, S_PACK_NAME as custompack, bot
+from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
@@ -76,7 +76,7 @@ async def kang(args):
     if photo:
         splat = args.text.split()
         if not emojibypass:
-            emoji = "⚡"
+            emoji = "☘️"
         pack = 1
         if len(splat) == 3:
             pack = splat[2]  # User sent both
@@ -94,7 +94,7 @@ async def kang(args):
         u_name = user.username
         f_name = user.first_name
         packname = f"StickerBy{u_name}_{pack}"
-        custom_packnick = f"{custompack}" or f"{f_name}"
+        custom_packnick = f"StickerBy @{u_name} ✨"
         packnick = f"{custom_packnick}"
         cmd = "/newpack"
         file = io.BytesIO()
