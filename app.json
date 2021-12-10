@@ -64,10 +64,6 @@
       "value": "I'am Using Flicks-Userbot ✨",
       "required": false
     },
-    "S_PACK_NAME": {
-      "description": "Nama Sticker Pack Mu",
-      "required": false
-    },
     "WEATHER_DEFCITY": {
       "description": "Set the default city for the userbot's weather module.",
       "value": "Solo",
