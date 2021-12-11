@@ -184,7 +184,7 @@ YOUTUBE_API_KEY = os.environ.get(
     "YOUTUBE_API_KEY") or "AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg"
 
 # Untuk Perintah .falive
-FLICKS_TEKS_KUSTOM = os.environ.get("FLICKS_TEKS_KUSTOM", None)
+FLICKS_TEKS_KUSTOM = os.environ.get("FLICKS_TEKS_KUSTOM", I'am Using Flicks-Userbot ✨)
 
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
@@ -229,7 +229,7 @@ INLINE_PIC = os.environ.get(
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
-DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
+DEFAULT_BIO = os.environ.get("DEFAULT_BIO", Flicks-Userbot ✨)
 
 LASTFM_API = os.environ.get(
     "LASTFM_API") or "73d42d9c93626709dc2679d491d472bf"
