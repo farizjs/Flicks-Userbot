@@ -29,9 +29,9 @@ for module_name in ALL_MODULES:
 
 LOGS.info(
     f"➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖"
-    f"✘ 𝐅𝐥𝐢𝐜𝐤𝐬 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ v{BOT_VER} ⚙️ [Berhasil Diaktifkan 🔥]"
-    f"Selamat memakai saya tuan {ALIVE_NAME}"
-    f"➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
+    f"\n✘ 𝐅𝐥𝐢𝐜𝐤𝐬 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ v{BOT_VER} ⚙️ [Berhasil Diaktifkan 🔥]"
+    f"\nSelamat memakai saya tuan {ALIVE_NAME}"
+    f"\n➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
 
 
 if len(argv) not in (1, 3, 4):
