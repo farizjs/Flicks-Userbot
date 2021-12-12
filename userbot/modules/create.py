@@ -15,7 +15,7 @@ async def telegraphs(grop):
         if type_of_group == "gb":
             try:
                 result = await grop.client(functions.messages.CreateChatRequest(  # pylint:disable=E0602
-                    users=["@MissRose_bot"],
+                    users=["@JokerXRobot"],
                     # Not enough users (to create a chat, for example)
                     # Telegram, no longer allows creating a chat with ourselves
                     title=group_name
@@ -43,8 +43,8 @@ async def telegraphs(grop):
                 await grop.edit(str(e))
 
 CMD_HELP.update({
-    "membuat": "\
-Membuat\
+    "BuatChat": "\
+Membuat Chat\
 \nUsage: Untuk membuat Channel, Grup dan Grup bersama Bot.\
 \n\n`.buat g` <nama grup>\
 \nUsage: Membuat grup mu.\
