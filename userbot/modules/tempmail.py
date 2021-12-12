@@ -1,4 +1,5 @@
 # From Geez-Userbot
+# Fix by Fariz <github.com/fjgaming212>
 
 from telethon import events
 from userbot import CMD_HELP, bot
@@ -20,7 +21,7 @@ async def _(event):
             )
             await conv.send_message("/start")
             await asyncio.sleep(1)
-            await conv.send_message("Generate New")
+            await conv.send_message("/create")
             response = await response
             flicksuserbot = ((response).reply_markup.rows[2].buttons[0].url)
             await event.client.send_read_acknowledge(conv.chat_id)
