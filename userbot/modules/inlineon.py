@@ -20,7 +20,7 @@ async def _(event):
             await conv.send_message("Search")
             await conv.get_response()
             await bot.send_read_acknowledge(conv.chat_id)
-         except YouBlockedUserError:
-            await event.edit("Unblock @Botfather first.")
+        except YouBlockedUserError:
+            await event.edit("Harap unblock `@BotFather` dan coba lagi")
             return
                 await event.edit("**Berhasil Menyalakan Mode Inline**\n\n**Ketik** `.helpme` **lagi untuk membuka menu bantuan.**")
