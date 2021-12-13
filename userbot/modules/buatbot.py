@@ -46,7 +46,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "botfather"
+        "botfather":
         ".botbaru\
 \nUntuk Membuat Bot Dari Botfather, .botbaru  < bot_name > <bot_username >  ."
         "`.inlineon`\
