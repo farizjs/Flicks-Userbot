@@ -49,7 +49,7 @@ CMD_HELP.update(
         "botfather":
         ".botbaru\
 \nUntuk Membuat Bot Dari Botfather, .botbaru  < bot_name > <bot_username >  ."
-        "`.inlineon`\
+        "\n`.inlineon`\
 \nUsage: Untuk mengaktifkan inline bot Assisten anda"
     }
 )
