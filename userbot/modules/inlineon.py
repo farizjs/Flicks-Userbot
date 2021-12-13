@@ -1,7 +1,7 @@
 # inspiration from Man-Userbot
 # plugins by Fariz <Flicks-Userbot>
-## Jangan di hapus ya:)
-## Kalo mau ambil ambil aja:D
+# Jangan di hapus ya:)
+# Kalo mau ambil ambil aja:D
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
