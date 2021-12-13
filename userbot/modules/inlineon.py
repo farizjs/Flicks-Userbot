@@ -23,4 +23,4 @@ async def _(event):
         except YouBlockedUserError:
             await event.edit("Harap unblock `@BotFather` dan coba lagi")
             return
-                await event.edit("**Berhasil Menyalakan Mode Inline**\n\n**Ketik** `.helpme` **lagi untuk membuka menu bantuan.**")
+            await event.edit("**Berhasil Menyalakan Mode Inline**\n\n**Ketik** `.helpme` **lagi untuk membuka menu bantuan.**")
