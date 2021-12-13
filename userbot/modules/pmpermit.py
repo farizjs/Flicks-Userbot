@@ -22,6 +22,7 @@ from userbot import (
     LASTMSG,
     LOGS,
     PM_AUTO_BAN,
+    PM_LIMIT,
     PMPERMIT_PIC,
     ALIVE_NAME,
     DEVS,
@@ -98,7 +99,7 @@ async def permitpm(event):
             else:
                 COUNT_PM[event.chat_id] = COUNT_PM[event.chat_id] + 1
 
-            if COUNT_PM[event.chat_id] > 5:
+            if COUNT_PM[event.chat_id] > PM_LIMIT:
                 await event.respond(
                     "`Anda Telah Di Blokir Karna Melakukan Spam Pesan`\n"
                     f"`Ke Room Chat Ini`"
@@ -177,7 +178,7 @@ async def auto_accept(event):
                     await event.client.send_message(
                         BOTLOG_CHATID,
                         "#AUTO-APPROVED\n"
-                        + "Pengguna: "
+                        + "Pengguna 👤: "
                         + f"[{chat.first_name}](tg://user?id={chat.id})",
                     )
 
