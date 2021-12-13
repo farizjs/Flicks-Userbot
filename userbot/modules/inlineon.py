@@ -4,6 +4,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, BOT_USERNAME
 from userbot.events import register
 
+
 @register(outgoing=True, pattern=r"^\.inlineon(?: |$)(.*)")
 async def _(event):
     await event.edit(f"Sedang menyalakan inline untuk @{BOT_USERNAME} tunggu sebentar")
