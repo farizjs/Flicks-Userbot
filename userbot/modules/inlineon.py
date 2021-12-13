@@ -13,19 +13,16 @@ async def _(event):
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=93372553)
             )
-                    first = await conv.send_message("/setinline")
-                    second = await conv.get_response()
-                    third = await conv.send_message(f"@{BOT_USERNAME}")
-                    fourth = await conv.get_response()
-                    fifth = await conv.send_message("Search")
-                    sixth = await conv.get_response()
+                    await conv.send_message("/setinline")
+                    await conv.get_response()
+                    await conv.send_message(f"@{BOT_USERNAME}")
+                    await conv.get_response()
+                    await conv.send_message("Search")
+                    await conv.get_response()
                     await bot.send_read_acknowledge(conv.chat_id)
                 except YouBlockedUserError:
                     return await event.edit("Unblock @Botfather first.")
                 await event.edit(
                     "**Berhasil Menyalakan Mode Inline**\n\n**Ketik** `.helpme` **lagi untuk membuka menu bantuan.**"
                 )
-            await bot.delete_messages(
-                conv.chat_id,
-                [first.id, second.id, third.id, fourth.id, fifth.id, sixth.id],
             )
