@@ -712,7 +712,7 @@ with bot:
                 if len(cmdhel) > 110:
                     help_string = (
                         str(CMD_HELP[modul_name]).replace(
-                            '`', '')[:180] + "..."
+                            '`', '')[:110] + "..."
                         + "\n\nBaca Text Berikutnya Ketik .help "
                         + modul_name
                         + " "
@@ -735,7 +735,7 @@ with bot:
     except BaseException:
         LOGS.info(
             "Mode Inline Bot Mu Nonaktif. "
-            "Untuk Mengaktifkannya, Silahkan Pergi Ke @BotFather Lalu, Settings Bot > Pilih Mode Inline > Turn On. ")
+            "Untuk Mengaktifkannya, Silahkan Gunakan Perintah .inlineon. ")
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
