@@ -12,7 +12,7 @@ from userbot.events import register
 
 @register(outgoing=True, pattern=r"^\.inlineon(?: |$)(.*)")
 async def _(event):
-    await event.edit(f"Sedang menyalakan inline untuk @{BOT_USERNAME} tunggu sebentar")
+    await event.edit(f"Sedang menyalakan inline untuk `@{BOT_USERNAME}` tunggu sebentar")
     async with bot.conversation("@BotFather") as conv:
         try:
             response = conv.wait_event(
@@ -28,4 +28,4 @@ async def _(event):
         except YouBlockedUserError:
             await event.edit("Harap unblock `@BotFather` dan coba lagi")
             return
-            await event.edit("**Berhasil Menyalakan Mode Inline**\n\n**Ketik** `.helpme` **lagi untuk membuka menu bantuan.**")
+            await event.edit(f"**Berhasil Menyalakan Mode Inline untuk `@{BOT_USERNAME}`**\n\n**Ketik** `.helpme` **lagi untuk membuka menu bantuan.**")
