@@ -14,7 +14,7 @@ from datetime import datetime
 
 from speedtest import Speedtest
 from userbot import DEVS
-from userbot import CMD_HELP, StartTime, ALIVE_NAME
+from userbot import CMD_HELP, StartTime
 from userbot.events import register
 
 absen = [
