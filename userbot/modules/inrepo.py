@@ -1,3 +1,7 @@
+# https://github.com/fjgaming212/Flicks-Userbot
+# Jan dihapus ya :)
+# Kalo mau ambil aja :D
+
 import logging
 
 from userbot import BOT_USERNAME
