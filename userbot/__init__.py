@@ -615,8 +615,6 @@ with bot:
                     link_preview=True)
             else:
                 result = builder.article(
-                    file=kenlogo,
-                    link_preview=False,
                     " ✘ Flicks-Userbot ✘",
                     text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n✥**ᴀssɪsᴛᴇɴ :** @{BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖➖""",
                     buttons=[
