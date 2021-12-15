@@ -614,7 +614,7 @@ with bot:
                     buttons=[],
                     link_preview=True)
             else:
-                result = builder.photo(
+                result = builder.article(
                     file=kenlogo,
                     link_preview=False,
                     " ✘ Flicks-Userbot ✘",
