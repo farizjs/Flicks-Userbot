@@ -709,10 +709,10 @@ with bot:
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
-                if len(cmdhel) > 110:
+                if len(cmdhel) > 140:
                     help_string = (
                         str(CMD_HELP[modul_name]).replace(
-                            '`', '')[:110] + "..."
+                            '`', '')[:140] + "..."
                         + "\n\nBaca Text Berikutnya Ketik .help "
                         + modul_name
                         + " "
