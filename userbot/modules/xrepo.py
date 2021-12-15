@@ -12,7 +12,7 @@ logging.basicConfig(
     level=logging.WARNING)
 
 
-@register(outgoing=True, pattern=r"^\.irepo")
+@register(outgoing=True, pattern=r"^\.xrepo")
 async def yardim(event):
     try:
         kenbotusername = BOT_USERNAME
