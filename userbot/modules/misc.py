@@ -276,8 +276,6 @@ CMD_HELP.update({
     "repo":
     "Command: `.repo`\
     \n↳ : Github Repo Userbot",
-    "Command: `.xrepo`\
-    \n↳ : Sama seperti .repo",
     "readme":
     "Command `.readme`\
     \n↳ : Provide links to setup the userbot and it's modules.",
