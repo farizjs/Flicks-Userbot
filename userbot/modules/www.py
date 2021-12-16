@@ -14,7 +14,7 @@ from datetime import datetime
 
 from speedtest import Speedtest
 from userbot import DEVS
-from userbot import CMD_HELP, StartTime
+from userbot import ALIVE_NAME, CMD_HELP, StartTime
 from userbot.events import register
 
 absen = [
@@ -91,7 +91,7 @@ async def redis(pong):
     user = await bot.get_me()
     duration = (end - start).microseconds / 1000
     await pong.edit(f" ➥ `%sms` \n"
-                    f"➥ [{user.first_name}](tg://user?id={user.id}) \n" % (duration))
+                    f"➥ {ALIVE_NAME} \n" % (duration))
 
 
 @register(outgoing=True, pattern="^.sping$")
@@ -112,7 +112,7 @@ async def redis(pong):
                     f"**          ⚡ 𝐍 𝐄 𝐓 𝐖 𝐎 𝐑 𝐊 ⚡** \n"
                     f"**   ▰▱▰▱▰▱▰▱▰▱▰▱** \n"
                     f"**        ❉ ꜱɪɢɴᴀʟ  :** `%sms` \n"
-                    f"**        ❉ ᴏᴡɴᴇʀ   :** [{user.first_name}](tg://user?id={user.id}) \n"
+                    f"**        ❉ ᴏᴡɴᴇʀ   :** {ALIVE_NAME} \n"
                     f"**╰━━━━━━━━━━━━━━━━━╯** \n" % (duration))
 
 
@@ -132,7 +132,7 @@ async def redis(pong):
     end = datetime.now()
     user = await bot.get_me()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**⚡[{user.first_name}](tg://user?id={user.id}) Bᴏᴛ⚡​**\n"
+    await pong.edit(f"**⚡{ALIVE_NAME} Bᴏᴛ⚡​**\n"
                     f"➤ __Signal__    __:__ "
                     f"`%sms` \n"
                     f"➤ __Uptime__ __:__ "
@@ -162,7 +162,7 @@ async def redis(pong):
                     f"`%sms` \n"
                     f"**▹  Uᴘᴛɪᴍᴇ  :** "
                     f"`{uptime}` \n"
-                    f"**▹  Oᴡɴᴇʀ   :** [{user.first_name}](tg://user?id={user.id}) \n" % (duration))
+                    f"**▹  Oᴡɴᴇʀ   :** {ALIVE_NAME} \n" % (duration))
 
 
 @register(outgoing=True, pattern="^.ping$")
