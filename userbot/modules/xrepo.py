@@ -4,7 +4,7 @@
 
 import logging
 
-from userbot import BOT_USERNAME
+from userbot import BOT_USERNAME, CMD_HELP
 from userbot.events import register
 
 logging.basicConfig(
@@ -30,3 +30,15 @@ async def yardim(event):
         return await event.edit(
             "**Anda tidak dapat mengirim inline menu dalam obrolan ini, silakan gunakan perintah** `.inlineon`"
         )
+
+
+CMD_HELP.update(
+    {
+        "inlinebot": "** Plugin :** inlinebot\
+        \n\n  •  Perintah : `.helpme`\
+        \n  •  Function : Untuk menu bantuan modul Flicks-Userbot\
+        \n\n  •  Perintah : `.xrepo`\
+        \n  •  Function : Repo Flicks-Userbot\
+    "
+    }
+)
