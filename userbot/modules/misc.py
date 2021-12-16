@@ -111,13 +111,13 @@ async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
         "**Hey, I Am ✨Fʟɪᴄᴋs Usᴇʀʙᴏᴛ✨ **\n"
-        "卍━━━━━━━━━━━━━━━━━━━卍\n"
+        "卍━━━━━━━━━━━━━━━━━━卍\n"
         "➣ Repo Userbot : [ɢɪᴛʜᴜʙ](https://github.com/fjgaming212/Flicks-Userbot)\n"
-        "➣ Owner Bot       : [ʀɪᴢᴢᴢ](t.me/FJ_GAMING)\n"
-        "卍━━━━━━━━━━━━━━━━━━━卍\n"
+        "➣ Owner Bot       : [Fᴀʀɪᴢ](tg://resolve?domain=Flicks4You)\n"
+        "卍━━━━━━━━━━━━━━━━━━卍\n"
         "➣ Team                : [ʜᴇʀᴇ](t.me/devoloperflicks)​\n"
         "➣ Support           : [ɢʀᴏᴜᴘs​](t.me/FlicksSupport)\n"
-        "卍━━━━━━━━━━━━━━━━━━━卍"
+        "卍━━━━━━━━━━━━━━━━━━卍"
     )
 
 
@@ -275,7 +275,9 @@ CMD_HELP.update({
     \n↳ : Shutdown bot",
     "repo":
     "Command: `.repo`\
-    \n↳ : Github Repo of this bot",
+    \n↳ : Github Repo Userbot",
+    "Command: `.xrepo`\
+    \n↳ : Sama seperti .repo,tapi menggunakan inline bot",
     "readme":
     "Command `.readme`\
     \n↳ : Provide links to setup the userbot and it's modules.",
