@@ -267,12 +267,12 @@ async def amireallyalive(alive):
     output = (
         f"**𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭**\n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
-        f"➣ 🤴 • `ᴏᴡɴᴇʀ    :`[Fariz](t.me/FJ_GAMING) \n"
-        f"➣ 🖥️ • `ꜱʏꜱᴛᴇᴍ.   :`Ubuntu 20.10 \n"
-        f"➣ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ  :`v.{version.__version__} \n"
-        f"➣ 🐍 • `ᴘʏᴛʜᴏɴ.   :`v.{python_version()} \n"
-        f"➣ 👾 • `ʙᴏᴛ      :`v.{BOT_VER} \n"
-        f"➣ 📂 • `ᴍᴏᴅᴜʟᴇ   :`{len(modules)} \n"
+        f"➣ 🤴 • ᴏᴡɴᴇʀ    :[Fariz](t.me/FJ_GAMING) \n"
+        f"➣ 🖥️ • ꜱʏꜱᴛᴇᴍ.   :`Ubuntu 20.10 `\n"
+        f"➣ ⚙️ • ᴛᴇʟᴇᴛʜᴏɴ  :`v.{version.__version__}` \n"
+        f"➣ 🐍 • ᴘʏᴛʜᴏɴ.   :`v.{python_version()}` \n"
+        f"➣ 👾 • ʙᴏᴛ      :`v.{BOT_VER}` \n"
+        f"➣ 📂 • ᴍᴏᴅᴜʟᴇ   :`{len(modules)}` \n"
         f"▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
         f"🔧 : [REPO-FLICKS](https://github.com/fjgaming212/Flicks-Userbot)\n👥 : [FLICKS-TEAM](t.me/FlicksSupport)\n👤 : [OWNER](t.me/FJ_GAMING)\n"
     )
@@ -314,15 +314,17 @@ async def redis(alive):
     await alive.edit("☠️")
     await asyncio.sleep(3)
     output = (
+        f"**The Flicks Userbot** \n"
+        f"{FLICKS_TEKS_KUSTOM} \n\n"
         f"┏━━━━━━━━━━━━━━━━━━━ \n"
-        f"┣  `Master   :` [{user.first_name}](tg://user?id={user.id}) \n"
-        f"┣  `Username :` @{user.username} \n"
-        f"┣  `Telethon :` Ver {version.__version__} \n"
-        f"┣  `Python   :` Ver {python_version()} \n"
-        f"┣  `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
-        f"┣  `Bot Ver  :` {BOT_VER} \n"
-        f"┣  `Modules  :` {len(modules)} Modules \n"
-        f"┣  `Github   :` [Userbot](https://github.com/fjgaming212/Flicks-Userbot) \n"
+        f"┣  **Master**   : [{user.first_name}](tg://user?id={user.id}) \n"
+        f"┣  **Username** : @{user.username} \n"
+        f"┣  **Telethon** :` Ver {version.__version__} `\n"
+        f"┣  **Python**   :` Ver {python_version()} `\n"
+        f"┣  **Branch**   :` {UPSTREAM_REPO_BRANCH} `\n"
+        f"┣  **Bot Ver**  :` v.{BOT_VER} `\n"
+        f"┣  **Modules**  :` {len(modules)} Modules `\n"
+        f"┣  **Github**   : [Userbot](https://github.com/fjgaming212/Flicks-Userbot) \n"
         f"┗━━━━━━━━━━━━━━━━━━━")
     if ALIVE_LOGO:
         try:
