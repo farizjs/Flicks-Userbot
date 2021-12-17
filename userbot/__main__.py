@@ -34,8 +34,7 @@ LOGS.info(
     f"\nSelamat memakai saya tuan {ALIVE_NAME}"
     f"\n➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
 
-
-    except Exception as e:
+   except Exception as e:
         LOGS.info(str(e))
     try:
         await bot(JoinChannelRequest("@InfoFlicksUserbot"))
