@@ -610,7 +610,7 @@ with bot:
             elif query.startswith("about"):
                 result = builder.article(
                     "Tentang Flicks-Userbot ",
-                    text="Flicks-Userbot adalah userbot Telegram berbahasa Python dan berbasis Telethon\nuntuk mengetahui semua perintah Flicks-Userbot\ngunakan perintah `.helpme`.",
+                    text=f"By {ALIVE_NAME}",
                     buttons=[]
                     link_preview=True)
             else:
