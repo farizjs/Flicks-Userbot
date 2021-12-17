@@ -607,11 +607,18 @@ with bot:
                     ),
                     buttons=buttons,
                 )
-            elif query.startswith("tb_btn"):
+            elif query.startswith("about"):
                 result = builder.article(
-                    "Bantuan Dari 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ",
-                    text="Daftar Plugins",
-                    buttons=[],
+                    "Tentang Flicks-Userbot ",
+                    text="Flicks-Userbot adalah userbot Telegram modular yang berjalan di Python 3.6 dengan database sqlalchemy.\n\n[Fariz](tg://openmessage?user_id=1514078508) membuat repository ini untuk memilih dan membuat beberapa modul yang dibutuhkan dengan banyak fitur\nuntuk mengetahui modul flicks-Userbot\ngunakan perintah `.helpme`.",
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                "ʀᴇᴘᴏ",
+                                "https://github.com/fjgaming212/Flicks-Userbot"),
+                            custom.Button.url(
+                                "ᴅᴇᴘʟᴏʏ​",
+                                "https://heroku.com/deploy?template=https://github.com/fjgaming212/Deploy-Flicks")],
                     link_preview=True)
             else:
                 result = builder.article(
