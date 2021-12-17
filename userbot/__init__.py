@@ -619,7 +619,6 @@ with bot:
                             custom.Button.url(
                                 "ᴅᴇᴘʟᴏʏ​",
                                 "https://heroku.com/deploy?template=https://github.com/fjgaming212/Deploy-Flicks")],
-                    link_preview=False,
             else:
                 result=builder.article(
                     " ✘ Flicks-Userbot ✘",
