@@ -11,7 +11,6 @@ from sys import argv
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from userbot import ALIVE_NAME, BOT_VER, LOGS, bot
 from userbot.modules import ALL_MODULES
-from telethon.tl.functions.channels import JoinChannelRequest
 
 
 INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
@@ -33,13 +32,6 @@ LOGS.info(
     f"\n✘ 𝐅𝐥𝐢𝐜𝐤𝐬 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ v{BOT_VER} ⚙️ [Berhasil Diaktifkan 🔥]"
     f"\nSelamat memakai saya tuan {ALIVE_NAME}"
     f"\n➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
-
-   except Exception as e:
-        LOGS.info(str(e))
-    try:
-        await bot(JoinChannelRequest("@InfoFlicksUserbot"))
-    except BaseException:
-        pass
 
 
 if len(argv) not in (1, 3, 4):
