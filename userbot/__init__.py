@@ -611,14 +611,8 @@ with bot:
                 result = builder.article(
                     "Tentang Flicks-Userbot ",
                     text="Flicks-Userbot adalah userbot Telegram berbahasa Python dan berbasis Telethon\nuntuk mengetahui semua perintah Flicks-Userbot\ngunakan perintah `.helpme`.",
-                    buttons=[
-                        [
-                            custom.Button.url(
-                                "ʀᴇᴘᴏ",
-                                "https://github.com/fjgaming212/Flicks-Userbot"),
-                            custom.Button.url(
-                                "ᴅᴇᴘʟᴏʏ​",
-                                "https://heroku.com/deploy?template=https://github.com/fjgaming212/Deploy-Flicks")],
+                    buttons=[]
+                    link_preview=True)
             else:
                 result=builder.article(
                     " ✘ Flicks-Userbot ✘",
