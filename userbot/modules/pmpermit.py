@@ -431,4 +431,5 @@ CMD_HELP.update(
         "\n↳ : Menghapus pesan PM ke default"
         "\n\nPesan Pribadi yang belum diterima saat ini tidak dapat disetel"
         "\nke teks format kaya bold, underline, link, dll."
-        "\nPesan akan terkirim normal saja"})
+        "\nPesan akan terkirim normal saja"
+        "\n\n**Note :\nUntuk mengaktifkan pmpermit gunakan perintah**\n`.set var PM_AUTO_BAN true`"})
