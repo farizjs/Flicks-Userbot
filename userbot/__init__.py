@@ -609,9 +609,9 @@ with bot:
                 )
             elif query.startswith("about"):
                 result = builder.article(
-                    "Tentang Flicks-Userbot ",
-                    text=f"By {ALIVE_NAME}",
-                    buttons=[]
+                    "Bantuan Dari 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ",
+                    text="Daftar Plugins",
+                    buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
