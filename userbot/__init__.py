@@ -619,7 +619,7 @@ with bot:
                             custom.Button.url(
                                 "ᴅᴇᴘʟᴏʏ​",
                                 "https://heroku.com/deploy?template=https://github.com/fjgaming212/Deploy-Flicks")],
-                    link_preview=True)
+                    link_preview=False,
             else:
                 result= builder.article(
                     " ✘ Flicks-Userbot ✘",
@@ -735,7 +735,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert= f"Jangan Menggunakan Milik {DEFAULTUSER} !."
+                reply_pop_up_alert= f"""Jangan Menggunakan Milik {DEFAULTUSER} !"""
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
