@@ -612,7 +612,7 @@ with bot:
                     "Bantuan Dari 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ",
                     text="Daftar Plugins",
                     buttons=[
-                      [
+                        [
                             custom.Button.url(
                                 "sᴜᴘᴘᴏʀᴛ",
                                 "t.me/FlicksSupport"),
