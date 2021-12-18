@@ -611,7 +611,17 @@ with bot:
                 result = builder.article(
                     "Bantuan Dari 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ",
                     text="Daftar Plugins",
-                    buttons=[],
+                    buttons=[
+                      [
+                            custom.Button.url(
+                                "sᴜᴘᴘᴏʀᴛ",
+                                "t.me/FlicksSupport"),
+                            custom.Button.url(
+                                "ᴄʜᴀɴɴᴇʟ​​",
+                                "t.me/InfoFlicksUserbot")],
+                        [custom.Button.url(
+                            "ʀᴇᴘᴏ",
+                            "https://github.com/fjgaming212/Flicks-Userbot")]],
                     link_preview=True)
             else:
                 result = builder.article(
