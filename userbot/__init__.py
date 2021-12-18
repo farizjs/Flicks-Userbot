@@ -610,7 +610,7 @@ with bot:
             elif query.startswith("about"):
                 result = builder.article(
                     "Tentang Flicks-Userbot ",
-                    text="Flicks-Userbot adalah userbot Telegram modular yang berjalan di Python 3.6 dengan database sqlalchemy\n[Fariz](t.me/Flicks4You) membuat dan menambahkan modul yang dibutuhkan.\nUntuk mengetahui perintah Flicks-Userbot gunakan perintah `.helpme` dan untuk mengecek userbot gunakan perintah `.alive`",
+                    text=f"Flicks-Userbot [☘️]({ALIVE_LOGO}) adalah userbot Telegram modular yang berjalan di Python 3.6 dengan database sqlalchemy\n[Fariz](tg://openmessage?user_id=1514078508) membuat dan menambahkan modul yang dibutuhkan.\nUntuk mengetahui perintah Flicks-Userbot gunakan perintah `.helpme` dan untuk mengecek userbot gunakan perintah `.alive`",
                     buttons=[
                         [
                             custom.Button.url(
