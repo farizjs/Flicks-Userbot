@@ -1,5 +1,6 @@
 # © Fariz ☘️
-# Kalo mau di ambil ambil aja,tapi kalo commandnya jadi aneh jangan salahkan saya🚶
+# Kalo mau di ambil ambil aja,tapi kalo commandnya jadi aneh jangan
+# salahkan saya🚶
 import logging
 
 from userbot import BOT_USERNAME
