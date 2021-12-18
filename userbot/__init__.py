@@ -609,19 +609,19 @@ with bot:
                 )
             elif query.startswith("about"):
                 result = builder.article(
-                    "Bantuan Dari 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ",
-                    text="Daftar Plugins",
+                    "Tentang Flicks-Userbot ",
+                    text="Flicks-Userbot adalah userbot Telegram modular yang berjalan di Python 3.6 dengan database sqlalchemy\n[Fariz](t.me/Flicks4You) membuat dan menambahkan modul yang dibutuhkan.\nUntuk mengetahui perintah Flicks-Userbot gunakan perintah `.helpme` dan untuk mengecek userbot gunakan perintah `.alive`",
                     buttons=[
                         [
                             custom.Button.url(
-                                "sᴜᴘᴘᴏʀᴛ",
-                                "t.me/FlicksSupport"),
+                                "ᴅᴇᴘʟᴏʏ​",
+                                "https://heroku.com/deploy?template=https://github.com/fjgaming212/Deploy-Flicks"),
                             custom.Button.url(
-                                "ᴄʜᴀɴɴᴇʟ​​",
-                                "t.me/InfoFlicksUserbot")],
+                                "ʀᴇᴘᴏ",
+                                "https://github.com/fjgaming212/Flicks-Userbot")],
                         [custom.Button.url(
-                            "ʀᴇᴘᴏ",
-                            "https://github.com/fjgaming212/Flicks-Userbot")]],
+                            "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
+                            "t.me/InfoFlicksUserbot")]],
                     link_preview=True)
             else:
                 result = builder.article(
