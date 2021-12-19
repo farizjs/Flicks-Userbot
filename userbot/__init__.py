@@ -639,7 +639,7 @@ with bot:
                         [custom.Button.url(
                             "ʀᴇᴘᴏ",
                             "https://github.com/fjgaming212/Flicks-Userbot")]],
-                    link_preview=False,
+                    link_preview=True,
                 )
             await event.answer(
                 [result], switch_pm="👥 USERBOT PORTAL", switch_pm_param="start"
