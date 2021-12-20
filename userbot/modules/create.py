@@ -43,7 +43,7 @@ async def telegraphs(grop):
                 await grop.edit(str(e))
 
 CMD_HELP.update({
-    "BuatChat": "\
+    "xchat": "\
 Membuat Chat\
 \nUsage: Untuk membuat Channel, Grup dan Grup bersama Bot.\
 \n\n`.buat g` <nama grup>\
