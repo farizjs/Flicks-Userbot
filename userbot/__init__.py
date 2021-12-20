@@ -624,6 +624,22 @@ with bot:
                             "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
                             "t.me/InfoFlicksUserbot")]],
                     link_preview=True)
+            elif query.startswith("coba"):
+                result = builder.article(
+                    "Tentang Flicks-Userbot ",
+                    text=f"Flicks-Userbot [☘️]({ALIVE_LOGO}) adalah userbot Telegram modular yang berjalan di Python 3.6 dengan database sqlalchemy\n[Fariz](tg://openmessage?user_id=1514078508) membuat dan menambahkan modul yang dibutuhkan.\nUntuk mengetahui perintah Flicks-Userbot gunakan perintah `.helpme` dan untuk mengecek userbot gunakan perintah `.alive`",
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                "ᴅᴇᴘʟᴏʏ​",
+                                "https://heroku.com/deploy?template=https://github.com/fjgaming212/Deploy-Flicks"),
+                            custom.Button.url(
+                                "ʀᴇᴘᴏ",
+                                "https://github.com/fjgaming212/Flicks-Userbot")],
+                        [custom.Button.url(
+                            "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
+                            "t.me/InfoFlicksUserbot")]],
+                    link_preview=True)
             else:
                 result = builder.article(
                     " ✘ Flicks-Userbot ✘",
@@ -642,7 +658,7 @@ with bot:
                     link_preview=True,
                 )
             await event.answer(
-                [result], switch_pm="👥 USERBOT PORTAL", switch_pm_param="start"
+                [result], switch_pm=f"ASSISTANT BOT OF {ALIVE_NAME}", switch_pm_param="start"
             )
 
         @ ken.tgbot.on(
