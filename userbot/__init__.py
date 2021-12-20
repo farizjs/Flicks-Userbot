@@ -490,7 +490,7 @@ with bot:
                         [
                             InlineKeyboardButton("Tentang Flicks-Userbot",
                                        switch_inline_query_current_chat="coba"
-                    ]
+                    ],
                 )
 
         @ ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
