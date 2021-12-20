@@ -489,7 +489,7 @@ with bot:
                     buttons=[
                         [
                             Button.url("ʀᴇᴘᴏ ꜰʟɪᴄᴋs ᴜsᴇʀʙᴏᴛ 🛠️",
-                                       "https://github.com/fjgaming212/Flicks-Userbot")], "
+                                       "https://github.com/fjgaming212/Flicks-Userbot")],
                     ]
                 )
 
