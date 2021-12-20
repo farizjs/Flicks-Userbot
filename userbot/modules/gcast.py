@@ -1,5 +1,5 @@
 # Ultroid - UserBot
-# Copyright (C) 2020 TeamUltroid
+# Copyright © 2020 TeamUltroid
 #
 # This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
@@ -31,6 +31,7 @@ GCAST_BLACKLIST = [
     -1001626554919,  # EmikoSupport
     -1001412403011,  # Group Music Chat ID
     -1001752592753,  # Skyzusupport
+    -1001611385446,  # SolidProjectChat
 ]
 
 
