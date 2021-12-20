@@ -488,9 +488,9 @@ with bot:
                     f"[👋](https://telegra.ph/file/808a9f8f047f9a7e67050.jpg) Hallo [{get_display_name(u)}](tg://user?id={u.id}) \nSelamat Datang Di **Flicks Userbot**\nGunakan saya untuk mempersantai grup anda\n\n➣ Botver : {BOT_VER}\n➣ Plugin : {len(plugins)}\n➣ Owner repo : [Fariz](tg://openmessage?user_id=1514078508)\n",
                     buttons=[
                         [
-                            InlineKeyboardButton("Tentang Flicks-Userbot",
-                                       switch_inline_query_current_chat="coba"
-                    ],
+                            Button.url("ʀᴇᴘᴏ ꜰʟɪᴄᴋs ᴜsᴇʀʙᴏᴛ 🛠️",
+                                       "https://github.com/fjgaming212/Flicks-Userbot")],"
+                    ]
                 )
 
         @ ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
