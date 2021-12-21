@@ -43,7 +43,6 @@ CMD_HELP.update(
         \n  •  Function : Tentang Flicks-Userbot\
         \n\n  •  Perintah : `.tutorial`\
         \n  •  Function : Tutorial memasang Flicks-Userbot\
-
-    "
+     "
     }
 )
