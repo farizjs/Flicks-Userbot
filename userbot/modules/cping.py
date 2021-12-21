@@ -19,7 +19,7 @@ cping = [
     "**Hadir cping** `100.699` ",
     "**Hadir speed** `999.999` ",
     "**Hadir boosted** `668.938` ",
-    "**Hadir pingers power** `889.669` ",
+    "**Hadir pingers power** `889.969` ",
 ]
 
 
