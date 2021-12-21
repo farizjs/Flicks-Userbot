@@ -39,6 +39,11 @@ CMD_HELP.update(
         \n  •  Function : Untuk menu bantuan modul Flicks-Userbot\
         \n\n  •  Perintah : `.xrepo`\
         \n  •  Function : Repo Flicks-Userbot\
+        \n\n  •  Perintah : `.aboutflicks`\
+        \n  •  Function : Tentang Flicks-Userbot\
+        \n\n  •  Perintah : `.tutorial`\
+        \n  •  Function : Tutorial memasang Flicks-Userbot\
+
     "
     }
 )
