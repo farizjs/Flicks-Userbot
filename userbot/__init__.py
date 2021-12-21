@@ -624,22 +624,22 @@ with bot:
                             "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
                             "t.me/InfoFlicksUserbot")]],
                     link_preview=True)
-            elif query.startswith("coba"):
+
                 result = builder.article(
-                    "Tentang Flicks-Userbot ",
-                    text=f"Flicks-Userbot [☘️]({ALIVE_LOGO}) adalah userbot Telegram modular yang berjalan di Python 3.6 dengan database sqlalchemy\n[Fariz](tg://openmessage?user_id=1514078508) membuat dan menambahkan modul yang dibutuhkan.\nUntuk mengetahui perintah Flicks-Userbot gunakan perintah `.helpme` dan untuk mengecek userbot gunakan perintah `.alive`",
+                    "Tutorial memasang Flicks-Userbot ",
+                    text=f"Dapatkan API_KEY dan API_HASH di web `my.telegram.org`.\nDapatkan STRING_SESSION di web replit atau bot\nDapatkan BOT_TOKEN dan BOT_USERNAME di [@BotFather](tg://user?id=93372553)\nDapatkan HEROKU_API_KEY di `dashboard.heroku.com/account`\nTerus Nyalakan, tutorial lengkap [klik disini](.https://t.me/InfoFlicksUserbot/64)",
                     buttons=[
                         [
                             custom.Button.url(
                                 "ᴅᴇᴘʟᴏʏ​",
                                 "https://heroku.com/deploy?template=https://github.com/fjgaming212/Deploy-Flicks"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ",
-                                "https://github.com/fjgaming212/Flicks-Userbot")],
+                                "sᴛʀɪɴɢ",
+                                "https://t.me/InfoFlicksUserbot/110")],
                         [custom.Button.url(
-                            "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
-                            "t.me/InfoFlicksUserbot")]],
-                    link_preview=True)
+                            "ʀᴇᴘᴏ",
+                            "https://github.com/fjgaming212/Flicks-Userbot")]],
+                    link_preview=False)
             else:
                 result = builder.article(
                     " ✘ Flicks-Userbot ✘",
