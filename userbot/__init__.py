@@ -624,10 +624,10 @@ with bot:
                             "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
                             "t.me/InfoFlicksUserbot")]],
                     link_preview=True)
-
+            elif query.startswith("tutor"):
                 result = builder.article(
                     "Tutorial memasang Flicks-Userbot ",
-                    text=f"Dapatkan API_KEY dan API_HASH di web `my.telegram.org`.\nDapatkan STRING_SESSION di web replit atau bot\nDapatkan BOT_TOKEN dan BOT_USERNAME di [@BotFather](tg://user?id=93372553)\nDapatkan HEROKU_API_KEY di `dashboard.heroku.com/account`\nTerus Nyalakan, tutorial lengkap [klik disini](.https://t.me/InfoFlicksUserbot/64)",
+                    text=f"Buat teman teman yang ingin memasang userbot seperti saya anda bisa melihat tutorial di bawah ini\nDapatkan API_KEY dan API_HASH di web `my.telegram.org`.\nDapatkan STRING_SESSION di web replit atau bot\nDapatkan BOT_TOKEN dan BOT_USERNAME di [@BotFather](tg://user?id=93372553)\nDapatkan HEROKU_API_KEY di `dashboard.heroku.com/account`\nTerus Nyalakan, tutorial lengkap [klik disini](.https://t.me/InfoFlicksUserbot/64)",
                     buttons=[
                         [
                             custom.Button.url(
