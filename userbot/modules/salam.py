@@ -31,11 +31,6 @@ async def typewriter(typew):
     await typew.edit("**Wa'alaikumssalam Warohmatullahi Wabarokatuh**")
 
 
-@register(outgoing=True, pattern='^.tutorial(?: |$)(.*)')
-async def typewriter(typew):
-    typew.pattern_match.group(1)
-    await typew.edit("**Hallo kamu\nJika anda mau menjadi userbot [klik disini](https://t.me/InfoFlicksUserbot/64)\nJangan lupa join channel nya ya :D\nJangan lupa gabung [grup support](http://t.me/FlicksSupport) juga :)**")
-
 CMD_HELP.update({
     "salam1":
     "Cmd: `.pe`\
@@ -44,8 +39,6 @@ CMD_HELP.update({
 \n↳ : Ngatain.\
 \n\nCmd: `.war`\
 \n↳ : Coba Aja Sendiri.\
-\n\nCmd: `.tutorial`\
-\n↳ : tutorial userbot.\
 \n\nCmd: `.wa`\
 \n↳ : Untuk Menjawab Salam."
 })
