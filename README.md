@@ -1,10 +1,19 @@
 #         FLICKS-USERBOT​    
 
+<p align="center">
+  <a href="https://github.com/fjgaming212/Flicks-Userbot/fork">
+    <img src="https://img.shields.io/github/forks/fjgaming212/Flicks-Userbot?label=Fork&style=social">
+    
+  </a>
+  <a href="https://github.com/fjgaming212/Flicis-Userbot">
+    <img src="https://img.shields.io/github/stars/fjgaming212/Flicks-Userbot?style=social">
+  </a>
+</p>  
+
 Flicks-Userbot adalah userbot Telegram modular yang berjalan di Python 3.6 dengan database sqlalchemy.
 
 Saya membuat repository ini untuk memilih dan menambahkan beberapa modul yang saya butuhkan dengan banyak perubahan, fitur dan module.
     
-
 
 <p align="center">&nbsp;</p>
 
