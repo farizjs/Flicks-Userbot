@@ -20,8 +20,8 @@ from userbot.utils.events import get_user_from_event
 async def echo(event):
     if event.reply_to_msg_id is None:
         return await event.edit("`Balas pesan Pengguna untuk echo`")
-    roseevent = await event.edit("`Menambahkan Echo ke pengguna...`")
-    user, rank = await get_user_from_event(event, roseevent, nogroup=True)
+    kingevent = await event.edit("`Menambahkan Echo ke pengguna...`")
+    user, rank = await get_user_from_event(event, kingevent, nogroup=True)
     if not user:
         return
     reply_msg = await event.get_reply_message()
@@ -46,9 +46,9 @@ async def echo(event):
             user_username,
             chat_type)
     except Exception as e:
-        await edit_delete(roseevent, f"**Error:**\n`{str(e)}`")
+        await edit_delete(kingevent, f"**Error:**\n`{str(e)}`")
     else:
-        await edit_or_reply(roseevent, "Berhasil")
+        await edit_or_reply(kingevent, "Berhasil")
 
 
 @register(outgoing=True, pattern=r"^.rmecho(?: |$)(.*)")
@@ -62,7 +62,7 @@ async def echo(event):
         try:
             remove_echo(chat_id, user_id)
         except Exception as e:
-            await edit_delete(roseevent, f"**Error:**\n`{str(e)}`")
+            await edit_delete(kingevent, f"**Error:**\n`{str(e)}`")
         else:
             await event.edit("Echo has been stopped for the user")
     else:
