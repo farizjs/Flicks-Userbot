@@ -87,20 +87,18 @@ async def fetch_info(replied_user, event):
                              offset=42,
                              max_id=0,
                              limit=80))
-    replied_user_profile_photos_count = "Orang tersebut membutuhkan bantuan untuk mengupload gambar profil."
     try:
-        replied_user_profile_photos_count = replied_user_profile_photos.count
+        replied_user_profile_photos.count
     except AttributeError:
         pass
     user_id = replied_user.user.id
     first_name = replied_user.user.first_name
-    last_name = replied_user.user.last_name
+    replied_user.user.last_name
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
-        dc_id = "Tidak Dapat Mengambil DC ID!"
         str(e)
-    common_chat = replied_user.common_chats_count
+    replied_user.common_chats_count
     first_name = first_name.replace(
         "\u2060", "") if first_name else ("Tidak Ada Nama Depan")
 
