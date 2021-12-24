@@ -1,20 +1,22 @@
 #         FLICKS-USERBOT​    
 
+</p>
 <p align="center">
-  <a href="https://github.com/fjgaming212/Flicks-Userbot/fork">
-    <img src="https://img.shields.io/github/forks/fjgaming212/Flicks-Userbot?label=Fork&style=social">
-    
-  </a>
-  <a href="https://github.com/fjgaming212/Flicis-Userbot">
-    <img src="https://img.shields.io/github/stars/fjgaming212/Flicks-Userbot?style=social">
-  </a>
-</p>  
+    <a href="https://www.python.org/" alt="made-with-python"> <img src="https://img.shields.io/badge/Made%20with-Python-black.svg?style=flat-square&logo=python&logoColor=blue&color=red" /></a>
+    <a href="https://github.com/fjgaming212/Flicks-Userbot/graphs/commit-activity" alt="Maintenance"> <img src="https://img.shields.io/badge/Maintained%3F-yes-red.svg?style=flat-square" /></a>
+    <a href="https://app.codacy.com/gh/fjgaming212/Flicks-Userbot/dashboard"> <img src="https://img.shields.io/codacy/grade/a723cb464d5a4d25be3152b5d71de82d?color=red&logo=codacy&style=flat-square" alt="Codacy" /></a><br>
+    <a href="https://github.com/fjgaming212/Flicks-Userbot"> <img src="https://img.shields.io/github/repo-size/fjgaming212/Flicks-Userbot?color=red&logo=github&logoColor=blue&style=flat-square" /></a>
+    <a href="https://github.com/fjgaming212/Flicks-Userbot/commits/main"> <img src="https://img.shields.io/github/last-commit/fjgaming212/Flicks-Userbot?color=red&logo=github&logoColor=blue&style=flat-square" /></a>
+    <a href="https://github.com/fjgaming212/Flicks-Userbot/issues"> <img src="https://img.shields.io/github/issues/fjgaming212/Flicks-Userbot?color=red&logo=github&logoColor=blue&style=flat-square" /></a>
+    <a href="https://github.com/fjgaming212/Flicks-Userbot/fork"> <img src="https://img.shields.io/github/forks/fjgaming212/Flicks-Userbot?color=red&logo=github&logoColor=blue&style=flat-square" /></a>  
+    <a href="https://github.com/fjgaming212/Flicks-Userbot/network/members"> <img src="https://img.shields.io/github/stars/fjgaming212/Flicks-Userbot?color=red&logo=github&logoColor=blue&style=flat-square" /></a>  
+</p>
 
 Flicks-Userbot adalah userbot Telegram modular yang berjalan di Python 3.6 dengan database sqlalchemy.
 
 Saya membuat repository ini untuk memilih dan menambahkan beberapa modul yang saya butuhkan dengan banyak perubahan, fitur dan module.
-    
 
+    
 <p align="center">&nbsp;</p>
 
 ### Disclaimer 
