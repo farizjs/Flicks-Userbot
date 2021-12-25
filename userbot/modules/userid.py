@@ -8,19 +8,14 @@ from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 
 
-@register(pattern=".id(?: |$)(.*)", outgoing=True)
 async def who(event):
-
-    await event.edit(
-        "`Sedang mencari id...`")
-
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
 
     replied_user = await get_user(event)
 
     try:
-        photo, caption = await fetch_info(replied_user, event)
+        caption = await fetch_info(replied_user, event)
     except AttributeError:
         return event.edit("`Saya Tidak Mendapatkan Informasi Apapun.`")
 
@@ -31,16 +26,12 @@ async def who(event):
 
     try:
         await event.client.send_file(event.chat_id,
-                                     photo,
                                      caption=caption,
                                      link_preview=False,
                                      force_document=False,
                                      reply_to=message_id_to_reply,
                                      parse_mode="html")
 
-        if not photo.startswith("http"):
-            os.remove(photo)
-        await event.delete()
 
     except TypeError:
         await event.edit(caption, parse_mode="html")
@@ -80,31 +71,23 @@ async def get_user(event):
     return replied_user
 
 
-async def fetch_info(replied_user, event):
-    """ Get details from the User object. """
-    replied_user_profile_photos = await event.client(
-        GetUserPhotosRequest(user_id=replied_user.user.id,
-                             offset=42,
-                             max_id=0,
-                             limit=80))
     try:
-        replied_user_profile_photos.count
     except AttributeError:
         pass
     user_id = replied_user.user.id
     first_name = replied_user.user.first_name
     replied_user.user.last_name
     try:
-        dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
         str(e)
     replied_user.common_chats_count
     first_name = first_name.replace(
         "\u2060", "") if first_name else ("Tidak Ada Nama Depan")
 
-    caption += f"ID pengguna {first_name} :\n<code>`{user_id}`</code>"
+@register(pattern=".id(?: |$)(.*)", outgoing=True)
 
-    return caption
+    await event.edit("`Sedang mencari id...`")
+    await event.edit(f"ID pengguna {replied_user.user.first_name} :\n `{replied_user.user.id}`")
 
 
 CMD_HELP.update({
