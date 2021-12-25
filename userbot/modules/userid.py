@@ -32,7 +32,6 @@ async def who(event):
                                      reply_to=message_id_to_reply,
                                      parse_mode="html")
 
-
     except TypeError:
         await event.edit(caption, parse_mode="html")
 
@@ -70,7 +69,6 @@ async def get_user(event):
 
     return replied_user
 
-
     try:
     except AttributeError:
         pass
@@ -84,10 +82,10 @@ async def get_user(event):
     first_name = first_name.replace(
         "\u2060", "") if first_name else ("Tidak Ada Nama Depan")
 
-@register(pattern=".id(?: |$)(.*)", outgoing=True)
 
-    await event.edit("`Sedang mencari id...`")
-    await event.edit(f"ID pengguna {replied_user.user.first_name} :\n `{replied_user.user.id}`")
+@register(pattern=".id(?: |$)(.*)", outgoing=True)
+await event.edit("`Sedang mencari id...`")
+await event.edit(f"ID pengguna {replied_user.user.first_name} :\n `{replied_user.user.id}`")
 
 
 CMD_HELP.update({
