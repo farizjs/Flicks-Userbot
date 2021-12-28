@@ -279,7 +279,7 @@ async def pingme(pong):
 
 
 CMD_HELP.update(
-    { 
+    {
         "ping": "**• Plugin Ping •**\
         \n\n  •  **Perintah :** `.ping` | `.lping` | `.xping` | `.sping` | `.fping`\
         \n  •  **Function :** Untuk Menunjukkan Ping Bot Anda\
@@ -287,5 +287,5 @@ CMD_HELP.update(
         \n  •  **Function :** Untuk Menunjukkan Kecepatan Jaringan Anda\
         \n\n  •  **Perintah :** `.pong` | `.test`\
         \n  •  **Function :** Sama Seperti Perintah Ping\
-    }
+ }
 )
