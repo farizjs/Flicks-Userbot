@@ -287,5 +287,6 @@ CMD_HELP.update(
         \n  •  **Function :** Untuk Menunjukkan Kecepatan Jaringan Anda\
         \n\n  •  **Perintah :** `.pong` | `.test`\
         \n  •  **Function :** Sama Seperti Perintah Ping\
- }
+    "
+    }
 )
