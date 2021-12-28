@@ -24,14 +24,16 @@ absen = [
     "**Hadir Bang** 😁",
     "**Hadir Kak ** 😉",
     "**Hadir Dev**😎 ",
+    "**Hadir Min** 😉",
 ]
 
 uy = [
-    "**Woke Dev** 😎 ",
+    "**Apa Dev** 😎 ",
     "**Apaan Bang Gw Mo Daring 😭**",
     "**Uuyy Bang** 😉",
     "**Hadir Cuy** 😁",
     "**Yoi Dev** 😎",
+    "**Apaan bang** 😎",
 ]
 
 
@@ -276,10 +278,14 @@ async def pingme(pong):
     await pong.edit("**Test Ping!**\n`%sms`" % (duration))
 
 
-CMD_HELP.update({
-    "ping": "Cmd: `.ping` | `.lping` | `.xping` | `.sping` | `.fping`\
-         \n↳ : Untuk Menunjukkan Ping Bot Anda.\
-         \n\nCmd: `.speed`\
-         \n↳ : Untuk Menunjukkan Kecepatan Jaringan Anda.\
-         \n\nCmd: `.pong` | `.test`\
-         \n↳ : Sama Seperti Perintah Ping."})
+CMD_HELP.update(
+    { 
+        "ping": "**• Plugin Ping •**\
+        \n\n  •  **Perintah :** `.ping` | `.lping` | `.xping` | `.sping` | `.fping`\
+        \n  •  **Function :** Untuk Menunjukkan Ping Bot Anda\
+        \n\n  •  **Perintah :*** `.speed`\
+        \n  •  **Function :** Untuk Menunjukkan Kecepatan Jaringan Anda\
+        \n\n  •  **Perintah :** `.pong` | `.test`\
+        \n  •  **Function :** Sama Seperti Perintah Ping\
+    }
+)
