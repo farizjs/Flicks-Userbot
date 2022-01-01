@@ -46,6 +46,7 @@ pySmartDL
 python-barcode
 python-dotenv
 pytz
+datetime
 qrcode
 requests>=2.18.4
 search-engine-parser>=0.6.1
