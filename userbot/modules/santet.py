@@ -1,5 +1,5 @@
 from time import sleep
-from userbot import CMD_HELP
+from userbot import CMD_HELP, CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
 
