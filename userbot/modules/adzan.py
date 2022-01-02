@@ -5,7 +5,6 @@ import requests
 from userbot import CMD_HELP
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
-from userbot.events import register
 
 PLACE = ""
 
