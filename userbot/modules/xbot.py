@@ -5,6 +5,7 @@
 
 from random import choice
 
+from userbot import DEVS, CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.utils import flicks_cmd
 
@@ -24,7 +25,7 @@ async def xbot(xbotflicks):
 
 CMD_HELP.update(
     {
-        "xbot": "**• Plugin Xbot •**\
+        "xbot": f"**• Plugin Xbot •**\
         \n\n  •  **Perintah :** `{cmd}xbot`\
         \n  •  **Function :** Xbot random untuk bersenang senang saja\
     "
