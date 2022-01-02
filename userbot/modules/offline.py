@@ -1,5 +1,6 @@
 # Code from Paradise Userbot
 # Recode by Fariz🚶
+# handler by Flicks-Userbot
 from datetime import datetime
 import time
 from random import choice, randint
@@ -42,7 +43,7 @@ afk_start = {}
 # =================================================================
 
 
-@register(outgoing=True, pattern="^.off(?: |$)(.*)", disable_errors=True)
+@flicks_cmd(pattern="off")
 async def set_afk(afk_e):
     """ For .afk command, allows you to inform people that you are afk when they message you """
     message = afk_e.text  # pylint:disable=E0602
