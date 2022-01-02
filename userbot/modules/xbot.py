@@ -5,7 +5,7 @@
 
 from random import choice
 
-from userbot import DEVS, CMD_HANDLER as cmd
+from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.utils import flicks_cmd
 
