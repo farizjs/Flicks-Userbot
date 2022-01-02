@@ -5,6 +5,8 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 from telethon import events
 import asyncio
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
 
 @flicks_cmd(pattern="hua")
@@ -94,6 +96,5 @@ CMD_HELP.update({
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}waktu`\
     \n↳ : animasi.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}hua`\
-
-\n↳: nangis.\"
+     \n↳: nangis.\"
 })
