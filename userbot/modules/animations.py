@@ -6,7 +6,6 @@ from PIL import Image
 from validators.url import url
 
 from userbot import CMD_HELP, CMD_HANDLER as cmd
-from userbot.events import register
 from userbot.utils import flicks_cmd
 
 EMOJI_PATTERN = re.compile(
