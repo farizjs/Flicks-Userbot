@@ -21,6 +21,7 @@ import psutil
 from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, FLICKS_TEKS_KUSTOM, StartTime, UPSTREAM_REPO_BRANCH, bot
 from userbot.events import register
 from userbot.utils import flicks_cmd
+from userbot import CMD_HANDLER as cmd
 
 
 # ================= CONSTANT =================
@@ -59,7 +60,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(outgoing=True, pattern=r"^\.spc")
+@flicks_cmd(pattern=r"spc")
 async def psu(event):
     uname = platform.uname()
     softw = "**Informasi Sistem**\n"
@@ -117,7 +118,7 @@ def get_size(bytes, suffix="B"):
         bytes /= factor
 
 
-@register(outgoing=True, pattern=r"^\.sysd$")
+@flicks_cmd(pattern="sysd$")
 async def sysdetails(sysd):
     if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
         try:
@@ -137,7 +138,7 @@ async def sysdetails(sysd):
             await sysd.edit("`Install neofetch first !!`")
 
 
-@register(outgoing=True, pattern=r"^\.botver$")
+@flicks_cmd(pattern="botver$")
 async def bot_ver(event):
     if event.text[0].isalpha() or event.text[0] in ("/", "#", "@", "!"):
         return
@@ -176,7 +177,7 @@ async def bot_ver(event):
         )
 
 
-@register(outgoing=True, pattern=r"^\.pip(?: |$)(.*)")
+@flicks_cmd(pattern="pip$")
 async def pipcheck(pip):
     if pip.text[0].isalpha() or pip.text[0] in ("/", "#", "@", "!"):
         return
@@ -224,7 +225,7 @@ async def pipcheck(pip):
         await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
 
 
-@register(outgoing=True, pattern=r"^\.(?:falive)\s?(.)?")
+@flicks_cmd(pattern="(?:falive)\\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -261,7 +262,7 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:flickson)\s?(.)?")
+@flicks_cmd(pattern="(?:flickson)\\s?(.)?")
 async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -347,7 +348,7 @@ async def redis(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern="^.aliveu")
+@flicks_cmd(pattern="aliveu$")
 async def amireallyaliveuser(username):
     """ For .aliveu command, change the username in the .alive command. """
     message = username.text
@@ -360,7 +361,7 @@ async def amireallyaliveuser(username):
     await username.edit("`" f"{output}" "`")
 
 
-@register(outgoing=True, pattern=r"^\.resetalive$")
+@flicks_cmd(pattern="resetalive$")
 async def amireallyalivereset(ureset):
     global DEFAULTUSER  # global statement
     DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
@@ -369,27 +370,27 @@ async def amireallyalivereset(ureset):
 
 CMD_HELP.update({
     "system":
-    "Cmd: `.sysd`"
+    f"Cmd: `{cmd}sysd`"
     "\n↳ : Shows system information using neofetch."
-    "\n\nCmd: `.db`"
+    f"\n\nCmd: `{cmd}db`"
     "\n↳ : Shows database related info."
-    "\n\nCmd: `.spc`"
+    f"\n\nCmd: `{cmd}spc`"
     "\n↳ : Show system specification."
 })
 CMD_HELP.update({
     "alive":
-    "Cmd: `.alive` or `.flickson` or `.on` or `.falive`"
+    f"Cmd: `{cmd}alive` or `{cmd}flickson` or `{cmd}on` or `{cmd}falive`"
     "\n↳ : To see whether your bot is working or not."
-    "\n\nCmd: `.aliveu` <text>"
+    f"\n\nCmd: `{cmd}aliveu` <text>"
     "\n↳ : Changes the 'user' in alive to the text you want."
-    "\n\nCmd: `.restalive`"
+    f"\n\nCmd: `{cmd}restalive`"
     "\n↳ : Resets the user to default."
 })
 CMD_HELP.update(
     {
         "botversion":
-        "Cmd: `.botver`"
+        f"Cmd: `{cmd}botver`"
         "\n↳ : Shows the userbot version."
-        "\n\nCmd: `.pip` <module(s)>"
+        f"\n\nCmd: `{cmd}pip` <module(s)>"
         "\n↳ : Does a search of pip modules(s)."
     })
