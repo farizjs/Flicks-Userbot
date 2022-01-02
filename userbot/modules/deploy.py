@@ -9,6 +9,8 @@ import asyncio
 from userbot import ALIVE_NAME, BOT_VER, CMD_HELP
 from userbot.events import register
 from platform import uname
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
 # Ported for Lynx by KENZO (Lynx-Userbot)
 # ================= CONSTANT =================
@@ -16,7 +18,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern="^.deploy ?(.*)")
+@flicks_cmd(pattern="deploy")
 async def _(event):
 
     if event.fwd_from:
@@ -65,5 +67,5 @@ async def _(event):
 
 
 CMD_HELP.update({
-    "deploy": "Perintah: `.deploy`"
+    "deploy": f"Perintah: `{cmd}deploy`"
     "\n↳ : Untuk Deploy ke Heroku.. <Tapi Animasi> :v haha"})
