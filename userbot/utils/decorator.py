@@ -62,8 +62,14 @@ def flicks_cmd(
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (flicks_ + pattern).replace("$", "").replace("\\", "").replace("^", "")
-                )
+                    (flicks_ +
+                     pattern).replace(
+                        "$",
+                        "").replace(
+                        "\\",
+                        "").replace(
+                        "^",
+                        ""))
                 cmd2 = (
                     (sudo_ + pattern)
                     .replace("$", "")
@@ -78,8 +84,8 @@ def flicks_cmd(
     def decorator(func):
         if not disable_edited:
             bot.add_event_handler(
-                func, events.MessageEdited(**args, outgoing=True, pattern=flicks_reg)
-            )
+                func, events.MessageEdited(
+                    **args, outgoing=True, pattern=flicks_reg))
         bot.add_event_handler(
             func, events.NewMessage(**args, outgoing=True, pattern=flicks_reg)
         )
