@@ -86,6 +86,10 @@ STRING_SESSION = os.environ.get("STRING_SESSION", "")
 # Logging channel/group ID configuration.
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
 
+# Handler Userbot
+CMD_HANDLER = int(os.environ.get("CMD_HANDLER", "."))
+SUDO_HANDLER = int(os.environ.get("SUDO_HANDLER", "$"))
+
 # Userbot logging feature switch.
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "True"))
