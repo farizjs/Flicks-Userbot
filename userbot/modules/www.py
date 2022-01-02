@@ -13,9 +13,10 @@ import random
 from datetime import datetime
 
 from speedtest import Speedtest
-from userbot import DEVS
+from userbot import DEVS, CMD_HANDLER as cmd
 from userbot import ALIVE_NAME, CMD_HELP, StartTime
 from userbot.events import register
+from userbot.utils import flicks_cmd
 
 absen = [
     "**Hadir Cuy** 😎",
@@ -74,7 +75,7 @@ async def _(asadekontol):
     await asadekontol.reply(random.choice(uy))
 
 
-@register(outgoing=True, pattern="^.fping$")
+@flicks_cmd(pattern="fping")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     await get_readable_time((time.time() - StartTime))
@@ -96,7 +97,7 @@ async def redis(pong):
                     f"➥ {ALIVE_NAME} \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.sping$")
+@flicks_cmd(pattern="sping")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     await get_readable_time((time.time() - StartTime))
@@ -118,7 +119,7 @@ async def redis(pong):
                     f"**╰━━━━━━━━━━━━━━━━━╯** \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.lping$")
+@flicks_cmd(pattern="lping")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -141,7 +142,7 @@ async def redis(pong):
                     f"`{uptime}` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.xping$")
+@flicks_cmd(pattern="xping")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -158,7 +159,6 @@ async def redis(pong):
     await pong.edit("🔥")
     await asyncio.sleep(2)
     end = datetime.now()
-    await bot.get_me()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"**▹  Sɪɢɴᴀʟ   :** "
                     f"`%sms` \n"
@@ -167,7 +167,7 @@ async def redis(pong):
                     f"**▹  Oᴡɴᴇʀ   :** {ALIVE_NAME} \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.ping$")
+@flicks_cmd(pattern="ping")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -188,7 +188,7 @@ async def redis(pong):
                     f"`{uptime}` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.test$")
+@flicks_cmd(pattern="tes")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -217,7 +217,7 @@ async def redis(pong):
     await pong.edit(f"**FLICKS-USERBOT**\n :` %s`ms\n**Bot Uptime** : `{uptime}`🕛" % (duration))
 
 
-@register(outgoing=True, pattern="^.speed$")
+@flicks_cmd(pattern="speed")
 async def speedtst(spd):
     """ For .speed command, use SpeedTest to check server speeds. """
     await spd.edit("`Menjalankan Tes Kecepatan Jaringan, Mohon Tunggu...⚡`")
@@ -257,7 +257,7 @@ def speed_convert(size):
     return f"{round(size, 2)} {units[zero]}"
 
 
-@register(outgoing=True, pattern="^.pong$")
+@flicks_cmd(pattern="pong")
 async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
     start = datetime.now()
@@ -280,12 +280,12 @@ async def pingme(pong):
 
 CMD_HELP.update(
     {
-        "ping": "**• Plugin Ping •**\
-        \n\n  •  **Perintah :** `.ping` | `.lping` | `.xping` | `.sping` | `.fping`\
+        "ping": f"**• Plugin Ping •**\
+        \n\n  •  **Perintah :** `{cmd}ping` | `{cmd}lping` | `{cmd}xping` | `{cmd}sping` | `{cmd}fping`\
         \n  •  **Function :** Untuk Menunjukkan Ping Bot Anda\
-        \n\n  •  **Perintah :*** `.speed`\
+        \n\n  •  **Perintah :*** `{cmd}speed`\
         \n  •  **Function :** Untuk Menunjukkan Kecepatan Jaringan Anda\
-        \n\n  •  **Perintah :** `.pong` | `.test`\
+        \n\n  •  **Perintah :** `{cmd}pong` | `{cmd}test`\
         \n  •  **Function :** Sama Seperti Perintah Ping\
     "
     }
