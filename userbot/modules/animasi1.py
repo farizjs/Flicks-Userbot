@@ -89,12 +89,11 @@ async def typewriter(typew):
 
 CMD_HELP.update({
     "animasi1":
-    f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}nah` ; `{cmd}fuck` ; `{cmd}huh`\
+    f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}nah` ; `{cmd}fuck` ; `{cmd}huh` ; `{cmd}hua`\
     \n↳ : Cobain Sendiri.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}bunga` ; `{cmd}buah`\
     \n↳ : animasi.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}waktu`\
     \n↳ : animasi.\
-
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}hua`\"
+"
 })
