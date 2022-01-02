@@ -1,4 +1,4 @@
-from userbot import CMD_HELP
+from userbot import CMD_HELP, CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 import asyncio
 
@@ -112,6 +112,6 @@ async def hack(event):
 
 
 CMD_HELP.update({
-    "hack": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}hack`\
+    "hack": f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}hack`\
         \n↳ : Untuk hacking via Termux (animasi:v)."
 })
