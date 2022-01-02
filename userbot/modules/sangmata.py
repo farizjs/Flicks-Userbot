@@ -2,9 +2,11 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
 from userbot.events import register
 from asyncio.exceptions import TimeoutError
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
 
-@register(outgoing=True, pattern=r"^\.sa(?: |$)(.*)")
+@flicks_cmd(pattern="(sa|sg)(?: |$)")
 async def lastname(steal):
     if steal.fwd_from:
         return
@@ -57,6 +59,6 @@ async def lastname(steal):
 
 CMD_HELP.update({
     "sangmata":
-        "`.sa`\
+        f"`{cmd}sa`|`{cmd}sg`\
           \nUsage: Mendapatkan Riwayat Nama Pengguna."
 })
