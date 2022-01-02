@@ -650,7 +650,7 @@ async def pin(msg):
         )
 
 
-@flicks, _cmd(pattern="kick(?: |$)(.*)")
+@flicks_cmd(pattern="kick(?: |$)(.*)")
 async def kick(usr):
     # Admin or creator check
     chat = await usr.get_chat()
