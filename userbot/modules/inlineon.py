@@ -7,7 +7,6 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import bot, BOT_USERNAME
-from userbot.events import register
 from userbot.utils import flicks_cmd
 
 
