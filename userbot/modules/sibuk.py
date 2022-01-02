@@ -1,4 +1,5 @@
 # Code from King-Userbot (https://github.com/apisuserbot/King-Userbot)
+# custom handler by Flicks-Userbot
 from datetime import datetime
 import time
 from random import choice, randint
@@ -20,6 +21,9 @@ from userbot import (  # noqa pylint: disable=unused-import isort:skip
     bot,
 )
 from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
+
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
@@ -41,7 +45,7 @@ afk_start = {}
 # =================================================================
 
 
-@register(outgoing=True, pattern="^.sibuk(?: |$)(.*)", disable_errors=True)
+@flicks_cmd(pattern="sibuk")
 async def set_afk(afk_e):
     """ For .afk command, allows you to inform people that you are afk when they message you """
     message = afk_e.text  # pylint:disable=E0602
