@@ -95,7 +95,5 @@ CMD_HELP.update({
     \n↳ : animasi.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}waktu`\
     \n↳ : animasi.\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}hua`\
-
-\n↳: nangis.\"
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}hua`\nLiat sendiri 🚶\"
 })
