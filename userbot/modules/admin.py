@@ -406,7 +406,7 @@ async def unmoot(unmot):
             )
 
 
-@flicks_handler
+@register(incoming=True)
 async def muter(moot):
     try:
         from userbot.modules.sql_helper.gmute_sql import is_gmuted
