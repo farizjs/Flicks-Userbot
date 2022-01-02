@@ -1,8 +1,9 @@
-from asyncio import sleep
+from time, asyncio import sleep
 from telethon.tl.types import ChatBannedRights
 from telethon.tl.functions.channels import EditBannedRequest
 from userbot.utils import flicks_cmd
 from userbot import CMD_HELP
+from userbot import CMD_HANDLER as cmd
 
 # Sudah di ubah menjadi cmd handler
 # Fixes by team Flick-Userbot
@@ -15,9 +16,15 @@ async def testing(event):
     admin = nikal.admin_rights
     creator = nikal.creator
     if not admin and not creator:
-        await event.edit("Anda Tidak Mempunyai Hak")
+        await event.edit("`Anda Tidak Mempunyai Hak Disini`")
         return
-    await event.edit("Tidak Melakukan Apa-apa")
+    await event.edit("**Berjalan.**")
+    sleep(3)
+    await event.edit("**Berjalan..**")
+    sleep(3)
+    await event.edit("**Berjalan...**")
+    sleep(3)
+    await event.edit("**Berjalan....**")
 
     everyone = await event.client.get_participants(event.chat_id)
     for user in everyone:
@@ -28,11 +35,11 @@ async def testing(event):
         except Exception as e:
             await event.edit(str(e))
         await sleep(.5)
-    await event.edit("**Tidak Ada yang Terjadi di sini 🙂**")
+    await event.edit("**Perintah berhasil di jalankan**\n\n__Semua member telah terblokir__ 🙂")
 
 CMD_HELP.update(
     {
-        "allban": "**• Plugin Allban •**\
+        "allban": f"**• Plugin Allban •**\
         \n\n  •  **Perintah :** `{cmd}allban`\
         \n  •  **Function :** Blokir semua member dengan 1 perintah\n\n**!!! WARNING !!!**\
     "
