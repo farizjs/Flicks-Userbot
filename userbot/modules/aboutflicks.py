@@ -5,13 +5,15 @@ import logging
 
 from userbot import BOT_USERNAME
 from userbot.events import register
+from userbot.utils import flicks_cmd
+from userbot import CMD_HANDLER as cmd
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
     level=logging.WARNING)
 
 
-@register(outgoing=True, pattern=r"^\.aboutflicks")
+@flicks_cmd(pattern="aboutflicks")
 async def yardim(event):
     try:
         kenbotusername = BOT_USERNAME
@@ -23,9 +25,9 @@ async def yardim(event):
             await event.delete()
         else:
             await event.edit(
-                "`Botnya tidak berfungsi! Silahkan atur vars `BOT_TOKEN` dan `BOT_USERNAME` dengan benar.\ntau gunakan perintah `.set var BOT_TOKEN` <token> dan `.set var BOT_USERNAME` <Username Bot mu>."
+                f"`Botnya tidak berfungsi! Silahkan atur vars `BOT_TOKEN` dan `BOT_USERNAME` dengan benar.\ntau gunakan perintah `{cmd}set var BOT_TOKEN` <token> dan `{cmd}set var BOT_USERNAME` <Username Bot mu>."
             )
     except Exception:
         return await event.edit(
-            "**Anda tidak dapat mengirim inline menu dalam obrolan ini, silakan gunakan perintah** `.inlineon`"
+            f"**Anda tidak dapat mengirim inline menu dalam obrolan ini, silakan gunakan perintah** `{cmd}inlineon`"
         )
