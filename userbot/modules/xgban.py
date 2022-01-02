@@ -1,4 +1,3 @@
-import asyncio
 
 from time import sleep
 from telethon.tl.types import ChatBannedRights
