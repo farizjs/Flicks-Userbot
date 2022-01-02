@@ -1,4 +1,6 @@
-from time, asyncio import sleep
+import asyncio
+
+from time import sleep
 from telethon.tl.types import ChatBannedRights
 from telethon.tl.functions.channels import EditBannedRequest
 from userbot.utils import flicks_cmd
