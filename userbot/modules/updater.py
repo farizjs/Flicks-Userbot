@@ -17,7 +17,6 @@ from userbot import (
     HEROKU_APP_NAME,
     UPSTREAM_REPO_URL,
     UPSTREAM_REPO_BRANCH)
-from userbot.events import register
 from userbot.utils import flicks_cmd
 
 requirements_path = path.join(
@@ -135,6 +134,7 @@ async def update(event, repo, ups_rem, ac_br):
     args = [sys.executable, "-m", "userbot"]
     execle(sys.executable, *args, environ)
     return
+
 
 @flicks_cmd(pattern="update( now| deploy|$)")
 async def upstream(event):
