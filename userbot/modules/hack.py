@@ -1,10 +1,10 @@
-from userbot import CMD_HELP
+from userbot import CMD_HELP, CMD_HANDLER as cmd
 from userbot.events import register
-
+from userbot.utils import flicks_cmd
 import asyncio
 
 
-@register(outgoing=True, pattern='^.hack(?: |$)(.*)')
+@flicks_cmd(pattern="hack")
 async def hack(event):
     range(0, 11)
     await event.edit("Installing.")
@@ -34,7 +34,7 @@ async def hack(event):
     await asyncio.sleep(2)
     await event.edit("`Target files Uploading...\n\nDirecting To Remote  server to hack..`")
     await asyncio.sleep(3)
-    await event.edit("Connecting nd getting combined token from my.telegram.org ")
+    await event.edit("Connecting nd getting combined token from `my.telegram.org` ")
     await asyncio.sleep(3)
     await event.edit("`root@anon:~#` ")
     await asyncio.sleep(2)
@@ -113,6 +113,6 @@ async def hack(event):
 
 
 CMD_HELP.update({
-    "hack": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.hack`\
-        \n↳ : Untuk hacking via Termux."
+    "hack": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}hack`\
+        \n↳ : Untuk hacking via Termux (animasi:v)."
 })
