@@ -115,8 +115,9 @@ async def set_group_photo(gpic):
             await gpic.edit(PP_ERROR)
 
 
-@flicks_cmd(pattern="promote(?:\s|$)([\s\S]*)")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cpromote(?:\s|$)([\s\S]*)")
+@flicks_cmd(pattern="promote(?:\\s|$)([\\s\\S]*)")
+@register(incoming=True, from_users=DEVS,
+          pattern=r"^\.cpromote(?:\s|$)([\s\S]*)")
 async def promote(promt):
     # Get targeted chat
     chat = await promt.get_chat()
@@ -166,8 +167,9 @@ async def promote(promt):
         )
 
 
-@flicks_cmd(pattern="demote(?:\s|$)([\s\S]*)")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cdemote(?:\s|$)([\s\S]*)")
+@flicks_cmd(pattern="demote(?:\\s|$)([\\s\\S]*)")
+@register(incoming=True, from_users=DEVS,
+          pattern=r"^\.cdemote(?:\s|$)([\s\S]*)")
 async def demote(dmod):
     # Admin right check
     chat = await dmod.get_chat()
@@ -216,7 +218,7 @@ async def demote(dmod):
         )
 
 
-@flicks_cmd(pattern="ban(?:\s|$)([\s\S]*)")
+@flicks_cmd(pattern="ban(?:\\s|$)([\\s\\S]*)")
 async def ban(bon):
     # Here laying the sanity check
     chat = await bon.get_chat()
@@ -269,7 +271,7 @@ async def ban(bon):
         )
 
 
-@flicks_cmd(pattern="unban(?:\s|$)([\s\S]*)")
+@flicks_cmd(pattern="unban(?:\\s|$)([\\s\\S]*)")
 async def nothanos(unbon):
     # Here laying the sanity check
     chat = await unbon.get_chat()
@@ -648,7 +650,7 @@ async def pin(msg):
         )
 
 
-@flicks,_cmd(pattern="kick(?: |$)(.*)")
+@flicks, _cmd(pattern="kick(?: |$)(.*)")
 async def kick(usr):
     # Admin or creator check
     chat = await usr.get_chat()
