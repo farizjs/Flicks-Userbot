@@ -1,9 +1,9 @@
 from time import sleep
-from userbot import CMD_HELP
+from userbot import CMD_HELP, CMD_HANDLER
 from userbot.events import register
+from userbot.utils import flicks_cmd
 
-
-@register(outgoing=True, pattern=r'^\.santet(?: |$)(.*)')
+@flicks_cmd(pattern="santet")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Anda Telah Mengaktifkan Perintah Santet Online ツ`")
@@ -313,11 +313,11 @@ async def typewriter(typew):
     sleep(0.03)
     await typew.edit(str(number) + "%   ████████████████▌")
     sleep(1)
-    await typew.edit("`Santet Berhasil, Kirim Pap TT Jika Gamau Di Santet:v`")
+    await typew.edit("`Santet Berhasil, Canda ngab:v`")
 
 
 CMD_HELP.update({
-    'santetonline':
-    '`.santet`\
+    'santet':
+    f'`{cmd}santet`\
         \nUsage: Santet Online Buat Bercanda.'
 })
