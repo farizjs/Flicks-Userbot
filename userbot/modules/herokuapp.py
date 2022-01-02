@@ -16,7 +16,6 @@ from userbot import (
     BOTLOG_CHATID,
     ALIVE_NAME,
     CMD_HELP)
-from userbot.events import register
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
@@ -34,7 +33,7 @@ else:
 """
 
 
-@flicks_cmd(pattern="(get|del) var(?: |$)(\w*)")
+@flicks_cmd(pattern="(get|del) var(?: |$)(\\w*)")
 async def variable(var):
     exe = var.pattern_match.group(1)
     if app is None:
@@ -96,7 +95,7 @@ async def variable(var):
             return True
 
 
-@flicks_cmd(pattern="set var (\w*) ([\s\S]*)")
+@flicks_cmd(pattern="set var (\\w*) ([\\s\\S]*)")
 async def set_var(var):
     await var.edit("`Sedang Menyetel Config Vars 🛠️`")
     variable = var.pattern_match.group(1)
