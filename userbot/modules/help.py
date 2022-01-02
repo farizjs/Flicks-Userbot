@@ -9,6 +9,8 @@ import asyncio
 from userbot import ALIVE_NAME, CMD_HELP
 from userbot.events import register
 from platform import uname
+from userbot.utils import flicks_cmd
+from userbot import CMD_HANDLER as cmd
 
 modules = CMD_HELP
 
@@ -17,7 +19,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern="^.modules(?: |$)(.*)")
+@flicks_cmd(pattern="help(?: |$)(.*)")
 async def help(event):
     """ For .help command,"""
     args = event.pattern_match.group(1).lower()
@@ -37,6 +39,6 @@ async def help(event):
                          f"**❒ Bᴏᴛ ᴏꜰ {DEFAULTUSER} **\n**❒ Mᴏᴅᴜʟᴇꜱ : {len(modules)}**\n\n"
                          "**❒ Mᴀɪɴ Mᴇɴᴜ :**\n"
                          f"◉| {string}◉\n\n"
-                         f"\n**Contoh** : Ketik <`.modules offline`> Untuk Informasi Pengunaan Perintah.\nAtau Bisa Juga Ketik `.helpme` Untuk Main Menu Yang Lain-Nya.")
+                         f"\n**Contoh** : Ketik <`{cmd}help offline`> Untuk Informasi Pengunaan Perintah.\nAtau Bisa Juga Ketik `{cmd}helpme` Untuk Main Menu Yang Lain-Nya.")
         await asyncio.sleep(360)
         await event.delete()
