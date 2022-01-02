@@ -44,7 +44,7 @@ afk_start = {}
 # =================================================================
 
 
-@flicks_cmd(pattern="sibuk")
+@flicks_cmd(pattern="sibuk(?: |$)(.*)")
 async def set_afk(afk_e):
     """ For .afk command, allows you to inform people that you are afk when they message you """
     message = afk_e.text  # pylint:disable=E0602
