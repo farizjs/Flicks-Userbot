@@ -1,6 +1,5 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
-from userbot.events import register
 from asyncio.exceptions import TimeoutError
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
