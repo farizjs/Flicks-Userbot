@@ -1,5 +1,4 @@
 from telethon import events
-from userbot.events import register
 from userbot import CMD_HELP, CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
