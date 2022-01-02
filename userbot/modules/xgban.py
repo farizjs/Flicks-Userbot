@@ -3,10 +3,10 @@ from telethon.tl.types import ChatBannedRights
 from telethon.tl.functions.channels import EditBannedRequest
 from userbot.utils import flicks_cmd
 from userbot import CMD_HELP
-from userbot import CMD_HANDLER as cmd
 
 # Sudah di ubah menjadi cmd handler
 # Fixes by team Flick-Userbot
+
 
 @flicks_cmd(pattern="allban")
 async def testing(event):
