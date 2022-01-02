@@ -3,6 +3,8 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 from telethon import events
 import asyncio
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
 
 @bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
@@ -63,7 +65,7 @@ async def _(event):
             await event.edit(animation_chars[i % 32])
 
 
-@register(outgoing=True, pattern='^.helikopter(?: |$)(.*)')
+@flicks_cmd(pattern="helikopter")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("▬▬▬.◙.▬▬▬ \n"
@@ -84,20 +86,20 @@ async def typewriter(typew):
                      "╬═╬/ \\ \n")
 
 
-@register(outgoing=True, pattern='^.tembak(?: |$)(.*)')
+@flicks_cmd(pattern="tembak")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("_/﹋\\_\n"
                      "(҂`_´)\n"
                      "<,︻╦╤─ ҉\n"
                      r"_/﹋\_"
-                     "\n**Mau Jadi Pacarku Gak?! Harus Mau Soalnya Aku Maksa!**")
+                     "\n**Ayo jadi pacarku**")
 
 
-@register(outgoing=True, pattern='^.bundir(?: |$)(.*)')
+@flicks_cmd(pattern="bundir")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("`Gua Mati Dulu Bye Ngentot...`          \n　　　　　|"
+    await typew.edit("`Gua Mati Dulu Bye Kawand...`          \n　　　　　|"
                      "\n　　　　　| \n"
                      "　　　　　| \n"
                      "　　　　　| \n"
@@ -113,7 +115,7 @@ async def typewriter(typew):
                      "　　　　　 Ｕ Ｕ\n")
 
 
-@register(outgoing=True, pattern='^.awkwok(?: |$)(.*)')
+@flicks_cmd(pattern="awokawok")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("────██──────▀▀▀██\n"
@@ -123,7 +125,7 @@ async def typewriter(typew):
                      "─▀───────▀▀─▀───────▀▀\n`Awkwokwokwok Goblok..`")
 
 
-@register(outgoing=True, pattern='^.ular(?: |$)(.*)')
+@flicks_cmd(pattern="ular")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("░░░░▓\n"
@@ -213,7 +215,7 @@ async def typewriter(typew):
                      "░░░░░░░░░░░░░░░░░░░\n")
 
 
-@register(outgoing=True, pattern='^.y(?: |$)(.*)')
+@flicks_cmd(pattern="y")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("‡‡‡‡‡‡‡‡‡‡‡‡▄▄▄▄\n"
@@ -231,7 +233,7 @@ async def typewriter(typew):
                      "█████‡‡‡‡‡‡‡██████████\n")
 
 
-@register(outgoing=True, pattern='^.tank(?: |$)(.*)')
+@flicks_cmd(pattern="tank")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("█۞███████]▄▄▄▄▄▄▄▄▄▄▃ \n"
@@ -240,7 +242,7 @@ async def typewriter(typew):
                      "◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤\n")
 
 
-@register(outgoing=True, pattern='^.pig(?: |$)(.*)')
+@flicks_cmd(pattern="pig")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("┈┈┏━╮╭━┓┈╭━━━━╮\n"
@@ -253,7 +255,7 @@ async def typewriter(typew):
                      "┈┈┈┈┈┗┻┛┗┻┛┈┈┈┈\n")
 
 
-@register(outgoing=True, pattern='^.dog(?: |$)(.*)')
+@flicks_cmd(pattern="dog")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("╥━━━━━━━━╭━━╮━━┳\n"
@@ -264,10 +266,10 @@ async def typewriter(typew):
                      "╨━━┗┛┗┛━━┗┛┗┛━━┻\n")
 
 
-@register(outgoing=True, pattern='^.bernyanyi(?: |$)(.*)')
+@flicks_cmd(pattern="bernyanyi")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**Ganteng Doang Gak Bernyanyi (ง˙o˙)ว**")
+    await typew.edit("**Mari bernyanyi bersama (ง˙o˙)ว**")
     sleep(2)
     await typew.edit("**♪┗ ( ･o･) ┓♪┏ (・o･) ┛♪**")
     sleep(1)
@@ -302,14 +304,14 @@ async def typewriter(typew):
 
 CMD_HELP.update({
     "animasi4":
-    "`.bulan` ; `.hati` ; `.bernyanyi`\
+    f"`{cmd}hati` ; `{cmd}bernyanyi`\
     \nUsage: liat aja.\
-    \n\n`.helikopter` ; `.tank` ; `.tembak`\n`.bundir`\
+    \n\n`{cmd}helikopter` ; `{cmd}tank` ; `{cmd}tembak`\n`{cmd}bundir`\
     \nUsage: liat sendiri\
-    \n\n`.y`\
+    \n\n`{cmd}y`\
     \nUsage: jempol\
-    \n\n`.awkwok`\
+    \n\n`{cmd}awokawok`\
     \nUsage: ketawa lari.\
-    \n\n`.ular` ; `.pig` ; `.dog`\
+    \n\n`{cmd}ular` ; `{cmd}pig` ; `{cmd}dog`\
     \nUsage: liat sendiri."
 })
