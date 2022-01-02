@@ -5,8 +5,9 @@ import requests
 from PIL import Image
 from validators.url import url
 
-from userbot import CMD_HELP
+from userbot import CMD_HELP, CMD_HANDLER as cmd
 from userbot.events import register
+from userbot.utils import flicks_cmd
 
 EMOJI_PATTERN = re.compile(
     "["
@@ -113,7 +114,7 @@ async def purge():
         pass
 
 
-@register(outgoing=True, pattern=r"^\.trump(?: |$)(.*)")
+@flicks_cmd(pattern="trump(?: |$)(.*)")
 async def trump(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -134,7 +135,7 @@ async def trump(event):
     await purge()
 
 
-@register(outgoing=True, pattern=r"^\.qg(?: |$)(.*)")
+@flicks_cmd(pattern="qg(?: |$)(.*)")
 async def qg(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -155,7 +156,7 @@ async def qg(event):
     await purge()
 
 
-@register(outgoing=True, pattern=r"^\.cmm(?: |$)(.*)")
+@flicks_cmd(pattern="cmm(?: |$)(.*)")
 async def cmm(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -176,7 +177,7 @@ async def cmm(event):
     await purge()
 
 
-@register(outgoing=True, pattern=r"^\.kanna(?: |$)(.*)")
+@flicks_cmd(pattern="kanna(?: |$)(.*)")
 async def kanna(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -197,7 +198,7 @@ async def kanna(event):
     await purge()
 
 
-@register(outgoing=True, pattern=r"\.tweet(?: |$)(.*)")
+@flicks_cmd(pattern="tweet(?: |$)(.*)")
 async def tweet(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -228,15 +229,15 @@ async def tweet(event):
 
 CMD_HELP.update(
     {
-        "animations": ">`.tweet` <username>.<tweet>"
+        "animations": f">`{cmd}tweet` <username>.<tweet>"
         "\nUsage: Create tweet with custom username.\n\n"
-        ">`.trump` <tweet>"
+        f">`{cmd}trump` <tweet>"
         "\nUsage: Create tweet for Donald Trump.\n\n"
-        ">`.qg` <tweet>"
+        f">`{cmd}qg` <tweet>"
         "\nUsage: Create tweet for `@QoryGore`.\n\n"
-        ">`.cmm` <text>"
+        f">`{cmd}cmm` <text>"
         "\nUsage: Create banner for Change My Mind.\n\n"
-        ">`.kanna` <text>"
+        f">`{cmd}kanna` <text>"
         "\nUsage: Kanna is writing your text."
     }
 )
