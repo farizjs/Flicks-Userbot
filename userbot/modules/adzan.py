@@ -3,12 +3,14 @@ import json
 import requests
 
 from userbot import CMD_HELP
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 from userbot.events import register
 
 PLACE = ""
 
 
-@register(pattern=r"^\.adzan(?: |$)(.*)")
+@flicks_cmd(pattern="adzan(?: |$)(.*)")
 async def get_adzan(adzan):
     if not adzan.pattern_match.group(1):
         LOCATION = PLACE
@@ -54,5 +56,5 @@ async def get_adzan(adzan):
     await adzan.edit(result)
 
 
-CMD_HELP.update({"adzan": "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.adzan` <kota>"
+CMD_HELP.update({"adzan": f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}adzan` <kota>"
                  "\n↳ : Memberikan Informasi Waktu Sholat."})
