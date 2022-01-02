@@ -17,6 +17,8 @@ from userbot import (
     ALIVE_NAME,
     CMD_HELP)
 from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
 heroku_api = "https://api.heroku.com"
 if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
@@ -32,7 +34,7 @@ else:
 """
 
 
-@register(outgoing=True, pattern=r"^.(get|del) var(?: |$)(\w*)")
+@flicks_cmd(pattern="(get|del) var(?: |$)(\w*)")
 async def variable(var):
     exe = var.pattern_match.group(1)
     if app is None:
@@ -94,7 +96,7 @@ async def variable(var):
             return True
 
 
-@register(outgoing=True, pattern=r'^.set var (\w*) ([\s\S]*)')
+@flicks_cmd(pattern="set var (\w*) ([\s\S]*)")
 async def set_var(var):
     await var.edit("`Sedang Menyetel Config Vars 🛠️`")
     variable = var.pattern_match.group(1)
@@ -123,7 +125,7 @@ async def set_var(var):
 """
 
 
-@register(outgoing=True, pattern=r"(.usage|.kuota|.dyno)(?: |$)")
+@flicks_cmd(pattern="(usage|kuota|dyno)(?: |$)")
 async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
@@ -199,7 +201,7 @@ async def dyno_usage(dyno):
             return True
 
 
-@register(outgoing=True, pattern=r"^.logs(?: |$)")
+@flicks_cmd(pattern="logs")
 async def _(dyno):
     try:
         Heroku = heroku3.from_key(HEROKU_API_KEY)
@@ -217,16 +219,16 @@ async def _(dyno):
     return os.remove("logs.txt")
 
 
-CMD_HELP.update({"herokuapp": "Cmd: `.usage`|`.kuota`|`.dyno`"
+CMD_HELP.update({"herokuapp": f"Cmd: `{cmd}usage`|`{cmd}kuota`|`{cmd}dyno`"
                  "\n↳ : Check Quota Dyno Heroku"
-                 "\n\nCmd: `.logs`"
+                 f"\n\nCmd: `{cmd}logs`"
                  "\n↳ : Melihat Logs Heroku Anda"
-                 "\n\nCmd: `.set var <NEW VAR> <VALUE>`"
+                 f"\n\nCmd: `{cmd}set var <NEW VAR> <VALUE>`"
                  "\n↳ : Tambahkan Variabel Baru Atau Memperbarui Variabel"
                  "\nSetelah Menyetel Variabel Tersebut, Flicks-Userbot Akan Di Restart."
-                 "\n\nCmd: `.get var atau .get var <VAR>`"
+                 f"\n\nCmd: `{cmd}get var atau .get var <VAR>`"
                  "\n↳ : Dapatkan Variabel Yang Ada, !!PERINGATAN!! Gunakanlah Di Grup Privasi Anda."
                  "\nIni Mengembalikan Semua Informasi Pribadi Anda, Harap berhati-hati."
-                 "\n\nCmd: `.del var <VAR>`"
+                 f"\n\nCmd: `{cmd}del var <VAR>`"
                  "\n↳ : Menghapus Variabel Yang Ada"
                  "\nSetelah Menghapus Variabel, Bot Akan Di Restart."})
