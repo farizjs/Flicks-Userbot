@@ -1,7 +1,7 @@
 from time import sleep
-from userbot import CMD_HELP, CMD_HANDLER
-from userbot.events import register
+from userbot import CMD_HELP
 from userbot.utils import flicks_cmd
+
 
 @flicks_cmd(pattern="santet")
 async def typewriter(typew):
