@@ -7,7 +7,6 @@
 import asyncio
 
 from userbot import ALIVE_NAME, BOT_VER, CMD_HELP
-from userbot.events import register
 from platform import uname
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
