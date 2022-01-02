@@ -12,6 +12,7 @@ async_generator
 cowpy
 psutil
 wget
+time
 telethon-tgcrypto
 cffi>=1.0.0
 dnspython
