@@ -1,13 +1,14 @@
 from asyncio import sleep
 from telethon.tl.types import ChatBannedRights
 from telethon.tl.functions.channels import EditBannedRequest
-from userbot.events import register
+from userbot.utils import flicks_cmd
 from userbot import CMD_HELP
+from userbot import CMD_HANDLER as cmd
 
+# Sudah di ubah menjadi cmd handler
+# Fixes by team Flick-Userbot
 
-# Port By @VckyouuBitch From GeezProject
-# Perkontolan Dengan Hapus Credits
-@register(outgoing=True, pattern="^.allban(?: |$)(.*)")
+@flicks_cmd(pattern="allban")
 async def testing(event):
     nikal = await event.get_chat()
     chutiya = await event.client.get_me()
@@ -17,7 +18,7 @@ async def testing(event):
         await event.edit("Anda Tidak Mempunyai Hak")
         return
     await event.edit("Tidak Melakukan Apa-apa")
-# Thank for Dark_Cobra
+
     everyone = await event.client.get_participants(event.chat_id)
     for user in everyone:
         if user.id == chutiya.id:
@@ -27,12 +28,13 @@ async def testing(event):
         except Exception as e:
             await event.edit(str(e))
         await sleep(.5)
-    await event.edit("Tidak Ada yang Terjadi di sini🙃🙂")
+    await event.edit("**Tidak Ada yang Terjadi di sini 🙂**")
 
 CMD_HELP.update(
     {
-        "allban": "**Plugin : **`allban`\
-    \n\n**Syntax : **`.allban`\
-    \n**Function : **ban all members in 1 cmnd"
+        "allban": "**• Plugin Allban •**\
+        \n\n  •  **Perintah :** `{cmd}allban`\
+        \n  •  **Function :** Blokir semua member dengan 1 perintah\n\n**!!! WARNING !!!**\
+    "
     }
 )
