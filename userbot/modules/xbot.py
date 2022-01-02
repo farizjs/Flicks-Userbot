@@ -5,8 +5,10 @@
 
 from random import choice
 
+from userbot import DEVS, CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.events import register
+from userbot.utils import flicks_cmd
 
 # ================= CONSTANT =================
 XBOT_STRINGS = [
@@ -18,15 +20,15 @@ XBOT_STRINGS = [
 ]
 
 
-@register(outgoing=True, pattern="^.xbot$")
+@flicks_cmd(pattern="xbot")
 async def xbot(xbotflicks):
     await xbotflicks.edit(choice(XBOT_STRINGS))
 
 CMD_HELP.update(
     {
-        "xbot": "**• Plugin Xbot •** \
-        \n\n  •  **Perintah :** `.xbot`\
-        \n  •  **Function : **Xbot random untuk bersenang senang saja\
+        "xbot": "**• Plugin Xbot •**\
+        \n\n  •  **Perintah :** `{cmd}xbot`\
+        \n  •  **Function :** Xbot random untuk bersenang senang saja\
     "
     }
 )
