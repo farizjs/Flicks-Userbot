@@ -1,6 +1,5 @@
 """ Userbot module for other small commands. """
 from userbot import CMD_HELP, ALIVE_NAME
-from userbot.events import register
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
@@ -20,6 +19,8 @@ async def usit(e):
 
 
 flicks_cmd(pattern="vars(?: |$)(.*)")
+
+
 async def var(m):
     await m.edit(
         f"**Disini Daftar Vars Dari {DEFAULTUSER}:**\n"
