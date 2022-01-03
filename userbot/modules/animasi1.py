@@ -6,7 +6,7 @@ from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
 
-@flicks_cmd(pattern="hua(?: |$)(.*)")
+@flicks_cmd(pattern="hua$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("(ʘᴗʘ✿)")
@@ -41,7 +41,7 @@ async def koc(e):
         await e.edit("༼ ༎ຶ ෴ ༎ຶ༽")
 
 
-@flicks_cmd(pattern="fuck(?: |$)(.*)")
+@flicks_cmd(pattern="fuck$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(".                       /¯ )")
