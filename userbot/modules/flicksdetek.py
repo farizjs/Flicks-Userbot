@@ -1,5 +1,7 @@
+from userbot.events import register
 from userbot import CMD_HELP, bot
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
 
@@ -63,6 +65,6 @@ def user_full_name(user):
 
 CMD_HELP.update({
     "deteksi":
-        "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.deteksi`\
+        f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}deteksi`\
           \n📌 : Melihat Riwayat Grup Yang Pernah/Sedang dimasuki."
 })
