@@ -4,7 +4,7 @@ from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
 
-@flicks_cmd(pattern="sayang")
+@flicks_cmd(pattern="sayang(?: |$)(.*)")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("I LOVEE YOUUU 💕")
@@ -33,7 +33,7 @@ async def koc(e):
         await e.edit("SAYANG KAMU💞")
 
 
-@flicks_cmd(pattern="dino")
+@flicks_cmd(pattern="dino(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`DIN DINNN.....`")
@@ -91,7 +91,7 @@ async def typewriter(typew):
     await typew.edit("`-TAMAT-`")
 
 
-@flicks_cmd(pattern="gabut")
+@flicks_cmd(pattern="gabut(?: |$)(.*)")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`PERNAAHHHHH KAHHH KAUUU MENGIRA`")
@@ -348,7 +348,7 @@ async def koc(e):
         await e.edit("`GABUT`")
 
 
-@flicks_cmd(pattern="mf")
+@flicks_cmd(pattern="mf(?: |$)(.*)")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`mf g dl` **ミ(ノ;_ _)ノ=3** ")
@@ -357,7 +357,7 @@ async def koc(e):
 # Create by myself @localheart
 
 
-@flicks_cmd(pattern="war")
+@flicks_cmd(pattern="war(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
