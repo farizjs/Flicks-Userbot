@@ -25,7 +25,6 @@ from telethon.tl.types import (DocumentAttributeAnimated,
 from telethon.utils import is_image, is_video
 
 from userbot import CMD_HELP, CMD_HANDLER as cmd
-from userbot.events import register
 from userbot.utils import flicks_cmd
 
 jikan = Jikan()
@@ -193,7 +192,6 @@ def replace_text(text):
             "").replace(
                 "\\",
         "")
-
 
 
 @flicks_cmd(pattern="anime ?(.*)")
