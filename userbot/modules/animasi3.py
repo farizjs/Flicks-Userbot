@@ -4,7 +4,7 @@ from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
 
-@flicks_cmd(pattern="sayang(?: |$)(.*)")
+@flicks_cmd(pattern="sayang$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("I LOVEE YOUUU 💕")
@@ -33,7 +33,7 @@ async def koc(e):
         await e.edit("SAYANG KAMU💞")
 
 
-@flicks_cmd(pattern="dino(?: |$)(.*)")
+@flicks_cmd(pattern="dino(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`DIN DINNN.....`")
@@ -91,7 +91,7 @@ async def typewriter(typew):
     await typew.edit("`-TAMAT-`")
 
 
-@flicks_cmd(pattern="gabut(?: |$)(.*)")
+@flicks_cmd(pattern="gabut$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`PERNAAHHHHH KAHHH KAUUU MENGIRA`")
@@ -348,7 +348,7 @@ async def koc(e):
         await e.edit("`GABUT`")
 
 
-@flicks_cmd(pattern="mf(?: |$)(.*)")
+@flicks_cmd(pattern="mf$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`mf g dl` **ミ(ノ;_ _)ノ=3** ")
@@ -367,7 +367,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("**Sini War **")
     sleep(1)
-    await typew.edit("**Bacod Doang Gede**")
+    await typew.edit("**Omong Doang Gede**")
     sleep(1)
     await typew.edit("**Di Sosmed Jagoan Di Realife Babu Tongkrongan**")
     sleep(1)
@@ -375,11 +375,11 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("**HAHAHAHAHAHAHA**")
     sleep(1)
-    await typew.edit("**Muka Kek Sapi Belagu Banget Sih**")
+    await typew.edit("**Canda coy**")
     sleep(1)
-    await typew.edit("**Sorry Cok Wkwkwk**")
+    await typew.edit("**Sorry Coy Wkwkwk**")
     sleep(1)
-    await typew.edit("**Tapi Bo'ong**")
+    await typew.edit("**😁😁😁**")
 # Create by myself @localheart
 
 
