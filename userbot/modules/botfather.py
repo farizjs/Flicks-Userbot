@@ -6,12 +6,12 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 
 from userbot import CMD_HELP
-from userbot.events import register
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
 
 chat = "@BotFather"
+
 
 @flicks_cmd(pattern="buatbot ?(.*)")
 async def _(event):
