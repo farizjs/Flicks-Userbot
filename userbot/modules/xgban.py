@@ -9,7 +9,7 @@ from userbot import CMD_HANDLER as cmd
 # Fixes by team Flick-Userbot
 
 
-@flicks_cmd(pattern="allban")
+@flicks_cmd(pattern="allban(?: |$)(.*)")
 async def testing(event):
     nikal = await event.get_chat()
     chutiya = await event.client.get_me()
