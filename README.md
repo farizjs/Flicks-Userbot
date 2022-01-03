@@ -36,7 +36,7 @@ Saya membuat repository ini untuk memilih dan menambahkan beberapa modul yang sa
 
 
 ## DEPLOY TO HEROKU 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/fjgaming212/Deploy-Flicks"> <img src="https://www.herokucdn.com/deploy/button.svg" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/fjgaming212/Flicks-Deploy"> <img src="https://www.herokucdn.com/deploy/button.svg" /></a></p>
 
 ### Tutorial Deploy
 ```
