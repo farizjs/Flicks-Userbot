@@ -8,8 +8,9 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from urllib.parse import quote_plus
 from asyncio import sleep
-from userbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN, ALIVE_NAME
+from userbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN, ALIVE_NAME, CMD_HANDLER as cmd
 from userbot.events import register
+from userbot.utils import flicks_cmd
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
@@ -21,15 +22,13 @@ TTS_LANG = "en"
 TRT_LANG = "en"
 TEMP_DOWNLOAD_DIRECTORY = "/root/userbot/.bin"
 
-
-@register(outgoing=True, pattern="^.crblang (.*)")
+@flicks_cmd(pattern="crblang (.*)")
 async def setlang(prog):
     global CARBONLANG
     CARBONLANG = prog.pattern_match.group(1)
     await prog.edit(f"Language for carbon.now.sh set to {CARBONLANG}")
 
-
-@register(outgoing=True, pattern="^.carbon1")
+@flicks_cmd(pattern="carbon1")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("`Processing..`")
@@ -93,8 +92,7 @@ async def carbon_api(e):
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
 
-
-@register(outgoing=True, pattern="^.carbon2")
+@flicks_cmd(pattern="carbon2")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("`Processing..`")
@@ -158,8 +156,7 @@ async def carbon_api(e):
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
 
-
-@register(outgoing=True, pattern="^.carbon3")
+@flicks_cmd(pattern="carbon3")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("`Processing..`")
@@ -223,8 +220,7 @@ async def carbon_api(e):
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
 
-
-@register(outgoing=True, pattern="^.carbon4")
+@flicks_cmd(pattern="carbon4")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("`Processing..`")
@@ -288,8 +284,7 @@ async def carbon_api(e):
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
 
-
-@register(outgoing=True, pattern="^.carbon")
+@flicks_cmd(pattern="carbon")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("`Processing..`")
@@ -356,6 +351,6 @@ async def carbon_api(e):
 
 CMD_HELP.update({
     "carbon":
-    "`.carbon`value <values=1,2,3,4>\
+    f"`{cmd}carbon`value <values=1,2,3,4>\
         \nUsage:reply or type .carbon1 or 2,3,4 value and beautify your text."
 })
