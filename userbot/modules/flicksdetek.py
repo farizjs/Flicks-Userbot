@@ -1,4 +1,3 @@
-from userbot.events import register
 from userbot import CMD_HELP, bot
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import CMD_HANDLER as cmd
