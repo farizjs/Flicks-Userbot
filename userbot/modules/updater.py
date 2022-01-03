@@ -2,6 +2,8 @@
 This module updates the userbot based on upstream revision
 """
 
+from userbot.utils import flicks_cmd
+from userbot import CMD_HANDLER as cmd
 from os import remove, execle, path, environ
 import asyncio
 import sys
@@ -17,11 +19,8 @@ from userbot import (
     UPSTREAM_REPO_URL,
     UPSTREAM_REPO_BRANCH)
 
-from userbot.events import register
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), 'requirements.txt')
-from userbot import CMD_HANDLER as cmd
-from userbot.utils import flicks_cmd
 
 
 async def gen_chlog(repo, diff):
@@ -135,6 +134,7 @@ async def update(event, repo, ups_rem, ac_br):
     args = [sys.executable, "-m", "userbot"]
     execle(sys.executable, *args, environ)
     return
+
 
 @flicks_cmd(pattern="update(?: |$)(now|deploy)?")
 async def upstream(event):
