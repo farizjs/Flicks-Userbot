@@ -1,6 +1,8 @@
 """ Userbot module for other small commands. """
 from userbot import CMD_HELP, ALIVE_NAME
 from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
 
 # ================= CONSTANT =================
@@ -8,7 +10,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern="^.ghelp$")
+@flicks_cmd(pattern="ghelp(?: |$)(.*)")
 async def usit(e):
     await e.edit(
         f"**Halo {DEFAULTUSER} Jika Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `.help` Atau Bisa Minta Bantuan Ke:\n"
@@ -17,7 +19,7 @@ async def usit(e):
         "\nTeam [Klick Here](https://t.me/devoloperflicks/32)")
 
 
-@register(outgoing=True, pattern="^.vars$")
+flicks_cmd(pattern="vars(?: |$)(.*)")
 async def var(m):
     await m.edit(
         f"**Disini Daftar Vars Dari {DEFAULTUSER}:**\n"
@@ -26,8 +28,8 @@ async def var(m):
 
 CMD_HELP.update({
     "helper":
-    "`.ghelp`\
+    f"`{cmd}ghelp`\
 \nUsage: Bantuan Untuk Flicks-Userbot.\
-\n`.vars`\
+\n`{cmd}vars`\
 \nUsage: Melihat Daftar Vars."
 })
