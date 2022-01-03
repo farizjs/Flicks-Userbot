@@ -13,13 +13,16 @@ import time
 import os
 from userbot import TEMP_DOWNLOAD_DIRECTORY, ZIP_DOWNLOAD_DIRECTORY, bot, CMD_HELP
 from userbot.utils import progress
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
+
 
 # ====================
 today = date.today()
 # ====================
 
 
-@register(outgoing=True, pattern=r"^\.compress(?: |$)(.*)")
+@flicks_cmd(pattern="compress(?: |$)(.*)")
 async def _(event):
     # Prevent Channel Bug to use update
     if event.is_channel and not event.is_group:
@@ -69,7 +72,7 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern=r"^\.addzip(?: |$)(.*)")
+@flicks_cmd(pattern="addzip(?: |$)(.*)")
 async def addzip(add):
     """ Copyright (c) 2020 azrim @github"""
     # Prevent Channel Bug to use update
@@ -102,7 +105,7 @@ async def addzip(add):
             return
 
 
-@register(outgoing=True, pattern=r"^\.upzip(?: |$)(.*)")
+@flicks_cmd(pattern="upzip(?: |$)(.*)")
 async def upload_zip(up):
     if not os.path.isdir(ZIP_DOWNLOAD_DIRECTORY):
         await up.edit("`Files not found`")
@@ -129,7 +132,7 @@ async def upload_zip(up):
     await up.delete()
 
 
-@register(outgoing=True, pattern=r"^\.rmzip(?: |$)(.*)")
+@flicks_cmd(pattern="rmzip(?: |$)(.*)")
 async def remove_dir(rm):
     if not os.path.isdir(ZIP_DOWNLOAD_DIRECTORY):
         await rm.edit("`Directory not found`")
@@ -148,12 +151,12 @@ def zipdir(path, ziph):
 
 CMD_HELP.update({
     "zipfile":
-        "`.compress` **[optional: <reply to file>]**\
+        f"`{cmd}compress` **[optional: <reply to file>]**\
             \nUsage: make files to zip.\
-            \n`.addzip` **<reply to file>**\
+            \n`{cmd}addzip` **<reply to file>**\
             \nUsage: add files to zip list.\
-            \n`.upzip` **[optional: <zip title>]**\
+            \n`{cmd}upzip` **[optional: <zip title>]**\
             \nUsage: upload zip list.\
-            \n`.rmzip` **[optional: <zip title>]**\
+            \n`{cmd}rmzip` **[optional: <zip title>]**\
             \nUsage: clear zip list."
 })
