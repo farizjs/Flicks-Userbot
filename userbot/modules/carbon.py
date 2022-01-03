@@ -9,7 +9,6 @@ from selenium.webdriver.chrome.options import Options
 from urllib.parse import quote_plus
 from asyncio import sleep
 from userbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN, ALIVE_NAME, CMD_HANDLER as cmd
-from userbot.events import register
 from userbot.utils import flicks_cmd
 
 # ================= CONSTANT =================
@@ -22,11 +21,13 @@ TTS_LANG = "en"
 TRT_LANG = "en"
 TEMP_DOWNLOAD_DIRECTORY = "/root/userbot/.bin"
 
+
 @flicks_cmd(pattern="crblang (.*)")
 async def setlang(prog):
     global CARBONLANG
     CARBONLANG = prog.pattern_match.group(1)
     await prog.edit(f"Language for carbon.now.sh set to {CARBONLANG}")
+
 
 @flicks_cmd(pattern="carbon1")
 async def carbon_api(e):
@@ -92,6 +93,7 @@ async def carbon_api(e):
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
 
+
 @flicks_cmd(pattern="carbon2")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
@@ -155,6 +157,7 @@ async def carbon_api(e):
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
+
 
 @flicks_cmd(pattern="carbon3")
 async def carbon_api(e):
@@ -220,6 +223,7 @@ async def carbon_api(e):
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
 
+
 @flicks_cmd(pattern="carbon4")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
@@ -283,6 +287,7 @@ async def carbon_api(e):
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
+
 
 @flicks_cmd(pattern="carbon")
 async def carbon_api(e):
