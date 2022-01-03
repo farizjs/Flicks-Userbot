@@ -5,7 +5,6 @@
 import logging
 
 from userbot import BOT_USERNAME, CMD_HELP
-from userbot.events import register
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
