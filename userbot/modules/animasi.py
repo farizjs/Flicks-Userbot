@@ -3,7 +3,7 @@ from userbot import CMD_HELP, CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
 
-@flicks_cmd(pattern="sadboy")
+@flicks_cmd(pattern="sadboy(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(2)
@@ -16,7 +16,7 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@flicks_cmd(pattern="punten")
+@flicks_cmd(pattern="punten(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`\n┻┳|―-∩`"
@@ -31,7 +31,7 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@flicks_cmd(pattern="pantau")
+@flicks_cmd(pattern="pantau(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`\n┻┳|―-∩`"
@@ -47,7 +47,7 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@flicks_cmd(pattern="idiot")
+@flicks_cmd(pattern="idiot(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("\n╭╮╱╱╭╮"
