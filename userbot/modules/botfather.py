@@ -7,11 +7,13 @@ from telethon.tl.functions.contacts import UnblockRequest
 
 from userbot import CMD_HELP
 from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
+
 
 chat = "@BotFather"
 
-
-@register(outgoing=True, pattern="^.botbaru ?(.*)")
+@flicks_cmd(pattern="buatbot ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -47,9 +49,9 @@ async def _(event):
 CMD_HELP.update(
     {
         "botfather":
-        "`.botbaru`\
+        f"`{cmd}botbaru`\
 \nUntuk Membuat Bot Dari Botfather, .botbaru  < bot_name > <bot_username >  ."
-        "\n`.inlineon`\
+        f"\n`{cmd}inlineon`\
 \nUsage: Untuk mengaktifkan inline bot Assisten anda"
     }
 )
