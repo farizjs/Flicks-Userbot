@@ -20,6 +20,8 @@ from userbot import (
 from userbot.events import register
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), 'requirements.txt')
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
 
 async def gen_chlog(repo, diff):
@@ -134,8 +136,7 @@ async def update(event, repo, ups_rem, ac_br):
     execle(sys.executable, *args, environ)
     return
 
-
-@register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
+@flicks_cmd(pattern="update(?: |$)(now|deploy)?")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("`Mengecek Pembaruan, Silakan Menunggu....`")
@@ -207,7 +208,7 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond(f"**Perintah Untuk Update, Sebagai Berikut.**\n🔰 Command: >`.update now` (Sementara)\n🔰 Command: >`.update deploy` (Permanen)\n\n__Untuk Meng Update Fitur 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭.__")
+        return await event.respond(f"**Perintah Untuk Update, Sebagai Berikut.**\n🔰 Command: >`{cmd}update now` (Sementara)\n🔰 Command: >`{cmd}update deploy` (Permanen)\n\n__Untuk Meng Update Fitur 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭.__")
 
     if force_update:
         await event.edit(
@@ -232,10 +233,8 @@ async def upstream(event):
 
 CMD_HELP.update({
     'update':
-    f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.update`"
+    f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}update`"
     "\n• : Untuk Melihat Pembaruan Terbaru Flicks-Userbot."
-    f"\n\nCommand: `.update now`"
-    "\n• : Memperbarui Flicks-Userbot."
-    f"\n\nCommand: `.update deploy`"
-    "\n• : Memperbarui Flicks-Userbot Dengan Cara Men-Deploy Ulang."
+    f"\n\nCommand: `{cmd}update deploy`"
+    "\n• : Untuk Memperbarui Flicks-Userbot."
 })
