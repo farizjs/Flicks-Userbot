@@ -33,7 +33,7 @@ async def koc(e):
         await e.edit("SAYANG KAMU💞")
 
 
-@flicks_cmd(pattern="dino(?: |$)(.*)')
+@flicks_cmd(pattern="dino(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`DIN DINNN.....`")
