@@ -18,7 +18,6 @@ from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
 
-
 @flicks_cmd(pattern="info(?: |$)(.*)")
 async def who(event):
 
