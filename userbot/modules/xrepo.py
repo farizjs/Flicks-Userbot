@@ -6,13 +6,16 @@ import logging
 
 from userbot import BOT_USERNAME, CMD_HELP
 from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
+
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
     level=logging.WARNING)
 
 
-@register(outgoing=True, pattern=r"^\.xrepo")
+@flicks_cmd(pattern="xrepo")
 async def yardim(event):
     try:
         kenbotusername = BOT_USERNAME
@@ -34,14 +37,14 @@ async def yardim(event):
 
 CMD_HELP.update(
     {
-        "inlinebot": "** Plugin :** inlinebot\
-        \n\n  •  Perintah : `.helpme`\
+        "inlinebot": f"** Plugin :** inlinebot\
+        \n\n  •  Perintah : `{cmd}helpme`\
         \n  •  Function : Untuk menu bantuan modul Flicks-Userbot\
-        \n\n  •  Perintah : `.xrepo`\
+        \n\n  •  Perintah : `{cmd}xrepo`\
         \n  •  Function : Repo Flicks-Userbot\
-        \n\n  •  Perintah : `.aboutflicks`\
+        \n\n  •  Perintah : `{cmd}aboutflicks`\
         \n  •  Function : Tentang Flicks-Userbot\
-        \n\n  •  Perintah : `.tutorial`\
+        \n\n  •  Perintah : `{cmd}tutorial`\
         \n  •  Function : Tutorial memasang Flicks-Userbot\
      "
     }
