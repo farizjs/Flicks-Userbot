@@ -4,7 +4,6 @@
 #
 import os
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot.events import register
 from userbot import bot, TEMP_DOWNLOAD_DIRECTORY, CMD_HELP
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
