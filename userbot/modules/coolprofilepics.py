@@ -13,7 +13,8 @@ import asyncio
 
 
 from userbot.events import register
-from userbot import CMD_HELP
+from userbot import CMD_HELP, CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
 COLLECTION_STRING = [
     "epic-fantasy-wallpaper",
@@ -67,7 +68,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@register(outgoing=True, pattern="^.pprandom(?: |$)(.*)")
+@flicks_cmd(pattern="pprandom(?: |$)(.*)")
 async def main(event):
     await event.edit("`Sedang Mengubah Photo Profile Anda...`")
 
@@ -81,5 +82,5 @@ async def main(event):
         await asyncio.sleep(3600)  # Edit this to your required needs
 
 CMD_HELP.update({
-    "randompp": "\n\nPerintah: `.pprandom`"
+    "randompp": f"\n\nPerintah: `{cmd}pprandom`"
     "\n↳ : Mengubah Photo Profile Anda Secara Random."})
