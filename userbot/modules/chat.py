@@ -25,6 +25,7 @@ from telethon.utils import pack_bot_file_id
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
+
 @flicks_cmd(pattern="getid(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
@@ -39,6 +40,7 @@ async def _(event):
             await event.edit("ID Grup : `{}`\nID Dari Pengguna : `{}`".format(str(event.chat_id), str(r_msg.from_id)))
     else:
         await event.edit("ID Grup : `{}`".format(str(event.chat_id)))
+
 
 @flicks_cmd(pattern="link(?: |$)(.*)")
 async def permalink(mention):
@@ -84,7 +86,7 @@ async def _(event):
     await event.edit(mentions)
 
 
-@flicks_cmd(pattern="logit(?: |$)([\s\S]*)")
+@flicks_cmd(pattern="logit(?: |$)([\\s\\S]*)")
 async def log(log_text):
     """ For .log command, forwards a message or the command argument to the bot logs group """
     if BOTLOG:
