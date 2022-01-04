@@ -22,9 +22,10 @@ from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
 from userbot.events import register
 from userbot.modules.admin import get_user_from_event
 from telethon.utils import pack_bot_file_id
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
-
-@register(outgoing=True, pattern="^.getid(?: |$)(.*)")
+@flicks_cmd(pattern="getid(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -39,8 +40,7 @@ async def _(event):
     else:
         await event.edit("ID Grup : `{}`".format(str(event.chat_id)))
 
-
-@register(outgoing=True, pattern="^.link(?: |$)(.*)")
+@flicks_cmd(pattern="link(?: |$)(.*)")
 async def permalink(mention):
     """ For .link command, generates a link to the user's PM with a custom text. """
     user, custom = await get_user_from_event(mention)
@@ -54,7 +54,7 @@ async def permalink(mention):
         await mention.edit(f"[{tag}](tg://user?id={user.id})")
 
 
-@register(outgoing=True, pattern="^.getbot(?: |$)(.*)")
+@flicks_cmd(pattern="getbot(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -84,7 +84,7 @@ async def _(event):
     await event.edit(mentions)
 
 
-@register(outgoing=True, pattern=r"^.logit(?: |$)([\s\S]*)")
+@flicks_cmd(pattern="logit(?: |$)([\s\S]*)")
 async def log(log_text):
     """ For .log command, forwards a message or the command argument to the bot logs group """
     if BOTLOG:
@@ -105,21 +105,21 @@ async def log(log_text):
     await log_text.delete()
 
 
-@register(outgoing=True, pattern="^.kickme$")
+@flicks_cmd(pattern="kickme$")
 async def kickme(leave):
     """ Basically it's .kickme command """
     await leave.edit(f"`Master {ALIVE_NAME} Telah Meninggalkan Grup...`")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
-@register(outgoing=True, pattern="^.leave$")
+@flicks_cmd(pattern="leave$")
 async def kickme(leave):
     """ Basically it's .leave command """
     await leave.edit(f"`Master {ALIVE_NAME} Telah Keluar Grup...`")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
-@register(outgoing=True, pattern="^.keluar$")
+@flicks_cmd(pattern="keluar$")
 async def kickme(leave):
     """ Basically it's .keluar command """
     await leave.edit("`Dahlah,keluar aja:)`")
@@ -128,7 +128,7 @@ async def kickme(leave):
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
-@register(outgoing=True, pattern="^.unmutechat$")
+@flicks_cmd(pattern="unmutechat$")
 async def unmute_chat(unm_e):
     """ For .unmutechat command, unmute a muted chat. """
     try:
@@ -142,7 +142,7 @@ async def unmute_chat(unm_e):
     await unm_e.delete()
 
 
-@register(outgoing=True, pattern="^.mutechat$")
+@flicks_cmd(pattern="mutechat$")
 async def mute_chat(mute_e):
     """ For .mutechat command, mute any chat. """
     try:
@@ -187,7 +187,7 @@ async def sedNinja(event):
         await event.delete()
 
 
-@register(outgoing=True, pattern="^.regexninja (on|off)$")
+@flicks_cmd(pattern="regexninja (on|off)$")
 async def sedNinjaToggle(event):
     """ Aktifkan Atau Nonaktifkan Modul Regex Ninja. """
     global regexNinja
@@ -203,7 +203,7 @@ async def sedNinjaToggle(event):
         await event.delete()
 
 
-@register(pattern=".chatinfo(?: |$)(.*)", outgoing=True)
+@flicks_cmd(pattern="chatinfo(?: |$)(.*)")
 async def info(event):
     await event.edit("`Menganalisis Obrolan Ini...`")
     chat = await get_chatinfo(event)
@@ -408,7 +408,7 @@ async def fetch_info(chat, event):
     return caption
 
 
-@register(outgoing=True, pattern="^.invite(?: |$)(.*)")
+@flicks_cmd(pattern="invite(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -442,28 +442,28 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "chat": "**Plugin ✨ :** `Global Chat`\
-        \n\n  •  **Perintah :** `.getid`\
+        "chat": f"**Plugin ✨ :** `Global Chat`\
+        \n\n  •  **Perintah :** `{cmd}getid`\
         \n  •  **Function : **Dapatkan ID dari media Telegram mana pun, atau pengguna mana pun\
-        \n\n  •  **Perintah :** `.getbot`\
+        \n\n  •  **Perintah :** `{cmd}getbot`\
         \n  •  **Function : **Dapatkan List Bot dalam grup caht\
-        \n\n  •  **Perintah :** `.logit`\
+        \n\n  •  **Perintah :** `{cmd}logit`\
         \n  •  **Function : **Meneruskan pesan yang Anda balas di grup log bot Anda\
-        \n\n  •  **Perintah :** `.mutechat`\
+        \n\n  •  **Perintah :** `{cmd}mutechat`\
         \n  •  **Function : **membisukan Grup chat (membutuhkan hak admin)\
-        \n\n  •  **Perintah :** `.unmutechat`\
+        \n\n  •  **Perintah :** `{cmd}unmutechat`\
         \n  •  **Function : **Membuka Grup chat yang dibisukan (membutuhkan hak admin)\
-        \n\n  •  **Perintah :** `.getbot`\
+        \n\n  •  **Perintah :** `{cmd}getbot`\
         \n  •  **Function : **Dapatkan Daftar Bot dalam grup chat\
-        \n\n  •  **Perintah :** `.logit`\
+        \n\n  •  **Perintah :** `{cmd}logit`\
         \n  •  **Function : **Meneruskan pesan yang Anda balas di grup log bot Anda\
-        \n\n  •  **Perintah :** `.link` <username/userid>: <opsional teks> (atau) Reply pesan `.link` <teks opsional>\
+        \n\n  •  **Perintah :** `{cmd}link` <username/userid>: <opsional teks> (atau) Reply pesan `.link` <teks opsional>\
         \n  •  **Function : **Membuat link permanen ke profil pengguna dengan teks ubahsuaian opsional\
-        \n\n  •  **Perintah :** `.regexninja` enable/disabled\
+        \n\n  •  **Perintah :** `{cmd}regexninja` on/off\
         \n  •  **Function : **Mengaktifkan/menonaktifkan modul ninja regex secara global. Modul Regex Ninja membantu menghapus pesan pemicu bot regex\
-        \n\n  •  **Perintah :** `.chatinfo` [opsional: <reply/tag/chat id/invite link>]\
+        \n\n  •  **Perintah :** `{cmd}chatinfo` [opsional: <reply/tag/chat id/invite link>]\
         \n  •  **Function : **Mendapatkan info obrolan, Beberapa info mungkin dibatasi karena izin yang hilang\
-        \n\n  •  **Perintah :** `.invite`\
+        \n\n  •  **Perintah :** `{cmd}invite`\
         \n  •  **Function : **Menambahkan pengguna ke obrolan, bukan ke pesan pribadi\
     "
     }
@@ -472,12 +472,12 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "keluar": "** Plugin :** `Kickme Userbot`\
-        \n\n  •  **Perintah :** `.kickme`\
+        "keluar": f"** Plugin :** `Kickme Userbot`\
+        \n\n  •  **Perintah :** `{cmd}kickme`\
         \n  •  **Function : **Keluar grup dengan menampilkan pesan lihat sendiri\
-        \n\n  •  **Perintah :** `.leave`\
+        \n\n  •  **Perintah :** `{cmd}leave`\
         \n  •  **Function : **Keluar grup dengan menampilkan pesan lihat sendiri\
-        \n\n  •  **Perintah :** `.keluar`\
+        \n\n  •  **Perintah :** `{cmd}keluar`\
         \n  •  **Function : **Keluar grup dengan menampilkan pesan lihat sendiri\
     "
     }
