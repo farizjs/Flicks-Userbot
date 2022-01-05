@@ -4,9 +4,11 @@ from time import sleep
 
 from userbot import CMD_HELP
 from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
 
-@register(outgoing=True, pattern="^.wibu2(?: |$)(.*)")
+@flicks_cmd(pattern="wibu2(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(0.07)
@@ -51,7 +53,7 @@ async def typewriter(typew):
     await typew.edit("**IUHH DEMEN KOK SAMA 2D😖**")
 
 
-@register(outgoing=True, pattern="^.wibbu(?: |$)(.*)")
+@flicks_cmd(pattern="wibbu(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**WI WIII WIIII WIIII.....**")
@@ -109,7 +111,7 @@ async def typewriter(typew):
     await typew.edit("**Mampus Kau Wibu**")
 
 
-@register(outgoing=True, pattern='^.jadiwibu(?: |$)(.*)')
+@flicks_cmd(pattern="jadiwibu(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**Kekuatan Mengjadi Wibu Garis Keras**")
@@ -141,7 +143,7 @@ async def typewriter(typew):
     await typew.edit("**Iya Wibu, Seperti Pariz**")
 
 
-@register(outgoing=True, pattern='^.adawibu(?: |$)(.*)')
+@flicks_cmd(pattern="adawibu(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**WI WIII WIIII**")
@@ -155,9 +157,9 @@ async def typewriter(typew):
     await typew.edit("`🏃.........🏃`")
     await typew.edit("`🏃..Wiba..🏃`")
     await typew.edit("`🏃...Wibu...🏃`")
-    await typew.edit("`🏃....Cringe..🏃`")
-    await typew.edit("`🏃....Tolol.....🏃`")
-    await typew.edit("`🏃............🏃`")
+    await typew.edit("`🏃......🏃`")
+    await typew.edit("`🏃.......🏃`")
+    await typew.edit("`🏃.........🏃`")
     await typew.edit("`🏃..Tolong..🏃`")
     await typew.edit("`🏃...........🏃`")
     await typew.edit("`🏃............🏃`")
@@ -173,9 +175,9 @@ async def typewriter(typew):
     await typew.edit("`🏃..Huh-Huh-Huh.......🏃`")
     await typew.edit("`🏃...................🏃`")
     await typew.edit("`🏃..................🏃`")
-    await typew.edit("`🏃.....Anak........🏃`")
+    await typew.edit("`🏃.................🏃`")
     await typew.edit("`🏃................🏃`")
-    await typew.edit("`🏃....Ngentot....🏃`")
+    await typew.edit("`🏃...............🏃`")
     await typew.edit("`🏃..............🏃`")
     await typew.edit("`🏃.............🏃`")
     await typew.edit("`🏃..Bodoamat..🏃`")
@@ -190,12 +192,12 @@ async def typewriter(typew):
     await typew.edit("`🏃....🏃`")
     await typew.edit("**Untung Ngga Kena Njir**")
     sleep(1)
-    await typew.edit("__Cape Juga Asu Cringe Gitu__")
+    await typew.edit("__Cape Juga Gitu__")
     sleep(2)
     await typew.edit("**Kasian Si Wibu Wokwokwok**")
 
 
-@register(outgoing=True, pattern='^.turtle(?: |$)(.*)')
+@flicks_cmd(pattern="turtle(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**War Sama Turtle Kah Gass Lah Ajg**")
@@ -243,17 +245,17 @@ async def typewriter(typew):
     await typew.edit("`🐢..🤺`")
     await typew.edit("`🐢....🤺`")
     await typew.edit("`🐢....🤺`")
-    await typew.edit("**Cape asu**")
+    await typew.edit("**Cape 🥺🥺**")
     sleep(1)
     await typew.edit("**Turtle telah di eliminasi**")
     sleep(2)
     await typew.edit("**Good Game**")
 
 
-@register(outgoing=True, pattern='^.tod(?: |$)(.*)')
+@flicks_cmd(pattern="gbt(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**Wait Kontol**")
+    await typew.edit("**Wait**")
     await typew.edit(" ▰ ")
     await typew.edit(" ▰▱ ")
     await typew.edit(" ▰▱▰ ")
@@ -278,18 +280,18 @@ async def typewriter(typew):
 
 CMD_HELP.update(
     {
-        "wibu": "**Modules** - `wibu`\
-        \n\n Cmd : `.wibbu`\
+        "wibu": f"**Modules** - `wibu`\
+        \n\n Cmd : `{cmd}wibbu`\
         \nUsage : ngatain wibu\
-        \n\n Cmd : `.turtle`\
+        \n\n Cmd : `{cmd}turtle`\
         \nUsage : war sama turtle\
-        \n\n Cmd : `.jadiwibu`\
+        \n\n Cmd : `{cmd}jadiwibu`\
         \nUsage : untuk jadi wibu\
-        \n\n Cmd : `.tod`\
-        \nUsage : icip mgentod\
-        \n\n Cmd : `.adawibu`\
+        \n\n Cmd : `{cmd}gbt`\
+        \nUsage : liat sendiri\
+        \n\n Cmd : `{cmd}adawibu`\
         \nUsage : lari ada wibu\
-        \n\n Cmd : `.wibu2`\
+        \n\n Cmd : `{cmd}wibu2`\
         \nUsage : ngatain wibu 2\
     "
     }
