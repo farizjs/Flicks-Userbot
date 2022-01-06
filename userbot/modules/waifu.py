@@ -8,10 +8,8 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
-from userbot.events import register
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
-
 
 
 EMOJI_PATTERN = re.compile(
