@@ -18,7 +18,7 @@ async def usit(e):
         "\nTeam [Klick Here](https://t.me/devoloperflicks/32)")
 
 
-flicks_cmd(pattern="vars(?: |$)(.*)")
+@flicks_cmd(pattern="vars(?: |$)(.*)")
 
 
 async def var(m):
