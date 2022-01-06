@@ -13,8 +13,11 @@ from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 from telethon.tl.types import ChatAdminRights
 from userbot import CMD_HELP
 from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
-NO_ADMIN = "`Maaf Kamu Bukan Admin 👮"
+
+NO_ADMIN = "`Maaf Kamu Bukan Admin 👮`"
 
 
 async def get_call(event):
@@ -28,7 +31,7 @@ def user_list(l, n):
         yield l[i: i + n]
 
 
-@register(outgoing=True, pattern=r"^\.startvc$", groups_only=True)
+@flicks_cmd(pattern="startvc$")
 async def _(e):
     chat = await e.get_chat()
     admin = chat.admin_rights
@@ -44,7 +47,7 @@ async def _(e):
         await e.edit(f"`{str(ex)}`")
 
 
-@register(outgoing=True, groups_only=True, pattern=r"^\.stopvc$")
+@flicks_cmd(pattern="stopvc$")
 async def stop_voice(c):
     chat = await c.get_chat()
     admin = chat.admin_rights
@@ -60,7 +63,7 @@ async def stop_voice(c):
         await c.edit(f"**ERROR:** `{ex}`")
 
 
-@register(outgoing=True, pattern=r"^\.vcinvite", groups_only=True)
+@flicks_cmd(pattern="vcinvite")
 async def _(e):
     await e.edit("`Sedang Mengivinte Member...`")
     users = []
@@ -79,10 +82,10 @@ async def _(e):
 
 
 CMD_HELP.update({
-    "vcg": "perintah: `.startvc`\
+    "vcg": f"perintah: `{cmd}startvc`\
     \n↳ : Untuk Memulai voice chat group.\
-    \nPerintah: `.stopvc`\
+    \nPerintah: `{cmd}stopvc`\
     \n↳ : Untuk Memberhentikan voice chat group.\
-    \nPerintah: `.vcinvite`\
+    \nPerintah: `{cmd}vcinvite`\
     \n↳ : Mengundang Member group ke voice chat group. (You must be joined)."
 })
