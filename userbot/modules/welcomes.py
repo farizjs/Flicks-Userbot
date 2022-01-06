@@ -1,7 +1,6 @@
 from datetime import datetime
 
 from pytz import timezone
-from userbot.events import register
 from userbot import CMD_HELP, bot, LOGS, CLEAN_WELCOME, BOTLOG_CHATID
 from telethon.events import ChatAction
 from userbot import CMD_HANDLER as cmd
