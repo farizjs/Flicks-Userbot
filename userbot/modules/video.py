@@ -5,9 +5,11 @@ import requests
 
 from userbot import CMD_HELP
 from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
 
-@register(outgoing=True, pattern=r"^\.vidwibu$")
+@flicks_cmd(pattern="vidwibu$")
 async def _(event):
     try:
         response = requests.get(
@@ -18,7 +20,7 @@ async def _(event):
         await event.edit("**Tidak bisa menemukan video wibu.**")
 
 
-@register(outgoing=True, pattern=r"^\.chika$")
+@flicks_cmd(pattern="chika$")
 async def _(event):
     try:
         response = requests.get(
@@ -29,24 +31,14 @@ async def _(event):
         await event.edit("**Tidak bisa menemukan video chikakiku.**")
 
 
-@register(outgoing=True, pattern=r"^\.bocil$")
-async def _(event):
-    try:
-        response = requests.get(
-            "https://api-alphabot.herokuapp.com/api/asupan/bocil?apikey=Alphabot"
-        ).json()
-        await event.client.send_file(event.chat_id, response["result"])
-        await event.delete()
-    except Exception:
-        await event.edit("**Tidak bisa menemukan video asupan bocil.**")
 
 
 CMD_HELP.update(
     {
-        "video": "**Plugin : **`video`\
-        \n\n  •  **Syntax :** `.vidwibu`\
+        "video": f"**Plugin : **`video`\
+        \n\n  •  **Syntax :** `{cmd}vidwibu`\
         \n  •  **Function : **Untuk Mengirim video wibu secara random.\
-        \n\n  •  **Syntax :** `.chika`\
+        \n\n  •  **Syntax :** `{cmd}chika`\
         \n  •  **Function : **Untuk Mengirim video chikakiku secara random.\
     "
     }
