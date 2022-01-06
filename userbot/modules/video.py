@@ -4,7 +4,6 @@
 import requests
 
 from userbot import CMD_HELP
-from userbot.events import register
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
@@ -29,8 +28,6 @@ async def _(event):
         await event.delete()
     except Exception:
         await event.edit("**Tidak bisa menemukan video chikakiku.**")
-
-
 
 
 CMD_HELP.update(
