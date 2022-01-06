@@ -23,10 +23,8 @@ from telethon.tl.types import DocumentAttributeVideo
 
 from userbot import LOGS, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.utils import progress, humanbytes
-from userbot.events import register
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
-
 
 
 @flicks_cmd(pattern="download(?: |$)(.*)")
