@@ -7,7 +7,6 @@ import os
 import io
 import sys
 from userbot import ALIVE_NAME, UPSTREAM_REPO_URL, BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
-from userbot.events import register
 from userbot.utils import time_formatter
 import urllib
 import requests
@@ -43,7 +42,6 @@ async def randomise(items):
                      itemo[index] + "`")
 
 
-
 @flicks_cmd(pattern="sleep ([0-9]+)$")
 async def sleepybot(time):
     """ For .sleep command, let the userbot snooze for a few second. """
@@ -59,7 +57,6 @@ async def sleepybot(time):
     await time.edit("`OK, I'm awake now.`")
 
 
-
 @flicks_cmd(pattern="shutdown$")
 async def killdabot(event):
     """ For .shutdown command, shut the bot down."""
@@ -70,7 +67,6 @@ async def killdabot(event):
         await event.client.send_message(BOTLOG_CHATID, "#SHUTDOWN \n"
                                         "`Userbot Telah Dimatikan`")
     await bot.disconnect()
-
 
 
 @flicks_cmd(pattern="restart$")
@@ -150,7 +146,7 @@ async def raw(event):
             caption="`Here's the decoded message data !!`")
 
 
-@flicks_cmd(pattern="reverse(?: |$)(\d*)")
+@flicks_cmd(pattern="reverse(?: |$)(\\d*)")
 async def okgoogle(img):
     """ For .reverse command, Google search images and stickers. """
     if os.path.isfile("okgoogle.png"):
