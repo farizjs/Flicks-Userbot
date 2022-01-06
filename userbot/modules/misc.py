@@ -14,6 +14,8 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from PIL import Image
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
 
 # ================= CONSTANT =================
@@ -27,7 +29,7 @@ useragent = 'Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) 
 opener.addheaders = [('User-agent', useragent)]
 
 
-@register(outgoing=True, pattern="^.random")
+@flicks_cmd(pattern="random")
 async def randomise(items):
     """ For .random command, get a random item from the list of items. """
     itemo = (items.text[8:]).split()
@@ -41,7 +43,8 @@ async def randomise(items):
                      itemo[index] + "`")
 
 
-@register(outgoing=True, pattern="^.sleep ([0-9]+)$")
+
+@flicks_cmd(pattern="sleep ([0-9]+)$")
 async def sleepybot(time):
     """ For .sleep command, let the userbot snooze for a few second. """
     counter = int(time.pattern_match.group(1))
@@ -56,7 +59,8 @@ async def sleepybot(time):
     await time.edit("`OK, I'm awake now.`")
 
 
-@register(outgoing=True, pattern="^.shutdown$")
+
+@flicks_cmd(pattern="shutdown$")
 async def killdabot(event):
     """ For .shutdown command, shut the bot down."""
     await event.edit("`Mematikan Flicks-Userbot....`")
@@ -68,7 +72,8 @@ async def killdabot(event):
     await bot.disconnect()
 
 
-@register(outgoing=True, pattern="^.restart$")
+
+@flicks_cmd(pattern="restart$")
 async def killdabot(event):
     await event.edit("`Restarting Flicks-Userbot...`")
     await asyncio.sleep(10)
@@ -83,7 +88,7 @@ async def killdabot(event):
     exit()
 
 
-@register(outgoing=True, pattern="^.readme$")
+@flicks_cmd(pattern="readme$")
 async def reedme(e):
     await e.edit(
         "Here's Something for You to Read :\n"
@@ -92,7 +97,7 @@ async def reedme(e):
         "\n[Special - Note](https://telegra.ph/Special-Note-11-02)")
 
 
-@register(outgoing=True, pattern="^.repeat (.*)")
+@flicks_cmd(pattern="repeat (.*)")
 async def repeat(rep):
     cnt, txt = rep.pattern_match.group(1).split(' ', 1)
     replyCount = int(cnt)
@@ -106,14 +111,14 @@ async def repeat(rep):
     await rep.edit(replyText)
 
 
-@register(outgoing=True, pattern="^.repo$")
+@flicks_cmd(pattern="repo$")
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
         "**Hey, I Am ✨Fʟɪᴄᴋs Usᴇʀʙᴏᴛ✨ **\n"
         "卍━━━━━━━━━━━━━━━━━━卍\n"
         "➣ Repo Userbot : [ɢɪᴛʜᴜʙ](https://github.com/fjgaming212/Flicks-Userbot)\n"
-        "➣ Owner Bot       : [Fᴀʀɪᴢ](tg://resolve?domain=Flicks4You)\n"
+        "➣ Owner Bot       : [Fᴀʀɪᴢ](t.me/farizsj)\n"
         "卍━━━━━━━━━━━━━━━━━━卍\n"
         "➣ Team                : [ʜᴇʀᴇ](t.me/devoloperflicks)​\n"
         "➣ Support           : [ɢʀᴏᴜᴘs​](t.me/FlicksSupport)\n"
@@ -121,7 +126,7 @@ async def repo_is_here(wannasee):
     )
 
 
-@register(outgoing=True, pattern="^.raw$")
+@flicks_cmd(pattern="raw$")
 async def raw(event):
     the_real_message = None
     reply_to_id = None
@@ -145,7 +150,7 @@ async def raw(event):
             caption="`Here's the decoded message data !!`")
 
 
-@register(outgoing=True, pattern=r"^.reverse(?: |$)(\d*)")
+@flicks_cmd(pattern="reverse(?: |$)(\d*)")
 async def okgoogle(img):
     """ For .reverse command, Google search images and stickers. """
     if os.path.isfile("okgoogle.png"):
@@ -265,27 +270,27 @@ async def scam(results, lim):
 
 CMD_HELP.update({
     "random":
-    "Command: `.random <item1> <item2> ... <itemN>`\
+    f"Command: `{cmd}random <item1> <item2> ... <itemN>`\
     \n↳ : Get a random item from the list of items.",
     "sleep":
-    "Command: `.sleep <seconds>`\
+    f"Command: `{cmd}sleep <seconds>`\
     \n↳ : Let yours snooze for a few seconds.",
     "shutdown":
-    "Command: `.shutdown`\
+    f"Command: `{cmd}shutdown`\
     \n↳ : Shutdown bot",
     "repo":
-    "Command: `.repo`\
+    f"Command: `{cmd}repo`\
     \n↳ : Github Repo Userbot",
     "readme":
-    "Command `.readme`\
+    f"Command `{cmd}readme`\
     \n↳ : Provide links to setup the userbot and it's modules.",
     "repeat":
-    "Command: `.repeat <no> <text>`\
+    f"Command: `{cmd}repeat <no> <text>`\
     \n↳ : Repeats the text for a number of times. Don't confuse this with spam tho.",
     "restart":
-    "Command: `.restart`\
+    f"Command: `{cmd}restart`\
     \n↳ : Restarts the bot !!",
     "raw":
-    "Command: `.raw`\
+    f"Command: `{cmd}raw`\
     \n↳ : Get detailed JSON-like formatted data about replied message."
 })
