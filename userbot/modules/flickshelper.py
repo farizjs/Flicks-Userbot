@@ -19,8 +19,6 @@ async def usit(e):
 
 
 @flicks_cmd(pattern="vars(?: |$)(.*)")
-
-
 async def var(m):
     await m.edit(
         f"**Disini Daftar Vars Dari {DEFAULTUSER}:**\n"
