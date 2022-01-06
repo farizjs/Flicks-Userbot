@@ -11,7 +11,6 @@ from asyncio.exceptions import TimeoutError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import CMD_HELP, bot
-from userbot.events import register
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
@@ -60,7 +59,7 @@ async def _(event):
 
 
 CMD_HELP.update({
-"wallpaper": 
-f">`{cmd}wall` <query>"
-"\nUsage: Mencari Wallpaper Bagus."
+    "wallpaper":
+    f">`{cmd}wall` <query>"
+    "\nUsage: Mencari Wallpaper Bagus."
 })
