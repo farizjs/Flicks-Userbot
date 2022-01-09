@@ -507,8 +507,8 @@ with bot:
         @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
             buttons = [
-                (Button.url("ʀᴇᴘᴏ ꜰʟɪᴄᴋs ᴜsᴇʀʙᴏᴛ​",
-                            "https://github.com/fjgaming212/Flicks-Userbot")], "),),
+                Button.url("ʀᴇᴘᴏ ꜰʟɪᴄᴋs ᴜsᴇʀʙᴏᴛ​",
+                            "https://github.com/fjgaming212/Flicks-Userbot")],
             ]
             await event.edit(f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport"), buttons=buttons)
 
