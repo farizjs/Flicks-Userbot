@@ -503,19 +503,20 @@ with bot:
                                                  data="about")],
                     ]
                 )
+
         @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
             buttons = [
                 (Button.url("ʀᴇᴘᴏ ꜰʟɪᴄᴋs ᴜsᴇʀʙᴏᴛ​",
-                            "https://github.com/fjgaming212/Flicks-Userbot")],"),),
+                            "https://github.com/fjgaming212/Flicks-Userbot")], "),),
             ]
             await event.edit(f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport"), buttons=buttons)
 
 
-        @ ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
+        @ ken.tgbot.on(events.NewMessage(pattern = r"/repo"))
         async def handler(event):
             if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id)
+                u=await event.client.get_entity(event.chat_id)
                 await event.reply(
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
                     f"Ingin melihat repository ini dan Cara deploynya\n\n"
@@ -533,9 +534,9 @@ with bot:
         @ ken.tgbot.on(events.NewMessage(pattern=r"/alive"))
         async def handler(event):
             if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id)
+                u=await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
-                text = (
+                text=(
                     f"**Hello** [{get_display_name(u)}](tg://user?id={u.id}) **Is Its Alive Bot**\n\n"
                     f"         ✘ 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
@@ -550,9 +551,9 @@ with bot:
                     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
                     f"       Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
-                await ken.tgbot.send_file(event.chat_id, file=logo,
-                                          caption=text,
-                                          buttons=[
+                await ken.tgbot.send_file(event.chat_id, file = logo,
+                                          caption= text,
+                                          buttons = [
                                               [
                                                   custom.Button.url(
                                                       text="Rᴇᴘᴏ",
