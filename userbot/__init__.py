@@ -507,17 +507,16 @@ with bot:
         @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
             await event.edit(f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport\nUntuk repo userbot gunakan perintah\n» /repo «")
-         buttons=[
+                    buttons=[
                         [
-                            custom.Button.url(
-                                "ᴅᴇᴘʟᴏʏ​",
-                                "https://heroku.com/deploy?template=https://github.com/fjgaming212/Deploy-FlicksUbot"),
-                            custom.Button.url(
-                                "ʀᴇᴘᴏ",
-                                "https://github.com/fjgaming212/Flicks-Userbot")],
-                        [custom.Button.url(
-                            "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
-                            "t.me/InfoFlicksUserbot")]],
+                            custom.Button.inline("ᴄʟᴏsᴇ",
+                                                 data="keluar")],
+                    ]
+                )
+
+        @ ken.tgbot.on(events.CallbackQuery(data=b"keluar"))
+        async def keluar(event):
+            await event.delete()
 
         @ ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
         async def handler(event):
