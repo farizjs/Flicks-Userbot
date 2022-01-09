@@ -496,13 +496,19 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"[👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg) Hallo [{get_display_name(u)}](tg://user?id={u.id}) \nSelamat Datang Di **Flicks Userbot**\nGunakan saya untuk mempersantai grup anda\n\n➣ Botver : {BOT_VER}\n➣ Plugin : {len(plugins)}\n➣ Owner repo : [Fariz](tg://openmessage?user_id=1514078508)\n",
+                    f"[👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg) Hallo [{get_display_name(u)}](tg://user?id={u.id}) \nSelamat Datang Di **Flicks Userbot**\nGunakan saya untuk mempersantai grup anda\n",
                     buttons=[
                         [
-                            Button.url("ʀᴇᴘᴏ ꜰʟɪᴄᴋs ᴜsᴇʀʙᴏᴛ 🛠️",
-                                       "https://github.com/fjgaming212/Flicks-Userbot")],
+                            custom.Button.inline("About ❓",
+                                       "data="about"")],
                     ]
                 )
+        @ken.tgbot.on(events.CallbackQuery(data=b"about"))
+        async def info(event):
+            text = (
+                f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport")
+            await event.answer(text, cache_time=0, alert=True)
+
 
         @ ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
         async def handler(event):
