@@ -509,8 +509,7 @@ with bot:
             buttons = [
                 Button.url("ʀᴇᴘᴏ ꜰʟɪᴄᴋs ᴜsᴇʀʙᴏᴛ​",
                             "https://github.com/fjgaming212/Flicks-Userbot")],
-            ]
-            await event.edit(f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport"), buttons = buttons)
+                await event.edit(f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport"), buttons = buttons)
 
 
         @ ken.tgbot.on(events.NewMessage(pattern = r"/repo"))
