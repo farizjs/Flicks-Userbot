@@ -507,7 +507,7 @@ with bot:
         @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
             await event.edit(f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport\nUntuk repo userbot gunakan perintah\n» /repo «")
-                    buttons=[
+                    buttons = [
                         [
                             custom.Button.inline("ᴄʟᴏsᴇ",
                                                  data="keluar")],
