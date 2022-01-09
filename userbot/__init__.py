@@ -500,15 +500,17 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline("About ❓",
-                                                 "data="about"")],
+                                                 data="about")],
                     ]
                 )
+        @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
+        async def about(event):
+            buttons = [
+                (Button.url("ʀᴇᴘᴏ ꜰʟɪᴄᴋs ᴜsᴇʀʙᴏᴛ​",
+                            "https://github.com/fjgaming212/Flicks-Userbot")],"),),
+            ]
+            await event.edit(f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport"), buttons=buttons)
 
-        @ken.tgbot.on(events.CallbackQuery(data=b"about"))
-        async def info(event):
-            text = (
-                f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport")
-            await event.answer(text, cache_time=0, alert=True)
 
         @ ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
         async def handler(event):
