@@ -499,16 +499,22 @@ with bot:
                     f"[👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg) Hallo [{get_display_name(u)}](tg://user?id={u.id}) \nSelamat Datang Di **Flicks Userbot**\nGunakan saya untuk mempersantai grup anda\n",
                     buttons=[
                         [
-                            Button.url("Repository",
+                           Button.url("Repository",
                                        "https://github.com/fjgaming212/Flicks-Userbot"),
                             custom.Button.inline("ɪɴꜰᴏ​",
-                                                  data="about")],
-
+                                                 data="about")],
+                    ]
+                )
                     ]
         @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
-            await event.edit(f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport\nUntuk repo userbot gunakan perintah\n» /repo «")
-
+            await event.edit(f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport\n")
+                    buttons=[
+                        [
+                            custom.Button.inline("Close",
+                                                 data="keluar")],
+                    ]
+                )
         @ ken.tgbot.on(events.CallbackQuery(data=b"keluar"))
         async def keluar(event):
             await event.delete()
