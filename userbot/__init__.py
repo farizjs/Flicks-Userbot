@@ -509,7 +509,7 @@ with bot:
         @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
             await event.edit(f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport\n")
-                    buttons=[
+                    buttons = [
                         [
                             custom.Button.inline("Close",
                                                  data="keluar")],
@@ -528,7 +528,7 @@ with bot:
                     f"Ingin melihat repository ini dan Cara deploynya\n\n"
                     f"👇🏻 __Klik button url di bawah ini__ 👇🏻\n\n"
                     f"**FLICKS USERBOT**\n",
-                    buttons=[
+                    buttons = [
                         [
                             Button.url("Repository",
                                        "https://github.com/fjgaming212/Flicks-Userbot"),
@@ -557,9 +557,9 @@ with bot:
                     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
                     f"       Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
-                await ken.tgbot.send_file(event.chat_id, file=logo,
-                                          caption=text,
-                                          buttons=[
+                await ken.tgbot.send_file(event.chat_id, file = logo,
+                                          caption= text,
+                                          buttons = [
                                               [
                                                   custom.Button.url(
                                                       text="Rᴇᴘᴏ",
