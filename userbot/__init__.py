@@ -509,12 +509,7 @@ with bot:
         @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
             await event.edit(f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport\n")
-                    buttons = [
-                        [
-                            custom.Button.inline("Close",
-                                                 data="keluar")],
-                    ]
-                )
+
         @ ken.tgbot.on(events.CallbackQuery(data=b"keluar"))
         async def keluar(event):
             await event.delete()
