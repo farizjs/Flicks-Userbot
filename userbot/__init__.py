@@ -499,7 +499,7 @@ with bot:
                     f"[👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg) Hallo [{get_display_name(u)}](tg://user?id={u.id}) \nSelamat Datang Di **Flicks Userbot**\nGunakan saya untuk mempersantai grup anda\n",
                     buttons=[
                         [
-                           Button.url("Repository",
+                            Button.url("Repository",
                                        "https://github.com/fjgaming212/Flicks-Userbot"),
                             custom.Button.inline("ɪɴꜰᴏ​",
                                                  data="about")],
@@ -517,13 +517,13 @@ with bot:
         @ ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
         async def handler(event):
             if event.message.from_id != uid:
-                u=await event.client.get_entity(event.chat_id)
+                u = await event.client.get_entity(event.chat_id)
                 await event.reply(
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
                     f"Ingin melihat repository ini dan Cara deploynya\n\n"
                     f"👇🏻 __Klik button url di bawah ini__ 👇🏻\n\n"
                     f"**FLICKS USERBOT**\n",
-                    buttons = [
+                    buttons=[
                         [
                             Button.url("Repository",
                                        "https://github.com/fjgaming212/Flicks-Userbot"),
@@ -535,9 +535,9 @@ with bot:
         @ ken.tgbot.on(events.NewMessage(pattern=r"/alive"))
         async def handler(event):
             if event.message.from_id != uid:
-                u=await event.client.get_entity(event.chat_id)
+                u = await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
-                text=(
+                text = (
                     f"**Hello** [{get_display_name(u)}](tg://user?id={u.id}) **Is Its Alive Bot**\n\n"
                     f"         ✘ 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
@@ -552,9 +552,9 @@ with bot:
                     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
                     f"       Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
-                await ken.tgbot.send_file(event.chat_id, file = logo,
-                                          caption= text,
-                                          buttons = [
+                await ken.tgbot.send_file(event.chat_id, file=logo,
+                                          caption=text,
+                                          buttons=[
                                               [
                                                   custom.Button.url(
                                                       text="Rᴇᴘᴏ",
@@ -570,7 +570,7 @@ with bot:
         @ ken.tgbot.on(events.NewMessage(pattern=r"/string"))
         async def handler(event):
             if event.message.from_id != uid:
-                reply="**STRING SESSION**"
+                reply = "**STRING SESSION**"
                 await event.reply(
                     f"**Hai Kamu!**\n\n"
                     f"Ingin Mengambil String Session?\n\n"
@@ -589,9 +589,9 @@ with bot:
         @ ken.tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
             if event.message.from_id != uid:
-                start=datetime.now()
-                end=datetime.now()
-                ms=(end - start).microseconds / 1000
+                start = datetime.now()
+                end = datetime.now()
+                ms = (end - start).microseconds / 1000
                 await tgbot.send_message(
                     event.chat_id,
                     f"**PONG!!**\n `{ms}ms`",
@@ -603,9 +603,9 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            current_page_number=int(lockpage)
-            buttons=paginate_help(current_page_number, plugins, "helpme")
-            text=f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
+            current_page_number = int(lockpage)
+            buttons = paginate_help(current_page_number, plugins, "helpme")
+            text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
             await event.edit(
                 text,
                 file=kenlogo,
@@ -615,13 +615,13 @@ with bot:
 
         @ ken.tgbot.on(events.InlineQuery)
         async def inline_handler(event):
-            builder=event.builder
-            result=None
-            query=event.text
+            builder = event.builder
+            result = None
+            query = event.text
             if event.query.user_id == uid and query.startswith(
                     "@FlicksSupport"):
-                buttons=paginate_help(0, dugmeler, "helpme")
-                result=builder.photo(
+                buttons = paginate_help(0, dugmeler, "helpme")
+                result = builder.photo(
                     file=kenlogo,
                     link_preview=False,
                     text=f"\n**Flicks-Userbot**\n\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n\n✥**ʙʀᴀɴᴄʜ :** Flicks-Userbot\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}".format(
@@ -630,7 +630,7 @@ with bot:
                     buttons=buttons,
                 )
             elif query.startswith("about"):
-                result=builder.article(
+                result = builder.article(
                     "Tentang Flicks-Userbot ",
                     text=f"Flicks-Userbot [☘️]({ALIVE_LOGO}) adalah userbot Telegram modular yang berjalan di Python 3.6 dengan database sqlalchemy\n[Fariz](tg://openmessage?user_id=1514078508) membuat dan menambahkan modul yang dibutuhkan.\nUntuk mengetahui perintah Flicks-Userbot gunakan perintah `.helpme` dan untuk mengecek userbot gunakan perintah `.alive`",
                     buttons=[
@@ -646,7 +646,7 @@ with bot:
                             "t.me/InfoFlicksUserbot")]],
                     link_preview=True)
             elif query.startswith("tutor"):
-                result=builder.article(
+                result = builder.article(
                     "Tutorial memasang Flicks-Userbot ",
                     text=f"Buat teman teman yang ingin memasang userbot seperti saya anda bisa melihat tutorial di bawah ini\nDapatkan API_KEY dan API_HASH di web `my.telegram.org`.\nDapatkan STRING_SESSION di web replit atau bot\nDapatkan BOT_TOKEN dan BOT_USERNAME di [@BotFather](tg://user?id=93372553)\nDapatkan HEROKU_API_KEY di `dashboard.heroku.com/account`\nTerus Nyalakan, tutorial lengkap [klik disini](https://t.me/InfoFlicksUserbot/64)",
                     buttons=[
@@ -662,7 +662,7 @@ with bot:
                             "https://github.com/fjgaming212/Flicks-Userbot")]],
                     link_preview=False)
             else:
-                result=builder.article(
+                result = builder.article(
                     " ✘ Flicks-Userbot ✘",
                     text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n✥**ᴀssɪsᴛᴇɴ :** @{BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖[➖]({ALIVE_LOGO})""",
                     buttons=[
@@ -689,14 +689,14 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number=int(
+                current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons=paginate_help(
+                buttons = paginate_help(
                     current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert=f"Jangan Menggunakan Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ ken.tgbot.on(
@@ -724,7 +724,7 @@ with bot:
 
         @ ken.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
-            buttons=[
+            buttons = [
                 (custom.Button.inline("Bᴜᴋᴀ Mᴇɴᴜ", data="open"),),
             ]
             await event.edit("**Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ​!**", file=kenlogo, buttons=buttons)
@@ -736,15 +736,15 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number=int(
+                current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons=paginate_help(
+                buttons = paginate_help(
                     current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
                 )
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert=f"🔒 Tombol Hanya bisa digunakan oleh {DEFAULTUSER} 🔒."
+                reply_pop_up_alert = f"🔒 Tombol Hanya bisa digunakan oleh {DEFAULTUSER} 🔒."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ ken.tgbot.on(
@@ -754,11 +754,11 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                modul_name=event.data_match.group(1).decode("UTF-8")
+                modul_name = event.data_match.group(1).decode("UTF-8")
 
-                cmdhel=str(CMD_HELP[modul_name])
+                cmdhel = str(CMD_HELP[modul_name])
                 if len(cmdhel) > 130:
-                    help_string=(
+                    help_string = (
                         str(CMD_HELP[modul_name]).replace(
                             '`', '')[:130] + "..."
                         + "\n\nBaca Text Berikutnya Ketik .help "
@@ -766,9 +766,9 @@ with bot:
                         + " "
                     )
                 else:
-                    help_string=str(CMD_HELP[modul_name]).replace('`', '')
+                    help_string = str(CMD_HELP[modul_name]).replace('`', '')
 
-                reply_pop_up_alert=(
+                reply_pop_up_alert = (
                     help_string
                     if help_string is not None
                     else "{} No document has been written for module.".format(
@@ -776,7 +776,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert=f"""Jangan Menggunakan Milik {DEFAULTUSER} !"""
+                reply_pop_up_alert = f"""Jangan Menggunakan Milik {DEFAULTUSER} !"""
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
