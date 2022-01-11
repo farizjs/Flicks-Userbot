@@ -778,7 +778,7 @@ with bot:
                     f"Flicks-Userbot versi {BOT_VER} berjalan\n"
                     f"master {ALIVE_NAME}\n"
                     f"Selamat bersenang-senang dengan saya\n"
-                    f"Anda dapat memberi tahu oranh lain\n"
+                    f"Anda dapat memberi tahu orang lain\n"
                     f"cara membuat userbot dengan `{CMD_HANDLER}tutorial`\n"
                     "Terimakasih\n"
                     f"Support : @FlicksSupport\n"
