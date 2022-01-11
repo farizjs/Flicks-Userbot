@@ -755,7 +755,7 @@ with bot:
                             Button.url("License",
                                        "https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
                         [custom.Button.inline(
-                            "⬅️ Kembali", data="helpme_close")],
+                            "⬅️ Kembali", data="helpme_close\((.+?)\)")],
                     ]
                 )
             else:
@@ -779,7 +779,7 @@ with bot:
                     f"master {ALIVE_NAME}\n"
                     f"Selamat bersenang-senang dengan saya\n"
                     f"Anda dapat memberi tahu oranh lain\n"
-                    f"cara membuat userbot dengan {CMD_HANDLER}tutorial\n"
+                    f"cara membuat userbot dengan `{CMD_HANDLER}tutorial`\n"
                     "Terimakasih\n"
                     f"Support : @FlicksSupport\n"
                     "Channel : @InfoFlicksUserbot")
@@ -794,7 +794,7 @@ with bot:
                             Button.url("License",
                                        "https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
                         [custom.Button.inline(
-                            "⬅️ Kembali", data="helpme_close")],
+                            "⬅️ Kembali", data="helpme_close\((.+?)\)")],
                     ]
                 )
             else:
