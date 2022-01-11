@@ -646,7 +646,6 @@ with bot:
                             "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
                             "t.me/InfoFlicksUserbot")]],
                     link_preview=True)
-            if event.query.user_id == uid
             elif query.startswith("flicksalive"):
                 result = builder.article(
                     "Flicks-Userbot ",
