@@ -755,7 +755,7 @@ with bot:
                             Button.url("License",
                                        "https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
                         [custom.Button.inline(
-                            "⬅️ Kembali", data="helpme_close\((.+?)\)")],
+                            "⬅️ Kembali", data="helpme_close\\((.+?)\\)")],
                     ]
                 )
             else:
@@ -794,7 +794,7 @@ with bot:
                             Button.url("License",
                                        "https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
                         [custom.Button.inline(
-                            "⬅️ Kembali", data="helpme_close\((.+?)\)")],
+                            "⬅️ Kembali", data="helpme_close\\((.+?)\\)")],
                     ]
                 )
             else:
