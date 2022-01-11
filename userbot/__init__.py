@@ -651,7 +651,11 @@ with bot:
                     "Flicks-Userbot ",
                     text=f"[⁣]({ALIVE_LOGO})**The Flicks Userbot** \n{FLICKS_TEKS_KUSTOM} \n\n┏━━━━━━━━━━━━━━━━━━━ \n┣  **Master**   : {ALIVE_NAME} \n┣  **Telethon** :` Ver {version.__version__} `\n┣  **Python**   :` Ver {python_version()} `\n┣  **Branch**   :` {UPSTREAM_REPO_BRANCH} `\n┣  **Bot Ver**  :` v.{BOT_VER} `\n┣  **Modules**  :` {len(modules)} Modules `\n┣  **Support**  : @FlicksSupport \n┗━━━━━━━━━━━━━━━━━━━"
                     buttons=[
-                        [custom.Button.url(
+                        [
+                             custom.Button.url(
+                                "ᴛᴜᴛᴏʀɪᴀʟ",
+                                "https://t.me/InfoFlicksUserbot/64"),
+                             custom.Button.url(
                                 "ʀᴇᴘᴏ",
                                 "https://github.com/fjgaming212/Flicks-Userbot")],
                         [custom.Button.url(
