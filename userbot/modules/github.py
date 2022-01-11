@@ -1,9 +1,9 @@
 import aiohttp
 from userbot.events import register
-from userbot import CMD_HELP
+from userbot import CMD_HELP, CMD_HANDLER as i
+from userbot.utils import flicks_cmd
 
-
-@register(pattern=r".git (.*)", outgoing=True)
+@flicks_cmd(pattern="git (.*)")
 async def github(event):
     URL = f"https://api.github.com/users/{event.pattern_match.group(1)}"
     await event.get_chat()
@@ -46,6 +46,6 @@ async def github(event):
 
 CMD_HELP.update({
     "github":
-    ">`.git <username>`"
-    "\nUsage: Like .whois but forr GitHub usernames."
+    f">`{i}git <username>`"
+    f"\nUsage: Seperti `{i}info` tetapi untuk nama pengguna GitHub."
 })
