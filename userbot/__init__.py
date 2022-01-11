@@ -713,15 +713,94 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("Cʜᴀɴɴᴇʟ Uᴘᴅᴀᴛᴇ​",
-                                       "t.me/SadRoomsInfo"),
-                            Button.url("Gʀᴏᴜᴘ Sᴜᴘᴘᴏʀᴛ",
-                                       "t.me/FlicksSupport")],
+                            custom.Button.inline("Alive",
+                                                  data="alive_inline"),
+                            custom.Button.inline("Flicks",
+                                                 "data="flicks_inline")],
                         [Button.inline("Oᴘᴇɴ Mᴇɴᴜ", data="open")],
                         [custom.Button.inline(
                             "Cʟᴏsᴇ", b"close")],
                     ]
                 )
+        @ken.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"alive_inline")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"__**{FLICKS_TEKS_KUSTOM}**__ \n\n"
+                    "============================\n"
+                    f"      **Alive Inline** \n"
+                    "============================\n"
+                    f"`Master      :` {DEFAULTUSER} \n"
+                    f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
+                    f"`Versi Bot :` {BOT_VER} \n"
+                    f"`Plugins   :` {len(plugins)} \n"
+                    f"`Bahasa    :` Python \n"
+                    f"`Database  :` Mongo db \n"
+                    "============================\n"
+                    f"    **FLICKS-USERBOT** \n"
+                    "============================")
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            Button.url("Repository",
+                                       "https://github.com/fjgaming212/Flicks-Userbot"),
+                            Button.url("License",
+                                       "https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
+                        [custom.Button.inline(
+                            "⬅️ Kembali", data="helpme_close")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+
+        @ken.tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"flicks_inline")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█\n"
+                     "█░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░█ \n"
+                    f"█░║║║╠─║─║─║║║║║╠─░█\n"
+                     "█░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░█\n"
+                    f"█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█\n"
+                    f"Flicks-Userbot versi {BOT_VER} berjalan\n"
+                    f"master {DEFAULUTSER}\n"
+                    f"Selamat bersenang-senang dengan saya\n"
+                    f"Anda dapat memberi tahu oranh lain\n"
+                    f"cara membuat userbot dengan {CMD_HANDLER}tutorial\n"
+                    "Terimakasih\n"
+                    f"Support : @FlicksSupport\n"
+                     "Channel : @InfoFlicksUserbot")
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            Button.url("Repository",
+                                       "https://github.com/fjgaming212/Flicks-Userbot"),
+                            Button.url("License",
+                                       "https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
+                        [custom.Button.inline(
+                            "⬅️ Kembali", data="helpme_close")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
 
         @ ken.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
