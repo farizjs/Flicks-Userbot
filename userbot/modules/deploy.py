@@ -17,7 +17,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@flicks_cmd(pattern="deploy")
+@flicks_cmd(pattern="deploy ?(.*)")
 async def _(event):
 
     if event.fwd_from:
