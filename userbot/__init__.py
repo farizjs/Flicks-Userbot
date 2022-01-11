@@ -646,6 +646,30 @@ with bot:
                             "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
                             "t.me/InfoFlicksUserbot")]],
                     link_preview=True)
+            if event.query.user_id == uid
+            elif query.startswith("flicksalive"):
+                result = builder.article(
+                    "Flicks-Userbot ",
+                    text=(f"
+        [⁣]({ALIVE_LOGO})**The Flicks Userbot** \n
+        {FLICKS_TEKS_KUSTOM} \n\n
+        ┏━━━━━━━━━━━━━━━━━━━ \n
+        ┣  **Master**   : {ALIVE_NAME} \n
+        ┣  **Telethon** :` Ver {version.__version__} `\n
+        ┣  **Python**   :` Ver {python_version()} `\n
+        ┣  **Branch**   :` {UPSTREAM_REPO_BRANCH} `\n
+        ┣  **Bot Ver**  :` v.{BOT_VER} `\n
+        ┣  **Modules**  :` {len(modules)} Modules `\n
+        ┣  **Support**  : @FlicksSupport \n
+        ┗━━━━━━━━━━━━━━━━━━━")
+                    buttons=[
+                        [custom.Button.url(
+                                "ʀᴇᴘᴏ",
+                                "https://github.com/fjgaming212/Flicks-Userbot")],
+                        [custom.Button.url(
+                            "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
+                            "t.me/InfoFlicksUserbot")]],
+                    link_preview=True)
             elif query.startswith("tutor"):
                 result = builder.article(
                     "Tutorial memasang Flicks-Userbot ",
