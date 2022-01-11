@@ -20,7 +20,6 @@ from youtube_dl.utils import (ContentTooShortError, DownloadError,
                               UnavailableVideoError, XAttrMetadataError)
 from youtubesearchpython import SearchVideos
 
-from userbot.events import register
 from userbot import CMD_HELP, ALIVE_NAME
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
@@ -231,12 +230,9 @@ async def original(event):
 
 
 CMD_HELP.update(
-    {
-        "musikdownload": f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}song <Penyanyi atau Band - Judul Lagu>`\
+    {"musikdownload": f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}song <Penyanyi atau Band - Judul Lagu>`\
          \n↳ : Mengunduh Sebuah Lagu Yang Diinginkan.\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}vsong` `<judul lagu>`\
          \n↳ : `unggah video lagu.`\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}lirik` <Penyanyi atau Band - Judul Lagu>`\
-         \n↳ : Mencari Lirik Lagu Yang Diinginkan."
-    }
-)
+         \n↳ : Mencari Lirik Lagu Yang Diinginkan."})
