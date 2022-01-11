@@ -716,7 +716,7 @@ with bot:
                             custom.Button.inline("Alive",
                                                  data="alive_inline"),
                             custom.Button.inline("Flicks",
-                                                 "data="flicks_inline")],
+                                                 data="flicks_inline")],
                         [Button.inline("Oᴘᴇɴ Mᴇɴᴜ", data="open")],
                         [custom.Button.inline(
                             "Cʟᴏsᴇ", b"close")],
