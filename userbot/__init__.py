@@ -649,7 +649,7 @@ with bot:
             elif query.startswith("flicksalive"):
                 result = builder.article(
                     "Flicks-Userbot ",
-                    text=(f"
+                    text=f"""
         [⁣]({ALIVE_LOGO})**The Flicks Userbot** \n
         {FLICKS_TEKS_KUSTOM} \n\n
         ┏━━━━━━━━━━━━━━━━━━━ \n
@@ -660,7 +660,8 @@ with bot:
         ┣  **Bot Ver**  :` v.{BOT_VER} `\n
         ┣  **Modules**  :` {len(modules)} Modules `\n
         ┣  **Support**  : @FlicksSupport \n
-        ┗━━━━━━━━━━━━━━━━━━━")
+        ┗━━━━━━━━━━━━━━━━━━━
+"""
                     buttons=[
                         [custom.Button.url(
                                 "ʀᴇᴘᴏ",
