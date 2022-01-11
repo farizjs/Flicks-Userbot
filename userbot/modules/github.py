@@ -1,7 +1,7 @@
 import aiohttp
-from userbot.events import register
 from userbot import CMD_HELP, CMD_HANDLER as i
 from userbot.utils import flicks_cmd
+
 
 @flicks_cmd(pattern="git (.*)")
 async def github(event):
