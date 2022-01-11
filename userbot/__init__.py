@@ -714,7 +714,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline("Alive",
-                                                  data="alive_inline"),
+                                                 data="alive_inline"),
                             custom.Button.inline("Flicks",
                                                  "data="flicks_inline")],
                         [Button.inline("Oᴘᴇɴ Mᴇɴᴜ", data="open")],
@@ -722,6 +722,7 @@ with bot:
                             "Cʟᴏsᴇ", b"close")],
                     ]
                 )
+
         @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"alive_inline")
@@ -761,7 +762,6 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-
         @ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"flicks_inline")
@@ -771,9 +771,9 @@ with bot:
             if event.query.user_id == uid:
                 text = (
                     f"█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█\n"
-                     "█░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░█ \n"
+                    "█░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░█ \n"
                     f"█░║║║╠─║─║─║║║║║╠─░█\n"
-                     "█░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░█\n"
+                    "█░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░█\n"
                     f"█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█\n"
                     f"Flicks-Userbot versi {BOT_VER} berjalan\n"
                     f"master {DEFAULUTSER}\n"
@@ -782,7 +782,7 @@ with bot:
                     f"cara membuat userbot dengan {CMD_HANDLER}tutorial\n"
                     "Terimakasih\n"
                     f"Support : @FlicksSupport\n"
-                     "Channel : @InfoFlicksUserbot")
+                    "Channel : @InfoFlicksUserbot")
                 await event.edit(
                     text,
                     file=logo,
@@ -800,7 +800,6 @@ with bot:
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
 
         @ ken.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
