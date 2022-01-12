@@ -557,7 +557,7 @@ Perintah yang tersedia di bot ini :
 [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg) Hallo {get_display_name(u)}
 Selamat Datang Di **Flicks Userbot**
 Gunakan saya untuk mempersantai grup anda
-"""",
+""",
                     buttons=[
                         [
                             Button.url("Repository",
