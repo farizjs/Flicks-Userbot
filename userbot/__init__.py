@@ -518,7 +518,7 @@ with bot:
                 )
 
         @ ken.tgbot.on(events.CallbackQuery(data=b"pesanstart"))
-        async def about(event):
+        async def pesanstart(event):
             await event.edit(f"[👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg) Hallo [{get_display_name(u)}](tg://user?id={u.id}) \nSelamat Datang Di **Flicks Userbot**\nGunakan saya untuk mempersantai grup anda\n",
                     buttons=[
                         [
