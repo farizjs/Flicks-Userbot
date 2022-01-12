@@ -504,6 +504,10 @@ with bot:
                                        "https://github.com/fjgaming212/Flicks-Userbot"),
                             custom.Button.inline("ɪɴꜰᴏ​",
                                                  data="about")],
+                         [custom.Button.inline(
+                            "ʜᴇʟᴘ",
+                            data="help")]],
+
                     ]
                 )
 
@@ -514,6 +518,23 @@ with bot:
                         [
                             custom.Button.inline("ᴄʟᴏsᴇ",
                                                  data="keluar")],
+                    ]
+                )
+
+        @ ken.tgbot.on(events.CallbackQuery(data=b"help"))
+        async def help(event):
+            await event.edit(f"""
+Perintah yang tersedia di bot ini :
+/start - Memulai Bot
+/ping - Sinyal Bot
+/repo - Link Repository Bot
+/alive - Alive Pada Bot
+/string - Mengambil String Session
+""",
+                    buttons=[
+                        [
+                            custom.Button.inline("ʙᴀᴄᴋ​",
+                                                 data="pesanstart")],
                     ]
                 )
 
