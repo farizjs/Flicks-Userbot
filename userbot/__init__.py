@@ -497,9 +497,9 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"[👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg) Hallo {get_display_name(u)}"
-                    f"Selamat Datang Di **Flicks Userbot**"
-                    f"Gunakan saya untuk mempersantai grup anda",
+                    f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)\n"
+                    f"Selamat Datang Di **Flicks Userbot**\n"
+                    f"Gunakan saya untuk mempersantai grup anda\n",
                     buttons=[
                         [
                             Button.url("Repository",
@@ -554,7 +554,7 @@ Perintah yang tersedia di bot ini :
         @ ken.tgbot.on(events.CallbackQuery(data=b"pesanstart"))
         async def pesanstart(event):
             await event.edit(f"""
-[👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg) Hallo {get_display_name(u)}
+Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)
 Selamat Datang Di **Flicks Userbot**
 Gunakan saya untuk mempersantai grup anda
 """,
