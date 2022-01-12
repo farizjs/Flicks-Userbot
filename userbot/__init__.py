@@ -506,7 +506,7 @@ with bot:
                                                  data="about")],
                          [custom.Button.inline(
                             "ʜᴇʟᴘ",
-                            data="help")]],
+                            data="help")],
 
                     ]
                 )
@@ -547,6 +547,9 @@ Perintah yang tersedia di bot ini :
                                        "https://github.com/fjgaming212/Flicks-Userbot"),
                             custom.Button.inline("ɪɴꜰᴏ​",
                                                  data="about")],
+                         [custom.Button.inline(
+                            "ʜᴇʟᴘ",
+                            data="help")],
                     ]
                 )
 
