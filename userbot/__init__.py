@@ -497,7 +497,9 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"[👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg) Hallo [{get_display_name(u)}](tg://user?id={u.id}) \nSelamat Datang Di **Flicks Userbot**\nGunakan saya untuk mempersantai grup anda\n",
+                    f"[👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg) Hallo {get_display_name(u)}"
+                    f"Selamat Datang Di **Flicks Userbot**"
+                    f"Gunakan saya untuk mempersantai grup anda",
                     buttons=[
                         [
                             Button.url("Repository",
@@ -513,11 +515,20 @@ with bot:
 
         @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
-            await event.edit(f"Master : {ALIVE_NAME}\nBotver : {BOT_VER}\nPlugin : {len(plugins)}\n\nOwner repo : [Fariz](tg://openmessage?user_id=1514078508)\nSupport : @FlicksSupport\n",
+            await event.edit(f"""
+Master : {ALIVE_NAME}
+Botver : {BOT_VER}
+Plugin : {len(plugins)}
+
+wner repo : [Fariz](tg://openmessage?user_id=1514078508)
+Support : @FlicksSupport
+""",
                     buttons=[
                         [
                             custom.Button.inline("ᴄʟᴏsᴇ",
-                                                 data="keluar")],
+                                                 data="keluar"),
+                            custom.Button.inline("ʙᴀᴄᴋ​",
+                                                 data="pesanstart")],
                     ]
                 )
 
@@ -533,6 +544,8 @@ Perintah yang tersedia di bot ini :
 """,
                     buttons=[
                         [
+                            custom.Button.inline("ᴄʟᴏsᴇ",
+                                                 data="keluar"),
                             custom.Button.inline("ʙᴀᴄᴋ​",
                                                  data="pesanstart")],
                     ]
@@ -540,7 +553,11 @@ Perintah yang tersedia di bot ini :
 
         @ ken.tgbot.on(events.CallbackQuery(data=b"pesanstart"))
         async def pesanstart(event):
-            await event.edit(f"[👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg) Hallo [{get_display_name(u)}](tg://user?id={u.id}) \nSelamat Datang Di **Flicks Userbot**\nGunakan saya untuk mempersantai grup anda\n",
+            await event.edit(f"""
+[👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg) Hallo {get_display_name(u)}
+Selamat Datang Di **Flicks Userbot**
+Gunakan saya untuk mempersantai grup anda
+"""",
                     buttons=[
                         [
                             Button.url("Repository",
@@ -692,16 +709,16 @@ Perintah yang tersedia di bot ini :
                 result = builder.article(
                     "Flicks-Userbot ",
                     text=f"""
-[⁣]({ALIVE_LOGO})**The Flicks Userbot** \n
-{FLICKS_TEKS_KUSTOM} \n\n
-┏━━━━━━━━━━━━━━━━━━━ \n
-┣  **Master**   : {ALIVE_NAME} \n
-┣  **Telethon** :` 1.24.0 `\n
-┣  **Bahasa**   : `Python`\n
-┣  **Branch**   :` {UPSTREAM_REPO_BRANCH} `\n
-┣  **Bot Ver**  :` v.{BOT_VER} `\n
-┣  **Modules**  :` {len(plugins)} Modules `\n
-┣  **Support**  : @FlicksSupport \n
+[⁣]({ALIVE_LOGO})**The Flicks Userbot** 
+{FLICKS_TEKS_KUSTOM} 
+┏━━━━━━━━━━━━━━━━━━━ 
+┣  **Master**   : {ALIVE_NAME} 
+┣  **Telethon** :` 1.24.0 `
+┣  **Bahasa**   : `Python`
+┣  **Branch**   :` {UPSTREAM_REPO_BRANCH} `
+┣  **Bot Ver**  :` v.{BOT_VER} `
+┣  **Modules**  :` {len(plugins)} Modules `
+┣  **Support**  : @FlicksSupport 
 ┗━━━━━━━━━━━━━━━━━━━
 """,
                     buttons=[
