@@ -517,6 +517,18 @@ with bot:
                     ]
                 )
 
+        @ ken.tgbot.on(events.CallbackQuery(data=b"pesanstart"))
+        async def about(event):
+            await event.edit(f"[👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg) Hallo [{get_display_name(u)}](tg://user?id={u.id}) \nSelamat Datang Di **Flicks Userbot**\nGunakan saya untuk mempersantai grup anda\n",
+                    buttons=[
+                        [
+                            Button.url("Repository",
+                                       "https://github.com/fjgaming212/Flicks-Userbot"),
+                            custom.Button.inline("ɪɴꜰᴏ​",
+                                                 data="about")],
+                    ]
+                )
+
         @ ken.tgbot.on(events.CallbackQuery(data=b"keluar"))
         async def keluar(event):
             await event.delete()
