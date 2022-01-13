@@ -303,7 +303,7 @@ BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
 # Default message Wellcome
 WELLCOME_MESSAGE = os.environ.get(
        "WELLCOME_MESSAGE",
-f"""
+"""
 **Hallo Kamu**\n**Welcome To** {chatname} 
 ✥ **ᴘᴇɴɢɢᴜɴᴀ​ :** {name} 
 ✥ **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {id} 
@@ -311,6 +311,7 @@ f"""
 ✥ **ᴍᴇɴᴛɪᴏɴ​ :** {mention} 
   sᴇᴍᴏɢᴀ ʙᴇᴛᴀʜ ᴅɪsɪɴɪ ʏᴀ​ ✨
 """)
+
 # Init Mongo
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
 MONGO = MONGOCLIENT.userbot
@@ -497,12 +498,9 @@ with bot:
                 chatname = f"[{get_display_name(u)}](tg://user?id={u.id})"
 
                 await event.reply(
-                    f"**Hallo Kamu**\n**Welcome To** {chatname} \n\n"
-                    f"✥ **ᴘᴇɴɢɢᴜɴᴀ​ :** {name} \n"
-                    f"✥ **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {id} \n"
-                    f"✥ **ᴜsᴇʀɴᴀᴍᴇ​ :** {username} \n"
-                    f"✥ **ᴍᴇɴᴛɪᴏɴ​ :** {mention} \n\n"
-                    f"sᴇᴍᴏɢᴀ ʙᴇᴛᴀʜ ᴅɪsɪɴɪ ʏᴀ​ ✨\n",
+                    f"""
+                     {WELLCOME_MESSAGE}
+                     """,
                     buttons=[
                         [
                             Button.url("ʀᴇᴘᴏ ꜰʟɪᴄᴋs ᴜsᴇʀʙᴏᴛ​",
