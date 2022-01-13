@@ -92,9 +92,8 @@ async def redis(pong):
     await pong.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸\n          /'/   /    /       /¨¯\\ \n        ('(   (   (   (  ¯~/'  ')\n         \\                        /\n          \\                _.•´\n            \\              (\n              \\  ")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-          me = bot.get_me()
     await pong.edit(f" ➥ `%sms` \n"
-                    f"➥ [{ALIVE_NAME}](tg://user?id={me.id}) \n" % (duration))
+                    f"➥ {ALIVE_NAME} \n" % (duration))
 
 
 @flicks_cmd(pattern="sping")
