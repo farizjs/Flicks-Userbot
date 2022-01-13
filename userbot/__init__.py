@@ -300,17 +300,7 @@ API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 BOT_TOKEN = os.environ.get("BOT_TOKEN") or None
 BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
 
-# Default message Wellcome
-WELLCOME_MESSAGE = os.environ.get(
-       "WELLCOME_MESSAGE",
-"""
-**Hallo Kamu**\n**Welcome To** {chatname} 
-✥ **ᴘᴇɴɢɢᴜɴᴀ​ :** {name} 
-✥ **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {id} 
-✥ **ᴜsᴇʀɴᴀᴍᴇ​ :** {username} 
-✥ **ᴍᴇɴᴛɪᴏɴ​ :** {mention} 
-  sᴇᴍᴏɢᴀ ʙᴇᴛᴀʜ ᴅɪsɪɴɪ ʏᴀ​ ✨
-""")
+
 
 # Init Mongo
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
@@ -494,8 +484,8 @@ with bot:
                 await event.reply(
                     f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)\n"
                     f"Selamat Datang Di **Flicks Userbot**\n"
-                    f"Saya Assisten bot {ALIVE_NAME}*
-                    f"Tekan tombol » ɪɴꜰᴏ​ «\n*
+                    f"Saya Assisten bot {ALIVE_NAME}\n"
+                    f"Tekan tombol » ɪɴꜰᴏ​ «\n"
                     f"Untuk info lebih lanjut\n"
                     f"Terimakasih\n",
                     buttons=[
@@ -557,8 +547,8 @@ Perintah yang tersedia di bot ini :
             await event.edit(
                     f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)"
                     f"Selamat Datang Di **Flicks Userbot**\n"
-                    f"Saya Assisten bot {ALIVE_NAME}*"
-                    f"Tekan tombol » ɪɴꜰᴏ​ «\n*"
+                    f"Saya Assisten bot {ALIVE_NAME}\n"
+                    f"Tekan tombol » ɪɴꜰᴏ​ «\n"
                     f"Untuk info lebih lanjut\n"
                     f"Terimakasih\n",
                     buttons=[
