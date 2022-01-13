@@ -486,27 +486,6 @@ with bot:
         plugins = CMD_HELP
         vr = BOT_VER
 
-        @ken.tgbot.on(events.ChatAction)
-        async def handler(event):
-            if event.user_joined or event.user_added:
-                u = await event.client.get_entity(event.chat_id)
-                c = await event.client.get_entity(event.user_id)
-                mention = f"[{get_display_name(c)}](tg://user?id={c.id})"
-                username = f"@{c.username}"
-                id = f"`{c.id}`"
-                name = f"{get_display_name(c)}"
-                chatname = f"[{get_display_name(u)}](tg://user?id={u.id})"
-
-                await event.reply(
-                    f"""
-                     {WELLCOME_MESSAGE}
-                     """,
-                    buttons=[
-                        [
-                            Button.url("ʀᴇᴘᴏ ꜰʟɪᴄᴋs ᴜsᴇʀʙᴏᴛ​",
-                                       "https://github.com/fjgaming212/Flicks-Userbot")],
-                    ]
-                )
 
         @ken.tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
@@ -515,7 +494,10 @@ with bot:
                 await event.reply(
                     f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)\n"
                     f"Selamat Datang Di **Flicks Userbot**\n"
-                    f"Gunakan saya untuk mempersantai grup anda\n",
+                    f"Saya Assisten bot {ALIVE_NAME}*
+                    f"Tekan tombol » ɪɴꜰᴏ​ «\n*
+                    f"Untuk info lebih lanjut\n"
+                    f"Terimakasih\n",
                     buttons=[
                         [
                             Button.url("Repository",
@@ -532,11 +514,14 @@ with bot:
         @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
             await event.edit(f"""
-Master : {ALIVE_NAME}
-Botver : {BOT_VER}
-Plugin : {len(plugins)}
+Master   : {ALIVE_NAME}
+Username : {me.username}
+Id       : {uid}
+Botver   : {BOT_VER}
+Assisten : @{BOT_USERNAME}
+Plugin   : {len(plugins)}
 
-wner repo : [Fariz](tg://openmessage?user_id=1514078508)
+Owner repo : [Fariz](tg://openmessage?user_id=1514078508)
 Support : @FlicksSupport
 """,
                     buttons=[
@@ -569,11 +554,13 @@ Perintah yang tersedia di bot ini :
 
         @ ken.tgbot.on(events.CallbackQuery(data=b"pesanstart"))
         async def pesanstart(event):
-            await event.edit(f"""
-Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)
-Selamat Datang Di **Flicks Userbot**
-Gunakan saya untuk mempersantai grup anda
-""",
+            await event.edit(
+                    f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)"
+                    f"Selamat Datang Di **Flicks Userbot**\n"
+                    f"Saya Assisten bot {ALIVE_NAME}*"
+                    f"Tekan tombol » ɪɴꜰᴏ​ «\n*"
+                    f"Untuk info lebih lanjut\n"
+                    f"Terimakasih\n",
                     buttons=[
                         [
                             Button.url("Repository",
