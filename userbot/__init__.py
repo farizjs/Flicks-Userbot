@@ -479,12 +479,17 @@ with bot:
             if event.user_joined or event.user_added:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
+                mention = f"[{get_display_name(c)}](tg://user?id={c.id})"
+                username = f"@{c.username}"
+                id = f"`{c.id}`"
+                name = f"{get_display_name(c)}"
+
                 await event.reply(
                     f"**Hallo Kamu**\n**Welcome To** [{get_display_name(u)}](tg://user?id={u.id}) \n\n"
-                    f"✥ **ᴘᴇɴɢɢᴜɴᴀ​ :** {get_display_name(c)} \n"
-                    f"✥ **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {c.id} \n"
-                    f"✥ **ᴜsᴇʀɴᴀᴍᴇ​ :** @{c.username} \n"
-                    f"✥ **ᴍᴇɴᴛɪᴏɴ​ :** [{get_display_name(c)}](tg://user?id={c.id}) \n\n"
+                    f"✥ **ᴘᴇɴɢɢᴜɴᴀ​ :** {name} \n"
+                    f"✥ **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {id} \n"
+                    f"✥ **ᴜsᴇʀɴᴀᴍᴇ​ :** {username} \n"
+                    f"✥ **ᴍᴇɴᴛɪᴏɴ​ :** {mention} \n\n"
                     f"sᴇᴍᴏɢᴀ ʙᴇᴛᴀʜ ᴅɪsɪɴɪ ʏᴀ​ ✨\n",
                     buttons=[
                         [
