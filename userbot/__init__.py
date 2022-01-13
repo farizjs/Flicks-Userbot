@@ -506,7 +506,7 @@ with bot:
             await event.edit(f"""
 Master   : {ALIVE_NAME}
 Username : {me.username}
-Id       : {uid}
+Id       : `{uid}`
 Botver   : {BOT_VER}
 Assisten : @{BOT_USERNAME}
 Plugin   : {len(plugins)}
