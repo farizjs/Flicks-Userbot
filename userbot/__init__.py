@@ -483,9 +483,10 @@ with bot:
                 username = f"@{c.username}"
                 id = f"`{c.id}`"
                 name = f"{get_display_name(c)}"
+                chatname = f"[{get_display_name(u)}](tg://user?id={u.id})"
 
                 await event.reply(
-                    f"**Hallo Kamu**\n**Welcome To** [{get_display_name(u)}](tg://user?id={u.id}) \n\n"
+                    f"**Hallo Kamu**\n**Welcome To** {chatname} \n\n"
                     f"✥ **ᴘᴇɴɢɢᴜɴᴀ​ :** {name} \n"
                     f"✥ **ɪᴅ ᴘᴇɴɢɢᴜɴᴀ​ :** {id} \n"
                     f"✥ **ᴜsᴇʀɴᴀᴍᴇ​ :** {username} \n"
