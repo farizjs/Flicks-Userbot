@@ -477,7 +477,6 @@ with bot:
         @ken.tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id)
                 await event.reply(
                     f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)\n"
                     f"Selamat Datang Di **Flicks Userbot**\n"
@@ -501,15 +500,13 @@ with bot:
         @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
             await event.edit(f"""
-Master   : {ALIVE_NAME}
-Username : {me.username}
-Id       : `{uid}`
-Botver   : {BOT_VER}
-Assisten : @{BOT_USERNAME}
-Plugin   : {len(plugins)}
+Owner - {ALIVE_NAME}
+OwnerID - {uid}
+[Link To Profile 👤](tg://user?id={uid})
 
-Owner repo : [Fariz](tg://openmessage?user_id=1514078508)
-Support : @FlicksSupport
+Owner repo - [Fariz](tg://openmessage?user_id=1514078508)
+Support - @FlicksSupport
+Flicks-Userbot [v{BOT_VER}](https://github.com/fjgaming212/Flicks-Userbot)
 """,
                     buttons=[
                         [
@@ -518,7 +515,7 @@ Support : @FlicksSupport
                             custom.Button.inline("ʙᴀᴄᴋ​",
                                                  data="pesanstart")],
                     ]
-                )
+                    link_preview=True)
 
         @ ken.tgbot.on(events.CallbackQuery(data=b"help"))
         async def help(event):
