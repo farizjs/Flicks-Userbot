@@ -515,7 +515,7 @@ Flicks-Userbot [v{BOT_VER}](https://github.com/fjgaming212/Flicks-Userbot)
                             custom.Button.inline("ʙᴀᴄᴋ​",
                                                  data="pesanstart")],
                     ]
-                    link_preview=True)
+                                     )
 
         @ ken.tgbot.on(events.CallbackQuery(data=b"help"))
         async def help(event):
