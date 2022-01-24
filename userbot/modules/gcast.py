@@ -32,6 +32,7 @@ GCAST_BLACKLIST = [
     -1001412403011,  # Group Music Chat ID
     -1001752592753,  # Skyzusupport
     -1001611385446,  # SolidProjectChat
+    -1001380293847,  # NastySupport
 ]
 
 
