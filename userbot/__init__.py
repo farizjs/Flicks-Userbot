@@ -18,10 +18,13 @@ from datetime import datetime
 from redis import StrictRedis
 from dotenv import load_dotenv
 from requests import get
+from telethon import Button
 from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
 from telethon import Button, events, functions, types
 from telethon.utils import get_display_name
+# Button from Man-Userbot
+# Thanks Man-Userbot 💙
 
 redis_db = None
 
@@ -419,7 +422,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 
 def paginate_help(page_number, loaded_modules, prefix):
-    number_of_rows = 5
+    number_of_rows = 6
     number_of_cols = 2
     global lockpage
     lockpage = page_number
@@ -455,6 +458,15 @@ def paginate_help(page_number, loaded_modules, prefix):
         ]
     return pairs
 
+def ibuild_keyboard(buttons):
+    keyb = []
+    for btn in buttons:
+        if btn[2] and keyb:
+            keyb[-1].append(Button.url(btn[0], btn[1]))
+        else:
+            keyb.append([Button.url(btn[0], btn[1])])
+    return keyb
+
 
 with bot:
     try:
@@ -468,6 +480,9 @@ with bot:
         me = bot.get_me()
         uid = me.id
         logo = ALIVE_LOGO
+        BTN_URL_REGEX = re.compile(
+            r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
+        )
 
         kenlogo = INLINE_PIC
         plugins = CMD_HELP
@@ -736,6 +751,38 @@ Perintah yang tersedia di bot ini :
                             "ʀᴇᴘᴏ",
                             "https://github.com/fjgaming212/Flicks-Userbot")]],
                     link_preview=False)
+            elif query.startswith("Inline buttons"):
+                markdown_note = query[14:]
+                prev = 0
+                note_data = ""
+                buttons = []
+                for match in BTN_URL_REGEX.finditer(markdown_note):
+                    n_escapes = 0
+                    to_check = match.start(1) - 1
+                    while to_check > 0 and markdown_note[to_check] == "\\":
+                        n_escapes += 1
+                        to_check -= 1
+                    if n_escapes % 2 == 0:
+                        buttons.append(
+                            (match.group(2), match.group(3), bool(match.group(4)))
+                        )
+                        note_data += markdown_note[prev : match.start(1)]
+                        prev = match.end(1)
+                    elif n_escapes % 2 == 1:
+                        note_data += markdown_note[prev:to_check]
+                        prev = match.start(1) - 1
+                    else:
+                        break
+                else:
+                    note_data += markdown_note[prev:]
+                message_text = note_data.strip()
+                tl_ib_buttons = ibuild_keyboard(buttons)
+                result = builder.article(
+                    title="Inline creator",
+                    text=message_text,
+                    buttons=tl_ib_buttons,
+                    link_preview=False,
+                )
             else:
                 result = builder.article(
                     " ✘ Flicks-Userbot ✘",
