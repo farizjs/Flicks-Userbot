@@ -333,7 +333,6 @@ async def redis(alive):
         await alive.delete()
 
 
-
 @flicks_cmd(pattern="aliveu$")
 async def amireallyaliveuser(username):
     """ For .aliveu command, change the username in the .alive command. """

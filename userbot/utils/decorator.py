@@ -119,4 +119,3 @@ def flicks_handler(
         return func
 
     return decorator
-

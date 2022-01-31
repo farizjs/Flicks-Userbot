@@ -301,7 +301,6 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN") or None
 BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
 
 
-
 # Init Mongo
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
 MONGO = MONGOCLIENT.userbot
@@ -458,6 +457,7 @@ def paginate_help(page_number, loaded_modules, prefix):
         ]
     return pairs
 
+
 def ibuild_keyboard(buttons):
     keyb = []
     for btn in buttons:
@@ -488,7 +488,6 @@ with bot:
         plugins = CMD_HELP
         vr = BOT_VER
 
-
         @ken.tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
@@ -505,7 +504,7 @@ with bot:
                                        "https://github.com/fjgaming212/Flicks-Userbot"),
                             custom.Button.inline("ɪɴꜰᴏ​",
                                                  data="about")],
-                         [custom.Button.inline(
+                        [custom.Button.inline(
                             "ʜᴇʟᴘ",
                             data="help")],
 
@@ -523,14 +522,14 @@ Owner repo - [Fariz](tg://openmessage?user_id=1514078508)
 Support - @FlicksSupport
 Flicks-Userbot [v{BOT_VER}](https://github.com/fjgaming212/Flicks-Userbot)
 """,
-                    buttons=[
-                        [
-                            custom.Button.inline("ᴄʟᴏsᴇ",
-                                                 data="keluar"),
-                            custom.Button.inline("ʙᴀᴄᴋ​",
-                                                 data="pesanstart")],
-                    ]
-                                     )
+                             buttons=[
+                                 [
+                                     custom.Button.inline("ᴄʟᴏsᴇ",
+                                                          data="keluar"),
+                                     custom.Button.inline("ʙᴀᴄᴋ​",
+                                                          data="pesanstart")],
+                             ]
+                             )
 
         @ ken.tgbot.on(events.CallbackQuery(data=b"help"))
         async def help(event):
@@ -542,35 +541,35 @@ Perintah yang tersedia di bot ini :
 /alive - Alive Pada Bot
 /string - Mengambil String Session
 """,
-                    buttons=[
-                        [
-                            custom.Button.inline("ᴄʟᴏsᴇ",
-                                                 data="keluar"),
-                            custom.Button.inline("ʙᴀᴄᴋ​",
-                                                 data="pesanstart")],
-                    ]
-                )
+                             buttons=[
+                                 [
+                                     custom.Button.inline("ᴄʟᴏsᴇ",
+                                                          data="keluar"),
+                                     custom.Button.inline("ʙᴀᴄᴋ​",
+                                                          data="pesanstart")],
+                             ]
+                             )
 
         @ ken.tgbot.on(events.CallbackQuery(data=b"pesanstart"))
         async def pesanstart(event):
             await event.edit(
-                    f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)"
-                    f"Selamat Datang Di **Flicks Userbot**\n"
-                    f"Saya Assisten bot {ALIVE_NAME}\n"
-                    f"Tekan tombol » ɪɴꜰᴏ​ «\n"
-                    f"Untuk info lebih lanjut\n"
-                    f"Terimakasih\n",
-                    buttons=[
+                f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)"
+                f"Selamat Datang Di **Flicks Userbot**\n"
+                f"Saya Assisten bot {ALIVE_NAME}\n"
+                f"Tekan tombol » ɪɴꜰᴏ​ «\n"
+                f"Untuk info lebih lanjut\n"
+                f"Terimakasih\n",
+                buttons=[
                         [
                             Button.url("Repository",
                                        "https://github.com/fjgaming212/Flicks-Userbot"),
                             custom.Button.inline("ɪɴꜰᴏ​",
                                                  data="about")],
-                         [custom.Button.inline(
+                        [custom.Button.inline(
                             "ʜᴇʟᴘ",
                             data="help")],
-                    ]
-                )
+                ]
+            )
 
         @ ken.tgbot.on(events.CallbackQuery(data=b"keluar"))
         async def keluar(event):
@@ -711,16 +710,16 @@ Perintah yang tersedia di bot ini :
                 result = builder.article(
                     "Flicks-Userbot ",
                     text=f"""
-[⁣]({ALIVE_LOGO})**The Flicks Userbot** 
-{FLICKS_TEKS_KUSTOM} 
-┏━━━━━━━━━━━━━━━━━━━ 
-┣  **Master**   : {ALIVE_NAME} 
+[⁣]({ALIVE_LOGO})**The Flicks Userbot**
+{FLICKS_TEKS_KUSTOM}
+┏━━━━━━━━━━━━━━━━━━━
+┣  **Master**   : {ALIVE_NAME}
 ┣  **Telethon** :` 1.24.0 `
 ┣  **Bahasa**   : `Python`
 ┣  **Branch**   :` {UPSTREAM_REPO_BRANCH} `
 ┣  **Bot Ver**  :` v.{BOT_VER} `
 ┣  **Modules**  :` {len(plugins)} Modules `
-┣  **Support**  : @FlicksSupport 
+┣  **Support**  : @FlicksSupport
 ┗━━━━━━━━━━━━━━━━━━━
 """,
                     buttons=[
@@ -764,9 +763,9 @@ Perintah yang tersedia di bot ini :
                         to_check -= 1
                     if n_escapes % 2 == 0:
                         buttons.append(
-                            (match.group(2), match.group(3), bool(match.group(4)))
-                        )
-                        note_data += markdown_note[prev : match.start(1)]
+                            (match.group(2), match.group(3), bool(
+                                match.group(4))))
+                        note_data += markdown_note[prev: match.start(1)]
                         prev = match.end(1)
                     elif n_escapes % 2 == 1:
                         note_data += markdown_note[prev:to_check]
