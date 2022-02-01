@@ -52,11 +52,7 @@ async def aexec(code, event):
     return await locals()["__aexec"](event)
 
 
-CMD_HELP.update(
-    {
-        "calkulator":
-        f"{hai}calc\n"
-        f"usage : Menyelesaikan permasalahan matematika dasar.\n"
-        "Memecahkan persamaan matematika yang diberikan dengan aturan BODMAS.\n"
-        f"contoh : `{hai}calc 2+9`"}
-)
+CMD_HELP.update({"calkulator": f"{hai}calc\n"
+                 f"usage : Menyelesaikan permasalahan matematika dasar.\n"
+                 "Memecahkan persamaan matematika yang diberikan dengan aturan BODMAS.\n"
+                 f"contoh : `{hai}calc 2+9`"})
