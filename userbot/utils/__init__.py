@@ -25,6 +25,7 @@ from .tools import (
     run_cmd, md5,
     post_to_telegraph,
     take_screen_shot,
+    reply_id,
     runcmd,
     edit_delete,
     edit_or_reply,
