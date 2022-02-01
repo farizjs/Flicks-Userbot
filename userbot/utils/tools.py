@@ -7,7 +7,7 @@ from os.path import basename
 import os.path
 from html_telegraph_poster import TelegraphPoster
 from typing import Optional, Union
-from userbot import bot, LOGS
+from userbot import bot, LOGS, SUDO_USERS
 
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator, DocumentAttributeFilename
@@ -126,6 +126,15 @@ async def take_screen_shot(video_file: str, duration: int, path: str = '') -> Op
     if err:
         LOGS.error(err)
     return thumb_image_path if os.path.exists(thumb_image_path) else None
+
+
+async def reply_id(event):
+    reply_to_id = None
+    if event.sender_id in SUDO_USERS:
+        reply_to_id = event.id
+    if event.reply_to_msg_id:
+        reply_to_id = event.reply_to_msg_id
+    return reply_to_id
 
 
 async def edit_or_reply(
