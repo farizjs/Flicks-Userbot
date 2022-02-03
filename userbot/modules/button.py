@@ -3,7 +3,6 @@
 # by @sandy1709 (@mrconfused)
 # Man-Userbot
 
-import os
 import re
 
 from telethon import Button
@@ -17,8 +16,6 @@ from userbot.utils import edit_delete, flicks_cmd, reply_id
 # https://github.com/PaulSonOfLars/tgbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
 BTN_URL_REGEX = re.compile(
     r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
-
-
 
 
 @flicks_cmd(pattern="button(?:\\s|$)([\\s\\S]*)")
