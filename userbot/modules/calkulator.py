@@ -55,4 +55,4 @@ async def aexec(code, event):
 CMD_HELP.update({"calkulator": f"{hai}calc\n"
                  f"usage : Menyelesaikan permasalahan matematika dasar.\n"
                  "Memecahkan persamaan matematika yang diberikan dengan aturan BODMAS.\n"
-                 f"contoh : `{hai}calc 2+9`"})
+                 f"contoh : `{hai}calc 2+9`, `{hai}calc 2*2`, `{hai}calc 7-2`, `{hai}calc 9/3`"})
