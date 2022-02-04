@@ -12,7 +12,7 @@ logging.basicConfig(
 @flicks_cmd(pattern="helpme")
 async def yardim(event):
     try:
-        kenbotusername = BOT_USERNAME
+        kenbotusername = f"@{BOT_USERNAME}"
         if kenbotusername is not None:
             results = await event.client.inline_query(kenbotusername, "@FlicksSupport")
             await results[0].click(
