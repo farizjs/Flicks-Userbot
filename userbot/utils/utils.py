@@ -92,7 +92,7 @@ async def autobot():
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
-            await bot.send_file(bf, "userbot/resources/logo.jpg")
+            await bot.send_file(bf, "https://telegra.ph/file/808a9f8f047f9a7e67050.jpg")
             await asyncio.sleep(3)
             await bot.send_message(bf, "/setabouttext")
             await asyncio.sleep(1)
@@ -105,7 +105,7 @@ async def autobot():
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Lunatic0de ✨"
+                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @TheFlicksUserbot ✨"
             )
             await bot.send_message(
                 BOTLOG_CHATID,
@@ -134,7 +134,7 @@ async def autobot():
         await asyncio.sleep(1)
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
-        await bot.send_file(bf, "userbot/resources/logo.jpg")
+        await bot.send_file(bf, "https://telegra.ph/file/808a9f8f047f9a7e67050.jpg")
         await asyncio.sleep(3)
         await bot.send_message(bf, "/setabouttext")
         await asyncio.sleep(1)
@@ -147,7 +147,7 @@ async def autobot():
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
         await bot.send_message(
-            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Lunatic0de ✨"
+            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @TheFlicksUserbot ✨"
         )
         await bot.send_message(
             BOTLOG_CHATID,
