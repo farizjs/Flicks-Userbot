@@ -9,9 +9,9 @@ from importlib import import_module
 from sys import argv
 
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-from userbot import ALIVE_NAME, BOT_VER, LOGS, bot
+from userbot import ALIVE_NAME, BOT_VER, LOGS, BOT_TOKEN, bot
 from userbot.modules import ALL_MODULES
-
+from userbot.utils import autobot
 
 INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
              '\n Tip: Use Country Code along with number.' \
@@ -34,6 +34,8 @@ LOGS.info(
     f"\n➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
 
 
+if not BOT_TOKEN:
+    bot.loop.run_until_complete(autobot())
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
