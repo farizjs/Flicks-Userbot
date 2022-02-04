@@ -86,7 +86,7 @@ BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 # =====================================================================
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_ID") or os.environ.get(
-        "API_KEY" or "6"))
+    "API_KEY" or "6"))
 API_HASH = str(os.environ.get("API_HASH") or None)
 
 # Userbot Session String
