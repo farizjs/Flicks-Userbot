@@ -47,7 +47,7 @@ async def _(event):
                 try:
                     first = await conv.send_message("/setinline")
                     second = await conv.get_response()
-                    third = await conv.send_message(f"@{BOT_USERNAME})
+                    third = await conv.send_message(f"@ {BOT_USERNAME})
                     fourth = await conv.get_response()
                     fifth = await conv.send_message("Search")
                     sixth = await conv.get_response()
@@ -56,7 +56,7 @@ async def _(event):
                     await event.client(UnblockRequest(chat))
                     first = await conv.send_message("/setinline")
                     second = await conv.get_response()
-                    third = await conv.send_message(f"@{BOT_USERNAME})
+                    third = await conv.send_message(f"@ {BOT_USERNAME})
                     fourth = await conv.get_response()
                     fifth = await conv.send_message("Search")
                     sixth = await conv.get_response()
