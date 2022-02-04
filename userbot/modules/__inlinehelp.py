@@ -1,7 +1,6 @@
 import logging
 
 from userbot import BOT_USERNAME
-from userbot import CMD_HANDLER as cmd
 from userbot.utils import flicks_cmd
 
 logging.basicConfig(
