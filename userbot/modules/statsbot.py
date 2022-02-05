@@ -14,7 +14,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from userbot.modules.sql_helper.blacklist_sql import all_bl_users
+from userbot.modules.sql_helper.blacklistbot_sql import all_bl_users
 from userbot.modules.sql_helper.userbase_sql import full_userbase
 from telethon import events
 from userbot import OWNER_ID
