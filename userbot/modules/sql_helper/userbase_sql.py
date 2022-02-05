@@ -3,7 +3,6 @@ from sqlalchemy import Column, String
 from userbot.modules.sql_helper import BASE, SESSION
 
 
-
 class userbase(BASE):
     __tablename__ = "UserBase"
     chat_id = Column(String(14), primary_key=True)
