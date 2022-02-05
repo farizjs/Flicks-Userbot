@@ -517,24 +517,23 @@ with bot:
 
         @ken.tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
-         event.message.from_id = uid
-                await event.reply(
-f"""
+            event.message.from_id = uid
+            await event.reply(
+                f"""
 Bot Berjalan Master
 Versi {BOT_VER}
 Bahasa - Python
 Kerangka - Telethon
 Ketik /ping untuk mengetahui sinyal bot
 """,
-                    buttons=[
-                        [
-                            Button.url("Support",
-                                       "t.me/FlicksSupport"),
-                            Button.url("Updates",
-                                       "t.me/InfoFlicksUserbot")],
-                    ]
-                )
-
+                buttons=[
+                    [
+                        Button.url("Support",
+                                   "t.me/FlicksSupport"),
+                        Button.url("Updates",
+                                   "t.me/InfoFlicksUserbot")],
+                ]
+            )
 
         @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
