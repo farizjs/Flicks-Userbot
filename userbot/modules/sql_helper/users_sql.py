@@ -12,7 +12,6 @@ from sqlalchemy import (
 from userbot.modules.sql_helper import BASE, SESSION
 
 
-
 class Users(BASE):
     """ Table to store the received messages """
     __tablename__ = "users"
