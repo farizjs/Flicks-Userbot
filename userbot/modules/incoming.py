@@ -16,7 +16,7 @@
 
 # Incoming message checker.
 from userbot.modules.sql_helper.users_sql import add_user_to_db
-from userbot.modules.sql_helper.blacklist_sql import check_is_black_list
+from userbot.modules.sql_helper.blacklistbot_sql import check_is_black_list
 from telethon import events
 from userbot import OWNER_ID
 
