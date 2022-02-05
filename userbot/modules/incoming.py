@@ -18,9 +18,20 @@
 from userbot.modules.sql_helper.users_sql import add_user_to_db
 from userbot.modules.sql_helper.blacklistbot_sql import check_is_black_list
 from telethon import events
-from userbot import OWNER_ID
+from userbot import OWNER_ID, API_KEY, API_HASH, BOT_TOKEN
 
 # if incoming
+
+    tgbot = TelegramClient(
+        "TG_BOT_TOKEN",
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    ).start(bot_token=BOT_TOKEN)
+else:
+    tgbot = None
 
 
 @tgbot.on(events.NewMessage(func=lambda e: e.is_private))
