@@ -10,8 +10,8 @@ from userbot.modules.sql_helper import (
 )
 
 
-class blacklist(BASE):
-    __tablename__ = "blacklist"
+class blacklistbot(BASE):
+    __tablename__ = "blacklistbot"
     chat_id = Column(String(14), primary_key=True)
     # reason = Column(UnicodeText)
 
@@ -23,12 +23,12 @@ class blacklist(BASE):
         return "<BL %s>" % self.chat_id
 
 
-blacklist.__table__.create(checkfirst=True)
+blacklistbot.__table__.create(checkfirst=True)
 
 
 def add_user_to_bl(chat_id: int):
     """Adding the user to the blacklist"""
-    __user = blacklist(str(chat_id))
+    __user = blacklistbot(str(chat_id))
     SESSION.add(__user)
     SESSION.commit()
 
@@ -36,8 +36,8 @@ def add_user_to_bl(chat_id: int):
 def check_is_black_list(chat_id):
     """check if blacklisted"""
     try:
-        return SESSION.query(blacklist).filter(
-            blacklist.chat_id == str(chat_id)).one()
+        return SESSION.query(blacklistbot).filter(
+            blacklistbot.chat_id == str(chat_id)).one()
     except BaseException:
         return None
     finally:
@@ -46,7 +46,7 @@ def check_is_black_list(chat_id):
 
 def rem_user_from_bl(chat_id):
     """remove from bl"""
-    __user = SESSION.query(blacklist).get(str(chat_id))
+    __user = SESSION.query(blacklistbot).get(str(chat_id))
     if __user:
         SESSION.delete(__user)
         SESSION.commit()
@@ -54,6 +54,6 @@ def rem_user_from_bl(chat_id):
 
 def all_bl_users():
     """get all bl users"""
-    __user = SESSION.query(blacklist).all()
+    __user = SESSION.query(blacklistbot).all()
     SESSION.close()
     return __user
