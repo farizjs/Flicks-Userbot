@@ -515,8 +515,8 @@ with bot:
                     ]
                 )
 
-        @ken.tgbot.on(events.NewMessage(pattern="/start", from_users=uid))))
-        async def handler(event):
+        @ken.tgbot.on(events.NewMessage(pattern="/start", from_users=uid))
+        async def owner(event):
             await event.reply(
                 f"""
 Bot Berjalan Master
