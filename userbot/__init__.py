@@ -1,5 +1,7 @@
 """ Userbot initialization. """
 
+from userbot.modules.sql_helper.blacklistbot_sql import check_is_black_list
+from userbot.modules.sql_helper.users_sql import add_user_to_db
 import logging
 import os
 import time
@@ -475,72 +477,70 @@ def ibuild_keyboard(buttons):
 
 with bot:
     try:
-from userbot.modules.sql_helper.users_sql import add_user_to_db
-from userbot.modules.sql_helper.blacklistbot_sql import check_is_black_list
 
-        ken.tgbot = tgbot = TelegramClient(
-            "TG_BOT_TOKEN",
-            api_id=API_KEY,
-            api_hash=API_HASH).start(
-            bot_token=BOT_TOKEN)
+   ken.tgbot = tgbot = TelegramClient(
+        "TG_BOT_TOKEN",
+        api_id=API_KEY,
+        api_hash=API_HASH).start(
+        bot_token=BOT_TOKEN)
 
-        dugmeler = CMD_HELP
-        me = bot.get_me()
-        uid = me.id
-        logo = ALIVE_LOGO
-        BTN_URL_REGEX = re.compile(
-            r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
-        )
+    dugmeler = CMD_HELP
+    me = bot.get_me()
+    uid = me.id
+    logo = ALIVE_LOGO
+    BTN_URL_REGEX = re.compile(
+        r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
+    )
 
-        kenlogo = INLINE_PIC
-        plugins = CMD_HELP
-        vr = BOT_VER
+    kenlogo = INLINE_PIC
+    plugins = CMD_HELP
+    vr = BOT_VER
 
-        @ken.tgbot.on(events.NewMessage(pattern="/start"))
-        async def handler(event):
-            if event.message.from_id != uid:
-                await event.reply(
-                    f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)\n"
-                    f"Selamat Datang Di **Flicks Userbot**\n"
-                    f"Saya Assisten bot {ALIVE_NAME}\n"
-                    f"Tekan tombol » ɪɴꜰᴏ​ «\n"
-                    f"Untuk info lebih lanjut\n"
-                    f"Terimakasih\n",
-                    buttons=[
-                        [
-                            Button.url("Repository",
-                                       "https://github.com/fjgaming212/Flicks-Userbot"),
-                            custom.Button.inline("ɪɴꜰᴏ​",
-                                                 data="about")],
-                        [custom.Button.inline(
-                            "ʜᴇʟᴘ",
-                            data="help")],
-
-                    ]
-                )
-
-        @ken.tgbot.on(events.NewMessage(pattern="/start", from_users=uid))
-        async def owner(event):
+    @ken.tgbot.on(events.NewMessage(pattern="/start"))
+    async def handler(event):
+        if event.message.from_id != uid:
             await event.reply(
-                f"""
+                f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)\n"
+                f"Selamat Datang Di **Flicks Userbot**\n"
+                f"Saya Assisten bot {ALIVE_NAME}\n"
+                f"Tekan tombol » ɪɴꜰᴏ​ «\n"
+                f"Untuk info lebih lanjut\n"
+                f"Terimakasih\n",
+                buttons=[
+                    [
+                        Button.url("Repository",
+                                   "https://github.com/fjgaming212/Flicks-Userbot"),
+                        custom.Button.inline("ɪɴꜰᴏ​",
+                                             data="about")],
+                    [custom.Button.inline(
+                        "ʜᴇʟᴘ",
+                        data="help")],
+
+                ]
+            )
+
+    @ken.tgbot.on(events.NewMessage(pattern="/start", from_users=uid))
+    async def owner(event):
+        await event.reply(
+            f"""
 Bot Berjalan Master
 Versi {BOT_VER}
 Bahasa - Python
 Kerangka - Telethon
 Ketik /ping untuk mengetahui sinyal bot
 """,
-                buttons=[
-                    [
-                        Button.url("Support",
-                                   "t.me/FlicksSupport"),
-                        Button.url("Updates",
-                                   "t.me/InfoFlicksUserbot")],
-                ]
-            )
+            buttons=[
+                [
+                    Button.url("Support",
+                               "t.me/FlicksSupport"),
+                    Button.url("Updates",
+                               "t.me/InfoFlicksUserbot")],
+            ]
+        )
 
-        @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
-        async def about(event):
-            await event.edit(f"""
+    @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
+    async def about(event):
+        await event.edit(f"""
 Owner - {ALIVE_NAME}
 OwnerID - {uid}
 [Link To Profile 👤](tg://user?id={uid})
@@ -549,18 +549,18 @@ Owner repo - [Fariz](tg://openmessage?user_id=1514078508)
 Support - @FlicksSupport
 Flicks-Userbot [v{BOT_VER}](https://github.com/fjgaming212/Flicks-Userbot)
 """,
-                             buttons=[
-                                 [
-                                     custom.Button.inline("ᴄʟᴏsᴇ",
-                                                          data="keluar"),
-                                     custom.Button.inline("ʙᴀᴄᴋ​",
-                                                          data="pesanstart")],
-                             ]
-                             )
+                         buttons=[
+                             [
+                                 custom.Button.inline("ᴄʟᴏsᴇ",
+                                                      data="keluar"),
+                                 custom.Button.inline("ʙᴀᴄᴋ​",
+                                                      data="pesanstart")],
+                         ]
+                         )
 
-        @ ken.tgbot.on(events.CallbackQuery(data=b"help"))
-        async def help(event):
-            await event.edit(f"""
+    @ ken.tgbot.on(events.CallbackQuery(data=b"help"))
+    async def help(event):
+        await event.edit(f"""
 Perintah yang tersedia di bot ini :
 /start - Memulai Bot
 /ping - Sinyal Bot
@@ -568,122 +568,122 @@ Perintah yang tersedia di bot ini :
 /alive - Alive Pada Bot
 /string - Mengambil String Session
 """,
-                             buttons=[
-                                 [
-                                     custom.Button.inline("ᴄʟᴏsᴇ",
-                                                          data="keluar"),
-                                     custom.Button.inline("ʙᴀᴄᴋ​",
-                                                          data="pesanstart")],
-                             ]
-                             )
+                         buttons=[
+                             [
+                                 custom.Button.inline("ᴄʟᴏsᴇ",
+                                                      data="keluar"),
+                                 custom.Button.inline("ʙᴀᴄᴋ​",
+                                                      data="pesanstart")],
+                         ]
+                         )
 
-        @ ken.tgbot.on(events.CallbackQuery(data=b"pesanstart"))
-        async def pesanstart(event):
-            await event.edit(
-                f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)\n"
-                f"Selamat Datang Di **Flicks Userbot**\n"
-                f"Saya Assisten bot {ALIVE_NAME}\n"
-                f"Tekan tombol » ɪɴꜰᴏ​ «\n"
-                f"Untuk info lebih lanjut\n"
-                f"Terimakasih\n",
+    @ ken.tgbot.on(events.CallbackQuery(data=b"pesanstart"))
+    async def pesanstart(event):
+        await event.edit(
+            f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)\n"
+            f"Selamat Datang Di **Flicks Userbot**\n"
+            f"Saya Assisten bot {ALIVE_NAME}\n"
+            f"Tekan tombol » ɪɴꜰᴏ​ «\n"
+            f"Untuk info lebih lanjut\n"
+            f"Terimakasih\n",
+            buttons=[
+                    [
+                        Button.url("Repository",
+                                   "https://github.com/fjgaming212/Flicks-Userbot"),
+                        custom.Button.inline("ɪɴꜰᴏ​",
+                                             data="about")],
+                    [custom.Button.inline(
+                        "ʜᴇʟᴘ",
+                        data="help")],
+            ]
+        )
+
+    @ ken.tgbot.on(events.CallbackQuery(data=b"keluar"))
+    async def keluar(event):
+        await event.delete()
+
+    @ ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
+    async def handler(event):
+        if event.message.from_id != uid:
+            u = await event.client.get_entity(event.chat_id)
+            await event.reply(
+                f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
+                f"Ingin melihat repository ini dan Cara deploynya\n\n"
+                f"👇🏻 __Klik button url di bawah ini__ 👇🏻\n\n"
+                f"**FLICKS USERBOT**\n",
                 buttons=[
-                        [
-                            Button.url("Repository",
-                                       "https://github.com/fjgaming212/Flicks-Userbot"),
-                            custom.Button.inline("ɪɴꜰᴏ​",
-                                                 data="about")],
-                        [custom.Button.inline(
-                            "ʜᴇʟᴘ",
-                            data="help")],
+                    [
+                        Button.url("Repository",
+                                   "https://github.com/fjgaming212/Flicks-Userbot"),
+                        Button.url("Tutorial",
+                                   "https://t.me/InfoFlicksUserbot/64")],
                 ]
             )
 
-        @ ken.tgbot.on(events.CallbackQuery(data=b"keluar"))
-        async def keluar(event):
-            await event.delete()
-
-        @ ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
-        async def handler(event):
-            if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id)
-                await event.reply(
-                    f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
-                    f"Ingin melihat repository ini dan Cara deploynya\n\n"
-                    f"👇🏻 __Klik button url di bawah ini__ 👇🏻\n\n"
-                    f"**FLICKS USERBOT**\n",
-                    buttons=[
-                        [
-                            Button.url("Repository",
-                                       "https://github.com/fjgaming212/Flicks-Userbot"),
-                            Button.url("Tutorial",
-                                       "https://t.me/InfoFlicksUserbot/64")],
-                    ]
-                )
-
-        @ ken.tgbot.on(events.NewMessage(pattern=r"/alive"))
-        async def handler(event):
-            if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id)
-                await event.message.get_sender()
-                text = (
-                    f"**Hello** [{get_display_name(u)}](tg://user?id={u.id}) **Is Its Alive Bot**\n\n"
-                    f"         ✘ 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ \n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-                    f"          I'ᴍ Aʟɪᴠᴇ​ ✨ \n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
-                    f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
-                    f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
-                    f"`Versi     :` {BOT_VER} \n"
-                    f"`Bahasa    :` Python \n"
-                    f"`Database  :` Mongo db \n"
-                    f"`Owner     :` {DEFAULTUSER} \n\n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
-                    f"       Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
-                await ken.tgbot.send_file(event.chat_id, file=logo,
-                                          caption=text,
-                                          buttons=[
-                                              [
-                                                  custom.Button.url(
-                                                      text="Rᴇᴘᴏ",
-                                                      url="https://github.com/fjgaming212/Flicks-Userbot"),
-                                                  custom.Button.url(
-                                                      text="Lɪsᴇɴsɪ​",
-                                                      url="https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE"
-                                                  )
-                                              ]
+    @ ken.tgbot.on(events.NewMessage(pattern=r"/alive"))
+    async def handler(event):
+        if event.message.from_id != uid:
+            u = await event.client.get_entity(event.chat_id)
+            await event.message.get_sender()
+            text = (
+                f"**Hello** [{get_display_name(u)}](tg://user?id={u.id}) **Is Its Alive Bot**\n\n"
+                f"         ✘ 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ \n"
+                "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
+                f"          I'ᴍ Aʟɪᴠᴇ​ ✨ \n"
+                "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
+                f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
+                f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
+                f"`Versi     :` {BOT_VER} \n"
+                f"`Bahasa    :` Python \n"
+                f"`Database  :` Mongo db \n"
+                f"`Owner     :` {DEFAULTUSER} \n\n"
+                "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
+                f"       Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
+                "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
+            await ken.tgbot.send_file(event.chat_id, file=logo,
+                                      caption=text,
+                                      buttons=[
+                                          [
+                                              custom.Button.url(
+                                                  text="Rᴇᴘᴏ",
+                                                  url="https://github.com/fjgaming212/Flicks-Userbot"),
+                                              custom.Button.url(
+                                                  text="Lɪsᴇɴsɪ​",
+                                                  url="https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE"
+                                              )
                                           ]
-                                          )
+                                      ]
+                                      )
 
-        @ ken.tgbot.on(events.NewMessage(pattern=r"/string"))
-        async def handler(event):
-            if event.message.from_id != uid:
-                reply = "**STRING SESSION**"
-                await event.reply(
-                    f"**Hai Kamu!**\n\n"
-                    f"Ingin Mengambil String Session?\n\n"
-                    f"Cukup Ambil Dibawah Button URL Ini\n\n"
-                    f"[⚠️](https://telegra.ph/file/32abc8853f19f9abf90e2.jpg) **Gunakan String Session Dengan Bijak!!**\n\n"
-                    f"{reply}\n",
-                    buttons=[
-                        [
-                            Button.url("Dengan Web",
-                                       "https://replit.com/@fjgaming212/StringSession#main.py"),
-                            Button.url("Dengan Bot",
-                                       "https://t.me/StringSessionFlicksbot")],
-                    ]
-                )
+    @ ken.tgbot.on(events.NewMessage(pattern=r"/string"))
+    async def handler(event):
+        if event.message.from_id != uid:
+            reply = "**STRING SESSION**"
+            await event.reply(
+                f"**Hai Kamu!**\n\n"
+                f"Ingin Mengambil String Session?\n\n"
+                f"Cukup Ambil Dibawah Button URL Ini\n\n"
+                f"[⚠️](https://telegra.ph/file/32abc8853f19f9abf90e2.jpg) **Gunakan String Session Dengan Bijak!!**\n\n"
+                f"{reply}\n",
+                buttons=[
+                    [
+                        Button.url("Dengan Web",
+                                   "https://replit.com/@fjgaming212/StringSession#main.py"),
+                        Button.url("Dengan Bot",
+                                   "https://t.me/StringSessionFlicksbot")],
+                ]
+            )
 
-        @ ken.tgbot.on(events.NewMessage(pattern="/ping"))
-        async def handler(event):
-            if event.message.from_id != uid:
-                start = datetime.now()
-                end = datetime.now()
-                ms = (end - start).microseconds / 1000
-                await tgbot.send_message(
-                    event.chat_id,
-                    f"**PONG!!**\n `{ms}ms`",
-                )
+    @ ken.tgbot.on(events.NewMessage(pattern="/ping"))
+    async def handler(event):
+        if event.message.from_id != uid:
+            start = datetime.now()
+            end = datetime.now()
+            ms = (end - start).microseconds / 1000
+            await tgbot.send_message(
+                event.chat_id,
+                f"**PONG!!**\n `{ms}ms`",
+            )
 
 
 @ken.tgbot.on(events.NewMessage(func=lambda e: e.is_private))
@@ -701,7 +701,6 @@ async def one_new_mssg(event):
         event.chat_id
         to = await event.forward_to(uid)
         add_user_to_db(to.id, who, event.id)
-
 
         @ ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
