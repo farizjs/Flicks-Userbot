@@ -475,6 +475,9 @@ def ibuild_keyboard(buttons):
 
 with bot:
     try:
+from userbot.modules.sql_helper.users_sql import add_user_to_db
+from userbot.modules.sql_helper.blacklistbot_sql import check_is_black_list
+
         ken.tgbot = tgbot = TelegramClient(
             "TG_BOT_TOKEN",
             api_id=API_KEY,
@@ -681,6 +684,24 @@ Perintah yang tersedia di bot ini :
                     event.chat_id,
                     f"**PONG!!**\n `{ms}ms`",
                 )
+
+
+@ken.tgbot.on(events.NewMessage(func=lambda e: e.is_private))
+async def one_new_mssg(event):
+    incoming = event.raw_text
+    who = event.sender_id
+    if check_is_black_list(who):
+        return
+    if incoming.startswith("/"):
+        pass
+    elif who == uid:
+        return
+    else:
+        await event.get_sender()
+        event.chat_id
+        to = await event.forward_to(uid)
+        add_user_to_db(to.id, who, event.id)
+
 
         @ ken.tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
