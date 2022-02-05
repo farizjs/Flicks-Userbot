@@ -19,16 +19,14 @@ from userbot.modules.sql_helper.userbase_sql import full_userbase
 from telethon import events
 from userbot import OWNER_ID, API_KEY, API_HASH, BOT_TOKEN
 
-
-    tgbot = TelegramClient(
-        "TG_BOT_TOKEN",
-        api_id=API_KEY,
-        api_hash=API_HASH,
-        connection=ConnectionTcpAbridged,
-        auto_reconnect=True,
-        connection_retries=None,
-    ).start(bot_token=BOT_TOKEN)
-
+tgbot = TelegramClient(
+    "TG_BOT_TOKEN",
+    api_id=API_KEY,
+    api_hash=API_HASH,
+    connection=ConnectionTcpAbridged,
+    auto_reconnect=True,
+    connection_retries=None,
+).start(bot_token=BOT_TOKEN)
 
 
 @tgbot.on(events.NewMessage(pattern="^/stats", from_users=OWNER_ID))
