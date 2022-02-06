@@ -687,8 +687,8 @@ Perintah yang tersedia di bot ini :
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
-       @ken.tgbot.on(events.NewMessage(pattern="/stats", from_users=OWNER_ID))
-        async def tele(event):
+       @ken.tgbot.on(events.NewMessage(pattern="/stats", from_users=uid))
+        async def statsbot(event):
         allu = len(full_userbase())
         blu = len(all_bl_users())
         await tgbot.send_message(event.chat_id,
