@@ -757,22 +757,6 @@ Perintah yang tersedia di bot ini :
                     ),
                     buttons=buttons,
                 )
-            elif query.startswith("about"):
-                result = builder.article(
-                    "Tentang Flicks-Userbot ",
-                    text=f"Flicks-Userbot [☘️]({ALIVE_LOGO}) adalah userbot Telegram modular yang berjalan di Python 3.6 dengan database sqlalchemy\n[Fariz](tg://openmessage?user_id=1514078508) membuat dan menambahkan modul yang dibutuhkan.\nUntuk mengetahui perintah Flicks-Userbot gunakan perintah `.helpme` dan untuk mengecek userbot gunakan perintah `.alive`",
-                    buttons=[
-                        [
-                            custom.Button.url(
-                                "ᴅᴇᴘʟᴏʏ​",
-                                "https://heroku.com/deploy?template=https://github.com/fjgaming212/Deploy-FlicksUbot"),
-                            custom.Button.url(
-                                "ʀᴇᴘᴏ",
-                                "https://github.com/fjgaming212/Flicks-Userbot")],
-                        [custom.Button.url(
-                            "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
-                            "t.me/InfoFlicksUserbot")]],
-                    link_preview=True)
             elif query.startswith("flicksalive"):
                 result = builder.article(
                     "Flicks-Userbot ",
@@ -801,22 +785,6 @@ Perintah yang tersedia di bot ini :
                             "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
                             "t.me/InfoFlicksUserbot")]],
                     link_preview=True)
-            elif query.startswith("tutor"):
-                result = builder.article(
-                    "Tutorial memasang Flicks-Userbot ",
-                    text=f"Buat teman teman yang ingin memasang userbot seperti saya anda bisa melihat tutorial di bawah ini\nDapatkan API_KEY dan API_HASH di web `my.telegram.org`.\nDapatkan STRING_SESSION di web replit atau bot\nDapatkan BOT_TOKEN dan BOT_USERNAME di [@BotFather](tg://user?id=93372553)\nDapatkan HEROKU_API_KEY di `dashboard.heroku.com/account`\nTerus Nyalakan, tutorial lengkap [klik disini](https://t.me/InfoFlicksUserbot/64)",
-                    buttons=[
-                        [
-                            custom.Button.url(
-                                "ᴅᴇᴘʟᴏʏ​",
-                                "https://heroku.com/deploy?template=https://github.com/fjgaming212/Deploy-Flicks"),
-                            custom.Button.url(
-                                "sᴛʀɪɴɢ",
-                                "https://t.me/InfoFlicksUserbot/110")],
-                        [custom.Button.url(
-                            "ʀᴇᴘᴏ",
-                            "https://github.com/fjgaming212/Flicks-Userbot")]],
-                    link_preview=False)
             elif query.startswith("Inline buttons"):
                 markdown_note = query[14:]
                 prev = 0
