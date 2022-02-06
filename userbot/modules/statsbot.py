@@ -18,6 +18,7 @@ from userbot.modules.sql_helper.blacklistbot_sql import all_bl_users
 from userbot.modules.sql_helper.userbase_sql import full_userbase
 from telethon import events
 from userbot import OWNER_ID, API_KEY, API_HASH, BOT_TOKEN
+from telethon.sync import TelegramClient
 
 tgbot = TelegramClient(
     "TG_BOT_TOKEN",
