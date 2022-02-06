@@ -687,12 +687,12 @@ Perintah yang tersedia di bot ini :
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
-       @ken.tgbot.on(events.NewMessage(pattern="/stats", from_users=uid))
+        @ken.tgbot.on(events.NewMessage(pattern="/stats", from_users=uid))
         async def statsbot(event):
-        allu = len(full_userbase())
-        blu = len(all_bl_users())
-        await tgbot.send_message(event.chat_id,
-                             "Here is the stats for your bot:\nTotal Users = {}\nBlacklisted Users = {}".format(allu, blu)
+            allu = len(full_userbase())
+            blu = len(all_bl_users())
+          await tgbot.send_message(event.chat_id,
+                             "Berikut adalah statistik untuk bot Anda:\nTotal Users = {}\nBlacklisted Users = {}".format(allu, blu)
                              )
 
 
