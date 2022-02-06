@@ -100,7 +100,8 @@ CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER") or "$"
 
 # Me Id
-OWNER_ID = bot.get_me().id
+OWNER_ID = int(os.environ.get("OWNER_ID", ""))
+
 
 # Userbot logging feature switch.
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
