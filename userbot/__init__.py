@@ -690,20 +690,19 @@ Perintah yang tersedia di bot ini :
 
         @ken.tgbot.on(events.NewMessage(func=lambda e: e.is_private))
         async def pmbot(event):
-             incoming = event.raw_text
+            incoming = event.raw_text
              who = event.sender_id
              if check_is_black_list(who):
                  return
              if incoming.startswith("/"):
-                   pass
-              elif who == uid:
+                 pass
+             elif who == uid:
                  return
              else:
                  await event.get_sender()
                  event.chat_id
                  to = await event.forward_to(uid)
                  add_user_to_db(to.id, who, event.id)
-
 
         @ken.tgbot.on(events.NewMessage(func=lambda e: e.is_private))
         async def pmbot(event):
