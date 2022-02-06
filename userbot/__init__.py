@@ -687,15 +687,6 @@ Perintah yang tersedia di bot ini :
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
-        @ken.tgbot.on(events.NewMessage(pattern="/stats", from_users=uid))
-        async def statsbot(event):
-            allu = len(full_userbase())
-            blu = len(all_bl_users())
-                await tgbot.send_message(
-                    event.chat_id,
-                    f"Berikut adalah statistik untuk bot Anda:\nTotal Users = `{allu}`\nBlacklisted Users = `{blu}`",
-                )
-
 
         @ken.tgbot.on(events.NewMessage(func=lambda e: e.is_private))
          async def one_new_mssg(event):
