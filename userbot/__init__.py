@@ -705,7 +705,7 @@ Perintah yang tersedia di bot ini :
                  add_user_to_db(to.id, who, event.id)
 
         @ken.tgbot.on(events.NewMessage(func=lambda e: e.is_private))
-         async def on_out_mssg(event):
+        async def on_out_mssg(event):
              to_send = await event.get_reply_message()
              if to_send is None:
                  return
