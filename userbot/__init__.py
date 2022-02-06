@@ -360,6 +360,15 @@ else:
     # pylint: disable=invalid-name
     bot = TelegramClient("userbot", API_KEY, API_HASH)
 
+if BOT_TOKEN is not None:
+    ken.tgbot = tgbot = TelegramClient(
+        "TG_BOT_TOKEN",
+        api_id=API_KEY,
+        api_hash=API_HASH).start(
+        bot_token=BOT_TOKEN)
+else:
+    ken.tgbot = None
+
 
 async def check_botlog_chatid():
     if not BOTLOG_CHATID and LOGSPAMMER:
@@ -477,11 +486,7 @@ def ibuild_keyboard(buttons):
 
 with bot:
     try:
-        ken.tgbot = tgbot = TelegramClient(
-            "TG_BOT_TOKEN",
-            api_id=API_KEY,
-            api_hash=API_HASH).start(
-            bot_token=BOT_TOKEN)
+
 
         dugmeler = CMD_HELP
         me = bot.get_me()
