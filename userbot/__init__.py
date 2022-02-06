@@ -687,6 +687,15 @@ Perintah yang tersedia di bot ini :
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
+       @ken.tgbot.on(events.NewMessage(pattern="/stats", from_users=OWNER_ID))
+        async def tele(event):
+        allu = len(full_userbase())
+        blu = len(all_bl_users())
+        await tgbot.send_message(event.chat_id,
+                             "Here is the stats for your bot:\nTotal Users = {}\nBlacklisted Users = {}".format(allu, blu)
+                             )
+
+
         @ken.tgbot.on(events.NewMessage(func=lambda e: e.is_private))
          async def one_new_mssg(event):
             incoming = event.raw_text
@@ -696,8 +705,8 @@ Perintah yang tersedia di bot ini :
             if incoming.startswith("/"):
             pass
             elif who == uid:
-            return
-             else:
+          return
+            else:
               await event.get_sender()
               event.chat_id
               to = await event.forward_to(uid)
