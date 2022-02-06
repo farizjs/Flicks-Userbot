@@ -705,8 +705,8 @@ Perintah yang tersedia di bot ini :
             if incoming.startswith("/"):
             pass
             elif who == uid:
-          return
-            else:
+           return
+       else:
               await event.get_sender()
               event.chat_id
               to = await event.forward_to(uid)
