@@ -691,8 +691,9 @@ Perintah yang tersedia di bot ini :
         async def statsbot(event):
             allu = len(full_userbase())
             blu = len(all_bl_users())
-          await tgbot.send_message(event.chat_id,
-                             "Berikut adalah statistik untuk bot Anda:\nTotal Users = {}\nBlacklisted Users = {}".format(allu, blu)
+          await tgbot.send_message(
+                             event.chat_id,
+                             f"Berikut adalah statistik untuk bot Anda:\nTotal Users = `{allu}`\nBlacklisted Users = `{blu}`",
                              )
 
 
