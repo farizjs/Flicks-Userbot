@@ -4,6 +4,7 @@ from userbot.modules.sql_helper.users_sql import get_user_id
 from telethon import events
 from telethon.utils import pack_bot_file_id
 from userbot import OWNER_ID, API_KEY, API_HASH, BOT_TOKEN
+from telethon.sync import TelegramClient
 
 # outgoing, aka, replying to mssg
 
