@@ -19,6 +19,7 @@ from redis import StrictRedis
 from dotenv import load_dotenv
 from requests import get
 from telethon import Button
+from telethon.errors import UserIsBlockedError
 from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
 from telethon import Button, events, functions, types
@@ -487,6 +488,10 @@ def ibuild_keyboard(buttons):
 with bot:
     try:
 
+        from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
+        from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
+        from userbot.utils import reply_id
+
 
         dugmeler = CMD_HELP
         me = bot.get_me()
@@ -500,29 +505,71 @@ with bot:
         plugins = CMD_HELP
         vr = BOT_VER
 
-        @tgbot.on(events.NewMessage(pattern="/start"))
-        async def handler(event):
-            if event.message.from_id != uid:
-                await event.reply(
-                    f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)\n"
-                    f"Selamat Datang Di **Flicks Userbot**\n"
-                    f"Saya Assisten bot {ALIVE_NAME}\n"
-                    f"Tekan tombol » ɪɴꜰᴏ​ «\n"
-                    f"Untuk info lebih lanjut\n"
-                    f"Terimakasih\n",
-                    buttons=[
-                        [
-                            Button.url("Repository",
-                                       "https://github.com/fjgaming212/Flicks-Userbot"),
-                            custom.Button.inline("ɪɴꜰᴏ​",
-                                                 data="about")],
-                        [custom.Button.inline(
-                            "ʜᴇʟᴘ",
-                            data="help")],
-
-                    ]
-                )
-
+        @tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
+        async def bot_pms(event):
+            chat = await event.get_chat()
+            if check_is_black_list(chat.id):
+                return
+            if chat.id != uid:
+                msg = await event.forward_to(uid)
+                try:
+                    add_user_to_db(
+                        msg.id, get_display_name(chat), chat.id, event.id, 0, 0
+                    )
+                except Exception as e:
+                    LOGS.error(str(e))
+                    if BOTLOG:
+                        await event.client.send_message(
+                            BOTLOG_CHATID,
+                            f"**ERROR:** Saat menyimpan detail pesan di database\n`{str(e)}`",
+                        )
+            else:
+                if event.text.startswith("/"):
+                    return
+                reply_to = await reply_id(event)
+                if reply_to is None:
+                    return
+                users = get_user_id(reply_to)
+                if users is None:
+                    return
+                for usr in users:
+                    user_id = int(usr.chat_id)
+                    reply_msg = usr.reply_id
+                    user_name = usr.first_name
+                    break
+                if user_id is not None:
+                    try:
+                        if event.media:
+                            msg = await event.client.send_file(
+                                user_id,
+                                event.media,
+                                caption=event.text,
+                                reply_to=reply_msg,
+                            )
+                        else:
+                            msg = await event.client.send_message(
+                                user_id,
+                                event.text,
+                                reply_to=reply_msg,
+                                link_preview=False,
+                            )
+                    except UserIsBlockedError:
+                        return await event.reply(
+                            "❌ **Bot ini diblokir oleh pengguna.**"
+                        )
+                    except Exception as e:
+                        return await event.reply(f"**ERROR:** `{e}`")
+                    try:
+                        add_user_to_db(
+                            reply_to, user_name, user_id, reply_msg, event.id, msg.id
+                        )
+                    except Exception as e:
+                        LOGS.error(str(e))
+                        if BOTLOG:
+                            await event.client.send_message(
+                                BOTLOG_CHATID,
+                                f"**ERROR:** Saat menyimpan detail pesan di database\n`{e}`",
+                            )
 
                 
         @tgbot.on(events.CallbackQuery(data=b"about"))
