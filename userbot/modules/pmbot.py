@@ -12,7 +12,7 @@ from telethon import Button
 from telethon.errors import BadRequestError, FloodWaitError, ForbiddenError
 from telethon.utils import get_display_name
 
-from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID, CHANNEL
+from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, GROUP, bot, tgbot, user
 from userbot.modules.sql_helper.bot_blacklists import (
@@ -34,7 +34,7 @@ from userbot.utils import (
     asst_cmd,
     edit_delete,
     edit_or_reply,
-    man_cmd,
+    flicks_cmd,
     reply_id,
     time_formatter,
 )
@@ -218,7 +218,7 @@ async def bot_broadcast(event):
     await br_cast.edit(b_info, parse_mode="html")
 
 
-@man_cmd(pattern="botuser$")
+@flicks_cmd(pattern="botuser$")
 async def ban_starters(event):
     "To get list of users who started bot."
     ulist = get_all_starters()
@@ -292,7 +292,7 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@man_cmd(pattern="bblist$")
+@flicks_cmd(pattern="bblist$")
 async def ban_starters(event):
     "To get list of users who are banned in bot."
     ulist = get_all_bl_users()
@@ -343,13 +343,13 @@ async def bot_start(event):
                         \n\n**Saya adalah {my_first}** \
                         \n**Anda dapat Menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
                         \n**Jangan Melakukan Spam Atau anda akan diBanned**\
-                        \n\n**Powered by** [UserBot](https://github.com/mrismanaziz/Man-Userbot)"
+                        \n\n**Powered by** [UserBot](https://github.com/fjgaming212/Flicks-Userbot)"
         buttons = [
             (
-                Button.url("ɢʀᴏᴜᴘ", f"https://t.me/{GROUP}"),
+                Button.url("ɢʀᴏᴜᴘ", f"https://t.me/FlicksSupport"),
                 Button.url(
                     "ᴄʜᴀɴɴᴇʟ",
-                    f"https://t.me/{CHANNEL}",
+                    f"https://t.me/InfoFlicksUserbot}",
                 ),
             )
         ]
@@ -357,7 +357,15 @@ async def bot_start(event):
         start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})\
             \nApa ada yang bisa saya Bantu?\
             \nSilahkan Ketik /help Bila butuh Bantuan**"
-        buttons = None
+        buttons = [
+            (
+                Button.url("ɢʀᴏᴜᴘ", f"https://t.me/FlicksSupport"),
+                Button.url(
+                    "ᴄʜᴀɴɴᴇʟ",
+                    f"https://t.me/InfoFlicksUserbot",
+                ),
+            )
+        ]
     try:
         await event.client.send_message(
             chat.id,
@@ -408,7 +416,7 @@ async def bot_start(event):
     await info_msg.edit(uinfo)
 
 
-@man_cmd(pattern="(set|reset) pmbot(?: |$)(\w*)")
+@flicks_cmd(pattern="(set|reset) pmbot(?: |$)(\w*)")
 async def setpmbot(event):
     try:
         import userbot.modules.sql_helper.globals as sql
