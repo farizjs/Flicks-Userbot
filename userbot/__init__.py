@@ -361,13 +361,13 @@ else:
     bot = TelegramClient("userbot", API_KEY, API_HASH)
 
 if BOT_TOKEN is not None:
-    ken.tgbot = tgbot = TelegramClient(
+    tgbot = TelegramClient(
         "TG_BOT_TOKEN",
         api_id=API_KEY,
         api_hash=API_HASH).start(
         bot_token=BOT_TOKEN)
 else:
-    ken.tgbot = None
+    tgbot = None
 
 
 async def check_botlog_chatid():
@@ -500,7 +500,7 @@ with bot:
         plugins = CMD_HELP
         vr = BOT_VER
 
-        @ken.tgbot.on(events.NewMessage(pattern="/start"))
+        @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
                 await event.reply(
@@ -525,7 +525,7 @@ with bot:
 
 
                 
-        @ ken.tgbot.on(events.CallbackQuery(data=b"about"))
+        @tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
             await event.edit(f"""
 Owner - {ALIVE_NAME}
@@ -545,7 +545,7 @@ Flicks-Userbot [v{BOT_VER}](https://github.com/fjgaming212/Flicks-Userbot)
                              ]
                              )
 
-        @ ken.tgbot.on(events.CallbackQuery(data=b"help"))
+        @tgbot.on(events.CallbackQuery(data=b"help"))
         async def help(event):
             await event.edit(f"""
 Perintah yang tersedia di bot ini :
@@ -564,7 +564,7 @@ Perintah yang tersedia di bot ini :
                              ]
                              )
 
-        @ ken.tgbot.on(events.CallbackQuery(data=b"pesanstart"))
+        @tgbot.on(events.CallbackQuery(data=b"pesanstart"))
         async def pesanstart(event):
             await event.edit(
                 f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)\n"
@@ -585,11 +585,11 @@ Perintah yang tersedia di bot ini :
                 ]
             )
 
-        @ ken.tgbot.on(events.CallbackQuery(data=b"keluar"))
+        @tgbot.on(events.CallbackQuery(data=b"keluar"))
         async def keluar(event):
             await event.delete()
 
-        @ ken.tgbot.on(events.NewMessage(pattern=r"/repo"))
+        @tgbot.on(events.NewMessage(pattern=r"/repo"))
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
@@ -607,7 +607,7 @@ Perintah yang tersedia di bot ini :
                     ]
                 )
 
-        @ ken.tgbot.on(events.NewMessage(pattern=r"/alive"))
+        @tgbot.on(events.NewMessage(pattern=r"/alive"))
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
@@ -627,7 +627,7 @@ Perintah yang tersedia di bot ini :
                     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
                     f"       Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
-                await ken.tgbot.send_file(event.chat_id, file=logo,
+                await tgbot.send_file(event.chat_id, file=logo,
                                           caption=text,
                                           buttons=[
                                               [
@@ -642,7 +642,7 @@ Perintah yang tersedia di bot ini :
                                           ]
                                           )
 
-        @ ken.tgbot.on(events.NewMessage(pattern=r"/string"))
+        @ tgbot.on(events.NewMessage(pattern=r"/string"))
         async def handler(event):
             if event.message.from_id != uid:
                 reply = "**STRING SESSION**"
@@ -661,7 +661,7 @@ Perintah yang tersedia di bot ini :
                     ]
                 )
 
-        @ ken.tgbot.on(events.NewMessage(pattern="/ping"))
+        @tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
             if event.message.from_id != uid:
                 start = datetime.now()
@@ -674,7 +674,7 @@ Perintah yang tersedia di bot ini :
 
 
 
-        @ ken.tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"open")
             )
@@ -690,7 +690,7 @@ Perintah yang tersedia di bot ini :
                 link_preview=False,
             )
 
-        @ ken.tgbot.on(events.InlineQuery)
+        @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
             builder = event.builder
             result = None
@@ -787,7 +787,7 @@ Perintah yang tersedia di bot ini :
                 [result], switch_pm=f"ASSISTANT BOT OF {ALIVE_NAME}", switch_pm_param="start"
             )
 
-        @ ken.tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
@@ -804,7 +804,7 @@ Perintah yang tersedia di bot ini :
                 reply_pop_up_alert = f"Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ ken.tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_close\((.+?)\)")
             )
@@ -827,7 +827,7 @@ Perintah yang tersedia di bot ini :
                     ]
                 )
 
-        @ken.tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"alive_inline")
             )
@@ -866,7 +866,7 @@ Perintah yang tersedia di bot ini :
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ken.tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"flicks_inline")
             )
@@ -905,14 +905,14 @@ Perintah yang tersedia di bot ini :
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ ken.tgbot.on(events.CallbackQuery(data=b"close"))
+        @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
                 (custom.Button.inline("Bᴜᴋᴀ Mᴇɴᴜ", data="open"),),
             ]
             await event.edit("**Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ​!**", file=kenlogo, buttons=buttons)
 
-        @ ken.tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_prev\((.+?)\)")
             )
@@ -930,7 +930,7 @@ Perintah yang tersedia di bot ini :
                 reply_pop_up_alert = f"🔒 Tombol Hanya bisa digunakan oleh {DEFAULTUSER} 🔒."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ ken.tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"ub_modul_(.*)")
             )
