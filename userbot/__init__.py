@@ -498,7 +498,7 @@ with bot:
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
 
-        kenlogo = INLINE_PIC
+        flickslogo = INLINE_PIC
         plugins = CMD_HELP
         vr = BOT_VER
 
@@ -729,7 +729,7 @@ Perintah yang tersedia di bot ini :
             text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
             await event.edit(
                 text,
-                file=kenlogo,
+                file=flickslogo,
                 buttons=buttons,
                 link_preview=False,
             )
@@ -743,7 +743,7 @@ Perintah yang tersedia di bot ini :
                     "@FlicksSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
-                    file=kenlogo,
+                    file=flickslogo,
                     link_preview=False,
                     text=f"\n**Flicks-Userbot**\n\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n\n✥**ʙʀᴀɴᴄʜ :** Flicks-Userbot\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}".format(
                         len(dugmeler),
@@ -857,7 +857,7 @@ Perintah yang tersedia di bot ini :
             if event.query.user_id == uid:  # @Flicks_Userbot
                 # https://t.me/TelethonChat/115200
                 await event.edit(
-                    file=kenlogo,
+                    file=flickslogo,
                     link_preview=True,
                     buttons=[
                         [
@@ -894,7 +894,7 @@ Perintah yang tersedia di bot ini :
                     "============================")
                 await event.edit(
                     text,
-                    file=logo,
+                    file=flickslogo,
                     link_preview=True,
                     buttons=[
                         [
@@ -933,7 +933,7 @@ Perintah yang tersedia di bot ini :
                     "Channel : @InfoFlicksUserbot")
                 await event.edit(
                     text,
-                    file=logo,
+                    file=flickslogo,
                     link_preview=True,
                     buttons=[
                         [
@@ -954,7 +954,7 @@ Perintah yang tersedia di bot ini :
             buttons = [
                 (custom.Button.inline("Bᴜᴋᴀ Mᴇɴᴜ", data="open"),),
             ]
-            await event.edit("**Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ​!**", file=kenlogo, buttons=buttons)
+            await event.edit("**Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ​!**", file=flickslogo, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
