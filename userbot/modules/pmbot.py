@@ -349,7 +349,7 @@ async def bot_start(event):
                 Button.url("ɢʀᴏᴜᴘ", f"https://t.me/FlicksSupport"),
                 Button.url(
                     "ᴄʜᴀɴɴᴇʟ",
-                    f"https://t.me/InfoFlicksUserbot}",
+                    f"https://t.me/InfoFlicksUserbot",
                 ),
             )
         ]
