@@ -35,6 +35,7 @@ heroku3
 httplib2>=0.18.0
 humanize 
 lxml
+markdown
 oauth2client
 Pillow>=6.0.0
 fontTools
