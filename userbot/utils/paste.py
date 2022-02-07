@@ -2,7 +2,7 @@ import json
 
 import requests
 
-from userbot.utils.logger import logging
+from userbot.logger import logging
 
 LOGS = logging.getLogger("ManUserBot")
 
