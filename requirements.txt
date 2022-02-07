@@ -36,6 +36,7 @@ httplib2>=0.18.0
 humanize 
 lxml
 markdown
+PyDictionary
 oauth2client
 Pillow>=6.0.0
 fontTools
