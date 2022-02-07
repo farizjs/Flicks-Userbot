@@ -14,7 +14,7 @@ from telethon.utils import get_display_name
 
 from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, bot, tgbot, user
+from userbot import CMD_HELP, bot, tgbot
 from userbot.modules.sql_helper.bot_blacklists import (
     add_user_to_bl,
     check_is_black_list,
@@ -38,7 +38,7 @@ from userbot.utils import (
     reply_id,
     time_formatter,
 )
-from userbot.utils.logger import logging
+from userbot.logger import logging
 
 LOGS = logging.getLogger(__name__)
 
