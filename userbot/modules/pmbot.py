@@ -42,6 +42,7 @@ from userbot.utils.logger import logging
 
 LOGS = logging.getLogger(__name__)
 
+user = bot.get_me()
 botusername = BOT_USERNAME
 OWNER_ID = user.id
 OWNER = user.first_name
