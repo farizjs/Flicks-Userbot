@@ -8,11 +8,14 @@
 from importlib import import_module
 from sys import argv
 
+from telethon import version
 from telethon.tl.functions.channels import InviteToChannelRequest
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from userbot import ALIVE_NAME, BOT_VER, LOGS, BOT_TOKEN, BOT_USERNAME, BOTLOG_CHATID, bot
 from userbot.modules import ALL_MODULES
 from userbot.utils import autobot
+
+    user = bot.get_me()
 
 INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
              '\n Tip: Use Country Code along with number.' \
@@ -27,13 +30,15 @@ except PhoneNumberInvalidError:
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
+    LOGS.info(f"Berhasil Login Sebagai - {user.first_name}")
+    LOGS.info(f"Python Version - 3.6")
+    LOGS.info(f"Telethon Version - {version.__version__}")
+    LOGS.info(f"Userbot Version - {BOT_VER}")
+    LOGS.info(
+        f"\n✘ 𝐅𝐥𝐢𝐜𝐤𝐬 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ [Berhasil Diaktifkan 🔥]"")
 
-LOGS.info(
-    f"➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖"
-    f"\n✘ 𝐅𝐥𝐢𝐜𝐤𝐬 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ v{BOT_VER} ⚙️ [Berhasil Diaktifkan 🔥]"
-    f"\nSelamat memakai saya tuan {ALIVE_NAME}"
-    f"\n➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
 
+    await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [f"@{BOT_USERNAME}"]))
 
 if not BOT_TOKEN:
     bot.loop.run_until_complete(autobot())
@@ -41,8 +46,3 @@ if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
     bot.run_until_disconnected()
-
-    try:
-        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [f"@{BOT_USERNAME}"]))
-    except BaseException:
-        pass
