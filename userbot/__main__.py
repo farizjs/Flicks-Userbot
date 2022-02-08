@@ -21,10 +21,7 @@ INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
              '\n Tip: Use Country Code along with number.' \
              '\n or check your phone number and try again !'
 
-try:
-    user = bot.get_me()
-except BaseException:
-    pass
+
 
 try:
     bot.start()
@@ -35,7 +32,6 @@ except PhoneNumberInvalidError:
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-    LOGS.info(f"Berhasil Login sebagai {user.first_name}")
     LOGS.info(f"Python Version - 3.6")
     LOGS.info(f"Telethon Version - {version.__version__}")
     LOGS.info(f"Userbot Version - {BOT_VER}")
