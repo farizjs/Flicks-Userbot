@@ -31,6 +31,7 @@ from userbot.modules.sql_helper.globals import gvarstatus
 from userbot.utils import (
     _format,
     asst_cmd,
+    callback,
     edit_delete,
     edit_or_reply,
     flicks_cmd,
@@ -342,7 +343,7 @@ async def bot_start(event):
             start_msg = f"**👋 Hai** {mention}**!**\
                         \n\n**Saya adalah {my_first}** \
                         \n**Anda dapat Menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
-                        \n**Jangan Melakukan Spam Atau anda akan diBanned**\
+                        \n**Jangan Melakukan Spam Atau anda akan di blokir oromatis**\
                         \n\n**Powered by** [UserBot](https://github.com/fjgaming212/Flicks-Userbot)"
         buttons = [
             (
@@ -356,14 +357,15 @@ async def bot_start(event):
     else:
         start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})\
             \nApa ada yang bisa saya Bantu?\
-            \nSilahkan Ketik /help Bila butuh Bantuan**"
+            \nKlik Tombol di bawah ini Bila anda butuh Bantuan**"
         buttons = [
             (
-                Button.url("ɢʀᴏᴜᴘ", f"https://t.me/FlicksSupport"),
-                Button.url(
-                    "ᴄʜᴀɴɴᴇʟ",
-                    f"https://t.me/InfoFlicksUserbot",
-                ),
+                Button.url("ɢʀᴏᴜᴘ", "https://t.me/FlicksSupport"),
+                Button.url("ᴄʜᴀɴɴᴇʟ", "https://t.me/InfoFlicksUserbot"),
+                custom.Button.inline(
+                           "ʜᴇʟᴘ",
+                           data="help"),
+
             )
         ]
     try:
@@ -383,6 +385,29 @@ async def bot_start(event):
 
     else:
         await check_bot_started_users(chat, event)
+
+
+@callback(data=re.compile(b"help"))
+async def pmbot(event):
+    await event.delete()
+    if event.query.user_id == OWNER_ID:
+        await tgbot.send_message(
+            event.chat_id,
+            message=f"""
+Hallo Master, ada yang bisa saya bantu?
+Klik tombol di bawah untuk mengetahui perintah bot ini
+dan daftar pengguna bot anda
+""",
+                custom.Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
+                custom.Button.inline("ᴘᴇɴɢɢᴜɴᴀ", data="users"),
+                custom.Button.inline(
+                           "ᴄʟᴏsᴇ",
+                           data="close"),
+
+                    )
+                ],
+            )
+
 
 @callback(data=re.compile(b"pmbot"))
 async def pmbot(event):
@@ -407,7 +432,7 @@ async def pmbot(event):
                 [
                     custom.Button.inline(
                         "« ʙᴀᴄᴋ",
-                        data="settings",
+                        data="help",
                     )
                 ],
             ],
@@ -433,8 +458,7 @@ async def users(event):
                 allow_cache=False,
                 buttons=[
                     (
-                        Button.inline("« ʙᴀᴄᴋ", data="settings"),
-                        Button.inline("ᴄʟᴏsᴇ", data="pmclose"),
+                        Button.inline("« ʙᴀᴄᴋ", data="help"),
                     )
                 ],
             )
