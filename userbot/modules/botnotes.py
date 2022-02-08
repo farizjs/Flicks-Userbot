@@ -5,7 +5,7 @@ from telethon.tl import types
 
 from userbot import bot
 from userbot import tgbot
-from userbot.plugins.sql_helper.snips_sql import (
+from userbot.modules.sql_helper.snips_sql import (
     add_snip,
     get_all_snips,
     get_snips,
