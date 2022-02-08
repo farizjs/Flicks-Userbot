@@ -41,8 +41,10 @@ for module_name in ALL_MODULES:
     LOGS.info(f"Telethon Version - {version.__version__}")
     LOGS.info(f"Userbot Version - {BOT_VER}")
     LOGS.info(
-        f"\n✘ 𝐅𝐥𝐢𝐜𝐤𝐬 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ [Berhasil Diaktifkan 🔥]"")
+        f"\n✘ 𝐅𝐥𝐢𝐜𝐤𝐬 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ [Berhasil Diaktifkan 🔥]")
 
+
+    await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [f"@{BOT_USERNAME}"]))
 
 
 if not BOT_TOKEN:
