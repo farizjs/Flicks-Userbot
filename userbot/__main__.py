@@ -2,14 +2,15 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
-#
+# Thanks Man-Userbot for autobot
 """ Userbot start point """
 
 from importlib import import_module
 from sys import argv
 
+from telethon.tl.functions.channels import InviteToChannelRequest
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-from userbot import ALIVE_NAME, BOT_VER, LOGS, BOT_TOKEN, bot
+from userbot import ALIVE_NAME, BOT_VER, LOGS, BOT_TOKEN, BOT_USERNAME, BOTLOG_CHATID, bot
 from userbot.modules import ALL_MODULES
 from userbot.utils import autobot
 
@@ -40,3 +41,8 @@ if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
     bot.run_until_disconnected()
+
+    try:
+        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [f"@{BOT_USERNAME}"]))
+    except BaseException:
+        pass
