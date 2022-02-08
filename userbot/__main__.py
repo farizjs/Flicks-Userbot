@@ -44,10 +44,6 @@ for module_name in ALL_MODULES:
         f"\n✘ 𝐅𝐥𝐢𝐜𝐤𝐬 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ [Berhasil Diaktifkan 🔥]")
 
 
-    try:
-        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
-    except BaseException:
-        pass
 
 if not BOT_TOKEN:
     bot.loop.run_until_complete(autobot())
