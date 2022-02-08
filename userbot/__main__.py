@@ -16,13 +16,12 @@ from userbot.modules import ALL_MODULES
 from userbot.utils import autobot
 
 
-
+user = bot.get_me()
 INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
              '\n Tip: Use Country Code along with number.' \
              '\n or check your phone number and try again !'
 
 try:
-user = bot.get_me()
     bot.start()
 except PhoneNumberInvalidError:
     print(INVALID_PH)
@@ -39,7 +38,6 @@ for module_name in ALL_MODULES:
         f"\n✘ 𝐅𝐥𝐢𝐜𝐤𝐬 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ [Berhasil Diaktifkan 🔥]"")
 
 
-    await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [f"@{BOT_USERNAME}"]))
 
 if not BOT_TOKEN:
     bot.loop.run_until_complete(autobot())
