@@ -346,14 +346,11 @@ async def bot_start(event):
                         \n**Jangan Melakukan Spam Atau anda akan di blokir**\
                         \n\n**Powered by** [UserBot](https://github.com/fjgaming212/Flicks-Userbot)"
         buttons = [
-            (
-                Button.url("ɢʀᴏᴜᴘ", f"https://t.me/FlicksSupport"),
-                Button.url(
-                    "ᴄʜᴀɴɴᴇʟ",
-                    f"https://t.me/InfoFlicksUserbot",
-                ),
-            )
-        ]
+                                 [
+                                     custom.Button.inline("ɪɴꜰᴏ​",
+                                                          data="about")],
+                             ]
+                             )
     else:
         start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})\
             \nApa ada yang bisa saya Bantu?\
@@ -402,6 +399,10 @@ Flicks-Userbot [v{BOT_VER}](https://github.com/fjgaming212/Flicks-Userbot)
                                                           data="keluar")],
                              ]
                              )
+
+@callback(data=re.compile(b"keluar"))
+async def keluar(event):
+    await event.delete()
 
 
 @asst_cmd(pattern="^/uinfo$", from_users=OWNER_ID)
