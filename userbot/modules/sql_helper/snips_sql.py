@@ -35,6 +35,15 @@ def get_snips():
         SESSION.close()
 
 
+def get_all_snips():
+    try:
+        return SESSION.query(Snips).all()
+    except:
+        return None
+    finally:
+        SESSION.close()
+
+
 def add_snip(keyword, reply, f_mesg_id):
     to_check = get_snip(keyword)
     if not to_check:
