@@ -346,11 +346,11 @@ async def bot_start(event):
                         \n**Jangan Melakukan Spam Atau anda akan di blokir**\
                         \n\n**Powered by** [UserBot](https://github.com/fjgaming212/Flicks-Userbot)"
         buttons = [
-                                 [
-                                     custom.Button.inline("ɪɴꜰᴏ​",
-                                                          data="about")],
-                             ]
-                             )
+            (
+                custom.Button.inline("ɪɴꜰᴏ​",
+                                     data="about"),
+            )
+        ]
     else:
         start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})\
             \nApa ada yang bisa saya Bantu?\
