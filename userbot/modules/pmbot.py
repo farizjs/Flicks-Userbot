@@ -31,6 +31,7 @@ from userbot.modules.sql_helper.globals import gvarstatus
 from userbot.utils import (
     _format,
     asst_cmd,
+    callback,
     edit_delete,
     edit_or_reply,
     flicks_cmd,
@@ -383,6 +384,24 @@ async def bot_start(event):
 
     else:
         await check_bot_started_users(chat, event)
+
+
+@callback(data=re.compile(b"about"))
+async def about(event):
+      await event.edit(f"""
+Owner - {user.first_name}
+OwnerID - {user.id}
+[Link To Profile 👤](tg://user?id={user.id})
+
+By @TeamFlicksUserbot
+Flicks-Userbot [v{BOT_VER}](https://github.com/fjgaming212/Flicks-Userbot)
+""",
+                             buttons=[
+                                 [
+                                     custom.Button.inline("ᴄʟᴏsᴇ",
+                                                          data="keluar")],
+                             ]
+                             )
 
 
 @asst_cmd(pattern="^/uinfo$", from_users=OWNER_ID)
