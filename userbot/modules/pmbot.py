@@ -347,8 +347,11 @@ async def bot_start(event):
                         \n\n**Powered by** [UserBot](https://github.com/fjgaming212/Flicks-Userbot)"
         buttons = [
             (
-                custom.Button.inline("ɪɴꜰᴏ​",
-                                     data="about"),
+                Button.url("ɢʀᴏᴜᴘ", f"https://t.me/FlicksSupport"),
+                Button.url(
+                    "ᴄʜᴀɴɴᴇʟ",
+                    f"https://t.me/InfoFlicksUserbot",
+                ),
             )
         ]
     else:
