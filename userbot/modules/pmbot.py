@@ -7,7 +7,7 @@ import asyncio
 from datetime import datetime
 from math import floor
 
-from telethon import Button
+from telethon import Button, events
 from telethon.errors import BadRequestError, FloodWaitError, ForbiddenError
 from telethon.utils import get_display_name
 
@@ -383,7 +383,7 @@ async def bot_start(event):
         await check_bot_started_users(chat, event)
 
 
-@callback(data=re.compile(b"about"))
+@tgbot.on(events.CallbackQuery(data=b"about"))
 async def about(event):
       await event.edit(f"""
 Owner - {user.first_name}
@@ -400,7 +400,7 @@ Flicks-Userbot [v{BOT_VER}](https://github.com/fjgaming212/Flicks-Userbot)
                              ]
                              )
 
-@callback(data=re.compile(b"keluar"))
+@tgbot.on(events.CallbackQuery(data=b"keluar"))
 async def keluar(event):
     await event.delete()
 
