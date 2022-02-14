@@ -105,7 +105,7 @@ async def typewriter(typew):
     await typew.edit("`🏃    🏂`")
     await typew.edit("**Untung Ngga Kena Njir**")
     sleep(1)
-    await typew.edit("🎯")
+    await typew.edit("🌟")
     sleep(2)
     await typew.edit("**Mampus Kau Wibu**")
 
@@ -139,7 +139,7 @@ async def typewriter(typew):
     sleep(2)
     await typew.edit("**Sukses Menjadi Wibu**")
     sleep(1)
-    await typew.edit("**Iya Wibu, Seperti Pariz**")
+    await typew.edit("**Iya Wibu, Seperti Watashi**")
 
 
 @flicks_cmd(pattern="adawibu(?: |$)(.*)")
@@ -244,9 +244,9 @@ async def typewriter(typew):
     await typew.edit("`🐢..🤺`")
     await typew.edit("`🐢....🤺`")
     await typew.edit("`🐢....🤺`")
-    await typew.edit("**Cape 🥺🥺**")
+    await typew.edit("**Cling....**")
     sleep(1)
-    await typew.edit("**Turtle telah di eliminasi**")
+    await typew.edit("**Turtle Telah Di Eliminasi**")
     sleep(2)
     await typew.edit("**Good Game**")
 
@@ -270,11 +270,11 @@ async def typewriter(typew):
     await typew.edit(" ▰▱▰▱▰▱▰▱▰▱▰▱▰ ")
     await typew.edit(" ▰▱▰▱▰▱▰▱▰▱▰▱▰▱ ")
     await typew.edit(" ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰ ")
-    await typew.edit(" **Apa Ya Ini Gua Gatau 🥺** ")
+    await typew.edit(" **Flicks Userbot 🚀** ")
     sleep(1)
-    await typew.edit(" **Cuma Gabut Saja Sayang** ")
+    await typew.edit(" **Gunakan Flicks Userbot Sekarang** ")
     sleep(2)
-    await typew.edit(" **Ahahaha** ")
+    await typew.edit(" **Ngik Ngok Ngik Ngok** ")
 
 
 CMD_HELP.update(
