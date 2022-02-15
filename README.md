@@ -69,3 +69,6 @@ Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
 *   [Risman](https://github.com/mrismanaziz/Man-Userbot)   Man - Userbot
 *   DAN TERIMAKASIH KEPADA USERBOT LAINNYA
+
+## License
+Licensed under [Raphielscape Public License](https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE) - Version 1.d, February 2020
