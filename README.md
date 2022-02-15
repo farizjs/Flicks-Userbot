@@ -61,7 +61,7 @@ Terus Nyalakan, tutorial lengkap cek di Channel Update
 Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t.me/InfoFlicksUserbot) Untuk Mengetahui update userbot kami
 
 
-  <b>© Credits</b></summary>
+####  <b>© Credits</b></summary>
 
 ⚡ **CONTRIBUTOR AND TEAM**
 *   [Fariz](https://github.com/fjgaming212/Flicks-Userbot)    Flicks - Userbot
@@ -80,7 +80,7 @@ Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t
 
 🚀 **STAY SUPPORT**
 
-❁ [LonamiWebs](https://github.com/LonamiWebs/) for [Telethon](https://github.com/LonamiWebs/Telethon)
+*   [LonamiWebs](https://github.com/LonamiWebs/) for [Telethon](https://github.com/LonamiWebs/Telethon)
 
 
 ## License
