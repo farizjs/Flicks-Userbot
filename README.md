@@ -12,6 +12,10 @@
     <a href="https://github.com/fjgaming212/Flicks-Userbot/network/members"> <img src="https://img.shields.io/github/stars/fjgaming212/Flicks-Userbot?color=red&logo=github&logoColor=blue&style=flat-square" /></a>  
 </p>
 
+<p align="center">
+  <img src="https://telegra.ph/file/fc57a8c8022bbd2623458.jpg">
+    </p>
+
 Flicks-Userbot adalah userbot Telegram modular yang berjalan di Python 3.6 dengan database sqlalchemy.
 
 Saya membuat repository ini untuk memilih dan menambahkan beberapa modul yang saya butuhkan dengan banyak perubahan, fitur dan module.
@@ -30,9 +34,14 @@ Saya membuat repository ini untuk memilih dan menambahkan beberapa modul yang sa
 ```
 
 
-### Generate String Using Replit
+### Dapatkan String Session
+
+**Dengan Replit**
 
 [![FLICKS-UBOT-STRING](https://img.shields.io/badge/run-string__session.py-blue?style=for-the-badge&logo=repl.it)](https://replit.com/@fjgaming212/StringSession#main.py)
+
+**Dengan Telegram Bot**
+<p><a href="https://t.me/StringSessionFlicksbot"><img src="https://img.shields.io/badge/TG%20String%20Gen%20Bot-blueviolet?style=for-the-badge&logo=appveyor" width="200""/></a></p>
 
 
 ## DEPLOY TO HEROKU 
