@@ -371,8 +371,7 @@ async def bot_start(event):
     try:
         await event.client.send_message(
             chat.id,
-            file=botlogo,
-            caption=start_msg,
+            start_msg,
             link_preview=False,
             buttons=buttons,
             reply_to=reply_to,
