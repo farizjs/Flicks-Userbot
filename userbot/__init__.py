@@ -131,7 +131,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/fjgaming212/Flicks-Userbot")
+    "https://github.com/farizjs/Flicks-Userbot")
 UPSTREAM_REPO_BRANCH = os.environ.get(
     "UPSTREAM_REPO_BRANCH", "Flicks-Userbot")
 
@@ -578,7 +578,7 @@ OwnerID - {uid}
 
 Owner repo - [Fariz](tg://openmessage?user_id=1514078508)
 Support - @FlicksSupport
-Flicks-Userbot [v{BOT_VER}](https://github.com/fjgaming212/Flicks-Userbot)
+Flicks-Userbot [v{BOT_VER}](https://github.com/farizjs/Flicks-Userbot)
 """,
                              buttons=[
                                  [
@@ -620,7 +620,7 @@ Perintah yang tersedia di bot ini :
                 buttons=[
                         [
                             Button.url("Repository",
-                                       "https://github.com/fjgaming212/Flicks-Userbot"),
+                                       "https://github.com/farizjs/Flicks-Userbot"),
                             custom.Button.inline("ɪɴꜰᴏ​",
                                                  data="about")],
                         [custom.Button.inline(
@@ -645,7 +645,7 @@ Perintah yang tersedia di bot ini :
                     buttons=[
                         [
                             Button.url("Repository",
-                                       "https://github.com/fjgaming212/Flicks-Userbot"),
+                                       "https://github.com/farizjs/Flicks-Userbot"),
                             Button.url("Tutorial",
                                        "https://t.me/InfoFlicksUserbot/64")],
                     ]
@@ -677,10 +677,10 @@ Perintah yang tersedia di bot ini :
                                               [
                                                   custom.Button.url(
                                                       text="Rᴇᴘᴏ",
-                                                      url="https://github.com/fjgaming212/Flicks-Userbot"),
+                                                      url="https://github.com/farizjs/Flicks-Userbot"),
                                                   custom.Button.url(
                                                       text="Lɪsᴇɴsɪ​",
-                                                      url="https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE"
+                                                      url="https://github.com/farizjs/Flicks-Userbot/blob/Flicks-Userbot/LICENSE"
                                                   )
                                               ]
                                           ]
@@ -770,10 +770,10 @@ Perintah yang tersedia di bot ini :
                         [
                             custom.Button.url(
                                 "ᴅᴇᴘʟᴏʏ​",
-                                "https://heroku.com/deploy?template=https://github.com/fjgaming212/Deploy-FlicksUbot"),
+                                "https://heroku.com/deploy?template=https://github.com/farizjs/Deploy-FlicksUbot"),
                             custom.Button.url(
                                 "ʀᴇᴘᴏ",
-                                "https://github.com/fjgaming212/Flicks-Userbot")],
+                                "https://github.com/farizjs/Flicks-Userbot")],
                         [custom.Button.url(
                             "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
                             "t.me/InfoFlicksUserbot")]],
@@ -824,7 +824,7 @@ Perintah yang tersedia di bot ini :
                                 "t.me/InfoFlicksUserbot")],
                         [custom.Button.url(
                             "ʀᴇᴘᴏ",
-                            "https://github.com/fjgaming212/Flicks-Userbot")]],
+                            "https://github.com/farizjs/Flicks-Userbot")]],
                     link_preview=True,
                 )
             await event.answer(
@@ -899,9 +899,9 @@ Perintah yang tersedia di bot ini :
                     buttons=[
                         [
                             Button.url("Repository",
-                                       "https://github.com/fjgaming212/Flicks-Userbot"),
+                                       "https://github.com/farizjs/Flicks-Userbot"),
                             Button.url("License",
-                                       "https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
+                                       "https://github.com/farizjs/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
                         [custom.Button.inline(
                             "⬅️ Kembali", data="open")],
                     ]
@@ -938,9 +938,9 @@ Perintah yang tersedia di bot ini :
                     buttons=[
                         [
                             Button.url("Repository",
-                                       "https://github.com/fjgaming212/Flicks-Userbot"),
+                                       "https://github.com/farizjs/Flicks-Userbot"),
                             Button.url("License",
-                                       "https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
+                                       "https://github.com/farizjs/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
                         [custom.Button.inline(
                             "⬅️ Kembali", data="open")],
                     ]
