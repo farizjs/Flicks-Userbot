@@ -312,6 +312,7 @@ async def bot_start(event):
     if check_is_black_list(chat.id):
         return
     reply_to = await reply_id(event)
+    botlogo = "https://telegra.ph/file/fc57a8c8022bbd2623458.jpg"
     mention = f"[{chat.first_name}](tg://user?id={chat.id})"
     my_mention = f"[{user.first_name}](tg://user?id={user.id})"
     first = chat.first_name
@@ -370,7 +371,8 @@ async def bot_start(event):
     try:
         await event.client.send_message(
             chat.id,
-            start_msg,
+            file=botlogo,
+            caption=start_msg,
             link_preview=False,
             buttons=buttons,
             reply_to=reply_to,
