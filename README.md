@@ -84,4 +84,4 @@ Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t
 
 
 ## License
-Licensed under [Raphielscape Public License](https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE) - Version 1.d, February 2020
+Licensed under [GNU General Public License](https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE) - Version 3.0
