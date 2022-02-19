@@ -1,7 +1,8 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 import os, logging, asyncio
 from telethon import Button
-from userbot import tgbot
+from userbot import bot, tgbot
+from userbot.utils import asst_cmd
 
 logging.basicConfig(
     level=logging.INFO,
@@ -9,7 +10,11 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger(__name__)
 
-@tgbot.on(events.NewMessage(pattern="^/mentionall ?(.*)"))
+
+saya = bot.get_me()
+OWNER_ID = saya.id
+
+@asst_cmd(pattern=r"^/mentionall ?(.*)", from_users=OWNER_ID)
 async def mentionall(event):
   if event.is_private:
     return await event.respond("__Perintah ini hanya dapat digunakan dalam grup dan channel!__")
