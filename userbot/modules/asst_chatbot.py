@@ -13,6 +13,9 @@ from userbot.utils import asst_cmd
 translator = Translator()
 LANGUAGE = "id"
 
+saya = bot.get_me()
+OWNER_ID = saya.id
+
 url = "https://api-tede.herokuapp.com/api/chatbot?message={message}"
 
 
