@@ -1,8 +1,13 @@
+# © t.me/farizsj
+# From https://github.com/farizjs/Flicks-Userbot <Flicks-Userbot>
+# Dont Remove Credits
+
 from telethon.tl.types import ChannelParticipantsAdmins
 import os, logging, asyncio
 from telethon import Button
 from userbot import bot, tgbot
 from userbot.utils import asst_cmd
+from telethon import events
 
 logging.basicConfig(
     level=logging.INFO,
@@ -13,6 +18,10 @@ LOGGER = logging.getLogger(__name__)
 
 saya = bot.get_me()
 OWNER_ID = saya.id
+
+# if userbot doesn't have asst_cmd
+# @tgbot.on(events.NewMessage(pattern="^/mentionall ?(.*)", from_users=OWNER_ID))
+# -------------------------------------------------------------------------------
 
 @asst_cmd(pattern=r"^/mentionall ?(.*)", from_users=OWNER_ID)
 async def mentionall(event):
