@@ -1,0 +1,73 @@
+# 🍀 © @tofik_dn
+# ⚠️ Do not remove credits
+
+import requests
+from googletrans import Translator
+from telethon import events
+from telethon.tl.types import User
+
+from userbot import LOGS, bot, tgbot
+from userbot.modules.sql_helper.tede_chatbot_sql import is_tede, rem_tede, set_tede
+from userbot.utils import asst_cmd
+
+translator = Translator()
+LANGUAGE = "id"
+
+url = "https://api-tede.herokuapp.com/api/chatbot?message={message}"
+
+
+async def ngapain_rep(message):
+    hayulo_link_apa = url.format(message=message)
+    try:
+        data = requests.get(hayulo_link_apa)
+        if data.status_code == 200:
+            return (data.json())["msg"]
+        else:
+            LOGS.info("ERROR: API chatbot sedang down, report ke @tedesupport.")
+    except Exception as e:
+        LOGS.info(str(e))
+
+
+async def chat_bot_toggle(event):
+    status = event.pattern_match.group(1).lower()
+    chat_id = event.chat_id
+    if status == "on":
+        if not is_tede(chat_id):
+            set_tede(chat_id)
+            return await tgbot.send_message("ChatBot Diaktifkan!")
+        await tgbot.send_message("ChatBot Sudah Diaktifkan.")
+    elif status == "off":
+        if is_tede(chat_id):
+            rem_tede(chat_id)
+            return await tgbot.send_message("ChatBot Dinonaktifkan!")
+        await tgbot.send_message("ChatBot Sudah Dinonaktifkan.")
+    else:
+        await tgbot.send_message("**Usage:** /chatbot <on/off>")
+
+
+
+@asst_cmd(pattern=r"^/chatbot(?: |$)(.*)", from_users=OWNER_ID)
+async def on_apa_off(event):
+    await chat_bot_toggle(event)
+
+
+@tgbot.on(
+    events.NewMessage(
+        incoming=True,
+        func=lambda e: (e.mentioned),
+    ),
+)
+async def tede_chatbot(event):
+    sender = await event.get_sender()
+    if not is_tede(event.chat_id):
+        return
+    if not isinstance(sender, User):
+        return
+    if event.text:
+        rep = await ngapain_rep(event.message.message)
+        tr = translator.translate(rep, LANGUAGE)
+        if tr:
+            await event.reply(tr.text)
+        else:
+            await event.reply(rep)
+
