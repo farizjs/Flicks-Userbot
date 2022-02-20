@@ -76,6 +76,7 @@ Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t
 *   [Vicky](https://github.com/Vckyou/Geez-Project)    Geez - Project 
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
 *   [Risman](https://github.com/mrismanaziz/Man-Userbot)   Man - Userbot
+*   [TeamUltroid](https://github.com/TeamUltroid/Ultroid) Ultroid - Userbot
 *   DAN TERIMAKASIH KEPADA USERBOT LAINNYA
 
 🚀 **STAY SUPPORT**
