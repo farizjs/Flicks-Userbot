@@ -47,6 +47,7 @@ pySmartDL
 python-barcode
 python-dotenv
 pytz
+pyUltroid
 datetime
 qrcode
 requests>=2.18.4
