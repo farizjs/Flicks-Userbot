@@ -19,7 +19,7 @@ OWNER_ID = saya.id
 url = "https://api-tede.herokuapp.com/api/chatbot?message={message}"
 
 
-async def ngapain_rep(message):
+async def ngapain_reply(message):
     hayulo_link_apa = url.format(message=message)
     try:
         data = requests.get(hayulo_link_apa)
@@ -67,7 +67,7 @@ async def tede_chatbot(event):
     if not isinstance(sender, User):
         return
     if event.text:
-        rep = await ngapain_rep(event.message.message)
+        rep = await ngapain_reply(event.message.message)
         tr = translator.translate(rep, LANGUAGE)
         if tr:
             await event.reply(tr.text)
