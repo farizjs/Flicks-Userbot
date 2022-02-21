@@ -72,8 +72,6 @@ Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t
 
 🔰 **THANKS YOU TO**
 *   [Kennedy](https://github.com/KennedyProject/KEN-UBOT)    Ken - Userbot
-*   [RaphielGang](https://github.com/RaphielGang/TelegramPaperplane)     TelegramPaperplane
-*   [Adek Maulana](https://github.com/adekmaulana/ProjectBish)     ProjectBish
 *   [Apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
 *   [Vicky](https://github.com/Vckyou/Geez-Project)    Geez - Project 
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
@@ -83,8 +81,9 @@ Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t
 
 🚀 **STAY SUPPORT**
 
-*   [LonamiWebs](https://github.com/LonamiWebs/) for [Telethon](https://github.com/LonamiWebs/Telethon)
-
+*   [LonamiWebs](https://github.com/LonamiWebs/) + [Telethon](https://github.com/LonamiWebs/Telethon)
+*   [RaphielGang](https://github.com/RaphielGang) + [TelegramPaperplane](https://github.com/RaphielGang/Telegram-Paperplane)
+*   [Adek Maulana](https://github.com/adekmaulana) + [ProjectBish](https://github.com/adekmaulana/ProjectBish)
 
 ## License
 Licensed under [GNU General Public License](https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE) - Version 3.0
