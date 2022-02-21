@@ -72,6 +72,8 @@ Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t
 
 🔰 **THANKS YOU TO**
 *   [Kennedy](https://github.com/KennedyProject/KEN-UBOT)    Ken - Userbot
+*   [RaphielGang](https://github.com/RaphielGang/TelegramPaperplane)     TelegramPaperplane
+*   [Adek Maulana](https://github.com/adekmaulana/ProjectBish)     ProjectBish
 *   [Apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
 *   [Vicky](https://github.com/Vckyou/Geez-Project)    Geez - Project 
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
