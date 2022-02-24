@@ -80,10 +80,9 @@ async def autolog():
             sys.exit(1)
         chat = r.chats[0]
         channel = get_peer_id(chat)
+        assistant = True
 
         heroku_var["BOTLOG_CHATID"] = channel
-
-    assistant = True
     try:
         await bot.get_permissions(int(channel), tgbot.me.username)
     except UserNotParticipantError:
