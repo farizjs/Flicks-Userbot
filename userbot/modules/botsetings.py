@@ -236,7 +236,7 @@ async def users(event):
                 event.chat_id,
                 fileuser,
                 force_document=True,
-                thumb="resources/extras/IMG_20211216_160240_756.jpg",
+                thumb="userbot/files/20211115_142004.jpg",
                 caption="**Total Pengguna Di Bot anda.**",
                 allow_cache=False,
                 buttons=[
@@ -254,16 +254,16 @@ async def botsettings(event):
     if event.query.user_id == OWNER_ID:
         await tgbot.send_message(
             event.chat_id,
-            message=f"**Menu ini Hanya Terlihat Oleh [{OWNER}](tg://user?id={OWNER_ID})** ..!",
+            message=f"**Hallo [{OWNER}](tg://user?id={OWNER_ID}) Adakah Yang Bisa Saya Bantu?**",
             buttons=[
-                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
+                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ ⚙️", data="apiset"),),
                 (
-                    Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
-                    Button.inline("ᴜsᴇʀs", data="users"),
+                    Button.inline("ᴘᴍʙᴏᴛ 🤖", data="pmbot"),
+                    Button.inline("ᴜsᴇʀs 👤", data="users"),
                 ),
                 (
-                    Button.inline("ᴘɪɴɢ", data="pingbot"),
-                    Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptimebot"),
+                    Button.inline("ᴘɪɴɢ ⚡", data="pingbot"),
+                    Button.inline("ᴜᴘᴛɪᴍᴇ ⌛", data="uptimebot"),
                 ),
                 (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
             ],
@@ -503,7 +503,7 @@ async def bot_start(event):
                         \n\n**Saya adalah {my_mention} \
                         \n**Anda dapat Menghubungi  [{OWNER}](tg://user?id={OWNER_ID}) dari sini. \
                         \n**Jangan Melakukan Spam Atau anda akan di blokir** \
-                        \n\n**Powered by**: [Flicks-Userbot](https://github.com/farizjs/Flicks-Userbot)"
+                        \n\n**Powered by**: [Flicks-Userbot](https://github.com/farizjs/Flicks-Userbot)**"
             buttons = [
                 (
                  Button.url("ɢʀᴏᴜᴘ", f"https://t.me/FlicksSupport"),
@@ -514,16 +514,16 @@ async def bot_start(event):
             )
         ]
     else:
-        start_msg = f"**Hallo [{OWNER}](tg://user?id={OWNER_ID}) Adakah Yang Bisa Saya Bantu**"
+        start_msg = f"**Hallo [{OWNER}](tg://user?id={OWNER_ID}) Adakah Yang Bisa Saya Bantu?**"
         buttons = [
-            (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
+            (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ ⚙️", data="apiset"),),
             (
-                Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
-                Button.inline("ᴜsᴇʀs", data="users"),
+                Button.inline("ᴘᴍʙᴏᴛ 🤖", data="pmbot"),
+                Button.inline("ᴜsᴇʀs 👤", data="users"),
             ),
             (
-                Button.inline("ᴘɪɴɢ", data="pingbot"),
-                Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptimebot"),
+                Button.inline("ᴘɪɴɢ ⚡", data="pingbot"),
+                Button.inline("ᴜᴘᴛɪᴍᴇ ⌛", data="uptimebot"),
             ),
             (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
         ]
