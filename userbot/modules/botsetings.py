@@ -506,9 +506,13 @@ async def bot_start(event):
                         \n\n**Powered by**: [Flicks-Userbot](https://github.com/farizjs/Flicks-Userbot)"
             buttons = [
                 (
-                    Button.inline("ɪɴꜰᴏ", data="infor"),
-                )
-            ]
+                 Button.url("ɢʀᴏᴜᴘ", f"https://t.me/FlicksSupport"),
+                Button.url(
+                    "ᴄʜᴀɴɴᴇʟ",
+                    f"https://t.me/InfoFlicksUserbot",
+                ),
+            )
+        ]
     else:
         start_msg = f"**Hallo [{OWNER}](tg://user?id={OWNER_ID}) Adakah Yang Bisa Saya Bantu**"
         buttons = [
