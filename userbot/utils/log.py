@@ -68,7 +68,6 @@ async def autolog():
             LOGS.info(
                 "You Are in Too Many Channels & Groups , Leave some And Restart The Bot"
             )
-            import sys
 
             sys.exit(1)
         except BaseException as er:
@@ -91,7 +90,7 @@ async def autolog():
         try:
             await bot(InviteToChannelRequest(int(channel), [tgbot.me.username]))
         except BaseException as er:
-            LOGS.info("Error while Adding Assistant to Log Channel")
+            LOGS.info("Kesalahan saat Menambahkan Asisten ke Log Grup")
             LOGS.exception(er)
             assistant = False
     except BaseException as er:
@@ -102,7 +101,7 @@ async def autolog():
             achat = await tgbot.get_entity(int(channel))
         except BaseException as er:
             achat = None
-            LOGS.info("Error while getting Log channel from Assistant")
+            LOGS.info("Kesalahan saat mendapatkan grup Log dari Asisten")
             LOGS.exception(er)
         if achat and not achat.admin_rights:
             rights = ChatAdminRights(
@@ -123,10 +122,10 @@ async def autolog():
                 )
             except ChatAdminRequiredError:
                 LOGS.info(
-                    "Failed to promote 'Assistant Bot' in 'Log Channel' due to 'Admin Privileges'"
+                    "Gagal mempromosikan 'Bot Asisten' di 'Log Grup' karena 'Hak Istimewa Admin'"
                 )
             except BaseException as er:
-                LOGS.info("Error while promoting assistant in Log Channel..")
+                LOGS.info("Kesalahan saat mempromosikan asisten di Grup Log..")
                 LOGS.exception(er)
     if isinstance(chat.photo, ChatPhotoEmpty):
         photo = "userbot/files/20211115_142004.jpg"
