@@ -32,3 +32,4 @@ from .tools import (
     edit_or_reply,
 )
 from .utils import autobot, load_module, remove_plugin, start_assistant
+from .log import autolog
