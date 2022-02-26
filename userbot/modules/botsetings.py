@@ -280,6 +280,7 @@ async def alivemenu(event):
                 Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ ᴏᴏꜰ", data="pmoff"),
             ],
             [
+                Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ ʟᴏɢᴏ", data="pmpic"),
                 Button.inline("ᴀʟɪᴠᴇ ɴᴀᴍᴇ", data="alvname"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="apiset")],
@@ -292,7 +293,7 @@ async def pmonn(event):
     var = "PM_AUTO_BAN"
     await setit(event, var, "True")
     await event.edit(
-        "Done! PMPermit telah berubah on!!",
+        "Done! PMPermit telah diaktifkan!!",
         buttons=get_back_button("settings"),
     )
 
@@ -302,7 +303,7 @@ async def pmofff(event):
     var = "PM_AUTO_BAN"
     await setit(event, var, "False")
     await event.edit(
-        "Done! PMPermit telah berubah off!!",
+        "Done! PMPermit telah dimatikan!!",
         buttons=get_back_button("settings"),
     )
 
@@ -460,6 +461,29 @@ async def alvlogo(event):
         await conv.send_message(
             f"**ALIVE_LOGO Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
             buttons=get_back_button("alivemenu"),
+        )
+
+@callback(data=re.compile(b"pmpic"))
+async def alvlogo(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "PMPERMIT_PIC"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Link Telegraph Untuk var PMPERMIT_PIC anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("pmpermitmenu"),
+            )
+        await setit(event, var, themssg)
+        await conv.send_message(
+            f"**PMPERMIT_PIC Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("pmpermitmenu"),
         )
 
 
