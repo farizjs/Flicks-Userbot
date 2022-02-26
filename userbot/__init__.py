@@ -26,7 +26,7 @@ from telethon import Button, events, functions, types
 from telethon.utils import get_display_name
 
 
-from userbot.utils import autolog
+# from userbot.utils import autolog
 
 # Button from Man-Userbot
 # Thanks Man-Userbot 💙
@@ -396,7 +396,10 @@ with bot:
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
-        bot.loop.run_until_complete(autolog())
+        LOGS.info(
+            "Your account doesn't have rights to send messages to BOTLOG_CHATID "
+            "group. Check if you typed the Chat ID correctly.")
+        quit(1)
 
 
 
@@ -1012,5 +1015,7 @@ Perintah yang tersedia di bot ini :
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
-        bot.loop.run_until_complete(autolog())
-
+        LOGS.info(
+            "Your account doesn't have rights to send messages to BOTLOG_CHATID "
+            "group. Check if you typed the Chat ID correctly.")
+        quit(1)
