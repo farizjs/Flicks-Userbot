@@ -141,7 +141,7 @@ async def bot_broadcast(event):
     for user in users:
         try:
             await event.client.send_message(
-                int(user.user_id), "🔊 You received a **new** Broadcast."
+                int(user.user_id), "🔊 Anda menerima **Siaran baru**."
             )
             await event.client.send_message(int(user.user_id), replied)
             await asyncio.sleep(0.8)
