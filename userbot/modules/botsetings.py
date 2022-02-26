@@ -530,13 +530,9 @@ async def bot_start(event):
                         \n\n**Powered by**: [Flicks-Userbot](https://github.com/farizjs/Flicks-Userbot)**"
             buttons = [
                 (
-                 Button.url("ɢʀᴏᴜᴘ", f"https://t.me/FlicksSupport"),
-                Button.url(
-                    "ᴄʜᴀɴɴᴇʟ",
-                    f"https://t.me/InfoFlicksUserbot",
-                ),
-            )
-        ]
+                    Button.inline("ɪɴꜰᴏ", data="infor"),
+                )
+            ]
     else:
         start_msg = f"**Hallo [{OWNER}](tg://user?id={OWNER_ID}) Adakah Yang Bisa Saya Bantu?**"
         buttons = [
@@ -586,3 +582,21 @@ async def _(event):
     await event.answer(pin, cache_time=0, alert=True)
 
 
+@callback(data=re.compile(b"infor"))
+async def infor(event):
+    await tgbot.send_message(
+        event.chat_id,
+        message=f"**Master** - {OWNER} \
+                \n**Id** - {OWNER_ID} \
+                \n**Profile** - [Link](tg://user?id={OWNER_ID}) \
+                \n\n**Repo** - [Github](github.com/farizjs/Flicks-userbot) \
+                \nPowerd By 💕 @TheFlicksUserbot",
+        buttons=[
+            [
+                custom.Button.inline(
+                    "ᴄʟᴏꜱᴇ",
+                    data="goblok",
+                )
+            ],
+        ],
+    )
