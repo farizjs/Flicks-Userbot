@@ -584,7 +584,7 @@ async def _(event):
 
 @callback(data=re.compile(b"infor"))
 async def infor(event):
-    await tgbot.send_message(
+    await event.edit(
         event.chat_id,
         message=f"**Master** - {OWNER} \
                 \n**Id** - {OWNER_ID} \
