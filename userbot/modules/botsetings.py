@@ -585,8 +585,7 @@ async def _(event):
 @callback(data=re.compile(b"infor"))
 async def infor(event):
     await event.edit(
-        event.chat_id,
-        message=f"**Master** - {OWNER} \
+                f"**Master** - {OWNER} \
                 \n**Id** - {OWNER_ID} \
                 \n**Profile** - [Link](tg://user?id={OWNER_ID}) \
                 \n\n**Repo** - [Github](github.com/farizjs/Flicks-userbot) \
