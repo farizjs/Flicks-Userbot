@@ -107,20 +107,6 @@ async def repeat(rep):
     await rep.edit(replyText)
 
 
-@flicks_cmd(pattern="repo$")
-async def repo_is_here(wannasee):
-    """ For .repo command, just returns the repo URL. """
-    await wannasee.edit(
-        "**Hey, I Am ✨Fʟɪᴄᴋs Usᴇʀʙᴏᴛ✨ **\n"
-        "卍━━━━━━━━━━━━━━━━━━卍\n"
-        "➣ Repo Userbot : [ɢɪᴛʜᴜʙ](https://github.com/fjgaming212/Flicks-Userbot)\n"
-        "➣ Owner Bot       : [Fᴀʀɪᴢ](t.me/farizsj)\n"
-        "卍━━━━━━━━━━━━━━━━━━卍\n"
-        "➣ Team                : [ʜᴇʀᴇ](t.me/devoloperflicks)​\n"
-        "➣ Support           : [ɢʀᴏᴜᴘs​](t.me/FlicksSupport)\n"
-        "卍━━━━━━━━━━━━━━━━━━卍"
-    )
-
 
 @flicks_cmd(pattern="raw$")
 async def raw(event):
