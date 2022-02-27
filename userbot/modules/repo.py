@@ -14,7 +14,7 @@ logging.basicConfig(
     level=logging.WARNING)
 
 
-@flicks_cmd(pattern="xrepo")
+@flicks_cmd(pattern="repo")
 async def yardim(event):
     try:
         kenbotusername = BOT_USERNAME
@@ -30,7 +30,14 @@ async def yardim(event):
             )
     except Exception:
         return await event.edit(
-            "**Anda tidak dapat mengirim inline menu dalam obrolan ini, silakan gunakan perintah** `.inlineon`"
+            "**Hey, I Am ✨Fʟɪᴄᴋs Usᴇʀʙᴏᴛ✨ **\n"
+            "卍━━━━━━━━━━━━━━━━━━卍\n"
+            "➣ Repo Userbot : [ɢɪᴛʜᴜʙ](https://github.com/fjgaming212/Flicks-Userbot)\n"
+            "➣ Owner Bot       : [Fᴀʀɪᴢ](t.me/farizsj)\n"
+            "卍━━━━━━━━━━━━━━━━━━卍\n"
+            "➣ Team                : [ʜᴇʀᴇ](t.me/devoloperflicks)​\n"
+            "➣ Support           : [ɢʀᴏᴜᴘs​](t.me/FlicksSupport)\n"
+            "卍━━━━━━━━━━━━━━━━━━卍"
         )
 
 
@@ -39,8 +46,6 @@ CMD_HELP.update(
         "inlinebot": f"** Plugin :** inlinebot\
         \n\n  •  Perintah : `{cmd}helpme`\
         \n  •  Function : Untuk menu bantuan modul Flicks-Userbot\
-        \n\n  •  Perintah : `{cmd}xrepo`\
-        \n  •  Function : Repo Flicks-Userbot\
         \n\n  •  Perintah : `{cmd}aboutflicks`\
         \n  •  Function : Tentang Flicks-Userbot\
         \n\n  •  Perintah : `{cmd}tutorial`\
