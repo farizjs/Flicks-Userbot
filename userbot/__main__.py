@@ -9,7 +9,7 @@ from importlib import import_module
 from sys import argv
 
 from telethon import version
-from telethon.tl.functions.channels import InviteToChannelRequest
+from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from userbot import ALIVE_NAME, BOT_VER, LOGS, BOT_TOKEN, BOT_USERNAME, BOTLOG_CHATID, bot
 from userbot.modules import ALL_MODULES
@@ -39,7 +39,14 @@ for module_name in ALL_MODULES:
         f"\n✘ 𝐅𝐥𝐢𝐜𝐤𝐬 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ [Berhasil Diaktifkan 🔥]")
 
 
-
+    try:
+        await bot(JoinChannelRequest("@TheFlicksUserbot"))
+    except BaseException:
+        pass
+    try:
+        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
+    except BaseException:
+        pass
 if not BOT_TOKEN:
     bot.loop.run_until_complete(autobot())
 if len(argv) not in (1, 3, 4):
