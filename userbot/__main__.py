@@ -40,11 +40,11 @@ for module_name in ALL_MODULES:
 
 
     try:
-        await bot(JoinChannelRequest("@TheFlicksUserbot"))
+        bot(JoinChannelRequest("@TheFlicksUserbot"))
     except BaseException:
         pass
     try:
-        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
+        bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
     except BaseException:
         pass
 if not BOT_TOKEN:
