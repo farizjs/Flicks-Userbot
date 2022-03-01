@@ -15,7 +15,7 @@ from random import choice
 import pytz
 from telethon.tl.types import DocumentAttributeVideo
 
-from userbot import bot, CMD_HANDLER as cmd
+from userbot import bot, CMD_HELP, CMD_HANDLER as cmd
 from userbot.utils import all_col, flicks_cmd
 from userbot.utils.quotly_helper import create_quotly
 
