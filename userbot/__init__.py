@@ -229,7 +229,7 @@ BITLY_TOKEN = os.environ.get(
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "Flicks-Userbot")
 
 # Bot Version
-BOT_VER = os.environ.get("BOT_VER", "5.1")
+BOT_VER = os.environ.get("BOT_VER", "1.5.2")
 
 # Default .alive Username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
