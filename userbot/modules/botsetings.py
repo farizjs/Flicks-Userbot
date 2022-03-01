@@ -256,8 +256,8 @@ async def botsettings(event):
             event.chat_id,
             message=f"**Hallo [{OWNER}](tg://user?id={OWNER_ID}) Adakah Yang Bisa Saya Bantu?**",
             buttons=[
-                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ ⚙️", data="apiset"),),
                 (
+                    Button.inline("sᴇᴛᴛɪɴɢs ⚙️", data="apiset"),
                     Button.inline("ᴘᴍʙᴏᴛ 🤖", data="pmbot"),
                 ),
                 (
@@ -580,8 +580,8 @@ async def bot_start(event):
     else:
         start_msg = f"**Hallo [{OWNER}](tg://user?id={OWNER_ID}) Adakah Yang Bisa Saya Bantu?**"
         buttons = [
-            (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ ⚙️", data="apiset"),),
             (
+                Button.inline("sᴇᴛᴛɪɴɢs ⚙️", data="apiset"),
                 Button.inline("ᴘᴍʙᴏᴛ 🤖", data="pmbot"),
             ),
             (
