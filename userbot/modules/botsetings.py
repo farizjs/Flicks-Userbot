@@ -259,11 +259,14 @@ async def botsettings(event):
                 (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ ⚙️", data="apiset"),),
                 (
                     Button.inline("ᴘᴍʙᴏᴛ 🤖", data="pmbot"),
-                    Button.inline("ᴜsᴇʀs 👤", data="users"),
                 ),
                 (
                     Button.inline("ᴘɪɴɢ ⚡", data="pingbot"),
                     Button.inline("ᴜᴘᴛɪᴍᴇ ⌛", data="uptimebot"),
+                ),
+                (
+                    Button.inline("ʙʀᴏᴀᴅᴄᴀsᴛ 📁", data="bcast"),
+                    Button.inline("sᴛᴀᴛs 📊", data="stat"),
                 ),
                 (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
             ],
@@ -486,6 +489,47 @@ async def alvlogo(event):
             buttons=get_back_button("pmpermitmenu"),
         )
 
+@callback(data=re.compile(b"bcast"))
+async def bdcast(event):
+    ok = get_all_starters()
+    await event.edit(f"• Siaran ke {len(ok)} pengguna.")
+    async with event.client.conversation(OWNER_ID) as conv:
+        await conv.send_message(
+            "Masukkan pesan siaran Anda.\nGunakan /cancel untuk menghentikan siaran.",
+        )
+        response = await conv.get_response()
+        if response.message == "/cancel":
+            return await conv.send_message("Cancelled!!")
+        success = 0
+        fail = 0
+        await conv.send_message(f"Memulai siaran ke {len(ok)} pengguna...")
+        start = datetime.now()
+        for i in ok:
+            try:
+                await tgbot.send_message(int(i), response)
+                success += 1
+            except BaseException:
+                fail += 1
+        end = datetime.now()
+        time_taken = (end - start).seconds
+        await conv.send_message(
+            f"""
+**Siaran selesai dalam {time_taken} detik.**
+Total Pengguna di Bot - {len(ok)}
+**Dikirim ke** : `{success} users.`
+**Gagal untuk** : `{fail} user(s).`""",
+        )
+
+
+@callback(data=re.compile(b"stat"))
+async def botstat(event):
+    orang = len(get_all_starters())
+    msg = """Flicks Assistant - Stats
+Jumlah Pengguna - {}""".format(
+        orang,
+    )
+    await event.answer(msg, cache_time=0, alert=True)
+
 
 @asst_cmd(pattern=f"^/start({botusername})?([\\s]+)?$",
           func=lambda e: e.is_private)
@@ -539,11 +583,14 @@ async def bot_start(event):
             (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ ⚙️", data="apiset"),),
             (
                 Button.inline("ᴘᴍʙᴏᴛ 🤖", data="pmbot"),
-                Button.inline("ᴜsᴇʀs 👤", data="users"),
             ),
             (
                 Button.inline("ᴘɪɴɢ ⚡", data="pingbot"),
                 Button.inline("ᴜᴘᴛɪᴍᴇ ⌛", data="uptimebot"),
+            ),
+            (
+                Button.inline("ʙʀᴏᴀᴅᴄᴀsᴛ 📁", data="bcast"),
+                Button.inline("sᴛᴀᴛs 📊", data="stat"),
             ),
             (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
         ]
