@@ -506,7 +506,7 @@ async def bdcast(event):
         start = datetime.now()
         for i in ok:
             try:
-                await tgbot.send_message(int(i), response)
+                await event.client.send_message(int(i.user_id), response)
                 success += 1
             except BaseException:
                 fail += 1
