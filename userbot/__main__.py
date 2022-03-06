@@ -14,7 +14,7 @@ from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from userbot import ALIVE_NAME, BOT_VER, LOGS, BOT_TOKEN, BOT_USERNAME, BOTLOG_CHATID, bot
 from userbot.modules import ALL_MODULES
 from userbot.utils import autobot
-
+from userbot.utils.log import autopilot
 
 
 INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
@@ -28,6 +28,10 @@ try:
 except PhoneNumberInvalidError:
     print(INVALID_PH)
     exit(1)
+
+LOGS.info("Initialising...")
+
+bot.loop.run_until_complete(autopilot())
 
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
