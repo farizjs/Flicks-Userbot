@@ -7,6 +7,7 @@
 
 from importlib import import_module
 from sys import argv
+from platform import python_version
 
 from telethon import version
 from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
@@ -34,11 +35,11 @@ except PhoneNumberInvalidError:
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-    LOGS.info(f"Python Version - 3.6")
-    LOGS.info(f"Telethon Version - {version.__version__}")
-    LOGS.info(f"Userbot Version - {BOT_VER}")
     LOGS.info(
-        f"\n✘ 𝐅𝐥𝐢𝐜𝐤𝐬 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ [Berhasil Diaktifkan 🔥]")
+        f"Python Version - {python_version()} \
+          \nTelethon Version - {version.__version__} \
+          \nUserbot Version - {BOT_VER} \
+          \n✘ 𝐅𝐥𝐢𝐜𝐤𝐬 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ [Berhasil Diaktifkan 🔥]")
 
 
     try:
