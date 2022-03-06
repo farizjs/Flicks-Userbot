@@ -50,44 +50,54 @@ if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
 else:
     app = None
 
-async def autolog():
-     if BOTLOG_CHATID:
-        return
-    await bot.start()
-        LOGS.info("'BOTLOG_CHATID' not found! Add it in order to use 'BOTMODE'")
-        LOGS.info("Creating a Log Channel for You!")
+async def autopilot():
+
+
+    if BOTLOG_CHATID and str(BOTLOG_CHATID).startswith("-100"):
+    channel = BOTLOG_CHATID
+    if channel:
+        try:
+            chat = await bot.get_entity(channel)
+        except BaseException:
+            logging.exception("message")
+            channel = None
+    if not channel:
+        if bot._bot:
+            LOGS.info("'BOTLOG_CHATID' tidak ditemukan! Tambahkan untuk digunakan 'BOTMODE'")
+
+            sys.exit()
+        LOGS.info("Membuat Grup Log untuk Anda!")
         try:
             r = await bot(
                 CreateChannelRequest(
-                    title="My Flicks Logs",
+                    title="My Userbot Logs",
                     about="My Userbot Log Group\n\n Join @TheFlicksUserbot",
                     megagroup=True,
                 ),
             )
         except ChannelsTooMuchError:
             LOGS.info(
-                "You Are in Too Many Channels & Groups , Leave some And Restart The Bot"
+                "Anda Berada di Terlalu Banyak Saluran & Grup, Tinggalkan Beberapa Dan Mulai Ulang Bot"
             )
+
 
             sys.exit(1)
         except BaseException as er:
             LOGS.info(er)
             LOGS.info(
-                "Something Went Wrong , Create A Group and set its id on config var LOG_CHANNEL."
+                "Ada yang Salah, Buat Grup dan atur id-nya di config var BOTOG_CHATID."
             )
-
 
             sys.exit(1)
         chat = r.chats[0]
         channel = get_peer_id(chat)
-        assistant = True
-
         heroku_var["BOTLOG_CHATID"] = channel
+        assistant = True
     try:
-        await bot.get_permissions(int(channel), tgbot.me.username)
+        await bot.get_permissions(int(channel), BOT_USERNAME)
     except UserNotParticipantError:
         try:
-            await bot(InviteToChannelRequest(int(channel), [tgbot.me.username]))
+            await bot(InviteToChannelRequest(int(channel), [BOT_USERNAME]))
         except BaseException as er:
             LOGS.info("Kesalahan saat Menambahkan Asisten ke Log Grup")
             LOGS.exception(er)
@@ -100,7 +110,7 @@ async def autolog():
             achat = await tgbot.get_entity(int(channel))
         except BaseException as er:
             achat = None
-            LOGS.info("Kesalahan saat mendapatkan grup Log dari Asisten")
+            LOGS.info("Kesalahan saat mendapatkan saluran Log dari Asisten")
             LOGS.exception(er)
         if achat and not achat.admin_rights:
             rights = ChatAdminRights(
@@ -116,7 +126,7 @@ async def autolog():
             try:
                 await bot(
                     EditAdminRequest(
-                        int(channel), tgbot.me.username, rights, "Assistant"
+                        int(channel), BOT_USERNAME, rights, "Assistant"
                     )
                 )
             except ChatAdminRequiredError:
@@ -124,7 +134,7 @@ async def autolog():
                     "Gagal mempromosikan 'Bot Asisten' di 'Log Grup' karena 'Hak Istimewa Admin'"
                 )
             except BaseException as er:
-                LOGS.info("Kesalahan saat mempromosikan asisten di Grup Log..")
+                LOGS.info("Kesalahan saat mempromosikan asisten di grup Log..")
                 LOGS.exception(er)
     if isinstance(chat.photo, ChatPhotoEmpty):
         photo = "userbot/files/20211115_142004.jpg"
