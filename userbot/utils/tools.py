@@ -2,6 +2,8 @@ import re
 import hashlib
 import asyncio
 import shlex
+from PIL import Image
+from yt_dlp import YoutubeDL
 import os
 from os.path import basename
 import os.path
@@ -110,6 +112,18 @@ async def runcmd(cmd: str) -> tuple[str, str, int, int]:
             stderr.decode('utf-8', 'replace').strip(),
             process.returncode,
             process.pid)
+
+async def bash(cmd):
+    process = await asyncio.create_subprocess_shell(
+        cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    stdout, stderr = await process.communicate()
+    err = stderr.decode().strip()
+    out = stdout.decode().strip()
+    return out, err
+
 
 
 async def take_screen_shot(video_file: str, duration: int, path: str = '') -> Optional[str]:
