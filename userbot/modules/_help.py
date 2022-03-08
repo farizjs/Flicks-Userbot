@@ -38,6 +38,7 @@ async def cmd_list(event):
             await event.edit(f"**✘ Commands available in {args} ✘** \n\n" + str(CMD_HELP[args]) + "\n\n**💕 @TheFlicksUserbot**")
         else:
             await event.edit(f"**Module** `{args}` **Tidak tersedia!**")
+    else:
         try:
             results = await bot.inline_query(  # pylint:disable=E0602
                 BOT_USERNAME, "@FlicksSupport"
