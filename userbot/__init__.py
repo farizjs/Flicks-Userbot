@@ -992,10 +992,10 @@ Perintah yang tersedia di bot ini :
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
-                if len(cmdhel) > 130:
+                if len(cmdhel) > 150:
                     help_string = (
                         str(CMD_HELP[modul_name]).replace(
-                            '`', '')[:1999] + "..."
+                            '`', '')[:150] + "..."
                         + "\n\nBaca Text Berikutnya Ketik .help "
                         + modul_name
                         + " "
@@ -1010,11 +1010,6 @@ Perintah yang tersedia di bot ini :
                         modul_name
                     )
                 )
-
-                    await event.edit(reply_pop_up_alert, buttons=[
-                    (custom.Button.inline("⬅️ Kembali", data="open"),),
-                ])
-
 
             else:
                 reply_pop_up_alert = f"""Jangan Menggunakan Milik {DEFAULTUSER} !"""
