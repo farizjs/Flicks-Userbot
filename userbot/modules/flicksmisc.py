@@ -987,8 +987,8 @@ async def _(event):
     if event.fwd_from:
         return
     user = bot.get_me()
-    name = f"{user.first_name}"
-    bio = f"{user.about}"
+    name = user.first_name
+    bio = user.about
     n = 1
     await bot(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit=n)))
     await bot(functions.account.UpdateProfileRequest(about=bio))
