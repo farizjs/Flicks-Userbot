@@ -995,7 +995,7 @@ Perintah yang tersedia di bot ini :
                 if len(cmdhel) > 130:
                     help_string = (
                         str(CMD_HELP[modul_name]).replace(
-                            '`', '')[:130] + "..."
+                            '`', '')[:1999] + "..."
                         + "\n\nBaca Text Berikutnya Ketik .help "
                         + modul_name
                         + " "
@@ -1010,6 +1010,13 @@ Perintah yang tersedia di bot ini :
                         modul_name
                     )
                 )
+                try:
+                buttons = [
+                    (custom.Button.inline("⬅️ Kembali", data="open"),),
+                ]
+                    await event.edit(reply_pop_up_alert, buttons=buttons)
+
+
             else:
                 reply_pop_up_alert = f"""Jangan Menggunakan Milik {DEFAULTUSER} !"""
 
