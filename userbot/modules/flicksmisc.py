@@ -11,6 +11,7 @@ from telethon import *
 from userbot.events import register
 from userbot import CMD_HELP, bot, TEMP_DOWNLOAD_DIRECTORY, DEFAULT_BIO, ALIVE_NAME
 from telethon import events
+from userbot.utils import flicks_cmd
 from telethon.tl import functions
 from urllib.parse import quote
 from datetime import datetime
@@ -88,7 +89,7 @@ if 1 == 1:
     client = bot
 
 
-@flicks_cmd(pattern="^app(?: |$)(.*)")
+@flicks_cmd(pattern="app(?: |$)(.*)")
 async def apk(e):
     try:
         app_name = e.pattern_match.group(1)
@@ -149,7 +150,7 @@ async def _(event):
 
 
 
-@flicks_cmd(pattern="^xcd(?: |$)(.*)")
+@flicks_cmd(pattern="xcd(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
