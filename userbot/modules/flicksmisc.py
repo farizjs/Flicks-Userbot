@@ -88,7 +88,7 @@ if 1 == 1:
     client = bot
 
 
-@register(outgoing=True, pattern="^.app(?: |$)(.*)")
+@flicks_cmd(pattern="^app(?: |$)(.*)")
 async def apk(e):
     try:
         app_name = e.pattern_match.group(1)
@@ -133,7 +133,7 @@ async def apk(e):
         await e.edit("Exception Occured:- " + str(err))
 
 
-@register(outgoing=True, pattern="^.undlt(?: |$)(.*)")
+@flicks_cmd(pattern="undlt(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -148,41 +148,8 @@ async def _(event):
         await event.delete()
 
 
-@register(outgoing=True, pattern="^.calc(?: |$)(.*)")
-async def _(event):
-    if event.fwd_from:
-        return
-    input = event.pattern_match.group(1)  # get input
-    exp = "Given expression is " + input  # report back input
-    # lazy workaround to add support for two digits
-    final_input = tuple(input)
-    term1part1 = final_input[0]
-    term1part2 = final_input[1]
-    term1 = str(term1part1) + str(term1part2)
-    final_term1 = (int(term1))
-    operator = str(final_input[2])
-    term2part1 = final_input[3]
-    term2part2 = final_input[4]
-    term2 = str(term2part1) + str(term2part2)
-    final_term2 = (int(term2))
-    # actual calculations go here
-    if input == "help":
-        await event.edit("Syntax .calc <term1><operator><term2>\nFor eg .calc 02*02 or 99*99 (the zeros are important) (two terms and two digits max)")
-    elif operator == "*":
-        await event.edit("Solution -->\n" + exp + "\n" + str(final_term1 * final_term2))
-    elif operator == "-":
-        await event.edit("Solution -->\n" + exp + "\n" + str(final_term1 - final_term2))
-    elif operator == "+":
-        await event.edit("Solution -->\n" + exp + "\n" + str(final_term1 + final_term2))
-    elif operator == "/":
-        await event.edit("Solution -->\n" + exp + "\n" + str(final_term1 / final_term2))
-    elif operator == "%":
-        await event.edit("Solution -->\n" + exp + "\n" + str(final_term1 % final_term2))
-    else:
-        await event.edit("use .calc help")
 
-
-@register(outgoing=True, pattern="^.xcd(?: |$)(.*)")
+@flicks_cmd(pattern="^xcd(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -229,7 +196,7 @@ Year: {}""".format(img, input_str, xkcd_link, safe_title, alt, day, month, year)
         await event.edit("xkcd n.{} not found!".format(xkcd_id))
 
 
-@register(outgoing=True, pattern="^.remove(?: |$)(.*)")
+@flicks_cmd(pattern="remove(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -377,7 +344,7 @@ async def ban_user(chat_id, i, rights):
         return False, str(exc)
 
 
-@register(outgoing=True, pattern="^.rnupload(?: |$)(.*)")
+@flicks_cmd(pattern="rnupload(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -421,7 +388,7 @@ async def _(event):
         await event.edit("Syntax // .rnupload filename.extension as reply to a Telegram media")
 
 
-@register(outgoing=True, pattern="^.grab(?: |$)(.*)")
+@flicks_cmd(pattern="grab(?: |$)(.*)")
 async def potocmd(event):
     """Gets the profile photos of replied users, channels or chats"""
     id = "".join(event.raw_text.split(maxsplit=2)[1:])
@@ -453,8 +420,7 @@ async def potocmd(event):
             await event.edit("`Tidak Dapat Menemukan Foto Pengguna Ini`")
             return
 
-
-@register(outgoing=True, pattern="^.res(?: |$)(.*)")
+@flicks_cmd(pattern="res(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -489,7 +455,7 @@ async def _(event):
             await event.client.delete_message(chat, event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.clone(?: |$)(.*)")
+@flicks_cmd(pattern="clone(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -668,7 +634,7 @@ def get_provider(url):
     return url
 
 
-@register(outgoing=True, pattern="^.watch(?: |$)(.*)")
+@flicks_cmd(pattern="watch(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -715,7 +681,7 @@ async def _(event):
 # Modified by :- @kirito6969,@deleteduser420
 
 
-@register(outgoing=True, pattern="^.weeb(?: |$)(.*)")
+@flicks_cmd(pattern="weeb(?: |$)(.*)")
 async def weebify(event):
 
     args = event.pattern_match.group(1)
@@ -762,7 +728,7 @@ boldfont = [
     '𝘇']
 
 
-@register(outgoing=True, pattern="^.bold(?: |$)(.*)")
+@flicks_cmd(pattern="bold(?: |$)(.*)")
 async def thicc(bolded):
 
     args = bolded.pattern_match.group(1)
@@ -809,7 +775,7 @@ medievalbold = [
     '𝖟']
 
 
-@register(outgoing=True, pattern="^.medbold(?: |$)(.*)")
+@flicks_cmd(pattern="medbold(?: |$)(.*)")
 async def mediv(medievalx):
 
     args = medievalx.pattern_match.group(1)
@@ -856,7 +822,8 @@ doublestruckt = [
     '𝕫']
 
 
-@register(outgoing=True, pattern="^.doublestruck(?: |$)(.*)")
+
+@flicks_cmd(pattern="doublestruck(?: |$)(.*)")
 async def doublex(doublestrucktx):
 
     args = doublestrucktx.pattern_match.group(1)
@@ -901,9 +868,9 @@ cursiveboldx = [
     '𝔁',
     '𝔂',
     '𝔃']
+  
 
-
-@register(outgoing=True, pattern="^.curbold(?: |$)(.*)")
+@flicks_cmd(pattern="curbold(?: |$)(.*)")
 async def cursive2(cursivebolded):
 
     args = cursivebolded.pattern_match.group(1)
@@ -951,7 +918,7 @@ medival2 = [
     '𝔷']
 
 
-@register(outgoing=True, pattern="^.medi(?: |$)(.*)")
+@flicks_cmd(pattern="medi(?: |$)(.*)")
 async def medival22(medivallite):
 
     args = medivallite.pattern_match.group(1)
@@ -997,8 +964,7 @@ cursive = [
     '𝓎',
     '𝓏']
 
-
-@register(outgoing=True, pattern="^.cur(?: |$)(.*)")
+@flicks_cmd(pattern="cur(?: |$)(.*)")
 async def xcursive(cursivelite):
 
     args = cursivelite.pattern_match.group(1)
@@ -1015,18 +981,18 @@ async def xcursive(cursivelite):
             string = string.replace(normiecharacter, cursivecharacter)
     await cursivelite.edit(string)
 
-
-@register(outgoing=True, pattern="^.rclone(?: |$)(.*)")
+@flicks_cmd(pattern="rclone(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
-    name = f"{ALIVE_NAME}"
-    bio = f"{DEFAULT_BIO}"
+    user = bot.get_me()
+    name = f"{user.first_name}"
+    bio = f"{user.about}"
     n = 1
     await bot(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit=n)))
     await bot(functions.account.UpdateProfileRequest(about=bio))
     await bot(functions.account.UpdateProfileRequest(first_name=name))
-    await event.edit(f"`{ALIVE_NAME} Telah Mengembalikan Ke Akun Utama.`")
+    await event.edit(f"`{user.first_name} Telah Mengembalikan Ke Akun Utama.`")
 
 CMD_HELP.update({
     "misc":
