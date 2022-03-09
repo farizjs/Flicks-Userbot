@@ -1010,7 +1010,7 @@ Perintah yang tersedia di bot ini :
                         modul_name
                     )
                 )
-                try:
+
                     await event.edit(reply_pop_up_alert, buttons=[
                     (custom.Button.inline("⬅️ Kembali", data="open"),),
                 ])
