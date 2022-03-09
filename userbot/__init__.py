@@ -239,15 +239,15 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/808a9f8f047f9a7e67050.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/2d75f18b79fd17217f44c.jpg"
 
 # Default pmpermit logo
 PMPERMIT_PIC = os.environ.get(
-    "PMPERMIT_PIC") or "https://telegra.ph/file/e950cf06924c4e090d513.jpg"
+    "PMPERMIT_PIC") or "https://telegra.ph/file/46a00f338fd3db59e5a65.jpg"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/808a9f8f047f9a7e67050.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/46a00f338fd3db59e5a65.jpg"
 
 # Picture For VCPLUGIN
 PLAY_PIC = (
