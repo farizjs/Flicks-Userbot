@@ -1,7 +1,7 @@
 from telethon.utils import get_display_name
+from telethon import events
 
-from userbot import bot
-
+from userbot import bot, CMD_HELP, CMD_HANDLER as cmd
 from .sql_helper.echo_sql import (
     addecho,
     get_all_echos,
@@ -11,9 +11,8 @@ from .sql_helper.echo_sql import (
     remove_echo,
     remove_echos,
 )
-from userbot.utils import get_user_from_event, edit_delete, edit_or_reply
+from userbot.utils import get_user_from_event, edit_delete, edit_or_reply, flicks_cmd
 
-plugin_category = "fun"
 
 
 @flicks_cmd(pattern="addecho$")
@@ -103,20 +102,7 @@ async def echo(event):
             )
 
 
-@catub.cat_cmd(
-    pattern="listecho( -a)?$",
-    command=("listecho", plugin_category),
-    info={
-        "header": "shows the list of users for whom you enabled echo",
-        "flags": {
-            "a": "To list echoed users in all chats",
-        },
-        "usage": [
-            "{tr}listecho",
-            "{tr}listecho -a",
-        ],
-    },
-)
+@flicks_cmd(pattern="echolist( -a)?$")
 async def echo(event):  # sourcery no-metrics
     "To list all users on who you enabled echoing."
     input_str = event.pattern_match.group(1)
@@ -167,9 +153,21 @@ async def echo(event):  # sourcery no-metrics
     await edit_or_reply(event, output_str)
 
 
-@bot.on(events.NewMessage(incoming=True))
+@bot.on(events.NewMessage(incoming=True, disable_edited=True))
 async def samereply(event):
     if is_echo(event.chat_id, event.sender_id) and (
         event.message.text or event.message.sticker
     ):
         await event.reply(event.message)
+
+CMD_HELP.update(
+    {
+        "echo": 
+    f"Perintah : `{cmd}addecho` \
+    \nUsage : Untuk Menambahkan Followers Chat Kamu. \
+    Perintah :`{cmd}delecho` \
+    \nUsage : Untuk menghentikan echo. \
+    Perintah :`{cmd}echolist`:\
+    \nUsage: Untuk Melihat daftar penggunaan yang kamu echo."
+    }
+)
