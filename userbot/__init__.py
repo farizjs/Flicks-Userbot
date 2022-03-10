@@ -384,10 +384,14 @@ async def check_botlog_chatid():
             "You must set up the BOTLOG_CHATID variable in the config.env or environment variables, for the private error log storage to work."
         )
 
+        quit(1)
+
     elif not BOTLOG_CHATID and BOTLOG:
         LOGS.info(
             "You must set up the BOTLOG_CHATID variable in the config.env or environment variables, for the userbot logging feature to work."
         )
+
+        quit(1)
 
     elif not BOTLOG or not LOGSPAMMER:
         return
@@ -403,7 +407,10 @@ with bot:
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
-        bot.loop.run_until_complete(verifyLoggerGroup())
+        LOGS.info(
+            "BOTLOG_CHATID environment variable isn't a "
+            "BOTLOG_CHATID yang anda masukan tidak valid, silahkan periksa variabel yang anda masukan.")
+        quit(1)
 
 
 
@@ -1020,5 +1027,7 @@ Perintah yang tersedia di bot ini :
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
-        bot.loop.run_until_complete(verifyLoggerGroup())
-
+        LOGS.info(
+            "BOTLOG_CHATID Environment Variable Isn't a "
+            "Valid Entity. Please Check Your Environment variables/config.env File.")
+        quit(1)
