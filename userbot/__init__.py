@@ -25,8 +25,6 @@ from telethon.sessions import StringSession
 from telethon import Button, events, functions, types
 from telethon.utils import get_display_name
 
-from userbot.utils.botlog import verifyLoggerGroup
-
 
 # Button from Man-Userbot
 # Thanks Man-Userbot 💙
@@ -383,14 +381,12 @@ async def check_botlog_chatid():
         LOGS.info(
             "You must set up the BOTLOG_CHATID variable in the config.env or environment variables, for the private error log storage to work."
         )
-
         quit(1)
 
     elif not BOTLOG_CHATID and BOTLOG:
         LOGS.info(
             "You must set up the BOTLOG_CHATID variable in the config.env or environment variables, for the userbot logging feature to work."
         )
-
         quit(1)
 
     elif not BOTLOG or not LOGSPAMMER:
@@ -401,7 +397,7 @@ async def check_botlog_chatid():
         LOGS.info(
             "Your account doesn't have rights to send messages to BOTLOG_CHATID "
             "group. Check if you typed the Chat ID correctly.")
-
+        quit(1)
 
 with bot:
     try:
@@ -411,7 +407,6 @@ with bot:
             "BOTLOG_CHATID environment variable isn't a "
             "BOTLOG_CHATID yang anda masukan tidak valid, silahkan periksa variabel yang anda masukan.")
         quit(1)
-
 
 
 async def check_alive():
@@ -424,7 +419,7 @@ with bot:
     except BaseException:
         LOGS.info(
             "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file.")
+            "BOTLOG_CHATID yang anda masukan tidak valid, silahkan periksa variabel yang anda masukan.")
         quit(1)
 
 # =================================GlobalVariables=================================== #
