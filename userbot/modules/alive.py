@@ -13,6 +13,8 @@ from platform import python_version, uname
 from shutil import which
 from os import remove
 from telethon import __version__, version
+from pytgcalls import __version__ as pytgcalls
+
 import platform
 import sys
 import time
@@ -308,6 +310,7 @@ async def redis(alive):
         f"┣  **Username** : @{user.username} \n"
         f"┣  **Telethon** :` Ver {version.__version__} `\n"
         f"┣  **Python**   :` Ver {python_version()} `\n"
+        f"┣  **Pytgcalls  :** `{pytgcalls.__version__}` \n"
         f"┣  **Branch**   :` {UPSTREAM_REPO_BRANCH} `\n"
         f"┣  **Bot Ver**  :` v.{BOT_VER} `\n"
         f"┣  **Modules**  :` {len(modules)} Modules `\n"
