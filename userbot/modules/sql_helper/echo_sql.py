@@ -1,8 +1,6 @@
-# Kyy-Userbot
-
 from sqlalchemy import Column, String, UnicodeText
 
-from userbot.modules.sql_helper import BASE, SESSION
+from . import BASE, SESSION
 
 
 class Echos(BASE):
@@ -64,12 +62,8 @@ def addecho(chat_id, user_id, chat_name, user_name, user_username, chat_type):
     to_check = is_echo(chat_id, user_id)
     if not to_check:
         adder = Echos(
-            str(chat_id),
-            str(user_id),
-            chat_name,
-            user_name,
-            user_username,
-            chat_type)
+            str(chat_id), str(user_id), chat_name, user_name, user_username, chat_type
+        )
         SESSION.add(adder)
         SESSION.commit()
         return True
@@ -77,12 +71,8 @@ def addecho(chat_id, user_id, chat_name, user_name, user_username, chat_type):
     SESSION.delete(rem)
     SESSION.commit()
     adder = Echos(
-        str(chat_id),
-        str(user_id),
-        chat_name,
-        user_name,
-        user_username,
-        chat_type)
+        str(chat_id), str(user_id), chat_name, user_name, user_username, chat_type
+    )
     SESSION.add(adder)
     SESSION.commit()
     return False
