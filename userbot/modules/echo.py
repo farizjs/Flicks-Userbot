@@ -1,3 +1,8 @@
+# Credits: mrconfused
+# Recode by @farizjs
+# FROM Flicks-Userbot <https://github.com/farizjs/Flicks-Userbot>
+# t.me/TheFlicksUserbot
+
 from telethon.utils import get_display_name
 from telethon import events
 
