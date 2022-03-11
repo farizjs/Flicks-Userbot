@@ -22,8 +22,8 @@ async def echo(event):
         return await edit_or_reply(
             event, "`Balas pesan Pengguna untuk menggemakan pesannya`"
         )
-    catevent = await edit_or_reply(event, "`Adding Echo to user...`")
-    user, rank = await get_user_from_event(event, catevent, nogroup=True)
+    flicksevent = await edit_or_reply(event, "`Adding Echo to user...`")
+    user, rank = await get_user_from_event(event, flicksevent, nogroup=True)
     if not user:
         return
     reply_msg = await event.get_reply_message()
@@ -42,9 +42,9 @@ async def echo(event):
     try:
         addecho(chat_id, user_id, chat_name, user_name, user_username, chat_type)
     except Exception as e:
-        await edit_delete(catevent, f"**Error:**\n`{e}`")
+        await edit_delete(flicksevent, f"**Error:**\n`{e}`")
     else:
-        await edit_or_reply(catevent, "Hi")
+        await edit_or_reply(flicksevent, "Hi")
 
 
 @flicks_cmd(pattern="rmecho$")
@@ -61,7 +61,7 @@ async def echo(event):
         try:
             remove_echo(chat_id, user_id)
         except Exception as e:
-            await edit_delete(catevent, f"**Error:**\n`{e}`")
+            await edit_delete(flicksevent, f"**Error:**\n`{e}`")
         else:
             await edit_or_reply(event, "Echo telah dihentikan untuk pengguna")
     else:
