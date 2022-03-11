@@ -34,4 +34,4 @@ from .tools import (
 )
 from .utils import autobot, load_module, remove_plugin, start_assistant
 from .xxxxxx import all_col
-# from .log import autolog
+from .events import get_user_from_event
