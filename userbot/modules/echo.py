@@ -170,9 +170,9 @@ CMD_HELP.update(
         "echo": 
     f"Perintah : `{cmd}addecho` \
     \nUsage : Untuk Menambahkan Followers Chat Kamu. \
-    Perintah :`{cmd}delecho` \
+    \nPerintah :`{cmd}delecho` \
     \nUsage : Untuk menghentikan echo. \
-    Perintah :`{cmd}echolist`:\
+    \nPerintah :`{cmd}echolist`:\
     \nUsage: Untuk Melihat daftar penggunaan yang kamu echo."
     }
 )
