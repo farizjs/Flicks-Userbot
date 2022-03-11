@@ -6,10 +6,10 @@ LOGS = logging.getLogger("userbot")
 
 
 async def get_user_from_event(
-    event, kingevent=None, secondgroup=None, nogroup=False, noedits=False
+    event, flicksevent=None, secondgroup=None, nogroup=False, noedits=False
 ):  # sourcery no-metrics
-    if kingevent is None:
-        kingevent = event
+    if flicksevent is None:
+        flicksevent = event
     if nogroup is False:
         if secondgroup:
             args = event.pattern_match.group(2).split(" ", 1)
@@ -50,18 +50,18 @@ async def get_user_from_event(
             previous_message = await event.get_reply_message()
             if previous_message.from_id is None:
                 if not noedits:
-                    await edit_delete(kingevent, "`Well that's an anonymous admin !`")
+                    await edit_delete(flicksevent, "`Well that's an anonymous admin !`")
                 return None, None
             user_obj = await event.client.get_entity(previous_message.sender_id)
             return user_obj, extra
         elif not args:
             if not noedits:
                 await edit_delete(
-                    kingevent, "`Pass the user's username, id or reply!`", 5
+                    flicksevent, "`Pass the user's username, id or reply!`", 5
                 )
             return None, None
     except Exception as e:
         LOGS.error(str(e))
     if not noedits:
-        await edit_delete(kingevent, "__Couldn't fetch user to proceed further__")
+        await edit_delete(flicksevent, "__Couldn't fetch user to proceed further__")
     return None, None
