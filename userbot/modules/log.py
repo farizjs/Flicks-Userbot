@@ -4,6 +4,7 @@
 # t.me/SharingUserbot & t.me/Lunatic0de
 
 import asyncio
+from telethon import Button
 
 from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
@@ -41,17 +42,22 @@ async def logaddjoin(event):
     if not (user and user.is_self):
         return
     if hasattr(chat, "username") and chat.username:
-        chat = f"[{chat.title}](https://t.me/{chat.username}/{event.action_message.id})"
+        chat = f"https://t.me/{chat.username}/{event.action_message.id}"
     else:
-        chat = f"[{chat.title}](https://t.me/c/{chat.id}/{event.action_message.id})"
+        chat = f"https://t.me/c/{chat.id}/{event.action_message.id}"
+    buttons = Button.url(
+        "View Message", f"{chat}"
+    )
     if event.user_added:
         tmp = event.added_by
-        text = f"📩 **#ADD_LOG\n •** {vcmention(tmp)} **Menambahkan** {vcmention(user)}\n **• Ke Group** {chat}"
+        gc = await event.get_chat()
+        text = f"📩 **#ADD_LOG\n •** {vcmention(tmp)} **Menambahkan** {vcmention(user)}\n **• Ke Group** {gc.title}"
     elif event.user_joined:
-        text = f"📨 **#JOIN_LOG\n •** [{user.first_name}](tg://user?id={user.id}) **Bergabung\n • Ke Group** {chat}"
+        gc = await event.get_chat()
+        text = f"📨 **#JOIN_LOG\n •** [{user.first_name}](tg://user?id={user.id}) **Bergabung\n • Ke Group** {gc.title}"
     else:
         return
-    await tgbot.send_message(BOTLOG_CHATID, text)
+    await tgbot.send_message(BOTLOG_CHATID, text, buttons=buttons)
 
 
 @flicks_handler(func=lambda e: e.is_private)
