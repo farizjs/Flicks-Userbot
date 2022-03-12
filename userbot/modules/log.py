@@ -16,8 +16,8 @@ from userbot.utils import (
     chataction,
     edit_delete,
     edit_or_reply,
-    man_cmd,
-    man_handler,
+    flicks_cmd,
+    flicks_handler,
 )
 from userbot.utils.tools import media_type
 
@@ -44,9 +44,6 @@ async def logaddjoin(event):
         chat = f"[{chat.title}](https://t.me/{chat.username}/{event.action_message.id})"
     else:
         chat = f"[{chat.title}](https://t.me/c/{chat.id}/{event.action_message.id})"
-    buttons = Button.inline(
-        "Tinggalkan Obrolan", data=f"leave_ch_{event.chat_id}|{key}"
-    )
     if event.user_added:
         tmp = event.added_by
         text = f"📩 **#ADD_LOG\n •** {vcmention(tmp)} **Menambahkan** {vcmention(user)}\n **• Ke Group** {chat}"
@@ -54,31 +51,7 @@ async def logaddjoin(event):
         text = f"📨 **#JOIN_LOG\n •** [{user.first_name}](tg://user?id={user.id}) **Bergabung\n • Ke Group** {chat}"
     else:
         return
-    await tgbot.send_message(BOTLOG_CHATID, text, buttons=buttons)
-
-
-@callback(data=re.compile(b"leave_ch_(.*)"))
-async def leave_ch_at(event):
-    if event.query.user_id == OWNER_ID:
-    cht = event.data_match.group(1)
-    ch_id, client = cht.split("|")
-    try:
-        client = _client[client]
-    except KeyError:
-        return
-    try:
-        name = (await client.get_entity(int(ch_id))).title
-        await client.delete_dialog(int(ch_id))
-    except UserNotParticipantError:
-        pass
-    except ChannelPrivateError:
-        return await event.edit(
-            "`[CANT_ACCESS_CHAT]` `Mungkin sudah keluar atau terkena banned.`"
-        )
-    except Exception as er:
-        LOGS.exception(er)
-        return await event.answer(str(er))
-    await event.edit("Keluar `{}`".format(name))
+    await tgbot.send_message(BOTLOG_CHATID, text)
 
 
 @flicks_handler(func=lambda e: e.is_private)
