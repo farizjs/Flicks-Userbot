@@ -13,7 +13,6 @@ from sqlalchemy.exc import IntegrityError
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
-from telethon import Button
 
 from userbot import (
     BOTLOG,
@@ -28,8 +27,6 @@ from userbot import (
     ALIVE_NAME,
     DEVS,
 )
-
-from userbot import tgbot
 
 from userbot.events import register
 
@@ -125,13 +122,14 @@ async def permitpm(event):
                 if BOTLOG:
                     name = await event.client.get_entity(event.chat_id)
                     name0 = str(name.first_name)
-                    await tgbot.send_message(
+                    await event.client.send_message(
                         BOTLOG_CHATID,
-                        f"#SPAM \
-                        \n{name0} Telah Di Blokir Karena melakukan Spam ke room chat",
-                        buttons=[
-                            Button.url("Profil Pengguna", f"tg://openmessage?user_id={str(event.chat_id)}"),
-                        ],
+                        "["
+                        + name0
+                        + "](tg://user?id="
+                        + str(event.chat_id)
+                        + ")"
+                        + " Telah Diblokir Karna Melakukan Spam Ke Room Chat",
                     )
 
 
@@ -250,13 +248,9 @@ async def approvepm(apprvpm):
     await message.delete()
 
     if BOTLOG:
-        await tgbot.send_message(
+        await apprvpm.client.send_message(
             BOTLOG_CHATID,
-            f"#DITERIMA \
-            \n{DEFAULTUSER} Menyetujui {name0} untuk pm",
-              buttons=[
-                  Button.url("Profil Pengguna", f"tg://openmessage?user_id={uid}"),
-              ],
+            "#DITERIMA\n" + "User: " + f"[{name0}](tg://user?id={uid})"
         )
 
 
@@ -283,13 +277,10 @@ async def disapprovepm(disapprvpm):
     )
 
     if BOTLOG:
-        await tgbot.send_message(
+        await disapprvpm.client.send_message(
             BOTLOG_CHATID,
-            f"#TOLAK \
-            \n{DEFAULTUSER} Menolak {name0} untuk pm",
-              buttons=[
-                  Button.url("Profil Pengguna", f"tg://openmessage?user_id={uid}"),
-              ],
+            f"[{name0}](tg://user?id={disapprvpm.chat_id})"
+            " `Berhasil Ditolak` !",
         )
 
 
@@ -319,14 +310,11 @@ async def blockpm(block):
         pass
 
     if BOTLOG:
-        await tgbot.send_message(
+        await block.client.send_message(
             BOTLOG_CHATID,
-            f"#BLOKIR \
-            \n {name0} Berhasil diBlokir",
-              buttons=[
-                  Button.url("Profil Pengguna", f"tg://openmessage?user_id={uid}"),
-              ],
+            "#BLOKIR\n" + "Pengguna: " + f"[{name0}](tg://user?id={uid})",
         )
+
 
 @ register(outgoing=True, pattern=r"^\.unblock$")
 async def unblockpm(unblock):
@@ -339,14 +327,11 @@ async def unblockpm(unblock):
         await unblock.edit("`Anda Sudah Tidak Diblokir Lagi.`")
 
     if BOTLOG:
-        await tgbot.send_message(
+        await unblock.client.send_message(
             BOTLOG_CHATID,
-            f"#UNBLOCK \
-            \n{DEFAULTUSER} Telah membuka blokir untuk {name0}",
-              buttons=[
-                  Button.url("Profil Pengguna", f"tg://openmessage?user_id={replied_user.id}"),
-              ],
+            f"[{name0}](tg://user?id={replied_user.id})" " Tidak Lagi Diblokir.",
         )
+
 
 @ register(outgoing=True, pattern=r"^.(set|get|reset) pm_msg(?: |$)(\w*)")
 async def add_pmsg(cust_msg):
