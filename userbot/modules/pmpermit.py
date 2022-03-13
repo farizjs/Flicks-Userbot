@@ -130,7 +130,7 @@ async def permitpm(event):
                         f"#SPAM \
                         \n{name0} Telah Di Blokir Karena melakukan Spam ke room chat",
                         buttons=[
-                            Button.url("Profil Pengguna", f"tg://openmessage?user_id={uid}"),
+                            Button.url("Profil Pengguna", f"tg://openmessage?user_id={str(event.chat_id)}"),
                         ],
                     )
 
