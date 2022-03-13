@@ -71,7 +71,7 @@ async def check_bot_started_users(user, event):
         notification = f"🔮 **#BOT_RESTART**\n**First Name:** {_format.mentionuser(user.first_name , user.id)}\
                 \n**ID: **`{user.id}`\
                 \n**Action: **Telah Me-Restart saya"
-    buttons = [[Button.inline("Info", "itkkstyo")]]
+    buttons = [[custom.Button.inline("Info", data="itkkstyo")]]
 
     try:
         add_starter_to_db(
