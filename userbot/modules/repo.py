@@ -1,6 +1,6 @@
-# https://github.com/fjgaming212/Flicks-Userbot
-# Jan dihapus ya :)
-# Kalo mau ambil aja :D
+# FROM Flicks-Userbot
+# <https://github.com/farizjs/Flicks-Userbot>
+# t.me/TheFlicksUserbot
 
 import logging
 
@@ -17,9 +17,9 @@ logging.basicConfig(
 @flicks_cmd(pattern="repo")
 async def yardim(event):
     try:
-        kenbotusername = BOT_USERNAME
-        if kenbotusername is not None:
-            results = await event.client.inline_query(kenbotusername, "")
+        botusername = BOT_USERNAME
+        if botusername is not None:
+            results = await event.client.inline_query(botusername, "")
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
@@ -30,26 +30,11 @@ async def yardim(event):
             )
     except Exception:
         return await event.edit(
-            "**Hey, I Am ✨Fʟɪᴄᴋs Usᴇʀʙᴏᴛ✨ **\n"
-            "卍━━━━━━━━━━━━━━━━━━卍\n"
-            "➣ Repo Userbot : [ɢɪᴛʜᴜʙ](https://github.com/fjgaming212/Flicks-Userbot)\n"
-            "➣ Owner Bot       : [Fᴀʀɪᴢ](t.me/farizsj)\n"
-            "卍━━━━━━━━━━━━━━━━━━卍\n"
-            "➣ Team                : [ʜᴇʀᴇ](t.me/devoloperflicks)​\n"
-            "➣ Support           : [ɢʀᴏᴜᴘs​](t.me/FlicksSupport)\n"
-            "卍━━━━━━━━━━━━━━━━━━卍"
+            "**__USERBOT INDONESIA__**\n"
+            "𝗥𝗲𝗽𝗼 🇮🇩\n"
+            "╰⎆ [Flick-Userbot](https://github.com/farizis/Flick-Userbot)\n"
+            "❏ 𝗢𝘄𝗻𝗲𝗿 ⎆ [Fariz • 🇮🇩](t.me/farizjs)\n"
+            "❏ 𝗦𝘂𝗽𝗽𝗼𝗿𝘁 ⎆ [groups](t.me/FlicksSupport)\n" 
+            "❏ 𝗧𝗲𝗮𝗺 ⎆  [click here](t.me/devoloperflicks)\n"
         )
 
-
-CMD_HELP.update(
-    {
-        "inlinebot": f"** Plugin :** inlinebot\
-        \n\n  •  Perintah : `{cmd}helpme`\
-        \n  •  Function : Untuk menu bantuan modul Flicks-Userbot\
-        \n\n  •  Perintah : `{cmd}aboutflicks`\
-        \n  •  Function : Tentang Flicks-Userbot\
-        \n\n  •  Perintah : `{cmd}tutorial`\
-        \n  •  Function : Tutorial memasang Flicks-Userbot\
-     "
-    }
-)
