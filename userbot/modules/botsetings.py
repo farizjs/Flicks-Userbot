@@ -71,7 +71,6 @@ async def check_bot_started_users(user, event):
         notification = f"🔮 **#BOT_RESTART**\n**First Name:** {_format.mentionuser(user.first_name , user.id)}\
                 \n**ID: **`{user.id}`\
                 \n**Action: **Telah Me-Restart saya"
-    buttons = [[custom.Button.inline("Info", data="itkkstyo")]]
 
     try:
         add_starter_to_db(
@@ -82,7 +81,7 @@ async def check_bot_started_users(user, event):
     except Exception as e:
         LOGS.error(str(e))
     if BOTLOG_CHATID:
-        await event.client.send_message(BOTLOG_CHATID, notification, buttons=buttons)
+        await event.client.send_message(BOTLOG_CHATID, notification, buttons=[[custom.Button.inline("Info", data="itkkstyo")]])
 
 @callback(data=re.compile(b"itkkstyo"))
 async def ekekdhdb(event):
