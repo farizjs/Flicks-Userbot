@@ -63,12 +63,12 @@ async def check_bot_started_users(user, event):
     check = get_starter_details(user.id)
     if check is None:
         start_date = str(datetime.now().strftime("%B %d, %Y"))
-        notification = f"🔮 **#BOT_START**\n**First Name:** {_format.mentionuser(user.first_name , user.id)} \
+        notification = f"🔮 **#BOT_START**\n**First Name:** {user.first_name} \
                 \n**User ID: **`{user.id}`\
                 \n**Action: **Telah Memulai saya."
     else:
         start_date = check.date
-        notification = f"🔮 **#BOT_RESTART**\n**First Name:** {_format.mentionuser(user.first_name , user.id)}\
+        notification = f"🔮 **#BOT_RESTART**\n**First Name:** {user.first_name}\
                 \n**ID: **`{user.id}`\
                 \n**Action: **Telah Me-Restart saya"
 
@@ -81,14 +81,8 @@ async def check_bot_started_users(user, event):
     except Exception as e:
         LOGS.error(str(e))
     if BOTLOG_CHATID:
-        await event.client.send_message(BOTLOG_CHATID, notification, buttons=[[custom.Button.inline("Info", data="itkkstyo")]])
+        await event.client.send_message(BOTLOG_CHATID, notification, buttons=[[Button.url("Profile", f"tg://openmessage?user_id={user.id}")]])
 
-@callback(data=re.compile(b"itkkstyo"))
-async def ekekdhdb(event):
-    if event.query.user_id == OWNER_ID:
-    text = f"Kapan Pengunjung Baru akan mengunjungi Bot Asisten Anda. Anda akan mendapatkan pesan log ini! \
-           \nJadi anda bisa tahu siapa dan kapan orang memulai bot anda"
-        await event.answer(text, alert=True)
 
 @callback(data=re.compile(b"pmclose"))
 async def pmclose(event):
