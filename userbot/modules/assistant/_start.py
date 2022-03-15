@@ -29,7 +29,7 @@ from userbot.modules.sql_helper.bot_starters import (
 from userbot.modules.sql_helper.globals import gvarstatus
 from userbot.utils import _format, asst_cmd, callback, reply_id
 
-from .www import get_readable_time
+from userbot.modules.www import get_readable_time
 
 user = bot.get_me()
 botusername = BOT_USERNAME
