@@ -87,7 +87,7 @@ async def on_snip_list(event):
         for a_snip in all_snips:
             OUT_STR += f"➤ `#{a_snip.snip}` \n"
     else:
-        OUT_STR = "Tidak ada Snip. Mulai Menyimpan menggunakan `/addnote`"
+        OUT_STR = "Tidak ada Snip. Mulai Menyimpan menggunakan `/save`"
     if len(OUT_STR) > MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUT_STR)) as out_file:
             out_file.name = "snips.text"
