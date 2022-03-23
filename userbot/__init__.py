@@ -40,6 +40,15 @@ CMD_LIST = {}
 CMD_HELP = {}
 INT_PLUG = ""
 LOAD_PLUG = {}
+COUNT_MSG = 0
+USERS = {}
+COUNT_PM = {}
+ENABLE_KILLME = True
+LASTMSG = {}
+ISAFK = False
+AFKREASON = None
+ZALG_LIST = {}
+
 
 # Bot Logs setup:
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -375,21 +384,6 @@ if BOT_TOKEN is not None:
 else:
     tgbot = None
 
-
-with bot:
-    try:
-
-# =================================GlobalVariables=================================== #
-COUNT_MSG = 0
-USERS = {}
-COUNT_PM = {}
-ENABLE_KILLME = True
-LASTMSG = {}
-ken = bot
-CMD_HELP = {}
-ISAFK = False
-AFKREASON = None
-ZALG_LIST = {}
 
 # Import Userbot - Ported by Apis
 
