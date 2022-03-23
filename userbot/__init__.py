@@ -96,7 +96,7 @@ API_HASH = str(os.environ.get("API_HASH") or None)
 STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
 # Logging channel/group ID configuration.
-BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
+BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", "0"))
 
 # Handler Userbot
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
@@ -376,51 +376,8 @@ else:
     tgbot = None
 
 
-async def check_botlog_chatid():
-    if not BOTLOG_CHATID and LOGSPAMMER:
-        LOGS.info(
-            "You must set up the BOTLOG_CHATID variable in the config.env or environment variables, for the private error log storage to work."
-        )
-        quit(1)
-
-    elif not BOTLOG_CHATID and BOTLOG:
-        LOGS.info(
-            "You must set up the BOTLOG_CHATID variable in the config.env or environment variables, for the userbot logging feature to work."
-        )
-        quit(1)
-
-    elif not BOTLOG or not LOGSPAMMER:
-        return
-
-    entity = await bot.get_entity(BOTLOG_CHATID)
-    if entity.default_banned_rights.send_messages:
-        LOGS.info(
-            "Your account doesn't have rights to send messages to BOTLOG_CHATID "
-            "group. Check if you typed the Chat ID correctly.")
-        quit(1)
-
 with bot:
     try:
-        bot.loop.run_until_complete(check_botlog_chatid())
-    except BaseException:
-        LOGS.info(
-            "BOTLOG_CHATID environment variable isn't a "
-            "BOTLOG_CHATID yang anda masukan tidak valid, silahkan periksa variabel yang anda masukan.")
-        quit(1)
-
-
-async def check_alive():
-    await bot.send_file(BOTLOG_CHATID, ALIVE_LOGO, caption=f"**Flicks Userbot Telah diaktifkan ✨**\n\n✥ Master : {ALIVE_NAME}\n✥ Botver : {BOT_VER}\n✥ Support: @FlicksSupport")
-    return
-
-with bot:
-    try:
-        bot.loop.run_until_complete(check_alive())
-    except BaseException:
-        LOGS.info(
-            "BOTLOG_CHATID environment variable isn't a "
-            "BOTLOG_CHATID yang anda masukan tidak valid, silahkan periksa variabel yang anda masukan.")
-        quit(1)
 
 # =================================GlobalVariables=================================== #
 COUNT_MSG = 0
@@ -1019,10 +976,4 @@ Perintah yang tersedia di bot ini :
         LOGS.info(
             "Mode Inline Bot Mu Nonaktif. "
             "Untuk Mengaktifkannya, Silahkan Gunakan Perintah .inlineon. ")
-    try:
-        bot.loop.run_until_complete(check_botlog_chatid())
-    except BaseException:
-        LOGS.info(
-            "BOTLOG_CHATID Environment Variable Isn't a "
-            "Valid Entity. Please Check Your Environment variables/config.env File.")
-        quit(1)
+
