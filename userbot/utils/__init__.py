@@ -32,6 +32,7 @@ from .tools import (
     edit_delete,
     edit_or_reply,
 )
+from .log import autopilot
 from .utils import autobot, load_module, remove_plugin, start_assistant
 from .xxxxxx import all_col
 from .events import get_user_from_event
