@@ -268,26 +268,7 @@ async def ban_starters(event):
 
 
 
-@tgbot.on(events.CallbackQuery(data=b"about"))
-async def about(event):
-      await event.edit(f"""
-Owner - {user.first_name}
-OwnerID - {user.id}
-[Link To Profile 👤](tg://user?id={user.id})
 
-By @TeamFlicksUserbot
-Flicks-Userbot [v{BOT_VER}](https://github.com/fjgaming212/Flicks-Userbot)
-""",
-                             buttons=[
-                                 [
-                                     custom.Button.inline("ᴄʟᴏsᴇ",
-                                                          data="keluar")],
-                             ]
-                             )
-
-@tgbot.on(events.CallbackQuery(data=b"keluar"))
-async def keluar(event):
-    await event.delete()
 
 
 @asst_cmd(pattern="^/uinfo$", from_users=OWNER_ID)
