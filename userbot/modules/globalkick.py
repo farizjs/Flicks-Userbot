@@ -8,9 +8,11 @@ from telethon.tl.types import (
     MessageEntityMentionName)
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 
-from userbot.events import register
-from userbot import ALIVE_NAME, CMD_HELP
+from userbot.utils import flicks_cmd
+from userbot import CMD_HELP, bot, CMD_HANDLER as cmd
 
+OWNER = user.first_name
+OWNER_ID = user.id
 
 async def get_user_from_event(event):
     args = event.pattern_match.group(1).split(':', 1)
@@ -26,7 +28,7 @@ async def get_user_from_event(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit(f"`{ALIVE_NAME}`: **Berikan nama pengguna, id, atau balasan pengguna!**")
+            await event.edit(f"`{OWNER}`: **Berikan nama pengguna, id, atau balasan pengguna!**")
             return
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
@@ -58,7 +60,7 @@ except BaseException:
     client2 = client3 = None
 
 
-@register(outgoing=True, pattern=r"^\.gkick(?: |$)(.*)")
+@flicks_cmd(pattern="gkick(?: |$)(.*)")
 async def gspide(rk):
     lazy = rk
     sender = await lazy.get_sender()
@@ -68,7 +70,7 @@ async def gspide(rk):
     else:
         rkp = await lazy.edit("`processing...`")
     me = await rk.client.get_me()
-    await rkp.edit(f"`{ALIVE_NAME}:` **Requesting to global kick user!**")
+    await rkp.edit(f"`{OWNER}:` **Requesting to global kick user!**")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await rk.get_chat()
@@ -86,10 +88,10 @@ async def gspide(rk):
         if not reason:
             reason = 'Private'
     except BaseException:
-        return await rkp.edit(f"`{ALIVE_NAME}`, **Kesalahan! Pengguna tidak dikenal.**")
+        return await rkp.edit(f"`{OWNER}`, **Kesalahan! Pengguna tidak dikenal.**")
     if user:
         if user.id == 1282429349:
-            return await rkp.edit(f"`{ALIVE_NAME}`, __Anda Tidak Bisa Global Kick Kepada Pembuat Saya__")
+            return await rkp.edit(f"`{OWNER}`, __Anda Tidak Bisa Global Kick Kepada Pembuat Saya__")
         try:
             await rk.client(BlockRequest(user))
             await rk.client(UnblockRequest(user))
@@ -101,17 +103,17 @@ async def gspide(rk):
                 await rk.client.edit_permissions(i, user, view_messages=False)
                 await rk.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await rkp.edit(f"`{ALIVE_NAME} :` **Requesting to kicking user!\nGkicked {a} chats.....**")
+                await rkp.edit(f"`{OWNER} :` **Requesting to kicking user!\nGkicked {a} chats.....**")
 
             except BaseException:
                 b += 1
     else:
-        await rkp.edit(f"`{ALIVE_NAME}:` **Balas ke pengguna !! **")
+        await rkp.edit(f"`{OWNER}:` **Balas ke pengguna !! **")
 
-    return await rkp.edit(f"`{ALIVE_NAME}:` **GKicked [{user.first_name}](tg://user?id={user.id}) in {a} chat(s) **")
+    return await rkp.edit(f"`{OWNER}:` **GKicked [{user.first_name}](tg://user?id={user.id}) in {a} chat(s) **")
 
 CMD_HELP.update({
-    "gkick": "\
-`.gkick reason`\
+    "gkick": f"\
+`{cmd}gkick reason`\
 \nUsage: Globally Ban users from all the Group Administrations bots where you are SUDO"
 })
