@@ -450,8 +450,10 @@ with bot:
 
         dugmeler = CMD_HELP
         me = bot.get_me()
-        uid = me.id
         logo = ALIVE_LOGO
+        user = bot.get_me()
+        uid = user.id
+        owner = user.first_name
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
