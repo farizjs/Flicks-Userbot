@@ -62,8 +62,8 @@ async def autopilot():
     try:
         r = await bot(
             CreateChannelRequest(
-                title="ICE LOGS",
-                about="Group log ɪᴄᴇ-ᴜsᴇʀʙᴏᴛ.\n\nJoin @musikkuchannel",
+                title="FLICKS LOGS",
+                about="Group log Flicks-Userbot.\n\nJoin @FlicksSupport & @TheFicksUserbot",
                 megagroup=True,
             ),
         )
