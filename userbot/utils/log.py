@@ -36,7 +36,7 @@ from telethon.utils import get_peer_id
 
 import heroku3
 
-from userbot import tgbot, bot, HEROKU_API_KEY, HEROKU_APP_NAME, LOGS
+from userbot import BOTLOG_CHATID, tgbot, bot, HEROKU_API_KEY, HEROKU_APP_NAME, LOGS
 
 heroku_api = "https://api.heroku.com"
 if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
