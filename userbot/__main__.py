@@ -64,11 +64,11 @@ async def check_alive():
     except Exception as e:
         LOGS.info(str(e))
     try:
-        bot(JoinChannelRequest("@TheFlicksUserbot"))
+        await bot(JoinChannelRequest("@TheFlicksUserbot"))
     except BaseException:
         pass
     try:
-        bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
+        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
     except BaseException:
         pass
 
