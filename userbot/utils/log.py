@@ -97,7 +97,7 @@ async def autopilot():
         ll = await bot.upload_file(photo)
         try:
             await bot(
-                EditPhotoRequest(int(channel), InputChatUploadedPhoto(ll))
+                EditPhotoRequest(int(chat_id), InputChatUploadedPhoto(ll))
             )
         except BaseException as er:
             LOGS.exception(er)
