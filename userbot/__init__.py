@@ -383,11 +383,6 @@ else:
     tgbot = None
 
 
-# Import Userbot - Ported by Apis
-
-DEFAULTUSER = ALIVE_NAME
-
-# --------------------------------------------InlineBot---------------------------------->
 
 
 def paginate_help(page_number, loaded_modules, prefix):
@@ -626,7 +621,7 @@ Perintah yang tersedia di bot ini :
                     f"`Versi     :` {BOT_VER} \n"
                     f"`Bahasa    :` Python \n"
                     f"`Database  :` Mongo db \n"
-                    f"`Owner     :` {DEFAULTUSER} \n\n"
+                    f"`Owner     :` {ALIVE_NAME} \n\n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
                     f"       Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
@@ -685,7 +680,7 @@ Perintah yang tersedia di bot ini :
         async def on_plug_in_callback_query_handler(event):
             current_page_number = int(lockpage)
             buttons = paginate_help(current_page_number, plugins, "helpme")
-            text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
+            text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
             await event.edit(
                 text,
                 file=flickslogo,
@@ -804,7 +799,7 @@ Perintah yang tersedia di bot ini :
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"Jangan Menggunakan Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"Jangan Menggunakan Milik {ALIVE_NAME}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -842,7 +837,7 @@ Perintah yang tersedia di bot ini :
                     "============================\n"
                     f"      **Alive Inline** \n"
                     "============================\n"
-                    f"`Master    :` {DEFAULTUSER} \n"
+                    f"`Master    :` {ALIVE_NAME} \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi Bot :` {BOT_VER} \n"
                     f"`Plugins   :` {len(plugins)} \n"
@@ -930,7 +925,7 @@ Perintah yang tersedia di bot ini :
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"🔒 Tombol Hanya bisa digunakan oleh {DEFAULTUSER} 🔒."
+                reply_pop_up_alert = f"🔒 Tombol Hanya bisa digunakan oleh {ALIVE_NAME} 🔒."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -963,7 +958,7 @@ Perintah yang tersedia di bot ini :
                 )
 
             else:
-                reply_pop_up_alert = f"""Jangan Menggunakan Milik {DEFAULTUSER} !"""
+                reply_pop_up_alert = f"""Jangan Menggunakan Milik {ALIVE_NAME} !"""
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
