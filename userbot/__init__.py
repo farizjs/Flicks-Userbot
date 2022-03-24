@@ -217,8 +217,6 @@ FLICKS_TEKS_KUSTOM = os.environ.get(
     "FLICKS_TEKS_KUSTOM",
     "I'am Using Flicks-Userbot ✨")
 
-# Default .alive Name
-ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
@@ -387,7 +385,7 @@ else:
 
 # Import Userbot - Ported by Apis
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+DEFAULTUSER = ALIVE_NAME
 
 # --------------------------------------------InlineBot---------------------------------->
 
@@ -453,6 +451,7 @@ with bot:
         logo = ALIVE_LOGO
         user = bot.get_me()
         uid = user.id
+        ALIVE_NAME = user.first_name
         owner = user.first_name
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
