@@ -45,7 +45,7 @@ Berbasis [Paperplane Userbot](https://github.com/RaphielGang/Telegram-Paperplane
 
 
 ## DEPLOY TO HEROKU 
-<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=ZmpnYW1pbmcyMTIvZmxpY2tzLWRlcGxveS11Ym90IEZsaWNrcy1Vc2VyYm90"> <img src="https://www.herokucdn.com/deploy/button.svg" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/farizjs/friendly-guacamole"> <img src="https://www.herokucdn.com/deploy/button.svg" /></a></p>
 
 ### Tutorial Deploy
 ```
