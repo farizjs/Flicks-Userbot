@@ -14,7 +14,7 @@
   "success_url": "https://t.me/FlicksSupport",
   "stack": "container",
   "env": {
-    "API_KEY": {
+    "API_ID": {
       "description": "Dapatkan Api Key di web my.telegram.org ,masukan yang API ID",
       "required": true
     },
@@ -33,10 +33,6 @@
     "HEROKU_API_KEY": {
       "description": "Heroku API KEY mu, dapatkan dari web 'https://dashboard.heroku.com/account'",
       "value": "Check Di Heroku Dashboard Mu",
-      "required": true
-    },
-    "ALIVE_NAME": {
-      "description": "Nama untuk menunjukan pesan .alive",
       "required": true
     }
   },
