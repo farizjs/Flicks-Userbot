@@ -447,6 +447,7 @@ with bot:
         user = bot.get_me()
         uid = user.id
         ALIVE_NAME = user.first_name
+        DEFAULT_BIO = user.about
         owner = user.first_name
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
