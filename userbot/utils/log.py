@@ -77,6 +77,7 @@ async def autopilot():
             "terjadi kesalahan, buat sebuah grup lalu isi id nya di config var BOTLOG_CHATID."
         )
         exit(1)
+    chat = r.chats[0]
     chat_id = r.chats[0].id
     if not str(chat_id).startswith("-100"):
         heroku_var["BOTLOG_CHATID"] = "-100" + str(chat_id)
