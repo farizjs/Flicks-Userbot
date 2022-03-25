@@ -16,9 +16,9 @@
   <img src="https://telegra.ph/file/fc57a8c8022bbd2623458.jpg">
     </p>
 
-Flicks-Userbot adalah userbot Telegram modular yang berjalan di Python 3.6 dengan database sqlalchemy.
+Flicks-Userbot adalah userbot Telegram modular yang berjalan di Python 3.9 dengan database sqlalchemy.
 
-Saya membuat repository ini untuk memilih dan menambahkan beberapa modul yang saya butuhkan dengan banyak perubahan, fitur dan module.
+Berbasis [Paperplane Userbot](https://github.com/RaphielGang/Telegram-Paperplane) Saya membuat repository ini untuk memilih dan menambahkan beberapa modul yang saya butuhkan dengan banyak perubahan, fitur dan module.
 
     
 <p align="center">&nbsp;</p>
