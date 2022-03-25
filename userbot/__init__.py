@@ -382,11 +382,6 @@ if BOT_TOKEN is not None:
 else:
     tgbot = None
 
-user = bot.get_me()
-uid = user.id
-ALIVE_NAME = user.first_name
-owner = user.first_name
-
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 6
