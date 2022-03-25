@@ -86,4 +86,4 @@ Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t
 *   [Adek Maulana](https://github.com/adekmaulana) + [ProjectBish](https://github.com/adekmaulana/ProjectBish)
 
 ## License
-Licensed under [GNU General Public License](https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE) - Version 3.0
+Licensed under [Raphielscape Public License](https://github.com/farizjs/Flicks-Userbot/blob/Flicks-Userbot/LICENSE) - Version 1.d, February 2020
