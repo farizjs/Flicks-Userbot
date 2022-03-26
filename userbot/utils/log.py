@@ -1,4 +1,3 @@
-
 import asyncio
 import importlib
 import logging
@@ -85,7 +84,7 @@ async def autopilot():
         heroku_var["BOTLOG_CHATID"] = str(chat_id)
     if isinstance(chat.photo, ChatPhotoEmpty):
 
-        ppk = "userbot/files/20211115_142004.jpg.jpg"
+        ppk = "userbot/files/20211115_142004.jpg"
         try:
             await bot(
                 EditPhotoRequest(int(chat_id), await bot.upload_file(ppk)))
