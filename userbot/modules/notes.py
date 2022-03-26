@@ -120,6 +120,6 @@ async def on_snip_delete(event):
         rm_note(name)
     else:
         return await edit_or_reply(
-            event, f"Apakah kamu yakin itu? #{names disimpan sebagai catatan?"
+            event, f"Apakah kamu yakin itu? #{name} disimpan sebagai catatan?"
         )
     await edit_or_reply(event, f"`catatan #{name} berhasil dihapus`")
