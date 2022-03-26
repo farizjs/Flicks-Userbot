@@ -1,4 +1,4 @@
-# Credits: mrconfused
+# Credits: @mrconfused
 # Recode by @farizjs
 # FROM Flicks-Userbot <https://github.com/farizjs/Flicks-Userbot>
 # t.me/TheFlicksUserbot
@@ -16,10 +16,12 @@ from .sql_helper.filter_sql import (
 )
 from userbot import BOTLOG, BOTLOG_CHATID, bot, CMD_HELP, CMD_HANDLER as cmd
 
+user = bot.get_me()
+OWNER_ID = user.id
 
 @bot.on(events.NewMessage(incoming=True))
 async def filter_incoming_handler(event):  # sourcery no-metrics
-    if event.sender_id == event.client.uid:
+    if event.sender_id == OWNER_ID:
         return
     name = event.raw_text
     filters = get_filters(event.chat_id)
