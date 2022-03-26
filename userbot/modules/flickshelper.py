@@ -13,8 +13,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 async def usit(e):
     await e.edit(
         f"**Halo {DEFAULTUSER} Jika Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `.help` Atau Bisa Minta Bantuan Ke:\n"
-        "\n[Owner](t.me/FJ_GAMING)"
-        "\n[Repo](https://github.com/fjgaming212/Flicks-Userbot)"
+        "\n[Owner](t.me/farizjs)"
+        "\n[Repo](https://github.com/farizjs/Flicks-Userbot)"
         "\nTeam [Klick Here](https://t.me/devoloperflicks/32)")
 
 
