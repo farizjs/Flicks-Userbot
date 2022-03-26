@@ -160,7 +160,7 @@ async def on_all_snip_delete(event):
 
 CMD_HELP.update({
     "filter":
-    "`{i}filters`\
+    f"`{i}filters`\
     \nUsage: Melihat filter userbot yang aktif di obrolan.\
     \n\n`{i}filter` <keyword> <balasan> atau balas ke pesan ketik .filter <keyword>\
     \nUsage: Membuat filter di obrolan.\
