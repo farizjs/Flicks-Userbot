@@ -1,5 +1,5 @@
 from userbot.utils import reply_id, edit_delete, edit_or_reply, flicks_cmd
-from .sql_helper.snip_sql import add_note, get_note, get_notes, rm_note
+from .sql_helper.notes_sql import add_note, get_note, get_notes, rm_note
 from userbot import BOTLOG, BOTLOG_CHATID, bot, CMD_HELP, CMD_HANDLER as i
 
 async def get_message_link(client, event):
