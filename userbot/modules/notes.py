@@ -1,6 +1,6 @@
 from userbot.utils import reply_id, edit_delete, edit_or_reply, flicks_cmd
 from .sql_helper.snip_sql import add_note, get_note, get_notes, rm_note
-from userbot import BOTLOG, BOTLOG_CHATID, bot
+from userbot import BOTLOG, BOTLOG_CHATID, bot, CMD_HELP, CMD_HANDLER as i
 
 async def get_message_link(client, event):
     chat = await event.get_chat()
@@ -89,7 +89,7 @@ async def add_snip(event):
         rm_note(keyword)
         if add_note(keyword, string, msg_id) is False:
             return await edit_or_reply(
-                event, f"Error in saving the given snip {keyword}"
+                event, f"Kesalahan dalam menyimpan snip yang diberikan {keyword}"
             )
         return await edit_or_reply(event, success.format(keyword, "updated", keyword))
     return await edit_or_reply(event, success.format(keyword, "added", keyword))
@@ -129,3 +129,16 @@ async def on_snip_delete(event):
             event, f"Apakah kamu yakin itu? #{name} disimpan sebagai catatan?"
         )
     await edit_or_reply(event, f"`catatan #{name} berhasil dihapus`")
+
+CMD_HELP.update({
+    "notes":
+    f"\
+#<nama_catatan>\
+\nUsage: Mendapat catatan yang ditentukan.\
+\n\n`{i}save` <nama catatan> <catatan> atau balas pesan dengan {i}save <nama catatan>\
+\nUsage: Menyimpan pesan balasan sebagai catatan dengan nama catatan. (Bekerja dengan foto, dokumen, dan stiker juga!)\
+\n\n`{i}notes`\
+\nUsage: Dapatkan semua catatan yang disimpan dalam obrolan.\
+\n\n`{i}clear` <nama catatan>\
+\nUsage: Menghapus catatan yang ditentukan."
+})
