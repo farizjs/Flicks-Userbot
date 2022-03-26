@@ -44,15 +44,7 @@ async def incom_note(event):
         pass
 
 
-@catub.cat_cmd(
-    pattern="snips (\w*)",
-    command=("snips", plugin_category),
-    info={
-        "header": "To save notes to the bot.",
-        "description": "Saves the replied message as a note with the notename. (Works with pics, docs, and stickers too!. and get them by using #notename",
-        "usage": "{tr}snips <keyword>",
-    },
-)
+@flicks_cmd(pattern="save (\w*)")
 async def add_snip(event):
     "To save notes to bot."
     if not BOTLOG:
