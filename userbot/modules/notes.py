@@ -2,6 +2,12 @@ from userbot.utils import reply_id, edit_delete, edit_or_reply, flicks_cmd
 from .sql_helper.snip_sql import add_note, get_note, get_notes, rm_note
 from userbot import BOTLOG, BOTLOG_CHATID, bot
 
+async def get_message_link(client, event):
+    chat = await event.get_chat()
+    if event.is_private:
+        return f"tg://openmessage?user_id={chat.id}&message_id={event.id}"
+    return f"https://t.me/c/{chat.id}/{event.id}"
+
 
 @flicks_cmd(pattern="\#(\S+)")
 async def incom_note(event):
