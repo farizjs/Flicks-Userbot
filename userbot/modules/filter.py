@@ -14,7 +14,7 @@ from .sql_helper.filter_sql import (
     remove_all_filters,
     remove_filter,
 )
-from userbot import BOTLOG, BOTLOG_CHATID, bot
+from userbot import BOTLOG, BOTLOG_CHATID, bot, CMD_HELP, CMD_HANDLER as i
 
 
 
@@ -157,3 +157,15 @@ async def on_all_snip_delete(event):
         await edit_or_reply(event, "filter dalam obrolan saat ini berhasil dihapus")
     else:
         await edit_or_reply(event, "Tidak ada filter di grup ini")
+
+CMD_HELP.update({
+    "filter":
+    "`{i}filters`\
+    \nUsage: Melihat filter userbot yang aktif di obrolan.\
+    \n\n`{i}filter` <keyword> <balasan> atau balas ke pesan ketik .filter <keyword>\
+    \nUsage: Membuat filter di obrolan.\
+    \nBot Akan Membalas Jika Ada Yang Menyebut 'keyword' yang dibuat.\
+    \nBisa dipake ke media/sticker/vn/file.\
+    \n\n`{i}rmfilters` <keyword>\
+    \nUsage: Untuk Nonaktifkan Filter.\
+})
