@@ -1,7 +1,7 @@
-# Cat-Userbot
-# Thanks Sandy
-# Recode by Fariz <Flicks-Userbot>
-# Don't Remove Credits ⚠️
+# Copyright (C) 2021 Catuserbot <https://github.com/sandy1709/catuserbot>
+# Recode by @farizjs
+# FROM Flicks-Userbot <https://github.com/farizjs/Flicks-Userbot>
+# t.me/TheFlicksUserbot
 
 import io
 import sys
