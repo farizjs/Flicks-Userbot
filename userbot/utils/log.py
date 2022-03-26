@@ -83,23 +83,12 @@ async def autopilot():
         heroku_var["BOTLOG_CHATID"] = "-100" + str(chat_id)
     else:
         heroku_var["BOTLOG_CHATID"] = str(chat_id)
-    rights = ChatAdminRights(
-        add_admins=True,
-        invite_users=True,
-        change_info=True,
-        ban_users=True,
-        delete_messages=True,
-        pin_messages=True,
-        anonymous=False,
-        manage_call=True,
-    )
     if isinstance(chat.photo, ChatPhotoEmpty):
-        photo = "userbot/files/20211115_142004.jpg"
-        ll = await bot.upload_file(photo)
+
+        ppk = "userbot/files/20211115_142004.jpg.jpg"
         try:
             await bot(
-                EditPhotoRequest(int(chat_id), InputChatUploadedPhoto(ll))
-            )
+                EditPhotoRequest(int(chat_id), await bot.upload_file(ppk)))
         except BaseException as er:
             LOGS.exception(er)
-        os.remove(photo)
+        os.remove(ppk)
