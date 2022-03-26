@@ -5,7 +5,7 @@
 import re
 
 from telethon.utils import get_display_name
-
+from telethon import events
 
 from userbot.utils import edit_or_reply, flicks_cmd
 from .sql_helper.filter_sql import (
