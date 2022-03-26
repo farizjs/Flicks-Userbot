@@ -1,153 +1,140 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
-#
-""" Userbot module containing commands for keeping notes. """
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from userbot.events import register
-from asyncio import sleep
+from userbot.utils import reply_id, edit_delete, edit_or_reply, flicks_cmd
+from .sql_helper.snip_sql import add_note, get_note, get_notes, rm_note
+from userbot import BOTLOG, BOTLOG_CHATID, bot
+
+async def get_message_link(client, event):
+    chat = await event.get_chat()
+    if event.is_private:
+        return f"tg://openmessage?user_id={chat.id}&message_id={event.id}"
+    return f"https://t.me/c/{chat.id}/{event.id}"
 
 
-@register(outgoing=True, pattern="^.notes$")
-async def notes_active(svd):
-    """ For .notes command, list all of the notes saved in a chat. """
+@flicks_cmd(pattern="\#(\S+)")
+async def incom_note(event):
+    if not BOTLOG:
+        return
     try:
-        from userbot.modules.sql_helper.notes_sql import get_notes
-    except AttributeError:
-        return await svd.edit("`Running on Non-SQL mode!`")
-    message = "`There are no saved notes in this chat`"
-    notes = get_notes(svd.chat_id)
-    for note in notes:
-        if message == "`There are no saved notes in this chat`":
-            message = "Notes saved in this chat:\n"
-            message += "`#{}`\n".format(note.keyword)
-        else:
-            message += "`#{}`\n".format(note.keyword)
-    await svd.edit(message)
-
-
-@register(outgoing=True, pattern=r"^.clear (\w*)")
-async def remove_notes(clr):
-    """ For .clear command, clear note with the given name."""
-    try:
-        from userbot.modules.sql_helper.notes_sql import rm_note
-    except AttributeError:
-        return await clr.edit("`Running on Non-SQL mode!`")
-    notename = clr.pattern_match.group(1)
-    if rm_note(clr.chat_id, notename) is False:
-        return await clr.edit("`Couldn't find note:` **{}**".format(notename))
-    else:
-        return await clr.edit(
-            "`Successfully deleted note:` **{}**".format(notename))
-
-
-@register(outgoing=True, pattern=r"^.save (\w*)")
-async def add_note(fltr):
-    """ For .save command, saves notes in a chat. """
-    try:
-        from userbot.modules.sql_helper.notes_sql import add_note
-    except AttributeError:
-        return await fltr.edit("`Running on Non-SQL mode!`")
-    keyword = fltr.pattern_match.group(1)
-    string = fltr.text.partition(keyword)[2]
-    msg = await fltr.get_reply_message()
-    msg_id = None
-    if msg and msg.media and not string:
-        if BOTLOG_CHATID:
-            await fltr.client.send_message(
-                BOTLOG_CHATID, f"#NOTE\nCHAT ID: {fltr.chat_id}\nKEYWORD: {keyword}"
-                "\n\nThe following message is saved as the note's reply data for the chat, please do NOT delete it !!"
-            )
-            msg_o = await fltr.client.forward_messages(entity=BOTLOG_CHATID,
-                                                       messages=msg,
-                                                       from_peer=fltr.chat_id,
-                                                       silent=True)
-            msg_id = msg_o.id
-        else:
-            return await fltr.edit(
-                "`Saving media as data for the note requires the BOTLOG_CHATID to be set.`"
-            )
-    elif fltr.reply_to_msg_id and not string:
-        rep_msg = await fltr.get_reply_message()
-        string = rep_msg.text
-    success = "`Note {} successfully. Use` #{} `to get it`"
-    if add_note(str(fltr.chat_id), keyword, string, msg_id) is False:
-        return await fltr.edit(success.format('updated', keyword))
-    else:
-        return await fltr.edit(success.format('added', keyword))
-
-
-@register(pattern=r"#\w*",
-          disable_edited=True,
-          disable_errors=True,
-          ignore_unsafe=True)
-async def incom_note(getnt):
-    """ Notes logic. """
-    try:
-        if not (await getnt.get_sender()).bot:
-            try:
-                from userbot.modules.sql_helper.notes_sql import get_note
-            except AttributeError:
-                return
-            notename = getnt.text[1:]
-            note = get_note(getnt.chat_id, notename)
-            message_id_to_reply = getnt.message.reply_to_msg_id
-            if not message_id_to_reply:
-                message_id_to_reply = None
-            if note and note.f_mesg_id:
-                msg_o = await getnt.client.get_messages(entity=BOTLOG_CHATID,
-                                                        ids=int(
-                                                            note.f_mesg_id))
-                await getnt.client.send_message(getnt.chat_id,
-                                                msg_o.mesage,
-                                                reply_to=message_id_to_reply,
-                                                file=msg_o.media)
-            elif note and note.reply:
-                await getnt.client.send_message(getnt.chat_id,
-                                                note.reply,
-                                                reply_to=message_id_to_reply)
+        if not (await event.get_sender()).bot:
+            notename = event.text[1:]
+            notename = notename.lower()
+            note = get_note(notename)
+            message_id_to_reply = await reply_id(event)
+            if note:
+                if note.f_mesg_id:
+                    msg_o = await event.client.get_messages(
+                        entity=BOTLOG_CHATID, ids=int(note.f_mesg_id)
+                    )
+                    await event.delete()
+                    await event.client.send_message(
+                        event.chat_id,
+                        msg_o,
+                        reply_to=message_id_to_reply,
+                        link_preview=False,
+                    )
+                elif note.reply:
+                    await event.delete()
+                    await event.client.send_message(
+                        event.chat_id,
+                        note.reply,
+                        reply_to=message_id_to_reply,
+                        link_preview=False,
+                    )
     except AttributeError:
         pass
 
 
-@register(outgoing=True, pattern="^.rmbotnotes (.*)")
-async def kick_marie_notes(kick):
-    """ For .rmbotnotes command, allows you to kick all \
-        Marie(or her clones) notes from a chat. """
-    bot_type = kick.pattern_match.group(1).lower()
-    if bot_type not in ["marie", "rose"]:
-        return await kick.edit("`That bot is not yet supported!`")
-    await kick.edit("```Will be kicking away all Notes!```")
-    await sleep(3)
-    resp = await kick.get_reply_message()
-    filters = resp.text.split("-")[1:]
-    for i in filters:
-        if bot_type == "marie":
-            await kick.reply("/clear %s" % (i.strip()))
-        if bot_type == "rose":
-            i = i.replace('`', '')
-            await kick.reply("/clear %s" % (i.strip()))
-        await sleep(0.3)
-    await kick.respond(
-        "```Successfully purged bots notes yaay!```\n Gimme cookies!")
-    if BOTLOG:
-        await kick.client.send_message(
-            BOTLOG_CHATID, "I cleaned all Notes at " + str(kick.chat_id))
+@catub.cat_cmd(
+    pattern="snips (\w*)",
+    command=("snips", plugin_category),
+    info={
+        "header": "To save notes to the bot.",
+        "description": "Saves the replied message as a note with the notename. (Works with pics, docs, and stickers too!. and get them by using #notename",
+        "usage": "{tr}snips <keyword>",
+    },
+)
+async def add_snip(event):
+    "To save notes to bot."
+    if not BOTLOG:
+        return await edit_delete(
+            event, "`Untuk menyimpan snip atau catatan, Anda perlu mengatur BOTLOG_CHATID`"
+        )
+    keyword = event.pattern_match.group(1)
+    string = event.text.partition(keyword)[2]
+    msg = await event.get_reply_message()
+    msg_id = None
+    keyword = keyword.lower()
+    if msg and not string:
+        await event.client.send_message(
+            BOTLOG_CHATID,
+            f"#NOTE\
+            \n**Keyword :** `#{keyword}`\
+            \n\nPesan berikut disimpan sebagai snip di bot Anda, JANGAN dihapus !!",
+        )
+        msg_o = await event.client.forward_messages(
+            entity=BOTLOG_CHATID, messages=msg, from_peer=event.chat_id, silent=True
+        )
+        msg_id = msg_o.id
+    elif msg:
+        return await edit_delete(
+            event,
+            "`Apa yang harus saya simpan untuk snip Anda, baik membalas atau memberikan teks snip bersama dengan kata kunci`",
+        )
+    if not msg:
+        if string:
+            await event.client.send_message(
+                BOTLOG_CHATID,
+                f"#NOTE\
+            \n**Kata kunci :** `#{keyword}`\
+            \n\nPesan berikut disimpan sebagai snip di bot Anda, JANGAN dihapus !!",
+            )
+            msg_o = await event.client.send_message(BOTLOG_CHATID, string)
+            msg_id = msg_o.id
+            string = None
+        else:
+            return await edit_delete(event, "`apa yang harus saya simpan untuk snip Anda?`")
+    success = "Catatan {} berhasil {}. gunakan` #{} `untuk mendapatkan"
+    if add_note(keyword, string, msg_id) is False:
+        rm_note(keyword)
+        if add_note(keyword, string, msg_id) is False:
+            return await edit_or_reply(
+                event, f"Error in saving the given snip {keyword}"
+            )
+        return await edit_or_reply(event, success.format(keyword, "updated", keyword))
+    return await edit_or_reply(event, success.format(keyword, "added", keyword))
 
 
-CMD_HELP.update({
-    "notes":
-    "\
-#<notename>\
-\nUsage: Gets the specified note.\
-\n\n`.save` <notename> <notedata> or reply to a message with .save <notename>\
-\nUsage: Saves the replied message as a note with the notename. (Works with pics, docs, and stickers too!)\
-\n\n`.notes`\
-\nUsage: Gets all saved notes in a chat.\
-\n\n`.clear` <notename>\
-\nUsage: Deletes the specified note.\
-\n\n`.rmbotnotes` <marie/rose>\
-\nUsage: Removes all notes of admin bots (Currently supported: Marie, Rose and their clones.) in the chat."
-})
+@flicks_cmd(pattern="notes$")
+async def on_snip_list(event):
+    "To list all notes in bot."
+    message = "Anda belum menyimpan catatan/snip"
+    notes = get_notes()
+    if not BOTLOG:
+        return await edit_delete(
+            event, "`Untuk menyimpan snip Anda harus mengatur BOTLOG_CHATID`"
+        )
+    for note in notes:
+        if message == "Anda belum menyimpan catatan/snip":
+            message = "Catatan yang disimpan di bot Anda adalah\n\n"
+        message += f"👉 `#{note.keyword}`"
+        if note.f_mesg_id:
+            msglink = await get_message_link(BOTLOG_CHATID, note.f_mesg_id)
+            message += f"  [preview]({msglink})\n"
+        else:
+            message += "  No preview\n"
+    await edit_or_reply(event, message)
+
+
+@flicks_cmd(pattern="clear (\S+)")
+async def on_snip_delete(event):
+    "To delete paticular note in bot."
+    name = event.pattern_match.group(1)
+    name = name.lower()
+    catsnip = get_note(name)
+    if catsnip:
+        rm_note(name)
+    else:
+        return await edit_or_reply(
+            event, f"Apakah kamu yakin itu? #{names disimpan sebagai catatan?"
+        )
+    await edit_or_reply(event, f"`catatan #{name} berhasil dihapus`")
