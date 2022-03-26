@@ -14,8 +14,7 @@ from .sql_helper.filter_sql import (
     remove_all_filters,
     remove_filter,
 )
-from userbot import BOTLOG, BOTLOG_CHATID, bot, CMD_HELP, CMD_HANDLER as i
-
+from userbot import BOTLOG, BOTLOG_CHATID, bot, CMD_HELP, CMD_HANDLER as cmd
 
 
 @bot.on(events.NewMessage(incoming=True))
@@ -160,12 +159,12 @@ async def on_all_snip_delete(event):
 
 CMD_HELP.update({
     "filter":
-    f"`{i}filters`\
+    f"`{cmd}filters`\
     \nUsage: Melihat filter userbot yang aktif di obrolan.\
-    \n\n`{i}filter` <keyword> <balasan> atau balas ke pesan ketik .filter <keyword>\
+    \n\n`{cmd}filter` <keyword> <balasan> atau balas ke pesan ketik .filter <keyword>\
     \nUsage: Membuat filter di obrolan.\
     \nBot Akan Membalas Jika Ada Yang Menyebut 'keyword' yang dibuat.\
     \nBisa dipake ke media/sticker/vn/file.\
-    \n\n`{i}rmfilters` <keyword>\
-    \nUsage: Untuk Nonaktifkan Filter.\
+    \n\n`{cmd}rmfilters` <keyword>\
+    \nUsage: Untuk Nonaktifkan Filter."
 })
