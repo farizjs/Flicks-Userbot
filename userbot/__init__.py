@@ -708,22 +708,6 @@ Perintah yang tersedia di bot ini :
                     ),
                     buttons=buttons,
                 )
-            elif query.startswith("repo"):
-                    "repo"):
-                result = builder.article(
-                    "Flicks-Userbot ",
-                    text=f"""
-**•The Flicks Userbot•**
-""",
-                    buttons=[
-                        [
-                            custom.Button.url(
-                                "ʀᴇᴘᴏ",
-                                "https://github.com/farizjs/Flicks-Userbot")],
-                        [custom.Button.url(
-                            "ᴄʜᴀɴɴᴇʟ​",
-                            "t.me/TheFlicksUserbot")]],
-                    link_preview=True)
             elif query.startswith("flicksalive"):
                 result = builder.article(
                     "Flicks-Userbot ",
