@@ -708,7 +708,7 @@ Perintah yang tersedia di bot ini :
                     ),
                     buttons=buttons,
                 )
-            if event.query.user_id == uid and query.startswith(
+            elif query.startswith("repo"):
                     "repo"):
                 result = builder.article(
                     "Flicks-Userbot ",
@@ -785,9 +785,9 @@ Perintah yang tersedia di bot ini :
                     link_preview=False,
                 )
             else:
-                result = builder.photo(
-                    file=flickslogo,
-                    text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n✥**ᴀssɪsᴛᴇɴ :** @{BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖➖""",
+                result = builder.article(
+                    " ✘ Flicks-Userbot ✘",
+                    text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n✥**ᴀssɪsᴛᴇɴ :** @{BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖[➖]({ALIVE_LOGO})""",
                     buttons=[
                         [
                             custom.Button.url(
