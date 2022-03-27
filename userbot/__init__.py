@@ -104,6 +104,9 @@ API_HASH = str(os.environ.get("API_HASH") or None)
 # Userbot Session String
 STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
+# Userbot Session String
+VC_SESSION = os.environ.get("VC_SESSION", "")
+
 # Logging channel/group ID configuration.
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", "0"))
 
@@ -374,6 +377,11 @@ if STRING_SESSION:
 else:
     # pylint: disable=invalid-name
     bot = TelegramClient("userbot", API_KEY, API_HASH)
+
+if VC_SESSION is not None:
+    VcClient = TelegramClient(StringSession(VC_SESSION))
+else:
+    VcClient = bot
 
 if BOT_TOKEN is not None:
     tgbot = TelegramClient(
