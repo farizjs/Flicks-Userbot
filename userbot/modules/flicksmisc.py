@@ -9,7 +9,7 @@ import html
 from justwatch import JustWatch
 from telethon import *
 from userbot.events import register
-from userbot import CMD_HELP, bot, TEMP_DOWNLOAD_DIRECTORY, DEFAULT_BIO, ALIVE_NAME
+from userbot import CMD_HELP, bot, TEMP_DOWNLOAD_DIRECTORY, DEFAULT_BIO, ALIVE_NAME, CMD_HANDLER as cmd
 from telethon import events
 from userbot.utils import flicks_cmd
 from telethon.tl import functions
@@ -997,34 +997,34 @@ async def _(event):
 
 CMD_HELP.update({
     "misc":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.app`\
-\n↳ : ketik `.app namaapp` Dan Dapatkan Detail Informasi App.\
+    f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}app`\
+\n↳ : ketik `{cmd}app namaapp` Dan Dapatkan Detail Informasi App.\
 \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.undlt`\
 \n↳ : urungkan pesan yang dihapus tetapi Anda harus menjadi admin.\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.calc`\
-\n↳ : `.calc <term1><operator><term2>\nUntuk eg .calc 02*02 Atau 99*99 (Angka Nol Penting) (Minimal Dua Suku Dan Dua Digit).\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.remove`\
-\n↳ : gunakan di grup .remove d atau y atau m atau w atau o atau q atau r.\n(d=AkunTerhapus y=userstatsempty m=userstatsmonth w=userstatsweek o=userstatsoffline q=userstatsonline r=userstatsrecently).\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.xcd`\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}remove`\
+\n↳ : gunakan di grup .remove d atau y atau m atau w atau o atau q atau r.\n(d=AkunTerhapus y=userstatsempty m=userstatsmonth w=userstatsweek o=userstatsoffline q=userstatsonline r=userstatsrecently).",
+    "misc2":
+    f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}xcd`\
 \n↳ : Ketik xcd <query>.ps:Aku Sangat Bosan:v\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.grab` <count>\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}grab` <count>\
 \n↳ : Balas Ke Pesan Pengguna Ketik `.grab` Atau `.grab <count>` Untuk Mengambil Foto Profil.\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.rnupload` filename.extenstion\
-\n↳ : Balas Ke Sticker Dan Ketik .rnupload xyz.jpg\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.res`\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}rnupload` filename.extenstion\
+\n↳ : Balas Ke Sticker Dan Ketik .rnupload xyz.jpg",
+    "misc3":
+    f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}res`\
 \n↳ : Ketik Username Akun,Channel,Group Atau Bot Bersama .res Dan Check Batasan\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.watch` <movie/tv>\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}watch` <movie/tv>\
 \n↳ : Mengetahui Detail Tentang Film.\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.weeb` <text>\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}weeb` <text>\
 \n↳ : Teks Weebify.\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: Ketik (`.bold <Teks>`,`.cur <Teks>`,`.curbold <Teks>`,`.medi <Teks>`,`.medbold <Teks>`,`.doublestruck <Teks>`)\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: Ketik (`{cmd}bold <Teks>`,`{cmd}cur <Teks>`,`{cmd}curbold <Teks>`,`.medi <Teks>`,`.medbold <Teks>`,`.doublestruck <Teks>`)\
 \n↳ : Buat Teks <Bold,Cursive,Cursivebold,Medival,Medivalbold,Gayishbold>\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.randompp`\
-\n↳ : Otomatis Mengganti Foto Profile Mu Untuk Stop ini Ketik .restart.\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.glitch` Balas Ke Media\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}randompp`\
+\n↳ : Otomatis Mengganti Foto Profile Mu Untuk Stop ini Ketik {cmd}restart.\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}glitch` Balas Ke Media\
 \n↳ : Memberikan Glitch (Gif , Stickers , Gambar, Video) Ke Gif Dan Level Glitch 1 - 8.\
 Jika Tidak Memberikan Level Otomatis Default Ke Level 2\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.glitchs` Balas Ke Media\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}glitchs` Balas Ke Media\
 \n↳ : Memberikan Glitch (Gif , Stickers , Gambar, Video) Ke Sticker Dan Level Glitch 1 to 8.\
 Jika Tidak Memberikan Level Otomatis Default Ke Level 2."
 })
@@ -1032,9 +1032,9 @@ Jika Tidak Memberikan Level Otomatis Default Ke Level 2."
 
 CMD_HELP.update(
     {
-        "clone": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.clone` <username>.\
+        "clone": f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}clone` <username>.\
         \n↳ : Mulai Mengaktifkan Clonning Ke Seseorang\
-        \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `'.rclone' Untuk Mengembalikan\
+        \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}rclone` Untuk Mengembalikan\
         \n↳ : Mengembalikan Kloning, Dan Kembali Keakun Utama.\
     "
     }
