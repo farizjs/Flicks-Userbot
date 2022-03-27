@@ -378,10 +378,6 @@ else:
     # pylint: disable=invalid-name
     bot = TelegramClient("userbot", API_KEY, API_HASH)
 
-if VC_SESSION is not None:
-    VcClient = TelegramClient(StringSession(VC_SESSION))
-else:
-    VcClient = bot
 
 if BOT_TOKEN is not None:
     tgbot = TelegramClient(
