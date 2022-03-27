@@ -13,6 +13,7 @@ from asyncio import sleep
 from collections import deque
 from random import choice, getrandbits, randint
 
+from userbot.utils import flicks_cmd
 from userbot import CMD_HELP, bot
 from userbot.events import register
 from userbot.modules.admin import get_user_from_event
@@ -876,7 +877,7 @@ weebyfont = [
 # ===========================================
 
 
-@register(outgoing=True, pattern=r"^\.(\w+)say (.*)")
+@flicks_cmd(pattern="^\.(\w+)say (.*)")
 async def univsaye(cowmsg):
     """ For .cowsay module, userbot wrapper for cow which says things. """
     arg = cowmsg.pattern_match.group(1).lower()
@@ -892,7 +893,7 @@ async def univsaye(cowmsg):
     await cowmsg.edit(f"`{cheese.milk(text).replace('`', '´')}`")
 
 
-@register(outgoing=True, pattern=r"^\.coinflip (.*)")
+@flicks_cmd(pattern="coinflip (.*)")
 async def coin(event):
     r = choice(["Kepala", "Ekor"])
     input_str = event.pattern_match.group(1)
@@ -920,7 +921,7 @@ async def coin(event):
             await event.edit("Koin Itu Mendarat Di: **Ekor**.")
 
 
-@register(pattern=r"^\.slap(?: |$)(.*)", outgoing=True)
+@flicks_cmd(pattern="slap(?: |$)(.*)")
 async def who(event):
     """ slaps a user, or get slapped if not a reply. """
     replied_user = await get_user_from_event(event)
@@ -981,7 +982,7 @@ async def slap(replied_user, event):
     return caption
 
 
-@register(outgoing=True, pattern=r"^\.boobs(?: |$)(.*)")
+@flicks_cmd(pattern="boobs(?: |$)(.*)")
 async def boobs(e):
     await e.edit("`Berdosa, Mendapatkan Gambar Boobs...`")
     await sleep(3)
@@ -996,22 +997,7 @@ async def boobs(e):
     await e.delete()
 
 
-@register(outgoing=True, pattern=r"^\.pantat(?: |$)(.*)")
-async def butts(e):
-    await e.edit("`Berdosa, Mendapatkan Gambar Pantat Yang Indah...`")
-    await sleep(3)
-    await e.edit("`Mengirim Gambar Pantat Indah...`")
-    nsfw = requests.get(
-        'http://api.obutts.ru/noise/1').json()[0]["Gambar Pantat"]
-    urllib.request.urlretrieve(
-        "http://media.obutts.ru/{}".format(nsfw), "*.jpg")
-    os.rename('*.jpg', 'butts.jpg')
-    await e.client.send_file(e.chat_id, "butts.jpg")
-    os.remove("butts.jpg")
-    await e.delete()
-
-
-@register(outgoing=True, pattern=r"^\.(yes|no|maybe|decide)$")
+@flicks_cmd(pattern="(yes|no|maybe|decide)$")
 async def decide(event):
     decision = event.pattern_match.group(1).lower()
     message_id = event.reply_to_msg_id if event.reply_to_msg_id else None
@@ -1026,55 +1012,24 @@ async def decide(event):
                                     file=r["image"])
 
 
-@register(outgoing=True, pattern=r"^\.fp$")
+@flicks_cmd(pattern="fp$")
 async def facepalm(e):
     """ Facepalm  🤦‍♂ """
     await e.edit("🤦‍♂")
 
 
-@register(outgoing=True, pattern=r"^\.cry$")
+@flicks_cmd(pattern="cry$")
 async def cry(e):
     """ y u du dis, i cry everytime !! """
     await e.edit(choice(CRI))
 
 
-@register(outgoing=True, pattern=r"^\.insult$")
+@flicks_cmd(pattern="insult$")
 async def insult(e):
     """ I make you cry !! """
     await e.edit(choice(INSULT_STRINGS))
 
 
-@register(outgoing=True, pattern=r"^\.cp(?: |$)(.*)")
-async def copypasta(cp_e):
-    """ Copypasta the famous meme """
-    textx = await cp_e.get_reply_message()
-    message = cp_e.pattern_match.group(1)
-
-    if message:
-        pass
-    elif textx:
-        message = textx.text
-    else:
-        return await cp_e.edit("`😂🅱️AhHH👐MaNtAp👅Bro👅UnTuk✌️MeMbuAT👌Ku👐TeRliHat👀LuCu💞HaHAhaA!💦`")
-
-    reply_text = choice(EMOJIS)
-    # choose a random character in the message to be substituted with 🅱️
-    b_char = choice(message).lower()
-    for owo in message:
-        if owo == " ":
-            reply_text += choice(EMOJIS)
-        elif owo in EMOJIS:
-            reply_text += owo
-            reply_text += choice(EMOJIS)
-        elif owo.lower() == b_char:
-            reply_text += "🅱️"
-        else:
-            if bool(getrandbits(1)):
-                reply_text += owo.upper()
-            else:
-                reply_text += owo.lower()
-    reply_text += choice(EMOJIS)
-    await cp_e.edit(reply_text)
 
 
 @register(outgoing=True, pattern=r"^\.vapor(?: |$)(.*)")
@@ -1101,7 +1056,7 @@ async def vapor(vpr):
     await vpr.edit("".join(reply_text))
 
 
-@register(outgoing=True, pattern=r"^\.str(?: |$)(.*)")
+@flicks_cmd(pattern="str(?: |$)(.*)")
 async def stretch(stret):
     """ Stretch it."""
     textx = await stret.get_reply_message()
@@ -1120,7 +1075,7 @@ async def stretch(stret):
     await stret.edit(reply_text)
 
 
-@register(outgoing=True, pattern=r"^\.zal(?: |$)(.*)")
+@flicks_cmd(pattern="zal(?: |$)(.*)")
 async def zal(zgfy):
     """ Invoke the feeling of chaos. """
     reply_text = list()
@@ -1719,40 +1674,6 @@ async def faces(siwis):
     await siwis.edit(reply_text)
 
 
-@register(outgoing=True, pattern="^.koc$")
-async def koc(e):
-    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("8✊===D")
-        await e.edit("8=✊==D")
-        await e.edit("8==✊=D")
-        await e.edit("8===✊D")
-        await e.edit("8==✊=D")
-        await e.edit("8=✊==D")
-        await e.edit("8✊===D")
-        await e.edit("8=✊==D")
-        await e.edit("8==✊=D")
-        await e.edit("8===✊D")
-        await e.edit("8==✊=D")
-        await e.edit("8=✊==D")
-        await e.edit("8✊===D")
-        await e.edit("8=✊==D")
-        await e.edit("8==✊=D")
-        await e.edit("8===✊D")
-        await e.edit("8==✊=D")
-        await e.edit("8=✊==D")
-        await e.edit("8===✊D💦")
-        await e.edit("8==✊=D💦💦")
-        await e.edit("8=✊==D💦💦💦")
-        await e.edit("8✊===D💦💦💦💦")
-        await e.edit("8===✊D💦💦💦💦💦")
-        await e.edit("8==✊=D💦💦💦💦💦💦")
-        await e.edit("8=✊==D💦💦💦💦💦💦💦")
-        await e.edit("8✊===D💦💦💦💦💦💦💦💦")
-        await e.edit("8===✊D💦💦💦💦💦💦💦💦💦")
-        await e.edit("8==✊=D💦💦💦💦💦💦💦💦💦💦")
-        await e.edit("8=✊==D Lah Kok Habis?")
-        await e.edit("😭😭😭😭")
-
 
 @register(outgoing=True, pattern="^.gas$")
 async def gas(e):
@@ -1869,9 +1790,4 @@ CMD_HELP.update({
     "\nUsage: Biar saya Google itu untuk Anda dengan cepat!"
     "\n\n>`.decide` [Alternatif: (.yes, .no, .maybe)]"
     "\nUsage: Buat keputusan cepat."
-    "\n\n> `.nou` `.bot` `.rock` `.gey` `.tf` `.paw` `.tai` `.leave` `.nih`"
-    "\n> `.fag` `.gtfo`; `.stfu` `.lol` `.lool` `.fail`"
-    "\n> `.iwi` `.sayhi` `.koc` `.gas` `.earth` `.love` `.rain`"
-    "\n> `.penis` `.emo` `.fuck` `.skull`  `.monyet`\nUsage: Cobain aja"
-    "\n\n\n**Semoga Harimu Menyenangkan**\n"
 })
