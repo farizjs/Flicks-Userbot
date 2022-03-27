@@ -1753,7 +1753,8 @@ CMD_HELP.update({
     "\n\n>`.moon`"
     "\nUsage: animasi bulan."
     "\n\n>`.clock`"
-    "\nUsage: animasi jam."
+    "\nUsage: animasi jam.",
+    "animasi5":
     "\n\n>`.hi`"
     "\nUsage: Sapa semuanya!"
     "\n\n>`.coinflip` <Kepala/Ekor>"
@@ -1771,7 +1772,8 @@ CMD_HELP.update({
     "\n\n>`.run`"
     "\nUsage: Biarkan Aku Lari, Lari, LARI!"
     "\n\n>`.chase`"
-    "\nUsage: Sebaiknya Anda mulai berlari"
+    "\nUsage: Sebaiknya Anda mulai berlari",
+    "animasi6":
     "\n\n>`.metoo`"
     "\nUsage: Haha ya"
     "\n\n>`.mock`"
@@ -1779,7 +1781,8 @@ CMD_HELP.update({
     "\n\n>`.clap`"
     "\nUsage: Puji orang!"
     "\n\n>`.f` <emoji/karakter>"
-    "\nUsage: F."
+    "\nUsage: F.",
+    "fun":
     "\n\n>`.bt`"
     "\nUsage: Percayalah, Anda akan menemukan ini berguna."
     "\n\n>`.weeb`"
