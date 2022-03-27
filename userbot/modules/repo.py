@@ -19,7 +19,7 @@ async def yardim(event):
     try:
         botusername = BOT_USERNAME
         if botusername is not None:
-            results = await event.client.inline_query(botusername, "")
+            results = await event.client.inline_query(botusername, "repo")
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
@@ -32,7 +32,7 @@ async def yardim(event):
         return await event.edit(
             "**__USERBOT INDONESIA__**\n"
             "𝗥𝗲𝗽𝗼 🇮🇩\n"
-            "╰⎆ [Flick-Userbot](https://github.com/farizis/Flick-Userbot)\n"
+            "╰⎆ [Flick-Userbot](https://github.com/farizjs/Flicks-Userbot)\n"
             "❏ 𝗢𝘄𝗻𝗲𝗿 ⎆ [Fariz • 🇮🇩](t.me/farizjs)\n"
             "❏ 𝗦𝘂𝗽𝗽𝗼𝗿𝘁 ⎆ [groups](t.me/FlicksSupport)\n" 
             "❏ 𝗧𝗲𝗮𝗺 ⎆  [click here](t.me/devoloperflicks)\n"
