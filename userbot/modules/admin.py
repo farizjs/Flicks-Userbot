@@ -935,7 +935,7 @@ CMD_HELP.update(
         f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}gmute` <username/balas ke pesan> <alasan (optional)>"
         "\n↳ : Membisukan ke semua grup yang kamu punya sebagai admin."
         f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}ungmute` <username/reply>"
-        "\n↳ : Reply someone's message with `.ungmute` to remove them from the gmuted list."
+        "\n↳ : Reply someone's message with `.ungmute` to remove them from the gmuted list.",
         "zombie":
         f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}zombies`"
         "\n↳ : Untuk mencari akun terhapus dalam grup."
