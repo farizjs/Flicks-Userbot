@@ -1,4 +1,4 @@
 from pytgcalls import PyTgCalls
-from userbot import VcClient
+from userbot import bot
 
-call_py = PyTgCalls(VcClient)
+call_py = PyTgCalls(bot)
