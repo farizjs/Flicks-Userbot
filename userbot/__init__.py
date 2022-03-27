@@ -957,10 +957,13 @@ Perintah yang tersedia di bot ini :
                     )
                 )
 
+            if event.query.user_id == uid:
+                await event.edit(
+                    reply_pop_up_alert, buttons=[Button.inline("Back", data="open")]
+                )
             else:
                 reply_pop_up_alert = f"""Jangan Menggunakan Milik {ALIVE_NAME} !"""
-
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     except BaseException:
         LOGS.info(
