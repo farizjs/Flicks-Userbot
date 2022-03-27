@@ -12,7 +12,7 @@ from platform import python_version
 from telethon import version
 from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, LOGS, BOT_TOKEN, BOT_USERNAME, BOTLOG_CHATID, bot, VcClient
+from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, LOGS, BOT_TOKEN, BOT_USERNAME, BOTLOG_CHATID, bot
 from userbot.modules import ALL_MODULES
 from userbot.modules.assistant import ASST_MODULES
 from userbot.utils import autobot, autopilot
@@ -28,7 +28,6 @@ INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
 
 try:
     bot.start()
-    VcClient.start()
     call_py.start()
 except PhoneNumberInvalidError:
     print(INVALID_PH)
