@@ -957,7 +957,6 @@ Perintah yang tersedia di bot ini :
                     )
                 )
 
-            if event.query.user_id == uid:
                 await event.edit(
                     reply_pop_up_alert, buttons=[Button.inline("Back", data="open")]
                 )
