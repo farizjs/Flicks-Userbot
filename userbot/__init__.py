@@ -938,10 +938,10 @@ Perintah yang tersedia di bot ini :
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
-                if len(cmdhel) > 4060:
+                if len(cmdhel) > 4030:
                     help_string = (
                         str(CMD_HELP[modul_name]).replace(
-                            '`', '')[:4060] + "..."
+                            '`', '')[:4030] + "..."
                         + "\n\nBaca Text Berikutnya Ketik .help "
                         + modul_name
                         + " "
