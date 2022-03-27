@@ -257,11 +257,12 @@ async def check_progress_for_dl(gid, event, previous):
 
 CMD_HELP.update(
     {
-        "aria": f">`{cmd}aurl [URL]` (or) >`{cmd}amag [Magnet Link]` (or) >`{cmd}ator [path to torrent file]`"
-        "\nUsage: Downloads the file into your userbot server storage."
+        "aria": f">`{cmd}aurl [URL]` (or) >`{cmd}amag [Magnet Link]` (or) >`{cmd}ator [jalur ke file torrent]`"
+        "\nUsage: Unduh file ke server userbot Anda."
         f"\n\n>`{cmd}apause (or) {cmd}aresume`"
-        "\nUsage: Pauses/resumes on-going downloads."
+        "\nUsage: Menjeda/melanjutkan unduhan ."
         f"\n\n>`{cmd}aclear`"
-        "\nUsage: Clears the download queue, deleting all on-going downloads."
+        "\nUsage: Menghapus antrean unduhan yang sedang berlangsung."
         f"\n\n>`{cmd}ashow`"
-        "\nUsage: Shows progress of the on-going downloads."})
+        "\nUsage: Menunjukkan kemajuan unduhan."
+})
