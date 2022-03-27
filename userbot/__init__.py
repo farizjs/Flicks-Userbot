@@ -950,7 +950,7 @@ Perintah yang tersedia di bot ini :
                 if len(cmdhel) > 4030:
                     help_string = (
                         str(CMD_HELP[modul_name]).replace(
-                            '`', '')[:4030] + "..."
+                            '__', '')[:4030] + "..."
                         + "\n\nBaca Text Berikutnya Ketik .help "
                         + modul_name
                         + " "
