@@ -877,7 +877,7 @@ weebyfont = [
 # ===========================================
 
 
-@flicks_cmd(pattern="^\.(\w+)say (.*)")
+@flicks_cmd(pattern="(\w+)say (.*)")
 async def univsaye(cowmsg):
     """ For .cowsay module, userbot wrapper for cow which says things. """
     arg = cowmsg.pattern_match.group(1).lower()
