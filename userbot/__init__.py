@@ -787,7 +787,6 @@ Perintah yang tersedia di bot ini :
             else:
                 result = builder.photo(
                     file=flickslogo,
-                    link_preview=False,
                     text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n✥**ᴀssɪsᴛᴇɴ :** @{BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖➖""",
                     buttons=[
                         [
@@ -800,7 +799,7 @@ Perintah yang tersedia di bot ini :
                         [custom.Button.url(
                             "ʀᴇᴘᴏ",
                             "https://github.com/farizjs/Flicks-Userbot")]],
-                    link_preview=True,
+                    link_preview=False,
                 )
             await event.answer(
                 [result], switch_pm=f"ASSISTANT BOT OF {ALIVE_NAME}", switch_pm_param="start"
