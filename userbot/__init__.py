@@ -24,7 +24,7 @@ from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
 from telethon import Button, events, functions, types
 from telethon.utils import get_display_name
-
+from userbot.modules._help import main_help_menu
 
 # Button from Man-Userbot
 # Thanks Man-Userbot 💙
@@ -704,23 +704,13 @@ Perintah yang tersedia di bot ini :
             query = event.text
             if event.query.user_id == uid and query.startswith(
                     "@FlicksSupport"):
-                buttons=[
-                        [
-                            custom.Button.url("Settings ⚙️",
-                                             f"t.me/{BOT_USERNAME}"),
-                            custom.Button.inline("Vc Plugin ⚙️",
-                                                 data="flicks_inline")],
-                        [Button.inline("Help Menu", data="open")],
-                        [custom.Button.inline(
-                            "Cʟᴏsᴇ", b"close")],
-                    ])
                 result = builder.photo(
                     file=flickslogo,
                     link_preview=False,
                     text=f"\n**Flicks-Userbot**\n\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n\n✥**ʙʀᴀɴᴄʜ :** Flicks-Userbot\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}".format(
                         len(dugmeler),
                     ),
-                    buttons=buttons,
+                    buttons=main_help_menu,
                 )
             elif query.startswith("flicksalive"):
                 result = builder.article(
