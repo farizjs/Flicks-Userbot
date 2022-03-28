@@ -713,8 +713,7 @@ Perintah yang tersedia di bot ini :
                         [Button.inline("Help Menu", data="open")],
                         [custom.Button.inline(
                             "Cʟᴏsᴇ", b"close")],
-                    ]
-                )
+                    ])
                 result = builder.photo(
                     file=flickslogo,
                     link_preview=False,
