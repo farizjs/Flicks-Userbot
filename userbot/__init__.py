@@ -704,18 +704,13 @@ Perintah yang tersedia di bot ini :
             query = event.text
             if event.query.user_id == uid and query.startswith(
                     "@FlicksSupport"):
-                buttons = [
+                    buttons=[
                         [
                             custom.Button.url("Settings ⚙️",
-                                              f"t.me/{BOT_USERNAME}"),
-                            custom.Button.url("Channel",
-                                              "t.me/TheFlicksUserbot")],
-                        [
-                            custom.Button.inline("Alive",
-                                                 data="alive_inline"),
-                            custom.Button.inline("Flicks",
+                                             f"t.me/{BOT_USERNAME}"),
+                            custom.Button.inline("Vc Plugin ⚙️",
                                                  data="flicks_inline")],
-                        [Button.inline("Help Module", data="open")],
+                        [Button.inline("Help Menu", data="open")],
                         [custom.Button.inline(
                             "Cʟᴏsᴇ", b"close")],
                     ]
@@ -839,11 +834,11 @@ Perintah yang tersedia di bot ini :
                     link_preview=True,
                     buttons=[
                         [
-                            custom.Button.inline("Alive",
-                                                 data="alive_inline"),
-                            custom.Button.inline("Flicks",
+                            custom.Button.url("Settings ⚙️",
+                                             f"t.me/{BOT_USERNAME}"),
+                            custom.Button.inline("Vc Plugin ⚙️",
                                                  data="flicks_inline")],
-                        [Button.inline("Oᴘᴇɴ Mᴇɴᴜ", data="open")],
+                        [Button.inline("Help Menu", data="open")],
                         [custom.Button.inline(
                             "Cʟᴏsᴇ", b"close")],
                     ]
@@ -896,36 +891,40 @@ Perintah yang tersedia di bot ini :
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█\n"
-                    "█░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░█ \n"
-                    f"█░║║║╠─║─║─║║║║║╠─░█\n"
-                    "█░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░█\n"
-                    f"█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█\n"
-                    f"Flicks-Userbot versi {BOT_VER} berjalan\n"
-                    f"master {ALIVE_NAME}\n"
-                    f"Selamat bersenang-senang dengan saya\n"
-                    f"Anda dapat memberi tahu orang lain\n"
-                    f"cara membuat userbot dengan `{CMD_HANDLER}tutorial`\n"
-                    "Terimakasih\n"
-                    f"Support : @FlicksSupport\n"
-                    "Channel : @InfoFlicksUserbot")
+"""
+  •  Syntax : .play <Judul Lagu/Link YT>        
+  •  Function : Untuk Memutar Lagu di voice chat group dengan akun kamu        
+
+  •  Syntax : .vplay <Judul Video/Link YT>        
+  •  Function : Untuk Memutar Video di voice chat group dengan akun kamu        
+
+  •  Syntax : .end        
+  •  Function : Untuk Memberhentikan video/lagu yang sedang putar di voice chat group        
+
+  •  Syntax : .skip        
+  •  Function : Untuk Melewati video/lagu yang sedang di putar        
+
+  •  Syntax : .pause        
+  •  Function : Untuk memberhentikan video/lagu yang sedang diputar        
+
+  •  Syntax : .resume        
+  •  Function : Untuk melanjutkan pemutaran video/lagu yang sedang diputar        
+
+  •  Syntax : .volume 1-200        
+  •  Function : Untuk mengubah volume (Membutuhkan Hak admin)        
+
+  •  Syntax : .playlist        
+  •  Function : Untuk menampilkan daftar putar Lagu/Video
+""")
                 await event.edit(
                     text,
                     file=flickslogo,
                     link_preview=True,
-                    buttons=[
-                        [
-                            Button.url("Repository",
-                                       "https://github.com/farizjs/Flicks-Userbot"),
-                            Button.url("License",
-                                       "https://github.com/farizjs/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
-                        [custom.Button.inline(
-                            "⬅️ Kembali", data="open")],
-                    ]
-                )
+                    buttons=[Button.inline("Help menu", data="open")]
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
 
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
