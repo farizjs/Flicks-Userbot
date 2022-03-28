@@ -1,3 +1,10 @@
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.d (the "License");
+# you may not use this file except in compliance with the License.
+#
+# inline credit @keselekpermen69 & @farizjs
+# Chatbot and button from Man-Userbot
 """ Userbot initialization. """
 
 import logging
@@ -26,8 +33,6 @@ from telethon import Button, events, functions, types
 from telethon.utils import get_display_name
 from userbot.modules._help import main_help_menu
 
-# Button from Man-Userbot
-# Thanks Man-Userbot 💙
 
 redis_db = None
 
