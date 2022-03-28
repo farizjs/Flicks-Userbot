@@ -393,17 +393,6 @@ else:
     tgbot = None
 
 
-main_help_menu = [
-    [
-        Button.url("Settings ⚙️", f"t.me/{BOT_USERNAME}"),
-        Button.inline("Vc Plugin ⚙️", data="flicks_inline"),
-    ],
-    [
-        Button.inline("Help Menu", data="open"),
-    ],
-    [Button.inline("Close", data="close")],
-]
-
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 6
@@ -720,7 +709,16 @@ Perintah yang tersedia di bot ini :
             query = event.text
             if event.query.user_id == uid and query.startswith(
                     "@FlicksSupport"):
-                buttons = paginate_help(0, dugmeler, "helpme")
+                buttons=[
+                    [
+                        Button.url("Settings ⚙️", f"t.me/{BOT_USERNAME}"),
+                        Button.inline("Vc Plugin ⚙️", data="flicks_inline"),
+                    ],
+                    [
+                        Button.inline("Help Menu", data="open"),
+                    ],
+                    [Button.inline("Close", data="close")],
+                ],
                 result = builder.photo(
                     file=flickslogo,
                     link_preview=False,
