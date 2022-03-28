@@ -465,6 +465,17 @@ with bot:
         plugins = CMD_HELP
         vr = BOT_VER
 
+        main_help_button=[
+            [
+                Button.url("Settings ⚙️", f"t.me/{BOT_USERNAME}"),
+                Button.inline("Vc Plugin ⚙️", data="flicks_inline"),
+            ],
+            [
+                Button.inline("Help Menu", data="open"),
+            ],
+            [Button.inline("Close", data="close")],
+        ]
+
         @tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
         async def bot_pms(event):
             chat = await event.get_chat()
@@ -709,23 +720,13 @@ Perintah yang tersedia di bot ini :
             query = event.text
             if event.query.user_id == uid and query.startswith(
                     "@FlicksSupport"):
-                buttons=[
-                    [
-                        Button.url("Settings ⚙️", f"t.me/{BOT_USERNAME}"),
-                        Button.inline("Vc Plugin ⚙️", data="flicks_inline"),
-                    ],
-                    [
-                        Button.inline("Help Menu", data="open"),
-                    ],
-                    [Button.inline("Close", data="close")],
-                ]
                 result = builder.photo(
                     file=flickslogo,
                     link_preview=False,
                     text=f"\n**Flicks-Userbot**\n\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n\n✥**ʙʀᴀɴᴄʜ :** Flicks-Userbot\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}".format(
                         len(dugmeler),
                     ),
-                    buttons=buttons,
+                    buttons=main_help_button,
                 )
             elif query.startswith("flicksalive"):
                 result = builder.article(
