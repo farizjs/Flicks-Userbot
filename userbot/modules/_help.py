@@ -33,7 +33,7 @@ main_help_menu = [
         Button.inline("Vc Plugin ⚙️", data="flicks_inline"),
     ],
     [
-        Button.inline(Help Menu, data="open"),
+        Button.inline("Help Menu", data="open"),
     ],
     [Button.inline("Close", data="close")],
 ]
