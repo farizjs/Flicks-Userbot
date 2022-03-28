@@ -704,7 +704,7 @@ Perintah yang tersedia di bot ini :
             query = event.text
             if event.query.user_id == uid and query.startswith(
                     "@FlicksSupport"):
-                    buttons=[
+                buttons=[
                         [
                             custom.Button.url("Settings ⚙️",
                                              f"t.me/{BOT_USERNAME}"),
@@ -714,6 +714,7 @@ Perintah yang tersedia di bot ini :
                         [custom.Button.inline(
                             "Cʟᴏsᴇ", b"close")],
                     ]
+                )
                 result = builder.photo(
                     file=flickslogo,
                     link_preview=False,
