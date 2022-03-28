@@ -920,7 +920,7 @@ Perintah yang tersedia di bot ini :
                     text,
                     file=flickslogo,
                     link_preview=True,
-                    buttons=[Button.inline("Help menu", data="open")]
+                    buttons=[Button.inline("Help menu", data="open")])
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
