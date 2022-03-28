@@ -28,17 +28,15 @@ user = bot.get_me()
 DEFAULTUSER = user.first_name
 CUSTOM_HELP_EMOJI = "⚡"
 main_help_menu = [
-                        [
-                            custom.Button.url("Settings ⚙️",
-                                             f"t.me/{BOT_USERNAME}"),
-                            custom.Button.inline("Vc Plugin ⚙️",
-                                                 data="flicks_inline")],
-                        [Button.inline("Help Menu", data="open")],
-                        [custom.Button.inline(
-                            "Cʟᴏsᴇ", b"close")],
-                    ]
-                )
-
+    [
+        Button.url("Settings ⚙️", f"t.me/{BOT_USERNAME}"),
+        Button.inline("Vc Plugin ⚙️", data="flicks_inline"),
+    ],
+    [
+        Button.inline(Help Menu, data="open"),
+    ],
+    [Button.inline("Close", data="close")],
+]
 
 
 @flicks_cmd(pattern="help ?(.*)")
