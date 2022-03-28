@@ -725,7 +725,7 @@ Perintah yang tersedia di bot ini :
                     text=f"\n**Flicks-Userbot**\n\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n\n✥**ʙʀᴀɴᴄʜ :** Flicks-Userbot\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}".format(
                         len(dugmeler),
                     ),
-                    buttons=main_help_menu,
+                    buttons=buttons,
                 )
             elif query.startswith("flicksalive"):
                 result = builder.article(
