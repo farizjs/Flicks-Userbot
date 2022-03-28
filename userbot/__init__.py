@@ -393,6 +393,18 @@ else:
     tgbot = None
 
 
+main_help_menu = [
+    [
+        Button.url("Settings ⚙️", f"t.me/{BOT_USERNAME}"),
+        Button.inline("Vc Plugin ⚙️", data="flicks_inline"),
+    ],
+    [
+        Button.inline("Help Menu", data="open"),
+    ],
+    [Button.inline("Close", data="close")],
+]
+
+
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 6
     number_of_cols = 2
@@ -715,7 +727,7 @@ Perintah yang tersedia di bot ini :
                     text=f"\n**Flicks-Userbot**\n\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n\n✥**ʙʀᴀɴᴄʜ :** Flicks-Userbot\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}".format(
                         len(dugmeler),
                     ),
-                    buttons=buttons,
+                    buttons=main_help_menu,
                 )
             elif query.startswith("flicksalive"):
                 result = builder.article(
