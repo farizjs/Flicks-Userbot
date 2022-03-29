@@ -467,7 +467,7 @@ with bot:
 
         main_help_button=[
             [
-                Button.url("Settings ⚙️", f"t.me/{BOT_USERNAME}"),
+                Button.url("Settings ⚙️", f"t.me/{BOT_USERNAME}?start=set"),
                 Button.inline("Vc Plugin ⚙️", data="flicks_inline"),
             ],
             [
@@ -699,7 +699,7 @@ Perintah yang tersedia di bot ini :
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                buttons = paginate_help(page_number, plugins, "helpme")
+                buttons = paginate_help(0, plugins, "helpme")
                 text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
                 await event.edit(
                     text,
@@ -839,7 +839,7 @@ Perintah yang tersedia di bot ini :
                     buttons=[
                         [
                             custom.Button.url("Settings ⚙️",
-                                             f"t.me/{BOT_USERNAME}"),
+                                             f"t.me/{BOT_USERNAME}?start=set"),
                             custom.Button.inline("Vc Plugin ⚙️",
                                                  data="flicks_inline")],
                         [Button.inline("Help Menu", data="open")],
