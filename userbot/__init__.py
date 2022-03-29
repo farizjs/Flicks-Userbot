@@ -873,7 +873,7 @@ Perintah yang tersedia di bot ini :
                 data=re.compile(rb"gcback")
             )
         )
-        def gback_handler(event):
+        async def gback_handler(event):
             if event.query.user_id == uid:  # @Flicasyncks_Userbot
                 # https://t.me/TelethonChat/115200
                 await event.edit(
