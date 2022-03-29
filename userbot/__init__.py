@@ -449,7 +449,6 @@ with bot:
         from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
         from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
         from userbot.utils import reply_id
-        from userbot.modules.www import get_readable_time
 
 
         dugmeler = CMD_HELP
@@ -839,8 +838,8 @@ with bot:
                         [
                             Button.inline("Ping ⚡",
                                           data="pingbot"),
-                            Button.inline("Uptime ⌛",
-                                           data="uptimebot")],
+                            Button.inline("Info ?",
+                                           data="about")],
                         [custom.Button.inline(
                             "Back", data="gcback")],
                     ]
@@ -866,20 +865,24 @@ with bot:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"uptimebot")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                uptime = await get_readable_time((time.time() - StartTime))
-                pin = f"⏱ ᴜᴘᴛɪᴍᴇ = {uptime}"
-                await event.answer(pin, cache_time=0, alert=True)
-            else:
-                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
+        @tgbot.on(events.CallbackQuery(data=b"about"))
+        async def about(event):
+            await event.edit(f"""
+Owner - {ALIVE_NAME}
+OwnerID - {uid}
+[Link To Profile 👤](tg://user?id={uid})
+Owner repo - [Fariz](tg://openmessage?user_id=1514078508)
+Support - @FlicksSupport
+Flicks-Userbot [v{BOT_VER}](https://github.com/farizjs/Flicks-Userbot)
+""",
+                             buttons=[
+                                 [
+                                     Button.url("Repo",
+                                                "https://github.com/farizjs/Flicks-Userbot"),
+                                     custom.Button.inline("ʙᴀᴄᴋ​",
+                                                          data="ownrmn")],
+                             ]
+                             )
 
 
         @tgbot.on(
