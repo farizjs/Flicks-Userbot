@@ -472,6 +472,7 @@ with bot:
             ],
             [
                 Button.inline("Help Menu", data="open"),
+                Button.inline("Owner Menu", data="ownrmn"),
             ],
             [Button.inline("Close", data="close")],
         ]
@@ -895,42 +896,53 @@ Perintah yang tersedia di bot ini :
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"alive_inline")
+                data=re.compile(rb"ownrmn")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"__**{FLICKS_TEKS_KUSTOM}**__ \n\n"
-                    "============================\n"
-                    f"      **Alive Inline** \n"
-                    "============================\n"
-                    f"`Master    :` {ALIVE_NAME} \n"
+                    f"Owner menu untuk {ALIVE_NAME} \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi Bot :` {BOT_VER} \n"
                     f"`Plugins   :` {len(plugins)} \n"
                     f"`Bahasa    :` Python \n"
-                    f"`Database  :` Mongo db \n"
-                    "============================\n"
-                    f"    **FLICKS-USERBOT** \n"
-                    "============================")
+                    f"`Database  :` SQL \n")
                 await event.edit(
                     text,
                     file=flickslogo,
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("Repository",
-                                       "https://github.com/farizjs/Flicks-Userbot"),
-                            Button.url("License",
-                                       "https://github.com/farizjs/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
+                            Button.inline("Ping ⚡",
+                                          data="pingbot"),
+                            Button.inline("Uptime ⌛",
+                                           data="uptimebot")],
                         [custom.Button.inline(
-                            "⬅️ Kembali", data="open")],
+                            "Back", data="open")],
                     ]
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"pingbot")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                start = datetime.now()
+                end = datetime.now()
+                ms = (end - start).microseconds / 1000
+                await event.answer(
+                    f"**PONG!!**\n `{ms}ms`", cache_time=0, alert=True)
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -981,6 +993,7 @@ Perintah yang tersedia di bot ini :
                 (custom.Button.inline("Bᴜᴋᴀ Mᴇɴᴜ", data="gcback"),),
             ]
             await event.edit("**Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ​!**", file=flickslogo, buttons=buttons)
+
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
