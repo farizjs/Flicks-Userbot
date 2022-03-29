@@ -699,8 +699,7 @@ Perintah yang tersedia di bot ini :
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                current_page_number = int(lockpage)
-                buttons = paginate_help(0, plugins, "helpme")
+                buttons = paginate_help(page_number, plugins, "helpme")
                 text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
                 await event.edit(
                     text,
