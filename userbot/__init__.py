@@ -33,8 +33,6 @@ from telethon import Button, events, functions, types
 from telethon.utils import get_display_name
 
 
-from userbot.modules.www import get_readable_time
-
 
 redis_db = None
 
@@ -451,6 +449,7 @@ with bot:
         from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
         from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
         from userbot.utils import reply_id
+        from userbot.modules.www import get_readable_time
 
 
         dugmeler = CMD_HELP
