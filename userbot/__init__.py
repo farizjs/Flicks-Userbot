@@ -546,65 +546,6 @@ with bot:
                             )
 
                 
-        @tgbot.on(events.CallbackQuery(data=b"about"))
-        async def about(event):
-            await event.edit(f"""
-Owner - {ALIVE_NAME}
-OwnerID - {uid}
-[Link To Profile 👤](tg://user?id={uid})
-
-Owner repo - [Fariz](tg://openmessage?user_id=1514078508)
-Support - @FlicksSupport
-Flicks-Userbot [v{BOT_VER}](https://github.com/farizjs/Flicks-Userbot)
-""",
-                             buttons=[
-                                 [
-                                     custom.Button.inline("ᴄʟᴏsᴇ",
-                                                          data="keluar"),
-                                     custom.Button.inline("ʙᴀᴄᴋ​",
-                                                          data="pesanstart")],
-                             ]
-                             )
-
-        @tgbot.on(events.CallbackQuery(data=b"help"))
-        async def help(event):
-            await event.edit(f"""
-Perintah yang tersedia di bot ini :
-/start - Memulai Bot
-/ping - Sinyal Bot
-/repo - Link Repository Bot
-/alive - Alive Pada Bot
-/string - Mengambil String Session
-""",
-                             buttons=[
-                                 [
-                                     custom.Button.inline("ᴄʟᴏsᴇ",
-                                                          data="keluar"),
-                                     custom.Button.inline("ʙᴀᴄᴋ​",
-                                                          data="pesanstart")],
-                             ]
-                             )
-
-        @tgbot.on(events.CallbackQuery(data=b"pesanstart"))
-        async def pesanstart(event):
-            await event.edit(
-                f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)\n"
-                f"Selamat Datang Di **Flicks Userbot**\n"
-                f"Saya Assisten bot {ALIVE_NAME}\n"
-                f"Tekan tombol » ɪɴꜰᴏ​ «\n"
-                f"Untuk info lebih lanjut\n"
-                f"Terimakasih\n",
-                buttons=[
-                        [
-                            Button.url("Repository",
-                                       "https://github.com/farizjs/Flicks-Userbot"),
-                            custom.Button.inline("ɪɴꜰᴏ​",
-                                                 data="about")],
-                        [custom.Button.inline(
-                            "ʜᴇʟᴘ",
-                            data="help")],
-                ]
-            )
 
         @tgbot.on(events.CallbackQuery(data=b"keluar"))
         async def keluar(event):
