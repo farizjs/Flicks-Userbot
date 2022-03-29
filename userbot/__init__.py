@@ -800,18 +800,7 @@ with bot:
                 await event.edit(
                     file=flickslogo,
                     link_preview=True,
-                    buttons=[
-                        [
-                            custom.Button.url("Settings ⚙️",
-                                             f"t.me/{BOT_USERNAME}?start=set"),
-                            custom.Button.inline("Vc Plugin ⚙️",
-                                                 data="flicks_inline")],
-                        [Button.inline("Help Menu", data="open"),
-                         Button.inline("Owner Menu", data="ownrmn")],
-                        [custom.Button.inline(
-                            "Cʟᴏsᴇ", b"close")],
-                    ]
-                )
+                    buttons=main_help_button)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -826,18 +815,7 @@ with bot:
                     text,
                     file=flickslogo,
                     link_preview=True,
-                    buttons=[
-                        [
-                            custom.Button.url("Settings ⚙️",
-                                             f"t.me/{BOT_USERNAME}?start=set"),
-                            custom.Button.inline("Vc Plugin ⚙️",
-                                                 data="flicks_inline")],
-                        [Button.inline("Help Menu", data="open"),
-                         Button.inline("Owner Menu", data="ownrmn")],
-                        [custom.Button.inline(
-                            "Cʟᴏsᴇ", b"close")],
-                    ]
-                )
+                    buttons=main_help_button)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
