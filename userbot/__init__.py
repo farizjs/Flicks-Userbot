@@ -851,7 +851,30 @@ Perintah yang tersedia di bot ini :
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:  # @Flicks_Userbot
+            if event.query.user_id == uid:  # @Flicasyncks_Userbot
+                # https://t.me/TelethonChat/115200
+                await event.edit(
+                    file=flickslogo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.url("Settings ⚙️",
+                                             f"t.me/{BOT_USERNAME}?start=set"),
+                            custom.Button.inline("Vc Plugin ⚙️",
+                                                 data="flicks_inline")],
+                        [Button.inline("Help Menu", data="open")],
+                        [custom.Button.inline(
+                            "Cʟᴏsᴇ", b"close")],
+                    ]
+                )
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"gcback")
+            )
+        )
+         def gback_handler(event):
+            if event.query.user_id == uid:  # @Flicasyncks_Userbot
                 # https://t.me/TelethonChat/115200
                 await event.edit(
                     file=flickslogo,
@@ -944,7 +967,7 @@ Perintah yang tersedia di bot ini :
                     text,
                     file=flickslogo,
                     link_preview=True,
-                    buttons=[Button.inline("Help menu", data="open")])
+                    buttons=[Button.inline("Back", data="gcback")])
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -953,7 +976,7 @@ Perintah yang tersedia di bot ini :
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("Bᴜᴋᴀ Mᴇɴᴜ", data="open"),),
+                (custom.Button.inline("Bᴜᴋᴀ Mᴇɴᴜ", data="gcback"),),
             ]
             await event.edit("**Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ​!**", file=flickslogo, buttons=buttons)
 
