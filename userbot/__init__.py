@@ -863,7 +863,8 @@ Perintah yang tersedia di bot ini :
                                              f"t.me/{BOT_USERNAME}?start=set"),
                             custom.Button.inline("Vc Plugin ⚙️",
                                                  data="flicks_inline")],
-                        [Button.inline("Help Menu", data="open")],
+                        [Button.inline("Help Menu", data="open"),
+                         Button.inline("Owner Menu", data="ownrmn")],
                         [custom.Button.inline(
                             "Cʟᴏsᴇ", b"close")],
                     ]
@@ -888,7 +889,8 @@ Perintah yang tersedia di bot ini :
                                              f"t.me/{BOT_USERNAME}?start=set"),
                             custom.Button.inline("Vc Plugin ⚙️",
                                                  data="flicks_inline")],
-                        [Button.inline("Help Menu", data="open")],
+                        [Button.inline("Help Menu", data="open"),
+                         Button.inline("Owner Menu", data="ownrmn")],
                         [custom.Button.inline(
                             "Cʟᴏsᴇ", b"close")],
                     ]
@@ -919,7 +921,7 @@ Perintah yang tersedia di bot ini :
                             Button.inline("Uptime ⌛",
                                            data="uptimebot")],
                         [custom.Button.inline(
-                            "Back", data="open")],
+                            "Back", data="gcback")],
                     ]
                 )
             else:
@@ -938,6 +940,21 @@ Perintah yang tersedia di bot ini :
                 ms = (end - start).microseconds / 1000
                 await event.answer(
                     f"**PONG!!**\n `{ms}ms`", cache_time=0, alert=True)
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"uptimebot")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                uptime = await get_readable_time((time.time() - StartTime))
+                pin = f"⏱ ᴜᴘᴛɪᴍᴇ = {uptime}"
+                await event.answer(pin, cache_time=0, alert=True)
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
