@@ -691,6 +691,26 @@ Perintah yang tersedia di bot ini :
                 )
 
 
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"get_back")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                current_page_number = int(lockpage)
+                buttons = paginate_help(current_page_number, plugins, "helpme")
+                text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
+                await event.edit(
+                    text,
+                    file=flickslogo,
+                    buttons=buttons,
+                    link_preview=False,
+                )
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -985,7 +1005,7 @@ Perintah yang tersedia di bot ini :
                 )
 
                 await event.edit(
-                    reply_pop_up_alert, buttons=[Button.inline("Back", data="open")]
+                    reply_pop_up_alert, buttons=[Button.inline("Back", data="get_back")]
                 )
             else:
                 reply_pop_up_alert = f"""Jangan Menggunakan Milik {ALIVE_NAME} !"""
