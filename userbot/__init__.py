@@ -796,7 +796,9 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # @Flicasyncks_Userbot
                 # https://t.me/TelethonChat/115200
+                text = (f"\n**Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ**\n\n **Mᴀsᴛᴇʀ** {ALIVE_NAME}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n")
                 await event.edit(
+                    text,
                     file=flickslogo,
                     link_preview=True,
                     buttons=main_help_button)
