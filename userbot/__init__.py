@@ -690,6 +690,20 @@ with bot:
                     ),
                     buttons=main_help_button,
                 )
+            elif query.startswith("pasta"):
+                ok = event.text.split("-")[1]
+                link = "https://spaceb.in/" + ok
+                raw = f"https://spaceb.in/api/v1/documents/{ok}/raw"
+                result = builder.article(
+                    "Paste",
+                    text="Pasted to Spacebin 🌌",
+                    buttons=[
+                        [
+                            Button.url("SpaceBin", url=link),
+                            Button.url("Raw", url=raw),
+                        ],
+                    ],
+                )
             elif query.startswith("flicksalive"):
                 result = builder.article(
                     "Flicks-Userbot ",
