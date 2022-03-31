@@ -861,7 +861,7 @@ with bot:
                 end = datetime.now()
                 ms = (end - start).microseconds / 1000
                 await event.answer(
-                    f"**PONG!!**\n `{ms}ms`", cache_time=0, alert=True)
+                    f"PONG 🏓\n {ms}ms", cache_time=0, alert=True)
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -901,7 +901,7 @@ Voice chat group menu untuk {ALIVE_NAME}
                     buttons=[
                         [
                             Button.inline("Vc Plugin ⚙️",
-                                          data="pingbot"),
+                                          data="vcplugin"),
                             Button.inline("Vc Tools ⚙️",
                                            data="vctools")],
                         [custom.Button.inline(
