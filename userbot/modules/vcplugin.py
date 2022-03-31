@@ -488,6 +488,67 @@ async def vc_playlist(event):
         await edit_delete(event, "**Tidak Sedang Memutar Streaming**")
 
 
+# credits by @vckyaz < vicky \>
+# FROM GeezProjects < https://github.com/vckyou/GeezProjects \>
+# ambil boleh apus credits jangan ya ka:)
+
+
+@flicks_cmd(pattern="joinvc(?: |$)(.*)")
+async def join_(event):
+    xflicks = await edit_or_reply(event, f"**Processing**")
+    if len(event.text.split()) > 1:
+        chat_id = event.text.split()[1]
+        try:
+            chat_id = await event.client(GetFullUserRequest(chat_id))
+        except Exception as e:
+            await edit_delete(event, f"**ERROR:** `{e}`", 30)
+    else:
+        chat_id = event.chat_id
+        await event.get_chat()
+        from_user = vcmention(event.sender)
+    if chat_id:
+        try:
+            await call_py.join_group_call(
+                chat_id,
+                AudioPiped(
+                    'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
+                ),
+            stream_type=StreamType().pulse_stream,
+            )
+            await edit_delete(xflicks, f"**{from_user} Berhasil Naik Ke VC Group!**")
+        except AlreadyJoinedError:
+            await call_py.leave_group_call(chat_id)
+            await edit_delete(
+                xflicks,
+                f"**ERROR:** `Akun Anda Sudah Berada Di VC Group!`\n\n**Noted :** __Silahkan Ketik__ `{cmd}joinvc` __untuk menggunakan command kembali.__",
+                30,
+            )
+        except Exception as e:
+            await xflicks.edit(f"**INFO:** `{e}`")
+
+@flicks_cmd(pattern="leavevc(?: |$)(.*)")
+async def leavevc(event):
+    xflicks = await edit_or_reply(event, "`Processing...`")
+    if len(event.text.split()) > 1:
+        chat_id = event.text.split()[1]
+        try:
+            chat_id = await event.client(GetFullUserRequest(chat_id))
+        except Exception as e:
+            return await geez.edit(f"**ERROR:** `{e}`")
+    else:
+        chat_id = event.chat_id
+        from_user = vcmention(event.sender)
+    if chat_id:
+        try:
+            await call_py.leave_group_call(chat_id)
+            await edit_delete(
+                xflicks,
+                f"{from_user} Berhasil Turun Dari VC Group!",
+            )
+        except Exception as e:
+            await xflicks.edit(f"**INFO:** `{e}`")
+
+
 @call_py.on_stream_end()
 async def stream_end_handler(_, u: Update):
     chat_id = u.chat_id
