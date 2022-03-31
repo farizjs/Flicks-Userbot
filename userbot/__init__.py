@@ -643,7 +643,7 @@ with bot:
             if event.query.user_id == uid:
                 current_page_number = int(lockpage)
                 buttons = paginate_help(current_page_number, plugins, "helpme")
-                text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
+                text = f"\n📚 **Menu Help Inline!**\n\n **Master​** {ALIVE_NAME}\n\n** Branch :** Flicks-Userbot\n** Versi :** `v{BOT_VER}`\n** Plugins :** `{len(plugins)}`\n"
                 await event.edit(
                     text,
                     file=flickslogo,
@@ -663,7 +663,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 buttons = paginate_help(0, plugins, "helpme")
-                text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
+                text = f"\n📚 **Menu Help Inline!**\n\n **Master​** {ALIVE_NAME}\n\n** Branch :** Flicks-Userbot\n** Versi :** `v{BOT_VER}`\n** Plugins :** `{len(plugins)}`\n"
                 await event.edit(
                     text,
                     file=flickslogo,
