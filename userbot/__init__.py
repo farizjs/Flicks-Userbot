@@ -469,7 +469,7 @@ with bot:
         main_help_button=[
             [
                 Button.url("Settings ⚙️", f"t.me/{BOT_USERNAME}?start=set"),
-                Button.inline("Vc Plugin ⚙️", data="flicks_inline"),
+                Button.inline("Vc Menu ⚙️", data="flicks_inline"),
             ],
             [
                 Button.inline("Help Menu", data="open"),
@@ -867,7 +867,8 @@ with bot:
 
         @tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
-            await event.edit(f"""
+            if event.query.user_id == uid:
+                await event.edit(f"""
 Owner - {ALIVE_NAME}
 OwnerID - {uid}
 [Link To Profile 👤](tg://user?id={uid})
@@ -883,11 +884,37 @@ Flicks-Userbot [v{BOT_VER}](https://github.com/farizjs/Flicks-Userbot)
                                                           data="ownrmn")],
                              ]
                              )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+
+
+        @tgbot.on(events.CallbackQuery(data=b"flicks_inline"))
+        async def about(event):
+            if event.query.user_id == uid:
+                await event.edit(f"""
+Voice chat group menu untuk {ALIVE_NAME}
+""",
+                    buttons=[
+                        [
+                            Button.inline("Vc Plugin ⚙️",
+                                          data="pingbot"),
+                            Button.inline("Vc Tools ⚙️",
+                                           data="vctools")],
+                        [custom.Button.inline(
+                            "Back", data="gcback")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
 
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"flicks_inline")
+                data=re.compile(rb"vcplugin")
             )
         )
         async def on_plug_in_callback_query_handler(event):
@@ -922,7 +949,44 @@ Flicks-Userbot [v{BOT_VER}](https://github.com/farizjs/Flicks-Userbot)
                     text,
                     file=flickslogo,
                     link_preview=True,
-                    buttons=[Button.inline("Back", data="gcback")])
+                    buttons=[Button.inline("Back", data="flicks_inline")])
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"vctools")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+"""
+  Command : .startvc        
+  • : Untuk Memulai voice chat group        
+
+  Command : .stopvc        
+  • : Untuk Memberhentikan voice chat group        
+
+  Command : .vctitle <title vcg>        
+  • : Untuk Mengubah title/judul voice chat group        
+
+  Command : .vcinvite        
+  • : Mengundang Member group ke voice chat group        
+
+  Command : .joinvc        
+  • : Untuk Join VC Group        
+
+  Command : .leavevc        
+  • : Untuk Turun Dari VC Group    
+""")
+                await event.edit(
+                    text,
+                    file=flickslogo,
+                    link_preview=True,
+                    buttons=[Button.inline("Back", data="flicks_inline")])
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
