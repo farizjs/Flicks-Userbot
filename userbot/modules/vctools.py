@@ -19,7 +19,7 @@ from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, owner
+from userbot import CMD_HELP, ALIVE_NAME
 from userbot.events import register
 from userbot.utils import edit_delete, edit_or_reply, flicks_cmd
 
@@ -42,7 +42,7 @@ async def start_voice(c):
     creator = chat.creator
 
     if not admin and not creator:
-        await edit_delete(c, f"**Maaf {owner} Bukan Admin 👮**")
+        await edit_delete(c, f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
         return
     try:
         await c.client(startvc(c.chat_id))
@@ -58,7 +58,7 @@ async def stop_voice(c):
     creator = chat.creator
 
     if not admin and not creator:
-        await edit_delete(c, f"**Maaf {owner} Bukan Admin 👮**")
+        await edit_delete(c, f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
         return
     try:
         await c.client(stopvc(await get_call(c)))
@@ -96,7 +96,7 @@ async def change_title(e):
         return await edit_delete(e, "**Silahkan Masukan Title Obrolan Suara Grup**")
 
     if not admin and not creator:
-        await edit_delete(e, f"**Maaf {owner} Bukan Admin 👮**")
+        await edit_delete(e, f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
         return
     try:
         await e.client(settitle(call=await get_call(e), title=title.strip()))
