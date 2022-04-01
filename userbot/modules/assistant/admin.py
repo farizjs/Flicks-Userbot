@@ -10,22 +10,23 @@ from telethon.tl.types import (
 )
 
 from userbot import tgbot
+
 # =================== CONSTANT ===================
-PP_TOO_SMOL = "`The image is too small`"
-PP_ERROR = "`Failure while processing the image`"
-NO_ADMIN = "`I am not an admin nub nibba!`"
+PP_TOO_SMOL = "`Gambarnya terlalu kecil`"
+PP_ERROR = "`Kegagalan saat memproses gambar`"
+NO_ADMIN = "`Saya bukan admin!`"
 NO_PERM = (
-    "`I don't have sufficient permissions! This is so sed. Alexa play Tera Baap Aaya`"
+    "`Saya tidak memiliki izin yang memadai! Ini sangat sedep.`"
 )
 NO_SQL = "`Running on Non-SQL mode!`"
 
-CHAT_PP_CHANGED = "`Chat Picture Changed`"
+CHAT_PP_CHANGED = "`Gambar Obrolan Berubah`"
 CHAT_PP_ERROR = (
-    "`Some issue with updating the pic,`"
-    "`maybe coz I'm not an admin,`"
-    "`or don't have enough rights.`"
+    "`Beberapa masalah dengan memperbarui foto,`"
+    "`mungkin karena saya bukan admin,`"
+    "`atau tidak memiliki cukup hak.`"
 )
-INVALID_MEDIA = "`Invalid Extension`"
+INVALID_MEDIA = "`Ekstensi Tidak Valid`"
 
 BANNED_RIGHTS = ChatBannedRights(
     until_date=None,
@@ -55,7 +56,7 @@ MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 
-@tgbot.on(events.NewMessage(pattern="^/bun(?: |$)(.*)"))
+@tgbot.on(events.NewMessage(pattern="^/ban(?: |$)(.*)"))
 async def ban(event):
     noob = event.sender_id
     userids = []
@@ -70,7 +71,7 @@ async def ban(event):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        await event.reply("I Am Not Admin 🥺.")
+        await event.reply("saya bukan 🥺.")
         return
 
     user, reason = await get_user_from_event(event)
@@ -81,7 +82,7 @@ async def ban(event):
     try:
         await event.client(EditBannedRequest(event.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
-        await event.reply("No Permission Sar 🤭.")
+        await event.reply("Tidak Ada Izin :D.")
         return
     # Helps ban group join spammers more easily
     try:
@@ -90,7 +91,7 @@ async def ban(event):
             pass
     except BadRequestError:
         await event.reply(
-            "`I dont have message nuking rights! But still he was banned!`"
+            "`Saya tidak memiliki hak nuking pesan! Tapi tetap saja dia dilarang!`"
         )
         return
     if reason:
@@ -99,7 +100,7 @@ async def ban(event):
         await event.reply(f"Banned  `{str(user.id)}` !")
 
 
-@tgbot.on(events.NewMessage(pattern="^/unbun(?: |$)(.*)"))
+@tgbot.on(events.NewMessage(pattern="^/unban(?: |$)(.*)"))
 async def nothanos(event):
     userids = []
     noob = event.sender_id
@@ -108,13 +109,13 @@ async def nothanos(event):
     ):
         userids.append(user.id)
     if noob not in userids:
-        await event.reply("You're not an admin!")
+        await event.reply("Anda bukan Admin!")
         return
     chat = await event.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        await event.reply("Me Not Admin 🥺")
+        await event.reply("Saya Bukan Admin 🥺")
         return
     user = await get_user_from_event(event)
     user = user[0]
@@ -124,13 +125,13 @@ async def nothanos(event):
         return
     try:
         await event.client(EditBannedRequest(event.chat_id, user.id, UNBAN_RIGHTS))
-        await event.reply("`Unbanned Successfully. Granting another chance.🚶`")
+        await event.reply("`Pemblokiran Berhasil. Memberikan kesempatan lagi.🚶`")
     except BadRequestError:
-        await event.reply("`No Permission 🤭`")
+        await event.reply("`Tidak ada izin 🤭`")
         return
 
 
-@tgbot.on(events.NewMessage(pattern="^/prumote(?: |$)(.*)"))
+@tgbot.on(events.NewMessage(pattern="^/promote(?: |$)(.*)"))
 async def promote(event):
     userids = []
     noob = event.sender_id
@@ -139,7 +140,7 @@ async def promote(event):
     ):
         userids.append(user.id)
     if noob not in userids:
-        await event.reply("You're not an admin!")
+        await event.reply("Anda bukan admin!")
         return
     """ For .promote command, promotes the replied/tagged person """
     # Get targeted chat
@@ -150,7 +151,7 @@ async def promote(event):
 
     # If not admin and not creator, also return
     if not admin and not creator:
-        await event.reply("Me Not Admin 🥺")
+        await event.reply("Saya Bukan Admin 🥺")
         return
     new_rights = ChatAdminRights(
         add_admins=False,
@@ -162,7 +163,7 @@ async def promote(event):
     )
     user, rank = await get_user_from_event(event)
     if not rank:
-        rank = "mememaster"  # Just in case.
+        rank = "Admin"  # Just in case.
     if user:
         pass
     else:
@@ -170,16 +171,16 @@ async def promote(event):
     # Try to promote if current user is admin or creator
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
-        await event.reply("`Promoted Successfully! Now gib Party`")
+        await event.reply("`Berhasil Dipromosikan!`")
 
     # If Telethon spit BadRequestError, assume
     # we don't have Promote permission
     except BadRequestError:
-        await event.reply("No Permission To Promote 🤭")
+        await event.reply("Tidak Ada Izin Untuk Mempromosikan 🤭")
         return
 
 
-@tgbot.on(events.NewMessage(pattern="^/demute(?: |$)(.*)"))
+@tgbot.on(events.NewMessage(pattern="^/demote(?: |$)(.*)"))
 async def demote(event):
     userids = []
     noob = event.sender_id
@@ -188,7 +189,7 @@ async def demote(event):
     ):
         userids.append(user.id)
     if noob not in userids:
-        await event.reply("You're not an admin!")
+        await event.reply("Anda bukan admin!")
         return
     """ For .demote command, demotes the replied/tagged person """
     # Admin right check
@@ -197,7 +198,7 @@ async def demote(event):
     creator = chat.creator
 
     if not admin and not creator:
-        await event.reply("I Am Not Admin 🤭")
+        await event.reply("Saya Bukan Admin 🤭")
         return
 
     rank = "mememaster"  # dummy rank, lol.
@@ -223,9 +224,9 @@ async def demote(event):
     # If we catch BadRequestError from Telethon
     # Assume we don't have permission to demote
     except BadRequestError:
-        await event.reply("Me No Permission 🤔")
+        await event.reply("Saya Tidak ada Izin 🤔")
         return
-    await event.reply("`Demoted this Guy Successfully!`")
+    await event.reply("`Menurunkan Orang ini Berhasil!`")
 
 
 @tgbot.on(events.NewMessage(pattern="^/pin(?: |$)(.*)"))
@@ -237,7 +238,7 @@ async def pin(event):
     ):
         userids.append(user.id)
     if noob not in userids:
-        await event.reply("You're not an admin!")
+        await event.reply("Anda bukan admin!")
         return
     """ For .pin command, pins the replied/tagged message on the top the chat. """
     # Admin or creator check
@@ -247,13 +248,13 @@ async def pin(event):
 
     # If not admin and not creator, return
     if not admin and not creator:
-        await event.reply("I Need Administration Permission 🤔")
+        await event.reply("Saya Membutuhkan Izin Administrator 🤔")
         return
 
     to_pin = event.reply_to_msg_id
 
     if not to_pin:
-        await event.reply("`Reply to a message to pin it.`")
+        await event.reply("`Balas pesan untuk menyematkannya.`")
         return
 
     options = event.pattern_match.group(1)
@@ -263,7 +264,7 @@ async def pin(event):
     try:
         await event.client(UpdatePinnedMessageRequest(event.to_id, to_pin, is_silent))
     except BadRequestError:
-        await event.reply("No Permission 🥺")
+        await event.reply("Tidak ada izin 🥺")
         return
     await event.reply("`Pinned Successfully!`")
     user = await get_user_from_id(msg.sender_id, msg)
@@ -286,7 +287,7 @@ async def get_user_from_event(event):
             user = int(user)
 
         if not user:
-            await event.reply("`Pass the user's username, id or reply!`")
+            await event.reply("`Lewati nama pengguna, id, atau balasan pengguna!`")
             return
 
         if event.message.entities is not None:
