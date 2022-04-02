@@ -73,7 +73,7 @@ async def _(event):
             .get("key")
         )
     q = f"pasta-{key}"
-    reply_text = f"• **Pasted to Spacebin :** [Link](https://spaceb.in/{ok})\n• **Raw Url :** : [Raw](https://spaceb.in/api/v1/documents/{ok}/raw)"
+    reply_text = f"• **Pasted to Spacebin :** [Link](https://spaceb.in/{key})\n• **Raw Url :** : [Raw](https://spaceb.in/api/v1/documents/{key}/raw)"
     try:
         ok = await bot.inline_query(BOT_USERNAME, q)
         await ok[0].click(event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True)
