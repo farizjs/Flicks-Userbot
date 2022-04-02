@@ -1,3 +1,5 @@
+# Credits (c) DARK-COBRA
+
 from telethon import events
 from telethon.errors import BadRequestError
 from telethon.tl.functions.channels import EditAdminRequest, EditBannedRequest
@@ -71,7 +73,7 @@ async def ban(event):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        await event.reply("saya bukan 🥺.")
+        await event.reply("saya bukan Admin 🥺.")
         return
 
     user, reason = await get_user_from_event(event)
