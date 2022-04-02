@@ -75,7 +75,7 @@ async def _(event):
     q = f"pasta-{key}"
     reply_text = f"• **Pasted to Nekobin :** [Neko](https://nekobin.com/{key})\n• **Raw Url :** : [Raw](https://nekobin.com/raw/{key})"
     try:
-        ok = await _bot.inline_query(BOT_USERNAME, q)
+        ok = await bot.inline_query(BOT_USERNAME, q)
         await ok[0].click(event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True)
         await xx.delete()
     except BaseException:
