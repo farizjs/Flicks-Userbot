@@ -59,7 +59,7 @@ async def _(event):
     if downloaded_file_name and downloaded_file_name.endswith(".py"):
         data = message
         key = (
-            requests.post("https://spaceb.in/api/v1/documents", json={"content": data, "extension": "txt"})
+            requests.post("https://nekobin.com/api/documents", json={"content": data})
             .json()
             .get("result")
             .get("key")
@@ -67,13 +67,13 @@ async def _(event):
     else:
         data = message
         key = (
-            requests.post("https://spaceb.in/api/v1/documents", json={"content": data, "extension": "txt"})
+            requests.post("https://nekobin.com/api/documents", json={"content": data})
             .json()
             .get("result")
             .get("key")
         )
     q = f"pasta-{key}"
-    reply_text = f"• **Pasted to Spacebin :** [Link](https://spaceb.in/{key})\n• **Raw Url :** : [Raw](https://spaceb.in/api/v1/documents/{key}/raw)"
+    reply_text = f"• **Pasted to Nekobin :** [Neko](https://nekobin.com/{key})\n• **Raw Url :** : [Raw](https://nekobin.com/raw/{key})"
     try:
         ok = await bot.inline_query(BOT_USERNAME, q)
         await ok[0].click(event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True)
@@ -86,7 +86,7 @@ CMD_HELP.update(
     {
         "paste": f"**•Plugin :** `Paste`\
         \n\n  •  **•Perintah :** `{CMD_HANDLER}paste` <text/reply>\
-        \n  •  **•Function : **Untuk Menyimpan text ke ke layanan Spacebin \
+        \n  •  **•Function : **Untuk Menyimpan text ke ke layanan Nekobin \
     "
     }
 )
