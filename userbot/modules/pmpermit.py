@@ -8,7 +8,6 @@
 # Update by Dev Flicks-Userbot
 """Userbot module for keeping control who PM you."""
 
-from userbot.events import register
 from sqlalchemy.exc import IntegrityError
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
@@ -28,7 +27,8 @@ from userbot import (
     DEVS,
 )
 
-from userbot.events import register
+from userbot import CMD_HANDLER as i
+from userbot.utils import flicks_cmd
 
 # ========================= CONSTANTS ===========================
 
@@ -47,7 +47,7 @@ DEF_UNAPPROVED_MSG = (
 # =================================================================
 
 
-@register(incoming=True, disable_edited=True, disable_errors=True)
+@bot.on(events.NewMessage(incoming=True))
 async def permitpm(event):
     """Prohibits people from PMing you without approval. \
         Will block retarded nibbas automatically."""
@@ -133,7 +133,7 @@ async def permitpm(event):
                     )
 
 
-@ register(disable_edited=True, outgoing=True, disable_errors=True)
+@bot.on(events.NewMessage(outgoing=True))
 async def auto_accept(event):
     """Will approve automatically if you texted them first."""
     if not PM_AUTO_BAN:
@@ -183,7 +183,7 @@ async def auto_accept(event):
                     )
 
 
-@ register(outgoing=True, pattern=r"^\.notifoff$")
+@flicks_cmd(pattern="notifoff$")
 async def notifoff(noff_event):
     """For .notifoff command, stop getting notifications from unapproved PMs."""
     try:
@@ -194,7 +194,7 @@ async def notifoff(noff_event):
     await noff_event.edit("`Notifikasi Dari Pesan Pribadi Tidak Disetujui, Telah Dibisukan!`")
 
 
-@ register(outgoing=True, pattern=r"^\.notifon$")
+@flicks_cmd(pattern="notifon$")
 async def notifon(non_event):
     """For .notifoff command, get notifications from unapproved PMs."""
     try:
@@ -205,7 +205,7 @@ async def notifon(non_event):
     await non_event.edit("`Notifikasi Dari Pesan Pribadi Tidak Disetujui, Tidak Lagi Dibisukan!`")
 
 
-@ register(outgoing=True, pattern=r"^\.(?:setuju|ok)\s?(.)?")
+@flicks_cmd(pattern="(?:setuju|ok)\s?(.)?")
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
@@ -254,7 +254,7 @@ async def approvepm(apprvpm):
         )
 
 
-@ register(outgoing=True, pattern=r"^\.(?:tolak|nopm)\s?(.)?")
+@flicks_cmd(pattern="(?:tolak|nopm)\s?(.)?")
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
@@ -284,7 +284,7 @@ async def disapprovepm(disapprvpm):
         )
 
 
-@ register(outgoing=True, pattern=r"^\.block$")
+@flicks_cmd(pattern="block$")
 async def blockpm(block):
     """For .block command, block people from PMing you!"""
     if block.reply_to_msg_id:
@@ -316,7 +316,7 @@ async def blockpm(block):
         )
 
 
-@ register(outgoing=True, pattern=r"^\.unblock$")
+@flicks_cmd(pattern="unblock$")
 async def unblockpm(unblock):
     """For .unblock command, let people PMing you again!"""
     if unblock.reply_to_msg_id:
@@ -333,7 +333,7 @@ async def unblockpm(unblock):
         )
 
 
-@ register(outgoing=True, pattern=r"^.(set|get|reset) pm_msg(?: |$)(\w*)")
+@flicks_cmd(pattern="(set|get|reset) pm_msg(?: |$)(\w*)")
 async def add_pmsg(cust_msg):
     """Set your own Unapproved message"""
     if not PM_AUTO_BAN:
@@ -393,10 +393,7 @@ async def add_pmsg(cust_msg):
             )
 
 
-@ register(incoming=True,
-           disable_edited=True,
-           disable_errors=True,
-           from_users=(DEVS))
+@bot.on(events.NewMessage(incoming=True, from_users=(DEVS)))
 async def permitpm(event):
     if event.fwd_from:
         return
@@ -411,23 +408,23 @@ async def permitpm(event):
 
 CMD_HELP.update(
     {
-        "pmpermit": "Cmd: >`.setuju` | `.ok`"
+        f"pmpermit": "Cmd: >`{i}setuju` | `{i}ok`"
         "\n↳ : Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
-        "\n\nCmd: >`.tolak | .nopm`"
+        f"\n\nCmd: >`{i}tolak | {i}nopm`"
         "\n↳ : Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
-        "\n\nCmd: >`.block`"
+        f"\n\nCmd: >`{i}block`"
         "\n↳ : Memblokir Orang Di PM."
-        "\n\nCmd: >`.unblock`"
+        f"\n\nCmd: >`{i}unblock`"
         "\n↳ : Membuka Blokir."
-        "\n\nCmd: >`.notifoff`"
+        f"\n\nCmd: >`{i}notifoff`"
         "\n↳ : Mematikan notifikasi pesan yang belum diterima."
-        "\n\nCmd: >`.notifon`"
+        f"\n\nCmd: >`{i}notifon`"
         "\n↳ : Menghidupkan notifikasi pesan yang belum diterima."
-        "\n\nCmd: >`.set pm_msg` <balas ke pesan>"
+        f"\n\nCmd: >`{i}set pm_msg` <balas ke pesan>"
         "\n↳ : Menyetel Pesan Pribadimu untuk orang yang pesannya belum diterima"
-        "\n\nCmd: >`.get pm_msg`"
+        f"\n\nCmd: >`{i}get pm_msg`"
         "\n↳ : Mendapatkan Custom pesan PM mu"
-        "\n\nCmd: >`.reset pm_msg`"
+        f"\n\nCmd: >`{i}reset pm_msg`"
         "\n↳ : Menghapus pesan PM ke default"
         "\n\nPesan Pribadi yang belum diterima saat ini tidak dapat disetel"
         "\nke teks format kaya bold, underline, link, dll."
