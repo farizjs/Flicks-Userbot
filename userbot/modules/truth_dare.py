@@ -3,7 +3,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import bot, CMD_HELP, CMD_HANDLER as i
-from userbot.events import register
+from userbot.utils import flicks_cmd
 
 
 @flicks_cmd(pattern="truth(?: |$)(.*)")
