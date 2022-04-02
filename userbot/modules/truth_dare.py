@@ -2,7 +2,7 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot import bot, CMD_HELP
+from userbot import bot, CMD_HELP, CMD_HANDLER as i
 from userbot.events import register
 
 
@@ -59,12 +59,12 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "truth_dare": "** Plugin :** truth_dare\
-        \n\n  •  Perintah : `.truth`\
+        "truth_dare": f"** Plugin :** truth_dare\
+        \n\n  •  Perintah : `{i}truth`\
         \n  •  Function : Untuk mengirim pesan truth\
-        \n\n  •  Perintah : `.dare`\
+        \n\n  •  Perintah : `{i}dare`\
         \n  •  Function : Untuk mengirim pesan dare\
-        \n\n  •  Perintah : `.spill`\
+        \n\n  •  Perintah : `{i}spill`\
         \n  •  Function : Untuk Pertanyaan\
     "
     }
