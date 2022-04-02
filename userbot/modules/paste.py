@@ -1,67 +1,85 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
-#
-"""Userbot module containing commands for interacting with dogbin(https://del.dog)"""
-
+import asyncio
+import calendar
+import html
+import io
 import os
+import sys
+import time
+import traceback
+from datetime import datetime as dt
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.utils.pastebin import PasteBin
-from userbot import CMD_HANDLER as cmd
-from userbot.utils import flicks_cmd
+import pytz
+import requests
+from telegraph import Telegraph
+from telegraph import upload_file as uf
+from telethon import functions
+from telethon.events import NewMessage
+from telethon.tl.custom import Dialog
+from telethon.tl.functions.channels import LeaveChannelRequest, InviteToChannelRequest
+from telethon.tl.functions.messages import AddChatUserRequest
+from telethon.tl.functions.photos import GetUserPhotosRequest
+from telethon.tl.types import Channel, Chat, InputMediaPoll, Poll, PollAnswer, User
+from telethon.utils import get_input_location
 
+from userbot import *
+from userbot.utils import *
 
-@flicks_cmd(pattern="paste(?: (-d|-n|-h|-k|-s)|$)?(?: ([\\s\\S]+)|$)")
-async def paste(pstl):
-    """For .paste command, pastes the text directly to a pastebin."""
-    service = pstl.pattern_match.group(1)
-    match = pstl.pattern_match.group(2)
-    reply_id = pstl.reply_to_msg_id
-
-    if not (match or reply_id):
-        return await pstl.edit("`Elon Musk berkata saya tidak bisa menempelkan kekosongan`")
-
-    if match:
-        message = match.strip()
-    elif reply_id:
-        message = await pstl.get_reply_message()
-        if message.media:
-            downloaded_file_name = await pstl.client.download_media(
-                message,
-                TEMP_DOWNLOAD_DIRECTORY,
+@flicks_cmd(pattern="paste( (.*)|$)")
+async def _(event):
+    xx = await eor(event, "` 《 Pasting to nekobin... 》 `")
+    input_str = "".join(event.text.split(maxsplit=1)[1:])
+    if not (input_str or event.is_reply):
+        return await xx.edit("`Membalas Pesan/Dokumen atau Beri saya Beberapa Teks !`")
+    if input_str:
+        message = input_str
+        downloaded_file_name = None
+    elif event.reply_to_msg_id:
+        previous_message = await event.get_reply_message()
+        if previous_message.media:
+            downloaded_file_name = await event.client.download_media(
+                previous_message,
+                "./resources/downloads",
             )
             m_list = None
             with open(downloaded_file_name, "rb") as fd:
                 m_list = fd.readlines()
             message = ""
-            for m in m_list:
-                message += m.decode("UTF-8")
+            try:
+                for m in m_list:
+                    message += m.decode("UTF-8")
+            except BaseException:
+                message = "`Include long text / Reply to text file`"
             os.remove(downloaded_file_name)
         else:
-            message = message.message
-
-    await pstl.edit("`Menempelkan text . . .`")
-    async with PasteBin(message) as client:
-        if service:
-            service = service.strip()
-            if service not in ["-d", "-n", "-h", "-k"]:
-                return await pstl.edit("Invalid flag")
-            await client(client.service_match[service])
-        else:
-            await client.post()
-
-        if client:
-            reply_text = (
-                "**Sukses Ditempelkan!**\n\n"
-                f"[URL]({client.link})\n"
-                f"[Lihat RAW]({client.raw_link})"
-            )
-        else:
-            reply_text = "**Gagal mencapai Layanan Pastebin**"
-
-    await pstl.edit(reply_text, link_preview=False)
+            downloaded_file_name = None
+            message = previous_message.message
+    else:
+        downloaded_file_name = None
+        message = "`Include long text / Reply to text file`"
+    if downloaded_file_name and downloaded_file_name.endswith(".py"):
+        data = message
+        key = (
+            requests.post("https://nekobin.com/api/documents", json={"content": data})
+            .json()
+            .get("result")
+            .get("key")
+        )
+    else:
+        data = message
+        key = (
+            requests.post("https://nekobin.com/api/documents", json={"content": data})
+            .json()
+            .get("result")
+            .get("key")
+        )
+    q = f"pasta-{key}"
+    reply_text = f"• **Pasted to Nekobin :** [Neko](https://nekobin.com/{key})\n• **Raw Url :** : [Raw](https://nekobin.com/raw/{key})"
+    try:
+        ok = await _bot.inline_query(BOT_USERNAME, q)
+        await ok[0].click(event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True)
+        await xx.delete()
+    except BaseException:
+        await xx.edit(reply_text)
 
 
 CMD_HELP.update(
