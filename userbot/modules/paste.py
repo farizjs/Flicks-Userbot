@@ -26,7 +26,7 @@ from userbot.utils import *
 
 @flicks_cmd(pattern="paste( (.*)|$)")
 async def _(event):
-    xx = await eor(event, "` 《 Pasting to nekobin... 》 `")
+    xx = await edit_or_reply(event, "` 《 Pasting to nekobin... 》 `")
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     if not (input_str or event.is_reply):
         return await xx.edit("`Membalas Pesan/Dokumen atau Beri saya Beberapa Teks !`")
