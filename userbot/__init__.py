@@ -65,7 +65,7 @@ if CONSOLE_LOGGER_VERBOSE:
     )
 else:
     basicConfig(
-        format="✘ %(asctime)s ✘ - ⫸ %(name)s ⫷ - ⛝ %(levelname)s ⛝ - ║ %(message)s ║",
+        format="[%(name)s] - [%(levelname)s] - %(message)s",
         level=INFO)
 LOGS = getLogger(__name__)
 
@@ -246,7 +246,7 @@ BITLY_TOKEN = os.environ.get(
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "Flicks-Userbot")
 
 # Bot Version
-BOT_VER = os.environ.get("BOT_VER", "1.5.3")
+BOT_VER = os.environ.get("BOT_VER", "1.5.9")
 
 # Default .alive Username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
