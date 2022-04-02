@@ -85,9 +85,8 @@ async def _(event):
 CMD_HELP.update(
     {
         "paste": f"**•Plugin :** `Paste`\
-        \n\n  •  **•Perintah :** `{cmd}paste` <text/reply>\
-        \n  •  **•Function : **Untuk Menyimpan text ke ke layanan pastebin gunakan flags [`-d`, `-n`, `-h`]\
-        \n\n  •  **•Note :** `-d` = **Dogbin** atau `-n` = **Nekobin** atau `-h` = **Hastebin** atau `-k` = **katbin**\
+        \n\n  •  **•Perintah :** `{CMD_HANDLER}paste` <text/reply>\
+        \n  •  **•Function : **Untuk Menyimpan text ke ke layanan Nekobin \
     "
     }
 )
