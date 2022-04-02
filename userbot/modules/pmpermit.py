@@ -26,6 +26,7 @@ from userbot import (
     PMPERMIT_PIC,
     ALIVE_NAME,
     DEVS,
+    bot,
 )
 
 from userbot import CMD_HANDLER as i
