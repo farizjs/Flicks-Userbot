@@ -6,7 +6,7 @@ from userbot import bot, CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r"^\.truth(?: |$)(.*)")
+@flicks_cmd(pattern="truth(?: |$)(.*)")
 async def _(event):
     await event.edit("Mengirim pesan truth...")
     async with bot.conversation("@truthordares_bot") as conv:
@@ -23,7 +23,7 @@ async def _(event):
         await event.edit(f"**Pesan truth**\n\n{response.message.message}")
 
 
-@register(outgoing=True, pattern=r"^\.dare(?: |$)(.*)")
+@flicks_cmd(pattern="dare(?: |$)(.*)")
 async def _(event):
     await event.edit("Mengirim pesan dare...")
     async with bot.conversation("@truthordares_bot") as conv:
@@ -40,7 +40,7 @@ async def _(event):
         await event.edit(f"**Pesan dare**\n\n{response.message.message}")
 
 
-@register(outgoing=True, pattern=r"^\.spill(?: |$)(.*)")
+@flicks_cmd(pattern="spill(?: |$)(.*)")
 async def _(event):
     await event.edit("Mengirim pesan spill...")
     async with bot.conversation("@Spillgame_bot") as conv:
