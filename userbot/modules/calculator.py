@@ -4,7 +4,8 @@
 # t.me/TheFlicksUserbot
 
 import re
-from telethon import Button, events
+from telethon import Button
+from telethon.events import CallbackQuery, InlineQuery, NewMessage
 
 from userbot import *
 from userbot.utils import *
@@ -49,7 +50,7 @@ async def icalc(e):
     await e.delete()
 
 
-@tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+@tgbot.on(InlineQuery)  # pylint:disable=E0602
 async def inline_handler(event):
     if event.query.user_id == OWNER_ID and query.startswith("calc"):
         calc = e.builder.article("Calc", text="Inline Calculator", buttons=lst)
