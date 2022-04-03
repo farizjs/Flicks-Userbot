@@ -5,6 +5,7 @@
 #
 # inline credit @keselekpermen69 & @farizjs
 # Chatbot and button from Man-Userbot
+#
 """ Userbot initialization. """
 
 import logging
@@ -404,8 +405,8 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} ✥".format(
-                "✥", x), data="ub_modul_{}".format(x))
+            "{} {} ✘".format(
+                "✘", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
