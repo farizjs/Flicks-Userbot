@@ -88,7 +88,9 @@ elif LOAD_MYBOT == "False":
                     [custom.Button.inline("Apa ini ❓", data="pmclick")],
                 ],
             )
-        await event.answer([result] if result else None)
+        await event.answer(
+               [result], switch_pm=f"ASSISTANT BOT OF {ALIVE_NAME}", switch_pm_param="start"
+           )
 
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
