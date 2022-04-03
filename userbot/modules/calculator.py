@@ -52,9 +52,12 @@ async def icalc(e):
 
 @tgbot.on(InlineQuery)  # pylint:disable=E0602
 async def inline_handler(event):
+    builder = event.builder
+    result = None
+    query = event.text
     if event.query.user_id == OWNER_ID and query.startswith("calc"):
-        calc = e.builder.article("Calc", text="Inline Calculator", buttons=lst)
-    await e.answer([calc])
+        result = event.builder.article("Calc", text="Inline Calculator", buttons=lst)
+    await event.answer([result])
 
 
 @callback(data=re.compile(b"calc(.*)"))
