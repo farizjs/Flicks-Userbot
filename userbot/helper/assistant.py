@@ -1,5 +1,5 @@
 import functools
-from telethon import events
+from telethon.events import CallbackQuery, InlineQuery, NewMessage
 from telethon import Button
 from telethon.tl.types import InputWebDocument
 from telethon.utils import get_display_name
@@ -77,7 +77,7 @@ def in_owner():
 
 def inline():
     def flicks(func):
-        tgbot.add_event_handler(func, events.InlineQuery)
+        tgbot.add_event_handler(func, InlineQuery)
 
     return flicks
 
@@ -85,7 +85,7 @@ def inline():
 def in_pattern(pat):
     def don(func):
         pattern = pat
-        tgbot.add_event_handler(func, events.InlineQuery(pattern=pattern))
+        tgbot.add_event_handler(func, InlineQuery(pattern=pattern))
 
     return don
 
