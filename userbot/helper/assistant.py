@@ -14,7 +14,7 @@ FLICKS_PIC = INLINE_PIC
 MSG = f"""
 **Flicks - UserBot**
 ➖➖➖➖➖➖➖➖➖➖
-**Owner**: [{OWNER}](tg://user?id={OWNER_ID})
+**Owner**: [{OWNER_NAME}](tg://user?id={OWNER_ID})
 **Assistant** : @{BOT_USERNAME}
 ➖➖➖➖➖➖➖➖➖➖
 """
