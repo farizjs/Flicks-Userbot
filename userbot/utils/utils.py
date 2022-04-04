@@ -92,20 +92,20 @@ async def autobot():
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
-            await bot.send_file(bf, "userbot/files/20211115_142004.jpg")
+            await bot.send_file(bf, "userbot/files/20220218_190645.jpg")
             await asyncio.sleep(3)
             await bot.send_message(bf, "/setabouttext")
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
-            await bot.send_message(bf, f"Managed By {who.first_name}")
+            await bot.send_message(bf, f"Managed By @{who.username}")
             await asyncio.sleep(3)
             await bot.send_message(bf, "/setdescription")
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @TheFlicksUserbot ✨"
+                bf, f"✨ Owner ~ @{who.username} ✨\n\n✨ Powered By ~ @TheFlicksUserbot ✨"
             )
             await bot.send_message(
                 BOTLOG_CHATID,
@@ -134,20 +134,20 @@ async def autobot():
         await asyncio.sleep(1)
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
-        await bot.send_file(bf, "userbot/files/20211115_142004.jpg")
+        await bot.send_file(bf, "userbot/files/20220218_190645.jpg")
         await asyncio.sleep(3)
         await bot.send_message(bf, "/setabouttext")
         await asyncio.sleep(1)
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
-        await bot.send_message(bf, f"Managed By {who.first_name}")
+        await bot.send_message(bf, f"Managed By @{who.username}")
         await asyncio.sleep(3)
         await bot.send_message(bf, "/setdescription")
         await asyncio.sleep(1)
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
         await bot.send_message(
-            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @TheFlicksUserbot ✨"
+            bf, f"✨ Owner ~ @{who.username} ✨\n\n✨ Powered By ~ @TheFlicksUserbot ✨"
         )
         await bot.send_message(
             BOTLOG_CHATID,
