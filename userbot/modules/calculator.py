@@ -52,7 +52,6 @@ async def icalc(e):
 
 
 @in_pattern("calc")
-@in_owner
 async def _(e):
     calc = e.builder.article("Calc", text="• Flicks Inline Calculator •", buttons=lst)
     await e.answer([calc])
