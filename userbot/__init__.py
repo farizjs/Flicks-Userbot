@@ -768,22 +768,17 @@ with bot:
             else:
                 result = builder.article(
                     " ✘ Flicks-Userbot ✘",
-                    text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n✥**ᴀssɪsᴛᴇɴ :** @{BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖[➖]({ALIVE_LOGO})""",
+                    text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Master​** {ALIVE_NAME}\n✥**Assistant :** @{BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖[➖]({ALIVE_LOGO})""",
                     buttons=[
                         [
-                            custom.Button.url(
-                                "sᴜᴘᴘᴏʀᴛ",
-                                "t.me/FlicksSupport"),
-                            custom.Button.url(
-                                "ᴄʜᴀɴɴᴇʟ​​",
-                                "t.me/InfoFlicksUserbot")],
-                        [custom.Button.url(
-                            "ʀᴇᴘᴏ",
-                            "https://github.com/farizjs/Flicks-Userbot")]],
+                            Button.url("Support", url="t.me/FlicksSupport"),
+                            Button.url("Repo", url="https://github.com/farizjs/Flicks-Userbot"),
+                        ],
+                    ],
                     link_preview=False,
                 )
             await event.answer(
-                [result], switch_pm=f"ASSISTANT BOT OF {ALIVE_NAME}", switch_pm_param="start"
+                [result], switch_pm=f"🤖: Assistant Bot Of {ALIVE_NAME}", switch_pm_param="start"
             )
 
         @tgbot.on(
