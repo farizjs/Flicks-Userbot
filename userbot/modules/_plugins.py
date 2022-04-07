@@ -31,5 +31,5 @@ async def help(event):
     await event.reply(
         f"\n**Contoh : ketik** `{xd}help` <nama plugin> **Yang Sesuai Dengan Plugin Di Atas**\n\n**USERBOT TELEGRAM**"
     )
-        await asyncio.sleep(2000)
-        await event.delete()
+    await asyncio.sleep(2000)
+    await event.delete()
