@@ -66,6 +66,7 @@ async def autopilot():
                 megagroup=True,
             ),
         )
+
     except ChannelsTooMuchError:
         LOGS.info(
             "terlalu banyak channel dan grup, hapus salah satu dan restart lagi"
@@ -82,10 +83,6 @@ async def autopilot():
         heroku_var["BOTLOG_CHATID"] = "-100" + str(chat_id)
     else:
         heroku_var["BOTLOG_CHATID"] = str(chat_id)
-        try:
-            await bot(InviteToChannelRequest(int(chat_id), [BOT_USERNAME]))
-        except BaseException as er:
-            LOGS.info("Kesalahan saat Menambahkan Asisten ke Log Group")
 
     if isinstance(chat.photo, ChatPhotoEmpty):
 
