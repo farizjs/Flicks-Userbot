@@ -35,7 +35,7 @@ from telethon.utils import get_peer_id
 
 import heroku3
 
-from userbot import BOTLOG_CHATID, tgbot, bot, HEROKU_API_KEY, HEROKU_APP_NAME, LOGS
+from userbot import BOTLOG_CHATID, tgbot, bot, HEROKU_API_KEY, HEROKU_APP_NAME, LOGS, BOT_USERNAME
 
 heroku_api = "https://api.heroku.com"
 if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
@@ -82,6 +82,11 @@ async def autopilot():
         heroku_var["BOTLOG_CHATID"] = "-100" + str(chat_id)
     else:
         heroku_var["BOTLOG_CHATID"] = str(chat_id)
+        try:
+            await bot(InviteToChannelRequest(int(chat_id), [BOT_USERNAME]))
+        except BaseException as er:
+            LOGS.info("Kesalahan saat Menambahkan Asisten ke Log Group")
+
     if isinstance(chat.photo, ChatPhotoEmpty):
 
         ppk = "userbot/files/20211115_142004.jpg"
