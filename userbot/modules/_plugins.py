@@ -20,7 +20,7 @@ async def help(event):
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += f"`\t✘  "
+            string += f"`\t|  "
         await event.edit(
             "**📙 Menu Help!**\n\n"
             f"**Master** {DEFAULTUSER}\n**◑» Plugins :** `{len(plugins)}`\n**◑» Branch :** __{UPSTREAM_REPO_BRANCH}__\n**◑» Versi Userbot :** `v{BOT_VER}`\n\n"
