@@ -51,6 +51,11 @@ if not BOT_TOKEN:
     )
     bot.loop.run_until_complete(autobot())
 
+    try:
+        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
+    except BaseException:
+        pass
+
 LOGS.info(
     f"Python Version - {python_version()} \
       \nTelethon Version - {version.__version__} \
