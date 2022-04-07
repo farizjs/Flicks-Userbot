@@ -1321,15 +1321,6 @@ CMD_HELP.update(
 )
 
 
-CMD_HELP.update(
-    {
-        "removebg": "**Modules : **`removebg`\
-        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.removebg` <Tautan ke Gambar> atau balas gambar apa pun (Peringatan: tidak berfungsi pada stiker.)\
-        \n  •  **Function : **Menghapus latar belakang gambar, menggunakan API remove.bg\
-    "
-    }
-)
-
 
 CMD_HELP.update(
     {
