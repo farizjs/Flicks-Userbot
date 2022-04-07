@@ -1006,10 +1006,14 @@ Voice chat group menu untuk {ALIVE_NAME}
 
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
-            buttons = [
-                (custom.Button.inline("Bᴜᴋᴀ Mᴇɴᴜ", data="gcback"),),
-            ]
-            await event.edit("**Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ​!**", file=flickslogo, buttons=buttons)
+            if event.query.user_id == uid:
+                buttons = [
+                    (custom.Button.inline("Bᴜᴋᴀ Mᴇɴᴜ", data="gcback"),),
+                ]
+                await event.edit("**Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ​!**", file=flickslogo, buttons=buttons)
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
         @tgbot.on(
