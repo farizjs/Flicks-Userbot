@@ -22,14 +22,14 @@ async def help(event):
         string += "`" + str(i)
         string += f"`\t✘  "
     await event.edit(
-            "**📙 Menu Help!**\n\n"
-            f"**Master** {DEFAULTUSER}\n**◑» Plugins :** `{len(plugins)}`\n**◑» Branch :** __{UPSTREAM_REPO_BRANCH}__\n**◑» Versi Userbot :** `v{BOT_VER}`\n\n"
-            f"**📚 Menu Help Inline** `{xd}help` \n\n"
-            "**❒ Menu Plugin ↯**\n"
-            f"╰►✘ {string} ◄─"
-        )
+        "**📙 Menu Help!**\n\n"
+        f"**Master** {DEFAULTUSER}\n**◑» Plugins :** `{len(plugins)}`\n**◑» Branch :** __{UPSTREAM_REPO_BRANCH}__\n**◑» Versi Userbot :** `v{BOT_VER}`\n\n"
+        f"**📚 Menu Help Inline** `{xd}help` \n\n"
+        "**❒ Menu Plugin ↯**\n"
+        f"╰►✘ {string} ◄─"
+    )
     await event.reply(
-            f"\n**Contoh : ketik** `{xd}help` <nama plugin> **Yang Sesuai Dengan Plugin Di Atas**\n\n**USERBOT TELEGRAM**"
-        )
+        f"\n**Contoh : ketik** `{xd}help` <nama plugin> **Yang Sesuai Dengan Plugin Di Atas**\n\n**USERBOT TELEGRAM**"
+    )
         await asyncio.sleep(2000)
         await event.delete()
