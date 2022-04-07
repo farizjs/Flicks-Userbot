@@ -23,7 +23,7 @@ async def help(event):
         string += f"`\t✘  "
     await event.edit(
         "**📙 Menu Help!**\n\n"
-        f"**Master** {DEFAULTUSER}\n**◑» Plugins :** `{len(plugins)}`\n**◑» Branch :** __{UPSTREAM_REPO_BRANCH}__\n**◑» Versi Userbot :** `v{BOT_VER}`\n\n"
+        f"**Master** {ALIVE_NAME}\n**◑» Plugins :** `{len(plugins)}`\n**◑» Branch :** __{UPSTREAM_REPO_BRANCH}__\n**◑» Versi Userbot :** `v{BOT_VER}`\n\n"
         f"**📚 Menu Help Inline** `{xd}help` \n\n"
         "**❒ Menu Plugin ↯**\n"
         f"╰►✘ {string} ◄─"
