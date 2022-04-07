@@ -20,9 +20,9 @@ from userbot.pytgcalls import call_py
 
 
 
-INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
-             '\n Tip: Use Country Code along with number.' \
-             '\n or check your phone number and try again !'
+INVALID_PH = '\nERROR: Nomor Telepon yang dimasukkan TIDAK VALID' \
+             '\n Tips: Gunakan Kode Negara beserta nomornya.' \
+             '\n atau periksa nomor telepon Anda dan coba lagi !'
 
 
 
@@ -51,10 +51,6 @@ if not BOT_TOKEN:
     )
     bot.loop.run_until_complete(autobot())
 
-    try:
-        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
-    except BaseException:
-        pass
 
 LOGS.info(
     f"Python Version - {python_version()} \
@@ -72,6 +68,11 @@ async def check_alive():
         await bot(JoinChannelRequest("@TheFlicksUserbot"))
     except BaseException:
         pass
+    try:
+        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
+    except BaseException:
+        pass
+
 
 
 bot.loop.run_until_complete(check_alive())
