@@ -13,22 +13,22 @@ from userbot import ALIVE_NAME, UPSTREAM_REPO_BRANCH, BOT_VER, CMD_HELP, CMD_HAN
 from userbot.utils import flicks_cmd
 
 plugins = CMD_HELP
-string = ""
 
 @flicks_cmd(pattern="plugins")
 async def help(event):
     """For plugins command,"""
-        for i in CMD_HELP:
-            string += "`" + str(i)
-            string += f"`\t✘  "
-        await event.edit(
+    string = ""
+    for i in CMD_HELP:
+        string += "`" + str(i)
+        string += f"`\t✘  "
+    await event.edit(
             "**📙 Menu Help!**\n\n"
             f"**Master** {DEFAULTUSER}\n**◑» Plugins :** `{len(plugins)}`\n**◑» Branch :** __{UPSTREAM_REPO_BRANCH}__\n**◑» Versi Userbot :** `v{BOT_VER}`\n\n"
             f"**📚 Menu Help Inline** `{xd}help` \n\n"
             "**❒ Menu Plugin ↯**\n"
             f"╰►✘ {string} ◄─"
         )
-        await event.reply(
+    await event.reply(
             f"\n**Contoh : ketik** `{xd}help` <nama plugin> **Yang Sesuai Dengan Plugin Di Atas**\n\n**USERBOT TELEGRAM**"
         )
         await asyncio.sleep(2000)
