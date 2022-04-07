@@ -9,14 +9,14 @@ from platform import uname
 
 
 from userbot import ALIVE_NAME, BOT_VER, is_mongo_alive, is_redis_alive
-from userbot.events import register
+from userbot.utils import flicks_cmd
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern="^.db$")
+@flicks_cmd(pattern="db$")
 async def amireallydbs(dbs):
     if not is_mongo_alive() and not is_redis_alive():
         db = "Both Mongo and Redis Database seems to be failing!"
@@ -29,5 +29,5 @@ async def amireallydbs(dbs):
     await dbs.edit(""
                    f"**User :** `{DEFAULTUSER}` \n"
                    f"**Status Database:** `{db}`\n"
-                   f"**Geez-Project :** `{BOT_VER}`"
+                   f"**Flicks Userbot :** `{BOT_VER}`"
                    "")
