@@ -45,5 +45,5 @@ async def cmd_list(event):
             await event.delete()
         except BaseException:
             await event.edit(
-                f"** Sepertinya obrolan atau bot ini tidak mendukung inline mode.\nUntuk alternatif gunakan perintah\n👉`{CMD_HANDLER}plugins`**"
+                f"** Sepertinya obrolan atau bot ini tidak mendukung inline mode.\nUntuk alternatif, gunakan perintah\n👉`{CMD_HANDLER}plugins`**"
             )
