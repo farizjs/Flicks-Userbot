@@ -410,7 +410,7 @@ async def permitpm(event):
 
 CMD_HELP.update(
     {
-        f"pmpermit": "Cmd: >`{i}setuju` | `{i}ok`"
+        "pmpermit": f"Cmd: >`{i}setuju` | `{i}ok`"
         "\n↳ : Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
         f"\n\nCmd: >`{i}tolak | {i}nopm`"
         "\n↳ : Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
