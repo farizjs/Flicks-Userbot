@@ -19,17 +19,17 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from userbot import CMD_HELP, bot
-from userbot.events import register
+from userbot import CMD_HELP, bot, CMD_HANDLER as i
+from userbot.utils import flicks_cmd
 
 
 KANGING_STR = [
     "Lagi Curry Tikel Ini Ke Pack Anda Tuan",
-    "Lagi Curry Tikel Ini Ke Pack Anda Tuan",
+    "Yahaha waktunya curry tikel lagi",
 ]
 
 
-@register(outgoing=True, pattern=r"^\.(?:tikel|kang)\s?(.)?")
+@flicks_cmd(pattern="(?:tikel|kang)\s?(.)?")
 async def kang(args):
     user = await bot.get_me()
     if not user.username:
@@ -271,7 +271,7 @@ async def resize_photo(photo):
     return image
 
 
-@register(outgoing=True, pattern=r"^\.stkrinfo$")
+@flicks_cmd(pattern="stkrinfo$")
 async def get_pack_info(event):
     if not event.is_reply:
         return await event.edit(
@@ -316,7 +316,7 @@ async def get_pack_info(event):
     await event.edit(OUTPUT)
 
 
-@register(outgoing=True, pattern=r"^\.get$")
+@flicks_cmd(pattern="get$")
 async def sticker_to_png(sticker):
     if not sticker.is_reply:
         await sticker.edit("`NULL information to fetch...`")
@@ -348,13 +348,13 @@ async def sticker_to_png(sticker):
 
 CMD_HELP.update(
     {
-        "stickers": "Cmd: `.kang | .tikel [emoji('s)]?`"
-        "\n↳ : Balas .tikel Ke Sticker Atau Gambar Untuk Menambahkan Ke Pack Mu "
+       f"stickers": "Cmd: `{i}kang | {i}tikel [emoji('s)]?`"
+        "\n↳ : Balas {i}tikel Ke Sticker Atau Gambar Untuk Menambahkan Ke Pack Mu "
         "\nBisa Memilih Emoji Sesuai Pilihanmu."
-        "\n\nCmd: `.kang | .tikel  (emoji['s]]?` [nomer]?"
+       f"\n\nCmd: `{i}kang | {i}tikel  (emoji['s]]?` [nomer]?"
         "\n↳ : Ambil Sticker/Gambar Ke Pack Baru Mu "
         "Dan Bisa Pilih Emoji Sticker Mu."
-        "\n\nCmd: `.stkrinfo`"
+       f"\n\nCmd: `{i}stkrinfo`"
         "\n↳ : Dapatkan Informasi Pack Sticker."
-        "\n\nCmd: `.get`"
+       f"\n\nCmd: `{i}get`"
         "\n↳ : Balas Ke Stcker Untuk Mendapatkan File 'PNG' Sticker."})
