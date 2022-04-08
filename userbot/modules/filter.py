@@ -167,6 +167,8 @@ CMD_HELP.update({
     \nUsage: Membuat filter di obrolan.\
     \nBot Akan Membalas Jika Ada Yang Menyebut 'keyword' yang dibuat.\
     \nBisa dipake ke media/sticker/vn/file.\
-    \n\n`{cmd}rmfilters` <keyword>\
-    \nUsage: Untuk Nonaktifkan Filter."
+    \n\n`{cmd}stop` <keyword>\
+    \nUsage: Untuk Nonaktifkan Filter. \
+    \n\n`{cmd}rmfilters` \
+    \nUsage: Untuk Nonaktifkan semua Filter di suatu grup. "
 })
