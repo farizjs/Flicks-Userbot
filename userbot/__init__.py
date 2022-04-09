@@ -8,6 +8,8 @@
 #
 """ Userbot initialization. """
 
+import asyncio
+import html
 import logging
 import os
 import time
@@ -32,6 +34,7 @@ from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
 from telethon import Button, events, functions, types
 from telethon.utils import get_display_name
+from telethon.tl.functions.users import GetFullUserRequest
 
 
 
@@ -1091,6 +1094,89 @@ Voice chat group menu untuk {ALIVE_NAME}
             else:
                 reply_pop_up_alert = f"""Jangan Menggunakan Milik {ALIVE_NAME} !"""
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
+        async def on_pm_click(event):
+            if event.query.user_id == uid:
+                reply_pop_up_alert = "Ini bukan untukmu, tuan!"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+            else:
+                await event.edit(
+                    f"Ini adalah Keamanan PM untuk {DEFAULTUSER} untuk menjauhkan spammer.\n\nDilindungi oleh [Userbot](t.me/FlicksSupport)"
+                )
+
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"req")))
+        async def on_pm_click(event):
+            if event.query.user_id == uid:
+                reply_pop_up_alert = "Ini bukan untukmu, tuan!"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+            else:
+                await event.edit(
+                    f"baik, `{DEFAULTUSER}` akan segera menghubungi Anda!\nSampai saat itu mohon **tunggu dengan sabar dan jangan spam di sini.**"
+                )
+                target = await event.client(GetFullUserRequest(event.query.user_id))
+                first_name = html.escape(target.user.first_name)
+                ok = event.query.user_id
+                if first_name is not None:
+                    first_name = first_name.replace("\u2060", "")
+                tosend = f"Hey {DEFAULTUSER}, [{first_name}](tg://user?id={ok}) sedang **meminta** sesuatu di PM!"
+                await tgbot.send_message(BOTLOG_CHATID, tosend)
+
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"chat")))
+        async def on_pm_click(event):
+            event.query.user_id
+            if event.query.user_id == uid:
+                reply_pop_up_alert = "Ini bukan untukmu, tuan!"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+            else:
+                await event.edit(
+                    f"wah, mau ngobrol...\nHarap tunggu dan lihat apakah {DEFAULTUSER} sedang dalam mood untuk mengobrol, jika ya, dia akan segera membalas!\nSampai saat itu, **jangan spam.**"
+                )
+                target = await event.client(GetFullUserRequest(event.query.user_id))
+                ok = event.query.user_id
+                first_name = html.escape(target.user.first_name)
+                if first_name is not None:
+                    first_name = first_name.replace("\u2060", "")
+                tosend = f"Hey {DEFAULTUSER}, [{first_name}](tg://user?id={ok}) ingin PM Anda untuk ** Obrolan Acak**!"
+                await tgbot.send_message(BOTLOG_CHATID, tosend)
+
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"plshelpme")))
+        async def on_pm_click(event):
+            if event.query.user_id == uid:
+                reply_pop_up_alert = "Ini bukan untukmu, tuan!"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+            else:
+            await event.edit(
+                    f"Oh!\n{DEFAULTUSER} dengan senang hati akan membantu Anda...\nSilakan tinggalkan pesan Anda di sini **dalam satu baris** dan tunggu sampai saya membalas 😊"
+                )
+                target = await event.client(GetFullUserRequest(event.query.user_id))
+                first_name = html.escape(target.user.first_name)
+                ok = event.query.user_id
+                if first_name is not None:
+                    first_name = first_name.replace("\u2060", "")
+                tosend = f"Hey {DEFAULTUSER}, [{first_name}](tg://user?id={ok}) ingin PM Anda untuk **bantuan**!"
+                await tgbot.send_message(BOTLOG_CHATID, tosend)
+
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"heheboi")))
+        async def on_pm_click(event):
+            if event.query.user_id == uid:
+                reply_pop_up_alert = "Ini bukan untukmu, tuan!"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+            else:
+                await event.edit(
+                    f"Oh, jadi Anda di sini untuk spam 😤\nGoodbye.\nPesan Anda telah dibaca dan berhasil diabaikan."
+                )
+                await bot(functions.contacts.BlockRequest(event.query.user_id))
+                target = await event.client(GetFullUserRequest(event.query.user_id))
+                ok = event.query.user_id
+                first_name = html.escape(target.user.first_name)
+                if first_name is not None:
+                    first_name = first_name.replace("\u2060", "")
+                first_name = html.escape(target.user.first_name)
+                await tgbot.send_message(
+                    BOTLOG_CHATID,
+                    f"[{first_name}](tg://user?id={ok}) tried to **spam** your inbox.\nHenceforth, **blocked**",
+                )
 
     except BaseException:
         LOGS.info(
