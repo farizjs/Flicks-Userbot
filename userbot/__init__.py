@@ -261,7 +261,7 @@ ALIVE_LOGO = os.environ.get(
 
 # Default pmpermit logo
 PMPERMIT_PIC = os.environ.get(
-    "PMPERMIT_PIC") or "https://telegra.ph/file/46a00f338fd3db59e5a65.jpg"
+    "PMPERMIT_PIC") or f"{ALIVE_LOGO}"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
@@ -479,6 +479,14 @@ with bot:
             [Button.inline("Close", data="close")],
         ]
 
+        USER_BOT_NO_WARN = (
+            "**PM Security of [{}](tg://user?id={})**\n\n"
+            "Untuk bantuan segera, PM saya melalui @{}"
+            "\nSilakan pilih mengapa Anda ada di sini, dari opsi yang tersedia\n\n".format(
+                ALIVE_NAME, uid, BOT_USERNAME
+            )
+        )
+
         @tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
         async def bot_pms(event):
             chat = await event.get_chat()
@@ -690,6 +698,20 @@ with bot:
                         len(dugmeler),
                     ),
                     buttons=main_help_button,
+                )
+            elif query.startswith("pmpermit"):
+                TELEBT = USER_BOT_NO_WARN.format(ALIVE_NAME, uid, BOT_USERNAME)
+                result = builder.photo(
+                    file=TELEPIC,
+                    text=TELEBT,
+                    buttons=[
+                        [
+                            custom.Button.inline("Meminta ", data="req"),
+                            custom.Button.inline("Chat 💭", data="chat"),
+                        ],
+                        [custom.Button.inline("untuk spam 🚫", data="heheboi")],
+                        [custom.Button.inline("Apa ini ❓", data="pmclick")],
+                    ],
                 )
             elif query.startswith("pasta"):
                 ok = event.text.split("-")[1]
