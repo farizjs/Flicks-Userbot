@@ -12,8 +12,9 @@
     <a href="https://github.com/fjgaming212/Flicks-Userbot/network/members"> <img src="https://img.shields.io/github/stars/fjgaming212/Flicks-Userbot?color=red&logo=github&logoColor=blue&style=flat-square" /></a>  
 </p>
 
-<a href="https://cooltext.com"><img src="https://telegra.ph/file/84c027f1ff17aa145a642.mp4" width="802" height="96" alt="Flicks Userbot" /></a>
-
+<p align="center">
+  <img src="https://telegra.ph/file/fc57a8c8022bbd2623458.jpg">
+    </p>
 
 Flicks-Userbot adalah userbot Telegram modular yang berjalan di Python 3.9 dengan database sqlalchemy.
 
