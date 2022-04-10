@@ -1149,9 +1149,9 @@ Voice chat group menu untuk {ALIVE_NAME}
                 await event.edit(
                     f"Sepertinya {ALIVE_NAME} sedang tidak mood untuk mengobrol\nGoodbye.\nPesan Anda telah dibaca dan berhasil diabaikan."
                 )
-                await bot(functions.contacts.BlockRequest(event.query.user_id))
-                target = await event.client(GetFullUserRequest(event.query.user_id))
-                ok = event.query.user_id
+                await bot(functions.contacts.BlockRequest(event.chat.id))
+                target = await event.client(GetFullUserRequest(event.chat.id))
+                ok = event.chat.id
                 first_name = html.escape(target.user.first_name)
                 if first_name is not None:
                     first_name = first_name.replace("\u2060", "")
