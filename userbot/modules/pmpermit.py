@@ -9,6 +9,7 @@ import os
 
 from telethon.events import NewMessage
 from telethon import functions
+from telethon.tl.types import User
 from telethon.tl.functions.users import GetFullUserRequest
 
 import userbot.modules.sql_helper.pm_permit_sql as pmpermit_sql
