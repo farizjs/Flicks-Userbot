@@ -478,7 +478,7 @@ with bot:
         ]
 
         USER_BOT_NO_WARN = (
-           f"PMSecurity of {ALIVE_NAME}!"
+           f"**PMSecurity of** {ALIVE_NAME}!"
             "\n\nMohon tunggu saya untuk merespon atau Anda akan diblokir dan dilaporkan sebagai spam!!")
 
         @tgbot.on(events.NewMessage(incoming=True,
