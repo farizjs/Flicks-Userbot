@@ -263,7 +263,7 @@ ALIVE_LOGO = os.environ.get(
 
 # Default pmpermit logo
 PMPERMIT_PIC = os.environ.get(
-    "PMPERMIT_PIC") or f"{INLINE_PIC}"
+    "PMPERMIT_PIC") or "https://telegra.ph/file/46a00f338fd3db59e5a65.jpg"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
