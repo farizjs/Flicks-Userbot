@@ -1138,9 +1138,9 @@ Voice chat group menu untuk {ALIVE_NAME}
                 reply_pop_up_alert = "Ini bukan untukmu, tuan!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             else:
-            await event.edit(
-                f"Oh!\n{ALIVE_NAME} dengan senang hati akan membantu Anda...\nSilakan tinggalkan pesan Anda di sini **dalam satu baris** dan tunggu sampai saya membalas 😊"
-            )
+                await event.edit(
+                    f"Oh!\n{ALIVE_NAME} dengan senang hati akan membantu Anda...\nSilakan tinggalkan pesan Anda di sini **dalam satu baris** dan tunggu sampai saya membalas 😊"
+                )
             target = await event.client(GetFullUserRequest(event.query.user_id))
              first_name = html.escape(target.user.first_name)
               ok = event.query.user_id
