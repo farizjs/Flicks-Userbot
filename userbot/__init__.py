@@ -1147,7 +1147,7 @@ Voice chat group menu untuk {ALIVE_NAME}
         async def on_pm_click(event):
             if event.query.user_id == uid:
                 await event.edit(
-                    f"Oh, jadi Anda di sini untuk spam 😤\nGoodbye.\nPesan Anda telah dibaca dan berhasil diabaikan."
+                    f"Sepertinya {ALIVE_NAME} sedang tidak mood untuk mengobrol\nGoodbye.\nPesan Anda telah dibaca dan berhasil diabaikan."
                 )
                 await bot(functions.contacts.BlockRequest(event.query.user_id))
                 target = await event.client(GetFullUserRequest(event.query.user_id))
