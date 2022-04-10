@@ -137,6 +137,7 @@ async def approve_p_m(event):
 
 
 @flicks_cmd(pattern="tolak ?(.*)")
+async def disapprovepm(disapprvpm):
     if disapprvpm.reply_to_msg_id:
         reply = await disapprvpm.get_reply_message()
         replied_user = await disapprvpm.client.get_entity(reply.sender_id)
