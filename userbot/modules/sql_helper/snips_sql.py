@@ -38,7 +38,7 @@ def get_snips():
 def get_all_snips():
     try:
         return SESSION.query(Snips).all()
-    except:
+    except BaseException:
         return None
     finally:
         SESSION.close()

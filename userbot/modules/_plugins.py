@@ -14,6 +14,7 @@ from userbot.utils import flicks_cmd
 
 plugins = CMD_HELP
 
+
 @flicks_cmd(pattern="plugins")
 async def help(event):
     """For plugins command,"""

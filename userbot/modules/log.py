@@ -29,6 +29,7 @@ class LOG_CHATS:
         self.NEWPM = None
         self.COUNT = 0
 
+
 saya = bot.get_me()
 OWNER_ID = saya.id
 

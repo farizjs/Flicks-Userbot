@@ -5,7 +5,8 @@
 
 from userbot.utils import reply_id, edit_delete, edit_or_reply, flicks_cmd
 from .sql_helper.notes_sql import add_note, get_note, get_notes, rm_note
-from userbot import BOTLOG, BOTLOG_CHATID, bot, CMD_HELP, CMD_HANDLER as i
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HANDLER as i, CMD_HELP
+
 
 async def get_message_link(client, event):
     chat = await event.get_chat()
@@ -14,7 +15,7 @@ async def get_message_link(client, event):
     return f"https://t.me/c/{chat.id}/{event.id}"
 
 
-@flicks_cmd(pattern="\#(\S+)")
+@flicks_cmd(pattern="\\#(\\S+)")
 async def incom_note(event):
     if not BOTLOG:
         return
@@ -48,7 +49,7 @@ async def incom_note(event):
         pass
 
 
-@flicks_cmd(pattern="save (\w*)")
+@flicks_cmd(pattern="save (\\w*)")
 async def add_snip(event):
     "To save notes to bot."
     if not BOTLOG:
@@ -121,7 +122,7 @@ async def on_snip_list(event):
     await edit_or_reply(event, message)
 
 
-@flicks_cmd(pattern="clear (\S+)")
+@flicks_cmd(pattern="clear (\\S+)")
 async def on_snip_delete(event):
     "To delete paticular note in bot."
     name = event.pattern_match.group(1)

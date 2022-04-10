@@ -931,15 +931,12 @@ CMD_HELP.update(
         "\n↳ : Mendapatkan daftar pengguna daam grup."
         f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}setgpic` <balas ke gambar>"
         "\n↳ : Mengganti foto profil grup.",
-        "globals":
-        f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}gmute` <username/balas ke pesan> <alasan (optional)>"
+        "globals": f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}gmute` <username/balas ke pesan> <alasan (optional)>"
         "\n↳ : Membisukan ke semua grup yang kamu punya sebagai admin."
         f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}ungmute` <username/reply>"
         "\n↳ : Reply someone's message with `.ungmute` to remove them from the gmuted list.",
-        "zombie":
-        f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}zombies`"
+        "zombie": f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}zombies`"
         "\n↳ : Untuk mencari akun terhapus dalam grup."
         f"Gunakan `{cmd}zombies clean` untuk menghapus Akun Terhapus dari grup.",
-        "tagger":
-        f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}all`"
+        "tagger": f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}all`"
         "\n↳ : Tag semua member dalam grup."})

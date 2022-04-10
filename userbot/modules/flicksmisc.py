@@ -8,7 +8,6 @@ import time
 import html
 from justwatch import JustWatch
 from telethon import *
-from userbot.events import register
 from userbot import CMD_HELP, bot, TEMP_DOWNLOAD_DIRECTORY, DEFAULT_BIO, ALIVE_NAME, CMD_HANDLER as cmd
 from telethon import events
 from userbot.utils import flicks_cmd
@@ -147,7 +146,6 @@ async def _(event):
         await event.edit("Mohon Maaf, Anda harus memerlukan izin Admin untuk melakukan perintah ini.")
         await asyncio.sleep(3)
         await event.delete()
-
 
 
 @flicks_cmd(pattern="xcd(?: |$)(.*)")
@@ -420,6 +418,7 @@ async def potocmd(event):
         else:
             await event.edit("`Tidak Dapat Menemukan Foto Pengguna Ini`")
             return
+
 
 @flicks_cmd(pattern="res(?: |$)(.*)")
 async def _(event):
@@ -823,7 +822,6 @@ doublestruckt = [
     '𝕫']
 
 
-
 @flicks_cmd(pattern="doublestruck(?: |$)(.*)")
 async def doublex(doublestrucktx):
 
@@ -869,7 +867,7 @@ cursiveboldx = [
     '𝔁',
     '𝔂',
     '𝔃']
-  
+
 
 @flicks_cmd(pattern="curbold(?: |$)(.*)")
 async def cursive2(cursivebolded):
@@ -965,6 +963,7 @@ cursive = [
     '𝓎',
     '𝓏']
 
+
 @flicks_cmd(pattern="cur(?: |$)(.*)")
 async def xcursive(cursivelite):
 
@@ -981,6 +980,7 @@ async def xcursive(cursivelite):
             cursivecharacter = cursive[normiefont.index(normiecharacter)]
             string = string.replace(normiecharacter, cursivecharacter)
     await cursivelite.edit(string)
+
 
 @flicks_cmd(pattern="rclone(?: |$)(.*)")
 async def _(event):

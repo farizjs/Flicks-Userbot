@@ -9,7 +9,7 @@
 # FROM GeezProjects <https://github.com/vckyou/GeezProjects>
 #
 # Support @GeezSupport & @GeezProjects
-# 
+#
 
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
@@ -20,7 +20,6 @@ from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, ALIVE_NAME
-from userbot.events import register
 from userbot.utils import edit_delete, edit_or_reply, flicks_cmd
 
 
@@ -32,7 +31,7 @@ async def get_call(event):
 
 def user_list(l, n):
     for i in range(0, len(l), n):
-        yield l[i : i + n]
+        yield l[i: i + n]
 
 
 @flicks_cmd(pattern="startvc$")

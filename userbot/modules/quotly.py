@@ -10,14 +10,12 @@
 # <t.me/TheFlicksUserbot>
 
 import os
-import time
 from random import choice
-import pytz
-from telethon.tl.types import DocumentAttributeVideo
 
-from userbot import bot, CMD_HELP, CMD_HANDLER as cmd
+from userbot import CMD_HANDLER as cmd, CMD_HELP
 from userbot.utils import all_col, flicks_cmd
 from userbot.utils.quotly_helper import create_quotly
+
 
 @flicks_cmd(pattern="q( (.*)|$)")
 async def quott_(event):

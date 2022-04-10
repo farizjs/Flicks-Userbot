@@ -19,11 +19,9 @@ from userbot.utils import autobot, autopilot
 from userbot.pytgcalls import call_py
 
 
-
 INVALID_PH = '\nERROR: Nomor Telepon yang dimasukkan TIDAK VALID' \
              '\n Tips: Gunakan Kode Negara beserta nomornya.' \
              '\n atau periksa nomor telepon Anda dan coba lagi !'
-
 
 
 try:
@@ -58,6 +56,7 @@ LOGS.info(
       \nUserbot Version - {BOT_VER} \
       \n✘ 𝐅𝐥𝐢𝐜𝐤𝐬 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ [Berhasil Diaktifkan 🔥]")
 
+
 async def check_alive():
     try:
         if BOTLOG_CHATID != 0:
@@ -72,7 +71,6 @@ async def check_alive():
         await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
     except BaseException:
         pass
-
 
 
 bot.loop.run_until_complete(check_alive())

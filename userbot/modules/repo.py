@@ -4,8 +4,7 @@
 
 import logging
 
-from userbot import BOT_USERNAME, CMD_HELP
-from userbot import CMD_HANDLER as cmd
+from userbot import BOT_USERNAME
 from userbot.utils import flicks_cmd
 
 
@@ -34,7 +33,6 @@ async def yardim(event):
             "𝗥𝗲𝗽𝗼 🇮🇩\n"
             "╰⎆ [Flick-Userbot](https://github.com/farizjs/Flicks-Userbot)\n"
             "❏ 𝗢𝘄𝗻𝗲𝗿 ⎆ [Fariz • 🇮🇩](t.me/farizjs)\n"
-            "❏ 𝗦𝘂𝗽𝗽𝗼𝗿𝘁 ⎆ [groups](t.me/FlicksSupport)\n" 
+            "❏ 𝗦𝘂𝗽𝗽𝗼𝗿𝘁 ⎆ [groups](t.me/FlicksSupport)\n"
             "❏ 𝗧𝗲𝗮𝗺 ⎆  [click here](t.me/devoloperflicks)\n"
         )
-

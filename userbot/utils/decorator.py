@@ -136,6 +136,7 @@ def asst_cmd(**args):
 
     return decorator
 
+
 def chataction(**args):
     def decorator(func):
         if bot:
@@ -143,6 +144,7 @@ def chataction(**args):
         return func
 
     return decorator
+
 
 def callback(**args):
     """Assistant's callback decorator"""

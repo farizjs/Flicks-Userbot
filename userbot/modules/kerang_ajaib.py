@@ -1,11 +1,11 @@
 import random
 from userbot.utils import asst_cmd
 
-APAKAH_STRING = ["Iya", 
-                 "Tidak", 
-                 "Mungkin", 
-                 "Mungkin Tidak", 
-                 "Bisa jadi", 
+APAKAH_STRING = ["Iya",
+                 "Tidak",
+                 "Mungkin",
+                 "Mungkin Tidak",
+                 "Bisa jadi",
                  "Mungkin Tidak",
                  "Tidak Mungkin",
                  "YNTKTS",

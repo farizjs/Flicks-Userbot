@@ -2,7 +2,6 @@
 # Recode by Fariz <github.com/farizjs>
 # <TheFlicksUserbot>
 
-from telethon import events
 import os
 from PIL import Image
 from datetime import datetime
@@ -50,7 +49,7 @@ async def _(event):
                 await h.edit("Diunggah ke https://telegra.ph{}".format(media_urls[0], (ms + ms_two)), link_preview=True)
         elif input_str == "gt":
             user_object = await tgbot.get_entity(r_message.sender_id)
-            title_of_page = user_object.first_name # + " " + user_object.last_name
+            title_of_page = user_object.first_name  # + " " + user_object.last_name
             # apparently, all Users do not have last_name field
             if optional_title:
                 title_of_page = optional_title

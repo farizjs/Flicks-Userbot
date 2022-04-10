@@ -5,10 +5,9 @@
 #    From Flicks-Userbot
 #    <t.me/TheFlicksUserbot>
 
-import os
 
 from telethon import Button
-from userbot import ALIVE_NAME, BOT_USERNAME, CMD_HELP, CMD_HANDLER, CMD_LIST, bot, tgbot
+from userbot import BOT_USERNAME, CMD_HANDLER, CMD_HELP, bot
 from userbot.utils import flicks_cmd
 
 user = bot.get_me()

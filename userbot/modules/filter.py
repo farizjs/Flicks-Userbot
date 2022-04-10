@@ -19,6 +19,7 @@ from userbot import BOTLOG, BOTLOG_CHATID, bot, CMD_HELP, CMD_HANDLER as cmd
 user = bot.get_me()
 OWNER_ID = user.id
 
+
 @bot.on(events.NewMessage(incoming=True))
 async def filter_incoming_handler(event):  # sourcery no-metrics
     if event.sender_id == OWNER_ID:
@@ -139,7 +140,7 @@ async def on_snip_list(event):
     )
 
 
-@flicks_cmd(pattern="stop ([\s\S]*)")
+@flicks_cmd(pattern="stop ([\\s\\S]*)")
 async def remove_a_filter(event):
     "Stops the specified keyword."
     filt = event.pattern_match.group(1)

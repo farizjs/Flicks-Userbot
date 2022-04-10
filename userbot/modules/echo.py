@@ -19,7 +19,6 @@ from .sql_helper.echo_sql import (
 from userbot.utils import get_user_from_event, edit_delete, edit_or_reply, flicks_cmd
 
 
-
 @flicks_cmd(pattern="addecho$")
 async def echo(event):
     "To echo the user messages"
@@ -45,7 +44,13 @@ async def echo(event):
     if is_echo(chat_id, user_id):
         return await edit_or_reply(event, "Pengguna sudah diaktifkan dengan echo ")
     try:
-        addecho(chat_id, user_id, chat_name, user_name, user_username, chat_type)
+        addecho(
+            chat_id,
+            user_id,
+            chat_name,
+            user_name,
+            user_username,
+            chat_type)
     except Exception as e:
         await edit_delete(flicksevent, f"**Error:**\n`{e}`")
     else:
@@ -167,8 +172,8 @@ async def samereply(event):
 
 CMD_HELP.update(
     {
-        "echo": 
-    f"Perintah : `{cmd}addecho` \
+        "echo":
+        f"Perintah : `{cmd}addecho` \
     \nUsage : Untuk Menambahkan Followers Chat Kamu. \
     \nPerintah :`{cmd}delecho` \
     \nUsage : Untuk menghentikan echo. \

@@ -1,4 +1,4 @@
-from telethon import events, utils
+from telethon import utils
 from telethon.tl import types
 
 from userbot import bot, tgbot
@@ -18,6 +18,7 @@ TYPE_PHOTO = 1
 TYPE_DOCUMENT = 2
 MAX_MESSAGE_SIZE_LIMIT = 4095
 # =====================================================
+
 
 @asst_cmd(pattern=r"\#(\S+)")
 async def on_snip(event):
@@ -103,7 +104,7 @@ async def on_snip_list(event):
         await event.reply(OUT_STR)
 
 
-@asst_cmd(pattern="^/rmnote (\S+)", from_users=OWNER_ID)
+@asst_cmd(pattern="^/rmnote (\\S+)", from_users=OWNER_ID)
 async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_snip(name)

@@ -29,7 +29,7 @@ KANGING_STR = [
 ]
 
 
-@flicks_cmd(pattern="(?:tikel|kang)\s?(.)?")
+@flicks_cmd(pattern="(?:tikel|kang)\\s?(.)?")
 async def kang(args):
     user = await bot.get_me()
     if not user.username:
@@ -348,13 +348,13 @@ async def sticker_to_png(sticker):
 
 CMD_HELP.update(
     {
-       f"stickers": "Cmd: `{i}kang | {i}tikel [emoji('s)]?`"
+        f"stickers": "Cmd: `{i}kang | {i}tikel [emoji('s)]?`"
         "\n↳ : Balas {i}tikel Ke Sticker Atau Gambar Untuk Menambahkan Ke Pack Mu "
         "\nBisa Memilih Emoji Sesuai Pilihanmu."
-       f"\n\nCmd: `{i}kang | {i}tikel  (emoji['s]]?` [nomer]?"
+        f"\n\nCmd: `{i}kang | {i}tikel  (emoji['s]]?` [nomer]?"
         "\n↳ : Ambil Sticker/Gambar Ke Pack Baru Mu "
         "Dan Bisa Pilih Emoji Sticker Mu."
-       f"\n\nCmd: `{i}stkrinfo`"
+        f"\n\nCmd: `{i}stkrinfo`"
         "\n↳ : Dapatkan Informasi Pack Sticker."
-       f"\n\nCmd: `{i}get`"
+        f"\n\nCmd: `{i}get`"
         "\n↳ : Balas Ke Stcker Untuk Mendapatkan File 'PNG' Sticker."})

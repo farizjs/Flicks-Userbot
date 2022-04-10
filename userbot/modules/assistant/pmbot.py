@@ -7,7 +7,6 @@ import asyncio
 from datetime import datetime
 from math import floor
 
-from telethon import Button, events
 from telethon.errors import BadRequestError, FloodWaitError, ForbiddenError
 from telethon.utils import get_display_name
 
@@ -22,16 +21,12 @@ from userbot.modules.sql_helper.bot_blacklists import (
 )
 from userbot.modules.sql_helper.bot_pms_sql import get_user_id
 from userbot.modules.sql_helper.bot_starters import (
-    add_starter_to_db,
     del_starter_from_db,
     get_all_starters,
-    get_starter_details,
 )
-from userbot.modules.sql_helper.globals import gvarstatus
 from userbot.utils import (
     _format,
     asst_cmd,
-    callback,
     edit_delete,
     edit_or_reply,
     flicks_cmd,
@@ -89,7 +84,12 @@ def progress_str(total: int, current: int) -> str:
 async def ban_user_from_bot(user, reason, reply_to=None):
     try:
         date = str(datetime.now().strftime("%B %d, %Y"))
-        add_user_to_bl(user.id, get_display_name(user), user.username, reason, date)
+        add_user_to_bl(
+            user.id,
+            get_display_name(user),
+            user.username,
+            reason,
+            date)
     except Exception as e:
         LOGS.error(str(e))
     banned_msg = f"**Anda Telah Dibanned dari Bot ini.\nKarena:** `{reason}`"
@@ -119,8 +119,6 @@ async def unban_user_from_bot(user, reason, reply_to=None):
     if BOTLOG:
         await bot.send_message(BOTLOG_CHATID, info)
     return info
-
-
 
 
 @asst_cmd(pattern="^/broadcast$", from_users=OWNER_ID)
@@ -266,11 +264,6 @@ async def ban_starters(event):
     await edit_or_reply(event, msg)
 
 
-
-
-
-
-
 @asst_cmd(pattern="^/uinfo$", from_users=OWNER_ID)
 async def bot_start(event):
     reply_to = await reply_id(event)
@@ -302,7 +295,7 @@ async def bot_start(event):
     await info_msg.edit(uinfo)
 
 
-@flicks_cmd(pattern="(set|reset) pmbot(?: |$)(\w*)")
+@flicks_cmd(pattern="(set|reset) pmbot(?: |$)(\\w*)")
 async def setpmbot(event):
     try:
         import userbot.modules.sql_helper.globals as sql

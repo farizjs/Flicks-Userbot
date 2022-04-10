@@ -1321,7 +1321,6 @@ CMD_HELP.update(
 )
 
 
-
 CMD_HELP.update(
     {
         "ocr": "**Modules : **`ocr`\

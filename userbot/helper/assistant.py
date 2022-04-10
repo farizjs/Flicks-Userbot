@@ -1,8 +1,7 @@
 import functools
-from telethon.events import CallbackQuery, InlineQuery, NewMessage
+from telethon.events import InlineQuery
 from telethon import Button
 from telethon.tl.types import InputWebDocument
-from telethon.utils import get_display_name
 
 from userbot import *
 
@@ -37,7 +36,7 @@ def in_owner():
             if event.sender_id in OWNER_ID:
                 try:
                     await function(event)
-                except BaseException as be:
+                except BaseException:
                     pass
             else:
                 try:
@@ -47,32 +46,32 @@ def in_owner():
                         url="https://t.me/FlicksSupport",
                         description="(c) FlicksUserbot",
                         text=MSG,
-                        thumb=InputWebDocument(FLICKS_PIC, 0, "image/jpeg", []),
+                        thumb=InputWebDocument(
+                            FLICKS_PIC,
+                            0,
+                            "image/jpeg",
+                            []),
                         buttons=[
                             [
                                 Button.url(
                                     "Repository",
-                                    url="https://github.com/farizjs/Flicks-Userbot"
-                                ),
+                                    url="https://github.com/farizjs/Flicks-Userbot"),
                                 Button.url(
                                     "Channel",
-                                    url="https://t.me/TheFlicksUserbot"
-                                ),
-                            ]
-                        ],
+                                    url="https://t.me/TheFlicksUserbot"),
+                            ]],
                     )
                     await event.answer(
                         [sur],
                         switch_pm=f"🤖: Asisten dari {OWNER_NAME}",
                         switch_pm_param="start",
                     )
-                except BaseException as bexc:
+                except BaseException:
                     pass
 
         return wrapper
 
     return decorator
-
 
 
 def inline():

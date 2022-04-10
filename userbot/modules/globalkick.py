@@ -9,8 +9,9 @@ from telethon.tl.types import (
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 
 from userbot.utils import flicks_cmd
-from userbot import CMD_HELP, bot, CMD_HANDLER as cmd
+from userbot import CMD_HANDLER as cmd, CMD_HELP
 from userbot import ALIVE_NAME as OWNER
+
 
 async def get_user_from_event(event):
     args = event.pattern_match.group(1).split(':', 1)

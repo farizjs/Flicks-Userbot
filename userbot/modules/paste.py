@@ -1,28 +1,10 @@
-import asyncio
-import calendar
-import html
-import io
 import os
-import sys
-import time
-import traceback
-from datetime import datetime as dt
 
-import pytz
 import requests
-from telegraph import Telegraph
-from telegraph import upload_file as uf
-from telethon import functions
-from telethon.events import NewMessage
-from telethon.tl.custom import Dialog
-from telethon.tl.functions.channels import LeaveChannelRequest, InviteToChannelRequest
-from telethon.tl.functions.messages import AddChatUserRequest
-from telethon.tl.functions.photos import GetUserPhotosRequest
-from telethon.tl.types import Channel, Chat, InputMediaPoll, Poll, PollAnswer, User
-from telethon.utils import get_input_location
 
 from userbot import *
 from userbot.utils import *
+
 
 @flicks_cmd(pattern="paste( (.*)|$)")
 async def _(event):
@@ -58,20 +40,12 @@ async def _(event):
         message = "`Include long text / Reply to text file`"
     if downloaded_file_name and downloaded_file_name.endswith(".py"):
         data = message
-        key = (
-            requests.post("https://nekobin.com/api/documents", json={"content": data})
-            .json()
-            .get("result")
-            .get("key")
-        )
+        key = (requests.post("https://nekobin.com/api/documents",
+                             json={"content": data}) .json() .get("result") .get("key"))
     else:
         data = message
-        key = (
-            requests.post("https://nekobin.com/api/documents", json={"content": data})
-            .json()
-            .get("result")
-            .get("key")
-        )
+        key = (requests.post("https://nekobin.com/api/documents",
+                             json={"content": data}) .json() .get("result") .get("key"))
     q = f"pasta-{key}"
     reply_text = f"• **Pasted to Nekobin :** [Neko](https://nekobin.com/{key})\n• **Raw Url :** : [Raw](https://nekobin.com/raw/{key})"
     try:

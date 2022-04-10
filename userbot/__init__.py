@@ -37,7 +37,6 @@ from telethon.utils import get_display_name
 from telethon.tl.functions.users import GetFullUserRequest
 
 
-
 redis_db = None
 
 load_dotenv("config.env")
@@ -271,13 +270,11 @@ INLINE_PIC = os.environ.get(
     "INLINE_PIC") or "https://telegra.ph/file/46a00f338fd3db59e5a65.jpg"
 
 # Picture For VCPLUGIN
-PLAY_PIC = (
-    os.environ.get("PLAY_PIC") or "https://telegra.ph/file/6213d2673486beca02967.png"
-)
+PLAY_PIC = (os.environ.get("PLAY_PIC")
+            or "https://telegra.ph/file/6213d2673486beca02967.png")
 
-QUEUE_PIC = (
-    os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/d6f92c979ad96b2031cba.png"
-)
+QUEUE_PIC = (os.environ.get("QUEUE_PIC")
+             or "https://telegra.ph/file/d6f92c979ad96b2031cba.png")
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", "Flicks-Userbot ✨")
@@ -398,7 +395,6 @@ else:
     tgbot = None
 
 
-
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
     number_of_cols = 2
@@ -454,7 +450,6 @@ with bot:
         from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
         from userbot.utils import reply_id
 
-
         dugmeler = CMD_HELP
         me = bot.get_me()
         logo = ALIVE_LOGO
@@ -470,7 +465,7 @@ with bot:
         plugins = CMD_HELP
         vr = BOT_VER
 
-        main_help_button=[
+        main_help_button = [
             [
                 Button.url("Settings ⚙️", f"t.me/{BOT_USERNAME}?start=set"),
                 Button.inline("Vc Menu ⚙️", data="flicks_inline"),
@@ -486,11 +481,10 @@ with bot:
             "**PM Security of [{}](tg://user?id={})**\n\n"
             "Untuk bantuan segera, PM saya melalui @{}"
             "\nSilakan pilih mengapa Anda ada di sini, dari opsi yang tersedia\n\n".format(
-                ALIVE_NAME, uid, BOT_USERNAME
-            )
-        )
+                ALIVE_NAME, uid, BOT_USERNAME))
 
-        @tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
+        @tgbot.on(events.NewMessage(incoming=True,
+                  func=lambda e: e.is_private))
         async def bot_pms(event):
             chat = await event.get_chat()
             if check_is_black_list(chat.id):
@@ -546,8 +540,12 @@ with bot:
                         return await event.reply(f"**ERROR:** `{e}`")
                     try:
                         add_user_to_db(
-                            reply_to, user_name, user_id, reply_msg, event.id, msg.id
-                        )
+                            reply_to,
+                            user_name,
+                            user_id,
+                            reply_msg,
+                            event.id,
+                            msg.id)
                     except Exception as e:
                         LOGS.error(str(e))
                         if BOTLOG:
@@ -555,8 +553,6 @@ with bot:
                                 BOTLOG_CHATID,
                                 f"**ERROR:** Saat menyimpan detail pesan di database\n`{e}`",
                             )
-
-                
 
         @tgbot.on(events.CallbackQuery(data=b"keluar"))
         async def keluar(event):
@@ -601,8 +597,8 @@ with bot:
                     f"       Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
                     "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
                 await tgbot.send_file(event.chat_id, file=logo,
-                                          caption=text,
-                                          buttons=[
+                                      caption=text,
+                                      buttons=[
                                               [
                                                   custom.Button.url(
                                                       text="Rᴇᴘᴏ",
@@ -612,8 +608,8 @@ with bot:
                                                       url="https://github.com/farizjs/Flicks-Userbot/blob/Flicks-Userbot/LICENSE"
                                                   )
                                               ]
-                                          ]
-                                          )
+                                      ]
+                                      )
 
         @ tgbot.on(events.NewMessage(pattern=r"/string"))
         async def handler(event):
@@ -645,7 +641,6 @@ with bot:
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
-
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"get_back")
@@ -666,7 +661,6 @@ with bot:
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"open")
@@ -685,7 +679,6 @@ with bot:
             else:
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
 
         @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
@@ -796,10 +789,14 @@ with bot:
                     text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Master​** {ALIVE_NAME}\n✥**Assistant :** @{BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖[➖]({ALIVE_LOGO})""",
                     buttons=[
                         [
-                            Button.url("Support", url="t.me/FlicksSupport"),
-                            Button.url("Repo", url="https://github.com/farizjs/Flicks-Userbot"),
+            Button.url(
+                "Support",
+                url="t.me/FlicksSupport"),
+            Button.url(
+                "Repo",
+                    url="https://github.com/farizjs/Flicks-Userbot"),
+        ],
                         ],
-                    ],
                     link_preview=False,
                 )
             await event.answer(
@@ -831,7 +828,8 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # @Flicasyncks_Userbot
                 # https://t.me/TelethonChat/115200
-                text = (f"\n**Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ**\n\n **Mᴀsᴛᴇʀ** {ALIVE_NAME}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n")
+                text = (
+                    f"\n**Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ**\n\n **Mᴀsᴛᴇʀ** {ALIVE_NAME}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n")
                 await event.edit(
                     text,
                     file=flickslogo,
@@ -846,7 +844,8 @@ with bot:
         async def gback_handler(event):
             if event.query.user_id == uid:  # @Flicasyncks_Userbot
                 # https://t.me/TelethonChat/115200
-                text = (f"\n**Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ**\n\n **Mᴀsᴛᴇʀ** {ALIVE_NAME}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n")
+                text = (
+                    f"\n**Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ**\n\n **Mᴀsᴛᴇʀ** {ALIVE_NAME}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n")
                 await event.edit(
                     text,
                     file=flickslogo,
@@ -876,7 +875,7 @@ with bot:
                             Button.inline("Ping ⚡",
                                           data="pingbot"),
                             Button.inline("Info ?",
-                                           data="about")],
+                                          data="about")],
                         [custom.Button.inline(
                             "Back", data="gcback")],
                     ]
@@ -901,7 +900,6 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-
         @tgbot.on(events.CallbackQuery(data=b"about"))
         async def about(event):
             if event.query.user_id == uid:
@@ -913,19 +911,17 @@ Owner repo - [Fariz](tg://openmessage?user_id=1514078508)
 Support - @FlicksSupport
 Flicks-Userbot [v{BOT_VER}](https://github.com/farizjs/Flicks-Userbot)
 """,
-                             buttons=[
-                                 [
-                                     Button.url("Repo",
-                                                "https://github.com/farizjs/Flicks-Userbot"),
-                                     custom.Button.inline("ʙᴀᴄᴋ​",
-                                                          data="ownrmn")],
-                             ]
-                             )
+                                 buttons=[
+                                     [
+                                         Button.url("Repo",
+                                                    "https://github.com/farizjs/Flicks-Userbot"),
+                                         custom.Button.inline("ʙᴀᴄᴋ​",
+                                                              data="ownrmn")],
+                                 ]
+                                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-
 
         @tgbot.on(events.CallbackQuery(data=b"flicks_inline"))
         async def about(event):
@@ -933,21 +929,19 @@ Flicks-Userbot [v{BOT_VER}](https://github.com/farizjs/Flicks-Userbot)
                 await event.edit(f"""
 Voice chat group menu untuk {ALIVE_NAME}
 """,
-                    buttons=[
-                        [
-                            Button.inline("Vc Plugin ⚙️",
-                                          data="vcplugin"),
-                            Button.inline("Vc Tools ⚙️",
-                                           data="vctools")],
-                        [custom.Button.inline(
-                            "Back", data="gcback")],
-                    ]
-                )
+                                 buttons=[
+                                     [
+                                         Button.inline("Vc Plugin ⚙️",
+                                                       data="vcplugin"),
+                                         Button.inline("Vc Tools ⚙️",
+                                                       data="vctools")],
+                                     [custom.Button.inline(
+                                         "Back", data="gcback")],
+                                 ]
+                                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -957,29 +951,29 @@ Voice chat group menu untuk {ALIVE_NAME}
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-"""
-  •  Syntax : .play <Judul Lagu/Link YT>        
-  •  Function : Untuk Memutar Lagu di voice chat group dengan akun kamu        
+                    """
+  •  Syntax : .play <Judul Lagu/Link YT>
+  •  Function : Untuk Memutar Lagu di voice chat group dengan akun kamu
 
-  •  Syntax : .vplay <Judul Video/Link YT>        
-  •  Function : Untuk Memutar Video di voice chat group dengan akun kamu        
+  •  Syntax : .vplay <Judul Video/Link YT>
+  •  Function : Untuk Memutar Video di voice chat group dengan akun kamu
 
-  •  Syntax : .end        
-  •  Function : Untuk Memberhentikan video/lagu yang sedang putar di voice chat group        
+  •  Syntax : .end
+  •  Function : Untuk Memberhentikan video/lagu yang sedang putar di voice chat group
 
-  •  Syntax : .skip        
-  •  Function : Untuk Melewati video/lagu yang sedang di putar        
+  •  Syntax : .skip
+  •  Function : Untuk Melewati video/lagu yang sedang di putar
 
-  •  Syntax : .pause        
-  •  Function : Untuk memberhentikan video/lagu yang sedang diputar        
+  •  Syntax : .pause
+  •  Function : Untuk memberhentikan video/lagu yang sedang diputar
 
-  •  Syntax : .resume        
-  •  Function : Untuk melanjutkan pemutaran video/lagu yang sedang diputar        
+  •  Syntax : .resume
+  •  Function : Untuk melanjutkan pemutaran video/lagu yang sedang diputar
 
-  •  Syntax : .volume 1-200        
-  •  Function : Untuk mengubah volume (Membutuhkan Hak admin)        
+  •  Syntax : .volume 1-200
+  •  Function : Untuk mengubah volume (Membutuhkan Hak admin)
 
-  •  Syntax : .playlist        
+  •  Syntax : .playlist
   •  Function : Untuk menampilkan daftar putar Lagu/Video
 """)
                 await event.edit(
@@ -991,7 +985,6 @@ Voice chat group menu untuk {ALIVE_NAME}
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"vctools")
@@ -1000,24 +993,24 @@ Voice chat group menu untuk {ALIVE_NAME}
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-"""
-  Command : .startvc        
-  • : Untuk Memulai voice chat group        
+                    """
+  Command : .startvc
+  • : Untuk Memulai voice chat group
 
-  Command : .stopvc        
-  • : Untuk Memberhentikan voice chat group        
+  Command : .stopvc
+  • : Untuk Memberhentikan voice chat group
 
-  Command : .vctitle <title vcg>        
-  • : Untuk Mengubah title/judul voice chat group        
+  Command : .vctitle <title vcg>
+  • : Untuk Mengubah title/judul voice chat group
 
-  Command : .vcinvite        
-  • : Mengundang Member group ke voice chat group        
+  Command : .vcinvite
+  • : Mengundang Member group ke voice chat group
 
-  Command : .joinvc        
-  • : Untuk Join VC Group        
+  Command : .joinvc
+  • : Untuk Join VC Group
 
-  Command : .leavevc        
-  • : Untuk Turun Dari VC Group    
+  Command : .leavevc
+  • : Untuk Turun Dari VC Group
 """)
                 await event.edit(
                     text,
@@ -1027,7 +1020,6 @@ Voice chat group menu untuk {ALIVE_NAME}
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
 
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
@@ -1039,7 +1031,6 @@ Voice chat group menu untuk {ALIVE_NAME}
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -1089,7 +1080,8 @@ Voice chat group menu untuk {ALIVE_NAME}
                 )
 
                 await event.edit(
-                    reply_pop_up_alert, buttons=[Button.inline("Back", data="get_back")]
+                    reply_pop_up_alert, buttons=[
+                        Button.inline("Back", data="get_back")]
                 )
             else:
                 reply_pop_up_alert = f"""Jangan Menggunakan Milik {ALIVE_NAME} !"""
@@ -1147,12 +1139,12 @@ Voice chat group menu untuk {ALIVE_NAME}
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             else:
             await event.edit(
-                    f"Oh!\n{DEFAULTUSER} dengan senang hati akan membantu Anda...\nSilakan tinggalkan pesan Anda di sini **dalam satu baris** dan tunggu sampai saya membalas 😊"
-                )
-                target = await event.client(GetFullUserRequest(event.query.user_id))
-                first_name = html.escape(target.user.first_name)
-                ok = event.query.user_id
-                if first_name is not None:
+                f"Oh!\n{DEFAULTUSER} dengan senang hati akan membantu Anda...\nSilakan tinggalkan pesan Anda di sini **dalam satu baris** dan tunggu sampai saya membalas 😊"
+            )
+            target = await event.client(GetFullUserRequest(event.query.user_id))
+             first_name = html.escape(target.user.first_name)
+              ok = event.query.user_id
+               if first_name is not None:
                     first_name = first_name.replace("\u2060", "")
                 tosend = f"Hey {DEFAULTUSER}, [{first_name}](tg://user?id={ok}) ingin PM Anda untuk **bantuan**!"
                 await tgbot.send_message(BOTLOG_CHATID, tosend)
@@ -1182,4 +1174,3 @@ Voice chat group menu untuk {ALIVE_NAME}
         LOGS.info(
             "Mode Inline Bot Mu Nonaktif. "
             "Untuk Mengaktifkannya, Silahkan Gunakan Perintah .inlineon. ")
-

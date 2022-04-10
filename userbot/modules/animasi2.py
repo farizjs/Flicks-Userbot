@@ -11,7 +11,7 @@ from re import sub
 from cowpy import cow
 from asyncio import sleep
 from collections import deque
-from random import choice, getrandbits, randint
+from random import choice, randint
 
 from userbot.utils import flicks_cmd
 from userbot import CMD_HELP, bot
@@ -877,7 +877,7 @@ weebyfont = [
 # ===========================================
 
 
-@flicks_cmd(pattern="(\w+)say (.*)")
+@flicks_cmd(pattern="(\\w+)say (.*)")
 async def univsaye(cowmsg):
     """ For .cowsay module, userbot wrapper for cow which says things. """
     arg = cowmsg.pattern_match.group(1).lower()
@@ -1028,8 +1028,6 @@ async def cry(e):
 async def insult(e):
     """ I make you cry !! """
     await e.edit(choice(INSULT_STRINGS))
-
-
 
 
 @register(outgoing=True, pattern=r"^\.vapor(?: |$)(.*)")
@@ -1672,7 +1670,6 @@ async def faces(siwis):
     reply_text = sub(r"\!+", " " + choice(IWIS), reply_text)
     reply_text += " " + choice(IWIS)
     await siwis.edit(reply_text)
-
 
 
 @register(outgoing=True, pattern="^.gas$")

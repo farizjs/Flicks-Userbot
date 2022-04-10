@@ -264,5 +264,4 @@ CMD_HELP.update(
         f"\n\n>`{cmd}aclear`"
         "\nUsage: Menghapus antrean unduhan yang sedang berlangsung."
         f"\n\n>`{cmd}ashow`"
-        "\nUsage: Menunjukkan kemajuan unduhan."
-})
+        "\nUsage: Menunjukkan kemajuan unduhan."})

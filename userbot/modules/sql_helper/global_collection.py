@@ -47,7 +47,8 @@ def add_to_collectionlist(keywoard, contents):
 
         SESSION.merge(keyword_items)
         SESSION.commit()
-        COLLECTION_SQL_.CONTENTS_LIST.setdefault(keywoard, set()).add(tuple(contents))
+        COLLECTION_SQL_.CONTENTS_LIST.setdefault(
+            keywoard, set()).add(tuple(contents))
 
 
 def rm_from_collectionlist(keywoard, contents):
@@ -56,7 +57,8 @@ def rm_from_collectionlist(keywoard, contents):
             (keywoard, tuple(contents))
         )
         if keyword_items:
-            if tuple(contents) in COLLECTION_SQL_.CONTENTS_LIST.get(keywoard, set()):
+            if tuple(contents) in COLLECTION_SQL_.CONTENTS_LIST.get(
+                    keywoard, set()):
                 COLLECTION_SQL_.CONTENTS_LIST.get(keywoard, set()).remove(
                     tuple(contents)
                 )
