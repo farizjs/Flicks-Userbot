@@ -1141,10 +1141,10 @@ Voice chat group menu untuk {ALIVE_NAME}
                 await event.edit(
                     f"Oh!\n{ALIVE_NAME} dengan senang hati akan membantu Anda...\nSilakan tinggalkan pesan Anda di sini **dalam satu baris** dan tunggu sampai saya membalas 😊"
                 )
-            target = await event.client(GetFullUserRequest(event.query.user_id))
-             first_name = html.escape(target.user.first_name)
-              ok = event.query.user_id
-               if first_name is not None:
+                target = await event.client(GetFullUserRequest(event.query.user_id))
+                first_name = html.escape(target.user.first_name)
+                ok = event.query.user_id
+                if first_name is not None:
                     first_name = first_name.replace("\u2060", "")
                 tosend = f"Hey {ALIVE_NAME}, [{first_name}](tg://user?id={ok}) ingin PM Anda untuk **bantuan**!"
                 await tgbot.send_message(BOTLOG_CHATID, tosend)
