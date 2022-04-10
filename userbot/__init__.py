@@ -478,10 +478,8 @@ with bot:
         ]
 
         USER_BOT_NO_WARN = (
-            "**PM Security of [{}](tg://user?id={})**\n\n"
-            "Untuk bantuan segera, PM saya melalui @{}"
-            "\nSilakan pilih mengapa Anda ada di sini, dari opsi yang tersedia\n\n".format(
-                ALIVE_NAME, uid, BOT_USERNAME))
+           f"PMSecurity of {ALIVE_NAME}!"
+            "\n\nMohon tunggu saya untuk merespon atau Anda akan diblokir dan dilaporkan sebagai spam!!")
 
         @tgbot.on(events.NewMessage(incoming=True,
                   func=lambda e: e.is_private))
@@ -696,17 +694,15 @@ with bot:
                     buttons=main_help_button,
                 )
             elif query.startswith("pmpermit"):
-                TELEBT = USER_BOT_NO_WARN.format(ALIVE_NAME, uid, BOT_USERNAME)
-                result = builder.photo(
-                    file=PMPERMIT_PIC,
+                TELEBT = USER_BOT_NO_WARN
+                result = builder.article(
+                    "PmPermit",
                     text=TELEBT,
                     buttons=[
                         [
-                            custom.Button.inline("Meminta ", data="req"),
-                            custom.Button.inline("Chat 💭", data="chat"),
+                            Button.inline("Terima PM", data="setuju"),
+                            Button.inline("Block PM", data="block"),
                         ],
-                        [custom.Button.inline("untuk spam 🚫", data="heheboi")],
-                        [custom.Button.inline("Apa ini ❓", data="pmclick")],
                     ],
                 )
             elif query.startswith("pasta"):
@@ -1132,29 +1128,24 @@ Voice chat group menu untuk {ALIVE_NAME}
                 tosend = f"Hey {ALIVE_NAME}, [{first_name}](tg://user?id={ok}) ingin PM Anda untuk ** Obrolan Acak**!"
                 await tgbot.send_message(BOTLOG_CHATID, tosend)
 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"plshelpme")))
-        async def on_pm_click(event):
-            if event.query.user_id == uid:
-                reply_pop_up_alert = "Ini bukan untukmu, tuan!"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-            else:
-                await event.edit(
-                    f"Oh!\n{ALIVE_NAME} dengan senang hati akan membantu Anda...\nSilakan tinggalkan pesan Anda di sini **dalam satu baris** dan tunggu sampai saya membalas 😊"
-                )
-                target = await event.client(GetFullUserRequest(event.query.user_id))
-                first_name = html.escape(target.user.first_name)
-                ok = event.query.user_id
-                if first_name is not None:
-                    first_name = first_name.replace("\u2060", "")
-                tosend = f"Hey {ALIVE_NAME}, [{first_name}](tg://user?id={ok}) ingin PM Anda untuk **bantuan**!"
-                await tgbot.send_message(BOTLOG_CHATID, tosend)
 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"heheboi")))
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"setuju")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                await event.answer(
+                    f"Untuk menyetujui PM, gunakan {CMD_HANDLER}ok", cache_time=0, alert=True)
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"block")))
         async def on_pm_click(event):
             if event.query.user_id == uid:
-                reply_pop_up_alert = "Ini bukan untukmu, tuan!"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-            else:
                 await event.edit(
                     f"Oh, jadi Anda di sini untuk spam 😤\nGoodbye.\nPesan Anda telah dibaca dan berhasil diabaikan."
                 )
@@ -1169,6 +1160,10 @@ Voice chat group menu untuk {ALIVE_NAME}
                     BOTLOG_CHATID,
                     f"[{first_name}](tg://user?id={ok}) tried to **spam** your inbox.\nHenceforth, **blocked**",
                 )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
 
     except BaseException:
         LOGS.info(
