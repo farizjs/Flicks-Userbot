@@ -13,7 +13,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 import userbot.modules.sql_helper.pm_permit_sql as pmpermit_sql
 from userbot import *
-from userbot.utils import flicks_cmd
+from userbot.utils import edit_delete, edit_or_reply, flicks_cmd
 
 i = CMD_HANDLER
 TELEPIC = PMPERMIT_PIC
@@ -38,26 +38,57 @@ USER_BOT_NO_WARN = (
 
 
 @flicks_cmd(pattern="ok ?(.*)")
-async def approve_p_m(event):
-    if event.fwd_from:
-        return
-    replied_user = await event.client(GetFullUserRequest(event.chat_id))
-    firstname = replied_user.user.first_name
-    reason = event.pattern_match.group(1)
-    chat = await event.get_chat()
-    if event.is_private:
-        if not pmpermit_sql.is_approved(chat.id):
-            if chat.id in PM_WARNS:
-                del PM_WARNS[chat.id]
-            if chat.id in PREV_REPLY_MESSAGE:
-                await PREV_REPLY_MESSAGE[chat.id].delete()
-                del PREV_REPLY_MESSAGE[chat.id]
-            pmpermit_sql.approve(chat.id, reason)
-            await event.edit(
-                "Disetujui [{}](tg://user?id={}) untuk PM kamu.".format(firstname, chat.id)
+async def approvepm(apprvpm):
+    if apprvpm.reply_to_msg_id:
+        reply = await apprvpm.get_reply_message()
+        replied_user = await apprvpm.client.get_entity(reply.sender_id)
+        uid = replied_user.id
+        name0 = str(replied_user.first_name)
+
+    elif apprvpm.pattern_match.group(1):
+        inputArgs = apprvpm.pattern_match.group(1)
+
+        try:
+            inputArgs = int(inputArgs)
+        except ValueError:
+            pass
+
+        try:
+            user = await apprvpm.client.get_entity(inputArgs)
+        except BaseException:
+            return await edit_delete(apprvpm, "**Invalid username/ID.**")
+
+        if not isinstance(user, User):
+            return await edit_delete(
+                apprvpm, "**Mohon Reply Pesan User Yang ingin diterima.**"
             )
-            await asyncio.sleep(3)
-            await event.delete()
+
+        uid = user.id
+        name0 = str(user.first_name)
+
+    else:
+        aname = await apprvpm.client.get_entity(apprvpm.chat_id)
+        if not isinstance(aname, User):
+            return await edit_delete(
+                apprvpm, "**Mohon Reply Pesan User Yang ingin diterima.**"
+            )
+        name0 = str(aname.first_name)
+        uid = apprvpm.chat_id
+
+    # Get user custom msg
+    async for message in apprvpm.client.iter_messages(
+        apprvpm.chat_id, from_user="me", search=USER_BOT_NO_WARN
+    ):
+        await message.delete()
+
+    try:
+        pmpermit_sql.approve(uid, 'Diterima')
+    except IntegrityError:
+        return await edit_delete(apprvpm, "**Pesan Anda Sudah Diterima**")
+
+    await edit_delete(
+        apprvpm, f"**Menerima Pesan Dari** [{name0}](tg://user?id={uid})", 5
+    )
 
 
 # Approve outgoing
@@ -106,24 +137,51 @@ async def approve_p_m(event):
 
 
 @flicks_cmd(pattern="tolak ?(.*)")
-async def approve_p_m(event):
-    if event.fwd_from:
-        return
-    replied_user = await event.client(GetFullUserRequest(event.chat_id))
-    firstname = replied_user.user.first_name
-    event.pattern_match.group(1)
-    chat = await event.get_chat()
-    if event.is_private:
-        if chat.id == DEVS:
-            await event.edit("Maaf, Saya Tidak Dapat Menolak Tuan Saya")
-        else:
-            if pmpermit_sql.is_approved(chat.id):
-                pmpermit_sql.disapprove(chat.id)
-                await event.edit(
-                    "[{}](tg://user?id={}) tidak disetujui untuk PM.".format(
-                        firstname, chat.id
-                    )
-                )
+    if disapprvpm.reply_to_msg_id:
+        reply = await disapprvpm.get_reply_message()
+        replied_user = await disapprvpm.client.get_entity(reply.sender_id)
+        aname = replied_user.id
+        name0 = str(replied_user.first_name)
+        pmpermit_sql.dissprove(aname)
+
+    elif disapprvpm.pattern_match.group(1):
+        inputArgs = disapprvpm.pattern_match.group(1)
+
+        try:
+            inputArgs = int(inputArgs)
+        except ValueError:
+            pass
+
+        try:
+            user = await disapprvpm.client.get_entity(inputArgs)
+        except BaseException:
+            return await edit_delete(
+                disapprvpm, "**Mohon Reply Pesan User Yang ingin ditolak.**"
+            )
+
+        if not isinstance(user, User):
+            return await edit_delete(
+                disapprvpm, "**Mohon Reply Pesan User Yang ingin ditolak.**"
+            )
+
+        aname = user.id
+        pmpermit_sql.dissprove(aname)
+        name0 = str(user.first_name)
+
+    else:
+        pmpermit_sql.dissprove(disapprvpm.chat_id)
+        aname = await disapprvpm.client.get_entity(disapprvpm.chat_id)
+        if not isinstance(aname, User):
+            return await edit_delete(
+                disapprvpm, "**This can be done only with users.**"
+            )
+        name0 = str(aname.first_name)
+        aname = aname.id
+
+    await edit_or_reply(
+        disapprvpm,
+        f" **Maaf Pesan** [{name0}](tg://user?id={aname}) **Telah Ditolak, Mohon Jangan Melakukan Spam Ke Room Chat!**",
+    )
 
 
 @flicks_cmd(pattern="listapproved")
@@ -131,7 +189,7 @@ async def approve_p_m(event):
     if event.fwd_from:
         return
     approved_users = pmpermit_sql.get_all_approved()
-    APPROVED_PMs = "[TeleBot] Currently Approved PMs\n"
+    APPROVED_PMs = "[Flicks] Currently Approved PMs\n"
     if len(approved_users) > 0:
         for a_user in approved_users:
             if a_user.reason:
