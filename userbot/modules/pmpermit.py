@@ -11,7 +11,7 @@ from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 import userbot.modules.sql_helper.pm_permit_sql as pmpermit_sql
-from userbot *
+from userbot import *
 from userbot.utils import *
 
 i = CMD_HANDLER
