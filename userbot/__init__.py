@@ -698,7 +698,7 @@ with bot:
             elif query.startswith("pmpermit"):
                 TELEBT = USER_BOT_NO_WARN.format(ALIVE_NAME, uid, BOT_USERNAME)
                 result = builder.photo(
-                    file=TELEPIC,
+                    file=PMPERMIT_PIC,
                     text=TELEBT,
                     buttons=[
                         [
