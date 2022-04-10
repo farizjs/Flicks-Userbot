@@ -12,7 +12,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 import userbot.modules.sql_helper.pm_permit_sql as pmpermit_sql
 from userbot import *
-from userbot.utils import *
+from userbot.utils import flicks_cmd
 
 i = CMD_HANDLER
 TELEPIC = PMPERMIT_PIC
