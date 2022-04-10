@@ -263,7 +263,7 @@ ALIVE_LOGO = os.environ.get(
 
 # Default pmpermit logo
 PMPERMIT_PIC = os.environ.get(
-    "PMPERMIT_PIC") or f"{ALIVE_LOGO}"
+    "PMPERMIT_PIC") or f"{INLINE_PIC}"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
