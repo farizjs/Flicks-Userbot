@@ -1,3 +1,8 @@
+# Credits: @xditya
+# Recode by @farizjs
+# FROM Flicks-Userbot <https://github.com/farizjs/Flicks-Userbot>
+# t.me/TheFlicksUserbot
+
 import asyncio
 import io
 import os
