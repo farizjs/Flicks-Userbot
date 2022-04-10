@@ -1094,7 +1094,7 @@ Voice chat group menu untuk {ALIVE_NAME}
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             else:
                 await event.edit(
-                    f"Ini adalah Keamanan PM untuk {DEFAULTUSER} untuk menjauhkan spammer.\n\nDilindungi oleh [Userbot](t.me/FlicksSupport)"
+                    f"Ini adalah Keamanan PM untuk {ALIVE_NAME} untuk menjauhkan spammer.\n\nDilindungi oleh [Userbot](t.me/FlicksSupport)"
                 )
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"req")))
@@ -1104,14 +1104,14 @@ Voice chat group menu untuk {ALIVE_NAME}
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             else:
                 await event.edit(
-                    f"baik, `{DEFAULTUSER}` akan segera menghubungi Anda!\nSampai saat itu mohon **tunggu dengan sabar dan jangan spam di sini.**"
+                    f"baik, `{ALIVE_NAME}` akan segera menghubungi Anda!\nSampai saat itu mohon **tunggu dengan sabar dan jangan spam di sini.**"
                 )
                 target = await event.client(GetFullUserRequest(event.query.user_id))
                 first_name = html.escape(target.user.first_name)
                 ok = event.query.user_id
                 if first_name is not None:
                     first_name = first_name.replace("\u2060", "")
-                tosend = f"Hey {DEFAULTUSER}, [{first_name}](tg://user?id={ok}) sedang **meminta** sesuatu di PM!"
+                tosend = f"Hey {ALIVE_NAME}, [{first_name}](tg://user?id={ok}) sedang **meminta** sesuatu di PM!"
                 await tgbot.send_message(BOTLOG_CHATID, tosend)
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"chat")))
@@ -1122,14 +1122,14 @@ Voice chat group menu untuk {ALIVE_NAME}
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             else:
                 await event.edit(
-                    f"wah, mau ngobrol...\nHarap tunggu dan lihat apakah {DEFAULTUSER} sedang dalam mood untuk mengobrol, jika ya, dia akan segera membalas!\nSampai saat itu, **jangan spam.**"
+                    f"wah, mau ngobrol...\nHarap tunggu dan lihat apakah {ALIVE_NAME} sedang dalam mood untuk mengobrol, jika ya, dia akan segera membalas!\nSampai saat itu, **jangan spam.**"
                 )
                 target = await event.client(GetFullUserRequest(event.query.user_id))
                 ok = event.query.user_id
                 first_name = html.escape(target.user.first_name)
                 if first_name is not None:
                     first_name = first_name.replace("\u2060", "")
-                tosend = f"Hey {DEFAULTUSER}, [{first_name}](tg://user?id={ok}) ingin PM Anda untuk ** Obrolan Acak**!"
+                tosend = f"Hey {ALIVE_NAME}, [{first_name}](tg://user?id={ok}) ingin PM Anda untuk ** Obrolan Acak**!"
                 await tgbot.send_message(BOTLOG_CHATID, tosend)
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"plshelpme")))
@@ -1139,14 +1139,14 @@ Voice chat group menu untuk {ALIVE_NAME}
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             else:
             await event.edit(
-                f"Oh!\n{DEFAULTUSER} dengan senang hati akan membantu Anda...\nSilakan tinggalkan pesan Anda di sini **dalam satu baris** dan tunggu sampai saya membalas 😊"
+                f"Oh!\n{ALIVE_NAME} dengan senang hati akan membantu Anda...\nSilakan tinggalkan pesan Anda di sini **dalam satu baris** dan tunggu sampai saya membalas 😊"
             )
             target = await event.client(GetFullUserRequest(event.query.user_id))
              first_name = html.escape(target.user.first_name)
               ok = event.query.user_id
                if first_name is not None:
                     first_name = first_name.replace("\u2060", "")
-                tosend = f"Hey {DEFAULTUSER}, [{first_name}](tg://user?id={ok}) ingin PM Anda untuk **bantuan**!"
+                tosend = f"Hey {ALIVE_NAME}, [{first_name}](tg://user?id={ok}) ingin PM Anda untuk **bantuan**!"
                 await tgbot.send_message(BOTLOG_CHATID, tosend)
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"heheboi")))
