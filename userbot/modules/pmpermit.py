@@ -3,9 +3,11 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 
-# Fixes By Dev KEN-UBOT
-# From KEN-UBOT
-# Update by Dev Flicks-Userbot
+# Credits: @xditya
+# Recode by @farizjs
+# FROM Flicks-Userbot <https://github.com/farizjs/Flicks-Userbot>
+# t.me/TheFlicksUserbot
+
 """Userbot module for keeping control who PM you."""
 
 from sqlalchemy.exc import IntegrityError
