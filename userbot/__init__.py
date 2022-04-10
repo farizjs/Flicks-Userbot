@@ -701,7 +701,7 @@ with bot:
                     buttons=[
                         [
                             Button.inline("Terima PM", data="setuju"),
-                            Button.inline("Block PM", data="block"),
+                            Button.inline("Tolak PM", data="block"),
                         ],
                     ],
                 )
@@ -1147,18 +1147,7 @@ Voice chat group menu untuk {ALIVE_NAME}
         async def on_pm_click(event):
             if event.query.user_id == uid:
                 await event.edit(
-                    f"Sepertinya {ALIVE_NAME} sedang tidak mood untuk mengobrol\nGoodbye.\nPesan Anda telah dibaca dan berhasil diabaikan."
-                )
-                await bot(functions.contacts.BlockRequest(event.chat.id))
-                target = await event.client(GetFullUserRequest(event.chat.id))
-                ok = event.chat.id
-                first_name = html.escape(target.user.first_name)
-                if first_name is not None:
-                    first_name = first_name.replace("\u2060", "")
-                first_name = html.escape(target.user.first_name)
-                await tgbot.send_message(
-                    BOTLOG_CHATID,
-                    f"[{first_name}](tg://user?id={ok}) tried to **spam** your inbox.\nHenceforth, **blocked**",
+                    f"Sepertinya {ALIVE_NAME} sedang tidak mood untuk mengobrol\nGoodbye.\nPesan Anda telah diabaikan.\njika tidak mau di blokir maka jangan spam!!"
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
