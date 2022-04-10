@@ -7,7 +7,8 @@ import asyncio
 import io
 import os
 
-from telethon import events, functions
+from telethon.events import NewMessage
+from telethon import functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 import userbot.modules.sql_helper.pm_permit_sql as pmpermit_sql
@@ -62,7 +63,7 @@ async def approve_p_m(event):
 # Approve outgoing
 
 
-@bot.on(events.NewMessage(outgoing=True))
+@bot.on(NewMessage(outgoing=True))
 async def you_dm_niqq(event):
     if event.fwd_from:
         return
@@ -155,7 +156,7 @@ async def approve_p_m(event):
         await event.edit(APPROVED_PMs)
 
 
-@bot.on(events.NewMessage(incoming=True))
+@bot.on(NewMessage(incoming=True))
 async def on_new_private_message(event):
     if event.sender_id == myid:
         return
@@ -244,7 +245,7 @@ async def do_pm_permit_action(chat_id, event):
 
 
 @bot.on(
-    events.NewMessage(
+    NewMessage(
         incoming=True, from_users=(DEVS)
     )
 )
@@ -262,7 +263,7 @@ async def hehehe(event):
 NEEDIT = None
 if NEEDIT == "on":
 
-    @bot.on(events.NewMessage(incoming=True))
+    @bot.on(NewMessage(incoming=True))
     async def on_new_private_message(event):
         event.message.message
         event.message.media
