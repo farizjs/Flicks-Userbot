@@ -479,7 +479,8 @@ with bot:
 
         USER_BOT_NO_WARN = (
            f"**PMSecurity of** {ALIVE_NAME}!"
-            "\n\nMohon tunggu saya untuk merespon atau Anda akan diblokir dan dilaporkan sebagai spam!!")
+            "\n\nSilahkan beri alasan mengapa anda chat saya"
+            "\nAtau tunggu saya untuk merespon atau Anda akan **diblokir dan dilaporkan sebagai spam!!**")
 
         @tgbot.on(events.NewMessage(incoming=True,
                   func=lambda e: e.is_private))
@@ -700,8 +701,8 @@ with bot:
                     text=TELEBT,
                     buttons=[
                         [
-                            Button.inline("Terima PM", data="setuju"),
-                            Button.inline("Tolak PM", data="block"),
+                            Button.inline("• Untuk Chat •", data="chat"),
+                            Button.inline("• Untuk Spam •", data="heheboi"),
                         ],
                     ],
                 )
@@ -1152,6 +1153,27 @@ Voice chat group menu untuk {ALIVE_NAME}
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"heheboi")))
+        async def on_pm_click(event):
+            if event.query.user_id == uid:
+                reply_pop_up_alert = "Ini bukan untukmu, tuan!"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+            else:
+                await event.edit(
+                    f"Oh, jadi Anda di sini untuk spam 😤\nGoodbye.\nPesan Anda telah dibaca dan berhasil diabaikan."
+                )
+                await bot(functions.contacts.BlockRequest(event.query.user_id))
+                target = await event.client(GetFullUserRequest(event.query.user_id))
+                ok = event.query.user_id
+                first_name = html.escape(target.user.first_name)
+                if first_name is not None:
+                    first_name = first_name.replace("\u2060", "")
+                first_name = html.escape(target.user.first_name)
+                await tgbot.send_message(
+                    BOTLOG_CHATID,
+                    f"[{first_name}](tg://user?id={ok}) mencoba untuk **spam** kotak masuk Anda.\nSelanjutnya, dia saya **blokir**",
+                )
 
 
     except BaseException:
