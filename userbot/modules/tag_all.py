@@ -22,7 +22,7 @@ import asyncio
 import random
 import re
 
-from userbot import CMD_HELP, bot
+from userbot import CMD_HELP, bot, CMD_HANDLER
 from userbot.utils import flicks_cmd
 
 usernexp = re.compile(r"@(\w{3,32})\[(.+?)\]")
@@ -135,4 +135,4 @@ async def _(event):
         FlagContainer.is_active = False
 
 
-CMD_HELP.update({"tagger": f"{__doc__.format(i=cmd)}"})
+CMD_HELP.update({"tagger": f"{__doc__.format(i=CMD_HANDLER)}"})
