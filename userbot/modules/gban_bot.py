@@ -4,7 +4,7 @@ Available Commands:
 .gban REASON
 .ungban REASON"""
 import asyncio
-from userbot.events import register
+from userbot.utils import flicks_cmd
 from userbot import ALIVE_NAME, G_BAN_LOGGER_GROUP, bot
 # imported from uniborg by @heyworld
 
@@ -13,7 +13,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern="^.gbanb(?: |$)(.*)")
+@flicks_cmd(pattern="gbanb(?: |$)(.*)")
 async def _(event):
     if G_BAN_LOGGER_GROUP is None:
         await event.edit("Set G_BAN_LOGGER_GROUP di vars jika tidak perintah tidak akan berfungsi!")
@@ -39,7 +39,7 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern="^.ungbanb(?: |$)(.*)")
+@flicks_cmd(pattern="ungbanb(?: |$)(.*)")
 async def _(event):
     if G_BAN_LOGGER_GROUP is None:
         await event.edit("Set G_BAN_LOGGER_GROUP di vars jika tidak perintah tidak akan berfungsi!")
