@@ -1,8 +1,28 @@
+"""
+Plugins : globals
+
+Perintah : `{i}gban`
+penggunaan :
+Melakukan Banned Secara Global Ke Semua Grup Dimana Anda Sebagai Admin
+Perintah : `{i}ungban`
+penggunaan :
+Membatalkan Banned Secara Global Ke Semua Grup Dimana Anda Sebagai Admin
+
+Perintah : `{i}gmute`
+penggunaan :
+Melakukan mute Secara Global Ke Semua Grup Dimana Anda Sebagai Admin
+Perintah : `{i}ungmute`
+penggunaan :
+Membatalkan mute Secara Global Ke Semua Grup Dimana Anda Sebagai Admin
+"""
+
 from telethon.events import ChatAction
-from userbot import ALIVE_NAME, CMD_HELP, DEVS, bot
-from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
-from userbot.events import register
 from telethon.tl.types import MessageEntityMentionName
+from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
+
+from userbot import ALIVE_NAME, CMD_HELP, DEVS, bot, CMD_HANDLER
+from userbot.events import register
+from userbot.utils import flicks_cmd
 
 
 async def get_full_user(event):
@@ -76,7 +96,7 @@ async def handler(tele):
                             return
 
 
-@register(outgoing=True, pattern="^.gban(?: |$)(.*)")
+@flicks_cmd(pattern="gban(?: |$)(.*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cgban(?: |$)(.*)")
 async def gben(userbot):
     dc = userbot
@@ -143,7 +163,7 @@ async def gben(userbot):
     )
 
 
-@register(outgoing=True, pattern="^.ungban(?: |$)(.*)")
+@flicks_cmd(pattern="ungban(?: |$)(.*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cungban(?: |$)(.*)")
 async def gunben(userbot):
     dc = userbot
@@ -208,9 +228,5 @@ async def gunben(userbot):
     )
 
 
-CMD_HELP.update({
-    "gban": "\
-**Modules:** __Global Banned__\n\n**Perintah:** `.gban`\
-\n**Penjelasan:** Melakukan Banned Secara Global Ke Semua Grup Dimana Anda Sebagai Admin\
-\n\n**Perintah:** `.ungban`\
-\n**Penjelasan:** Membatalkan Global Banned"})
+
+CMD_HELP.update({"globals": f"{__doc__.format(i=CMD_HANDLER)}"})
