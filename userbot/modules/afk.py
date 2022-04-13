@@ -1,4 +1,9 @@
-""" Userbot module which contains afk-related commands """
+"""
+• `{i}afk <alasan opsional>
+    Lakukan ketika ingin OFF,
+    Setelah Anda mengaktifkan ini jika Seseorang menandai atau mengirim pesan kepada Anda maka itu akan membalasnya secara otomatis,
+    (Catatan: Dengan Membalas Ke media apa pun, Anda juga dapat mengatur media afk).
+"""
 
 from datetime import datetime
 import time
@@ -260,10 +265,4 @@ async def afk_on_pm(sender):
                     COUNT_MSG = COUNT_MSG + 1
 
 
-CMD_HELP.update({
-    "afk":
-    f"`{cmd}afk` [Alasan]\
-\nUsage: Lakukan ketika ingin OFF.\nSiapapun Yang Balas, Tag, Atau Chat Kamu \
-Mereka Akan Tau Alasan Kamu OFF.\n\nAFK Bisa Dilakukan Dan Dibatalkan Dimanapun.\
-"
-})
+CMD_HELP.update({"afk": f"{__doc__.format(i=cmd)}"})
