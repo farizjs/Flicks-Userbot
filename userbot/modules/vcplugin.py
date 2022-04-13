@@ -3,6 +3,34 @@
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
 
+"""
+Plugin : vcplugin
+
+Perintah : `{i}play` <Judul Lagu/Link YT>
+Penggunaan : Untuk Memutar Lagu di voice chat group dengan akun kamu
+
+Perintah : `{i}vplay` <Judul Video/Link YT>
+Penggunaan : Untuk Memutar Video di voice chat group dengan akun kamu
+
+Perintah : `{i}end`
+Penggunaan : Untuk Memberhentikan video/lagu yang sedang putar di voice chat group
+
+Perintah :  `{i}skip`
+Penggunaan : Untuk Melewati video/lagu yang sedang di putar
+
+Perintah : `{i}pause`
+Penggunaan : Untuk memberhentikan video/lagu yang sedang diputar
+
+Perintah :  `{i}resume`
+Penggunaan : Untuk melanjutkan pemutaran video/lagu yang sedang diputar
+
+Perintah :  `{i}volume` 1-200
+Penggunaan : Untuk mengubah volume (Membutuhkan Hak admin)
+
+Perintah : `{i}playlist`
+Penggunaan : Untuk menampilkan daftar putar Lagu/Video
+"""
+
 from pytgcalls import StreamType
 from pytgcalls.types import Update
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
@@ -590,25 +618,4 @@ async def kickedvc(_, chat_id: int):
         clear_queue(chat_id)
 
 
-CMD_HELP.update(
-    {
-        "vcplugin": f"**Plugin : **`vcplugin`\
-        \n\n  •  **Syntax :** `{cmd}play` <Judul Lagu/Link YT>\
-        \n  •  **Function : **Untuk Memutar Lagu di voice chat group dengan akun kamu\
-        \n\n  •  **Syntax :** `{cmd}vplay` <Judul Video/Link YT>\
-        \n  •  **Function : **Untuk Memutar Video di voice chat group dengan akun kamu\
-        \n\n  •  **Syntax :** `{cmd}end`\
-        \n  •  **Function : **Untuk Memberhentikan video/lagu yang sedang putar di voice chat group\
-        \n\n  •  **Syntax :** `{cmd}skip`\
-        \n  •  **Function : **Untuk Melewati video/lagu yang sedang di putar\
-        \n\n  •  **Syntax :** `{cmd}pause`\
-        \n  •  **Function : **Untuk memberhentikan video/lagu yang sedang diputar\
-        \n\n  •  **Syntax :** `{cmd}resume`\
-        \n  •  **Function : **Untuk melanjutkan pemutaran video/lagu yang sedang diputar\
-        \n\n  •  **Syntax :** `{cmd}volume` 1-200\
-        \n  •  **Function : **Untuk mengubah volume (Membutuhkan Hak admin)\
-        \n\n  •  **Syntax :** `{cmd}playlist`\
-        \n  •  **Function : **Untuk menampilkan daftar putar Lagu/Video\
-    "
-    }
-)
+CMD_HELP.update({"vcplugin": f"{__doc__.format(i=cmd)}"})
