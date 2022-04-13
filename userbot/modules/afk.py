@@ -1,8 +1,12 @@
 """
-• `{i}afk <alasan opsional>
-    Lakukan ketika ingin OFF,
-    Setelah Anda mengaktifkan ini jika Seseorang menandai atau mengirim pesan kepada Anda maka itu akan membalasnya secara otomatis,
-    (Catatan: Dengan Membalas Ke media apa pun, Anda juga dapat mengatur media afk).
+Plugin : afk
+
+Perintah   : `{i}afk` <alasan opsional>
+
+penggunaan :
+Lakukan ketika ingin OFF,
+Setelah Anda mengaktifkan ini jika Seseorang menandai atau mengirim pesan kepada Anda maka itu akan membalasnya secara otomatis,
+(Catatan: Dengan Membalas Ke media apa pun, Anda juga dapat mengatur media afk).
 """
 
 from datetime import datetime
