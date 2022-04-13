@@ -3,6 +3,30 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 
+"""
+Plugin : admin
+
+Perintah: `{i}promote` <username/balas ke pesan> <nama title (optional)>
+penggunaan : Mempromosikan member sebagai admin.
+Perintah : `{i}demote` <username/balas ke pesan>
+penggunaan : Menurunkan admin sebagai member.
+Perintah : `{i}ban` <username/balas ke pesan> <alasan (optional)>
+penggunaan : Memblokir Seseorang.
+Perintah : `{i}unban <username/reply>`
+penggunaan : Menghapus Blokir.
+Perintah : `{i}mute` <username/balas ke pesan> <alasan (optional)>
+penggunaan : Membisukan Seseorang Di Grup, Bisa Ke Admin Juga.
+Perintah : `{i}unmute` <username/balas ke pesan>
+penggunaan : Membuka bisu orang yang dibisukan.
+Perintah : `{i}admins`
+penggunaan : Melihat daftar admin di grup.
+Perintah : `{i}bots`
+penggunaan Melihat daftar bot dalam grup.
+Perintah : `{i}users` Atau >`{i}users` <nama member>
+penggunaan : Mendapatkan daftar pengguna daam grup.
+Perintah : `{i}setgpic` <balas ke gambar>
+penggunaan : Mengganti foto profil grup.
+"""
 from asyncio import sleep
 from os import remove
 
@@ -909,34 +933,4 @@ async def get_bots(show):
         remove("botlist.txt")
 
 
-CMD_HELP.update(
-    {
-        "admin": f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}promote` <username/balas ke pesan> <nama title (optional)>"
-        "\n↳ : Mempromosikan member sebagai admin."
-        f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}demote` <username/balas ke pesan>"
-        "\n↳ : Menurunkan admin sebagai member."
-        f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}ban` <username/balas ke pesan> <alasan (optional)>"
-        "\n↳ : Memblokir Seseorang."
-        f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}unban <username/reply>`"
-        "\n↳ : Menghapus Blokir."
-        f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}mute` <username/balas ke pesan> <alasan (optional)>"
-        "\n↳ : Membisukan Seseorang Di Grup, Bisa Ke Admin Juga."
-        f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}unmute` <username/balas ke pesan>"
-        "\n↳ : Membuka bisu orang yang dibisukan."
-        f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}admins`"
-        "\n↳ : Melihat daftar admin di grup."
-        f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}bots`"
-        "\n↳ : Melihat daftar bot dalam grup."
-        f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}users` Atau >`{cmd}users` <nama member>"
-        "\n↳ : Mendapatkan daftar pengguna daam grup."
-        f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}setgpic` <balas ke gambar>"
-        "\n↳ : Mengganti foto profil grup.",
-        "globals": f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}gmute` <username/balas ke pesan> <alasan (optional)>"
-        "\n↳ : Membisukan ke semua grup yang kamu punya sebagai admin."
-        f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}ungmute` <username/reply>"
-        "\n↳ : Reply someone's message with `.ungmute` to remove them from the gmuted list.",
-        "zombie": f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}zombies`"
-        "\n↳ : Untuk mencari akun terhapus dalam grup."
-        f"Gunakan `{cmd}zombies clean` untuk menghapus Akun Terhapus dari grup.",
-        "tagger": f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}all`"
-        "\n↳ : Tag semua member dalam grup."})
+CMD_HELP.update({"admin": f"{__doc__.format(i=cmd)}"})
