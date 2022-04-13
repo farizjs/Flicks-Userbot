@@ -8,22 +8,31 @@ Plugin : admin
 
 Perintah: `{i}promote` <username/balas ke pesan> <nama title (optional)>
 penggunaan : Mempromosikan member sebagai admin.
+
 Perintah : `{i}demote` <username/balas ke pesan>
 penggunaan : Menurunkan admin sebagai member.
+
 Perintah : `{i}ban` <username/balas ke pesan> <alasan (optional)>
 penggunaan : Memblokir Seseorang.
+
 Perintah : `{i}unban <username/reply>`
 penggunaan : Menghapus Blokir.
+
 Perintah : `{i}mute` <username/balas ke pesan> <alasan (optional)>
 penggunaan : Membisukan Seseorang Di Grup, Bisa Ke Admin Juga.
+
 Perintah : `{i}unmute` <username/balas ke pesan>
 penggunaan : Membuka bisu orang yang dibisukan.
+
 Perintah : `{i}admins`
 penggunaan : Melihat daftar admin di grup.
+
 Perintah : `{i}bots`
 penggunaan Melihat daftar bot dalam grup.
+
 Perintah : `{i}users` Atau >`{i}users` <nama member>
 penggunaan : Mendapatkan daftar pengguna daam grup.
+
 Perintah : `{i}setgpic` <balas ke gambar>
 penggunaan : Mengganti foto profil grup.
 """
