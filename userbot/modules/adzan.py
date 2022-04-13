@@ -1,3 +1,12 @@
+"""
+Plugin : Adzan
+
+Perintah : `{i}adzan`
+Penggunaan :
+`{i}adzan` <nama kota>
+Memberikan waktu sholat di suatu kota
+contoh : `{i}adzan solo`
+"""
 import json
 
 import requests
@@ -55,5 +64,4 @@ async def get_adzan(adzan):
     await adzan.edit(result)
 
 
-CMD_HELP.update({"adzan": f"\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}adzan` <kota>"
-                 "\n↳ : Memberikan Informasi Waktu Sholat."})
+CMD_HELP.update({"adzan": f"{__doc__.format(i=cmd)}"})
