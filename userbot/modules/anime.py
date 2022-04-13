@@ -4,6 +4,27 @@
 # you may not use this file except in compliance with the License.
 #
 
+"""
+Plugin : anime
+
+Perintah : `{i}anime` <anime>
+Penggunaan: Memberikan informasi Anime.
+Perintah : `{i}manga` <manga name>
+Penggunaan: Memberikan dengan informasi Manga.
+Perintah: `{i}akaizoku` or `{i}akayo` <anime name>
+Penggunaan: Memberikan tautan Unduhan Anime.
+Perintah:`{i}char` <character name>\
+Penggunaan: Memberikan informasi karakter anime.
+Perintah:`{i}upcoming`
+Penggunaan: Memberikan informasi Anime Mendatang.
+Perintah:`{i}scanime` <anime> or `{i}sanime` <anime>
+Penggunaan: Cari anime.
+Perintah:`{i}smanga` <manga>
+Penggunaan: Cari manga.
+Perintah:`{i}whatanime` Balas dengan media.
+Penggunaan: Temukan anime dari file media.
+"""
+
 import asyncio
 import html
 import json
@@ -660,22 +681,4 @@ def is_gif(file):
     return True
 
 
-CMD_HELP.update({
-    "anime":
-    f"`{cmd}anime` <anime>\
-    \nUsage: Returns with Anime information.\
-    \n\n`{cmd}manga` <manga name>\
-    \nUsage: Returns with the Manga information.\
-    \n\n`{cmd}akaizoku` or `{cmd}akayo` <anime name>\
-    \nUsage: Returns with the Anime Download link.\
-    \n\n`{cmd}char` <character name>\
-    \nUsage: Return with character information.\
-    \n\n`{cmd}upcoming`\
-    \nUsage: Returns with Upcoming Anime information.\
-    \n\n`{cmd}scanime` <anime> or .sanime <anime>\
-    \nUsage: Search anime.\
-    \n\n`{cmd}smanga` <manga>\
-    \nUsage: Search manga.\
-    \n\n`{cmd}whatanime` Reply with media.\
-    \nUsage: Find anime from media file."
-})
+CMD_HELP.update({"anime": f"{__doc__.format(i=cmd)}"})
