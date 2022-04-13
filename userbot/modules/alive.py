@@ -3,8 +3,31 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module for getting information about the server. """
 
+"""
+Plugin : alive
+
+Perintah   : `{i}alive`
+penggunaan :
+Cek bot anda berjalan atau tidak
+Perintah   : `{i}sysd` `{i}db` {i}spc
+penggunaan :
+Menampilkan informasi sistem
+Perintah   : `{i}botver`
+penggunaan :
+Menampilkan versi userbot
+Perintah   : `{i}pip`
+penggunaan :
+Menampilkan versi userbot
+
+"""
+
+    f"Cmd: `{cmd}sysd`"
+    "\n↳ : Shows system information using neofetch."
+    f"\n\nCmd: `{cmd}db`"
+    "\n↳ : Shows database related info."
+    f"\n\nCmd: `{cmd}spc`"
+    "\n↳ : Show system specification."
 
 import asyncio
 from asyncio import create_subprocess_exec as asyncrunapp
