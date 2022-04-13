@@ -1,7 +1,22 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
-"""A Plugin to tagall in the chat for @UniBorg and cmd is `.all`"""
+
+"""
+Plugin : tagger
+
+Perintah   : `{i}all`
+penggunaan :
+Untuk Mengetag semua anggota yang ada di group
+Perintah   : `{i}mention`
+penggunaan :
+Untuk Menmention semua anggota yang ada di group tanpa menyebut namanya.
+Perintah   : `{i}emojitag`
+penggunaan :
+Untuk Mengetag semua anggota di grup dengan random emoji berbeda.
+
+**NOTE :** Untuk Memberhentikan Tag ketik `{i}restart`."
+"""
 
 import asyncio
 import random
@@ -21,7 +36,7 @@ class FlagContainer:
     is_active = False
 
 
-@register(outgoing=True, pattern="^.mention$")
+@flicks_cmd(pattern="mention$")
 async def _(event):
     if event.fwd_from:
         return
@@ -34,7 +49,7 @@ async def _(event):
     await bot.send_message(chat, mentions, reply_to=event.message.reply_to_msg_id)
 
 
-@register(outgoing=True, pattern="^.emojitag$")
+@flicks_cmd(pattern="emojitag$")
 async def _(event):
     if event.fwd_from or FlagContainer.is_active:
         return
@@ -77,7 +92,7 @@ async def _(event):
         FlagContainer.is_active = False
 
 
-@register(outgoing=True, pattern="^.all$")
+@flicks_cmd(pattern="all$")
 async def _(event):
     if event.fwd_from or FlagContainer.is_active:
         return
@@ -120,13 +135,4 @@ async def _(event):
         FlagContainer.is_active = False
 
 
-CMD_HELP.update({
-    "tag_all":
-    "`.all`\
-\nUsage: Untuk Mengetag semua anggota yang ada di group.\
-\n\n`.mention`\
-\nUsage: Untuk Menmention semua anggota yang ada di group tanpa menyebut namanya.\
-\n\n`.emojitag`\
-\nUsage: Untuk Mengetag semua anggota di grup dengan random emoji berbeda.\
-\n\n **NOTE :** Untuk Memberhentikan Tag ketik `.restart`."
-})
+CMD_HELP.update({"tagger": f"{__doc__.format(i=cmd)}"})
