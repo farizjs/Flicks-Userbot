@@ -19,15 +19,7 @@ Menampilkan versi userbot
 Perintah   : `{i}pip`
 penggunaan :
 Menampilkan versi userbot
-
 """
-
-    f"Cmd: `{cmd}sysd`"
-    "\n↳ : Shows system information using neofetch."
-    f"\n\nCmd: `{cmd}db`"
-    "\n↳ : Shows database related info."
-    f"\n\nCmd: `{cmd}spc`"
-    "\n↳ : Show system specification."
 
 import asyncio
 from asyncio import create_subprocess_exec as asyncrunapp
@@ -379,29 +371,4 @@ async def amireallyalivereset(ureset):
     await ureset.edit("`" "Successfully reset user for alive!" "`")
 
 
-CMD_HELP.update({
-    "system":
-    f"Cmd: `{cmd}sysd`"
-    "\n↳ : Shows system information using neofetch."
-    f"\n\nCmd: `{cmd}db`"
-    "\n↳ : Shows database related info."
-    f"\n\nCmd: `{cmd}spc`"
-    "\n↳ : Show system specification."
-})
-CMD_HELP.update({
-    "alive":
-    f"Cmd: `{cmd}alive` or `{cmd}flickson` or `{cmd}on` or `{cmd}falive` or `{cmd}xalive"
-    "\n↳ : To see whether your bot is working or not."
-    f"\n\nCmd: `{cmd}aliveu` <text>"
-    "\n↳ : Changes the 'user' in alive to the text you want."
-    f"\n\nCmd: `{cmd}restalive`"
-    "\n↳ : Resets the user to default."
-})
-CMD_HELP.update(
-    {
-        "botversion":
-        f"Cmd: `{cmd}botver`"
-        "\n↳ : Shows the userbot version."
-        f"\n\nCmd: `{cmd}pip` <module(s)>"
-        "\n↳ : Does a search of pip modules(s)."
-    })
+CMD_HELP.update({"alive": f"{__doc__.format(i=cmd)}"})
