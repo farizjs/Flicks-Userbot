@@ -1,4 +1,18 @@
+"""
+Plugin : animasi1
+Kategori : Fun (Biar asik² aja)
 
+Perintah: `{i}sadboy`
+Penggunaan : Biasalah sadboy hikss
+Perintah: `{i}punten` ; `{i}pantau`
+Penggunaan : Coba aja hehehe.
+Perintah: `{i}nah` ; `{i}fuck` ; `{i}huh` ; `{i}hua`
+Penggunaan : Cobain Sendiri.
+Perintah: `{i}bunga` ; `{i}buah`
+Penggunaan : animasi.
+Perintah: `{i}waktu`
+Penggunaan : animasi juga.
+"""
 
 from time import sleep
 from userbot import CMD_HELP
@@ -84,13 +98,4 @@ async def typewriter(typew):
                      "`\n💖<\\  *Tapi Bo'ong Hiyahiyahiya`")
 
 
-CMD_HELP.update({
-    "animasi1":
-    f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}nah` ; `{cmd}fuck` ; `{cmd}huh` ; `{cmd}hua`\
-    \n↳ : Cobain Sendiri.\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}bunga` ; `{cmd}buah`\
-    \n↳ : animasi.\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}waktu`\
-    \n↳ : animasi.\
-"
-})
+CMD_HELP.update({"animasi1": f"{__doc__.format(i=cmd)}"})
