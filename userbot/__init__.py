@@ -1059,14 +1059,13 @@ Voice chat group menu untuk {ALIVE_NAME}
                 cmdhel = str(CMD_HELP[modul_name])
                 if len(cmdhel) > 4030:
                     help_string = (
-                        str(CMD_HELP[modul_name]).replace(
-                            '__', '')[:4030] + "..."
+                        str(CMD_HELP[modul_name])[:4030] + "..."
                         + "\n\nBaca Text Berikutnya Ketik .help "
                         + modul_name
                         + " "
                     )
                 else:
-                    help_string = str(CMD_HELP[modul_name]).replace('`', '')
+                    help_string = str(CMD_HELP[modul_name])
 
                 reply_pop_up_alert = (
                     help_string
