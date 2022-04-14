@@ -3,6 +3,34 @@
 # Recode by @VckyouuBitch
 # From Geez - Project
 
+"""
+Plugin : broadcast
+
+Perintah : `{i}sendto` <category_name>
+Penggunaan : akan mengirim pesan balasan ke semua obrolan dalam kategori yang diberikan.
+
+Perintah : `{i}fwdto` <category_name>
+Penggunaan : akan meneruskan pesan yang dibalas ke semua obrolan di kategori berikan.
+
+Perintah : `{i}addto` <category name>
+Penggunaan : Ini akan menambahkan obrolan / pengguna / saluran ini ke kategori nama yang diberikan.
+
+Perintah : `{i}rmfrom` <category name>
+Penggunaan : Untuk menghapus Obrolan / pengguna / saluran dari nama kategori yang diberikan.
+
+Perintah : `{i}list` <category_name>
+Penggunaan : Akan menampilkan daftar semua obrolan dalam kategori yang diberikan.
+
+Perintah : `{i}listall`
+Penggunaan : Akan menampilkan daftar semua nama kategori.
+
+Perintah : `{i}frmfrom` <category_name/chat_id>
+Penggunaan : Untuk memaksa menghapus chat_id dari nama kategori yang diberikan.
+
+Perintah : `{i}delc` <category_name>
+Penggunaan : Menghapus kategori sepenuhnya di database
+"""
+
 import base64
 from asyncio import sleep
 
@@ -328,25 +356,4 @@ async def catbroadcast_delete(event):
         )
 
 
-CMD_HELP.update(
-    {
-        "siaran": f"**𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : **`siaran`\
-        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}sendto` <category_name>\
-        \n  **Usage : **akan mengirim pesan balasan ke semua obrolan dalam kategori yang diberikan.\
-        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}fwdto` <category_name>\
-        \n  **Usage : **akan meneruskan pesan yang dibalas ke semua obrolan di kategori berikan. \
-        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}addto` <category name>\
-        \n  **Usage : **Ini akan menambahkan obrolan / pengguna / saluran ini ke kategori nama yang diberikan. \
-        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}rmfrom` <category name>\
-        \n  **Usage : **Untuk menghapus Obrolan / pengguna / saluran dari nama kategori yang diberikan. \
-        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}list` <category_name>\
-        \n  **Usage : **Akan menampilkan daftar semua obrolan dalam kategori yang diberikan. \
-        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}listall`\
-        \n  **Usage : **Akan menampilkan daftar semua nama kategori. \
-        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}frmfrom` <category_name/chat_id>\
-        \n  **Usage : **Untuk memaksa menghapus chat_id yang diberikan dari nama kategori yang diberikan berguna ketika Anda meninggalkan obrolan itu atau melarang Anda di sana \
-        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}delc` <category_name>\
-        \n  **Usage : **Menghapus kategori sepenuhnya di database \
-    "
-    }
-)
+CMD_HELP.update({"broadcast": f"{__doc__.format(i=cmd)}"})
