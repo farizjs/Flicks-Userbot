@@ -10,6 +10,27 @@
 #
 # Support @GeezSupport & @GeezProjects
 #
+"""
+Plugin : vctools
+
+Perintah : `{i}startvc`
+Penggunaan : **Untuk Memulai voice chat group
+
+Perintah : `{i}stopvc`
+Penggunaan : Untuk Memberhentikan voice chat group
+
+Perintah : `{i}vctitle` <title vcg>
+Penggunaan : Untuk Mengubah title/judul voice chat group
+
+Perintah : `{i}vcinvite`
+Penggunaan : Mengundang Member group ke voice chat group
+
+Perintah : `{i}joinvc`
+Penggunaan : Untuk Join VC Group
+
+Perintah : `{i}leavevc`
+Penggunaan : Untuk Turun Dari VC Group
+"""
 
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
@@ -103,22 +124,4 @@ async def change_title(e):
     except Exception as ex:
         await edit_delete(e, f"**ERROR:** `{ex}`")
 
-
-CMD_HELP.update(
-    {
-        "vctools": f"**Plugin : **`vctools`\
-        \n\n  Command :** `{cmd}startvc`\
-        \n  • : **Untuk Memulai voice chat group\
-        \n\n  Command :** `{cmd}stopvc`\
-        \n  • : **Untuk Memberhentikan voice chat group\
-        \n\n  Command :** `{cmd}vctitle` <title vcg>\
-        \n  • : **Untuk Mengubah title/judul voice chat group\
-        \n\n  Command :** `{cmd}vcinvite`\
-        \n  • : **Mengundang Member group ke voice chat group\
-        \n\n  Command :** `{cmd}joinvc`\
-        \n  • : Untuk Join VC Group\
-        \n\n  Command :** `{cmd}leavevc`\
-        \n  • : Untuk Turun Dari VC Group\
-    "
-    }
-)
+CMD_HELP.update({"vctools": f"{__doc__.format(i=cmd)}"})
