@@ -277,29 +277,4 @@ async def scam(results, lim):
     return imglinks
 
 
-CMD_HELP.update({
-    "random":
-    f"Command: `{cmd}random <item1> <item2> ... <itemN>`\
-    \n↳ : Get a random item from the list of items.",
-    "sleep":
-    f"Command: `{cmd}sleep <seconds>`\
-    \n↳ : Let yours snooze for a few seconds.",
-    "shutdown":
-    f"Command: `{cmd}shutdown`\
-    \n↳ : Shutdown bot",
-    "repo":
-    f"Command: `{cmd}repo`\
-    \n↳ : Github Repo Userbot",
-    "readme":
-    f"Command `{cmd}readme`\
-    \n↳ : Provide links to setup the userbot and it's modules.",
-    "repeat":
-    f"Command: `{cmd}repeat <no> <text>`\
-    \n↳ : Repeats the text for a number of times. Don't confuse this with spam tho.",
-    "restart":
-    f"Command: `{cmd}restart`\
-    \n↳ : Restarts the bot !!",
-    "raw":
-    f"Command: `{cmd}raw`\
-    \n↳ : Get detailed JSON-like formatted data about replied message."
-})
+CMD_HELP.update({"utlis": f"{__doc__.format(i=cmd)}"})
