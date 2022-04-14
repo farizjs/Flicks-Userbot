@@ -2,9 +2,18 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License
-""" Userbot module containing commands related to the \
-    Information Superhighway (yes, Internet). """
+"""
+Plugin : ping
 
+Perintah : `{i}ping` | `{i}lping` | `{i}xping` | `{i}sping` | `{i}fping`
+Penggunaan : Untuk Menunjukkan Ping Bot Anda
+
+Perintah : `{i}speed`
+Penggunaan : Untuk Menunjukkan Kecepatan Jaringan Anda
+
+Perintah : `{i}pong` | `{i}test`
+Penggunaan : Sama Seperti Perintah Ping
+"""
 import asyncio
 import time
 import redis
@@ -275,15 +284,4 @@ async def pingme(pong):
     await pong.edit("**Test Ping!**\n`%sms`" % (duration))
 
 
-CMD_HELP.update(
-    {
-        "ping": f"**• Plugin Ping •**\
-        \n\n  •  **Perintah :** `{cmd}ping` | `{cmd}lping` | `{cmd}xping` | `{cmd}sping` | `{cmd}fping`\
-        \n  •  **Function :** Untuk Menunjukkan Ping Bot Anda\
-        \n\n  •  **Perintah :*** `{cmd}speed`\
-        \n  •  **Function :** Untuk Menunjukkan Kecepatan Jaringan Anda\
-        \n\n  •  **Perintah :** `{cmd}pong` | `{cmd}test`\
-        \n  •  **Function :** Sama Seperti Perintah Ping\
-    "
-    }
-)
+CMD_HELP.update({"ping": f"{__doc__.format(i=cmd)}"})
