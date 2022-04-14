@@ -10,12 +10,15 @@ Plugin : alive
 Perintah   : `{i}alive`
 penggunaan :
 Cek bot anda berjalan atau tidak
+
 Perintah   : `{i}sysd` `{i}db` `{i}spc`
 penggunaan :
 Menampilkan informasi sistem
+
 Perintah   : `{i}botver`
 penggunaan :
 Menampilkan versi userbot
+
 Perintah   : `{i}pip`
 penggunaan :
 Menampilkan versi userbot
