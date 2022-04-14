@@ -2,6 +2,23 @@
 # Recode by @farizjs
 # FROM Flicks-Userbot <https://github.com/farizjs/Flicks-Userbot>
 # t.me/TheFlicksUserbot
+
+"""
+Plugin : filter
+
+Perintah : `{i}filters`
+Penggunaan: Melihat filter userbot yang aktif di obrolan.
+
+Perintah : `{i}filter` <keyword> terus balas ke pesan
+Penggunaan: Bot Akan Membalas Jika Ada Yang Menyebut 'keyword' yang dibuat, bisa dipake ke media/sticker/vn/file.
+
+Perintah : `{i}stop` <keyword>
+Penggunaan: Untuk Nonaktifkan Filter. 
+
+Perintah : `{i}rmfilters`
+Penggunaan: Untuk Nonaktifkan semua Filter di suatu grup. "
+"""
+
 import re
 
 from telethon.utils import get_display_name
@@ -160,16 +177,5 @@ async def on_all_snip_delete(event):
     else:
         await edit_or_reply(event, "Tidak ada filter di grup ini")
 
-CMD_HELP.update({
-    "filter":
-    f"`{cmd}filters`\
-    \nUsage: Melihat filter userbot yang aktif di obrolan.\
-    \n\n`{cmd}filter` <keyword> <balasan> atau balas ke pesan ketik .filter <keyword>\
-    \nUsage: Membuat filter di obrolan.\
-    \nBot Akan Membalas Jika Ada Yang Menyebut 'keyword' yang dibuat.\
-    \nBisa dipake ke media/sticker/vn/file.\
-    \n\n`{cmd}stop` <keyword>\
-    \nUsage: Untuk Nonaktifkan Filter. \
-    \n\n`{cmd}rmfilters` \
-    \nUsage: Untuk Nonaktifkan semua Filter di suatu grup. "
-})
+
+CMD_HELP.update({"filter": f"{__doc__.format(i=cmd)}"})
