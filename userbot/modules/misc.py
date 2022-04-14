@@ -1,3 +1,31 @@
+"""
+Plugin : utils
+
+Perintah: `{i}random <item1> <item2> ... <itemN>`
+Penggunaan : Dapatkan item acak dari daftar item.
+
+Perintah: `{i}sleep <detik>`
+Penggunaan : Biarkan userbot Anda tertidur selama beberapa detik.
+
+Perintah: `{i}shutdown`
+Penggunaan : Mematikan userbot
+
+Perintah: `{i}repo`
+Penggunaan : Github Repo Userbot
+
+Perintah: `{i}readme`
+Penggunaan : Berikan tautan untuk mengatur userbot dan modulnya.
+
+Perintah: `{i}repeat <no> <text>`
+Penggunaan : Mengulangi teks untuk beberapa kali.
+
+Perintah: `{i}restart`
+Penggunaan : Mulai ulang userbot !!
+
+Perintah: `{i}raw`
+Penggunaan : Dapatkan data berformat mirip JSON terperinci tentang pesan yang dibalas.
+"""
+
 from random import randint
 from time import sleep
 from os import execl
