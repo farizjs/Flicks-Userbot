@@ -45,14 +45,10 @@ PREV_REPLY_MESSAGE = {}
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    " ─────「Flicks-Userbot」─────\n"
-    f"Dimohon Untuk Tidak Melakukan Spam Ke Room Chat ini\n"
-    f"Karena bisa menggangu {ALIVE_NAME} [⚠️]({PMPERMIT_PIC})\n"
-    f"Jika Anda Melakukan Spamming, Anda Akan Terblokir Otomatis\n"
-    " ➖➖➖➖➖➖➖➖➖➖\n"
-    f" **Owner :** {ALIVE_NAME} \n"
-    " **Pesan otomatis by Flicks-Userbot** \n"
-    f" ➖➖➖➖➖➖➖➖➖➖ ")
+    f"**PMSecurity of** {ALIVE_NAME}!"
+    "\n\nSilahkan beri alasan mengapa anda chat saya"
+    "\nAtau tunggu saya untuk merespon atau Anda akan **diblokir dan dilaporkan sebagai spam!!**")
+
 
 # =================================================================
 
