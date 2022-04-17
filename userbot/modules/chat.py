@@ -447,16 +447,12 @@ CMD_HELP.update(
         "chat": f"**Plugin ✨ :** `Global Chat`\
         \n\n  •  **Perintah :** `{cmd}getid`\
         \n  •  **Function : **Dapatkan ID dari media Telegram mana pun, atau pengguna mana pun\
-        \n\n  •  **Perintah :** `{cmd}getbot`\
-        \n  •  **Function : **Dapatkan List Bot dalam grup caht\
         \n\n  •  **Perintah :** `{cmd}logit`\
         \n  •  **Function : **Meneruskan pesan yang Anda balas di grup log bot Anda\
         \n\n  •  **Perintah :** `{cmd}mutechat`\
         \n  •  **Function : **membisukan Grup chat (membutuhkan hak admin)\
         \n\n  •  **Perintah :** `{cmd}unmutechat`\
         \n  •  **Function : **Membuka Grup chat yang dibisukan (membutuhkan hak admin)\
-        \n\n  •  **Perintah :** `{cmd}getbot`\
-        \n  •  **Function : **Dapatkan Daftar Bot dalam grup chat\
         \n\n  •  **Perintah :** `{cmd}logit`\
         \n  •  **Function : **Meneruskan pesan yang Anda balas di grup log bot Anda\
         \n\n  •  **Perintah :** `{cmd}link` <username/userid>: <opsional teks> (atau) Reply pesan `.link` <teks opsional>\
@@ -474,7 +470,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "keluar": f"** Plugin :** `Kickme Userbot`\
+        "kickme": f"** Plugin :** `Kickme Userbot`\
         \n\n  •  **Perintah :** `{cmd}kickme`\
         \n  •  **Function : **Keluar grup dengan menampilkan pesan lihat sendiri\
         \n\n  •  **Perintah :** `{cmd}leave`\
