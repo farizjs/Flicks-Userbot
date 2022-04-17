@@ -15,6 +15,7 @@ import os
 import time
 import re
 import redis
+from random import choice
 
 from sys import version_info
 from logging import basicConfig, getLogger, INFO, DEBUG
@@ -257,6 +258,18 @@ ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 # Sticker Custom Pack Name
 S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
+# Constants
+FLICKS_IMAGES = [
+    f"https://telegra.ph/file/{_}.jpg"
+    for _ in [
+        "e83f48bf76e7e143a36ab",
+        "1bf65b201cc7afc8f273e",
+        "ae5cff8466004b0b81429",
+        "b0d79d4c0bd5d955cd59a",
+        "971590852b73296ba0ed3",
+    ]
+]
+
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
     "ALIVE_LOGO") or "https://telegra.ph/file/2d75f18b79fd17217f44c.jpg"
@@ -266,8 +279,9 @@ PMPERMIT_PIC = os.environ.get(
     "PMPERMIT_PIC") or "https://telegra.ph/file/46a00f338fd3db59e5a65.jpg"
 
 # Default .helpme Logo
-INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/46a00f338fd3db59e5a65.jpg"
+INLINE_PIC = os.environ.get("INLINE_PIC")
+if INLINE_PIC is None:
+    INLINE_PIC = choice(FLICKS_IMAGES)
 
 # Picture For VCPLUGIN
 PLAY_PIC = (os.environ.get("PLAY_PIC")
