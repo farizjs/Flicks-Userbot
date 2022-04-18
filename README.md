@@ -1,24 +1,28 @@
 #         FLICKS-USERBOT​    
 
-</p>
-<p align="center">
-    <a href="https://www.python.org/" alt="made-with-python"> <img src="https://img.shields.io/badge/Made%20with-Python-black.svg?style=flat-square&logo=python&logoColor=blue&color=red" /></a>
-    <a href="https://github.com/fjgaming212/Flicks-Userbot/graphs/commit-activity" alt="Maintenance"> <img src="https://img.shields.io/badge/Maintained%3F-yes-red.svg?style=flat-square" /></a>
-    <a href="https://app.codacy.com/gh/fjgaming212/Flicks-Userbot/dashboard"> <img src="https://img.shields.io/codacy/grade/a723cb464d5a4d25be3152b5d71de82d?color=red&logo=codacy&style=flat-square" alt="Codacy" /></a><br>
-    <a href="https://github.com/fjgaming212/Flicks-Userbot"> <img src="https://img.shields.io/github/repo-size/fjgaming212/Flicks-Userbot?color=red&logo=github&logoColor=blue&style=flat-square" /></a>
-    <a href="https://github.com/fjgaming212/Flicks-Userbot/commits/main"> <img src="https://img.shields.io/github/last-commit/fjgaming212/Flicks-Userbot?color=red&logo=github&logoColor=blue&style=flat-square" /></a>
-    <a href="https://github.com/fjgaming212/Flicks-Userbot/issues"> <img src="https://img.shields.io/github/issues/fjgaming212/Flicks-Userbot?color=red&logo=github&logoColor=blue&style=flat-square" /></a>
-    <a href="https://github.com/fjgaming212/Flicks-Userbot/fork"> <img src="https://img.shields.io/github/forks/fjgaming212/Flicks-Userbot?color=red&logo=github&logoColor=blue&style=flat-square" /></a>  
-    <a href="https://github.com/fjgaming212/Flicks-Userbot/network/members"> <img src="https://img.shields.io/github/stars/fjgaming212/Flicks-Userbot?color=red&logo=github&logoColor=blue&style=flat-square" /></a>  
-</p>
+
+[![Size](https://img.shields.io/github/repo-size/farizjs/Flicks-Userbot?style=flat-square&color=green)](https://github.com/farizjs/Flicks-Userbot)  [![Stars](https://img.shields.io/github/stars/farizjs/flicks-userbot?style=flat-square&color=yellow)](https://github.com/farizjs/flicks-userbot/stargazers)  
+[![](https://img.shields.io/badge/FlicksUserbot-v.1.5.9-blue)](#)
+[![Forks](https://img.shields.io/github/forks/farizjs/flicks-userbot?style=flat-square&color=orange)](https://github.com/farizjs/flicks-userbot/fork)
+[![Python](https://img.shields.io/badge/Python-v3.10.2-blue)](https://www.python.org/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/farizjs/flicks-userbot/graphs/commit-activity)
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/farizjs/flicks-userbot)
+[![Contributors](https://img.shields.io/github/contributors/farizjs/flicks-userbot?style=flat-square&color=green)](https://github.com/farizjs/flicks-userbot/graphs/contributors)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
+[![LICENSE](https://img.shields.io/badge/License-MIT-blue)](https://github.com/farizjs/flicks-userbot/blob/Flicks-Userbot/LICENSE)
+----
 
 <p align="center">
   <img src="https://telegra.ph/file/fc57a8c8022bbd2623458.jpg">
     </p>
 
-Flicks-Userbot adalah userbot Telegram modular yang berjalan di Python 3.9 dengan database sqlalchemy.
+Flicks-Userbot adalah sebuah repository berbasis [Paperplane Userbot](https://github.com/RaphielGang/Telegram-Paperplane) yang di rancang untuk membantu akun pengguna telegram dalam menjalankan aktifitas di dalamnya.
 
-Berbasis [Paperplane Userbot](https://github.com/RaphielGang/Telegram-Paperplane) Saya membuat repository ini untuk memilih dan menambahkan beberapa modul yang saya butuhkan dengan banyak perubahan, fitur dan module.
+Dengan memiliki berbagai fitur yang menarik dan menyenangkan.
+
+Bahasa code ini adalah [Python 3.9](python.org)
+
+Terimakasih telah menggunakan repository ini.
 
     
 <p align="center">&nbsp;</p>
@@ -28,7 +32,7 @@ Berbasis [Paperplane Userbot](https://github.com/RaphielGang/Telegram-Paperplane
              ⚠️ PERINGATAN UNTUK ANDA ⚠️ ️
    Flicks-Userbot digunakan untuk membantu aktifitas akun anda di telegram
    Kami tidak bertanggung jawab atas apa yang anda salah gunakan pada repository ini!
-      Hati hati dalam penggunaan pada repository ini !
+        Hati hati dalam penggunaan pada repository ini !
    Jika salah satu member salah gunakan repository ini , kami terpaksa harus melakukan gban kepada anda 
   Jangan pernah sekali sekali menyalah gunakan repository ini
 ```
@@ -73,7 +77,7 @@ Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t
 🔰 **THANKS YOU TO**
 *   [Kennedy](https://github.com/KennedyProject/KEN-UBOT)    Ken - Userbot
 *   [Apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
-*   [Vicky](https://github.com/Vckyou/Geez-Project)    Geez - Project 
+*   [Vicky](https://github.com/Vckyou/GeezProjects)    Geez - Project 
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
 *   [Risman](https://github.com/mrismanaziz/Man-Userbot)   Man - Userbot
 *   [TeamUltroid](https://github.com/TeamUltroid/Ultroid) Ultroid - Userbot
