@@ -12,9 +12,6 @@
 [![LICENSE](https://img.shields.io/badge/License-MIT-blue)](https://github.com/farizjs/flicks-userbot/blob/Flicks-Userbot/LICENSE)
 ----
 
-<p align="center">
-  <img src="https://telegra.ph/file/fc57a8c8022bbd2623458.jpg">
-    </p>
 
 Flicks-Userbot adalah sebuah repository berbasis [Paperplane Userbot](https://github.com/RaphielGang/Telegram-Paperplane) yang di rancang untuk membantu akun pengguna telegram dalam menjalankan aktifitas di dalamnya.
 
@@ -24,7 +21,6 @@ Bahasa code ini adalah [Python 3.9](python.org)
 
 Terimakasih telah menggunakan repository ini.
 
-    
 <p align="center">&nbsp;</p>
 
 ### Disclaimer 
@@ -49,13 +45,22 @@ Terimakasih telah menggunakan repository ini.
 
 
 ## DEPLOY TO HEROKU 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/farizjs/friendly-guacamole"> <img src="https://www.herokucdn.com/deploy/button.svg" /></a></p>
+<h4>DEPLOY VIA BOT</h4>
+<a href="https://telegram.dog/XTZ_HerokuBot?start=ZmpnYW1pbmcyMTIvZmxpY2tzLWRlcGxveS11Ym90IEZsaWNrcy1Vc2VyYm90">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="deploy">
+</a>
+
+
+<h4>DEPLOY VIA WEBSITE</h4>
+<a href="https://heroku.com/deploy?template=https://github.com/farizjs/friendly-guacamole">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="deploy">
+</a>
+
 
 ### Tutorial Deploy
 ```
-Dapatkan API_KEY dan API_HASH di web my.telegram.org.
+Dapatkan API_ID dan API_HASH di web my.telegram.org.
 Dapatkan STRING_SESSION di web replit
-Dapatkan BOT_TOKEN dan BOT_USERNAME di @BotFather
 Dapatkan HEROKU_API_KEY di dashboard.heroku.com/account
 Terus Nyalakan, tutorial lengkap cek di Channel Update
 ```
@@ -65,7 +70,7 @@ Terus Nyalakan, tutorial lengkap cek di Channel Update
 Gabung [Grup Support](https://t.me/FlicksSupport) Dan [Channel Update](https://t.me/InfoFlicksUserbot) Untuk Mengetahui update userbot kami
 
 
-####  <b>© Credits</b></summary>
+### © Credits 
 
 ⚡ **CONTRIBUTOR AND TEAM**
 *   [Fariz](https://github.com/fjgaming212/Flicks-Userbot)    Flicks - Userbot
