@@ -444,7 +444,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "chat": f"**Plugin ✨ :** `Global Chat`\
+        "chat": f"**Plugin :** `Chat`\
         \n\n  •  **Perintah :** `{cmd}getid`\
         \n  •  **Function : **Dapatkan ID dari media Telegram mana pun, atau pengguna mana pun\
         \n\n  •  **Perintah :** `{cmd}logit`\
@@ -453,16 +453,14 @@ CMD_HELP.update(
         \n  •  **Function : **membisukan Grup chat (membutuhkan hak admin)\
         \n\n  •  **Perintah :** `{cmd}unmutechat`\
         \n  •  **Function : **Membuka Grup chat yang dibisukan (membutuhkan hak admin)\
-        \n\n  •  **Perintah :** `{cmd}logit`\
-        \n  •  **Function : **Meneruskan pesan yang Anda balas di grup log bot Anda\
         \n\n  •  **Perintah :** `{cmd}link` <username/userid>: <opsional teks> (atau) Reply pesan `.link` <teks opsional>\
         \n  •  **Function : **Membuat link permanen ke profil pengguna dengan teks ubahsuaian opsional\
         \n\n  •  **Perintah :** `{cmd}regexninja` on/off\
-        \n  •  **Function : **Mengaktifkan/menonaktifkan modul ninja regex secara global. Modul Regex Ninja membantu menghapus pesan pemicu bot regex\
+        \n  •  **Function : **Mengaktifkan/menonaktifkan modul ninja regex secara global. \
         \n\n  •  **Perintah :** `{cmd}chatinfo` [opsional: <reply/tag/chat id/invite link>]\
         \n  •  **Function : **Mendapatkan info obrolan, Beberapa info mungkin dibatasi karena izin yang hilang\
         \n\n  •  **Perintah :** `{cmd}invite`\
-        \n  •  **Function : **Menambahkan pengguna ke obrolan, bukan ke pesan pribadi\
+        \n  •  **Function : **Menambahkan pengguna ke grup \
     "
     }
 )
