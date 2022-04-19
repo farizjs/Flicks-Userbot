@@ -1134,7 +1134,7 @@ Voice chat group menu untuk {ALIVE_NAME}
             )
         )
         async def on_plug_in_callback_query_handler(e):
-            if event.query.user_id == uid:  # pylint:disable=E0602
+            if e.query.user_id == uid:  # pylint:disable=E0602
                 x = (e.data_match.group(1)).decode()
                 user = e.query.user_id
                 get = None
@@ -1206,7 +1206,7 @@ Voice chat group menu untuk {ALIVE_NAME}
             )
         )
         async def on_plug_in_callback_query_handler(e):
-            if event.query.user_id == uid:  # pylint:disable=E0602
+            if e.query.user_id == uid:  # pylint:disable=E0602
                 m = [
                     "AC",
                     "C",
