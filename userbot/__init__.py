@@ -1200,6 +1200,43 @@ Voice chat group menu untuk {ALIVE_NAME}
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
                 await e.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"recalc")
+            )
+        )
+        async def on_plug_in_callback_query_handler(e):
+            if event.query.user_id == uid:  # pylint:disable=E0602
+                m = [
+                    "AC",
+                    "C",
+                    "⌫",
+                    "%",
+                    "7",
+                    "8",
+                    "9",
+                    "+",
+                    "4",
+                    "5",
+                    "6",
+                    "-",
+                    "1",
+                    "2",
+                    "3",
+                    "x",
+                    "00",
+                    "0",
+                    ".",
+                    "÷",
+                ]
+                tultd = [Button.inline(f"{x}", data=f"calc{x}") for x in m]
+                lst = list(zip(tultd[::4], tultd[1::4], tultd[2::4], tultd[3::4]))
+                lst.append([Button.inline("=", data="calc=")])
+                await e.edit("• Flicks Inline Calculator •", buttons=lst)
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
+                await e.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
         async def on_pm_click(event):
             if event.query.user_id == uid:
