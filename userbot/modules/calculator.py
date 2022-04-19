@@ -1,14 +1,44 @@
 # Copyright (C) 2021 Catuserbot <https://github.com/sandy1709/catuserbot>
+# Copyright (C) 2021 Ultroid <https://github.com/Teamultroid/Ultroid>
 # Recode by @farizjs
 # FROM Flicks-Userbot <https://github.com/farizjs/Flicks-Userbot>
 # t.me/TheFlicksUserbot
+"""
+Plugin : Calculator
+
+Perintah : `{i}icalc`
+Penggunaan : Inline Kalkulator
+
+Perintah : `{i}calc`
+Penggunaan : Alternatif jika `{i}icalc` tidak dapat digunakan
+"""
 
 import io
 import sys
 import traceback
 
-from userbot import CMD_HELP, CMD_HANDLER as hai
+from userbot import BOT_USERNAME, CMD_HELP, CMD_HANDLER as hai
 from userbot.utils import flicks_cmd, edit_or_reply
+
+
+@flicks_cmd(pattern="icalc")
+async def yardim(event):
+    try:
+        botusername = BOT_USERNAME
+        if botusername is not None:
+            results = await event.client.inline_query(botusername, "calc")
+            await results[0].click(
+                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+            )
+            await event.delete()
+        else:
+            await event.edit(
+                f"`Botnya tidak berfungsi! Silahkan atur vars `BOT_TOKEN` dan `BOT_USERNAME` dengan benar.\ntau gunakan perintah `{hai}set var BOT_TOKEN` <token> dan `{hai}set var BOT_USERNAME` <Username Bot mu>."
+            )
+    except Exception:
+        return await event.edit(
+            f"**Anda tidak dapat mengirim inline menu dalam obrolan ini, sebagai alternatif, silakan gunakan perintah** `{hai}calc`"
+        )
 
 
 @flicks_cmd(pattern="calc(?: |$)(.*)*")
@@ -52,7 +82,4 @@ async def aexec(code, event):
     return await locals()["__aexec"](event)
 
 
-CMD_HELP.update({"calculator": f"{hai}calc\n"
-                 f"usage : Menyelesaikan permasalahan matematika dasar.\n"
-                 "Memecahkan persamaan matematika yang diberikan dengan aturan BODMAS.\n"
-                 f"contoh : `{hai}calc 2+9`, `{hai}calc 2*2`, `{hai}calc 7-2`, `{hai}calc 9/3`"})
+CMD_HELP.update({"calculator": f"{__doc__.format(i=hai)}"})
