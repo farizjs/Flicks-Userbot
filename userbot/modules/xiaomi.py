@@ -4,28 +4,28 @@ Plugin : xiaomi
 Hanya untuk perangkat Xiaomi!
 
 
-`{i}firmware` (codename)\
-Penggunaan : Dapatkan Firmware terbaru\
+`{i}firmware` (codename)
+Penggunaan : Dapatkan Firmware terbaru
 
-`{i}pb` (codename)\
-Penggunaan : Dapatkan Pemulihan PitchBlack terbaru\
+`{i}pb` (codename)
+Penggunaan : Dapatkan Pemulihan PitchBlack terbaru
 
-`{i}specs` (codename)\
-Penggunaan : Dapatkan informasi spesifikasi cepat tentang perangkat\
+`{i}specs` (codename)
+Penggunaan : Dapatkan informasi spesifikasi cepat tentang perangkat
 
-`{i}fastboot` (codename)\
-Penggunaan : Dapatkan MIUI fastboot terbaru\
+`{i}fastboot` (codename)
+Penggunaan : Dapatkan MIUI fastboot terbaru
 
-`{i}recovery` (codename)\
-Penggunaan : Dapatkan MIUI pemulihan terbaru\
+`{i}recovery` (codename)
+Penggunaan : Dapatkan MIUI pemulihan terbaru
 
-`{i}eu` (codename)\
-Penggunaan : Dapatkan rom xiaomi.eu terbaru\
+`{i}eu` (codename)
+Penggunaan : Dapatkan rom xiaomi.eu terbaru
 
-`{i}vendor` (codename)\
-Penggunaan : mengambil vendor terbaru\
+`{i}vendor` (codename)
+Penggunaan : mengambil vendor terbaru
 
-`{i}of` (codename)\
+`{i}of` (codename)
 Penggunaan : Dapatkan Pemulihan ORangeFox terbaru
 """
 
