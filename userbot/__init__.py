@@ -478,6 +478,34 @@ with bot:
         flickslogo = INLINE_PIC
         plugins = CMD_HELP
         vr = BOT_VER
+        CALC = {}
+
+        m = [
+            "AC",
+            "C",
+            "⌫",
+            "%",
+            "7",
+            "8",
+            "9",
+            "+",
+            "4",
+            "5",
+            "6",
+            "-",
+            "1",
+            "2",
+            "3",
+            "x",
+            "00",
+            "0",
+            ".",
+            "÷",
+        ]
+        tultd = [Button.inline(f"{x}", data=f"calc{x}") for x in m]
+        lst = list(zip(tultd[::4], tultd[1::4], tultd[2::4], tultd[3::4]))
+        lst.append([Button.inline("=", data="calc=")])
+
 
         main_help_button = [
             [
@@ -708,6 +736,9 @@ with bot:
                     ),
                     buttons=main_help_button,
                 )
+            elif query.startswith("calc"):
+                result = event.builder.article("Calc", text="• Flicks Inline Calculator •", buttons=lst)
+
             elif query.startswith("pmpermit"):
                 TELEBT = USER_BOT_NO_WARN
                 result = builder.article(
@@ -1096,6 +1127,78 @@ Voice chat group menu untuk {ALIVE_NAME}
             else:
                 reply_pop_up_alert = f"""Jangan Menggunakan Milik {ALIVE_NAME} !"""
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"calc(.*)")
+            )
+        )
+        async def on_plug_in_callback_query_handler(e):
+            if event.query.user_id == uid:  # pylint:disable=E0602
+                x = (e.data_match.group(1)).decode()
+                user = e.query.user_id
+                get = None
+                if x == "AC":
+                    if CALC.get(user):
+                        CALC.pop(user)
+                    await e.edit(
+                        "• Flicks Inline Calculator •",
+                        buttons=[Button.inline("Buka Kalkulator Lagi", data="recalc")],
+                    )
+                elif x == "C":
+                    if CALC.get(user):
+                        CALC.pop(user)
+                    await e.answer("cleared")
+                elif x == "⌫":
+                    if CALC.get(user):
+                        get = CALC[user]
+                    if get:
+                        CALC.update({user: get[:-1]})
+                        await e.answer(str(get[:-1]))
+                elif x == "%":
+                    if CALC.get(user):
+                        get = CALC[user]
+                    if get:
+                        CALC.update({user: get + "/100"})
+                        await e.answer(str(get + "/100"))
+                elif x == "÷":
+                    if CALC.get(user):
+                        get = CALC[user]
+                    if get:
+                        CALC.update({user: get + "/"})
+                        await e.answer(str(get + "/"))
+                elif x == "x":
+                    if CALC.get(user):
+                        get = CALC[user]
+                    if get:
+                        CALC.update({user: get + "*"})
+                        await e.answer(str(get + "*"))
+                elif x == "=":
+                    if CALC.get(user):
+                        get = CALC[user]
+                    if get:
+                        if get.endswith(("*", ".", "/", "-", "+")):
+                            get = get[:-1]
+                        out = eval(get)
+                        try:
+                            num = float(out)
+                            await e.answer(f"Answer : {num}", cache_time=0, alert=True)
+                        except BaseException:
+                            CALC.pop(user)
+                            await e.answer("Kesalahan", cache_time=0, alert=True)
+                    await e.answer("None")
+                else:
+                    if CALC.get(user):
+                        get = CALC[user]
+                    if get:
+                        CALC.update({user: get + x})
+                        return await e.answer(str(get + x))
+                    CALC.update({user: x})
+                    await e.answer(str(x))
+
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
+                await e.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
         async def on_pm_click(event):
