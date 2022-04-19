@@ -1,3 +1,11 @@
+"""
+Plugin : allban
+Perintah : `{i}allban`
+Fungsi : Blokir semua member dengan 1 perintah
+
+**!!! WARNING !!!**\
+"""
+
 from time import sleep
 from telethon.tl.types import ChatBannedRights
 from telethon.tl.functions.channels import EditBannedRequest
@@ -37,11 +45,5 @@ async def testing(event):
         await sleep(.5)
     await event.edit("**Perintah berhasil di jalankan**\n\n__Semua member telah terblokir__ 🙂")
 
-CMD_HELP.update(
-    {
-        "allban": f"**• Plugin Allban •**\
-        \n\n  •  **Perintah :** `{cmd}allban`\
-        \n  •  **Function :** Blokir semua member dengan 1 perintah\n\n**!!! WARNING !!!**\
-    "
-    }
-)
+CMD_HELP.update({"allban": f"{__doc__.format(i=cmd)}"})
+
