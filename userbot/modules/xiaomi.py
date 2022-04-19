@@ -1,12 +1,41 @@
 # created by @eve_enryu
+"""
+Plugin : xiaomi
+Hanya untuk perangkat Xiaomi!
+
+
+`{i}firmware` (codename)\
+Penggunaan : Dapatkan Firmware terbaru\
+
+`{i}pb` (codename)\
+Penggunaan : Dapatkan Pemulihan PitchBlack terbaru\
+
+`{i}specs` (codename)\
+Penggunaan : Dapatkan informasi spesifikasi cepat tentang perangkat\
+
+`{i}fastboot` (codename)\
+Penggunaan : Dapatkan MIUI fastboot terbaru\
+
+`{i}recovery` (codename)\
+Penggunaan : Dapatkan MIUI pemulihan terbaru\
+
+`{i}eu` (codename)\
+Penggunaan : Dapatkan rom xiaomi.eu terbaru\
+
+`{i}vendor` (codename)\
+Penggunaan : mengambil vendor terbaru\
+
+`{i}of` (codename)\
+Penggunaan : Dapatkan Pemulihan ORangeFox terbaru
+"""
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot import bot, CMD_HELP
-from userbot.events import register
+from userbot import bot, CMD_HELP, CMD_HANDLER as cmd
+from userbot.utils import flicks_cmd
 
 
-@register(outgoing=True, pattern="^.firmware(?: |$)(.*)")
+@flicks_cmd(pattern="firmware(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -29,7 +58,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.fastboot(?: |$)(.*)")
+@flicks_cmd(pattern="fastboot(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -52,7 +81,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.recovery(?: |$)(.*)")
+@flicks_cmd(pattern="recovery(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -75,7 +104,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.pb(?: |$)(.*)")
+@flicks_cmd(pattern="pb(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -98,7 +127,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.of(?: |$)(.*)")
+@flicks_cmd(pattern="of(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -121,7 +150,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.eu(?: |$)(.*)")
+@flicks_cmd(pattern="eu(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -144,7 +173,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.vendor(?: |$)(.*)")
+@flicks_cmd(pattern="vendor(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -167,7 +196,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.specs(?: |$)(.*)")
+@flicks_cmd(pattern="specs(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -190,22 +219,4 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-CMD_HELP.update({
-    "xiaomi":
-    "For Xiaomeme devices only!\
-\n\n`.firmware` (codename)\
-     \nUsage : Get lastest Firmware\
-\n\n`.pb` (codename)\
-     \nUsage : Get latest PitchBlack Recovery\
-\n\n`.specs` (codename)\
-     \nUsage : Get quick spec information about device\
-\n\n`.fastboot` (codename)\
-     \nUsage : Get latest fastboot MIUI\
-\n\n`.recovery` (codename)\
-     \nUsage : Get latest recovery MIUI\
-\n\n`.eu` (codename)\
-    \nUsage: Get latest xiaomi.eu rom\
-\n\n`.vendor` (codename)\
-    \nUsage: fetches latest vendor\
-\n\n`.of` (codename)\
-     \nUsage : Get latest ORangeFox Recovery"})
+CMD_HELP.update({"xiaomi": f"{__doc__.format(i=cmd)}"})
