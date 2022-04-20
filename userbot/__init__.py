@@ -343,7 +343,7 @@ API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 
 # Inline bot helper
 BOT_TOKEN = os.environ.get("BOT_TOKEN") or None
-BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
+BOT_USERNAME = os.environ.get("BOT_USERNAME", "bot")
 
 
 # Init Mongo
@@ -466,10 +466,12 @@ with bot:
 
         dugmeler = CMD_HELP
         me = bot.get_me()
+        asst = tgbot.get_me()
         logo = ALIVE_LOGO
         user = bot.get_me()
         uid = user.id
         ALIVE_NAME = user.first_name
+        BOT_USERNAME = asst.username
         owner = user.first_name
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
