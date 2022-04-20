@@ -1,7 +1,31 @@
-"""
-   Heroku manager for your userbot
-"""
+# Copyright (C) 2020 Adek Maulana.
+# All rights reserved.
 
+###
+#   Heroku manager for your userbot
+###
+"""
+Plugin : heroku
+
+
+Perintah: `{i}usage`|`{i}kuota`|`{i}dyno`
+Penggunaan : Check Quota Dyno Heroku"
+
+Perintah: `{i}logs`
+Penggunaan : Melihat Logs Heroku Anda
+
+Perintah: `{i}set var <NEW VAR> <VALUE>`
+Penggunaan : Tambahkan Variabel Baru Atau Memperbarui Variabel
+Setelah Menyetel Variabel Tersebut, Flicks-Userbot Akan Di Restart.
+
+Perintah: `{i}get var atau {i}get var <VAR>`"
+Penggunaan : Dapatkan Variabel Yang Ada, !!PERINGATAN!! Gunakanlah Di Grup Privasi Anda.
+Ini Mengembalikan Semua Informasi Pribadi Anda, Harap berhati-hati.
+
+Perintah: `{cmd}del var <VAR>`
+Penggunaan : Menghapus Variabel Yang Ada
+Setelah Menghapus Variabel, Bot Akan Di Restart.
+"""
 import heroku3
 import aiohttp
 import math
@@ -97,6 +121,10 @@ async def variable(var):
 
 @flicks_cmd(pattern="set var (\\w*) ([\\s\\S]*)")
 async def set_var(var):
+    if app is None:
+        return await var.edit(
+             "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **dan** `HEROKU_API_KEY`"
+        )
     await var.edit("`Sedang Menyetel Config Vars 🛠️`")
     variable = var.pattern_match.group(1)
     value = var.pattern_match.group(2)
@@ -129,8 +157,10 @@ async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
     """
-    await dyno.edit("```Checking dynos ✨```")
-    await asyncio.sleep(1)
+    if app is None:
+        return await dyno.edit(
+            "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **dan** `HEROKU_API_KEY`"
+        )
     useragent = (
         'Mozilla/5.0 (Linux; Android 10; SM-G975F) '
         'AppleWebKit/537.36 (KHTML, like Gecko) '
@@ -206,7 +236,7 @@ async def _(dyno):
         Heroku = heroku3.from_key(HEROKU_API_KEY)
         app = Heroku.app(HEROKU_APP_NAME)
     except BaseException:
-        return await dyno.reply("`Please make sure your Heroku API Key, Your App name are configured correctly in the heroku var.`")
+        return await dyno.reply("`Pastikan HEROKU_API_KEY dan HEROKU_APP_NAME Anda dikonfigurasi dengan benar di heroku var.`")
     await dyno.edit("`Sedang Mengambil Logs Anda`")
     with open("logs.txt", "w") as log:
         log.write(app.get_log())
@@ -218,16 +248,4 @@ async def _(dyno):
     return os.remove("logs.txt")
 
 
-CMD_HELP.update({"herokuapp": f"Cmd: `{cmd}usage`|`{cmd}kuota`|`{cmd}dyno`"
-                 "\n↳ : Check Quota Dyno Heroku"
-                 f"\n\nCmd: `{cmd}logs`"
-                 "\n↳ : Melihat Logs Heroku Anda"
-                 f"\n\nCmd: `{cmd}set var <NEW VAR> <VALUE>`"
-                 "\n↳ : Tambahkan Variabel Baru Atau Memperbarui Variabel"
-                 "\nSetelah Menyetel Variabel Tersebut, Flicks-Userbot Akan Di Restart."
-                 f"\n\nCmd: `{cmd}get var atau .get var <VAR>`"
-                 "\n↳ : Dapatkan Variabel Yang Ada, !!PERINGATAN!! Gunakanlah Di Grup Privasi Anda."
-                 "\nIni Mengembalikan Semua Informasi Pribadi Anda, Harap berhati-hati."
-                 f"\n\nCmd: `{cmd}del var <VAR>`"
-                 "\n↳ : Menghapus Variabel Yang Ada"
-                 "\nSetelah Menghapus Variabel, Bot Akan Di Restart."})
+CMD_HELP.update({"heroku": f"{__doc__.format(i=cmd)}"})
