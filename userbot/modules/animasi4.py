@@ -64,7 +64,7 @@ async def _(event):
             await event.edit(animation_chars[i % 32])
 
 
-@flicks_cmd(pattern="helikopter")
+@flicks_cmd(pattern="helikopter(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("▬▬▬.◙.▬▬▬ \n"
@@ -85,7 +85,7 @@ async def typewriter(typew):
                      "╬═╬/ \\ \n")
 
 
-@flicks_cmd(pattern="tembak")
+@flicks_cmd(pattern="tembak(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("_/﹋\\_\n"
@@ -95,7 +95,7 @@ async def typewriter(typew):
                      "\n**Ayo jadi pacarku**")
 
 
-@flicks_cmd(pattern="bundir")
+@flicks_cmd(pattern="bundir(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Gua Mati Dulu Bye Kawand...`          \n　　　　　|"
@@ -114,7 +114,7 @@ async def typewriter(typew):
                      "　　　　　 Ｕ Ｕ\n")
 
 
-@flicks_cmd(pattern="awokawok")
+@flicks_cmd(pattern="awokawok(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("────██──────▀▀▀██\n"
@@ -124,7 +124,7 @@ async def typewriter(typew):
                      "─▀───────▀▀─▀───────▀▀\n`Awkwokwokwok Goblok..`")
 
 
-@flicks_cmd(pattern="ular")
+@flicks_cmd(pattern="ular(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("░░░░▓\n"
@@ -214,7 +214,7 @@ async def typewriter(typew):
                      "░░░░░░░░░░░░░░░░░░░\n")
 
 
-@flicks_cmd(pattern="y")
+@flicks_cmd(pattern="y(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("‡‡‡‡‡‡‡‡‡‡‡‡▄▄▄▄\n"
@@ -232,7 +232,7 @@ async def typewriter(typew):
                      "█████‡‡‡‡‡‡‡██████████\n")
 
 
-@flicks_cmd(pattern="tank")
+@flicks_cmd(pattern="tank(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("█۞███████]▄▄▄▄▄▄▄▄▄▄▃ \n"
@@ -241,7 +241,7 @@ async def typewriter(typew):
                      "◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤\n")
 
 
-@flicks_cmd(pattern="pig")
+@flicks_cmd(pattern="pig(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("┈┈┏━╮╭━┓┈╭━━━━╮\n"
@@ -254,7 +254,7 @@ async def typewriter(typew):
                      "┈┈┈┈┈┗┻┛┗┻┛┈┈┈┈\n")
 
 
-@flicks_cmd(pattern="dog")
+@flicks_cmd(pattern="dog(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("╥━━━━━━━━╭━━╮━━┳\n"
@@ -265,7 +265,7 @@ async def typewriter(typew):
                      "╨━━┗┛┗┛━━┗┛┗┛━━┻\n")
 
 
-@flicks_cmd(pattern="bernyanyi")
+@flicks_cmd(pattern="bernyanyi(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**Mari bernyanyi bersama (ง˙o˙)ว**")
