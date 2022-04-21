@@ -44,24 +44,39 @@ Terimakasih telah menggunakan repository ini.
 <p><a href="https://t.me/StringSessionFlicksbot"><img src="https://img.shields.io/badge/TG%20String%20Gen%20Bot-blueviolet?style=for-the-badge&logo=appveyor" width="200""/></a></p>
 
 
-## DEPLOY TO HEROKU 
-<h4>DEPLOY VIA BOT</h4>
-<a href="https://telegram.dog/XTZ_HerokuBot?start=ZmpnYW1pbmcyMTIvZmxpY2tzLWRlcGxveS11Ym90IEZsaWNrcy1Vc2VyYm90">
-  <img src="https://www.herokucdn.com/deploy/button.svg" alt="deploy">
-</a>
 
+### Deploy To Heroku
+|Deploy Via Bot|  Deploy Via Web|
+|--|--|
+| [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://telegram.dog/XTZ_HerokuBot?start=ZmpnYW1pbmcyMTIvZmxpY2tzLWRlcGxveS11Ym90IEZsaWNrcy1Vc2VyYm90) | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/farizjs/friendly-guacamole) |
 
-<h4>DEPLOY VIA WEBSITE</h4>
-<a href="https://heroku.com/deploy?template=https://github.com/farizjs/friendly-guacamole">
-  <img src="https://www.herokucdn.com/deploy/button.svg" alt="deploy">
-</a>
+### Deploy to VPS
+
+#### REQUIREMENTS PACKAGE !
+-  Update & upgrade VPS anda `sudo apt update && upgrade -y`
+-  Install Git `sudo apt install git -y`
+-  Install Python3 `sudo apt install python3`
+-  Install PIP / PIP3 `sudo apt install python3-pip`
+-  Install NodeJs 16.X `curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -` then do `sudo apt install -y nodejs vim`
+-  Install FFMPEG `sudo apt install tree wget2 p7zip-full jq ffmpeg wget git -y`
+-  Install Chrome `wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb` lalu ketik `sudo apt install ./google-chrome-stable_current_amd64.deb`
+
+#### DEPLOY TO VPS
+-  `git clone https://github.com/farizjs/Flicks-Userbot`
+-  `cd Flicks-Userbot`
+-  `pip3 install -r requirements.txt`
+-  `mv sample_config.env config.env`
+-  edit config.env Anda dan isi VARS menggunakan `nano config.env` `CTRL + S ` untuk menyimpan VARS Anda, gunakan `CTRL + X` untuk keluar dan kembali ke direktori Flicks-Userbot
+-  Buka SCRREN di VPS Anda `screen -S Flicks-Userbot`
+-  Kemudian gunakan perintah ini untuk deploy Flicks-Userbot `python3 -m userbot`
+
 
 
 ### Tutorial Deploy
 ```
 Dapatkan API_ID dan API_HASH di web my.telegram.org.
 Dapatkan STRING_SESSION di web replit
-Dapatkan HEROKU_API_KEY di dashboard.heroku.com/account
+Dapatkan HEROKU_API_KEY di dashboard.heroku.com/account (Jika host di heroku)
 Terus Nyalakan, tutorial lengkap cek di Channel Update
 ```
 
