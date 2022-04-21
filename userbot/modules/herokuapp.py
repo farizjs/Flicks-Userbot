@@ -22,7 +22,7 @@ Perintah: `{i}get var atau {i}get var <VAR>`"
 Penggunaan : Dapatkan Variabel Yang Ada, !!PERINGATAN!! Gunakanlah Di Grup Privasi Anda.
 Ini Mengembalikan Semua Informasi Pribadi Anda, Harap berhati-hati.
 
-Perintah: `{cmd}del var <VAR>`
+Perintah: `{i}del var <VAR>`
 Penggunaan : Menghapus Variabel Yang Ada
 Setelah Menghapus Variabel, Bot Akan Di Restart.
 """
@@ -40,7 +40,7 @@ from userbot import (
     BOTLOG_CHATID,
     ALIVE_NAME,
     CMD_HELP)
-from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HANDLER
 from userbot.utils import flicks_cmd
 
 heroku_api = "https://api.heroku.com"
@@ -248,4 +248,4 @@ async def _(dyno):
     return os.remove("logs.txt")
 
 
-CMD_HELP.update({"heroku": f"{__doc__.format(i=cmd)}"})
+CMD_HELP.update({"heroku": f"{__doc__.format(i=CMD_HANDLER)}"})
