@@ -84,7 +84,7 @@ async def _(asadekontol):
     await asadekontol.reply(random.choice(uy))
 
 
-@flicks_cmd(pattern="fping")
+@flicks_cmd(pattern="fping", allow_sudo=True)
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     await get_readable_time((time.time() - StartTime))
@@ -105,7 +105,7 @@ async def redis(pong):
                     f"➥ {ALIVE_NAME} \n" % (duration))
 
 
-@flicks_cmd(pattern="sping")
+@flicks_cmd(pattern="sping", allow_sudo=True)
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     await get_readable_time((time.time() - StartTime))
@@ -126,7 +126,7 @@ async def redis(pong):
                     f"**╰━━━━━━━━━━━━━━━━━╯** \n" % (duration))
 
 
-@flicks_cmd(pattern="lping")
+@flicks_cmd(pattern="lping", allow_sudo=True)
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -148,7 +148,7 @@ async def redis(pong):
                     f"`{uptime}` \n" % (duration))
 
 
-@flicks_cmd(pattern="xping")
+@flicks_cmd(pattern="xping", allow_sudo=True)
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -173,7 +173,7 @@ async def redis(pong):
                     f"**▹  Oᴡɴᴇʀ   :** {ALIVE_NAME} \n" % (duration))
 
 
-@flicks_cmd(pattern="ping")
+@flicks_cmd(pattern="ping", allow_sudo=True)
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -194,7 +194,7 @@ async def redis(pong):
                     f"`{uptime}` \n" % (duration))
 
 
-@flicks_cmd(pattern="tes")
+@flicks_cmd(pattern="tes", allow_sudo=True)
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -263,7 +263,7 @@ def speed_convert(size):
     return f"{round(size, 2)} {units[zero]}"
 
 
-@flicks_cmd(pattern="pong")
+@flicks_cmd(pattern="pong", allow_sudo=True)
 async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
     start = datetime.now()
