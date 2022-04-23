@@ -48,7 +48,7 @@ Terimakasih telah menggunakan repository ini.
 ### Deploy To Heroku
 |Deploy Via Bot|  Deploy Via Web|
 |--|--|
-| [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://telegram.dog/XTZ_HerokuBot?start=ZmpnYW1pbmcyMTIvZmxpY2tzLWRlcGxveS11Ym90IEZsaWNrcy1Vc2VyYm90) | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/farizjs/friendly-guacamole) |
+| [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://telegram.dog/XTZ_HerokuBot?start=ZmpnYW1pbmcyMTIvZmxpY2tzLWRlcGxveS11Ym90IEZsaWNrcy1Vc2VyYm90) | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kntlxmmk/Flicks-Userbot) |
 
 ### Deploy to VPS
 
