@@ -120,7 +120,8 @@ VC_SESSION = os.environ.get("VC_SESSION", "")
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", "0"))
 
 # Handler Userbot
-CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
+CMD_HANDLER = os.environ.get("HANDLER") or os.environ.get(
+    "CMD_HANDLER" or "."))
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER") or "$"
 
 # Default .alive Name
