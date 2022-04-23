@@ -1104,7 +1104,7 @@ Voice chat group menu untuk {ALIVE_NAME}
             if event.query.user_id == uid:  # pylint:disable=E0602
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
-                cmdhel = str(CMD_HELP[modul_name])
+                cmdhel = "**✘ Commands available**\n\n" + str(CMD_HELP[modul_name]) + "\n\n**💕 @TheFlicksUserbot**"
                 if len(cmdhel) > 4030:
                     help_string = (
                         str(CMD_HELP[modul_name])[:4030] + "..."
@@ -1113,7 +1113,7 @@ Voice chat group menu untuk {ALIVE_NAME}
                         + " "
                     )
                 else:
-                    help_string = str(CMD_HELP[modul_name])
+                    help_string = "**✘ Commands available**\n\n" + str(CMD_HELP[modul_name]) + "\n\n**💕 @TheFlicksUserbot**"
 
                 reply_pop_up_alert = (
                     help_string
