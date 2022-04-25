@@ -1,10 +1,24 @@
+"""
+plugin : flicks (fun buat asik²)
+
+Perintah : `{i}intro`
+Penjelasan: Memperkenalkan diri anda
+
+Perintah: `{cmd}semangat`
+Penjelasan: Sedikit Motifasi
+
+Perintah: `{i}aku`
+Penjelasan: Lihat sendiri 🏃
+
+Perintah: `{i}lopyu`
+Penjelasan: Lihat Sendiri 🏃
+"""
 from time import sleep
-from userbot import ALIVE_NAME, CMD_HELP, WEATHER_DEFCITY
-from userbot import CMD_HANDLER as cmd
+from userbot import ALIVE_NAME, CMD_HANDLER, CMD_HELP, WEATHER_DEFCITY
 from userbot.utils import flicks_cmd
 
 
-@flicks_cmd(pattern="intro")
+@flicks_cmd(pattern="intro(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(f"**Hai Perkenalkan Namaku {ALIVE_NAME}**")
@@ -15,7 +29,7 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@flicks_cmd(pattern="lopyu")
+@flicks_cmd(pattern="lopyu(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(3)
@@ -29,7 +43,7 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@flicks_cmd(pattern="semangat")
+@flicks_cmd(pattern="semangat(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Apapun Yang Terjadi`")
@@ -42,7 +56,7 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@flicks_cmd(pattern="aku")
+@flicks_cmd(pattern="aku(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Aku Userbot`")
@@ -52,14 +66,4 @@ async def typewriter(typew):
     await typew.edit("`Aku Gban Nanti Nangesss Lho 🥺`")
 # Create by myself @localheart
 
-
-CMD_HELP.update({
-    "flicks": f"\
-**Perintah:** `{cmd}intro`\
-\n**Penjelasan:** Memperkenalkan diri anda\
-\n\n**Perintah:** `{cmd}semangat`\
-\n**Penjelasan:** Sedikit Motifasi\
-\n\n**Perintah:** `{cmd}aku`\
-\n**Penjelasan:** Lihat sendiri 🏃\
-\n\n**Perintah:** `{cmd}lopyu`\
-\n**Penjelasan:** Lihat Sendiri 🏃"})
+CMD_HELP.update({"flicks": f"{__doc__.format(i=CMD_HANDLER)}"})
