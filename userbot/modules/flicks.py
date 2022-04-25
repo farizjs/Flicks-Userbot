@@ -4,7 +4,7 @@ plugin : flicks (fun buat asik²)
 Perintah : `{i}intro`
 Penjelasan: Memperkenalkan diri anda
 
-Perintah: `{cmd}semangat`
+Perintah: `{i}semangat`
 Penjelasan: Sedikit Motifasi
 
 Perintah: `{i}aku`
