@@ -3,7 +3,19 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module for executing code and terminal commands from Telegram. """
+"""
+Plugin : devtools
+
+
+Perintah : `{i}eval print('world')`
+Penggunaan: Jalankan skrip python kecil.
+
+Perintah : `{i}exec print('hello')`
+Penggunaan : Sama seperti `{i}eval`
+
+Perintah : `{i}term <cmd>`
+Penggunaan : Jalankan perintah dan skrip bash di server Anda.
+"""
 
 import asyncio
 import io
@@ -14,7 +26,7 @@ from getpass import getuser
 from os import remove
 from sys import executable
 
-from userbot import CMD_HELP, TERM_ALIAS, CMD_HANDLER as i
+from userbot import CMD_HELP, TERM_ALIAS, CMD_HANDLER
 from userbot.utils import flicks_cmd
 
 
@@ -25,7 +37,7 @@ async def _(event):
     s_m_ = await event.edit("Processing ...")
     cmd = event.pattern_match.group(1)
     if not cmd:
-        return await s_m_.edit("`What should i eval...`")
+        return await s_m_.edit("`Apa yang harus saya eval?...`")
 
     old_stderr = sys.stderr
     old_stdout = sys.stdout
@@ -83,16 +95,16 @@ async def run(run_q):
     code = run_q.pattern_match.group(1)
 
     if run_q.is_channel and not run_q.is_group:
-        return await run_q.edit("`Exec isn't permitted on channels!`")
+        return await run_q.edit("`Exec tidak diizinkan di channel!`")
 
     if not code:
         return await run_q.edit(
-            "``` At least a variable is required to"
-            "execute. Use .help exec for an example.```"
+            "``` Setidaknya variabel diperlukan untuk"
+            "menjalankan. Gunakan {CMD_HANDLER}help devtools sebagai contoh.```"
         )
 
     if code in ("userbot.session", "config.env"):
-        return await run_q.edit("`That's a dangerous operation! Not Permitted!`")
+        return await run_q.edit("`Itu operasi yang berbahaya! Tidak diperbolehkan!`")
 
     if len(code.splitlines()) <= 5:
         codepre = code
@@ -128,7 +140,7 @@ async def run(run_q):
                 run_q.chat_id,
                 "output.txt",
                 reply_to=run_q.id,
-                caption="`Output too large, sending as file`",
+                caption="`Output terlalu besar, mengirim sebagai file`",
             )
             remove("output.txt")
             return
@@ -151,22 +163,22 @@ async def terminal_runner(term):
 
         uid = geteuid()
     except ImportError:
-        uid = "This ain't it chief!"
+        uid = "Ini bukan ketua!"
 
     if term.is_channel and not term.is_group:
-        return await term.edit("`Term commands aren't permitted on channels!`")
+        return await term.edit("`Perintah istilah tidak diizinkan di saluran!`")
 
     if not command:
         return await term.edit(
-            "``` Give a command or use .help term for an example.```"
+            "``` Beri perintah atau Gunakan {CMD_HANDLER}help devtools sebagai contoh.```"
         )
 
     for i in ("userbot.session", "env"):
         if command.find(i) != -1:
-            return await term.edit("`That's a dangerous operation! Not Permitted!`")
+            return await term.edit("`Itu operasi yang berbahaya! Tidak diperbolehkan!`")
 
     if not re.search(r"echo[ \-\w]*\$\w+", command) is None:
-        return await term.edit("`That's a dangerous operation! Not Permitted!`")
+        return await term.edit("`Itu operasi yang berbahaya! Tidak diperbolehkan!`")
 
     process = await asyncio.create_subprocess_shell(
         command, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
@@ -182,7 +194,7 @@ async def terminal_runner(term):
             term.chat_id,
             "output.txt",
             reply_to=term.id,
-            caption="`Output too large, sending as file`",
+            caption="`Output terlalu besar, mengirim sebagai file`",
         )
         remove("output.txt")
         return
@@ -193,10 +205,4 @@ async def terminal_runner(term):
         await term.edit(f"`{curruser}:~$ {command}\n{result}`")
 
 
-CMD_HELP.update({"eval": f">`{i}eval print('world')`"
-                 f"\nUsage: Just like exec.",
-                 "exec": ">`{i}exec print('hello')`"
-                 f"\nUsage: Execute small python scripts.",
-                 "term": ">`{i}term <cmd>`"
-                 "\nUsage: Run bash commands and scripts on your server.",
-                 })
+CMD_HELP.update({"devtools": f"{__doc__.format(i=CMD_HANDLER)}"})
