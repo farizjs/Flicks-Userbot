@@ -1,6 +1,36 @@
 # Authored by @Khrisna_Singhal
 # Ported from Userge by Alfiananda P.A
+"""
+Plugin : transfrom
 
+Perintah : `{i}ghost`
+Penggunaan: Tingkatkan citra Anda untuk menjadi hantu!.
+
+Perintah : `{i}ascii`
+Penggunaan: membuat seni ascii dari media
+
+Perintah : `{i}asciis`
+Penggunaan: sama tetapi unggah hasil sebagai stiker
+
+Perintah : `{i}asciibg <warna>`
+Penggunaan: Sekarang untuk menggunakan modul ASCII, ubah warna latar belakang pertama sebelumnya
+
+Perintah : `{i}flip`
+Penggunaan: Untuk membalik gambar Anda
+
+Perintah : `{i}mirror`
+Penggunaan: Untuk mencerminkan gambar Anda
+
+Perintah : `{i}bw`
+Penggunaan: Untuk Mengubah gambar berwarna Anda menjadi gambar b/w!
+
+Perintah : `{i}poster`
+Penggunaan: Untuk posterisasi gambar Anda!
+
+Perintah : `{i}rotate <value>`
+Penggunaan: Untuk memutar gambar Anda
+* Nilainya berkisar 1-360 jika tidak maka akan memberikan nilai default yaitu 90
+"""
 import os
 import random
 import numpy as np
@@ -10,13 +40,13 @@ from hachoir.parser import createParser
 from PIL import Image, ImageOps, ImageDraw, ImageFont
 from telethon.tl.types import DocumentAttributeFilename
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
-from userbot.events import register
+from userbot import CMD_HANDLER, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
+from userbot.utils import flicks_cmd
 
 bground = "black"
 
 
-@register(outgoing=True, pattern=r"^\.(ascii|asciis)$")
+@flicks_cmd(pattern="(ascii|asciis)$")
 async def ascii(event):
     if not event.reply_to_msg_id:
         await event.edit("`Reply to Any media..`")
@@ -129,7 +159,7 @@ async def random_color():
     return color
 
 
-@register(outgoing=True, pattern=r"^\.asciibg(?: |$)(.*)")
+@flicks_cmd(pattern="asciibg(?: |$)(.*)")
 async def _(event):
     BG = event.pattern_match.group(1)
     if BG.isnumeric():
@@ -145,7 +175,7 @@ async def _(event):
 Converted = TEMP_DOWNLOAD_DIRECTORY + "sticker.webp"
 
 
-@register(outgoing=True, pattern=r"^\.(mirror|flip|ghost|bw|poster)$")
+@flicks_cmd(pattern="(mirror|flip|ghost|bw|poster)$")
 async def transform(event):
     if not event.reply_to_msg_id:
         await event.edit("`Reply to Any media..`")
@@ -212,7 +242,7 @@ async def transform(event):
         return
 
 
-@register(outgoing=True, pattern=r"^\.rotate(?: |$)(.*)")
+@flicks_cmd(pattern="rotate(?: |$)(.*)")
 async def rotate(event):
     if not event.reply_to_msg_id:
         await event.edit("`Reply to any media..`")
@@ -271,26 +301,4 @@ async def rotate(event):
     os.remove(rotate)
     os.remove(Converted)
 
-
-CMD_HELP.update(
-    {
-        "transform": ">`.ghost`"
-        "\nUsage: Enchance your image to become a ghost!."
-        "\n\n>`.ascii`"
-        "\nUsage:create ascii art from media"
-        "\n\n>`.asciis`"
-        "\nUsage:same but upload result as sticker"
-        "\n\n>`.asciibg <color>`"
-        "\nUsage:Now to use ASCII module change first background color past"
-        "\n\n>`.flip`"
-        "\nUsage: To flip your image"
-        "\n\n>`.mirror`"
-        "\nUsage: To mirror your image"
-        "\n\n>`.bw`"
-        "\nUsage: To Change your colorized image to b/w image!"
-        "\n\n>`.poster`"
-        "\nUsage: To posterize your image!"
-        "\n\n>`.rotate <value>`"
-        "\nUsage: To rotate your image\n* The value is range 1-360 if not it'll give default value which is 90"
-    }
-)
+CMD_HELP.update({"transform": f"{__doc__.format(i=CMD_HANDLER)}"})
