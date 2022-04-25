@@ -4,17 +4,30 @@
 # you may not use this file except in compliance with the License.
 
 # port to userbot from uniborg by @keselekpermen69
+"""
+Plugin : blacklist
 
+Perintah : `{i)listbl`
+Penggunaan: Melihat daftar blacklist yang aktif di obrolan.
+
+Perintah : `{i}addbl <kata>`
+Penggunaan: Memasukan pesan ke blacklist 'kata blacklist'.
+bot akan otomatis menghapus 'kata blacklist'.
+
+Perintah : `{i}rmbl <kata>`
+Penggunaan: Menghapus kata blacklist.
+"""
 
 import io
 import re
+from telethon import events
 
 import userbot.modules.sql_helper.blacklist_sql as sql
-from userbot import CMD_HELP
-from userbot.events import register
+from userbot import CMD_HANDLER, CMD_HELP, bot
+from userbot.utils import flicks_cmd
 
 
-@register(incoming=True, disable_edited=True, disable_errors=True)
+@bot.on(events.NewMessage(incoming=True))
 async def on_new_message(event):
     # TODO: exempt admins from locks
     name = event.raw_text
@@ -32,7 +45,7 @@ async def on_new_message(event):
             break
 
 
-@register(outgoing=True, pattern=r"^\.addbl(?: |$)(.*)")
+@flicks_cmd(pattern="addbl(?: |$)(.*)")
 async def on_add_black_list(addbl):
     text = addbl.pattern_match.group(1)
     to_blacklist = list(
@@ -46,7 +59,7 @@ async def on_add_black_list(addbl):
     )
 
 
-@register(outgoing=True, pattern=r"^\.listbl(?: |$)(.*)")
+@flicks_cmd(pattern="listbl(?: |$)(.*)")
 async def on_view_blacklist(listbl):
     all_blacklisted = sql.get_chat_blacklist(listbl.chat_id)
     OUT_STR = "Blacklists in the Current Chat:\n"
@@ -71,7 +84,7 @@ async def on_view_blacklist(listbl):
         await listbl.edit(OUT_STR)
 
 
-@register(outgoing=True, pattern=r"^\.rmbl(?: |$)(.*)")
+@flicks_cmd(pattern="rmbl(?: |$)(.*)")
 async def on_delete_blacklist(rmbl):
     text = rmbl.pattern_match.group(1)
     to_unblacklist = list(
@@ -87,11 +100,4 @@ async def on_delete_blacklist(rmbl):
     else:
         await rmbl.edit("`Berhasil Menghapus` **{}** `Di Blacklist`".format(text))
 
-
-CMD_HELP.update({"blacklist": ">`.listbl`"
-                 "\nUsage: Melihat daftar blacklist yang aktif di obrolan."
-                 "\n\n>`.addbl <kata>`"
-                 "\nUsage: Memasukan pesan ke blacklist 'kata blacklist'."
-                 "\nlord bot akan otomatis menghapus 'kata blacklist'."
-                 "\n\n>`.rmbl <kata>`"
-                 "\nUsage: Menghapus kata blacklist."})
+CMD_HELP.update({"blacklist": f"{__doc__.format(i=CMD_HANDLER)}"})
