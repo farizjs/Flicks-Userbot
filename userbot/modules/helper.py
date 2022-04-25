@@ -1,6 +1,14 @@
-""" Userbot module for other small commands. """
+""" 
+Plugin : helper
+
+Perintah : `{i}ghelp`
+Penggunaan : bantuan Flicks-Userbot
+
+Perintah : `{i}vars`
+Penggunaan : melihat daftar vars Flicks-Userbot
+"""
 from userbot import CMD_HELP, ALIVE_NAME
-from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HANDLER
 from userbot.utils import flicks_cmd
 
 
@@ -22,13 +30,8 @@ async def usit(e):
 async def var(m):
     await m.edit(
         f"**Disini Daftar Vars Dari {DEFAULTUSER}:**\n"
-        "\n[DAFTAR VARS](https://raw.githubusercontent.com/fjgaming212/Flicks-Userbot/Flicks-Userbot/varshelper.txt)")
+        "\n[DAFTAR VARS](https://raw.githubusercontent.com/farizjs/Flicks-Userbot/Flicks-Userbot/sample_config.env)")
 
 
-CMD_HELP.update({
-    "helper":
-    f"`{cmd}ghelp`\
-\nUsage: Bantuan Untuk Flicks-Userbot.\
-\n`{cmd}vars`\
-\nUsage: Melihat Daftar Vars."
-})
+CMD_HELP.update({"helper": f"{__doc__.format(i=CMD_HANDLER)}"})
+
