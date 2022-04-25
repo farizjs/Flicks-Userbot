@@ -2,11 +2,22 @@
 # Recode by @farizjs
 # FROM Flicks-Userbot <https://github.com/farizjs/Flicks-Userbot>
 # t.me/TheFlicksUserbot
+"""
+Plugin : echo
 
+Perintah : `{i}addecho` 
+Penggunaan : Untuk Menambahkan Followers Chat Kamu. 
+
+Perintah :`{i}delecho` 
+Penggunaan : Untuk menghentikan echo. 
+
+Perintah :`{i}echolist`
+Penggunaan: Untuk Melihat daftar penggunaan yang kamu echo.
+"""
 from telethon.utils import get_display_name
 from telethon import events
 
-from userbot import bot, CMD_HELP, CMD_HANDLER as cmd
+from userbot import bot, CMD_HELP, CMD_HANDLER
 from .sql_helper.echo_sql import (
     addecho,
     get_all_echos,
@@ -170,14 +181,4 @@ async def samereply(event):
     ):
         await event.reply(event.message)
 
-CMD_HELP.update(
-    {
-        "echo":
-        f"Perintah : `{cmd}addecho` \
-    \nUsage : Untuk Menambahkan Followers Chat Kamu. \
-    \nPerintah :`{cmd}delecho` \
-    \nUsage : Untuk menghentikan echo. \
-    \nPerintah :`{cmd}echolist`:\
-    \nUsage: Untuk Melihat daftar penggunaan yang kamu echo."
-    }
-)
+CMD_HELP.update({"echo": f"{__doc__.format(i=CMD_HANDLER)}"})
