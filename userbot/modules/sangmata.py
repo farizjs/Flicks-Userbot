@@ -1,63 +1,79 @@
+# Credits Cat-Userbot <github.com/TgCatUb/Cat-Userbot>
+# Recode by fariz <farizjs>
+# t.me/FlicksSupport
+"""
+Plugin : sangmata
+
+Perintah : `{i}sg`
+Penggunaan : Cek riwayat nama pengguna
+
+Perintah : `{i}sgu`
+Penggunaan : Cek riwayat username pengguna
+"""
+
+import asyncio
+
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot import bot, CMD_HELP
-from asyncio.exceptions import TimeoutError
-from userbot import CMD_HANDLER as cmd
-from userbot.utils import flicks_cmd
+
+from userbot import bot, CMD_HELP, CMD_HANDLER
+from userbot.utils import flicks_cmd, edit_delete, edit_or_reply, get_user_from_event, _format
 
 
-@flicks_cmd(pattern="(sa|sg)(?: |$)")
-async def lastname(steal):
-    if steal.fwd_from:
+async def sanga_seperator(sanga_list):
+    for i in sanga_list:
+        if i.startswith("🔗"):
+            sanga_list.remove(i)
+    s = 0
+    for i in sanga_list:
+        if i.startswith("Username History"):
+            break
+        s += 1
+    usernames = sanga_list[s:]
+    names = sanga_list[:s]
+    return names, usernames
+
+@flicks_cmd(pattern="sg(u)?(?:\s|$)([\s\S]*)")
+async def _(event):  # sourcery no-metrics
+    "To get name/username history."
+    input_str = "".join(event.text.split(maxsplit=1)[1:])
+    reply_message = await event.get_reply_message()
+    if not input_str and not reply_message:
+        await edit_delete(
+            event,
+            "`balas pesan teks pengguna untuk mendapatkan riwayat nama/username pengguna atau berikan id/username`",
+        )
+    user, rank = await get_user_from_event(event, secondgroup=True)
+    if not user:
         return
-    if not steal.reply_to_msg_id:
-        await steal.edit("```Mohon Balas Ke Pesan Pengguna.```")
-        return
-    message = await steal.get_reply_message()
+    uid = user.id
     chat = "@SangMataInfo_bot"
-    user_id = message.sender.id
-    id = f"/search_id {user_id}"
-    if message.sender.bot:
-        await steal.edit("```Balas Ke Pesan Pengguna Yang Sebenarnya.```")
-        return
-    await steal.edit("```Mengambil Informasi Pengguna Tersebut, Mohon Menunggu..```")
-    try:
-        async with bot.conversation(chat) as conv:
+    flicksevent = await edit_or_reply(event, "`Processing...`")
+    async with event.client.conversation(chat) as conv:
+        try:
+            await conv.send_message(f"/search_id {uid}")
+        except YouBlockedUserError:
+            await edit_delete(flicksevent, "`unblock @Sangmatainfo_bot dan kemudian coba lagi`")
+        responses = []
+        while True:
             try:
-                msg = await conv.send_message(id)
-                r = await conv.get_response()
-                response = await conv.get_response()
-            except YouBlockedUserError:
-                await steal.reply(
-                    "```Mohon Unblock @sangmatainfo_bot Dan Coba Lagi```"
-                )
-                return
-            if r.text.startswith("Name"):
-                respond = await conv.get_response()
-                await steal.edit(f"`{r.message}`")
-                await steal.client.delete_messages(
-                    conv.chat_id, [msg.id, r.id, response.id, respond.id]
-                )
-                return
-            if response.text.startswith("No records") or r.text.startswith(
-                "No records"
-            ):
-                await steal.edit("```Saya Tidak Menemukan Informasi Pengguna Ini, Pengguna Ini Belum Pernah Mengganti Nama Sebelumnya```")
-                await steal.client.delete_messages(
-                    conv.chat_id, [msg.id, r.id, response.id]
-                )
-                return
-            else:
-                respond = await conv.get_response()
-                await steal.edit(f"```{response.message}```")
-            await steal.client.delete_messages(
-                conv.chat_id, [msg.id, r.id, response.id, respond.id]
-            )
-    except TimeoutError:
-        return await steal.edit("`Saya Sedang Sakit Mohon Maaf`")
+                response = await conv.get_response(timeout=2)
+            except asyncio.TimeoutError:
+                break
+            responses.append(response.text)
+        await event.client.send_read_acknowledge(conv.chat_id)
+    if not responses:
+        await edit_delete(flicksevent, "`bot tidak dapat mengambil hasil`")
+    if "No records found" in responses:
+        await edit_delete(flicksevent, "`Pengguna tidak memiliki catatan apa pun`")
+    names, usernames = await sanga_seperator(responses)
+    cmd = event.pattern_match.group(1)
+    saya = None
+    check = usernames if cmd == "u" else names
+    for i in check:
+        if saya:
+            await event.reply(i, parse_mode=_format.parse_pre)
+        else:
+            saya = True
+            await flicksevent.edit(i, parse_mode=_format.parse_pre)
 
-
-CMD_HELP.update({
-    "sangmata":
-        f"`{cmd}sa`|`{cmd}sg`\
-          \nUsage: Mendapatkan Riwayat Nama Pengguna."
-})
+CMD_HELP.update({"sangmata": f"{__doc__.format(i=CMD_HANDLER)}"})
