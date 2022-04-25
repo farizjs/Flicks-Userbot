@@ -1,14 +1,19 @@
 # From Geez-Userbot
-# Fix by Fariz <github.com/fjgaming212>
+# Fix by Fariz <github.com/farizjs>
+"""
+Plugin : tempmail
 
+Perintah : `{i}tempmail`
+Penggunaan : dapatkan email gratis dari tempmail
+"""
 from telethon import events
-from userbot import CMD_HELP, bot
-from userbot.events import register
+from userbot import CMD_HELP, CMD_HANDLER, bot
+from userbot.utils import flicks_cmd
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import asyncio
 
 
-@register(outgoing=True, pattern=r"^\.tempmail(?: |$)(.*)")
+@flicks_cmd(pattern="tempmail(?: |$)(.*)")
 async def _(event):
     chat = "@TempMailBot"
     flicks = await event.edit("Sedang Memprosess...")
@@ -31,5 +36,4 @@ async def _(event):
         await event.edit(f"**FLICKS TEMPMAIL** ~ `{response.message.message}`\n\n[KLIK DISINI UNTUK VERIFIKASI]({flicksuserbot})")
 
 
-CMD_HELP.update({"tempmail": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.tempmail`"
-                 "\n•: Mendapatkan Email Gratis Dari Temp Mail"})
+CMD_HELP.update({"tempmail": f"{__doc__.format(i=CMD_HANDLER)}"})
