@@ -7,7 +7,7 @@
 """
 Plugin : blacklist
 
-Perintah : `{i)listbl`
+Perintah : `{i}listbl`
 Penggunaan: Melihat daftar blacklist yang aktif di obrolan.
 
 Perintah : `{i}addbl <kata>`
