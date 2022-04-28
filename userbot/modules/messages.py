@@ -4,6 +4,9 @@
 # you may not use this file except in compliance with the License.
 #
 """
+Plugin : purge
+
+
 Perintah : `{i}purge`
 Fungsi: Membersihkan semua pesan mulai dari pesan yang dibalas.
 
