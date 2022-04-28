@@ -3,17 +3,36 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
+"""
+Perintah : `{i}purge`
+Fungsi: Membersihkan semua pesan mulai dari pesan yang dibalas.
+
+Perintah: `{i}purgeme <angka>`
+Fungsi: Menghapus jumlah pesan anda, yang mau anda hapus.
+
+Perintah: `{i}del`
+Fungsi: Menghapus pesan, balas ke pesan.
+
+Perintah: `{i}edit <pesan baru>`
+Fungsi: Ganti pesan terakhir Anda dengan <pesan baru>.
+
+Perintah: `{i}sd <x> <pesan>`
+Fungsi: Membuat pesan yang hancur sendiri dalam x detik."
+Catatan : Jaga agar detik di bawah 100 karena bot Anda akan tidur.",
+
+"""
 
 from asyncio import sleep
 
 from telethon.errors import rpcbaseerrors
 
-from userbot import CMD_HELP
+from userbot import CMD_HANDLER, CMD_HELP
 from userbot import DEVS
 from userbot.events import register
+from userbot.utils import flicks_cmd
 
 
-@register(outgoing=True, pattern=r"^\.purge$")
+@flicks_cmd(pattern="purge$")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cpurge$")
 async def fastpurger(purg):
     chat = await purg.get_input_chat()
@@ -47,7 +66,7 @@ async def fastpurger(purg):
     await done.delete()
 
 
-@register(outgoing=True, pattern=r"^\.purgeme")
+@flicks_cmd(pattern="purgeme")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cpurgeme$")
 async def purgeme(delme):
     message = delme.text
@@ -75,7 +94,7 @@ async def purgeme(delme):
     await smsg.delete()
 
 
-@register(outgoing=True, pattern=r"^\.del$")
+@flicks_cmd(pattern="del$")
 async def delete_it(delme):
     msg_src = await delme.get_reply_message()
     if delme.reply_to_msg_id:
@@ -96,7 +115,7 @@ async def delete_it(delme):
             """
 
 
-@register(outgoing=True, pattern=r"^\.edit")
+@flicks_cmd(pattern="edit")
 async def editer(edit):
     message = edit.text
     chat = await edit.get_input_chat()
@@ -116,7 +135,7 @@ async def editer(edit):
    """
 
 
-@register(outgoing=True, pattern=r"^\.sd")
+@flicks_cmd(pattern="sd")
 async def selfdestruct(destroy):
     message = destroy.text
     counter = int(message[4:6])
@@ -132,15 +151,4 @@ async def selfdestruct(destroy):
     """
 
 
-CMD_HELP.update({"purge": ">`.purge`"
-                 "\nUsage: Membersihkan semua pesan mulai dari pesan yang dibalas.",
-                 "purgeme": ">`.purgeme <angka>`"
-                 "\nUsage: Menghapus jumlah pesan anda, yang mau anda hapus.",
-                 "del": ">`.del`"
-                 "\nUsage: Menghapus pesan, balas ke pesan.",
-                 "edit": ">`.edit <pesan baru>`"
-                 "\nUsage: Ganti pesan terakhir Anda dengan <pesan baru>.",
-                 "sd": ">`.sd <x> <pesan>`"
-                 "\nUsage: Membuat pesan yang hancur sendiri dalam x detik."
-                 "\nJaga agar detik di bawah 100 karena bot Anda akan tidur.",
-                 })
+CMD_HELP.update({"purge": f"{__doc__.format(i=CMD_HANDLER)}"})
